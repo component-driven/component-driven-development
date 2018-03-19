@@ -12,6 +12,8 @@ const InputBase = styled.input`
 	background-color: ${props => props.theme.color.bg};
 	border: 1px solid ${props => props.theme.color.primary};
 	border-radius: ${props => props.theme.borderRadius.base};
+	/* Remove red outline on required input in Firefox */
+	box-shadow: none;
 
 	&:focus {
 		outline: 0;
