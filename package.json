@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
+  "homepage": "https://sapegin.github.io/component-driven-development/",
   "dependencies": {
     "grid-styled": "^3.2.1",
     "prop-types": "^15.6.1",
