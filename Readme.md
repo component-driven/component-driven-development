@@ -1,6 +1,6 @@
 # Component-driven development example app
 
-[Try the app](https://sapegin.github.io/component-driven-development)
+[Try the app](https://sapegin.github.io/component-driven-development) or [view the style guide](https://sapegin.github.io/component-driven-development/styleguide/).
 
 ## Author and license
 
