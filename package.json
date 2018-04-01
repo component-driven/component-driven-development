@@ -13,16 +13,16 @@
     "styled-components": "^3.2.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && styleguidist build",
+    "start": "node scripts/setup.js && react-scripts start",
+    "build": "node scripts/setup.js && react-scripts build && styleguidist build",
     "pretest": "eslint src",
     "test": "CI=true react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "posttest": "npm run format",
     "eject": "react-scripts eject",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
-    "exercise": "styleguidist server --exercise",
+    "styleguide": "node scripts/setup.js && styleguidist server",
+    "styleguide:build": "node scripts/setup.js && styleguidist build",
+    "exercise": "node scripts/setup.js && styleguidist server --exercise",
     "deploy": "gh-pages -d build",
     "format": "prettier --write '**/*.{js,md}'"
   },
