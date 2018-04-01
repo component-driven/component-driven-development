@@ -15,7 +15,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && styleguidist build",
-    "test": "react-scripts test --env=jsdom",
+    "pretest": "eslint src",
+    "test": "CI=true react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
     "posttest": "npm run format",
     "eject": "react-scripts eject",
     "styleguide": "styleguidist server",
