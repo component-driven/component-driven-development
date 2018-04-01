@@ -27,6 +27,6 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "gh-pages": "^1.1.0",
     "prettier": "^1.11.1",
-    "react-styleguidist": "^6.2.7"
+    "react-styleguidist": "^7.0.1"
   }
 }
