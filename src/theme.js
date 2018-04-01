@@ -4,15 +4,15 @@ export default {
 		heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
 	},
 	fontSize: {
-		base: '16px',
-		small: '14px',
-		big: '20px',
-		alpha: '48px',
-		beta: '36px',
-		gamma: '24px',
-		delta: '20px',
-		epsilon: '16px',
-		zeta: '14px',
+		base: '1rem',
+		small: '0.875rem',
+		big: '1.25rem',
+		alpha: '3rem',
+		beta: '2.25rem',
+		gamma: '1.5rem',
+		delta: '1.25rem',
+		epsilon: '1rem',
+		zeta: '0.875rem',
 	},
 	color: {
 		bg: '#fff',
@@ -26,6 +26,6 @@ export default {
 		error: '#d0453e',
 	},
 	borderRadius: {
-		base: '3px',
+		base: '0.15em',
 	},
 };
