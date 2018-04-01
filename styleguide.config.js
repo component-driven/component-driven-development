@@ -16,6 +16,6 @@ module.exports = {
 	],
 	styleguideDir: 'build/styleguide',
 	styleguideComponents: {
-		Wrapper: path.join(__dirname, 'src/styleguide/ThemeWrapper'),
+		Wrapper: path.join(__dirname, 'src/Provider'),
 	},
 };
