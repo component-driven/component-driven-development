@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import { Box } from 'grid-styled';
 import Card from '../core/Card';
@@ -11,10 +12,7 @@ const Layout = ({ filters, dogs, onFilterUpdate }) => (
 	<Page.Container>
 		<Box p={3}>
 			<Heading size="alpha" is="h1" mb={1}>
-				Dog Finder{' '}
-				<span role="img" aria-label="Dog">
-					🐶
-				</span>
+				Dog Finder <span aria-hidden="true">🐶</span>
 			</Heading>
 			<Box mb={4}>
 				<DogFinder />
