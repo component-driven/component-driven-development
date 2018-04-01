@@ -1,5 +1,7 @@
 # Component-driven development example app
 
+[![Build Status](https://travis-ci.org/sapegin/component-driven-development.svg)](https://travis-ci.org/sapegin/component-driven-development)
+
 [Try the app](https://sapegin.github.io/component-driven-development) or [view the style guide](https://sapegin.github.io/component-driven-development/styleguide/).
 
 ## Author and license
