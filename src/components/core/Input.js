@@ -26,6 +26,9 @@ const InputBase = styled.input`
 	}
 `;
 
+/**
+ * A basic input field.
+ */
 const Input = props => <Box is={InputBase} p={2} {...props} />;
 
 export default Input;

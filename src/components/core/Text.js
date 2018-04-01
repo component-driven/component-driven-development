@@ -16,21 +16,31 @@ const TextBase = styled.p`
 		]};
 `;
 
+/**
+ * A component to render all text in the app.
+ */
 const Text = ({ children, is, ...props }) => {
 	const Tag = TextBase.withComponent(is);
 	return <Tag {...props}>{children}</Tag>;
 };
 
 Text.propTypes = {
+	/** Custom component or HTML tag */
 	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+	/** Less important text */
 	secondary: PropTypes.bool,
+	/** Small copy */
 	tertiary: PropTypes.bool,
+	/** Error message */
 	error: PropTypes.bool,
 	children: PropTypes.node,
 };
 
 Text.defaultProps = {
 	is: 'p',
+	secondary: false,
+	tertiary: false,
+	error: false,
 };
 
 export default Text;

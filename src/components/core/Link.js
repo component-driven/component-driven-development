@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+/**
+ * A link.
+ */
 const Link = styled.a`
 	&,
 	&:link,
@@ -15,7 +18,12 @@ const Link = styled.a`
 `;
 
 Link.propTypes = {
+	/** Has text color by default */
 	shy: PropTypes.bool,
+};
+
+Link.defaultProps = {
+	shy: false,
 };
 
 /** @component */

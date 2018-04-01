@@ -11,7 +11,7 @@ const Footer = styled.footer`
 `;
 
 /**
- * Page container to create a sticky footer.
+ * A page container to create a sticky footer.
  * @component
  */
 export default { Container, Footer };

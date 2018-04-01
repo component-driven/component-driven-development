@@ -12,6 +12,9 @@ const Base = styled.p`
 
 const Container = Base.withComponent(Box);
 
+/**
+ * A text heading.
+ */
 const Heading = ({ children, ...props }) => {
 	return (
 		<Container m={0} {...props}>
@@ -21,10 +24,15 @@ const Heading = ({ children, ...props }) => {
 };
 
 Heading.propTypes = {
+	/** Custom component or HTML tag */
 	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 	size: PropTypes.oneOf(['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta'])
 		.isRequired,
 	children: PropTypes.node,
+};
+
+Heading.defaultProps = {
+	is: 'div',
 };
 
 export default Heading;

@@ -33,6 +33,9 @@ const ButtonBase = styled.button`
 	}
 `;
 
+/**
+ * A button.
+ */
 const Button = ({ children, ...props }) => (
 	<Box is={ButtonBase} px={3} py={2} {...props}>
 		{children}

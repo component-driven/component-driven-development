@@ -51,6 +51,9 @@ const Input = styled.input`
 	}
 `;
 
+/**
+ * A slider.
+ */
 function Slider({ value, onChange }) {
 	return (
 		<Input
