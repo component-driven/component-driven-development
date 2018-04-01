@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from 'grid-styled';
-import Card from './Card';
+import Card from '../core/Card';
 import Dogs from './Dogs';
-import Slider from './Slider';
-import Widget from './Widget';
+import Slider from '../core/Slider';
+import Widget from '../core/Widget';
 
 const SliderColumn = ({ children }) => (
 	<Box w={[1, 1 / 3]} px={2} py={[2, 0]}>

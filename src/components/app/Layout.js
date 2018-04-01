@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box } from 'grid-styled';
-import Card from './components/Card';
-import Footer from './components/Footer';
-import Heading from './components/Heading';
-import Page from './components/Page';
-import DogFinder from './components/DogFinderContainer';
-import SubscriptionForm from './components/SubscriptionFormContainer';
+import Card from '../core/Card';
+import Footer from '../app/Footer';
+import Heading from '../core/Heading';
+import Page from '../core/Page';
+import DogFinder from '../app/DogFinderContainer';
+import SubscriptionForm from '../app/SubscriptionFormContainer';
 
 const Layout = ({ filters, dogs, onFilterUpdate }) => (
 	<Page.Container>

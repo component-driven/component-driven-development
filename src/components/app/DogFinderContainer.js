@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import findDogs from '../dogsService';
+import findDogs from '../../services/dogsService';
 import DogFinder from './DogFinder';
 
 class DogFinderContainer extends Component {

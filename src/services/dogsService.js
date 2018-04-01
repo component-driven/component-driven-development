@@ -1,5 +1,5 @@
 import sampleSize from 'lodash/sampleSize';
-import breeds from './dogs.json';
+import breeds from '../data/dogs.json';
 
 const MAX_RESULTS = 6;
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SubscriptionForm from './SubscriptionForm';
-import subscribe from '../newsletterService';
+import subscribe from '../../services/newsletterService';
 
 class SubscriptionFormContainer extends Component {
 	state = {

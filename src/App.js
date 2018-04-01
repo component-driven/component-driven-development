@@ -1,6 +1,6 @@
 import React from 'react';
 import Provider from './Provider';
-import Layout from './Layout';
+import Layout from './components/app/Layout';
 
 const App = () => (
 	<Provider>
