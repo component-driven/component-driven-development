@@ -1,0 +1,3 @@
+```jsx
+<Input type="text" />
+```
