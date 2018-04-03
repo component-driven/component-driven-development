@@ -1,20 +1,19 @@
-# Creating a generic text component
-
-## Task
-
-Create a components that renders text in different styles:
-
-* Normal text (base font size, base color);
-* Secondary text (base font size, secondary color);
-* Small text (small font size, secondary color);
-* Error message (base font size, error color).
-
-Props are used to change text style.
-
-### Bonus
-
-The user can change a component or an HTML tag that is used to render text.
+# React Styleguidist introduction
 
 ## Getting started
 
-1. Run Styleguidist: `npm run exercise 1`
+Run Styleguidist: `npm run exercise 1`.
+
+## Task
+
+1.  Explore React Styleguidist UI, try to switch to isolated mode, try to edit example code.
+
+2.  Edit a examples in `Button.md`, add a new example.
+
+3.  Edit a component in `Button.js`.
+
+4.  Add a new component and an example file (you’ll need to restart Styleguidist after that).
+
+## Resources
+
+* [React Styleguidist docs](https://react-styleguidist.js.org/docs/getting-started.html)
