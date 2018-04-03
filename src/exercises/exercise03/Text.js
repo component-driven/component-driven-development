@@ -1,13 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 /**
  * A component to render all text in the app.
  */
-const Text = () => {
-	return <div>Your code here</div>;
-};
+const Text = styled.button`
+	font-family: ${props => props.theme.fontFamily.base};
+	/* Your styles here */
+`;
 
 Text.propTypes = {
 	/** Custom component or HTML tag */

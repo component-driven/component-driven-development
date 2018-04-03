@@ -12,6 +12,8 @@ Run Styleguidist: `npm run exercise 2`.
 
 3.  Add hover styles to the Button component.
 
+**Hint:** Use `&` to refer to a component class name.
+
 ## Resources
 
 * [A 5-minute Intro to Styled Components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55)
