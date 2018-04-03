@@ -1,9 +1,15 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from 'grid-styled';
 import styled from 'styled-components';
 
-const ButtonBase = styled.button`
+/**
+ * A button.
+ */
+const Button = styled(Box).attrs({
+	is: 'button',
+	px: 3,
+	py: 2,
+})`
 	font-family: ${props => props.theme.fontFamily.base};
 	font-size: ${props => props.theme.fontSize.base};
 	color: ${props => props.theme.color.bg};
@@ -33,17 +39,9 @@ const ButtonBase = styled.button`
 	}
 `;
 
-/**
- * A button.
- */
-const Button = ({ children, ...props }) => (
-	<Box is={ButtonBase} px={3} py={2} {...props}>
-		{children}
-	</Box>
-);
-
 Button.propTypes = {
 	children: PropTypes.node,
 };
 
+/** @component */
 export default Button;
