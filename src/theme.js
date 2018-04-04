@@ -22,7 +22,7 @@ export default {
 		light: '#ccc',
 		link: '#8667a8',
 		hover: '#ed9dc5',
-		focus: '#ed9dc599',
+		focus: '#ed9dc5',
 		error: '#d0453e',
 	},
 	borderRadius: {
