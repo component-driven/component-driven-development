@@ -6,6 +6,7 @@
   "homepage": "https://sapegin.github.io/component-driven-development/",
   "dependencies": {
     "grid-styled": "^3.2.1",
+    "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",

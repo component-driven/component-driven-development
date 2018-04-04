@@ -39,6 +39,7 @@ if (exercise) {
 		{
 			name: 'Foundation',
 			content: 'docs/Foundation.md',
+			components: 'src/components/foundation/*.js',
 		},
 		{
 			name: 'Core components',
