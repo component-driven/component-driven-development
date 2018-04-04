@@ -28,4 +28,5 @@ export default {
 	borderRadius: {
 		base: '0.15em',
 	},
+	space: [ 0, 4, 8, 16, 24, 48, 64, 128 ],
 };
