@@ -21,6 +21,7 @@ export default {
 		primary: '#8667a8',
 		secondary: '#767676',
 		light: '#ccc',
+		lighter: '#efefef',
 		link: '#8667a8',
 		hover: '#ed9dc5',
 		focus: transparentize(0.4, '#ed9dc5'),

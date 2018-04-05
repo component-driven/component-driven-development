@@ -4,28 +4,37 @@ import { Box, Flex } from 'grid-styled';
 import theme from '../../theme';
 import Text from '../core/Text';
 import Card from '../core/Card';
+import Heading from '../core/Heading';
 
 const SpacingExample = styled(Card)`
 	padding: 0;
-	height: ${props => props.space}px;
 	margin: 0;
+	height: ${props => props.space}px;
+	width: 100%;
 	font-size: ${props => props.fontSize};
 	font-family: ${props => props.theme.fontFamily.base};
-	background: ${props => props.theme.color.light};
-	border: none;
+	background: ${props => props.theme.color.lighter};
+	border-color: ${props => props.theme.color.light};
+	border-style: dashed;
 `;
-const SpaceSample = ({ space, children }) => <Box m={0}>
-	<SpacingExample space={space}/>
-	<Text tertiary>{children}</Text>
-</Box>;
+
+const SpaceSample = ({ space, children }) => (
+	<Flex mb={3}>
+		<Box width={theme.space[6]}>{children}</Box>
+		<SpacingExample space={space} />
+	</Flex>
+);
 
 export default class Spacing extends React.Component {
 	render() {
 		return (
 			<Box>
-				{theme.space.map(space => (
+				{theme.space.map((space, index) => (
 					<SpaceSample space={space} key={space}>
-						{space}
+						<Heading size="delta" is="h3">
+							{index}
+						</Heading>
+						<Text tertiary>{space}px</Text>
 					</SpaceSample>
 				))}
 			</Box>
