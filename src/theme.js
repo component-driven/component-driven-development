@@ -1,3 +1,4 @@
+import { transparentize } from 'polished';
 export default {
 	fontFamily: {
 		base: 'Helvetica Neue, Helvetica, Arial, sans-serif',
@@ -22,11 +23,11 @@ export default {
 		light: '#ccc',
 		link: '#8667a8',
 		hover: '#ed9dc5',
-		focus: '#ed9dc5',
+		focus: transparentize(0.4, '#ed9dc5'),
 		error: '#d0453e',
 	},
 	borderRadius: {
 		base: '0.15em',
 	},
-	space: [ 0, 4, 8, 16, 24, 48, 64, 128 ],
+	space: [0, 4, 8, 16, 24, 48, 64, 128],
 };
