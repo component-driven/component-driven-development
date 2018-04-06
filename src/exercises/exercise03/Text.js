@@ -4,7 +4,7 @@ import styled from 'styled-components';
 /**
  * A component to render all text in the app.
  */
-const Text = styled.button`
+const Text = styled.p`
 	font-family: ${props => props.theme.fontFamily.base};
 	/* Your styles here */
 `;
