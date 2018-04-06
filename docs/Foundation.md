@@ -10,10 +10,10 @@ Every element of the design system should be in relation to those values in orde
 and instead of using CSS values for spacing you should rely on design system primitives:
 
 ```diff
-- const BoxWithSpacing = styled.div`
+- const BoxWithSpacing = styled.article`
 -   margin: 16px;
 - `;
-+ const BoxWithSpacing = styled(Box).attrs({ m: 3 })`
++ const BoxWithSpacing = styled(Box).attrs({ is: 'article', m: 3 })`
 +   // Your additional styles go here
 + `;
 ```
