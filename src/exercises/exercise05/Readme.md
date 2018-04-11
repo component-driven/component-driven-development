@@ -6,7 +6,7 @@ Run Styleguidist: `npm run exercise 5`.
 
 ### Task
 
-Create a components that renders a link. Link should have a hover state with a different color.
+Create a components that renders a link. Link should be rendered using base text style. Link should have a hover state with a different color.
 
 **Hint:** Use `&` to refer to a component class name.
 
