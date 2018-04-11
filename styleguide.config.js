@@ -33,7 +33,13 @@ if (exercise) {
 	}
 
 	config.title = `Exercise ${args.exercise}`;
-	config.components = `${exerciseFolder}/**/*.js`;
+	config.sections = [
+		{
+			name: config.title,
+			content: `${exerciseFolder}/Readme.md`,
+			components: `${exerciseFolder}/**/*.js`,
+		},
+	];
 } else {
 	config.sections = [
 		{

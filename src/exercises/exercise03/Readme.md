@@ -1,10 +1,10 @@
-# Creating a generic text component
+## Creating a generic text component
 
-## Getting started
+### Getting started
 
 Run Styleguidist: `npm run exercise 3`.
 
-## Task
+### Task
 
 Create a component that renders text in different styles:
 
@@ -15,12 +15,12 @@ Create a component that renders text in different styles:
 
 Props are used to change text style.
 
-### Bonus
+#### Bonus
 
 The user can change a component or an HTML tag that is used to render text.
 
 **Hint:** use Styled Components’ [withComponent method](https://www.styled-components.com/docs/api#withcomponent).
 
-## If you’re stuck
+### If you’re stuck
 
 See the completed [code of this example](../../components/core/Text.js).

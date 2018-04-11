@@ -1,19 +1,19 @@
-# Creating a generic heading component
+## Creating a generic heading component
 
-## Getting started
+### Getting started
 
 Run Styleguidist: `npm run exercise 4`.
 
-## Task
+### Task
 
 Create a components that renders different levels of headings.
 
 Props are used to change heading level.
 
-### Bonus
+#### Bonus
 
 The user can change a component or an HTML tag that is used to render text.
 
-## If you’re stuck
+### If you’re stuck
 
 See the completed [code of this example](../../components/core/Heading.js).

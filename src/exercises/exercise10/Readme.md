@@ -1,10 +1,10 @@
-# Creating a subscription form
+## Creating a subscription form
 
-## Getting started
+### Getting started
 
 Run Styleguidist: `npm run exercise 10`.
 
-## Task
+### Task
 
 Create a subscription form that consists of two components:
 
@@ -18,6 +18,6 @@ Create a subscription form that consists of two components:
   * sends a network request on form submit;
   * controls the presentational component via its props.
 
-## If you’re stuck
+### If you’re stuck
 
 See the completed code of this example: [presentational](../../components/app/SubscriptionForm.js) and [container](../../components/app/SubscriptionFormContainer.js).
