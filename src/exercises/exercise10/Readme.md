@@ -6,7 +6,7 @@ Run Styleguidist: `npm run exercise 10`.
 
 ## Task
 
-Create a subscription form that consists for two components:
+Create a subscription form that consists of two components:
 
 * A presentational component (`SubscriptionForm`) that renders all possible states of the subscription form:
   * default;
