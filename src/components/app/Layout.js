@@ -8,7 +8,7 @@ import Page from '../core/Page';
 import DogFinder from '../app/DogFinderContainer';
 import SubscriptionForm from '../app/SubscriptionFormContainer';
 
-const Layout = ({ filters, dogs, onFilterUpdate }) => (
+const Layout = () => (
 	<Page.Container>
 		<Box p={3}>
 			<Heading size="alpha" is="h1" mb={1}>
