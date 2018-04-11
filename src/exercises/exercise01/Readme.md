@@ -1,10 +1,10 @@
-# React Styleguidist introduction
+## React Styleguidist introduction
 
-## Getting started
+### Getting started
 
 Run Styleguidist: `npm run exercise 1`.
 
-## Task
+### Task
 
 1.  Explore React Styleguidist UI, try to switch to isolated mode, try to edit example code.
 
@@ -14,6 +14,6 @@ Run Styleguidist: `npm run exercise 1`.
 
 4.  Add a new component and an example file (you’ll need to restart Styleguidist after that).
 
-## Resources
+### Resources
 
 * [React Styleguidist docs](https://react-styleguidist.js.org/docs/getting-started.html)

@@ -1,10 +1,10 @@
-# Styled Components introduction
+## Styled Components introduction
 
-## Getting started
+### Getting started
 
 Run Styleguidist: `npm run exercise 2`.
 
-## Task
+### Task
 
 1.  Change base tag from `button` to `a`, add `href` props to examples in `Button.md`.
 
@@ -14,7 +14,7 @@ Run Styleguidist: `npm run exercise 2`.
 
 **Hint:** Use `&` to refer to a component class name.
 
-## Resources
+### Resources
 
 * [A 5-minute Intro to Styled Components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55)
 * [Styled Components docs](https://www.styled-components.com/docs)
