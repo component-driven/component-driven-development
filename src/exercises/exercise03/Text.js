@@ -22,10 +22,10 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
-	is: 'p',
 	secondary: false,
 	tertiary: false,
 	error: false,
 };
 
+/** @component */
 export default Text;
