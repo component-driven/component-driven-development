@@ -24,6 +24,7 @@
     "styleguide": "node scripts/setup.js && styleguidist server",
     "styleguide:build": "node scripts/setup.js && styleguidist build",
     "exercise": "node scripts/setup.js && styleguidist server --exercise",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "format": "prettier --write '**/*.{js,md}'",
     "precommit": "lint-staged"
