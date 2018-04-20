@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box } from 'grid-styled';
-import Card from '../../components/core/Card';
+import { Card } from '../../components/core/Card';
+import { Heading } from '../../components/core/Heading';
+import { Page } from '../../components/core/Page';
 import Footer from '../../components/app/Footer';
-import Heading from '../../components/core/Heading';
-import Page from '../../components/core/Page';
 import DogFinder from '../../components/app/DogFinderContainer';
 import SubscriptionForm from '../../components/app/SubscriptionFormContainer';
 

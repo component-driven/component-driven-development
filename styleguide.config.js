@@ -49,7 +49,7 @@ if (exercise) {
 		},
 		{
 			name: 'Core components',
-			components: 'src/components/core/*.js',
+			components: 'src/components/core/**/[A-Z]*.js',
 		},
 		{
 			name: 'App components',

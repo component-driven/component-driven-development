@@ -10,4 +10,4 @@ Create a component that renders a form control container with a label. Label is 
 
 ### If you’re stuck
 
-See the completed [code of this example](../../components/core/Widget.js).
+See the completed [code of this example](../../components/core/Widget/Widget.js).

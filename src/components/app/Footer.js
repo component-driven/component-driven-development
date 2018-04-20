@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from '../core/Link';
-import Text from '../core/Text';
+import { Link } from '../core/Link';
+import { Text } from '../core/Text';
 
 const Footer = () => {
 	return (

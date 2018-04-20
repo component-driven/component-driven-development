@@ -18,4 +18,4 @@ If that’s too easy for you, try to use the Box component from Styled Grid to d
 
 ### If you’re stuck
 
-See the completed [code of this example](../../components/core/Button.js).
+See the completed [code of this example](../../components/core/Button/Button.js).

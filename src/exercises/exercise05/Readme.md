@@ -16,4 +16,4 @@ Add a variation that renders text using the base color (hover should be the same
 
 ### If you’re stuck
 
-See the completed [code of this example](../../components/core/Link.js).
+See the completed [code of this example](../../components/core/Link/Link.js).
