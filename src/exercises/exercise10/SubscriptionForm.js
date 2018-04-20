@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from 'grid-styled';
-import Button from '../../components/core/Button';
-import Input from '../../components/core/Input';
-import Text from '../../components/core/Text';
+import { Button } from '../../components/core/Button';
+import { Input } from '../../components/core/Input';
+import { Text } from '../../components/core/Text';
 
 const SubscriptionForm = ({
 	id,

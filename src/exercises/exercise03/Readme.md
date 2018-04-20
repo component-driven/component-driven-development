@@ -23,4 +23,4 @@ The user can change a component or an HTML tag that is used to render text.
 
 ### If you’re stuck
 
-See the completed [code of this example](../../components/core/Text.js).
+See the completed [code of this example](../../components/core/Text/Text.js).

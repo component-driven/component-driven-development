@@ -27,4 +27,5 @@ Heading.defaultProps = {
 	is: 'div',
 };
 
+/** @component */
 export default Heading;

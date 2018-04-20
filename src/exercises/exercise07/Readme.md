@@ -10,4 +10,4 @@ Create a card components. Card is a visually distinctive block of content, in ou
 
 ### If you’re stuck
 
-See the completed [code of this example](../../components/core/Card.js).
+See the completed [code of this example](../../components/core/Card/Card.js).
