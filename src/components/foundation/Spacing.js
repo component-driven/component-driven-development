@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from 'grid-styled';
 import theme from '../../theme';
-import { Text } from '../core/Text';
-import { Card } from '../core/Card';
-import { Heading } from '../core/Heading';
+import Text from '../core/Text';
+import Card from '../core/Card';
+import Heading from '../core/Heading';
 
 const SpacingExample = styled(Card)`
 	padding: 0;

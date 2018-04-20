@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Box, Flex } from 'grid-styled';
 import { darken } from 'polished';
 import theme from '../../theme';
-import { Text } from '../core/Text';
-import { Card } from '../core/Card';
+import Text from '../core/Text';
+import Card from '../core/Card';
 
 const Swatch = styled.div`
 	width: 100%;

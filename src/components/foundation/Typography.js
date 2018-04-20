@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Box } from 'grid-styled';
 import theme from '../../theme';
-import { Text } from '../core/Text';
+import Text from '../core/Text';
 
 const FontSizeSample = styled.p`
 	margin: 0;

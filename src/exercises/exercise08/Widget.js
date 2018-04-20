@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from 'grid-styled';
-import { Text } from '../../components/core/Text';
+import Text from '../../components/core/Text';
 
 /**
  * A container for a form control with a label.
