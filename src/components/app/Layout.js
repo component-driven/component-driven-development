@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import { Box } from 'grid-styled';
-import { Card } from '../core/Card';
-import { Heading } from '../core/Heading';
-import { Page } from '../core/Page';
+import Card from '../core/Card';
+import Heading from '../core/Heading';
+import Page from '../core/Page';
 import Footer from '../app/Footer';
 import DogFinder from '../app/DogFinderContainer';
 import SubscriptionForm from '../app/SubscriptionFormContainer';

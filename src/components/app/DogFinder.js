@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from 'grid-styled';
-import { Card } from '../core/Card';
-import { Slider } from '../core/Slider';
-import { Widget } from '../core/Widget';
+import Card from '../core/Card';
+import Slider from '../core/Slider';
+import Widget from '../core/Widget';
 import Dogs from './Dogs';
 
 const SliderColumn = ({ children }) => (
