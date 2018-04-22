@@ -15,6 +15,7 @@ const exercise = args.exercise && args.exercise.toString().padStart(2, '0');
 
 const config = {
 	styleguideDir: 'build/styleguide',
+	assetsDir: 'public',
 	styleguideComponents: {
 		Wrapper: path.join(__dirname, 'src/Provider'),
 	},

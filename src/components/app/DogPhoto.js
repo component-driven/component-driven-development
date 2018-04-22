@@ -11,7 +11,7 @@ const Img = styled.img`
 `;
 
 const DogPhoto = ({ id, breed }) => (
-	<Img src={`http://www.dogbreedchart.com/img/${id}.jpg`} alt={breed} />
+	<Img src={`/images/${id}.jpg`} alt={breed} />
 );
 
 DogPhoto.propTypes = {
