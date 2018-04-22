@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import { Box } from 'grid-styled';
-import Card from '../core/Card';
+import Card from '../core/Panel';
 import Heading from '../core/Heading';
 import Page from '../core/Page';
 import Footer from '../app/Footer';

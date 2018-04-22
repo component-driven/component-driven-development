@@ -5,16 +5,16 @@ import { Box } from 'grid-styled';
 /**
  * A visually distinctive block of content.
  */
-const Card = styled(Box).attrs({
+const Panel = styled(Box).attrs({
 	p: 3,
 })`
 	border: 1px solid ${props => props.theme.color.light};
 	border-radius: ${props => props.theme.borderRadius.base};
 `;
 
-Card.propTypes = {
+Panel.propTypes = {
 	children: PropTypes.node,
 };
 
 /** @component */
-export default Card;
+export default Panel;

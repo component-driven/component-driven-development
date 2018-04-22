@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from 'grid-styled';
-import Card from '../core/Card';
+import Card from '../core/Panel';
 import Slider from '../core/Slider';
 import Widget from '../core/Widget';
 import Dogs from './Dogs';
