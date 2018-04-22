@@ -39,8 +39,8 @@ Or run:
 * [Styled Components](https://www.styled-components.com/)
 * [Grid Styled](https://github.com/jxnblk/grid-styled)
 
-## Author and license
+## Authors and license
 
-[Artem Sapegin](http://sapegin.me) and [contributors](https://github.com/sapegin/component-driven-development/graphs/contributors).
+[Artem Sapegin](http://sapegin.me), [Andrey Okonetchnikov](http://okonet.ru/) and [contributors](https://github.com/sapegin/component-driven-development/graphs/contributors).
 
 MIT License, see the included [License.md](License.md) file.
