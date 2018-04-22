@@ -9,7 +9,7 @@ const Heading = styled(Box).attrs({
 	is: props => props.is,
 	m: 0,
 })`
-	font-family: ${props => props.theme.fontFamily.base};
+	font-family: ${props => props.theme.fontFamily.heading};
 	font-size: ${props => props.theme.fontSize[props.size]};
 	color: ${props => props.theme.color.base};
 	font-weight: normal;
@@ -18,13 +18,13 @@ const Heading = styled(Box).attrs({
 Heading.propTypes = {
 	/** Custom component or HTML tag */
 	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	size: PropTypes.oneOf(['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta'])
+	size: PropTypes.oneOf(['xxlarge', 'xlarge', 'large', 'base', 'small'])
 		.isRequired,
 	children: PropTypes.node,
 };
 
 Heading.defaultProps = {
-	is: 'div',
+	is: 'h1',
 };
 
 /** @component */
