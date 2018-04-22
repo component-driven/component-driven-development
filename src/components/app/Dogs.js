@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from 'grid-styled';
-import DogPhoto from './DogPhoto';
+import Dog from './Dog';
 
 const Dogs = ({ dogs }) => (
 	<Flex m={-2} flexWrap="wrap">
 		{dogs.map(dog => (
 			<Box key={dog.id} p={2}>
-				<DogPhoto id={dog.id} breed={dog.name} />
+				<Dog {...dog} />
 			</Box>
 		))}
 	</Flex>
