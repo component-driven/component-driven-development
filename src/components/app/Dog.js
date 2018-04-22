@@ -55,6 +55,17 @@ class Dog extends Component {
 Dog.propTypes = {
 	id: PropTypes.string,
 	breed: PropTypes.string,
+	kidFriendly: PropTypes.number,
+	dogFriendly: PropTypes.number,
+	lowShedding: PropTypes.number,
+	easyToGroom: PropTypes.number,
+	highEnergy: PropTypes.number,
+	goodHealth: PropTypes.number,
+	lowBarking: PropTypes.number,
+	intelligence: PropTypes.number,
+	easyToTrain: PropTypes.number,
+	toleratesHot: PropTypes.number,
+	toleratesCold: PropTypes.number,
 };
 
 export default Dog;
