@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from 'grid-styled';
-import Card from '../../components/core/Panel';
+import Panel from '../../components/core/Panel';
 import Heading from '../../components/core/Heading';
 import Page from '../../components/core/Page';
 import Footer from '../../components/app/Footer';

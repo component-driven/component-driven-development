@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import { Box } from 'grid-styled';
-import Card from '../core/Panel';
+import Panel from '../core/Panel';
 import Heading from '../core/Heading';
 import Page from '../core/Page';
 import Footer from '../app/Footer';
@@ -21,9 +21,9 @@ const Layout = () => (
 				<Heading size="gamma" is="h2" mb={2}>
 					Subscribe to our newsletter!
 				</Heading>
-				<Card>
+				<Panel>
 					<SubscriptionForm />
-				</Card>
+				</Panel>
 			</Box>
 		</Box>
 		<Page.Footer>

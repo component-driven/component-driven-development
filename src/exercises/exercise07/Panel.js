@@ -5,11 +5,11 @@ import { Box } from 'grid-styled';
 /**
  * A visually distinctive block of content.
  */
-const Card = styled(Box).attrs({})``;
+const Panel = styled(Box).attrs({})``;
 
-Card.propTypes = {
+Panel.propTypes = {
 	children: PropTypes.node,
 };
 
 /** @component */
-export default Card;
+export default Panel;

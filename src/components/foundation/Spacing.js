@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { Box, Flex } from 'grid-styled';
 import theme from '../../theme';
 import Text from '../core/Text';
-import Card from '../core/Panel';
+import Panel from '../core/Panel';
 import Heading from '../core/Heading';
 
-const SpacingExample = styled(Card)`
+const SpacingExample = styled(Panel)`
 	padding: 0;
 	margin: 0;
 	height: ${props => props.space}px;
