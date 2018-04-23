@@ -21,6 +21,7 @@ const config = {
 	},
 	// Read examples from Component.md files only, not from Readme.md
 	getExampleFilename: x => x.replace(/\.js$/, '.md'),
+	skipComponentsWithoutExample: true,
 };
 
 if (exercise) {
@@ -49,11 +50,11 @@ if (exercise) {
 			components: 'src/components/foundation/*.js',
 		},
 		{
-			name: 'Core components',
+			name: 'Components',
 			components: 'src/components/core/**/[A-Z]*.js',
 		},
 		{
-			name: 'App components',
+			name: 'Patterns',
 			components: 'src/components/app/**/*.js',
 		},
 	];

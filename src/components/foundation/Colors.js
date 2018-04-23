@@ -1,28 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from 'grid-styled';
-import { darken } from 'polished';
+import { readableColor } from 'polished';
 import theme from '../../theme';
 import Text from '../core/Text';
-import Card from '../core/Card';
 
-const Swatch = styled.div`
+const Swatch = styled(Box).attrs({ p: 3 })`
 	width: 100%;
 	height: 100px;
 	background: ${props => props.color};
-	border-bottom: 1px solid ${props => darken(0.15, props.color)};
-	border-top-left-radius: ${props => props.theme.borderRadius.base};
-	border-top-right-radius: ${props => props.theme.borderRadius.base};
+
+	& > p {
+		color: ${props => readableColor(props.color)};
+	}
 `;
 
 const ColorSample = ({ color, children }) => (
-	<Card m={2} p={0} width={1 / 6}>
-		<Swatch color={color} />
-		<Box p={2}>
+	<Box width={1 / 5}>
+		<Swatch color={color}>
 			<Text>{children}</Text>
 			<Text tertiary>{color}</Text>
-		</Box>
-	</Card>
+		</Swatch>
+	</Box>
 );
 
 export default class Colors extends React.Component {

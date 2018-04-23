@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Modal from '../core/Modal';
-import DogPhoto from './DogPhoto';
+import DogCard from './DogCard';
 import DogInfo from './DogInfo';
 
 const Button = styled.button`
@@ -46,7 +46,7 @@ class Dog extends Component {
 					<DogInfo dog={dog} />
 				</Modal>
 				<Button onClick={this.handleOpenModal}>
-					<DogPhoto dog={dog} />
+					<DogCard dog={dog} />
 				</Button>
 			</React.Fragment>
 		);
