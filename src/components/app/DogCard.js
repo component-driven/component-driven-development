@@ -4,12 +4,12 @@ import Text from '../core/Text';
 import DogPhoto from './DogPhoto';
 import Panel from '../core/Panel';
 
-const DogCard = ({ id, breed }) => (
+const DogCard = ({ dog }) => (
 	<Panel p={2} flexDirection="column" alignItems="center">
-		<DogPhoto id={id} breed={breed} />
+		<DogPhoto dog={dog} />
 		<Box>
 			<Text secondary is="h3">
-				{breed}
+				{dog.name}
 			</Text>
 		</Box>
 	</Panel>
