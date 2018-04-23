@@ -22,38 +22,41 @@ const QUALITIES = {
 const getQualities = values =>
 	Object.keys(values)
 		.filter(x => values[x] >= 4)
+		.filter(x => x in QUALITIES)
 		.map(x => QUALITIES[x]);
 
-const DogInfo = ({ id, breed, ...props }) => (
+const DogInfo = ({ dog, ...props }) => (
 	<Flex>
 		<Box mr="2">
 			<Text>
 				About the breed:{' '}
 				<Group separator=", " inline>
-					{getQualities(props)}
+					{getQualities(dog)}
 				</Group>.
 			</Text>
 		</Box>
 		<Box ml="auto">
-			<DogPhoto id={id} breed={breed} />
+			<DogPhoto dog={dog} />
 		</Box>
 	</Flex>
 );
 
 DogInfo.propTypes = {
-	id: PropTypes.string,
-	breed: PropTypes.string,
-	kidFriendly: PropTypes.number,
-	dogFriendly: PropTypes.number,
-	lowShedding: PropTypes.number,
-	easyToGroom: PropTypes.number,
-	highEnergy: PropTypes.number,
-	goodHealth: PropTypes.number,
-	lowBarking: PropTypes.number,
-	intelligence: PropTypes.number,
-	easyToTrain: PropTypes.number,
-	toleratesHot: PropTypes.number,
-	toleratesCold: PropTypes.number,
+	dog: PropTypes.shape({
+		id: PropTypes.string,
+		name: PropTypes.string,
+		kidFriendly: PropTypes.number,
+		dogFriendly: PropTypes.number,
+		lowShedding: PropTypes.number,
+		easyToGroom: PropTypes.number,
+		highEnergy: PropTypes.number,
+		goodHealth: PropTypes.number,
+		lowBarking: PropTypes.number,
+		intelligence: PropTypes.number,
+		easyToTrain: PropTypes.number,
+		toleratesHot: PropTypes.number,
+		toleratesCold: PropTypes.number,
+	}),
 };
 
 export default DogInfo;

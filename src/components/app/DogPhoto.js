@@ -10,13 +10,15 @@ const Img = styled.img`
 	object-fit: contain;
 `;
 
-const DogPhoto = ({ id, breed }) => (
-	<Img src={`/images/${id}.jpg`} alt={breed} />
+const DogPhoto = ({ dog: { id, name } }) => (
+	<Img src={`images/${id}.jpg`} alt={name} />
 );
 
 DogPhoto.propTypes = {
-	id: PropTypes.string,
-	breed: PropTypes.string,
+	dog: PropTypes.shape({
+		id: PropTypes.string,
+		name: PropTypes.string,
+	}),
 };
 
 export default DogPhoto;

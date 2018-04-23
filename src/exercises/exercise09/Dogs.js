@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from 'grid-styled';
-import DogPhoto from '../../components/app/DogPhoto';
+import Dog from '../../components/app/Dog';
 
-const Dogs = ({ dogs }) => (
-	<div>{dogs.map(dog => <DogPhoto id={dog.id} breed={dog.name} />)}</div>
-);
+const Dogs = ({ dogs }) => <div>{dogs.map(dog => <Dog dog={dog} />)}</div>;
 
 Dogs.propTypes = {
 	dogs: PropTypes.arrayOf(
