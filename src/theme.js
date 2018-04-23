@@ -9,7 +9,8 @@ export default {
 		xlarge: '2.25rem',
 		large: '1.5rem',
 		base: '1rem',
-		small: '0.75rem',
+		small: '0.875rem',
+		xsmall: '0.75rem',
 	},
 	color: {
 		bg: '#fff',
