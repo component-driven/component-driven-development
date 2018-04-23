@@ -11,14 +11,14 @@ import SubscriptionForm from '../app/SubscriptionFormContainer';
 const Layout = () => (
 	<Page.Container>
 		<Box p={3}>
-			<Heading size="alpha" is="h1" mb={1}>
+			<Heading size="xxlarge" is="h1" mb={1}>
 				Dog Finder <span aria-hidden="true">🐶</span>
 			</Heading>
 			<Box mb={4}>
 				<DogFinder />
 			</Box>
 			<Box mb={4}>
-				<Heading size="gamma" is="h2" mb={2}>
+				<Heading size="large" is="h2" mb={2}>
 					Subscribe to our newsletter!
 				</Heading>
 				<Panel>
