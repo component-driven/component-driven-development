@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Box } from 'grid-styled';
+import { Flex } from 'grid-styled';
 
 /**
  * A visually distinctive block of content.
  */
-const Panel = styled(Box).attrs({
+const Panel = styled(Flex).attrs({
 	p: 3,
 })`
 	border: 1px solid ${props => props.theme.color.light};

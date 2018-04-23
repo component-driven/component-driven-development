@@ -7,6 +7,7 @@ const TextBase = styled.p`
 	font-family: ${props => props.theme.fontFamily.base};
 	font-size: ${props =>
 		props.theme.fontSize[props.tertiary ? 'small' : 'base']};
+	font-weight: normal;
 	color: ${props =>
 		props.theme.color[
 			(props.secondary && 'secondary') ||

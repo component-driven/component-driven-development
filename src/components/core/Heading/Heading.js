@@ -18,13 +18,13 @@ const Heading = styled(Box).attrs({
 Heading.propTypes = {
 	/** Custom component or HTML tag */
 	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	size: PropTypes.oneOf(['xxlarge', 'xlarge', 'large', 'base', 'small'])
-		.isRequired,
+	size: PropTypes.oneOf(['xxlarge', 'xlarge', 'large', 'base', 'small']),
 	children: PropTypes.node,
 };
 
 Heading.defaultProps = {
 	is: 'h1',
+	size: 'xxlarge',
 };
 
 /** @component */
