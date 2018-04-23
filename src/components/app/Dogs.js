@@ -7,7 +7,7 @@ const Dogs = ({ dogs }) => (
 	<Flex m={-2} flexWrap="wrap">
 		{dogs.map(dog => (
 			<Box key={dog.id} p={2}>
-				<Dog {...dog} />
+				<Dog dog={dog} />
 			</Box>
 		))}
 	</Flex>

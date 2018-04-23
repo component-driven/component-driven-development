@@ -35,17 +35,18 @@ class Dog extends Component {
 	};
 
 	render() {
+		const { dog } = this.props;
 		return (
 			<React.Fragment>
 				<Modal
-					title={this.props.breed}
+					title={dog.name}
 					isOpen={this.state.isModalOpen}
 					onRequestClose={this.handleCloseModal}
 				>
-					<DogInfo {...this.props} />
+					<DogInfo dog={dog} />
 				</Modal>
 				<Button onClick={this.handleOpenModal}>
-					<DogPhoto {...this.props} />
+					<DogPhoto dog={dog} />
 				</Button>
 			</React.Fragment>
 		);
@@ -53,19 +54,21 @@ class Dog extends Component {
 }
 
 Dog.propTypes = {
-	id: PropTypes.string,
-	breed: PropTypes.string,
-	kidFriendly: PropTypes.number,
-	dogFriendly: PropTypes.number,
-	lowShedding: PropTypes.number,
-	easyToGroom: PropTypes.number,
-	highEnergy: PropTypes.number,
-	goodHealth: PropTypes.number,
-	lowBarking: PropTypes.number,
-	intelligence: PropTypes.number,
-	easyToTrain: PropTypes.number,
-	toleratesHot: PropTypes.number,
-	toleratesCold: PropTypes.number,
+	dog: PropTypes.shape({
+		id: PropTypes.string,
+		name: PropTypes.string,
+		kidFriendly: PropTypes.number,
+		dogFriendly: PropTypes.number,
+		lowShedding: PropTypes.number,
+		easyToGroom: PropTypes.number,
+		highEnergy: PropTypes.number,
+		goodHealth: PropTypes.number,
+		lowBarking: PropTypes.number,
+		intelligence: PropTypes.number,
+		easyToTrain: PropTypes.number,
+		toleratesHot: PropTypes.number,
+		toleratesCold: PropTypes.number,
+	}),
 };
 
 export default Dog;
