@@ -1,4 +1,4 @@
-## Creating a generic link component
+## Creating a generic button component
 
 ### Getting started
 
