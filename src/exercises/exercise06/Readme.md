@@ -14,7 +14,7 @@ Create a components that renders a button. Button should have hover/active, focu
 
 If that’s too easy for you, try to use the Box component from Styled Grid to define paddings inside a button.
 
-**Hint:** Have a look at an example in Foundation of a style guide.
+**Hint:** Have a look at an example in [Foundation](https://sapegin.github.io/component-driven-development/styleguide/#foundation) of a style guide (`npm run styleguide`).
 
 ### If you’re stuck
 
