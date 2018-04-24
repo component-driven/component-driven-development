@@ -5,7 +5,9 @@ import Text from '../../components/core/Text';
 /**
  * A link.
  */
-const Link = styled(Text).attrs({ is: 'a' })``;
+const Link = styled.a`
+	/* Your styles here */
+`;
 
 /** @component */
 export default Link;

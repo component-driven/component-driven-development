@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Text from '../Text';
 
 /**
  * A link.
  */
-const Link = styled(Text).attrs({ is: 'a' })`
+const Link = styled.a`
 	&,
 	&:link,
 	&:visited {
