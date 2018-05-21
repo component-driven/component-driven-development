@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * The most simple button.
+ * One button to push them all.
  */
 const Button = ({ children, ...props }) => {
 	return <button {...props}>{children}</button>;
