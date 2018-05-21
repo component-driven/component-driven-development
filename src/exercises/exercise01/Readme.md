@@ -10,9 +10,11 @@ Run Styleguidist: `npm run exercise 1`.
 
 2.  Edit a examples in `Button.md`, add a new example.
 
-3.  Edit a component in `Button.js`.
+3.  Edit a component in `Button.js`. See how all examples update every time you save a file.
 
-4.  Add a new component and an example file (you’ll need to restart Styleguidist after that).
+4.  Edit component’s `PropTypes` definition. Open “Props & methods” to see that the documentation updates.
+
+5.  Add a new component and an example file (you need to restart Styleguidist after that).
 
 ### Resources
 
