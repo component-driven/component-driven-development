@@ -12,12 +12,14 @@ const Button = styled(Box).attrs({
 })`
 	font-family: ${props => props.theme.fontFamily.base};
 	font-size: ${props => props.theme.fontSize.base};
-	color: ${props => props.theme.color.bg};
-	background-color: ${props => props.theme.color.primary};
+	color: ${props =>
+		props.secondary ? props.theme.color.primary : props.theme.color.bg};
+	background-color: ${props =>
+		props.secondary ? 'transparent' : props.theme.color.primary};
 	border: 1px solid ${props => props.theme.color.primary};
 	border-radius: ${props => props.theme.borderRadius.base};
 
-	&:hover:not(:disabled),
+	&:hover:enabled,
 	&:active {
 		border-color: ${props => props.theme.color.hover};
 		background-color: ${props => props.theme.color.hover};
@@ -35,12 +37,14 @@ const Button = styled(Box).attrs({
 	}
 
 	&::-moz-focus-inner {
-		border: 0;
+		\border: 0;
 	}
 `;
 
 Button.propTypes = {
+	/** Button text */
 	children: PropTypes.node,
+	secondary: PropTypes.bool,
 };
 
 /** @component */
