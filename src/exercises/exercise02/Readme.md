@@ -1,4 +1,4 @@
-## Component-driven development basics
+## Creating reusable components
 
 ### Getting started
 
