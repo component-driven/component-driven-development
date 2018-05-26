@@ -37,7 +37,7 @@ const Button = styled(Box).attrs({
 	}
 
 	&::-moz-focus-inner {
-		\border: 0;
+		border: 0;
 	}
 `;
 
