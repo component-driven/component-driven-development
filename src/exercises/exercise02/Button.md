@@ -10,16 +10,16 @@ Disabled button:
 <Button disabled>Can’t touch this</Button>
 ```
 
-Secondary button:
+Primary button:
 
 ```jsx
-<Button secondary>Push me</Button>
+<Button primary>Push me</Button>
 ```
 
-Disabled secondary button:
+Disabled primary button:
 
 ```jsx
-<Button secondary disabled>
+<Button primary disabled>
   Can’t touch this
 </Button>
 ```

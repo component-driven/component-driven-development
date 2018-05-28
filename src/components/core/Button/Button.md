@@ -1,25 +1,11 @@
-Enabled button:
+Secondary and primary buttons:
 
 ```jsx
-<Button>Push me</Button>
+<Button>Push me</Button> <Button primary>Push me</Button>
 ```
 
-Disabled button:
+Disabled buttons:
 
 ```jsx
-<Button disabled>Can’t touch this</Button>
-```
-
-Secondary button:
-
-```jsx
-<Button secondary>Push me</Button>
-```
-
-Disabled secondary button:
-
-```jsx
-<Button secondary disabled>
-  Can’t touch this
-</Button>
+<Button disabled>Can’t touch this</Button> <Button primary disabled>Can’t touch this</Button>
 ```

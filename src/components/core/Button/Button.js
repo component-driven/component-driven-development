@@ -13,9 +13,9 @@ const Button = styled(Box).attrs({
 	font-family: ${props => props.theme.fontFamily.base};
 	font-size: ${props => props.theme.fontSize.base};
 	color: ${props =>
-		props.secondary ? props.theme.color.primary : props.theme.color.bg};
+		props.primary ? props.theme.color.bg : props.theme.color.primary};
 	background-color: ${props =>
-		props.secondary ? 'transparent' : props.theme.color.primary};
+		props.primary ? props.theme.color.primary : 'transparent'};
 	border: 1px solid ${props => props.theme.color.primary};
 	border-radius: ${props => props.theme.borderRadius.base};
 
@@ -44,7 +44,8 @@ const Button = styled(Box).attrs({
 Button.propTypes = {
 	/** Button label */
 	children: PropTypes.node,
-	secondary: PropTypes.bool,
+	/** Button for primary actions */
+	primary: PropTypes.bool,
 };
 
 /** @component */
