@@ -4,6 +4,17 @@
 
 Run Styleguidist: `npm run exercise 2`.
 
+### Result
+
+The result should look like this:
+
+```js noeditor
+const Button = require('../../components/core/Button').default;
+<>
+  <Button primary>Primary</Button> <Button>Secondary</Button> <Button primary disabled>Disabled</Button> <Button disabled>Disabled</Button>
+</>
+```
+
 ### Tasks
 
 #### 2.1. Introducing styled-components
@@ -177,15 +188,6 @@ const Title = styled.h1`
 a. Render current style when the component rendered with a `primary` prop. b. Render a new, secondary, style (no background, just a border) by default.
 
 2.  Add a new prop to PropTypes.
-
-The result should look like this:
-
-```js noeditor
-const Button = require('../../components/core/Button').default;
-<>
-  <Button>Secondary</Button> <Button primary>Primary</Button>
-</>
-```
 
 <details>
  <summary>Solution</summary>
