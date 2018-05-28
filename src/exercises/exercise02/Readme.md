@@ -172,9 +172,20 @@ const Title = styled.h1`
 
 ##### The task
 
-1.  Add a secondary variation of a button that should be enabled by rendering a component with a `secondary` prop.
+1.  Add a new variation of a button:
+
+a. Render current style when the component rendered with a `primary` prop. b. Render a new, secondary, style (no background, just a border) by default.
 
 2.  Add a new prop to PropTypes.
+
+The result should look like this:
+
+```js noeditor
+const Button = require('../../components/core/Button').default;
+<>
+  <Button>Secondary</Button> <Button primary>Primary</Button>
+</>
+```
 
 <details>
  <summary>Solution</summary>
@@ -184,12 +195,19 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   /* Other styles */
-  color: ${props =>
-    props.secondary ? props.theme.color.primary : props.theme.color.bg};
-  background-color: ${props =>
-    props.secondary ? 'transparent' : props.theme.color.primary};
+	color: ${props =>
+		props.primary ? props.theme.color.bg : props.theme.color.primary};
+	background-color: ${props =>
+		props.primary ? props.theme.color.primary : 'transparent'};
   border: 1px solid ${props => props.theme.color.primary};
 `;
+
+Button.propTypes = {
+	/** Button label */
+	children: PropTypes.node,
+	/** Button for primary actions */
+	primary: PropTypes.bool,
+};
 
 /** @component */
 export default Button;
