@@ -22,7 +22,7 @@ const Title = styled.h1`
 <Title>Hello components!</Title>
 ```
 
-The `Title` component will render an `h1` tag with an attached CSS that sets font size to 2 ems.
+The `Title` component will render an `h1` tag with an attached CSS that sets font size to 2 ems. Styles look almost identical to regular CSS, but instead of classes we have components.
 
 **Hint:** [A 5-minute Intro to Styled Components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55)
 
@@ -48,7 +48,7 @@ import styled from 'styled-components';
 const Button = styled.button`
   padding: 8px 16px;
   color: #fff;
-  background: #8667a8;
+  background-color: #8667a8;
   border: 0;
 `;
 
