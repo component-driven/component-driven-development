@@ -9,7 +9,7 @@ const Button = ({ children, ...props }) => {
 };
 
 Button.propTypes = {
-	/** Button text */
+	/** Button label */
 	children: PropTypes.node,
 };
 

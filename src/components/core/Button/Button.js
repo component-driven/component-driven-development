@@ -42,7 +42,7 @@ const Button = styled(Box).attrs({
 `;
 
 Button.propTypes = {
-	/** Button text */
+	/** Button label */
 	children: PropTypes.node,
 	secondary: PropTypes.bool,
 };
