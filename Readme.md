@@ -36,7 +36,7 @@ Or run:
 * [React](https://reactjs.org/)
 * [Create React App](https://github.com/facebook/create-react-app)
 * [React Styleguidist](https://react-styleguidist.js.org/)
-* [Styled Components](https://www.styled-components.com/)
+* [styled-components](https://www.styled-components.com/)
 * [Grid Styled](https://github.com/jxnblk/grid-styled)
 
 ## Authors and license
