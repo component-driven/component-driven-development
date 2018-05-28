@@ -6,11 +6,11 @@ Run Styleguidist: `npm run exercise 2`.
 
 ### Tasks
 
-#### 2.1. Introducing Styled Components
+#### 2.1. Introducing styled-components
 
 ##### Background
 
-If you’re not familiar with [Styled Components](https://www.styled-components.com/), here’s the idea in five lines of code:
+If you’re not familiar with [styled-components](https://www.styled-components.com/), here’s the idea in five lines of code:
 
 ```js static
 import styled from 'styled-components';
@@ -24,11 +24,11 @@ const Title = styled.h1`
 
 The `Title` component will render an `h1` tag with an attached CSS that sets font size to 2 ems. Styles look almost identical to regular CSS, but instead of classes we have components.
 
-**Hint:** [A 5-minute Intro to Styled Components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55)
+**Hint:** [A 5-minute intro to styled-components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55)
 
 ##### The task
 
-1.  Rewrite our button component to use Styled Components.
+1.  Rewrite our button component to use styled-components.
 
 2.  Define basic styles like padding, text and background colors according to the mockup.
 
@@ -64,7 +64,7 @@ export default Button;
 
 Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions. We’re already created tokens for our project. Check them out in [the style guide](https://sapegin.github.io/component-driven-development/styleguide/#foundation). Tokens defined as JavaScript objects in the [theme.js file](https://github.com/sapegin/component-driven-development/blob/master/src/theme.js).
 
-Design tokens are accessible in Styled Components, thanks to [ThemeProvider](https://github.com/sapegin/component-driven-development/blob/master/src/Provider.js), and you can use them like this:
+Design tokens are accessible in styled-components, thanks to [ThemeProvider](https://github.com/sapegin/component-driven-development/blob/master/src/Provider.js), and you can use them like this:
 
 ```js static
 const Button = styled.button`
@@ -160,7 +160,7 @@ export default Button;
 
 ##### Background
 
-Styles in Styled Components [can depend on props](https://www.styled-components.com/docs/basics#adapting-based-on-props) you pass to your component:
+Styles in styled-components [can depend on props](https://www.styled-components.com/docs/basics#adapting-based-on-props) you pass to your component:
 
 ```js static
 const Title = styled.h1`
@@ -211,7 +211,7 @@ import { Box } from 'grid-styled';
 
 This code will render a `<section>` with padding of 8 pixels and bottom margin of 32 pixels.
 
-You can add extra styles using Styled Components:
+You can add extra styles using styled-components:
 
 ```js static
 import styled from 'styled-components';
