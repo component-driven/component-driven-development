@@ -18,4 +18,4 @@ Run Styleguidist: `npm run exercise 1`.
 
 4.  Edit component’s `PropTypes` definition. Open “Props & methods” to see that the documentation updates.
 
-5.  Add a new component and an example file (you need to restart Styleguidist after that).
+5.  Add a new component and an example file and see how it's added to the styleguide.
