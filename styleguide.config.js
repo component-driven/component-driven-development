@@ -22,6 +22,7 @@ const config = {
 	// Read examples from Component.md files only, not from Readme.md
 	getExampleFilename: x => x.replace(/\.js$/, '.md'),
 	skipComponentsWithoutExample: true,
+	showCode: true,
 };
 
 if (exercise) {
