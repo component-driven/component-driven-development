@@ -14,6 +14,6 @@ Props are used to change heading level.
 
 The user can change a component or an HTML tag that is used to render text.
 
-### If you’re stuck
+### Solution
 
 See the completed [code of this example](../../components/core/Heading/Heading.js).

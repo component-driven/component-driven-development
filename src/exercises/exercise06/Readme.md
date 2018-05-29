@@ -16,6 +16,6 @@ If that’s too easy for you, try to use the Box component from Styled Grid to d
 
 **Hint:** Have a look at an example in [Foundation](https://sapegin.github.io/component-driven-development/styleguide/#foundation) of a style guide (`npm run styleguide`).
 
-### If you’re stuck
+### Solution
 
 See the completed [code of this example](../../components/core/Button/Button.js).

@@ -10,6 +10,6 @@ Create a photo grid: render an array of photos (`DogPhoto` component) with gaps 
 
 **Hint:** use negative margins on the container to remove extra gaps.
 
-### If you’re stuck
+### Solution
 
 See the completed [code of this example](../../components/app/Dogs.js).
