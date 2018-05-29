@@ -6,7 +6,7 @@ Run Styleguidist: `npm run exercise 7`.
 
 ### Task
 
-Create a panel components. Panel is a visually distinctive block of content, in our case with a light gray border, slight border radius and some padding.
+Create a panel component. Panel is a visually distinctive block of content, in our case with a light gray border, slight border radius and some padding.
 
 ### Solution
 

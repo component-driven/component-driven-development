@@ -6,7 +6,7 @@ Run Styleguidist: `npm run exercise 11`.
 
 ### Task
 
-Create two components that will incapsulate styles required for a sticky footer:
+Create two components that will encapsulate styles required for a sticky footer:
 
 * A container (wrapper) component (`Container`), that
 * A footer component (`Footer`), that shifts its content to the bottom of the page.
