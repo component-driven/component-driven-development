@@ -1,3 +1,3 @@
-```jsx
+```jsx noeditor
 <Spacing />
 ```
