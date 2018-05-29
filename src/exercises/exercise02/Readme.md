@@ -15,11 +15,9 @@ const Button = require('../../components/core/Button').default;
 </>
 ```
 
-### Tasks
+### 2.1. Introducing styled-components
 
-#### 2.1. Introducing styled-components
-
-##### Background
+#### Background
 
 If you’re not familiar with [styled-components](https://www.styled-components.com/), here’s the idea in five lines of code:
 
@@ -37,7 +35,7 @@ The `Title` component will render an `h1` tag with an attached CSS that sets f
 
 **Hint:** [A 5-minute intro to styled-components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55)
 
-##### The task
+#### The task
 
 1.  Rewrite our button component to use styled-components.
 
@@ -69,9 +67,9 @@ export default Button;
 
 </details>
 
-#### 2.2. Introducing design tokens
+### 2.2. Introducing design tokens
 
-##### Background
+#### Background
 
 Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions. We’re already created tokens for our project. Check them out in [the style guide](https://sapegin.github.io/component-driven-development/styleguide/#foundation). Tokens defined as JavaScript objects in the [theme.js file](https://github.com/sapegin/component-driven-development/blob/master/src/theme.js).
 
@@ -83,7 +81,7 @@ const Button = styled.button`
 `;
 ```
 
-##### The task
+#### The task
 
 1.  Replace all hardcoded values with design tokens.
 
@@ -113,11 +111,11 @@ export default Button;
 
 </details>
 
-#### 2.3. Add hover and active styles
+### 2.3. Add hover and active styles
 
-##### Background
+#### Background
 
-Use `&` to refer to a component class name:
+Use `&` to refer to a component class name similar to Sass:
 
 ```js static
 const Button = styled.button`
@@ -128,7 +126,7 @@ const Button = styled.button`
 `;
 ```
 
-##### The task
+#### The task
 
 1.  Add hover and active styles.
 
@@ -167,9 +165,9 @@ export default Button;
 
 </details>
 
-#### 2.3. Prop-based styling
+### 2.4. Prop-based styling
 
-##### Background
+#### Background
 
 Styles in styled-components [can depend on props](https://www.styled-components.com/docs/basics#adapting-based-on-props) you pass to your component:
 
@@ -181,13 +179,12 @@ const Title = styled.h1`
 <Title huge>Hello components!</Title>
 ```
 
-##### The task
+#### The task
 
-1.  Add a new variation of a button:
-
-a. Render current style when the component rendered with a `primary` prop. b. Render a new, secondary, style (no background, just a border) by default.
-
-2.  Add a new prop to PropTypes.
+1.  Add a new variation of a button
+    * Render current style when the component rendered with a `primary` prop.
+    * Render a new, secondary, style (no background, just a border) by default.
+1.  Add a new prop to PropTypes.
 
 <details>
  <summary>Solution</summary>
@@ -217,9 +214,9 @@ export default Button;
 
 </details>
 
-#### 2.4. Introducing Grid Styled
+### 2.5. Introducing Grid Styled
 
-##### Background
+#### Background
 
 [Grid Styled](http://jxnblk.com/grid-styled/) allows you to define margins and paddings, and create responsive flexbox layouts using React components:
 
@@ -247,7 +244,7 @@ const Card = styled(Box).attrs({
 `;
 ```
 
-##### The task
+#### The task
 
 1.  Replace custom whitespace styles with a `Box` component from Grid Styled.
 
