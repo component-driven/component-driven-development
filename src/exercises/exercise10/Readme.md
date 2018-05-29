@@ -18,6 +18,6 @@ Create a subscription form that consists of two components:
   * sends a network request on form submit;
   * controls the presentational component via its props.
 
-### If you’re stuck
+### Solution
 
 See the completed code of this example: [presentational](../../components/app/SubscriptionForm.js) and [container](../../components/app/SubscriptionFormContainer.js).

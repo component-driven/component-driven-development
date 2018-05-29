@@ -21,6 +21,6 @@ The user can change a component or an HTML tag that is used to render text.
 
 **Hint:** use Styled Components’ [withComponent method](https://www.styled-components.com/docs/api#withcomponent).
 
-### If you’re stuck
+### Solution
 
 See the completed [code of this example](../../components/core/Text/Text.js).

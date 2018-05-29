@@ -15,6 +15,6 @@ Create two components that will incapsulate styles required for a sticky footer:
 
 **Hint:** use flexbox and `margin-top: auto` to move a block to the end of the container.
 
-### If you’re stuck
+### Solution
 
 See the completed [code of this example](../../components/app/Dogs.js).

@@ -14,6 +14,6 @@ Create a components that renders a link. Link should have a hover state with a d
 
 Add a variation that renders text using the base color (hover should be the same as in the default variation). [Prop is used](https://www.styled-components.com/docs/basics#adapting-based-on-props) to change a variation.
 
-### If you’re stuck
+### Solution
 
 See the completed [code of this example](../../components/core/Link/Link.js).

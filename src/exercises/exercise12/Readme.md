@@ -16,6 +16,6 @@ Now combine all components to create an app layout:
 
 **Hint:** Most of the layout can be implemented using the Box component from Styled Grid.
 
-### If you’re stuck
+### Solution
 
 See the completed [code of this example](../../components/app/Layout.js).
