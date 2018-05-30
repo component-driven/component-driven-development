@@ -2,13 +2,13 @@
 
 ### Getting started
 
-Run Styleguidist: `npm run exercise 6`.
+Run Styleguidist: `npm run exercise 6`. Use files in the `src/exercises/exercise06` folder.
 
 ### Task
 
 Create a components that renders a button. Button should have hover/active, focus and disabled states.
 
-**Hint:** You may want to disable hover on disabled button: you can do it using pseude selectors — `&:hover:enabled {}`.
+**Hint:** You may want to disable hover on disabled button: you can do it using pseudo selectors — `&:hover:enabled {}`.
 
 #### Mega bonus
 
