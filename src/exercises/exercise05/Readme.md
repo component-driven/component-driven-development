@@ -2,7 +2,7 @@
 
 ### Getting started
 
-Run Styleguidist: `npm run exercise 5`.
+Run Styleguidist: `npm run exercise 5`. Use files in the `src/exercises/exercise05` folder.
 
 ### Task
 
