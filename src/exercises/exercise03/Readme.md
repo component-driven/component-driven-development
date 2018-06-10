@@ -63,7 +63,7 @@ export default Text;
 
 The user can change a component or an HTML tag that is used to render text.
 
-**Hint:** use Styled Components’ [withComponent method](https://www.styled-components.com/docs/api#withcomponent).
+**Hint:** see the next exercise for an example.
 
 <details>
  <summary>Solution</summary>
@@ -71,14 +71,13 @@ The user can change a component or an HTML tag that is used to render text.
 ```jsx static
 import styled from 'styled-components';
 
-const TextBase = styled.p`
+const Base = ({ is: Component, ...props }) => (
+  <Component {...props} />
+);
+
+const Text = styled(Base)`
   /* Base styles */
 `;
-
-const Text = ({ children, is, ...props }) => {
-  const Tag = TextBase.withComponent(is);
-  return <Tag {...props}>{children}</Tag>;
-};
 
 Text.propTypes = {
   /** Custom component or HTML tag */
