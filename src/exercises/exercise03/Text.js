@@ -10,8 +10,6 @@ const Text = styled.p`
 `;
 
 Text.propTypes = {
-	/** Custom component or HTML tag */
-	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 	/** Less important text */
 	secondary: PropTypes.bool,
 	/** Small copy */
