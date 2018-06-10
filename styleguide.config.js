@@ -48,7 +48,20 @@ if (exercise) {
 		{
 			name: 'Foundation',
 			content: 'docs/Foundation.md',
-			components: 'src/components/foundation/*.js',
+			sections: [
+				{
+					name: 'Colors',
+					content: 'docs/Colors.md',
+				},
+				{
+					name: 'Typography',
+					content: 'docs/Typography.md',
+				},
+				{
+					name: 'Spacing',
+					content: 'docs/Spacing.md',
+				},
+			],
 		},
 		{
 			name: 'Components',

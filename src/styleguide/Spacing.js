@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from 'grid-styled';
-import theme from '../../theme';
-import Text from '../core/Text';
-import Panel from '../core/Panel';
-import Heading from '../core/Heading';
+import theme from '../theme';
+import Text from '../components/core/Text';
+import Panel from '../components/core/Panel';
+import Heading from '../components/core/Heading';
 
 const SpacingExample = styled(Panel)`
 	padding: 0;

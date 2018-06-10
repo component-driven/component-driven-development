@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from 'grid-styled';
 import { readableColor } from 'polished';
-import theme from '../../theme';
-import Text from '../core/Text';
+import theme from '../theme';
+import Text from '../components/core/Text';
 
 const Swatch = styled(Box).attrs({ p: 3 })`
 	width: 100%;
