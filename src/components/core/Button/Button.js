@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Box } from 'grid-styled';
 import styled from 'styled-components';
+import { text } from '../../../mixins';
 
 /**
  * A button.
@@ -10,10 +11,11 @@ const Button = styled(Box).attrs({
 	px: 3,
 	py: 2,
 })`
-	font-family: ${props => props.theme.fontFamily.base};
-	font-size: ${props => props.theme.fontSize.base};
-	color: ${props =>
-		props.primary ? props.theme.color.bg : props.theme.color.primary};
+	${props =>
+		text({
+			color: props.primary ? 'bg' : 'primary',
+		})};
+
 	background-color: ${props =>
 		props.primary ? props.theme.color.primary : 'transparent'};
 	border: 1px solid ${props => props.theme.color.primary};

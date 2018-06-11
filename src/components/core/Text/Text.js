@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { text } from '../../../mixins';
 
 const Base = ({ is: Component, ...props }) => <Component {...props} />;
 
@@ -9,17 +10,15 @@ const Base = ({ is: Component, ...props }) => <Component {...props} />;
  */
 const Text = styled(Base)`
 	margin: 0;
-	font-family: ${props => props.theme.fontFamily.base};
-	font-size: ${props =>
-		props.theme.fontSize[props.tertiary ? 'small' : 'base']};
-	font-weight: normal;
-	color: ${props =>
-		props.theme.color[
-			(props.secondary && 'secondary') ||
+	${props =>
+		text({
+			size: props.tertiary ? 'small' : 'base',
+			color:
+				(props.secondary && 'secondary') ||
 				(props.tertiary && 'secondary') ||
 				(props.error && 'error') ||
-				'base'
-		]};
+				'base',
+		})};
 `;
 
 Text.propTypes = {
