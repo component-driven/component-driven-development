@@ -1,10 +1,10 @@
 # Component-driven development workshop
 
-[![Build Status](https://travis-ci.org/sapegin/component-driven-development.svg)](https://travis-ci.org/sapegin/component-driven-development)
+[![Build Status](https://travis-ci.org/component-driven/component-driven-development.svg)](https://travis-ci.org/component-driven/component-driven-development)
 
 This repository contains exercises for Component-driven development workshop. Before attending the training, please make sure you can run the code in this repository.
 
-[Try the app](https://sapegin.github.io/component-driven-development/) or [view the style guide](https://sapegin.github.io/component-driven-development/styleguide/).
+[Try the app](https://component-driven.github.io/component-driven-development/) or [view the style guide](https://component-driven.github.io/component-driven-development/styleguide/).
 
 ## System requirements
 
@@ -19,7 +19,7 @@ We recommend [nvm](https://github.com/creationix/nvm) or [n](https://github.com/
 First, clone the repository and install the dependencies:
 
 ```
-git clone https://github.com/sapegin/component-driven-development.git
+git clone https://github.com/component-driven/component-driven-development.git
 cd component-driven-development
 npm install
 ```
