@@ -11,7 +11,7 @@ const Message = styled.p`
 -   font-size: 13px;
 +   color: ${props => props.theme.color.primary};
 +   font-family: ${props => props.theme.fontFamily.base};
-+   font-size: ${props => props.theme.fontSize.small};
++   font-size: ${props => props.theme.fontSize.s};
 `;
 ```
 
@@ -20,7 +20,7 @@ _Prefer_ the [Text](#text) and [Heading](#heading) components to render any text
 ```diff
 - const Small = styled.p`
 -   font-family: ${props => props.theme.fontFamily.base};
--   font-size: ${props => props.theme.fontSize.small};
+-   font-size: ${props => props.theme.fontSize.s};
 - `;
 - <Small>Oh dear! Oh dear! I shall be late!</Small>
 + <Text secondary>Oh dear! Oh dear! I shall be late!</Text>
