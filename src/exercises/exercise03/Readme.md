@@ -43,7 +43,7 @@ const Text = styled.p`
   margin: 0;
   font-family: ${props => props.theme.fontFamily.base};
   font-size: ${props =>
-    props.theme.fontSize[props.tertiary ? 'small' : 'base']};
+    props.theme.fontSize[props.tertiary ? 's' : 'base']};
   color: ${props =>
     props.theme.color[
       (props.secondary && 'secondary') ||

@@ -5,12 +5,12 @@ export default {
 		heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
 	},
 	fontSize: {
-		xxlarge: '4rem',
-		xlarge: '2.25rem',
-		large: '1.5rem',
+		xxl: '4rem',
+		xl: '2.25rem',
+		l: '1.5rem',
 		base: '1rem',
-		small: '0.875rem',
-		xsmall: '0.75rem',
+		s: '0.875rem',
+		xs: '0.75rem',
 	},
 	color: {
 		bg: '#fff',
