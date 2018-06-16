@@ -12,8 +12,9 @@ const Heading = styled(Box).attrs({
 })`
 	${props =>
 		text({
-			family: 'heading',
-			size: props.size,
+			lineHeight: 1.2,
+			fontFamily: 'heading',
+			fontSize: props.size,
 		})};
 `;
 

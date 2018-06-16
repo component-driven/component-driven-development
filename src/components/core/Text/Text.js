@@ -12,7 +12,8 @@ const Text = styled(Base)`
 	margin: 0;
 	${props =>
 		text({
-			size: props.tertiary ? 's' : 'base',
+			lineHeight: 1.5,
+			fontSize: props.tertiary ? 's' : 'base',
 			color:
 				(props.secondary && 'secondary') ||
 				(props.tertiary && 'secondary') ||
