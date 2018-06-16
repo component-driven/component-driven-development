@@ -11,13 +11,15 @@ The result should look like this:
 ```js noeditor
 const Button = require('../../components/core/Button').default;
 <>
-  <Button primary>Primary</Button> <Button>Secondary</Button> <Button primary disabled>Disabled</Button> <Button disabled>Disabled</Button>
-</>
+  <Button primary>Primary</Button> <Button>Secondary</Button>{' '}
+  <Button primary disabled>
+    Disabled
+  </Button>{' '}
+  <Button disabled>Disabled</Button>
+</>;
 ```
 
 ### 2.1. Introducing styled-components
-
-#### Background
 
 If you’re not familiar with [styled-components](https://www.styled-components.com/), here’s the idea in five lines of code:
 
@@ -28,7 +30,7 @@ const Title = styled.h1`
   font-size: 2em;
 `;
 
-<Title>Hello components!</Title>
+<Title>Hello components!</Title>;
 ```
 
 The `Title` component will render an `h1` tag with an attached CSS that sets font size to 2 ems. Styles look almost identical to regular CSS, but instead of classes we have components.
@@ -69,8 +71,6 @@ export default Button;
 
 ### 2.2. Introducing design tokens
 
-#### Background
-
 Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions. We’re already created tokens for our project. Check them out in [the style guide](https://sapegin.github.io/component-driven-development/styleguide/#foundation). Tokens defined as JavaScript objects in the [theme.js file](https://github.com/sapegin/component-driven-development/blob/master/src/theme.js).
 
 Design tokens are accessible in styled-components, thanks to [ThemeProvider](https://github.com/sapegin/component-driven-development/blob/master/src/Provider.js), and you can use them like this:
@@ -96,7 +96,8 @@ const Button = styled.button`
 import styled from 'styled-components';
 
 const Button = styled.button`
-  padding: ${props => props.theme.space[2]}px ${props => props.theme.space[3]}px;
+  padding: ${props => props.theme.space[2]}px ${props =>
+      props.theme.space[3]}px;
   color: ${props => props.theme.color.bg};
   background: ${props => props.theme.color.primary};
   border-radius: ${props => props.theme.borderRadius.base};
@@ -112,8 +113,6 @@ export default Button;
 </details>
 
 ### 2.3. Add hover and active styles
-
-#### Background
 
 Use `&` to refer to a component class name similar to Sass:
 
@@ -145,8 +144,8 @@ const Button = styled.button`
 
   &:hover:enabled,
   &:active {
-   background: ${props => props.theme.color.hover};
-   cursor: pointer;
+    background: ${props => props.theme.color.hover};
+    cursor: pointer;
   }
 
   &:focus {
@@ -167,23 +166,21 @@ export default Button;
 
 ### 2.4. Prop-based styling
 
-#### Background
-
 Styles in styled-components [can depend on props](https://www.styled-components.com/docs/basics#adapting-based-on-props) you pass to your component:
 
 ```js static
 const Title = styled.h1`
-  font-size: ${props => props.huge ? '4em' : '2em'};
+  font-size: ${props => (props.huge ? '4em' : '2em')};
 `;
 
-<Title huge>Hello components!</Title>
+<Title huge>Hello components!</Title>;
 ```
 
 #### The task
 
 1.  Add a new variation of a button
-    * Render current style when the component rendered with a `primary` prop.
-    * Render a new, secondary, style (no background, just a border) by default.
+    - Render current style when the component rendered with a `primary` prop.
+    - Render a new, secondary, style (no background, just a border) by default.
 1.  Add a new prop to PropTypes.
 
 <details>
@@ -194,18 +191,18 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   /* Other styles */
-	color: ${props =>
-		props.primary ? props.theme.color.bg : props.theme.color.primary};
-	background-color: ${props =>
-		props.primary ? props.theme.color.primary : 'transparent'};
+  color: ${props =>
+    props.primary ? props.theme.color.bg : props.theme.color.primary};
+  background-color: ${props =>
+    props.primary ? props.theme.color.primary : 'transparent'};
   border: 1px solid ${props => props.theme.color.primary};
 `;
 
 Button.propTypes = {
-	/** Button label */
-	children: PropTypes.node,
-	/** Button for primary actions */
-	primary: PropTypes.bool,
+  /** Button label */
+  children: PropTypes.node,
+  /** Button for primary actions */
+  primary: PropTypes.bool
 };
 
 /** @component */
@@ -223,7 +220,9 @@ export default Button;
 ```js static
 import { Box } from 'grid-styled';
 
-<Box is="section" p={2} mb={4}>Hello components!</Box>
+<Box is="section" p={2} mb={4}>
+  Hello components!
+</Box>;
 ```
 
 This code will render a `<section>` with padding of 8 pixels and bottom margin of 32 pixels.
@@ -235,9 +234,9 @@ import styled from 'styled-components';
 import { Box } from 'grid-styled';
 
 const Card = styled(Box).attrs({
-	is: 'section',
-	p: 2,
-	mb: 4,
+  is: 'section',
+  p: 2,
+  mb: 4
 })`
   background: ghostwhite;
   border-radius: 3px;
@@ -258,7 +257,7 @@ import { Box } from 'grid-styled';
 const Button = styled(Box).attrs({
   is: 'button',
   px: 3,
-  py: 2,
+  py: 2
 })`
   /* All styles except padding */
 `;
