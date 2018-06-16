@@ -6,6 +6,7 @@ import Text from '../components/core/Text';
 
 const FontSizeSample = styled.p`
 	margin: 0;
+	line-height: 1;
 	font-size: ${props => props.fontSize};
 	font-family: ${props => props.theme.fontFamily.base};
 `;
