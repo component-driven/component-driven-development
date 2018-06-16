@@ -4,11 +4,9 @@
 
 Run Styleguidist: `npm run exercise 1`.
 
-### Background
-
 [React Styleguidist](https://react-styleguidist.js.org/) is a tool that we use as a workbench to develop component, and to generate a style guide.
 
-### Task
+### The task
 
 1.  Explore React Styleguidist UI, try to switch to isolated mode, try to edit example code.
 
@@ -18,4 +16,4 @@ Run Styleguidist: `npm run exercise 1`.
 
 4.  Edit component’s `PropTypes` definition. Open “Props & methods” to see that the documentation updates.
 
-5.  Add a new component and an example file and see how it's added to the styleguide.
+5.  Add a new component and an example file and see how it's added to the style guide.
