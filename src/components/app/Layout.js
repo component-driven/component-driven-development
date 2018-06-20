@@ -9,7 +9,7 @@ import DogFinder from '../app/DogFinderContainer';
 import SubscriptionForm from '../app/SubscriptionFormContainer';
 
 const Layout = () => (
-	<Page.Container>
+	<Page>
 		<Box p={3}>
 			<Heading size="xxl" is="h1" mb={1}>
 				Dog Finder <span aria-hidden="true">🐶</span>
@@ -31,7 +31,7 @@ const Layout = () => (
 				<Footer />
 			</Box>
 		</Page.Footer>
-	</Page.Container>
+	</Page>
 );
 
 export default Layout;

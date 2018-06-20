@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-const Container = styled.div``;
+const Page = styled.div``;
 
 const Footer = styled.footer``;
+
+Page.Footer = Footer;
 
 /**
  * A page container to create a sticky footer.
  * @component
  */
-export default { Container, Footer };
+export default Page;
