@@ -5,7 +5,7 @@ import styled from 'styled-components';
  * A text heading.
  */
 const Heading = styled.h1`
-	font-family: ${props => props.theme.fontFamily.heading};
+	font-family: ${props => props.theme.fonts.heading};
 	/* Your styles here */
 `;
 
