@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { themeGet, css } from 'styled-system';
+import { themeGet, mixed } from 'styled-system';
 
 /**
  * A button.
  */
 const Button = styled.button`
 	${({ theme, variant }) =>
-		css({
+		mixed({
 			theme,
 			px: 3,
 			py: 2,

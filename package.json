@@ -14,7 +14,7 @@
     "react-modal": "^3.4.5",
     "react-scripts": "1.1.4",
     "styled-components": "^3.3.3",
-    "styled-system": "^3.0.0"
+    "styled-system": "^3.0.1"
   },
   "scripts": {
     "start": "node scripts/setup.js && react-scripts start",

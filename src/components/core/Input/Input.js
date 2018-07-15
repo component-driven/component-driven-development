@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { themeGet, css } from 'styled-system';
+import { themeGet, mixed } from 'styled-system';
 
 /**
  * A basic input field.
  */
 const Input = styled.input`
-	${props =>
-		css({
-			theme: props.theme,
+	${({ theme }) =>
+		mixed({
+			theme,
 			p: 2,
 			fontFamily: 'base',
 			fontSize: 'base',
