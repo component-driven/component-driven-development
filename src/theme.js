@@ -24,7 +24,7 @@ export default {
 	},
 	lineHeights: {
 		base: 1.5,
-		heading: 1.2,
+		heading: 1.1,
 	},
 	colors: {
 		bg: '#fff',
@@ -44,5 +44,5 @@ export default {
 	radii: {
 		base: '0.15em',
 	},
-	space: [0, 4, 8, 16, 24, 48, 64, 128],
+	space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 };

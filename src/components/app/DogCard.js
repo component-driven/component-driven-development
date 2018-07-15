@@ -8,7 +8,7 @@ const DogCard = ({ dog }) => (
 	<Panel p={2} flexDirection="column" alignItems="center">
 		<DogPhoto dog={dog} />
 		<Box>
-			<Text secondary is="h3">
+			<Text variant="secondary" is="h3">
 				{dog.name}
 			</Text>
 		</Box>

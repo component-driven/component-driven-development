@@ -17,7 +17,7 @@ const FontSample = ({ fontSize, children }) => (
 	<Box mr={2}>
 		<FontSizeSample fontSize={fontSize}>
 			{children}
-			<Text tertiary is="span">
+			<Text variant="tertiary" is="span">
 				{' '}
 				— {fontSize}
 			</Text>

@@ -1,21 +1,27 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Box } from 'grid-styled';
 import styled from 'styled-components';
-import { text } from '../../../mixins';
+import { mixed, space } from 'styled-system';
+
+const Base = ({ is: Component, ...props }) => <Component {...props} />;
 
 /**
  * A text heading.
  */
-const Heading = styled(Box).attrs({
+const Heading = styled(Base).attrs({
 	is: props => props.is,
 	m: 0,
 })`
-	${props =>
-		text({
-			lineHeight: 1.2,
+	${({ theme, size }) =>
+		mixed({
+			theme,
+			color: 'base',
+			lineHeight: 'heading',
 			fontFamily: 'heading',
-			fontSize: props.size,
+			fontWeight: 'normal',
+			fontSize: size,
 		})};
+	${space};
 `;
 
 Heading.propTypes = {

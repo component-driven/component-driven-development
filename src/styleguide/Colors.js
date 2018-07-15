@@ -21,7 +21,7 @@ const ColorSample = ({ color, children }) => (
 	<Box width={1 / 5}>
 		<Swatch color={color}>
 			<Text>{children}</Text>
-			<Text tertiary>{color}</Text>
+			<Text variant="tertiary">{color}</Text>
 		</Swatch>
 	</Box>
 );

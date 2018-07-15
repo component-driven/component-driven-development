@@ -44,11 +44,11 @@ const SubscriptionForm = ({
 				</Flex>
 				<div id={`${id}-info`}>
 					{error ? (
-						<Text error role="alert">
+						<Text variant="error" role="alert">
 							{error}
 						</Text>
 					) : (
-						<Text tertiary>
+						<Text variant="tertiary">
 							We won’t spam you. Actually we won’t send you anything.
 						</Text>
 					)}
