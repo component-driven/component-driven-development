@@ -4,7 +4,7 @@ import Text from '../core/Text';
 
 const Footer = () => {
 	return (
-		<Text tertiary>
+		<Text variant="tertiary">
 			© {new Date().getFullYear()} <Link href="http://sapegin.me/" shy>
 				Artem Sapegin
 			</Link>

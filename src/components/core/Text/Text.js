@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { text } from '../../../mixins';
+import { mixed } from 'styled-system';
 
 const Base = ({ is: Component, ...props }) => <Component {...props} />;
 
@@ -9,36 +9,38 @@ const Base = ({ is: Component, ...props }) => <Component {...props} />;
  * A component to render all text in the app.
  */
 const Text = styled(Base)`
-	margin: 0;
-	${props =>
-		text({
-			lineHeight: 1.5,
-			fontSize: props.tertiary ? 's' : 'base',
-			color:
-				(props.secondary && 'secondary') ||
-				(props.tertiary && 'secondary') ||
-				(props.error && 'error') ||
-				'base',
+	${({ theme, variant }) =>
+		mixed({
+			theme,
+			m: 0,
+			fontFamily: 'base',
+			lineHeight: 'base',
+			fontSize: {
+				base: 'm',
+				secondary: 'm',
+				tertiary: 's',
+				error: 'm',
+			}[variant],
+			color: {
+				base: 'base',
+				secondary: 'secondary',
+				tertiary: 'secondary',
+				error: 'error',
+			}[variant],
 		})};
 `;
 
 Text.propTypes = {
 	/** Custom component or HTML tag */
 	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	/** Less important text */
-	secondary: PropTypes.bool,
-	/** Small copy */
-	tertiary: PropTypes.bool,
-	/** Error message */
-	error: PropTypes.bool,
+	/** Variation */
+	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
 	children: PropTypes.node,
 };
 
 Text.defaultProps = {
 	is: 'p',
-	secondary: false,
-	tertiary: false,
-	error: false,
+	variant: 'base',
 };
 
 export default Text;

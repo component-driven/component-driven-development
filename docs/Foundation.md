@@ -37,7 +37,7 @@ _Prefer_ the [Text](#text) and [Heading](#heading) components to render any text
 -   font-size: ${props => props.theme.fontSizes.s};
 - `;
 - <Small>Oh dear! Oh dear! I shall be late!</Small>
-+ <Text secondary>Oh dear! Oh dear! I shall be late!</Text>
++ <Text variant="secondary">Oh dear! Oh dear! I shall be late!</Text>
 ```
 
 _Prefer_ [Grid Styled](http://jxnblk.com/grid-styled/) components for whitespace:

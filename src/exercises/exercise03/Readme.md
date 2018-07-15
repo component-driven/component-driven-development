@@ -25,9 +25,9 @@ const Text = require('../../components/core/Text').default;
     Heading 4
   </Heading>
   <Text>Normal text</Text>
-  <Text secondary>Secondary text</Text>
-  <Text tertiary>Tertiary text</Text>
-  <Text error>Error message</Text>
+  <Text variant="secondary">Secondary text</Text>
+  <Text variant="tertiary">Tertiary text</Text>
+  <Text variant="error">Error text</Text>
 </>;
 ```
 
@@ -49,7 +49,7 @@ Create a component that renders different levels of headings:
 - heading font family;
 - normal font weight;
 - base color;
-- font size is defined by a component prop (one of `base`, `l`, `xl` or `xxl`).
+- font size is defined by a component prop (one of `m`, `l`, `xl` or `xxl`).
 
 Render all sizes with `h1` element — we’ll fix that soon.
 
@@ -120,6 +120,18 @@ const Heading = styled(Base)`
   color: ${props => props.theme.colors.base};
 `;
 
+Heading.propTypes = {
+  /** Custom component or HTML tag */
+  is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm']),
+  children: PropTypes.node
+};
+
+Heading.defaultProps = {
+  is: 'h1',
+  size: 'xxl'
+};
+
 /** @component */
 export default Heading;
 ```
@@ -130,28 +142,31 @@ export default Heading;
 
 Usually we need some whitespace below the heading. We can hardcode values for each heading size, but often whitespace depends on the context, where the heading is used.
 
-We can remove all whitespace and wrap our `Heading` component in the `Box` component from Grid Styled:
+We can remove margins from our `Heading` component and define them where we use the component:
 
 ```jsx static
-<Box mb={4}>
+const Container = styled.div`
+  margin-bottom: ${props => props.theme.space[5]};
+`
+<Container>
   <Heading size="xl">The quick brown fox</Heading>
-</Box>
+</Container>
 ```
 
-But that’s quite verbose.
+But that’s a lot of boilerplate code.
 
-We can use the `Box` component instead of our `Base` component:
+We can [extend](https://www.styled-components.com/docs/basics#extending-styles) the `Heading` component:
 
 ```jsx static
-const Heading = styled(Box).attrs({
-  is: props => props.is,
-  m: 0
-})`
-  /* Other styles */
-`;
+const HeadingWithMargin = Heading.extend`
+  margin-bottom: ${props => props.theme.space[5]};
+`
+<HeadingWithMargin size="xl">The quick brown fox</HeadingWithMargin>
 ```
 
-`attrs()` method defines default props of a styled component. Here we’re passing `Heading`’s `is` prop to the `Box` component, and remove margins. So no we can use our component like this:
+But that's not much better.
+
+Let’s make the whitespace part of the component API:
 
 ```jsx static
 <Heading size="xl" mb={4}>
@@ -161,24 +176,75 @@ const Heading = styled(Box).attrs({
 
 #### The task
 
-Replace the `Base` component with the `Box` component from Grid Styled to allow passing `Box`’s props on our component.
+Add props `m`, `mt`, `mr`, `mb` and `ml` to change `margin`, `margin-top`, `margin-right`, `margin-bottom` and `margin-left` respectively.
 
 <details>
  <summary>Solution</summary>
 
 ```js static
-import { Box } from 'grid-styled';
 import styled from 'styled-components';
 
-const Heading = styled(Box).attrs({
-  is: props => props.is,
-  m: 0
-})`
-  font-weight: normal;
+const Base = ({ is: Component, ...props }) => (
+  <Component {...props} />
+);
+
+const Heading = styled(Base)`
+  margin: ${props => props.theme.space[props.m]};
+  margin-top: ${props => props.theme.space[props.mt]};
+  margin-right: ${props => props.theme.space[props.mr]};
+  margin-bottom: ${props => props.theme.space[props.mb]};
+  margin-left: ${props => props.theme.space[props.ml]};
   line-height: 1.2;
+  font-weight: normal;
   font-family: ${props => props.theme.fonts.heading};
   font-size: ${props => props.theme.fontSizes[props.size]};
   color: ${props => props.theme.colors.base};
+`;
+
+Heading.defaultProps = {
+  m: 0,
+  is: 'h1',
+  size: 'xxl'
+};
+
+/** @component */
+export default Heading;
+```
+
+</details>
+
+### 3.4. Introducing styled-system
+
+[Styled-system](http://jxnblk.com/styled-system/) is a collection of utility functions that allow you to control styles of your component using props.
+
+For example, the [space](http://jxnblk.com/styled-system/api#space) function does exactly what we have done in the last task:
+
+```js static
+import { space } from 'styled-system';
+const Heading = styled(Base)`
+  ${space};
+  /* ... */
+`;
+```
+
+#### The task
+
+Replace all custom margins with the `space` function from styled-system.
+
+<details>
+ <summary>Solution</summary>
+
+```js static
+import styled from 'styled-components';
+import { space } from 'styled-system';
+
+const Base = ({ is: Component, ...props }) => (
+  <Component {...props} />
+);
+
+const Heading = styled(Base)`
+  ${space};
+  /* Other styles */
 `;
 
 /** @component */
@@ -187,84 +253,86 @@ export default Heading;
 
 </details>
 
-### 3.4. Creating a mixin for text styles
+### 3.5. Simplifying styles
 
-Using theme properties in styled-components is quite verbose, especially if we want to use base values of our design system:
-
-```css static
-font-family: ${props => props.theme.fonts.base};
-font-size: ${props => props.theme.fontSizes.base};
-color: ${props => props.theme.colors.base};
-```
-
-We can extract these styles into a _mixin_ like this:
+Converting props to styles isn’t the only feature of styled-system: [themeGet](http://jxnblk.com/styled-system/api#themeget) function can save you a few keystrokes when accessing the theme values, so instead of writing `props => props.theme.colors.base` you could write `themeGet('colors.base')`:
 
 ```js static
-import { css } from 'styled-components';
+import styled from 'styled-components';
+import { themeGet } from 'styled-system';
 
-const text = ({
-  fontFamily = 'base',
-  fontSize = 'base',
-  color = 'base'
-} = {}) => css`
-  font-family: ${props => props.theme.fontFamily[fontFamily]};
-  font-size: ${props => props.theme.fontSize[fontSize]};
-  color: ${props => props.theme.color[color]};
-`;
-```
-
-And then we can use it like this:
-
-```jsx static
-const Error = styled.p`
-  ${text({ color: 'error' })} /* Other styles */;
+const Heading = styled.h1`
+  font-family: ${themeGet('fonts.heading')};
+  color: ${themeGet('colors.base')};
 `;
 ```
 
 #### The task
 
-1.  Expand the `text` mixin with `lineHeight` and `fontWeight` options (just pass values directly to CSS properties, we don’t have any tokens for them) and put it into a separate file.
-2.  Update the `Heading` component to use the mixin.
+Replace direct access to `props.theme` with the `themeGet` function.
 
 <details>
  <summary>Solution</summary>
 
-The mixin:
+```js static
+import styled from 'styled-components';
+import { space, themeGet } from 'styled-system';
+
+const Heading = styled(Base)`
+  ${space};
+  font-family: ${themeGet('fonts.heading')};
+  font-size: ${props => themeGet(`fontSizes.${props.size}`)};
+  color: ${themeGet('colors.base')};
+  /* Other styles */
+`;
+
+/** @component */
+export default Heading;
+```
+
+</details>
+
+### 3.6. Simplifying styles even more
+
+Even with `themeGet` extracting lots of theme values, especially with conditions, is very verbose and hard to read. [mixed](http://jxnblk.com/styled-system/api#mixed) function from styled-system makes styles much more readable:
 
 ```js static
-import { css } from 'styled-components';
+import styled from 'styled-components';
+import { mixed } from 'styled-system';
 
-export const text = ({
-  lineHeight = 1,
-  fontFamily = 'base',
-  fontSize = 'base',
-  fontWeight = 'normal',
-  color = 'base'
-} = {}) => css`
-  line-height: ${lineHeight};
-  font-weight: ${fontWeight};
-  font-family: ${props => props.theme.fontFamily[fontFamily]};
-  font-size: ${props => props.theme.fontSize[fontSize]};
-  color: ${props => props.theme.color[color]};
+const Heading = styled.h1`
+  ${({ theme, variant }) =>
+    mixed({
+      theme,
+      fontFamily: 'heading',
+      color: 'base'
+    })};
 `;
 ```
 
-The component:
+This is an equivalent of the example from the previous tasks: it will render text with the `heading` font and the `base` color _from theme_.
+
+#### The task
+
+Replace all `themeGet` with a single `mixed` call.
+
+<details>
+ <summary>Solution</summary>
 
 ```js static
-import { Box } from 'grid-styled';
 import styled from 'styled-components';
-import { text } from './mixins';
+import { space, mixed } from 'styled-system';
 
-const Heading = styled(Box).attrs({
-  is: props => props.is,
-  m: 0
-})`
-  ${props =>
-    text({
+const Heading = styled(Base)`
+  ${space};
+  ${({ theme, size }) =>
+    mixed({
+      theme,
+      color: 'base',
+      lineHeight: 'heading',
       fontFamily: 'heading',
-      fontSize: props.size,
-      lineHeight: 1.2
+      fontWeight: 'normal',
+      fontSize: size
     })};
 `;
 
@@ -274,9 +342,9 @@ export default Heading;
 
 </details>
 
-### 3.5. Creating a generic text component
+### 3.7. Creating a generic text component
 
-Now we can use our `text` mixin to easily create components that render text.
+Now we know enough to easily create customizable components that use many theme values.
 
 ### The task
 
@@ -287,7 +355,7 @@ Create a component that renders text in different styles:
 - Small text (small font size, secondary color);
 - Error message (base font size, error color).
 
-Props are used to change text style. The user can change a component or an HTML tag that is used to render text. Use the `text` mixin from the previous section.
+The `variant` prop is used to change text style. The user can change a component or an HTML element that is used to render text.
 
 <details>
  <summary>Solution</summary>
@@ -295,24 +363,51 @@ Props are used to change text style. The user can change a component or an HTML 
 ```jsx static
 import React from 'react';
 import styled from 'styled-components';
+import { mixed } from 'styled-system';
 
 const Base = ({ is: Component, ...props }) => (
   <Component {...props} />
 );
 
 const Text = styled(Base)`
-  margin: 0;
-  ${props =>
-    text({
-      fontSize: props.tertiary ? 's' : 'base',
-      lineHeight: 1.5,
-      color:
-        (props.secondary && 'secondary') ||
-        (props.tertiary && 'secondary') ||
-        (props.error && 'error') ||
-        'base'
+  ${({ theme, variant }) =>
+    mixed({
+      theme,
+      m: 0,
+      fontFamily: 'base',
+      lineHeight: 'base',
+      fontSize: {
+        base: 'm',
+        secondary: 'm',
+        tertiary: 's',
+        error: 'm'
+      }[variant],
+      color: {
+        base: 'base',
+        secondary: 'secondary',
+        tertiary: 'secondary',
+        error: 'error'
+      }[variant]
     })};
 `;
+
+Text.propTypes = {
+  /** Custom component or HTML tag */
+  is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  /** Variation */
+  variant: PropTypes.oneOf([
+    'base',
+    'secondary',
+    'tertiary',
+    'error'
+  ]),
+  children: PropTypes.node
+};
+
+Text.defaultProps = {
+  is: 'p',
+  variant: 'base'
+};
 
 /** @component */
 export default Text;
