@@ -9,9 +9,23 @@ const Message = styled.p`
 -   color: #8667a8;
 -   font-family: Helvetica;
 -   font-size: 13px;
-+   color: ${props => props.theme.color.primary};
-+   font-family: ${props => props.theme.fontFamily.base};
-+   font-size: ${props => props.theme.fontSize.s};
++   color: ${props => props.theme.colors.primary};
++   font-family: ${props => props.theme.fonts.base};
++   font-size: ${props => props.theme.fontSizes.s};
+`;
+```
+
+You can also use [themeGet](https://jxnblk.com/styled-system/api#themeget) helper from styled-system to access theme values:
+
+```diff
+import { themeGet } from 'styled-system'
+const Message = styled.p`
+-   color: #8667a8;
+-   font-family: Helvetica;
+-   font-size: 13px;
++   color: ${themeGet('colors.primary')};
++   font-family: ${themeGet('fonts.base')};
++   font-size: ${themeGet('fontSizes.s')};
 `;
 ```
 
