@@ -13,13 +13,13 @@ Disabled button:
 Primary button:
 
 ```jsx
-<Button variation="primary">Push me</Button>
+<Button variant="primary">Push me</Button>
 ```
 
 Disabled primary button:
 
 ```jsx
-<Button variation="primary" disabled>
+<Button variant="primary" disabled>
   Can’t touch this
 </Button>
 ```
