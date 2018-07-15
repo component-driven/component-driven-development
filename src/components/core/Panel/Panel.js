@@ -8,8 +8,8 @@ import { Flex } from 'grid-styled';
 const Panel = styled(Flex).attrs({
 	p: 3,
 })`
-	border: 1px solid ${props => props.theme.color.light};
-	border-radius: ${props => props.theme.borderRadius.base};
+	border: 1px solid ${props => props.theme.colors.light};
+	border-radius: ${props => props.theme.radii.base};
 `;
 
 Panel.propTypes = {

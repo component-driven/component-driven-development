@@ -12,7 +12,7 @@ const Heading = styled.h1`
 Heading.propTypes = {
 	/** Custom component or HTML tag */
 	// is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	size: PropTypes.oneOf(['xxl', 'xl', 'l', 'base']),
+	size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm']),
 	children: PropTypes.node,
 };
 

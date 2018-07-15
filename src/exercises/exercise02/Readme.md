@@ -77,7 +77,7 @@ Design tokens are accessible in styled-components, thanks to [ThemeProvider](htt
 
 ```js static
 const Button = styled.button`
-  background: ${props => props.theme.color.primary};
+  background: ${props => props.theme.colors.primary};
 `;
 ```
 
@@ -98,9 +98,9 @@ import styled from 'styled-components';
 const Button = styled.button`
   padding: ${props => props.theme.space[2]}px ${props =>
       props.theme.space[3]}px;
-  color: ${props => props.theme.color.bg};
-  background: ${props => props.theme.color.primary};
-  border-radius: ${props => props.theme.borderRadius.base};
+  color: ${props => props.theme.colors.bg};
+  background: ${props => props.theme.colors.primary};
+  border-radius: ${props => props.theme.radii.base};
   font-family: ${props => props.theme.fontFamily.base};
   font-size: ${props => props.theme.fontSize.base};
   border: 0;
@@ -144,13 +144,13 @@ const Button = styled.button`
 
   &:hover:enabled,
   &:active {
-    background: ${props => props.theme.color.hover};
+    background: ${props => props.theme.colors.hover};
     cursor: pointer;
   }
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 2px ${props => props.theme.color.focus};
+    box-shadow: 0 0 0 2px ${props => props.theme.colors.focus};
   }
 
   &:disabled {
@@ -192,10 +192,12 @@ import styled from 'styled-components';
 const Button = styled.button`
   /* Other styles */
   color: ${props =>
-    props.primary ? props.theme.color.bg : props.theme.color.primary};
+    props.primary
+      ? props.theme.colors.bg
+      : props.theme.colors.primary};
   background-color: ${props =>
-    props.primary ? props.theme.color.primary : 'transparent'};
-  border: 1px solid ${props => props.theme.color.primary};
+    props.primary ? props.theme.colors.primary : 'transparent'};
+  border: 1px solid ${props => props.theme.colors.primary};
 `;
 
 Button.propTypes = {

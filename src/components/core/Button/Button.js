@@ -1,36 +1,38 @@
 import PropTypes from 'prop-types';
-import { Box } from 'grid-styled';
 import styled from 'styled-components';
-import { text } from '../../../mixins';
+import { themeGet, css } from 'styled-system';
 
 /**
  * A button.
  */
-const Button = styled(Box).attrs({
-	is: 'button',
-	px: 3,
-	py: 2,
-})`
+const Button = styled.button`
 	${props =>
-		text({
+		css({
+			theme: props.theme,
+			px: 3,
+			py: 2,
+			fontFamily: 'base',
+			fontSize: 'base',
 			color: props.primary ? 'bg' : 'primary',
+			bg: props.primary ? 'primary' : undefined,
+			borderColor: 'primary',
+			borderRadius: 'base',
 		})};
 
-	background-color: ${props =>
-		props.primary ? props.theme.color.primary : 'transparent'};
-	border: 1px solid ${props => props.theme.color.primary};
-	border-radius: ${props => props.theme.borderRadius.base};
+	border-width: 1px;
+	border-style: solid;
+	user-select: none;
 
 	&:hover:enabled,
 	&:active {
-		border-color: ${props => props.theme.color.hover};
-		background-color: ${props => props.theme.color.hover};
+		border-color: ${themeGet('colors.hover')};
+		background-color: ${themeGet('colors.hover')};
 		cursor: pointer;
 	}
 
 	&:focus {
 		outline: 0;
-		box-shadow: 0 0 0 2px ${props => props.theme.color.focus};
+		box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
 	}
 
 	&:disabled {

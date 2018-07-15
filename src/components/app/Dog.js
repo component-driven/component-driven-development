@@ -13,7 +13,7 @@ const Button = styled.button`
 
 	&:focus {
 		outline: 0;
-		box-shadow: 0 0 0 2px ${props => props.theme.color.focus};
+		box-shadow: 0 0 0 2px ${props => props.theme.colors.focus};
 	}
 
 	&::-moz-focus-inner {

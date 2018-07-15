@@ -1,23 +1,33 @@
-import React from 'react';
-import { Box } from 'grid-styled';
 import styled from 'styled-components';
+import { themeGet, css } from 'styled-system';
 
-const InputBase = styled.input`
+/**
+ * A basic input field.
+ */
+const Input = styled.input`
+	${props =>
+		css({
+			theme: props.theme,
+			p: 2,
+			fontFamily: 'base',
+			fontSize: 'base',
+			color: 'base',
+			bg: 'bg',
+			borderColor: 'primary',
+			borderRadius: 'base',
+		})};
+
 	box-sizing: border-box;
 	display: block;
 	width: 100%;
-	font-family: ${props => props.theme.fontFamily.base};
-	font-size: ${props => props.theme.fontSize.base};
-	color: ${props => props.theme.color.base};
-	background-color: ${props => props.theme.color.bg};
-	border: 1px solid ${props => props.theme.color.primary};
-	border-radius: ${props => props.theme.borderRadius.base};
+	border-width: 1px;
+	border-style: solid;
 	/* Remove red outline on required input in Firefox */
 	box-shadow: none;
 
 	&:focus {
 		outline: 0;
-		box-shadow: 0 0 0 2px ${props => props.theme.color.focus};
+		box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
 	}
 
 	&:disabled {
@@ -26,9 +36,5 @@ const InputBase = styled.input`
 	}
 `;
 
-/**
- * A basic input field.
- */
-const Input = props => <Box is={InputBase} p={2} {...props} />;
-
+/** @component */
 export default Input;

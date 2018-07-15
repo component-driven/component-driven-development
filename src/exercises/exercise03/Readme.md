@@ -63,9 +63,9 @@ const Heading = styled.h1`
   margin: 0;
   line-height: 1.2;
   font-weight: normal;
-  font-family: ${props => props.theme.fontFamily.heading};
-  font-size: ${props => props.theme.fontSize[props.size]};
-  color: ${props => props.theme.color.base};
+  font-family: ${props => props.theme.fonts.heading};
+  font-size: ${props => props.theme.fontSizes[props.size]};
+  color: ${props => props.theme.colors.base};
 `;
 
 /** @component */
@@ -115,9 +115,9 @@ const Heading = styled(Base)`
   margin: 0;
   line-height: 1.2;
   font-weight: normal;
-  font-family: ${props => props.theme.fontFamily.heading};
-  font-size: ${props => props.theme.fontSize[props.size]};
-  color: ${props => props.theme.color.base};
+  font-family: ${props => props.theme.fonts.heading};
+  font-size: ${props => props.theme.fontSizes[props.size]};
+  color: ${props => props.theme.colors.base};
 `;
 
 /** @component */
@@ -176,9 +176,9 @@ const Heading = styled(Box).attrs({
 })`
   font-weight: normal;
   line-height: 1.2;
-  font-family: ${props => props.theme.fontFamily.heading};
-  font-size: ${props => props.theme.fontSize[props.size]};
-  color: ${props => props.theme.color.base};
+  font-family: ${props => props.theme.fonts.heading};
+  font-size: ${props => props.theme.fontSizes[props.size]};
+  color: ${props => props.theme.colors.base};
 `;
 
 /** @component */
@@ -192,9 +192,9 @@ export default Heading;
 Using theme properties in styled-components is quite verbose, especially if we want to use base values of our design system:
 
 ```css static
-font-family: ${props => props.theme.fontFamily.base};
-font-size: ${props => props.theme.fontSize.base};
-color: ${props => props.theme.color.base};
+font-family: ${props => props.theme.fonts.base};
+font-size: ${props => props.theme.fontSizes.base};
+color: ${props => props.theme.colors.base};
 ```
 
 We can extract these styles into a _mixin_ like this:
