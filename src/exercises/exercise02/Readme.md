@@ -11,9 +11,9 @@ The result should look like this:
 ```js noeditor
 const Button = require('../../components/core/Button').default;
 <>
-  <Button variation="primary">Primary</Button>{' '}
+  <Button variant="primary">Primary</Button>{' '}
   <Button>Secondary</Button>{' '}
-  <Button variation="primary" disabled>
+  <Button variant="primary" disabled>
     Disabled
   </Button>{' '}
   <Button disabled>Disabled</Button>
@@ -180,10 +180,10 @@ const Title = styled.h1`
 #### The task
 
 1.  Add a new variation of a button
-    - Render current style when the component rendered with a `variation="primary"` prop.
-    - Render a new, secondary, style (no background, just a border) when the component is rendered with a `variation="secondary"` prop.
+    - Render current style when the component rendered with a `variant="primary"` prop.
+    - Render a new, secondary, style (no background, just a border) when the component is rendered with a `variant="secondary"` prop.
 2.  Add a new prop to PropTypes.
-3.  Render a secondary button by default (when the `variation` prop is missed).
+3.  Render a secondary button by default (when the `variant` prop is missed).
 
 <details>
  <summary>Solution</summary>
@@ -194,11 +194,11 @@ import styled from 'styled-components';
 const Button = styled.button`
   /* Other styles */
   color: ${props =>
-    props.variation === 'primary'
+    props.variant === 'primary'
       ? props.theme.colors.bg
       : props.theme.colors.primary};
   background-color: ${props =>
-    props.variation === 'primary'
+    props.variant === 'primary'
       ? props.theme.colors.primary
       : 'transparent'};
   border: 1px solid ${props => props.theme.colors.primary};
@@ -208,11 +208,11 @@ Button.propTypes = {
   /** Button label */
   children: PropTypes.node,
   /** Button variation */
-  variation: PropTypes.oneOf(['primary', 'secondary'])
+  variant: PropTypes.oneOf(['primary', 'secondary'])
 };
 
 Button.defaultProps = {
-  variation: 'secondary'
+  variant: 'secondary'
 };
 
 /** @component */
