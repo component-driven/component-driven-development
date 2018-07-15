@@ -6,15 +6,15 @@ import { themeGet, css } from 'styled-system';
  * A button.
  */
 const Button = styled.button`
-	${props =>
+	${({ theme, variation }) =>
 		css({
-			theme: props.theme,
+			theme,
 			px: 3,
 			py: 2,
 			fontFamily: 'base',
 			fontSize: 'base',
-			color: props.primary ? 'bg' : 'primary',
-			bg: props.primary ? 'primary' : undefined,
+			color: { primary: 'bg', secondary: 'primary' }[variation],
+			bg: { primary: 'primary' }[variation],
 			borderColor: 'primary',
 			borderRadius: 'base',
 		})};
@@ -48,8 +48,12 @@ const Button = styled.button`
 Button.propTypes = {
 	/** Button label */
 	children: PropTypes.node,
-	/** Button for primary actions */
-	primary: PropTypes.bool,
+	/** Button variation */
+	variation: PropTypes.oneOf(['primary', 'secondary']),
+};
+
+Button.defaultProps = {
+	variation: 'secondary',
 };
 
 /** @component */

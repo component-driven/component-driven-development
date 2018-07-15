@@ -37,7 +37,7 @@ const SubscriptionForm = ({
 						/>
 					</Box>
 					<Box px={1}>
-						<Button primary type="submit" disabled={loading}>
+						<Button variation="primary" type="submit" disabled={loading}>
 							Subscribe
 						</Button>
 					</Box>

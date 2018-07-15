@@ -11,8 +11,9 @@ The result should look like this:
 ```js noeditor
 const Button = require('../../components/core/Button').default;
 <>
-  <Button primary>Primary</Button> <Button>Secondary</Button>{' '}
-  <Button primary disabled>
+  <Button variation="primary">Primary</Button>{' '}
+  <Button>Secondary</Button>{' '}
+  <Button variation="primary" disabled>
     Disabled
   </Button>{' '}
   <Button disabled>Disabled</Button>
@@ -101,8 +102,8 @@ const Button = styled.button`
   color: ${props => props.theme.colors.bg};
   background: ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.radii.base};
-  font-family: ${props => props.theme.fontFamily.base};
-  font-size: ${props => props.theme.fontSize.base};
+  font-family: ${props => props.theme.fonts.base};
+  font-size: ${props => props.theme.fontSizes.base};
   border: 0;
 `;
 
@@ -179,9 +180,10 @@ const Title = styled.h1`
 #### The task
 
 1.  Add a new variation of a button
-    - Render current style when the component rendered with a `primary` prop.
-    - Render a new, secondary, style (no background, just a border) by default.
-1.  Add a new prop to PropTypes.
+    - Render current style when the component rendered with a `variation="primary"` prop.
+    - Render a new, secondary, style (no background, just a border) when the component is rendered with a `variation="secondary"` prop.
+2.  Add a new prop to PropTypes.
+3.  Render a secondary button by default (when the `variation` prop is missed).
 
 <details>
  <summary>Solution</summary>
@@ -192,77 +194,26 @@ import styled from 'styled-components';
 const Button = styled.button`
   /* Other styles */
   color: ${props =>
-    props.primary
+    props.variation === 'primary'
       ? props.theme.colors.bg
       : props.theme.colors.primary};
   background-color: ${props =>
-    props.primary ? props.theme.colors.primary : 'transparent'};
+    props.variation === 'primary'
+      ? props.theme.colors.primary
+      : 'transparent'};
   border: 1px solid ${props => props.theme.colors.primary};
 `;
 
 Button.propTypes = {
   /** Button label */
   children: PropTypes.node,
-  /** Button for primary actions */
-  primary: PropTypes.bool
+  /** Button variation */
+  variation: PropTypes.oneOf(['primary', 'secondary'])
 };
 
-/** @component */
-export default Button;
-```
-
-</details>
-
-### 2.5. Introducing Grid Styled
-
-#### Background
-
-[Grid Styled](http://jxnblk.com/grid-styled/) allows you to define margins and paddings, and create responsive flexbox layouts using React components:
-
-```js static
-import { Box } from 'grid-styled';
-
-<Box is="section" p={2} mb={4}>
-  Hello components!
-</Box>;
-```
-
-This code will render a `<section>` with padding of 8 pixels and bottom margin of 32 pixels.
-
-You can add extra styles using styled-components:
-
-```js static
-import styled from 'styled-components';
-import { Box } from 'grid-styled';
-
-const Card = styled(Box).attrs({
-  is: 'section',
-  p: 2,
-  mb: 4
-})`
-  background: ghostwhite;
-  border-radius: 3px;
-`;
-```
-
-#### The task
-
-1.  Replace custom whitespace styles with a `Box` component from Grid Styled.
-
-<details>
- <summary>Solution</summary>
-
-```js static
-import styled from 'styled-components';
-import { Box } from 'grid-styled';
-
-const Button = styled(Box).attrs({
-  is: 'button',
-  px: 3,
-  py: 2
-})`
-  /* All styles except padding */
-`;
+Button.defaultProps = {
+  variation: 'secondary'
+};
 
 /** @component */
 export default Button;
