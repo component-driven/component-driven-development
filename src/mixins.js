@@ -19,7 +19,7 @@ export const text = ({
 } = {}) => css`
 	line-height: ${lineHeight};
 	font-weight: ${fontWeight};
-	font-family: ${props => props.theme.fontFamily[fontFamily]};
-	font-size: ${props => props.theme.fontSize[fontSize]};
-	color: ${props => props.theme.color[color]};
+	font-family: ${props => props.theme.fonts[fontFamily]};
+	font-size: ${props => props.theme.fontSizes[fontSize]};
+	color: ${props => props.theme.colors[color]};
 `;

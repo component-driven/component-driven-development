@@ -10,8 +10,8 @@ const thumbStyles = css`
 	height: ${thumbSize}px;
 	cursor: pointer;
 	border-radius: 50%;
-	border: 3px solid ${props => props.theme.color.primary};
-	background-color: ${props => props.theme.color.bg};
+	border: 3px solid ${props => props.theme.colors.primary};
+	background-color: ${props => props.theme.colors.bg};
 `;
 
 const trackStyles = css`
@@ -19,7 +19,7 @@ const trackStyles = css`
 	width: 100%;
 	height: 4px;
 	border-radius: 4px;
-	background-color: ${props => props.theme.color.primary};
+	background-color: ${props => props.theme.colors.primary};
 `;
 
 const Input = styled.input`

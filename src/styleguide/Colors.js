@@ -5,6 +5,8 @@ import { readableColor } from 'polished';
 import theme from '../theme';
 import Text from '../components/core/Text';
 
+const { colors } = theme;
+
 const Swatch = styled(Box).attrs({ p: 3 })`
 	width: 100%;
 	height: 100px;
@@ -24,17 +26,14 @@ const ColorSample = ({ color, children }) => (
 	</Box>
 );
 
-export default class Colors extends React.Component {
-	render() {
-		const colors = theme.color;
-		return (
-			<Flex flexWrap="wrap">
-				{Object.keys(colors).map(key => (
-					<ColorSample color={colors[key]} key={key}>
-						{key}
-					</ColorSample>
-				))}
-			</Flex>
-		);
-	}
-}
+const Colors = () => (
+	<Flex flexWrap="wrap">
+		{Object.keys(colors).map(key => (
+			<ColorSample color={colors[key]} key={key}>
+				{key}
+			</ColorSample>
+		))}
+	</Flex>
+);
+
+export default Colors;

@@ -33,10 +33,10 @@ const Modal = styled(ModalBase)`
 	left: ${props => props.theme.space[5]}px;
 	right: ${props => props.theme.space[5]}px;
 	bottom: ${props => props.theme.space[5]}px;
-	border: 1px solid ${props => props.theme.color.light};
-	background: ${props => props.theme.color.bg};
+	border: 1px solid ${props => props.theme.colors.light};
+	background: ${props => props.theme.colors.bg};
 	overflow: auto;
-	border-radius: ${props => props.theme.borderRadius.base};
+	border-radius: ${props => props.theme.radii.base};
 	outline: none;
 `;
 

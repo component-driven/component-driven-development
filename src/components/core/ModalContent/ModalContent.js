@@ -7,23 +7,24 @@ import Heading from '../Heading';
 const CloseButton = styled.button.attrs({
 	type: 'button',
 	children: '×',
+	'aria-label': 'Close',
 })`
 	border: 0;
 	background: transparent;
-	color: ${props => props.theme.color.secondary};
-	font-family: ${props => props.theme.fontFamily.base};
+	color: ${props => props.theme.colors.secondary};
+	font-family: ${props => props.theme.fonts.base};
 	font-size: 1.5rem;
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: ${props => props.theme.color.hover};
+		color: ${props => props.theme.colors.hover};
 		cursor: pointer;
 	}
 
 	&:focus {
 		outline: 0;
-		box-shadow: 0 0 0 2px ${props => props.theme.color.focus};
+		box-shadow: 0 0 0 2px ${props => props.theme.colors.focus};
 	}
 
 	&::-moz-focus-inner {
@@ -36,7 +37,7 @@ const Header = styled(Flex).attrs({
 	mb: 2,
 	p: 3,
 })`
-	border-bottom: 1px solid ${props => props.theme.color.light};
+	border-bottom: 1px solid ${props => props.theme.colors.light};
 `;
 
 /**
@@ -46,7 +47,7 @@ function ModalContent({ onRequestClose, title, children }) {
 	return (
 		<React.Fragment>
 			<Header>
-				<Heading size="gamma" is="h2" mr="2">
+				<Heading size="l" is="h2" mr="2">
 					{title}
 				</Heading>
 				<Box ml="auto">

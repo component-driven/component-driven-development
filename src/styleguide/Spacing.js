@@ -11,10 +11,10 @@ const SpacingExample = styled(Panel)`
 	margin: 0;
 	height: ${props => props.space}px;
 	width: 100%;
-	font-size: ${props => props.fontSize};
-	font-family: ${props => props.theme.fontFamily.base};
-	background: ${props => props.theme.color.lighter};
-	border-color: ${props => props.theme.color.light};
+	font-size: ${props => props.fontSizes};
+	font-family: ${props => props.theme.fonts.base};
+	background: ${props => props.theme.colors.lighter};
+	border-color: ${props => props.theme.colors.light};
 	border-style: dashed;
 `;
 
@@ -31,7 +31,7 @@ export default class Spacing extends React.Component {
 			<Box>
 				{theme.space.map((space, index) => (
 					<SpaceSample space={space} key={space}>
-						<Heading size="delta" is="h3">
+						<Heading size="l" is="h3">
 							{index}
 						</Heading>
 						<Text tertiary>{space}px</Text>

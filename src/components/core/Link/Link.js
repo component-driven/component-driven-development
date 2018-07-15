@@ -8,12 +8,12 @@ const Link = styled.a`
 	&,
 	&:link,
 	&:visited {
-		color: ${props => (props.shy ? 'inherit' : props.theme.color.link)};
+		color: ${props => (props.shy ? 'inherit' : props.theme.colors.primary)};
 	}
 	&:hover,
 	&:focus,
 	&:active {
-		color: ${props => props.theme.color.hover};
+		color: ${props => props.theme.colors.hover};
 	}
 `;
 
