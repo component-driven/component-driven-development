@@ -23,14 +23,18 @@ The result should look like this:
 ```jsx
 const TruncatedText = require('../../components/core/TruncatedText')
   .default;
-<TruncatedText style={{ width: 300 }}>
-  <b>The quick brown fox jumps over the lazy dog</b>
+<TruncatedText width="300px">
+  The quick brown fox jumps over the lazy dog
 </TruncatedText>;
 ```
 
 #### The task
 
 Create a component (`TruncatedText`) that renders its children with an ellipsis at the end, if the content can’t fit at a single line.
+
+**Bonus 1:** Add a prop to define component’s `max-width`.
+
+**Bonus 2:** Use [ellipsis](https://polished.js.org/docs/#ellipsis) mixin from polished.
 
 <details>
  <summary>Solution</summary>
@@ -180,7 +184,6 @@ Create three components (`Media`, `Media.Image` and `Media.Body`) that implement
 
 ```js static
 import styled from 'styled-components';
-import { space } from 'styled-system';
 
 const Media = styled.div`
   display: flex;
@@ -188,7 +191,7 @@ const Media = styled.div`
 `;
 
 const Image = styled.footer`
-  ${space({ mr: 3 })};
+  margin-right: ${props => props.theme.space[3]}px;
 `;
 
 const Body = styled.footer`
