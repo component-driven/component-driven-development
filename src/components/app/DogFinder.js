@@ -6,7 +6,7 @@ import Widget from '../core/Widget';
 import Dogs from './Dogs';
 
 const SliderColumn = ({ children }) => (
-	<Box w={[1, 1 / 3]} px={2} py={[2, 0]}>
+	<Box width={[1, 1 / 3]} px={2} py={[2, 0]}>
 		{children}
 	</Box>
 );
