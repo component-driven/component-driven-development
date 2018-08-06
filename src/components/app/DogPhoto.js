@@ -5,11 +5,11 @@ import Image from '../core/Image';
 
 const SIZE = 200;
 
-const Img = styled(Image).attrs({
-	width: SIZE,
-	height: SIZE,
-})`
+const Img = styled(Image)`
 	object-fit: contain;
+	max-width: ${SIZE};
+	width: 100%;
+	height: auto;
 `;
 
 const DogPhoto = ({ dog: { id, name } }) => (
