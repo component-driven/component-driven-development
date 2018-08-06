@@ -1,0 +1,12 @@
+```jsx
+<PhotoGrid
+  items={[
+    'saluki',
+    'afghan-hound',
+    'english-setter',
+    'dachshund',
+    'greyhound',
+    'vizsla'
+  ]}
+/>
+```
