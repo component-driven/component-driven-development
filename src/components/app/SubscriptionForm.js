@@ -23,7 +23,7 @@ const SubscriptionForm = ({
 		) : (
 			<React.Fragment>
 				<Flex mx={-1} mb={1}>
-					<Box px={1} w={1}>
+					<Box px={1} width={1}>
 						<Input
 							type="email"
 							value={email}
