@@ -11,7 +11,7 @@ const Base = ({ is: Component, ...props }) => <Component {...props} />;
 const TruncatedText = styled(Base).attrs({
 	title: props => props.children,
 })`
-	${props => ellipsis(props.width)};
+	${props => ellipsis(props.width + 'px')};
 `;
 
 TruncatedText.propTypes = {

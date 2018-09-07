@@ -14,6 +14,7 @@ const die = message => {
 const exercise = args.exercise && args.exercise.toString().padStart(2, '0');
 
 const config = {
+	title: 'Component-driven development workshop',
 	styleguideDir: 'build/styleguide',
 	assetsDir: 'public',
 	styleguideComponents: {

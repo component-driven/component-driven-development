@@ -2,7 +2,7 @@
 <DogInfo
   dog={{
     id: 'shetland-sheepdog',
-    name: 'Shetland Sheepdo',
+    name: 'Shetland Sheepdog',
     kidFriendly: 5,
     dogFriendly: 5,
     lowShedding: 1,
