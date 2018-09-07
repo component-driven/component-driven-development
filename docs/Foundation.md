@@ -40,16 +40,4 @@ _Prefer_ the [Text](#text) and [Heading](#heading) components to render any text
 + <Text variant="secondary">Oh dear! Oh dear! I shall be late!</Text>
 ```
 
-_Prefer_ [Grid Styled](http://jxnblk.com/grid-styled/) components for whitespace:
-
-```diff
-- const Panel = styled.article`
--   padding: 16px;
-- `;
-+ import { Box } from 'grid-styled';
-+ const Panel = styled(Box).attrs({ is: 'article', p: 3 })`
-+   // Your additional styles go here
-+ `;
-```
-
 Check out the [theme.js](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js) file for all available design tokens.
