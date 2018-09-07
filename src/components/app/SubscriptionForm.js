@@ -1,10 +1,15 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Flex, Box } from 'grid-styled';
+import styled from 'styled-components';
+import Stack from 'stack-styled';
 import Button from '../core/Button';
 import Input from '../core/Input';
 import Text from '../core/Text';
+
+const Form = styled.form`
+	width: 100%;
+`;
 
 const SubscriptionForm = ({
 	id,
@@ -15,33 +20,29 @@ const SubscriptionForm = ({
 	success,
 	error,
 }) => (
-	<form onSubmit={onSubmit}>
+	<React.Fragment>
 		{success ? (
 			<Text>
 				Thank you! <span aria-hidden="true">🍕</span>
 			</Text>
 		) : (
-			<React.Fragment>
-				<Flex mx={-1} mb={1}>
-					<Box px={1} width={1}>
-						<Input
-							type="email"
-							value={email}
-							required
-							placeholder="Email"
-							aria-label="Email"
-							aria-invalid={error && 'true'}
-							aria-describedby={`${id}-info`}
-							disabled={loading}
-							onChange={onEmailChange}
-						/>
-					</Box>
-					<Box px={1}>
-						<Button variant="primary" type="submit" disabled={loading}>
-							Subscribe
-						</Button>
-					</Box>
-				</Flex>
+			<Form onSubmit={onSubmit}>
+				<Stack gap={2} mb={1} gridTemplateColumns={['1fr', '1fr auto']}>
+					<Input
+						type="email"
+						value={email}
+						required
+						placeholder="Email"
+						aria-label="Email"
+						aria-invalid={error && 'true'}
+						aria-describedby={`${id}-info`}
+						disabled={loading}
+						onChange={onEmailChange}
+					/>
+					<Button variant="primary" type="submit" disabled={loading}>
+						Subscribe
+					</Button>
+				</Stack>
 				<div id={`${id}-info`}>
 					{error ? (
 						<Text variant="error" role="alert">
@@ -53,9 +54,9 @@ const SubscriptionForm = ({
 						</Text>
 					)}
 				</div>
-			</React.Fragment>
+			</Form>
 		)}
-	</form>
+	</React.Fragment>
 );
 
 SubscriptionForm.propTypes = {
