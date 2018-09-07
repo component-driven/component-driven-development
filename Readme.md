@@ -8,9 +8,9 @@ This repository contains exercises for Component-driven development workshop. Be
 
 ## System requirements
 
-* [Git](https://git-scm.com/) 2.0, or newer
-* [Node.js](https://nodejs.org/) 8.6, or newer
-* [npm](https://www.npmjs.com/) 5.4, or newer
+- [Git](https://git-scm.com/) 2.0, or newer
+- [Node.js](https://nodejs.org/) 8.6, or newer
+- [npm](https://www.npmjs.com/) 5.4, or newer
 
 We recommend [nvm](https://github.com/creationix/nvm) or [n](https://github.com/tj/n) to install Node.js.
 
@@ -28,16 +28,17 @@ Then run `npm run exercise N`, where _N_ is the number of an exercise you want t
 
 Or run:
 
-* `npm start` to run a completed app
-* `npm run styleguide` to run a completed style guide
+- `npm start` to run a completed app
+- `npm run styleguide` to run a completed style guide
 
 ## Tech stack
 
-* [React](https://reactjs.org/)
-* [Create React App](https://github.com/facebook/create-react-app)
-* [React Styleguidist](https://react-styleguidist.js.org/)
-* [styled-components](https://www.styled-components.com/)
-* [Grid Styled](https://github.com/jxnblk/grid-styled)
+- [React](https://reactjs.org/)
+- [Create React App](https://github.com/facebook/create-react-app)
+- [React Styleguidist](https://react-styleguidist.js.org/)
+- [styled-components](https://www.styled-components.com/)
+- [Grid Styled](https://github.com/jxnblk/grid-styled)
+- [Polished](https://polished.js.org/)
 
 ## Authors and license
 

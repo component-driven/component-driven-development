@@ -1,12 +1,15 @@
-import { transparentize } from 'polished';
+import { transparentize, modularScale } from 'polished';
+
+const scale = value =>
+	modularScale(value, 1, 'perfectFifth').replace('em', 'rem');
 
 const fontSizes = {
-	xxl: '4rem',
-	xl: '2.25rem',
-	l: '1.5rem',
-	m: '1rem',
-	s: '0.875rem',
-	xs: '0.75rem',
+	xxl: scale(4),
+	xl: scale(3),
+	l: scale(1),
+	m: scale(0),
+	s: scale(-0.5),
+	xs: scale(-0.75),
 };
 
 export default {
