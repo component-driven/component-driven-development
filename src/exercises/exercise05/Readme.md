@@ -4,14 +4,14 @@
 
 Run Styleguidist: `npm run exercise 5`. Use files in the `src/exercises/exercise05` folder.
 
-### 5.1. Introducing Grid Styled
+### 5.1. Introducing Rebass Grid (former Grid Styled)
 
 Ideally components shouldn’t have any predefined whitespace around them, otherwise it may be hard to use them in some contexts.
 
-We have already used the `space` function from styled-system, that adds margins and paddings props to your component. [Grid Styled](http://jxnblk.com/grid-styled/) is based on styled-system and allows you to define margins and paddings and create responsive Flexbox layouts using React components, like the [Box](https://jxnblk.com/grid-styled/Box) component:
+We have already used the `space` function from styled-system, that adds margins and paddings props to your component. [Rebass Grid](https://rebassjs.org/grid/) is based on styled-system and allows you to define margins and paddings and create responsive Flexbox layouts using React components, like the [Box](https://github.com/rebassjs/grid#box) component:
 
 ```js static
-import { Box } from 'grid-styled';
+import { Box } from '@rebass/grid';
 
 <Box is="section" p={2} mb={4}>
   <Button>Hello React!</Button>
@@ -24,7 +24,7 @@ You can add extra styles using styled-components:
 
 ```js static
 import styled from 'styled-components';
-import { Box } from 'grid-styled';
+import { Box } from '@rebass/grid';
 
 const Card = styled(Box).attrs({
   is: 'section',
@@ -36,10 +36,10 @@ const Card = styled(Box).attrs({
 `;
 ```
 
-Grid Styled has another component — [Flex](http://jxnblk.com/grid-styled/Flex), that can do everything `Box` can do, but also has Flexbox props, like `alignItems` or `flexWrap`:
+Rebass Grid has another component — [Flex](https://github.com/rebassjs/grid#flex), that can do everything `Box` can do, but also has Flexbox props, like `alignItems` or `flexWrap`:
 
 ```jsx static
-import { Box, Flex } from 'grid-styled'
+import { Box, Flex } from '@rebass/grid'
 
 <Flex justifyContent="space-between">
   <Box width={1/4}>
@@ -56,7 +56,7 @@ import { Box, Flex } from 'grid-styled'
 The result should look like this:
 
 ```jsx noeditor
-const { Flex, Box } = require('grid-styled');
+const { Flex, Box } = require('@rebass/grid');
 const Button = require('../../components/core/Button').default;
 const Input = require('../../components/core/Input').default;
 <Flex>
@@ -92,7 +92,7 @@ Implement a basic subscription form:
 
 ```js static
 import React from 'react';
-import { Flex, Box } from 'grid-styled';
+import { Flex, Box } from '@rebass/grid';
 import Button from '../../components/core/Button';
 import Input from '../../components/core/Input';
 
@@ -126,7 +126,7 @@ export default SubscriptionForm;
 
 There's one issue with our form: on small screens the input field is too small to type anything. Let’s make our form responsive: wrap the button to the next line on narrow screens.
 
-All Grid Styled props are [responsive](https://jxnblk.com/grid-styled/responsive), meaning that they accept different values for different browser window widths, if you pass an array:
+All Rebass Grid props are [responsive](https://github.com/rebassjs/grid#responsive-styles), meaning that they accept different values for different browser window widths, if you pass an array:
 
 ```jsx static
 <Box
@@ -145,7 +145,7 @@ All Grid Styled props are [responsive](https://jxnblk.com/grid-styled/responsive
 The result should look like this (change the browser window width to see the effect):
 
 ```jsx noeditor
-const { Flex, Box } = require('grid-styled');
+const { Flex, Box } = require('@rebass/grid');
 const Button = require('../../components/core/Button').default;
 const Input = require('../../components/core/Input').default;
 <Flex flexWrap="wrap">
@@ -179,7 +179,7 @@ Update the code from the previous exercise to make it responsive: render the inp
 
 ```js static
 import React from 'react';
-import { Flex, Box } from 'grid-styled';
+import { Flex, Box } from '@rebass/grid';
 import Button from '../../components/core/Button';
 import Input from '../../components/core/Input';
 
@@ -238,7 +238,7 @@ One solution is to use [a negative margin](https://medium.com/@justintulk/why-cs
 The result should look like this:
 
 ```jsx noeditor
-const { Flex, Box } = require('grid-styled');
+const { Flex, Box } = require('@rebass/grid');
 const Button = require('../../components/core/Button').default;
 const Input = require('../../components/core/Input').default;
 <Flex m={-1} flexWrap="wrap">
@@ -270,7 +270,7 @@ Update the code from the previous exercise using the negative margin technique. 
 
 ```js static
 import React from 'react';
-import { Flex, Box } from 'grid-styled';
+import { Flex, Box } from '@rebass/grid';
 import Button from '../../components/core/Button';
 import Input from '../../components/core/Input';
 
@@ -319,7 +319,7 @@ CSS Grid has a thing called _gap_ (`grid-gap` attribute), which is exactly what 
 </div>
 ```
 
-[Stack Styled](https://sapegin.github.io/stack-styled/) has a `Stack` component similar to [Flex](http://jxnblk.com/grid-styled/Flex) component from Grid Styled, but with CSS Grip props. It’s also based on styled-system, so the API is similar:
+[Stack Styled](https://sapegin.github.io/stack-styled/) has a `Stack` component similar to [Flex](https://github.com/rebassjs/grid#flex) component from Rebass Grid, but with CSS Grip props. It’s also based on styled-system, so the API is similar:
 
 ```jsx static
 import Stack from 'stack-styled'

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
-import { Flex } from 'grid-styled';
+import { Flex } from '@rebass/grid';
 
 /**
  * A visually distinctive block of content.

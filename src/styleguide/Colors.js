@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Flex } from 'grid-styled';
+import { Box, Flex } from '@rebass/grid';
 import { readableColor } from 'polished';
 import theme from '../theme';
 import Text from '../components/core/Text';

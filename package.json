@@ -5,7 +5,7 @@
   "license": "MIT",
   "homepage": "https://sapegin.github.io/component-driven-development/",
   "dependencies": {
-    "grid-styled": "^5.0.2",
+    "@rebass/grid": "^6.0.0-0",
     "polished": "^2.0.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",

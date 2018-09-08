@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
-import { Box } from 'grid-styled';
+import { Box } from '@rebass/grid';
 import Panel from '../core/Panel';
 import Heading from '../core/Heading';
 import Page from '../core/Page';
