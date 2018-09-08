@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { themeGet } from 'styled-system';
 import { Flex } from 'grid-styled';
 
 /**
@@ -8,8 +9,8 @@ import { Flex } from 'grid-styled';
 const Panel = styled(Flex).attrs({
 	p: 3,
 })`
-	border: 1px solid ${props => props.theme.colors.light};
-	border-radius: ${props => props.theme.radii.base};
+	border: 1px solid ${themeGet('colors.light')};
+	border-radius: ${themeGet('radii.base')};
 `;
 
 Panel.propTypes = {

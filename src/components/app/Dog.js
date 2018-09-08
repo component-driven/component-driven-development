@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { themeGet } from 'styled-system';
 import Modal from '../core/Modal';
 import DogCard from './DogCard';
 import DogInfo from './DogInfo';
 
-const Button = styled.button`
+const Button = styled(DogCard)`
 	padding: 0;
-	border: 0;
 	background: transparent;
 	cursor: pointer;
 
+	&:hover,
+	&:focus,
+	&:active {
+		border: 1px solid ${themeGet('colors.focus')};
+	}
+
 	&:focus {
 		outline: 0;
-		box-shadow: 0 0 0 2px ${props => props.theme.colors.focus};
+		box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
 	}
 
 	&::-moz-focus-inner {
 		border: 0;
 	}
 `;
+
+const DogButton = props => <Button is="button" {...props} />;
 
 class Dog extends Component {
 	state = {
@@ -45,9 +53,7 @@ class Dog extends Component {
 				>
 					<DogInfo dog={dog} />
 				</Modal>
-				<Button onClick={this.handleOpenModal}>
-					<DogCard dog={dog} />
-				</Button>
+				<DogButton onClick={this.handleOpenModal} dog={dog} />
 			</React.Fragment>
 		);
 	}
