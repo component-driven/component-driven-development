@@ -5,7 +5,9 @@ import Dog from './Dog';
 
 const Dogs = ({ dogs }) => (
 	<Stack gap={3} minWidth={200}>
-		{dogs.map(dog => <Dog key={dog.id} dog={dog} />)}
+		{dogs.map(dog => (
+			<Dog key={dog.id} dog={dog} />
+		))}
 	</Stack>
 );
 

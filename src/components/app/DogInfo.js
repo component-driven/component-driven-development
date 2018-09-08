@@ -32,7 +32,8 @@ const DogInfo = ({ dog, ...props }) => (
 				About the breed:{' '}
 				<Group separator=", " inline>
 					{getQualities(dog)}
-				</Group>.
+				</Group>
+				.
 			</Text>
 		</Box>
 		<Box ml="auto">

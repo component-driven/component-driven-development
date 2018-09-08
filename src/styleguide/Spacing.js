@@ -34,7 +34,10 @@ export default class Spacing extends React.Component {
 						<Heading size="l" is="h3">
 							{index}
 						</Heading>
-						<Text variant="tertiary">{space}px</Text>
+						<Text variant="tertiary">
+							{space}
+							px
+						</Text>
 					</SpaceSample>
 				))}
 			</Box>

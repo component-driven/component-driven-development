@@ -380,7 +380,7 @@ const SubscriptionForm = () => (
       <Button variant="primary" type="submit">
         Subscribe
       </Button>
-    </Stack>;
+    </Stack>
   </form>
 );
 

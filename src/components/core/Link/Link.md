@@ -11,6 +11,7 @@ Shy link. Use for secondary content like footers or small copy.
   By using our site you agree to the following{' '}
   <Link href="/" shy>
     Terms of Service
-  </Link>.
+  </Link>
+  .
 </Text>
 ```
