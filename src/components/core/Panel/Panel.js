@@ -11,6 +11,7 @@ const Panel = styled(Flex).attrs({
 })`
 	border: 1px solid ${themeGet('colors.light')};
 	border-radius: ${themeGet('radii.base')};
+	background: transparent;
 `;
 
 Panel.propTypes = {

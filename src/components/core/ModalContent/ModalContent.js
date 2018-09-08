@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from 'grid-styled';
 import styled from 'styled-components';
+import { themeGet } from 'styled-system';
 import Heading from '../Heading';
 
 const CloseButton = styled.button.attrs({
@@ -11,20 +12,20 @@ const CloseButton = styled.button.attrs({
 })`
 	border: 0;
 	background: transparent;
-	color: ${props => props.theme.colors.secondary};
-	font-family: ${props => props.theme.fonts.base};
+	color: ${themeGet('colors.secondary')};
+	font-family: ${themeGet('fonts.base')};
 	font-size: 1.5rem;
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: ${props => props.theme.colors.hover};
+		color: ${themeGet('colors.hover')};
 		cursor: pointer;
 	}
 
 	&:focus {
 		outline: 0;
-		box-shadow: 0 0 0 2px ${props => props.theme.colors.focus};
+		box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
 	}
 
 	&::-moz-focus-inner {
@@ -37,7 +38,7 @@ const Header = styled(Flex).attrs({
 	mb: 2,
 	p: 3,
 })`
-	border-bottom: 1px solid ${props => props.theme.colors.light};
+	border-bottom: 1px solid ${themeGet('colors.light')};
 `;
 
 /**

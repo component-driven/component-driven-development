@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { themeGet } from 'styled-system';
 import styled, { css } from 'styled-components';
 
 const thumbSize = 12;
@@ -10,8 +11,8 @@ const thumbStyles = css`
 	height: ${thumbSize}px;
 	cursor: pointer;
 	border-radius: 50%;
-	border: 3px solid ${props => props.theme.colors.primary};
-	background-color: ${props => props.theme.colors.bg};
+	border: 3px solid ${themeGet('colors.primary')};
+	background-color: ${themeGet('colors.bg')};
 `;
 
 const trackStyles = css`
@@ -19,7 +20,7 @@ const trackStyles = css`
 	width: 100%;
 	height: 4px;
 	border-radius: 4px;
-	background-color: ${props => props.theme.colors.primary};
+	background-color: ${themeGet('colors.primary')};
 `;
 
 const Input = styled.input`

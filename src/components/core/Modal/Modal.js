@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
 import styled from 'styled-components';
+import { themeGet, mixed } from 'styled-system';
 import ModalContent from '../ModalContent';
 
 // Connect with the app root element for accessibility
@@ -28,15 +29,25 @@ ModalBase.propTypes = {
 };
 
 const Modal = styled(ModalBase)`
+	${({ theme }) =>
+		mixed({
+			theme,
+			top: 5,
+			left: 5,
+			right: 5,
+			bottom: 5,
+			bg: 'bg',
+			borderColor: 'light',
+			borderRadius: 'base',
+		})};
+	top: ${themeGet('space.5')}px;
+	left: ${themeGet('space.5')}px;
+	right: ${themeGet('space.5')}px;
+	bottom: ${themeGet('space.5')}px;
 	position: absolute;
-	top: ${props => props.theme.space[5]}px;
-	left: ${props => props.theme.space[5]}px;
-	right: ${props => props.theme.space[5]}px;
-	bottom: ${props => props.theme.space[5]}px;
-	border: 1px solid ${props => props.theme.colors.light};
-	background: ${props => props.theme.colors.bg};
+	border-width: 1px;
+	border-style: solid;
 	overflow: auto;
-	border-radius: ${props => props.theme.radii.base};
 	outline: none;
 `;
 

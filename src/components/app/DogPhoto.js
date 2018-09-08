@@ -7,7 +7,7 @@ const SIZE = 200;
 
 const Img = styled(Image)`
 	object-fit: contain;
-	max-width: ${SIZE};
+	max-width: ${SIZE}px;
 	width: 100%;
 	height: auto;
 `;

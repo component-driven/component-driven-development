@@ -7,8 +7,6 @@ import DogCard from './DogCard';
 import DogInfo from './DogInfo';
 
 const Button = styled(DogCard)`
-	padding: 0;
-	background: transparent;
 	cursor: pointer;
 
 	&:hover,
