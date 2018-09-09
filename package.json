@@ -18,7 +18,8 @@
     "styled-system": "^3.0.3"
   },
   "scripts": {
-    "start": "node scripts/setup.js && react-scripts start",
+    "start": "node scripts/setup.js && styleguidist server --open --exercise",
+    "app": "node scripts/setup.js && react-scripts start",
     "build": "node scripts/setup.js && react-scripts build && styleguidist build",
     "pretest": "eslint src",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
@@ -27,20 +28,17 @@
     "eject": "react-scripts eject",
     "styleguide": "node scripts/setup.js && styleguidist server --open",
     "styleguide:build": "node scripts/setup.js && styleguidist build",
-    "exercise": "node scripts/setup.js && styleguidist server --open --exercise",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "format": "prettier --write '**/*.{js,md}'",
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "chalk": "^2.4.1",
     "cross-env": "^5.2.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "gh-pages": "^1.2.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
-    "node-args": "^2.1.8",
     "prettier": "^1.14.2",
     "react-styleguidist": "^7.3.6"
   },

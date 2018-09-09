@@ -1,17 +1,8 @@
-const fs = require('fs');
 const path = require('path');
-const args = require('node-args');
-const chalk = require('chalk');
+const glob = require('glob');
 
-// Show an error message and quit
-const die = message => {
-	console.error(chalk.red(message));
-	console.error();
-	process.exit(1);
-};
-
-// styleguidist server --exercise 1 => 01
-const exercise = args.exercise && args.exercise.toString().padStart(2, '0');
+// styleguidist server --exercise
+const shouldShowExercises = !!process.argv.find(x => x === '--exercise');
 
 const config = {
 	title: 'Component-driven development workshop',
@@ -23,28 +14,21 @@ const config = {
 	// Read examples from Component.md files only, not from Readme.md
 	getExampleFilename: x => x.replace(/\.js$/, '.md'),
 	skipComponentsWithoutExample: true,
+	pagePerSection: true,
 	exampleMode: 'expand',
 };
 
-if (exercise) {
-	// Load components from an exercise folder
-	const exerciseFolder = path.join(
-		__dirname,
-		`src/exercises/exercise${exercise}`
-	);
-	if (!fs.existsSync(exerciseFolder)) {
-		die(`Exercise ${args.exercise} not found`);
-	}
-
-	config.title = `Exercise ${args.exercise}`;
-	config.sections = [
-		{
-			name: config.title,
-			content: `${exerciseFolder}/Readme.md`,
-			components: `${exerciseFolder}/**/*.js`,
-		},
-	];
+if (shouldShowExercises) {
+	// Generate sections for all exercises
+	const exercisesRoot = path.join(__dirname, `src/exercises`);
+	const exercises = glob.sync(`${exercisesRoot}/exercise*`);
+	config.sections = exercises.map((folder, index) => ({
+		name: `Exercise ${index + 1}`,
+		content: `${folder}/Readme.md`,
+		components: `${folder}/**/*.js`,
+	}));
 } else {
+	// Styleguide
 	config.sections = [
 		{
 			name: 'Foundation',

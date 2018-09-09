@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/component-driven/component-driven-development.svg)](https://travis-ci.org/component-driven/component-driven-development)
 
-This repository contains exercises for Component-driven development workshop. Before attending the training, please make sure you can run the code in this repository.
+This repository contains exercises for Component-driven development workshop.
+
+_Before attending the workshop, please make sure you can run the code in this repository._
 
 **[Try the app](https://component-driven.github.io/component-driven-development/) or [view the style guide](https://component-driven.github.io/component-driven-development/styleguide/).**
 
@@ -24,12 +26,11 @@ cd component-driven-development
 npm install
 ```
 
-Then run `npm run exercise N`, where _N_ is the number of an exercise you want to do.
+Then run:
 
-Or run:
-
-- `npm start` to run a completed app
-- `npm run styleguide` to run a completed style guide
+- `npm start` to work on exercises
+- `npm run app` to run the completed app
+- `npm run styleguide` to run the completed style guide
 
 ## Tech stack
 
