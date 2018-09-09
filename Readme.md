@@ -4,7 +4,7 @@
 
 This repository contains exercises for Component-driven development workshop. Before attending the training, please make sure you can run the code in this repository.
 
-[Try the app](https://component-driven.github.io/component-driven-development/) or [view the style guide](https://component-driven.github.io/component-driven-development/styleguide/).
+**[Try the app](https://component-driven.github.io/component-driven-development/) or [view the style guide](https://component-driven.github.io/component-driven-development/styleguide/).**
 
 ## System requirements
 
