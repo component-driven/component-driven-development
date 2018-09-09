@@ -8,6 +8,17 @@ _Before attending the workshop, please make sure you can run the code in this re
 
 **[Try the app](https://component-driven.github.io/component-driven-development/) or [view the style guide](https://component-driven.github.io/component-driven-development/styleguide/).**
 
+## Prerequisites
+
+Basic JavaScript, CSS and HTML experience is required. Following will be very useful:
+
+- React experience;
+- command line basics.
+
+To learn React we recommend [the official tutorial](https://reactjs.org/tutorial/tutorial.html) and [The Beginner’s Guide to React course](https://egghead.io/courses/the-beginner-s-guide-to-react) by Kent C. Dodds.
+
+To learn command line basics we recommend [Really Friendly Command Line Intro](https://hellowebbooks.com/learn-command-line/) by Tracy Osborn.
+
 ## System requirements
 
 - [Git](https://git-scm.com/) 2.0, or newer

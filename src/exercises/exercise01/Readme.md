@@ -2,7 +2,7 @@
 
 ### Getting started
 
-Run Styleguidist: `npm run exercise 1`.
+Run `npm start` and navigate to _Exercise 1_ in the sidebar. Use files in the `src/exercises/exercise01` folder.
 
 [React Styleguidist](https://react-styleguidist.js.org/) is a tool that we use as a workbench to develop component, and to generate a style guide.
 

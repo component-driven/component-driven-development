@@ -2,7 +2,7 @@
 
 ### Getting started
 
-Run Styleguidist: `npm run exercise 5`. Use files in the `src/exercises/exercise05` folder.
+Run `npm start` and navigate to _Exercise 5_ in the sidebar. Use files in the `src/exercises/exercise05` folder.
 
 ### 5.1. Introducing Rebass Grid (former Grid Styled)
 

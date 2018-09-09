@@ -2,7 +2,7 @@
 
 ### Getting started
 
-Run Styleguidist: `npm run exercise 4`. Use files in the `src/exercises/exercise04` folder.
+Run `npm start` and navigate to _Exercise 4_ in the sidebar. Use files in the `src/exercises/exercise04` folder.
 
 ### 4.1. Truncating long lines of text
 
@@ -58,7 +58,7 @@ export default TruncatedText;
 
 Sticky footer is another common task. It has [dozens of different solutions](https://css-tricks.com/couple-takes-sticky-footer/), many are tricky and hard to remember.
 
-We’ll use Flexbox:
+We’ll [use Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/) and [viewport units](https://css-tricks.com/fun-viewport-units/):
 
 ```html static
 <style>
@@ -190,7 +190,7 @@ const Media = styled.div`
   align-items: flex-start;
 `;
 
-const Image = styled.footer`
+const Image = styled.div`
   margin-right: ${props => props.theme.space[3]}px;
 `;
 

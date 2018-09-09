@@ -2,7 +2,7 @@
 
 ### Getting started
 
-Run Styleguidist: `npm run exercise 2`. Use files in the `src/exercises/exercise02` folder.
+Run `npm start` and navigate to _Exercise 2_ in the sidebar. Use files in the `src/exercises/exercise02` folder.
 
 ### Result
 
