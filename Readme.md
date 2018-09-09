@@ -53,6 +53,11 @@ Then run:
 - [Stack Styled](https://sapegin.github.io/stack-styled/)
 - [Polished](https://polished.js.org/)
 
+## Further resources
+
+- [Awesome component-driven development](https://github.com/component-driven/awesome-list)
+- [Advanced React Component Patterns](https://egghead.io/courses/advanced-react-component-patterns)
+
 ## Authors and license
 
 [Artem Sapegin](http://sapegin.me), [Andrey Okonetchnikov](http://okonet.ru/) and [contributors](https://github.com/sapegin/component-driven-development/graphs/contributors).
