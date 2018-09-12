@@ -36,13 +36,13 @@ const Title = styled.h1`
 
 The `Title` component will render an `h1` tag with an attached CSS that sets font size to 2 ems. Styles look almost identical to regular CSS, but instead of classes we have components.
 
-**Hint:** [A 5-minute intro to styled-components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55)
+**Hint:** [A 5-minute intro to styled-components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55).
 
 #### The task
 
-1.  Rewrite our button component to use styled-components.
+1. Rewrite our button component to use styled-components.
 
-2.  Define basic styles like padding, text and background colors according to the mockup.
+2. Define basic styles like padding, text and background colors according to [the mockup](https://component-driven.github.io/component-driven-development/).
 
 **Hint:** To fix PropTypes documentation in Styleguidist, add a `@component` JSDoc tag in front of your `export`:
 
@@ -72,7 +72,7 @@ export default Button;
 
 ### 2.2. Introducing design tokens
 
-Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions. We’re already created tokens for our project. Check them out in [the style guide](https://sapegin.github.io/component-driven-development/styleguide/#foundation). Tokens defined as JavaScript objects in the [theme.js file](https://github.com/sapegin/component-driven-development/blob/master/src/theme.js).
+Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions. We’ve already created tokens for our project. Check them out in [the style guide](https://sapegin.github.io/component-driven-development/styleguide/#foundation). Tokens are defined as JavaScript objects in the [theme.js file](https://github.com/sapegin/component-driven-development/blob/master/src/theme.js).
 
 Design tokens are accessible in styled-components, thanks to [ThemeProvider](https://github.com/sapegin/component-driven-development/blob/master/src/Provider.js), and you can use them like this:
 
@@ -84,9 +84,9 @@ const Button = styled.button`
 
 #### The task
 
-1.  Replace all hardcoded values with design tokens.
+1. Replace all hardcoded values with design tokens.
 
-2.  Add base font family, font size and border radius.
+2. Add `base` font family, font size and border radius.
 
 **Hint:** See [theme.js file](https://github.com/sapegin/component-driven-development/blob/master/src/theme.js) for all available tokens.
 
@@ -128,11 +128,11 @@ const Button = styled.button`
 
 #### The task
 
-1.  Add hover and active styles.
+1. Add hover and active styles.
 
-**Bonus 1:** Add focus styles.
+**Bonus 1:** Add focus style.
 
-**Bonus 2:** Add disabled styles. Make sure that a button doesn’t have a hover state when it’s disabled.
+**Bonus 2:** Add disabled style. Make sure that a button doesn’t have a hover state when it’s disabled.
 
 <details>
  <summary>Solution</summary>
@@ -179,11 +179,13 @@ const Title = styled.h1`
 
 #### The task
 
-1.  Add a new variation of a button
-    - Render current style when the component rendered with a `variant="primary"` prop.
-    - Render a new, secondary, style (no background, just a border) when the component is rendered with a `variant="secondary"` prop.
-2.  Add a new prop to PropTypes.
-3.  Render a secondary button by default (when the `variant` prop is missed).
+1. Add a new variation of a button:
+
+- Render the current style when the component rendered with a `variant="primary"` prop.
+- Render a new, secondary, style (no background, just a border) when the component is rendered with a `variant="secondary"` prop.
+
+2. Add the new `variant` prop to PropTypes.
+3. Render a secondary button by default (when the `variant` prop is missed).
 
 <details>
  <summary>Solution</summary>

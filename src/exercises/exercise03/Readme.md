@@ -46,9 +46,9 @@ We already know how to access design tokens in our styled components from the pr
 
 Create a component that renders different levels of headings:
 
-- heading font family;
-- normal font weight;
-- base color;
+- `heading` font family;
+- `normal` font weight;
+- `base` color;
 - font size is defined by a component prop (one of `m`, `l`, `xl` or `xxl`).
 
 Render all sizes with `h1` element — we’ll fix that soon.
@@ -95,6 +95,8 @@ And then we’ll be able to use this component like so:
 ```jsx static
 <Heading is="h2" />
 ```
+
+**Hint:** [styled-components 4](https://medium.com/styled-components/announcing-styled-components-v4-better-faster-stronger-3fe1aba1a112) will have a built-in `as` props to change an HTML element.
 
 #### The task
 
@@ -227,6 +229,8 @@ const Heading = styled(Base)`
 `;
 ```
 
+**Note:** Have a look at the [default spacing scale](https://jxnblk.com/styled-system/api#space-1).
+
 #### The task
 
 Replace all custom margins with the `space` function from styled-system.
@@ -255,7 +259,7 @@ export default Heading;
 
 ### 3.5. Simplifying styles
 
-Converting props to styles isn’t the only feature of styled-system: [themeGet](http://jxnblk.com/styled-system/api#themeget) function can save you a few keystrokes when accessing the theme values, so instead of writing `props => props.theme.colors.base` you could write `themeGet('colors.base')`:
+Converting props to styles isn’t the only feature of styled-system: [themeGet](http://jxnblk.com/styled-system/api#themeget) function can save you a few keystrokes when accessing the theme values, so instead of writing `props => props.theme.colors.base` you could write:
 
 ```js static
 import styled from 'styled-components';
@@ -350,12 +354,14 @@ Now we know enough to easily create customizable components that use many theme 
 
 Create a component that renders text in different styles:
 
-- Normal text (base font size, base color);
-- Secondary text (base font size, secondary color);
-- Small text (small font size, secondary color);
-- Error message (base font size, error color).
+- Normal text (`base` font size, `base` color);
+- Secondary text (`base` font size, `secondary` color);
+- Small text (small (`s`) font size, `secondary` color);
+- Error message (`base` font size, `error` color).
 
-The `variant` prop is used to change text style. The user can change a component or an HTML element that is used to render text.
+The `variant` prop is used to change text style.
+
+**Bonus:** The user can change a component or an HTML element that is used to render text.
 
 <details>
  <summary>Solution</summary>

@@ -30,11 +30,11 @@ const TruncatedText = require('../../components/core/TruncatedText')
 
 #### The task
 
-Create a component (`TruncatedText`) that renders its children with an ellipsis at the end, if the content can’t fit at a single line.
+Create a component (`TruncatedText`) that renders its children with an ellipsis at the end, if the content can’t fit on a single line.
 
 **Bonus 1:** Add a prop to define component’s `max-width`.
 
-**Bonus 2:** Use [ellipsis](https://polished.js.org/docs/#ellipsis) mixin from polished.
+**Bonus 2:** Use [ellipsis](https://polished.js.org/docs/#ellipsis) mixin from polished instead of custom CSS.
 
 <details>
  <summary>Solution</summary>

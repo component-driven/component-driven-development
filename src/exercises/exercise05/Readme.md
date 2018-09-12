@@ -8,7 +8,7 @@ Run `npm start` and navigate to _Exercise 5_ in the sidebar. Use files in the `s
 
 Ideally components shouldn’t have any predefined whitespace around them, otherwise it may be hard to use them in some contexts.
 
-We have already used the `space` function from styled-system, that adds margins and paddings props to your component. [Rebass Grid](https://rebassjs.org/grid/) is based on styled-system and allows you to define margins and paddings and create responsive Flexbox layouts using React components, like the [Box](https://github.com/rebassjs/grid#box) component:
+We have already used the [space](https://jxnblk.com/styled-system/api#space) function from styled-system, that adds margins and paddings props to your component. [Rebass Grid](https://rebassjs.org/grid/) is based on styled-system and allows you to define margins and paddings and create responsive Flexbox layouts using React components, like the [Box](https://github.com/rebassjs/grid#box) component:
 
 ```js static
 import { Box } from '@rebass/grid';
@@ -19,6 +19,8 @@ import { Box } from '@rebass/grid';
 ```
 
 This code will render a `<section>` element with padding of 8 pixels and bottom margin of 32 pixels.
+
+**Note:** Have a look at the [default spacing scale](https://jxnblk.com/styled-system/api#space-1).
 
 You can add extra styles using styled-components:
 
@@ -211,7 +213,7 @@ export default SubscriptionForm;
 
 ### 5.3 Simplifying whitespace management
 
-There are several solutions to the previous task, but the most obvious ones require switching a horizontal padding or margin to a vertical on narrow screens. There are better ways to keep the gap between elements.
+There are several solutions to the previous task, but the most obvious ones require switching a horizontal padding or margin to a vertical on narrow screens. There are better ways to implement a gap between elements.
 
 One solution is to use [a negative margin](https://medium.com/@justintulk/why-css-grid-frameworks-have-negative-margins-37d67cf6acc8) on the container to keep grid items close to the container edges:
 
@@ -302,7 +304,7 @@ export default SubscriptionForm;
 
 ### 5.4 Introducing Stack Styled
 
-CSS Grid has a thing called _gap_ (`grid-gap` attribute), which is exactly what we need here: whitespace between items. No need to use negative margins:
+CSS Grid has a thing called _gap_ (`grid-gap` property), which is exactly what we need here: whitespace between items. No need to use negative margins:
 
 ```html static
 <style>
@@ -324,7 +326,7 @@ CSS Grid has a thing called _gap_ (`grid-gap` attribute), which is exactly what 
 ```jsx static
 import Stack from 'stack-styled'
 
-<Stack is="section" gridGap={4}>
+<Stack is="section" gap={4}>
   <Button>Hello React!</Button>
   <Button>Hello Stack Styled!</Button>
 </Stack>;
