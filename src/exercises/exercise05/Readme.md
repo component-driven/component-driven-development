@@ -8,7 +8,7 @@ Run `npm start` and navigate to _Exercise 5_ in the sidebar. Use files in the `s
 
 Ideally components shouldn’t have any predefined whitespace around them, otherwise it may be hard to use them in some contexts.
 
-We have already used the [space](https://jxnblk.com/styled-system/api#space) function from styled-system, that adds margins and paddings props to your component. [Rebass Grid](https://rebassjs.org/grid/) is based on styled-system and allows you to define margins and paddings and create responsive Flexbox layouts using React components, like the [Box](https://github.com/rebassjs/grid#box) component:
+We have already used the [space](https://jxnblk.com/styled-system/api#space) function from styled-system, that adds margins and paddings props to your component. [Rebass Grid](https://grid.rebassjs.org/) is based on styled-system and allows you to define margins and paddings and create responsive Flexbox layouts using React components, like the [Box](https://github.com/rebassjs/grid#box) component:
 
 ```js static
 import { Box } from '@rebass/grid';

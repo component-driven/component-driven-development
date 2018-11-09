@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "homepage": "https://sapegin.github.io/component-driven-development/",
+  "homepage": "https://component-driven.github.io/component-driven-development/",
   "dependencies": {
     "@rebass/grid": "^6.0.0-0",
     "polished": "^2.0.3",

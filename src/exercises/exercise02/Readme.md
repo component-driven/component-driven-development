@@ -72,9 +72,9 @@ export default Button;
 
 ### 2.2. Introducing design tokens
 
-Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions. We’ve already created tokens for our project. Check them out in [the style guide](https://sapegin.github.io/component-driven-development/styleguide/#foundation). Tokens are defined as JavaScript objects in the [theme.js file](https://github.com/sapegin/component-driven-development/blob/master/src/theme.js).
+Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions. We’ve already created tokens for our project. Check them out in [the style guide](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation). Tokens are defined as JavaScript objects in the [theme.js file](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js).
 
-Design tokens are accessible in styled-components, thanks to [ThemeProvider](https://github.com/sapegin/component-driven-development/blob/master/src/Provider.js), and you can use them like this:
+Design tokens are accessible in styled-components, thanks to [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/Provider.js), and you can use them like this:
 
 ```js static
 const Button = styled.button`
@@ -88,7 +88,7 @@ const Button = styled.button`
 
 2. Add `base` font family, font size and border radius.
 
-**Hint:** See [theme.js file](https://github.com/sapegin/component-driven-development/blob/master/src/theme.js) for all available tokens.
+**Hint:** See [theme.js file](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js) for all available tokens.
 
 <details>
  <summary>Solution</summary>
