@@ -14,7 +14,7 @@ const Button = styled.button`
 			fontFamily: 'base',
 			fontSize: 'base',
 			color: { primary: 'bg', secondary: 'primary' }[variant],
-			bg: { primary: 'primary' }[variant],
+			bg: { primary: 'primary', secondary: 'bg' }[variant],
 			borderColor: 'primary',
 			borderRadius: 'base',
 		})};
