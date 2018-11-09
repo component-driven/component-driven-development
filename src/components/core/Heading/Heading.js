@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { mixed, space } from 'styled-system';
+import { themeGet, space } from 'styled-system';
 
 const Base = ({ is: Component, ...props }) => <Component {...props} />;
 
@@ -12,16 +12,12 @@ const Heading = styled(Base).attrs({
 	is: props => props.is,
 	m: 0,
 })`
-	${({ theme, size }) =>
-		mixed({
-			theme,
-			color: 'base',
-			lineHeight: 'heading',
-			fontFamily: 'heading',
-			fontWeight: 'normal',
-			fontSize: size,
-		})};
 	${space};
+	line-height: ${themeGet('lineHeights.heading')};
+	font-family: ${themeGet('fonts.heading')};
+	font-weight: ${themeGet('fontWeights.normal')};
+	font-size: ${props => props.theme.fontSizes[props.size]};
+	color: ${themeGet('colors.base')};
 `;
 
 Heading.propTypes = {

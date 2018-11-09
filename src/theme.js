@@ -47,7 +47,6 @@ export default {
 	radii: {
 		base: '0.15em',
 	},
-	space_: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 	space: [
 		0,
 		'0.25rem',

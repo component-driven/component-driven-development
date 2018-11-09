@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space, mixed } from 'styled-system';
+import { space } from 'styled-system';
 
 const Base = ({ is: Component, ...props }) => <Component {...props} />;
 
@@ -9,16 +9,7 @@ const Base = ({ is: Component, ...props }) => <Component {...props} />;
  * A text heading.
  */
 const Heading = styled(Base)`
-	${space};
-	${({ theme, size }) =>
-		mixed({
-			theme,
-			color: 'base',
-			lineHeight: 'heading',
-			fontFamily: 'heading',
-			fontWeight: 'normal',
-			fontSize: size,
-		})};
+	/* Your styles here */
 `;
 
 Heading.propTypes = {

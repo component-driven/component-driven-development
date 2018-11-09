@@ -296,57 +296,7 @@ export default Heading;
 
 </details>
 
-### 3.6. Simplifying styles even more
-
-Even with `themeGet` extracting lots of theme values, especially with conditions, is very verbose and hard to read. [mixed](http://jxnblk.com/styled-system/api#mixed) function from styled-system makes styles much more readable:
-
-```js static
-import styled from 'styled-components';
-import { mixed } from 'styled-system';
-
-const Heading = styled.h1`
-  ${({ theme, variant }) =>
-    mixed({
-      theme,
-      fontFamily: 'heading',
-      color: 'base'
-    })};
-`;
-```
-
-This is an equivalent of the example from the previous tasks: it will render text with the `heading` font and the `base` color _from theme_.
-
-#### The task
-
-Replace all `themeGet` with a single `mixed` call.
-
-<details>
- <summary>Solution</summary>
-
-```js static
-import styled from 'styled-components';
-import { space, mixed } from 'styled-system';
-
-const Heading = styled(Base)`
-  ${space};
-  ${({ theme, size }) =>
-    mixed({
-      theme,
-      color: 'base',
-      lineHeight: 'heading',
-      fontFamily: 'heading',
-      fontWeight: 'normal',
-      fontSize: size
-    })};
-`;
-
-/** @component */
-export default Heading;
-```
-
-</details>
-
-### 3.7. Creating a generic text component
+### 3.6. Creating a generic text component
 
 Now we know enough to easily create customizable components that use many theme values.
 
@@ -369,32 +319,34 @@ The `variant` prop is used to change text style.
 ```jsx static
 import React from 'react';
 import styled from 'styled-components';
-import { mixed } from 'styled-system';
+import { themeGet } from 'styled-system';
 
 const Base = ({ is: Component, ...props }) => (
   <Component {...props} />
 );
 
+const getFontSize = variant =>
+  ({
+    base: 'm',
+    secondary: 'm',
+    tertiary: 's',
+    error: 'm'
+  }[variant]);
+const getColor = variant =>
+  ({
+    base: 'base',
+    secondary: 'secondary',
+    tertiary: 'secondary',
+    error: 'error'
+  }[variant]);
+
 const Text = styled(Base)`
-  ${({ theme, variant }) =>
-    mixed({
-      theme,
-      m: 0,
-      fontFamily: 'base',
-      lineHeight: 'base',
-      fontSize: {
-        base: 'm',
-        secondary: 'm',
-        tertiary: 's',
-        error: 'm'
-      }[variant],
-      color: {
-        base: 'base',
-        secondary: 'secondary',
-        tertiary: 'secondary',
-        error: 'error'
-      }[variant]
-    })};
+  margin: 0;
+  line-height: ${themeGet('lineHeights.base')};
+  font-family: ${themeGet('fonts.base')};
+  font-size: ${props =>
+    props.theme.fontSizes[getFontSize(props.variant)]};
+  color: ${props => props.theme.colors[getColor(props.variant)]};
 `;
 
 Text.propTypes = {

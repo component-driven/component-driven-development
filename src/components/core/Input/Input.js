@@ -1,27 +1,22 @@
 import styled from 'styled-components';
-import { themeGet, mixed } from 'styled-system';
+import { themeGet } from 'styled-system';
 
 /**
  * A basic input field.
  */
 const Input = styled.input`
-	${({ theme }) =>
-		mixed({
-			theme,
-			p: 2,
-			fontFamily: 'base',
-			fontSize: 'base',
-			color: 'base',
-			bg: 'bg',
-			borderColor: 'primary',
-			borderRadius: 'base',
-		})};
-
 	box-sizing: border-box;
 	display: block;
 	width: 100%;
-	border-width: 1px;
-	border-style: solid;
+	margin: 0;
+	padding: ${themeGet('space.2')};
+	border: 1px solid ${themeGet('colors.primary')};
+	border-radius: ${themeGet('radii.base')};
+	font-family: ${themeGet('fonts.base')};
+	font-size: ${themeGet('fontSizes.base')};
+	color: ${themeGet('colors.base')};
+	background-color: ${themeGet('colors.bg')};
+
 	/* Remove red outline on required input in Firefox */
 	box-shadow: none;
 

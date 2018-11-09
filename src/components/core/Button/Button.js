@@ -1,30 +1,26 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { themeGet, mixed } from 'styled-system';
+import { themeGet } from 'styled-system';
+
+const getColor = variant => ({ primary: 'bg', secondary: 'primary' }[variant]);
+const getBgColor = variant =>
+	({ primary: 'primary', secondary: 'bg' }[variant]);
 
 /**
  * A button.
  */
 const Button = styled.button`
-	${({ theme, variant }) =>
-		mixed({
-			theme,
-			px: 3,
-			py: 2,
-			fontFamily: 'base',
-			fontSize: 'base',
-			color: { primary: 'bg', secondary: 'primary' }[variant],
-			bg: { primary: 'primary', secondary: 'bg' }[variant],
-			borderColor: 'primary',
-			borderRadius: 'base',
-		})};
-
-	border-width: 1px;
-	border-style: solid;
+	padding: ${themeGet('space.2')} ${themeGet('space.3')};
+	border: 1px solid ${themeGet('colors.primary')};
+	border-radius: ${themeGet('radii.base')};
+	font-family: ${themeGet('fonts.base')};
+	font-size: ${themeGet('fontSizes.base')};
+	color: ${props => props.theme.colors[getColor(props.variant)]};
+	background-color: ${props => props.theme.colors[getBgColor(props.variant)]};
 	user-select: none;
 
 	&:hover:enabled,
-	&:active {
+	&:active:enabled {
 		border-color: ${themeGet('colors.hover')};
 		background-color: ${themeGet('colors.hover')};
 		cursor: pointer;
