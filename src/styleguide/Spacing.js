@@ -9,7 +9,7 @@ import Heading from '../components/core/Heading';
 const SpacingExample = styled(Panel)`
 	padding: 0;
 	margin: 0;
-	height: ${props => props.space}px;
+	height: ${props => props.space};
 	width: 100%;
 	font-size: ${props => props.fontSizes};
 	font-family: ${props => props.theme.fonts.base};
@@ -34,10 +34,7 @@ export default class Spacing extends React.Component {
 						<Heading size="l" is="h3">
 							{index}
 						</Heading>
-						<Text variant="tertiary">
-							{space}
-							px
-						</Text>
+						<Text variant="tertiary">{space}</Text>
 					</SpaceSample>
 				))}
 			</Box>
