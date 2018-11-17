@@ -1,15 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { themeGet, space } from 'styled-system';
 
-const Base = ({ is: Component, ...props }) => <Component {...props} />;
-
 /**
  * A text heading.
  */
-const Heading = styled(Base).attrs({
-	is: props => props.is,
+const Heading = styled.h1.attrs({
 	m: 0,
 })`
 	${space};
@@ -22,13 +18,12 @@ const Heading = styled(Base).attrs({
 
 Heading.propTypes = {
 	/** Custom component or HTML tag */
-	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 	size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm']),
 	children: PropTypes.node,
 };
 
 Heading.defaultProps = {
-	is: 'h1',
 	size: 'xxl',
 };
 

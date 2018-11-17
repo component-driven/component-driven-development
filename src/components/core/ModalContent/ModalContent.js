@@ -34,7 +34,7 @@ const CloseButton = styled.button.attrs({
 `;
 
 const Header = styled(Flex).attrs({
-	is: 'header',
+	as: 'header',
 	mb: 2,
 	p: 3,
 })`
@@ -48,7 +48,7 @@ function ModalContent({ onRequestClose, title, children }) {
 	return (
 		<React.Fragment>
 			<Header>
-				<Heading size="l" is="h2" mr="2">
+				<Heading size="l" as="h2" mr="2">
 					{title}
 				</Heading>
 				<Box ml="auto">

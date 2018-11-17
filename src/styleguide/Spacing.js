@@ -31,7 +31,7 @@ export default class Spacing extends React.Component {
 			<Box>
 				{theme.space.map((space, index) => (
 					<SpaceSample space={space} key={space}>
-						<Heading size="l" is="h3">
+						<Heading size="l" as="h3">
 							{index}
 						</Heading>
 						<Text variant="tertiary">{space}</Text>

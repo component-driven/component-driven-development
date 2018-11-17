@@ -1,14 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ellipsis } from 'polished';
 
-const Base = ({ is: Component, ...props }) => <Component {...props} />;
-
 /**
  * Truncate text with an ellipsis.
  */
-const TruncatedText = styled(Base).attrs({
+const TruncatedText = styled.div.attrs({
 	title: props => props.children,
 })`
 	${props => ellipsis(props.width + 'px')};
@@ -17,11 +14,7 @@ const TruncatedText = styled(Base).attrs({
 TruncatedText.propTypes = {
 	width: PropTypes.number,
 	/** Custom component or HTML tag */
-	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-};
-
-TruncatedText.defaultProps = {
-	is: 'div',
+	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 };
 
 export default TruncatedText;

@@ -1,9 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
-
-const Base = ({ is: Component, ...props }) => <Component {...props} />;
 
 const getFontSize = variant =>
 	({
@@ -23,7 +20,7 @@ const getColor = variant =>
 /**
  * A component to render all text in the app.
  */
-const Text = styled(Base)`
+const Text = styled.p`
 	margin: 0;
 	line-height: ${themeGet('lineHeights.base')};
 	font-family: ${themeGet('fonts.base')};
@@ -33,14 +30,13 @@ const Text = styled(Base)`
 
 Text.propTypes = {
 	/** Custom component or HTML tag */
-	is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 	/** Variation */
 	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
 	children: PropTypes.node,
 };
 
 Text.defaultProps = {
-	is: 'p',
 	variant: 'base',
 };
 

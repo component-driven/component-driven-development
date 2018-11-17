@@ -62,14 +62,14 @@ We’ll [use Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/sti
 
 ```html static
 <style>
-.container {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-.footer {
-	margin-top: auto;
-}
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .footer {
+    margin-top: auto;
+  }
 </style>
 <div class="container">
   <main>Main content</main>
@@ -134,19 +134,19 @@ Again, we’ll use Flexbox to implement it:
 
 ```html static
 <style>
-.container {
-  display: flex;
-  align-items: flex-start;
-}
-.image {
-  margin-right: 16px;
-}
-.body {
-  flex: 1;
-}
+  .container {
+    display: flex;
+    align-items: flex-start;
+  }
+  .image {
+    margin-right: 16px;
+  }
+  .body {
+    flex: 1;
+  }
 </style>
 <div class="container">
-  <img class="image" src="dachshund.jpg">
+  <img class="image" src="dachshund.jpg" />
   <p class="body">Main content</p>
 </div>
 ```

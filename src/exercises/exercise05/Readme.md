@@ -13,7 +13,7 @@ We have already used the [space](https://jxnblk.com/styled-system/api#space) fun
 ```js static
 import { Box } from '@rebass/grid';
 
-<Box is="section" p={2} mb={4}>
+<Box as="section" p={2} mb={4}>
   <Button>Hello React!</Button>
 </Box>;
 ```
@@ -29,7 +29,7 @@ import styled from 'styled-components';
 import { Box } from '@rebass/grid';
 
 const Card = styled(Box).attrs({
-  is: 'section',
+  as: 'section',
   p: 2,
   mb: 4
 })`
@@ -219,14 +219,14 @@ One solution is to use [a negative margin](https://medium.com/@justintulk/why-cs
 
 ```html static
 <style>
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -8px;
-}
-.item {
-  padding: 8px;
-}
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px;
+  }
+  .item {
+    padding: 8px;
+  }
 </style>
 <div class="container">
   <div class="item">Item 1</div>
@@ -308,11 +308,11 @@ CSS Grid has a thing called _gap_ (`grid-gap` property), which is exactly what w
 
 ```html static
 <style>
-.container {
-  display: grid;
-  grid-gap: 8px;
-  grid-template-columns: 1fr 1fr;
-}
+  .container {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 1fr 1fr;
+  }
 </style>
 <div class="container">
   <div>Item 1</div>
@@ -326,7 +326,7 @@ CSS Grid has a thing called _gap_ (`grid-gap` property), which is exactly what w
 ```jsx static
 import Stack from 'stack-styled'
 
-<Stack is="section" gap={4}>
+<Stack as="section" gap={4}>
   <Button>Hello React!</Button>
   <Button>Hello Stack Styled!</Button>
 </Stack>;

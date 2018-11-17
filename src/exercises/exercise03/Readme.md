@@ -12,16 +12,16 @@ The result should look like this:
 const Heading = require('../../components/core/Heading').default;
 const Text = require('../../components/core/Text').default;
 <>
-  <Heading size="xxl" is="h1">
+  <Heading size="xxl" as="h1">
     Heading 1
   </Heading>
-  <Heading size="xl" is="h2">
+  <Heading size="xl" as="h2">
     Heading 2
   </Heading>
-  <Heading size="l" is="h3">
+  <Heading size="l" as="h3">
     Heading 3
   </Heading>
-  <Heading size="base" is="h4">
+  <Heading size="base" as="h4">
     Heading 4
   </Heading>
   <Text>Normal text</Text>
@@ -49,9 +49,10 @@ Create a component that renders different levels of headings:
 - `heading` font family;
 - `normal` font weight;
 - `base` color;
-- font size is defined by a component prop (one of `m`, `l`, `xl` or `xxl`).
+- font size is defined by a component prop (one of `m`, `l`, `xl` or `xxl`);
+- HTML element can be changed independently from the font size.
 
-Render all sizes with `h1` element — we’ll fix that soon.
+**Hint:** We need to change heading styles and an HTML element independently, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3), where the heading is placed in an app, and doesn’t always match the style. Use styled-components [`as` props](https://www.styled-components.com/docs/api#as-polymorphic-prop) to change an HTML element, used to render a component.
 
 <details>
  <summary>Solution</summary>
@@ -68,79 +69,19 @@ const Heading = styled.h1`
   color: ${props => props.theme.colors.base};
 `;
 
-/** @component */
-export default Heading;
-```
-
-</details>
-
-### 3.2. Making an HTML element configurable
-
-We need to change heading styles and an HTML element independently, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3), where the heading is placed in an app, and doesn’t always match the style.
-
-We can implement it like this:
-
-```js static
-const Base = ({ is: Component, ...props }) => (
-  <Component {...props} />
-);
-
-const Heading = styled(Base)`
-  /* Our styles */
-`;
-```
-
-And then we’ll be able to use this component like so:
-
-```jsx static
-<Heading is="h2" />
-```
-
-**Hint:** [styled-components 4](https://medium.com/styled-components/announcing-styled-components-v4-better-faster-stronger-3fe1aba1a112) will have a built-in `as` props to change an HTML element.
-
-#### The task
-
-Add a prop (`is`) that will change an HTML element used to render the text.
-
-<details>
- <summary>Solution</summary>
-
-```js static
-import React from 'react';
-import styled from 'styled-components';
-
-const Base = ({ is: Component, ...props }) => (
-  <Component {...props} />
-);
-
-const Heading = styled(Base)`
-  margin: 0;
-  line-height: 1.2;
-  font-weight: normal;
-  font-family: ${props => props.theme.fonts.heading};
-  font-size: ${props => props.theme.fontSizes[props.size]};
-  color: ${props => props.theme.colors.base};
-`;
-
 Heading.propTypes = {
   /** Custom component or HTML tag */
-  is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm']),
   children: PropTypes.node
 };
-
-Heading.defaultProps = {
-  is: 'h1',
-  size: 'xxl'
-};
-
 /** @component */
 export default Heading;
 ```
 
 </details>
 
-### 3.3. Making margins customizable
+### 3.2. Making margins customizable
 
 Usually we need some whitespace below the heading. We can hardcode values for each heading size, but often whitespace depends on the context, where the heading is used.
 
@@ -186,11 +127,7 @@ Add props `m`, `mt`, `mr`, `mb` and `ml` to change `margin`, `margin-top`, `marg
 ```js static
 import styled from 'styled-components';
 
-const Base = ({ is: Component, ...props }) => (
-  <Component {...props} />
-);
-
-const Heading = styled(Base)`
+const Heading = styled.h1`
   margin: ${props => props.theme.space[props.m]};
   margin-top: ${props => props.theme.space[props.mt]};
   margin-right: ${props => props.theme.space[props.mr]};
@@ -205,7 +142,6 @@ const Heading = styled(Base)`
 
 Heading.defaultProps = {
   m: 0,
-  is: 'h1',
   size: 'xxl'
 };
 
@@ -215,7 +151,7 @@ export default Heading;
 
 </details>
 
-### 3.4. Introducing styled-system
+### 3.3. Introducing styled-system
 
 [Styled-system](http://jxnblk.com/styled-system/) is a collection of utility functions that allow you to control styles of your component using props.
 
@@ -242,11 +178,7 @@ Replace all custom margins with the `space` function from styled-system.
 import styled from 'styled-components';
 import { space } from 'styled-system';
 
-const Base = ({ is: Component, ...props }) => (
-  <Component {...props} />
-);
-
-const Heading = styled(Base)`
+const Heading = styled.h1`
   ${space};
   /* Other styles */
 `;
@@ -257,7 +189,7 @@ export default Heading;
 
 </details>
 
-### 3.5. Simplifying styles
+### 3.4. Simplifying styles
 
 Converting props to styles isn’t the only feature of styled-system: [themeGet](http://jxnblk.com/styled-system/api#themeget) function can save you a few keystrokes when accessing the theme values, so instead of writing `props => props.theme.colors.base` you could write:
 
@@ -296,7 +228,7 @@ export default Heading;
 
 </details>
 
-### 3.6. Creating a generic text component
+### 3.5. Creating a generic text component
 
 Now we know enough to easily create customizable components that use many theme values.
 
@@ -317,13 +249,8 @@ The `variant` prop is used to change text style.
  <summary>Solution</summary>
 
 ```jsx static
-import React from 'react';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
-
-const Base = ({ is: Component, ...props }) => (
-  <Component {...props} />
-);
 
 const getFontSize = variant =>
   ({
@@ -340,7 +267,7 @@ const getColor = variant =>
     error: 'error'
   }[variant]);
 
-const Text = styled(Base)`
+const Text = styled.p`
   margin: 0;
   line-height: ${themeGet('lineHeights.base')};
   font-family: ${themeGet('fonts.base')};
@@ -351,7 +278,7 @@ const Text = styled(Base)`
 
 Text.propTypes = {
   /** Custom component or HTML tag */
-  is: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   /** Variation */
   variant: PropTypes.oneOf([
     'base',
@@ -363,7 +290,6 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
-  is: 'p',
   variant: 'base'
 };
 
