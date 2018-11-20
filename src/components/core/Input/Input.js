@@ -9,7 +9,7 @@ const Input = styled.input`
 	display: block;
 	width: 100%;
 	margin: 0;
-	padding: ${themeGet('space.2')};
+	padding: ${themeGet('space.3')};
 	border: 1px solid ${themeGet('colors.primary')};
 	border-radius: ${themeGet('radii.base')};
 	font-family: ${themeGet('fonts.base')};

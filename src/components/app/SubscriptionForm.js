@@ -27,7 +27,7 @@ const SubscriptionForm = ({
 			</Text>
 		) : (
 			<Form onSubmit={onSubmit}>
-				<Stack gap={2} mb={1} gridTemplateColumns={['1fr', '1fr auto']}>
+				<Stack gap={3} mb={2} gridTemplateColumns={['1fr', '1fr auto']}>
 					<Input
 						type="email"
 						value={email}

@@ -4,7 +4,7 @@ import Stack from 'stack-styled';
 import Dog from './Dog';
 
 const Dogs = ({ dogs }) => (
-	<Stack gap={3} minWidth={200}>
+	<Stack gap={4} minWidth={200}>
 		{dogs.map(dog => (
 			<Dog key={dog.id} dog={dog} />
 		))}

@@ -9,7 +9,7 @@ import Text from '../Text';
 const Widget = ({ label, children }) => {
 	return (
 		<Text as="label">
-			<Box mb={2}>{label}</Box>
+			<Box mb={3}>{label}</Box>
 			{children}
 		</Text>
 	);

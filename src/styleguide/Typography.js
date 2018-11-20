@@ -14,7 +14,7 @@ const FontSizeSample = styled.p`
 `;
 
 const FontSample = ({ fontSize, children }) => (
-	<Box mr={2}>
+	<Box mr={3}>
 		<FontSizeSample fontSize={fontSize}>
 			{children}
 			<Text variant="tertiary" as="span">

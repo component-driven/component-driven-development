@@ -191,7 +191,7 @@ const Media = styled.div`
 `;
 
 const Image = styled.div`
-  margin-right: ${props => props.theme.space[3]}px;
+  margin-right: ${props => props.theme.space[4]}px;
 `;
 
 const Body = styled.footer`

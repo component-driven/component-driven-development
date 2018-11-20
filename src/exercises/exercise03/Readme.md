@@ -89,7 +89,7 @@ We can remove margins from our `Heading` component and define them where we use
 
 ```jsx static
 const Container = styled.div`
-  margin-bottom: ${props => props.theme.space[5]};
+  margin-bottom: ${props => props.theme.space[6]};
 `
 <Container>
   <Heading size="xl">The quick brown fox</Heading>
@@ -102,7 +102,7 @@ We can [extend](https://www.styled-components.com/docs/basics#extending-styles) 
 
 ```jsx static
 const HeadingWithMargin = Heading.extend`
-  margin-bottom: ${props => props.theme.space[5]};
+  margin-bottom: ${props => props.theme.space[6]};
 `
 <HeadingWithMargin size="xl">The quick brown fox</HeadingWithMargin>
 ```
@@ -112,7 +112,7 @@ But that's not much better.
 Let’s make the whitespace part of the component API:
 
 ```jsx static
-<Heading size="xl" mb={4}>
+<Heading size="xl" mb={5}>
   The quick brown fox
 </Heading>
 ```

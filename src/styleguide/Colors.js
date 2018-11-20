@@ -7,7 +7,7 @@ import Text from '../components/core/Text';
 
 const { colors } = theme;
 
-const Swatch = styled(Box).attrs({ p: 3 })`
+const Swatch = styled(Box).attrs({ p: 4 })`
 	width: 100%;
 	height: 100px;
 	background: ${props => props.color};

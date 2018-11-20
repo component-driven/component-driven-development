@@ -10,7 +10,7 @@ const getBgColor = variant =>
  * A button.
  */
 const Button = styled.button`
-	padding: ${themeGet('space.2')} ${themeGet('space.3')};
+	padding: ${themeGet('space.3')} ${themeGet('space.4')};
 	border: 1px solid ${themeGet('colors.primary')};
 	border-radius: ${themeGet('radii.base')};
 	font-family: ${themeGet('fonts.base')};

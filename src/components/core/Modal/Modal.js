@@ -29,10 +29,10 @@ ModalBase.propTypes = {
 };
 
 const Modal = styled(ModalBase)`
-	top: ${themeGet('space.5')};
-	left: ${themeGet('space.5')};
-	right: ${themeGet('space.5')};
-	bottom: ${themeGet('space.5')};
+	top: ${themeGet('space.6')};
+	left: ${themeGet('space.6')};
+	right: ${themeGet('space.6')};
+	bottom: ${themeGet('space.6')};
 	position: absolute;
 	background-color: ${themeGet('colors.bg')};
 	border: 1px solid ${themeGet('colors.light')};

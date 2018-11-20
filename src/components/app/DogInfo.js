@@ -27,7 +27,7 @@ const getQualities = values =>
 
 const DogInfo = ({ dog, ...props }) => (
 	<Flex>
-		<Box mr="2">
+		<Box mr={3}>
 			<Text>
 				About the breed:{' '}
 				<Group separator=", " inline>

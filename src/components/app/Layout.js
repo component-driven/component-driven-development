@@ -10,15 +10,15 @@ import SubscriptionForm from '../app/SubscriptionFormContainer';
 
 const Layout = () => (
 	<Page>
-		<Box p={3}>
-			<Heading size="xxl" as="h1" mb={1}>
+		<Box p={4}>
+			<Heading size="xxl" as="h1" mb={2}>
 				Dog Finder <span aria-hidden="true">🐶</span>
 			</Heading>
-			<Box mb={4}>
+			<Box mb={5}>
 				<DogFinder />
 			</Box>
-			<Box mb={4}>
-				<Heading size="l" as="h2" mb={2}>
+			<Box mb={5}>
+				<Heading size="l" as="h2" mb={3}>
 					Subscribe to our newsletter!
 				</Heading>
 				<Panel>
@@ -27,7 +27,7 @@ const Layout = () => (
 			</Box>
 		</Box>
 		<Page.Footer>
-			<Box px={3} py={2}>
+			<Box px={4} py={3}>
 				<Footer />
 			</Box>
 		</Page.Footer>

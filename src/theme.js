@@ -49,13 +49,14 @@ export default {
 	},
 	space: [
 		0,
-		'0.25rem',
-		'0.5rem',
-		'1rem',
-		'2rem',
-		'4rem',
-		'8rem',
-		'16rem',
-		'32rem',
+		'0.125rem', // 2px
+		'0.25rem', // 4px
+		'0.5rem', // 8px
+		'1rem', // 16px
+		'2rem', // 32px
+		'4rem', // 64px
+		'8rem', // 128px
+		'16rem', // 256px
+		'32rem', // 512px
 	],
 };

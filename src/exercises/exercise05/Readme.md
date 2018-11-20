@@ -13,7 +13,7 @@ We have already used the [space](https://jxnblk.com/styled-system/api#space) fun
 ```js static
 import { Box } from '@rebass/grid';
 
-<Box as="section" p={2} mb={4}>
+<Box as="section" p={3} mb={5}>
   <Button>Hello React!</Button>
 </Box>;
 ```
@@ -30,8 +30,8 @@ import { Box } from '@rebass/grid';
 
 const Card = styled(Box).attrs({
   as: 'section',
-  p: 2,
-  mb: 4
+  p: 3,
+  mb: 5
 })`
   background: ghostwhite;
   border-radius: 3px;
@@ -71,7 +71,7 @@ const Input = require('../../components/core/Input').default;
       aria-label="Email"
     />
   </Box>
-  <Box pl={2}>
+  <Box pl={3}>
     <Button variant="primary" type="submit">
       Subscribe
     </Button>
@@ -110,7 +110,7 @@ const SubscriptionForm = () => (
           aria-label="Email"
         />
       </Box>
-      <Box pl={2}>
+      <Box pl={3}>
         <Button type="submit" variant="primary">
           Subscribe
         </Button>
@@ -160,7 +160,7 @@ const Input = require('../../components/core/Input').default;
       aria-label="Email"
     />
   </Box>
-  <Box pl={[0, 2]} pt={[2, 0]} width={[1, 'auto']}>
+  <Box pl={[0, 3]} pt={[3, 0]} width={[1, 'auto']}>
     <Button variant="primary" type="submit">
       Subscribe
     </Button>
@@ -197,7 +197,7 @@ const SubscriptionForm = () => (
           aria-label="Email"
         />
       </Box>
-      <Box pl={[0, 2]} pt={[2, 0]} width={[1, 'auto']}>
+      <Box pl={[0, 3]} pt={[3, 0]} width={[1, 'auto']}>
         <Button type="submit" variant="primary">
           Subscribe
         </Button>
@@ -243,8 +243,8 @@ The result should look like this:
 const { Flex, Box } = require('@rebass/grid');
 const Button = require('../../components/core/Button').default;
 const Input = require('../../components/core/Input').default;
-<Flex m={-1} flexWrap="wrap">
-  <Box p={1} flex={1}>
+<Flex m={-2} flexWrap="wrap">
+  <Box p={2} flex={1}>
     <Input
       type="email"
       value=""
@@ -253,7 +253,7 @@ const Input = require('../../components/core/Input').default;
       aria-label="Email"
     />
   </Box>
-  <Box p={1} width={[1, 'auto']}>
+  <Box p={2} width={[1, 'auto']}>
     <Button variant="primary" type="submit">
       Subscribe
     </Button>
@@ -278,8 +278,8 @@ import Input from '../../components/core/Input';
 
 const SubscriptionForm = () => (
   <form>
-    <Flex m={-1} flexWrap="wrap">
-      <Box p={1} flex={1}>
+    <Flex m={-2} flexWrap="wrap">
+      <Box p={2} flex={1}>
         <Input
           type="email"
           value=""
@@ -288,7 +288,7 @@ const SubscriptionForm = () => (
           aria-label="Email"
         />
       </Box>
-      <Box p={1} width={[1, 'auto']}>
+      <Box p={2} width={[1, 'auto']}>
         <Button type="submit" variant="primary">
           Subscribe
         </Button>
@@ -326,7 +326,7 @@ CSS Grid has a thing called _gap_ (`grid-gap` property), which is exactly what w
 ```jsx static
 import Stack from 'stack-styled'
 
-<Stack as="section" gap={4}>
+<Stack as="section" gap={5}>
   <Button>Hello React!</Button>
   <Button>Hello Stack Styled!</Button>
 </Stack>;
@@ -340,7 +340,7 @@ The result should look like this:
 const Stack = require('stack-styled').default;
 const Button = require('../../components/core/Button').default;
 const Input = require('../../components/core/Input').default;
-<Stack gap={2} gridTemplateColumns={['1fr', '1fr auto']}>
+<Stack gap={3} gridTemplateColumns={['1fr', '1fr auto']}>
   <Input
     type="email"
     value=""
@@ -371,7 +371,7 @@ import Input from '../../components/core/Input';
 
 const SubscriptionForm = () => (
   <form>
-    <Stack gap={2} gridTemplateColumns={['1fr', '1fr auto']}>
+    <Stack gap={3} gridTemplateColumns={['1fr', '1fr auto']}>
       <Input
         type="email"
         value=""

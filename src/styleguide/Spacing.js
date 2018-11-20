@@ -19,8 +19,8 @@ const SpacingExample = styled(Panel)`
 `;
 
 const SpaceSample = ({ space, children }) => (
-	<Flex mb={3}>
-		<Box width={theme.space[6]}>{children}</Box>
+	<Flex mb={4}>
+		<Box width={theme.space[7]}>{children}</Box>
 		<SpacingExample space={space} />
 	</Flex>
 );

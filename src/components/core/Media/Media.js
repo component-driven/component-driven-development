@@ -7,7 +7,7 @@ const Media = styled.div`
 `;
 
 const Image = styled.footer`
-	${({ theme }) => space({ theme, mr: 3 })};
+	${({ theme }) => space({ theme, mr: 4 })};
 `;
 
 const Body = styled.footer`

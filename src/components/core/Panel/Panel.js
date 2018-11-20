@@ -7,7 +7,7 @@ import { Flex } from '@rebass/grid';
  * A visually distinctive block of content.
  */
 const Panel = styled(Flex).attrs({
-	p: 3,
+	p: 4,
 })`
 	border: 1px solid ${themeGet('colors.light')};
 	border-radius: ${themeGet('radii.base')};
