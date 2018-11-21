@@ -1,4 +1,4 @@
 ```jsx noeditor
-const Typography = require('../src/styleguide/Typography').default;
+import Typography from '../src/styleguide/Typography';
 <Typography />;
 ```

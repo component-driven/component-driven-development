@@ -38,10 +38,10 @@
     "cross-env": "^5.2.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "gh-pages": "^2.0.1",
-    "husky": "^1.1.4",
-    "lint-staged": "^8.0.5",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
-    "react-styleguidist": "^8.0.5"
+    "react-styleguidist": "^9.0.0-beta1"
   },
   "lint-staged": {
     "*.{js}": [

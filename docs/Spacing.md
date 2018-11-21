@@ -1,4 +1,4 @@
 ```jsx noeditor
-const Spacing = require('../src/styleguide/Spacing').default;
+import Spacing from '../src/styleguide/Spacing';
 <Spacing />;
 ```

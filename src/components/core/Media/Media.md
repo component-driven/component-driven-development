@@ -1,4 +1,6 @@
 ```js
+import Text from '../Text';
+import DogPhoto from '../../app/DogPhoto';
 <Media>
   <Media.Image>
     <DogPhoto dog={{ id: 'saluki', name: 'Saluki' }} />

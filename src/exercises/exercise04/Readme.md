@@ -21,8 +21,7 @@ By creating a component, we can hide the complexity from the user, reduce code d
 The result should look like this:
 
 ```jsx
-const TruncatedText = require('../../components/core/TruncatedText')
-  .default;
+import TruncatedText from '../../components/core/TruncatedText';
 <TruncatedText width={200}>
   The quick brown fox jumps over the lazy dog
 </TruncatedText>;
@@ -82,7 +81,7 @@ We’ll [use Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/sti
 The result should look like this:
 
 ```jsx
-const Page = require('../../components/core/Page').default;
+import Page from '../../components/core/Page';
 <div
   style={{
     height: 100,
@@ -156,9 +155,9 @@ Again, we’ll use Flexbox to implement it:
 The result should look like this:
 
 ```jsx
-const Media = require('../../components/core/Media').default;
-const Text = require('../../components/core/Text').default;
-const DogPhoto = require('../../components/app/DogPhoto').default;
+import Media from '../../components/core/Media';
+import Text from '../../components/core/Text';
+import DogPhoto from '../../components/app/DogPhoto';
 <Media>
   <Media.Image>
     <DogPhoto dog={{ id: 'saluki', name: 'Saluki' }} />

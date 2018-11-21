@@ -9,8 +9,8 @@ Run `npm start` and navigate to _Exercise 3_ in the sidebar. Use files in the `s
 The result should look like this:
 
 ```js noeditor
-const Heading = require('../../components/core/Heading').default;
-const Text = require('../../components/core/Text').default;
+import Heading from '../../components/core/Heading';
+import Text from '../../components/core/Text';
 <>
   <Heading size="xxl" as="h1">
     Heading 1
@@ -36,7 +36,7 @@ const Text = require('../../components/core/Text').default;
 Have a look at our [typography scale](https://component-driven.github.io/component-driven-development/styleguide/#typography):
 
 ```jsx noeditor
-const Typography = require('../../styleguide/Typography').default;
+import Typography from '../../styleguide/Typography';
 <Typography />;
 ```
 

@@ -1,4 +1,4 @@
 ```jsx noeditor
-const Colors = require('../src/styleguide/Colors').default;
+import Colors from '../src/styleguide/Colors';
 <Colors />;
 ```

@@ -9,7 +9,7 @@ Run `npm start` and navigate to _Exercise 2_ in the sidebar. Use files in the `s
 The result should look like this:
 
 ```js noeditor
-const Button = require('../../components/core/Button').default;
+import Button from '../../components/core/Button';
 <>
   <Button variant="primary">Primary</Button>{' '}
   <Button>Secondary</Button>{' '}

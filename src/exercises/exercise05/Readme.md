@@ -58,9 +58,9 @@ import { Box, Flex } from '@rebass/grid'
 The result should look like this:
 
 ```jsx noeditor
-const { Flex, Box } = require('@rebass/grid');
-const Button = require('../../components/core/Button').default;
-const Input = require('../../components/core/Input').default;
+import { Flex, Box } from '@rebass/grid';
+import Button from '../../components/core/Button';
+import Input from '../../components/core/Input';
 <Flex>
   <Box flex={1}>
     <Input
@@ -147,9 +147,9 @@ All Rebass Grid props are [responsive](https://github.com/rebassjs/grid#responsi
 The result should look like this (change the browser window width to see the effect):
 
 ```jsx noeditor
-const { Flex, Box } = require('@rebass/grid');
-const Button = require('../../components/core/Button').default;
-const Input = require('../../components/core/Input').default;
+import { Flex, Box } from '@rebass/grid';
+import Button from '../../components/core/Button';
+import Input from '../../components/core/Input';
 <Flex flexWrap="wrap">
   <Box flex={1}>
     <Input
@@ -240,9 +240,9 @@ One solution is to use [a negative margin](https://medium.com/@justintulk/why-cs
 The result should look like this:
 
 ```jsx noeditor
-const { Flex, Box } = require('@rebass/grid');
-const Button = require('../../components/core/Button').default;
-const Input = require('../../components/core/Input').default;
+import { Flex, Box } from '@rebass/grid';
+import Button from '../../components/core/Button';
+import Input from '../../components/core/Input';
 <Flex m={-2} flexWrap="wrap">
   <Box p={2} flex={1}>
     <Input
@@ -337,9 +337,9 @@ import Stack from 'stack-styled'
 The result should look like this:
 
 ```jsx noeditor
-const Stack = require('stack-styled').default;
-const Button = require('../../components/core/Button').default;
-const Input = require('../../components/core/Input').default;
+import Stack from 'stack-styled';
+import Button from '../../components/core/Button';
+import Input from '../../components/core/Input';
 <Stack gap={3} gridTemplateColumns={['1fr', '1fr auto']}>
   <Input
     type="email"
