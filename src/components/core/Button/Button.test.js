@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Provider from '../../../Provider';
+import Provider from '../../../ThemeProvider';
 import Button from './Button';
 
 it('renders without crashing', () => {

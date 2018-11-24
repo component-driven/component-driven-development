@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
 const getColor = variant => ({ primary: 'bg', secondary: 'primary' }[variant]);
-const getBgColor = variant =>
-	({ primary: 'primary', secondary: 'bg' }[variant]);
+const getBgColor = variant => ({ primary: 'primary' }[variant]);
 
 /**
  * A button.
@@ -16,7 +15,8 @@ const Button = styled.button`
 	font-family: ${themeGet('fonts.base')};
 	font-size: ${themeGet('fontSizes.base')};
 	color: ${props => props.theme.colors[getColor(props.variant)]};
-	background-color: ${props => props.theme.colors[getBgColor(props.variant)]};
+	background-color: ${props =>
+		props.theme.colors[getBgColor(props.variant)] || 'transparent'};
 	user-select: none;
 
 	&:hover:enabled,

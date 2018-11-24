@@ -1,15 +1,15 @@
 import React from 'react';
-import Provider from './Provider';
+import ThemeProvider from './ThemeProvider';
 import GlobalStyle from './styles';
 import Layout from './components/app/Layout';
 
 const App = () => (
-	<Provider>
+	<ThemeProvider>
 		<>
 			<GlobalStyle />
 			<Layout />
 		</>
-	</Provider>
+	</ThemeProvider>
 );
 
 export default App;
