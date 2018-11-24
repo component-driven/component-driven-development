@@ -12,7 +12,7 @@ const fontSizes = {
 	xs: scale(-0.75),
 };
 
-export default {
+const theme = {
 	fonts: {
 		base: 'Helvetica Neue, Helvetica, Arial, sans-serif',
 		heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
@@ -39,6 +39,7 @@ export default {
 		hover: '#ed9dc5',
 		focus: transparentize(0.4, '#ed9dc5'),
 		error: '#d0453e',
+		rating: '#f8c124',
 	},
 	borders: {
 		none: 'none',
@@ -59,4 +60,23 @@ export default {
 		'16rem', // 256px
 		'32rem', // 512px
 	],
+};
+
+export default theme;
+
+export const inverted = {
+	...theme,
+	colors: {
+		...theme.colors,
+		bg: theme.colors.base,
+		base: theme.colors.bg,
+		primary: theme.colors.bg,
+		focus: transparentize(0.1, theme.colors.hover),
+		// secondary: '#767676',
+		// light: '#ccc',
+		// lighter: '#efefef',
+		// hover: '#ed9dc5',
+		// error: '#d0453e',
+		// rating: '#f8c124',
+	},
 };

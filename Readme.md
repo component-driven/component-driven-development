@@ -64,3 +64,5 @@ Then run:
 [Artem Sapegin](http://sapegin.me), [Andrey Okonetchnikov](http://okonet.ru/) and [contributors](https://github.com/component-driven/component-driven-development/graphs/contributors).
 
 MIT License, see the included [License.md](License.md) file.
+
+Icons: [Ionicons](https://ionicons.com/), [Font Awesome](https://fontawesome.com/).

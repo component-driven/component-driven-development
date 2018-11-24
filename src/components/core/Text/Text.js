@@ -22,6 +22,7 @@ const getColor = variant =>
  */
 const Text = styled.p`
 	margin: 0;
+	font-weight: normal;
 	line-height: ${themeGet('lineHeights.base')};
 	font-family: ${themeGet('fonts.base')};
 	font-size: ${props => props.theme.fontSizes[getFontSize(props.variant)]};
