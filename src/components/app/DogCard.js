@@ -1,17 +1,25 @@
 import React from 'react';
+import Stack from 'stack-styled';
+import Heading from '../core/Heading';
 import Text from '../core/Text';
-import DogPhoto from './DogPhoto';
-import Panel from '../core/Panel';
+import Button from '../core/Button';
+import Image from '../core/Image';
+import Rating from '../core/Rating';
 
 const DogCard = ({ dog, ...props }) => (
-	<Panel {...props} p={3} flexDirection="column" alignItems="center">
-		<DogPhoto dog={dog} />
-		<div>
-			<Text variant="secondary" as="h3">
+	<Stack {...props} gap={4}>
+		<Image src={`images/${dog.image}`} alt={dog.name} />
+		<Stack {...props} gap={2}>
+			<Heading as="h3" size="m">
 				{dog.name}
+			</Heading>
+			<Text variant="secondary">
+				{dog.breed} from {dog.location}
 			</Text>
-		</div>
-	</Panel>
+			<Rating value={dog.rating} />
+		</Stack>
+		<Button variant="primary">Rent {dog.name}</Button>
+	</Stack>
 );
 
 export default DogCard;

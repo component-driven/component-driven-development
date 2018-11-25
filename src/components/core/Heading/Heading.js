@@ -11,7 +11,7 @@ const Heading = styled.h1.attrs({
 	${space};
 	line-height: ${themeGet('lineHeights.heading')};
 	font-family: ${themeGet('fonts.heading')};
-	font-weight: ${themeGet('fontWeights.normal')};
+	font-weight: ${props => props.theme.headingFontWeights[props.size]};
 	font-size: ${props => props.theme.fontSizes[props.size]};
 	color: ${themeGet('colors.base')};
 `;

@@ -25,6 +25,12 @@ const theme = {
 		normal: 400,
 		bold: 700,
 	},
+	headingFontWeights: {
+		xxl: 400,
+		xl: 400,
+		l: 400,
+		m: 700,
+	},
 	lineHeights: {
 		base: 1.5,
 		heading: 1.1,
