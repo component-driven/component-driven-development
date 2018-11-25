@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { color, backgroundSize, backgroundImage } from 'styled-system';
+import {
+	color,
+	backgroundSize,
+	backgroundImage,
+	backgroundPosition,
+} from 'styled-system';
 import { Box } from '@rebass/grid';
 
 const getBackgroundCss = image =>
@@ -14,6 +19,7 @@ const Hero = styled(Box).attrs({
 })`
 	${color};
 	${backgroundSize};
+	${backgroundPosition};
 	${backgroundImage};
 	text-align: center;
 `;

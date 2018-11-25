@@ -4,16 +4,17 @@ import { Box } from '@rebass/grid';
 import Panel from '../core/Panel';
 import Heading from '../core/Heading';
 import Page from '../core/Page';
+import Header from '../app/Header';
 import Footer from '../app/Footer';
 import DogFinder from '../app/DogFinderContainer';
 import SubscriptionForm from '../app/SubscriptionFormContainer';
 
 const Layout = () => (
 	<Page>
+		<Box mb={3}>
+			<Header />
+		</Box>
 		<Box p={4}>
-			<Heading size="xxl" as="h1" mb={2}>
-				Dog Finder <span aria-hidden="true">🐶</span>
-			</Heading>
 			<Box mb={5}>
 				<DogFinder />
 			</Box>

@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Image = ({ alt, src, width, height, ...rest }) => (
-	<img src={src} alt={alt} width={width} height={height} {...rest} />
-);
+const Img = styled.img`
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+`;
+
+const Image = ({ alt, src, ...rest }) => <Img src={src} alt={alt} {...rest} />;
 
 Image.propTypes = {
 	src: PropTypes.string.isRequired,
 	alt: PropTypes.string.isRequired,
-	width: PropTypes.number,
-	height: PropTypes.number,
 };
 
 export default Image;

@@ -17,6 +17,7 @@ const getSvg = color =>
 const Select = styled.select`
 	appearance: none;
 	user-select: none;
+	width: ${props => props.fullWidth && '100%'};
 	padding-top: ${themeGet('space.3')};
 	padding-right: ${themeGet('space.5')};
 	padding-bottom: ${themeGet('space.3')};
@@ -47,7 +48,8 @@ const Select = styled.select`
 `;
 
 Select.propTypes = {
-	value: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	fullWidth: PropTypes.bool,
 	disabled: PropTypes.bool,
 };
 

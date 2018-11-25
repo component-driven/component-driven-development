@@ -15,6 +15,10 @@ const Link = styled.a`
 	&:active {
 		color: ${props => props.theme.colors.hover};
 	}
+	&:focus {
+		outline: 1px dashed ${props => props.theme.colors.focus};
+		outline-offset: 2px;
+	}
 `;
 
 Link.propTypes = {
