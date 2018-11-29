@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { Flex, Box } from '@rebass/grid';
 import Select from '../core/Select';
 import Widget from '../core/Widget';
-import Dogs from './Dogs';
+import CardList from './CardList';
+import DogCard from './DogCard';
 
 const FilterSelect = ({ name, options, value, onChange }) => (
 	<Select
@@ -40,7 +41,11 @@ const DogFinder = ({ filterOptions, filters, dogs, onFilterUpdate }) => (
 				</Box>
 			))}
 		</Flex>
-		<Dogs dogs={dogs} />
+		<CardList>
+			{dogs.map(dog => (
+				<DogCard key={dog.id} dog={dog} as="li" />
+			))}
+		</CardList>
 	</React.Fragment>
 );
 

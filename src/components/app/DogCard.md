@@ -1,3 +1,11 @@
 ```jsx
-<DogCard dog={{ id: 'saluki', name: 'Saluki' }} />
+<DogCard
+  dog={{
+    image: 'tsiri.jpg',
+    name: 'Tsiri',
+    breed: 'Saluki',
+    location: 'Berlin',
+    rating: 6
+  }}
+/>
 ```

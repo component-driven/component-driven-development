@@ -1,11 +1,33 @@
 ```jsx
 <DogFinder
   dogs={[
-    { id: 'saluki', name: 'Saluki' },
-    { id: 'afghan-hound', name: 'Afghan Hound' },
-    { id: 'english-setter', name: 'English Setter' }
+    {
+      image: 'tsiri.jpg',
+      id: 'tsiri',
+      name: 'Tsiri',
+      breed: 'Saluki',
+      location: 'Berlin',
+      rating: 6
+    },
+    {
+      image: 'dessi.jpg',
+      id: 'dessi',
+      name: 'Dessi',
+      breed: 'Dachshund',
+      location: 'Berlin',
+      rating: 6
+    },
+    {
+      image: 'twiggy.jpg',
+      id: 'twiggy',
+      name: 'Twiggy',
+      breed: 'Sheltie',
+      location: 'Berlin',
+      rating: 6
+    }
   ]}
-  filters={{ size: 3, energy: 3, barkness: 3 }}
+  filters={{ location: 'Berlin', size: 3, rating: 3 }}
+  filterOptions={[]}
   onFilterUpdate={() => {}}
 />
 ```

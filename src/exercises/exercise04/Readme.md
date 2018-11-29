@@ -157,10 +157,10 @@ The result should look like this:
 ```jsx
 import Media from '../../components/core/Media';
 import Text from '../../components/core/Text';
-import DogPhoto from '../../components/app/DogPhoto';
+import Image from '../../components/core/Image';
 <Media>
   <Media.Image>
-    <DogPhoto dog={{ id: 'saluki', name: 'Saluki' }} />
+    <Image src="images/tsiri.jpg" alt="Saluki" />
   </Media.Image>
   <Media.Body>
     <Text>

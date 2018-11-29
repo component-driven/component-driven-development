@@ -1,9 +1,9 @@
 ```js
 import Text from '../Text';
-import DogPhoto from '../../app/DogPhoto';
+import Image from '../Image';
 <Media>
   <Media.Image>
-    <DogPhoto dog={{ id: 'saluki', name: 'Saluki' }} />
+    <Image src="images/tsiri.jpg" alt="Saluki" />
   </Media.Image>
   <Media.Body>
     <Text>
@@ -12,5 +12,5 @@ import DogPhoto from '../../app/DogPhoto';
       by sight—and run their quarry down to kill or retrieve it.
     </Text>
   </Media.Body>
-</Media>
+</Media>;
 ```

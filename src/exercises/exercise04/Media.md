@@ -1,9 +1,9 @@
 ```js
-const Text = require('../../components/core/Text').default;
-const DogPhoto = require('../../components/app/DogPhoto').default;
+import Text from '../../components/core/Text';
+import Image from '../../components/core/Image';
 <Media>
   <Media.Image>
-    <DogPhoto dog={{ id: 'saluki', name: 'Saluki' }} />
+    <Image src="images/tsiri.jpg" alt="Saluki" />
   </Media.Image>
   <Media.Body>
     <Text>
