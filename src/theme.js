@@ -78,11 +78,6 @@ export const inverted = {
 		base: theme.colors.bg,
 		primary: theme.colors.bg,
 		focus: transparentize(0.1, theme.colors.hover),
-		// secondary: '#767676',
-		// light: '#ccc',
-		// lighter: '#efefef',
-		// hover: '#ed9dc5',
-		// error: '#d0453e',
-		// rating: '#f8c124',
+		secondary: '#ccc',
 	},
 };

@@ -1,36 +1,26 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import { Box } from '@rebass/grid';
-import Panel from '../core/Panel';
-import Heading from '../core/Heading';
 import Page from '../core/Page';
 import Header from '../app/Header';
 import Footer from '../app/Footer';
+import Features from '../app/Features';
 import DogFinder from '../app/DogFinderContainer';
-import SubscriptionForm from '../app/SubscriptionFormContainer';
 
 const Layout = () => (
 	<Page>
-		<Box mb={3}>
+		<Box mb={5}>
 			<Header />
 		</Box>
 		<Box p={4}>
 			<Box mb={5}>
-				<DogFinder />
+				<Features />
 			</Box>
 			<Box mb={5}>
-				<Heading size="l" as="h2" mb={3}>
-					Subscribe to our newsletter!
-				</Heading>
-				<Panel>
-					<SubscriptionForm />
-				</Panel>
+				<DogFinder />
 			</Box>
 		</Box>
 		<Page.Footer>
-			<Box px={4} py={3}>
-				<Footer />
-			</Box>
+			<Footer />
 		</Page.Footer>
 	</Page>
 );

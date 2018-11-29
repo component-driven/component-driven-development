@@ -14,12 +14,14 @@ const Heading = styled.h1.attrs({
 	font-weight: ${props => props.theme.headingFontWeights[props.size]};
 	font-size: ${props => props.theme.fontSizes[props.size]};
 	color: ${themeGet('colors.base')};
+	text-align: ${props => props.align};
 `;
 
 Heading.propTypes = {
 	/** Custom component or HTML tag */
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 	size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm']),
+	align: PropTypes.oneOf(['left', 'center', 'right']),
 	children: PropTypes.node,
 };
 

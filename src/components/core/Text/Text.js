@@ -27,6 +27,7 @@ const Text = styled.p`
 	font-family: ${themeGet('fonts.base')};
 	font-size: ${props => props.theme.fontSizes[getFontSize(props.variant)]};
 	color: ${props => props.theme.colors[getColor(props.variant)]};
+	text-align: ${props => props.align};
 `;
 
 Text.propTypes = {
@@ -34,6 +35,7 @@ Text.propTypes = {
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 	/** Variation */
 	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
+	align: PropTypes.oneOf(['left', 'center', 'right']),
 	children: PropTypes.node,
 };
 

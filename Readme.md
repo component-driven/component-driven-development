@@ -65,4 +65,6 @@ Then run:
 
 MIT License, see the included [License.md](License.md) file.
 
-Icons: [Ionicons](https://ionicons.com/), [Font Awesome](https://fontawesome.com/).
+Icons: [Ionicons](https://ionicons.com/), [Font Awesome](https://fontawesome.com/), [Ilya Kolbin](https://thenounproject.com/kolbin.ia/), [Denis Sazhin](https://thenounproject.com/iconka/).
+
+Photos: [Unsplash](https://unsplash.com/), [Artem Sapegin](http://morning.photos/).
