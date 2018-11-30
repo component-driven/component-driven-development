@@ -38,7 +38,7 @@ const Header = () => (
 			</Flex>
 			<Box py={7}>
 				<Heading level={2} size="xl" mb={5}>
-					Good boys and girs to brighten your office
+					Good boys and girls to brighten your office
 				</Heading>
 			</Box>
 		</Hero>
