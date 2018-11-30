@@ -9,9 +9,8 @@ import { Flex } from '@rebass/grid';
 const Panel = styled(Flex).attrs({
 	p: 4,
 })`
-	border: 1px solid ${themeGet('colors.light')};
 	border-radius: ${themeGet('radii.base')};
-	background: transparent;
+	background: ${themeGet('colors.bg')};
 `;
 
 Panel.propTypes = {
