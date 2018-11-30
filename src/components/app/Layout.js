@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box } from '@rebass/grid';
+import Heading from '../core/Heading';
 import Page from '../core/Page';
 import Header from '../app/Header';
 import Footer from '../app/Footer';
@@ -11,13 +12,14 @@ const Layout = () => (
 		<Box mb={5}>
 			<Header />
 		</Box>
-		<Box p={4}>
-			<Box mb={5}>
-				<Features />
-			</Box>
-			<Box mb={5}>
-				<DogFinder />
-			</Box>
+		<Box px={4} mb={5}>
+			<Features />
+		</Box>
+		<Box px={4} py={5} bg="lighter">
+			<Heading as="h2" size="l" mb={4} align="center">
+				Find the best fluffy coworker for you
+			</Heading>
+			<DogFinder />
 		</Box>
 		<Page.Footer>
 			<Footer />
