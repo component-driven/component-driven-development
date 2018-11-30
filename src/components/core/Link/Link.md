@@ -14,5 +14,5 @@ import Text from '../Text';
     Terms of Service
   </Link>
   .
-</Text>
+</Text>;
 ```
