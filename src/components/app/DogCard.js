@@ -11,7 +11,7 @@ import Panel from '../core/Panel';
 const DogCard = ({ dog, ...props }) => (
 	<Panel>
 		<Stack {...props} gap={4}>
-			<Box m={-4}>
+			<Box mt={-4} ml={-4} mr={-4}>
 				<Image src={`images/${dog.image}`} alt={dog.name} />
 			</Box>
 			<Stack {...props} gap={2}>

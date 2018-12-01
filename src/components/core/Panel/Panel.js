@@ -11,6 +11,8 @@ const Panel = styled(Flex).attrs({
 })`
 	border-radius: ${themeGet('radii.base')};
 	background: ${themeGet('colors.bg')};
+	/* To make border-radius work in full bleed images */
+	overflow: hidden;
 `;
 
 Panel.propTypes = {
