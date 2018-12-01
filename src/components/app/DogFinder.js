@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Flex, Box } from '@rebass/grid';
 import Select from '../core/Select';
 import Widget from '../core/Widget';
+import VisuallyHidden from '../core/VisuallyHidden';
 import CardList from './CardList';
 import DogCard from './DogCard';
 
@@ -27,6 +28,9 @@ const FilterSelect = ({ name, options, value, onChange }) => (
 
 const DogFinder = ({ filterOptions, filters, dogs, onFilterUpdate }) => (
 	<React.Fragment>
+		<VisuallyHidden>
+			<h3>Filters</h3>
+		</VisuallyHidden>
 		<Flex mt={3} mb={5} mx={-3} flexWrap="wrap">
 			{filterOptions.map(({ name, label, options }) => (
 				<Box key={name} width={[1, 1 / 3]} px={3} py={[3, 0]}>
@@ -41,6 +45,9 @@ const DogFinder = ({ filterOptions, filters, dogs, onFilterUpdate }) => (
 				</Box>
 			))}
 		</Flex>
+		<VisuallyHidden>
+			<h3>Search results ({dogs.length} dogs found)</h3>
+		</VisuallyHidden>
 		<CardList>
 			{dogs.map(dog => (
 				<DogCard key={dog.id} dog={dog} as="li" />
