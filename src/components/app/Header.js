@@ -26,18 +26,18 @@ const Header = () => (
 				</Box>
 				<Stack justifyContent="center" gridAutoFlow="column" gap={4} mb={2}>
 					<Text>
-						<Link href="/">Our dogs</Link>
-					</Text>
-					<Text>
 						<Link href="/">How it works</Link>
 					</Text>
 					<Text>
 						<Link href="/">Contact us</Link>
 					</Text>
+					<Text>
+						<Link href="/">Login for dogs</Link>
+					</Text>
 				</Stack>
 			</Flex>
 			<Box py={7}>
-				<Heading level={2} size="xxxl" mb={5}>
+				<Heading as="p" level={2} size="xxxl" mb={5}>
 					Good boys and girls to brighten your office
 				</Heading>
 			</Box>
