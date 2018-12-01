@@ -37,7 +37,7 @@ const Header = () => (
 				</Stack>
 			</Flex>
 			<Box py={7}>
-				<Heading level={2} size="xl" mb={5}>
+				<Heading level={2} size="xxxl" mb={5}>
 					Good boys and girls to brighten your office
 				</Heading>
 			</Box>

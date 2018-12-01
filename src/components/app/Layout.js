@@ -9,14 +9,12 @@ import DogFinder from '../app/DogFinderContainer';
 
 const Layout = () => (
 	<Page>
-		<Box mb={5}>
-			<Header />
-		</Box>
-		<Box px={4} mb={5}>
+		<Header />
+		<Box px={4} py={5}>
 			<Features />
 		</Box>
 		<Box px={4} py={5} bg="lighter">
-			<Heading as="h2" size="l" mb={4} align="center">
+			<Heading as="h2" size="xl" mb={4} align="center">
 				Find the best fluffy coworker for you
 			</Heading>
 			<DogFinder />

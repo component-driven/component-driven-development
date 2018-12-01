@@ -1,9 +1,10 @@
 import { transparentize, modularScale } from 'polished';
 
 const scale = value =>
-	modularScale(value, 1, 'perfectFifth').replace('em', 'rem');
+	modularScale(value, 1, 'majorThird').replace('em', 'rem');
 
 const fontSizes = {
+	xxxl: scale(5),
 	xxl: scale(4),
 	xl: scale(3),
 	l: scale(1),
@@ -26,6 +27,7 @@ const theme = {
 		bold: 700,
 	},
 	headingFontWeights: {
+		xxxl: 400,
 		xxl: 400,
 		xl: 400,
 		l: 400,
