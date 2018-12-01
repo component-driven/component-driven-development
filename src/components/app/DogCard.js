@@ -23,7 +23,11 @@ const DogCard = ({ dog, ...props }) => (
 				</Text>
 				<Rating value={dog.rating} />
 			</Stack>
-			<Button variant="primary">Rent {dog.name}</Button>
+			<Box mt="auto">
+				<Button variant="primary" fullWidth>
+					Rent {dog.name}
+				</Button>
+			</Box>
 		</Stack>
 	</Panel>
 );
