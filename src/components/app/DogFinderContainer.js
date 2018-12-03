@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import {
-	findDogs,
-	getLocations,
-	SIZE_SMALL,
-	SIZE_MEDIUM,
-	SIZE_LARGE,
-} from '../../services/dogsService';
+import { STATUSES, SIZES } from '../../consts';
+import { findDogs, getLocations } from '../../services/dogsService';
 import DogFinder from './DogFinder';
 
 class DogFinderContainer extends Component {
 	unmounted = false;
 	state = {
+		status: STATUSES.IDLE,
 		filters: {
 			location: '',
-			size: SIZE_MEDIUM,
+			size: SIZES.MEDIUM,
 			rating: 4,
 		},
 		locations: [],
@@ -30,9 +26,15 @@ class DogFinderContainer extends Component {
 	}
 
 	fetchDogs = () => {
-		findDogs(this.state.filters).then(
-			dogs => this.unmounted || this.setState({ dogs })
-		);
+		this.setState({ status: STATUSES.LOADING });
+		findDogs(this.state.filters)
+			.then(
+				dogs =>
+					this.unmounted || this.setState({ status: STATUSES.READY, dogs })
+			)
+			.catch(() => {
+				this.setState({ status: STATUSES.FAILURE });
+			});
 	};
 
 	fetchLocations = () => {
@@ -56,9 +58,9 @@ class DogFinderContainer extends Component {
 				label: 'Size',
 				options: [
 					{ value: '', label: 'Any' },
-					{ value: SIZE_SMALL, label: 'Small' },
-					{ value: SIZE_MEDIUM, label: 'Medium' },
-					{ value: SIZE_LARGE, label: 'Large' },
+					{ value: SIZES.SMALL, label: 'Small' },
+					{ value: SIZES.MEDIUM, label: 'Medium' },
+					{ value: SIZES.LARGE, label: 'Large' },
 				],
 			},
 			{
@@ -76,7 +78,6 @@ class DogFinderContainer extends Component {
 	}
 
 	handleFilterUpdate = (field, value) => {
-		console.log('handleFilterUpdate', field, value);
 		this.setState(
 			prevState => ({
 				filters: {
@@ -91,6 +92,7 @@ class DogFinderContainer extends Component {
 	render() {
 		return (
 			<DogFinder
+				status={this.state.status}
 				dogs={this.state.dogs}
 				filters={this.state.filters}
 				filterOptions={this.getFilterOptions()}
