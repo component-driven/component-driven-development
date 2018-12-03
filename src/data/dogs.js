@@ -1,6 +1,4 @@
-export const SIZE_SMALL = 1;
-export const SIZE_MEDIUM = 2;
-export const SIZE_LARGE = 3;
+import { SIZES } from '../consts';
 
 export default [
 	{
@@ -10,7 +8,7 @@ export default [
 		breed: 'Afgan Hound',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -20,7 +18,7 @@ export default [
 		breed: 'Nova Scotia Duck Tolling Retriever',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_MEDIUM,
+		size: SIZES.MEDIUM,
 		rating: 3,
 	},
 	{
@@ -30,7 +28,7 @@ export default [
 		breed: 'Whoodle',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_MEDIUM,
+		size: SIZES.MEDIUM,
 		rating: 5,
 	},
 	{
@@ -40,7 +38,7 @@ export default [
 		breed: 'Hasky',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 4,
 	},
 	{
@@ -50,7 +48,7 @@ export default [
 		breed: 'Boston Terrier',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_MEDIUM,
+		size: SIZES.MEDIUM,
 		rating: 5,
 	},
 	{
@@ -60,7 +58,7 @@ export default [
 		breed: 'Samoyed',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -70,7 +68,7 @@ export default [
 		breed: 'Pug',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_SMALL,
+		size: SIZES.SMALL,
 		rating: 5,
 	},
 	{
@@ -80,7 +78,7 @@ export default [
 		breed: 'Dalmatian',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 4,
 	},
 	{
@@ -90,7 +88,7 @@ export default [
 		breed: 'A good boy',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -100,7 +98,7 @@ export default [
 		breed: 'Labrador',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -110,7 +108,7 @@ export default [
 		breed: 'A girl boy',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -120,7 +118,7 @@ export default [
 		breed: 'Saluki',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 6,
 	},
 	{
@@ -130,7 +128,7 @@ export default [
 		breed: 'Dachshund',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_SMALL,
+		size: SIZES.SMALL,
 		rating: 6,
 	},
 	{
@@ -140,7 +138,7 @@ export default [
 		breed: 'Boxer',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_MEDIUM,
+		size: SIZES.MEDIUM,
 		rating: 4,
 	},
 	{
@@ -150,7 +148,7 @@ export default [
 		breed: 'Labrador',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -160,7 +158,7 @@ export default [
 		breed: 'Sheltie',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_MEDIUM,
+		size: SIZES.MEDIUM,
 		rating: 6,
 	},
 	{
@@ -170,7 +168,7 @@ export default [
 		breed: 'Dachshund',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_SMALL,
+		size: SIZES.SMALL,
 		rating: 5,
 	},
 	{
@@ -180,7 +178,7 @@ export default [
 		breed: 'Labrador',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -190,7 +188,7 @@ export default [
 		breed: 'Irish Setter',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 4,
 	},
 	{
@@ -200,7 +198,7 @@ export default [
 		breed: 'Pomeranian',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_SMALL,
+		size: SIZES.SMALL,
 		rating: 5,
 	},
 	{
@@ -210,7 +208,7 @@ export default [
 		breed: 'Bichon',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_SMALL,
+		size: SIZES.SMALL,
 		rating: 4,
 	},
 	{
@@ -220,7 +218,7 @@ export default [
 		breed: 'Border Collie',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 6,
 	},
 	{
@@ -230,7 +228,7 @@ export default [
 		breed: 'A good boy',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_MEDIUM,
+		size: SIZES.MEDIUM,
 		rating: 5,
 	},
 	{
@@ -240,7 +238,7 @@ export default [
 		breed: 'A good boy',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_MEDIUM,
+		size: SIZES.MEDIUM,
 		rating: 5,
 	},
 	{
@@ -250,7 +248,7 @@ export default [
 		breed: 'Labrador',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 4,
 	},
 	{
@@ -260,7 +258,7 @@ export default [
 		breed: 'German Shepherd',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -270,7 +268,7 @@ export default [
 		breed: 'Labrador',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -280,7 +278,7 @@ export default [
 		breed: 'Golden Retriever',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -290,7 +288,7 @@ export default [
 		breed: 'Dachshund',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_SMALL,
+		size: SIZES.SMALL,
 		rating: 5,
 	},
 	{
@@ -300,7 +298,7 @@ export default [
 		breed: 'Labrador',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 4,
 	},
 	{
@@ -310,7 +308,7 @@ export default [
 		breed: 'Labrador',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -320,7 +318,7 @@ export default [
 		breed: 'Husky',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 5,
 	},
 	{
@@ -330,7 +328,7 @@ export default [
 		breed: 'Border Collie',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 3,
 	},
 	{
@@ -340,7 +338,7 @@ export default [
 		breed: 'Weimaraner',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 4,
 	},
 	{
@@ -350,7 +348,7 @@ export default [
 		breed: 'Irish Wolfhound',
 		info: '',
 		location: 'Berlin',
-		size: SIZE_LARGE,
+		size: SIZES.LARGE,
 		rating: 4,
 	},
 ];

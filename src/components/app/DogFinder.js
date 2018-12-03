@@ -4,13 +4,15 @@ import { Flex, Box } from '@rebass/grid';
 import Select from '../core/Select';
 import Widget from '../core/Widget';
 import VisuallyHidden from '../core/VisuallyHidden';
+import LoadingContainer from '../core/LoadingContainer';
 import CardList from './CardList';
 import DogCard from './DogCard';
+import { STATUSES } from '../../consts';
 
-const FilterSelect = ({ name, options, value, onChange }) => (
+const FilterSelect = ({ name, options, value, disabled, onChange }) => (
 	<Select
 		fullWidth
-		disabled={options.length === 1}
+		disabled={disabled || options.length <= 1}
 		value={value}
 		onChange={event => {
 			const { value } = event.target;
@@ -26,7 +28,13 @@ const FilterSelect = ({ name, options, value, onChange }) => (
 	</Select>
 );
 
-const DogFinder = ({ filterOptions, filters, dogs, onFilterUpdate }) => (
+const DogFinder = ({
+	status,
+	filterOptions,
+	filters,
+	dogs,
+	onFilterUpdate,
+}) => (
 	<React.Fragment>
 		<VisuallyHidden>
 			<h3>Filters</h3>
@@ -39,6 +47,7 @@ const DogFinder = ({ filterOptions, filters, dogs, onFilterUpdate }) => (
 							name={name}
 							options={options}
 							value={filters[name]}
+							disabled={status === STATUSES.LOADING}
 							onChange={onFilterUpdate}
 						/>
 					</Widget>
@@ -46,17 +55,30 @@ const DogFinder = ({ filterOptions, filters, dogs, onFilterUpdate }) => (
 			))}
 		</Flex>
 		<VisuallyHidden>
-			<h3>Search results ({dogs.length} dogs found)</h3>
+			<h3>
+				Search results{' '}
+				<span aria-live="polite" role="status">
+					({dogs.length} dogs found)
+				</span>
+			</h3>
 		</VisuallyHidden>
-		<CardList>
-			{dogs.map(dog => (
-				<DogCard key={dog.id} dog={dog} as="li" />
-			))}
-		</CardList>
+		{status === STATUSES.FAILURE && (
+			<p aria-live="assertive" role="alert">
+				Something went wrong, try again later
+			</p>
+		)}
+		<LoadingContainer isLoading={status === STATUSES.LOADING}>
+			<CardList>
+				{dogs.map(dog => (
+					<DogCard key={dog.id} dog={dog} as="li" />
+				))}
+			</CardList>
+		</LoadingContainer>
 	</React.Fragment>
 );
 
 DogFinder.propTypes = {
+	status: PropTypes.string.isRequired,
 	filterOptions: PropTypes.arrayOf(
 		PropTypes.shape({
 			name: PropTypes.string.isRequired,
