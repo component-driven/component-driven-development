@@ -41,7 +41,7 @@
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
-    "react-styleguidist": "^9.0.0-beta2"
+    "react-styleguidist": "^9.0.0-beta3"
   },
   "lint-staged": {
     "*.{js}": [
