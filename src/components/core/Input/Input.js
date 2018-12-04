@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
@@ -7,8 +8,8 @@ import { themeGet } from 'styled-system';
 const Input = styled.input`
 	box-sizing: border-box;
 	display: block;
-	width: 100%;
 	margin: 0;
+	width: ${props => props.fullWidth && '100%'};
 	padding: ${themeGet('space.3')};
 	border: 1px solid ${themeGet('colors.primary')};
 	border-radius: ${themeGet('radii.base')};
@@ -30,6 +31,10 @@ const Input = styled.input`
 		filter: saturate(60%);
 	}
 `;
+
+Input.propTypes = {
+	fullWidth: PropTypes.bool,
+};
 
 /** @component */
 export default Input;
