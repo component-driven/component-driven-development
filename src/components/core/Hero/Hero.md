@@ -7,13 +7,28 @@ import Heading from '../Heading';
 </Hero>;
 ```
 
-Responsive paddings
+Responsive paddings:
 
 ```jsx
 import Heading from '../Heading';
 <Hero
   backgroundImage="https://source.unsplash.com/TBw3iQGdwbg/1000x600"
   py={[5, 6]}
+>
+  <Heading level={2} size="xl">
+    The quick brown fox jumps over the lazy dog
+  </Heading>
+</Hero>;
+```
+
+Responsive height:
+
+```jsx
+import Heading from '../Heading';
+<Hero
+  backgroundImage="https://source.unsplash.com/TBw3iQGdwbg/1000x600"
+  py={5}
+  minHeight="20vh"
 >
   <Heading level={2} size="xl">
     The quick brown fox jumps over the lazy dog

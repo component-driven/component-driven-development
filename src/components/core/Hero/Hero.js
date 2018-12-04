@@ -5,6 +5,7 @@ import {
 	backgroundSize,
 	backgroundImage,
 	backgroundPosition,
+	minHeight,
 } from 'styled-system';
 import { Box } from '@rebass/grid';
 
@@ -21,6 +22,10 @@ const Hero = styled(Box).attrs({
 	${backgroundSize};
 	${backgroundPosition};
 	${backgroundImage};
+	${minHeight};
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	text-align: center;
 `;
 
@@ -33,6 +38,8 @@ Hero.propTypes = {
 	px: PropTypes.number,
 	/** Vertical padding */
 	py: PropTypes.number,
+	/** Minimum height */
+	minHeight: PropTypes.number,
 	children: PropTypes.node,
 };
 
