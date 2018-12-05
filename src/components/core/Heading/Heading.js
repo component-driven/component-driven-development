@@ -20,7 +20,7 @@ const Heading = styled.h1.attrs({
 Heading.propTypes = {
 	/** Custom component or HTML tag */
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm']),
+	size: PropTypes.oneOf(['xxxl', 'xxl', 'xl', 'l', 'm']),
 	align: PropTypes.oneOf(['left', 'center', 'right']),
 	children: PropTypes.node,
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Stack from 'stack-styled';
 import { Box } from '@rebass/grid';
 import Heading from '../core/Heading';
@@ -8,13 +9,13 @@ import Image from '../core/Image';
 import Rating from '../core/Rating';
 import Panel from '../core/Panel';
 
-const DogCard = ({ dog, ...props }) => (
-	<Panel>
-		<Stack {...props} gap={4}>
+const DogCard = ({ as, dog, ...props }) => (
+	<Panel as={as}>
+		<Stack gap={4}>
 			<Box mt={-4} ml={-4} mr={-4}>
 				<Image src={`images/${dog.image}`} alt={dog.name} />
 			</Box>
-			<Stack {...props} gap={2}>
+			<Stack gap={2}>
 				<Heading as="h3" size="m">
 					{dog.name}
 				</Heading>
@@ -31,5 +32,19 @@ const DogCard = ({ dog, ...props }) => (
 		</Stack>
 	</Panel>
 );
+
+DogCard.propTypes = {
+	as: PropTypes.string,
+	dog: PropTypes.shape({
+		image: PropTypes.string.isRequired,
+		id: PropTypes.string.isRequired,
+		name: PropTypes.string.isRequired,
+		breed: PropTypes.string.isRequired,
+		info: PropTypes.string.isRequired,
+		location: PropTypes.string.isRequired,
+		size: PropTypes.number.isRequired,
+		rating: PropTypes.number.isRequired,
+	}),
+};
 
 export default DogCard;

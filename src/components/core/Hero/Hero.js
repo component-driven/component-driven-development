@@ -15,9 +15,9 @@ const getBackgroundCss = image =>
 /**
  * A hero
  */
-const Hero = styled(Box).attrs({
-	backgroundImage: props => getBackgroundCss(props.backgroundImage),
-})`
+const Hero = styled(Box).attrs(props => ({
+	backgroundImage: getBackgroundCss(props.backgroundImage),
+}))`
 	${color};
 	${backgroundSize};
 	${backgroundPosition};
