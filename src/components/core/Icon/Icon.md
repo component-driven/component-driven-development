@@ -1,10 +1,11 @@
 Sizes and variants:
 
 ```js
-<Icon name="dog" alt="" />
-<Icon name="dog" size="l" alt="" />
+<Icon name="dog" variant="primary" alt="" />
+<Icon name="dog" variant="primary" size="l" alt="" />
 <Icon name="dog" variant="secondary" alt="" />
 <Icon name="dog" variant="secondary" size="l" alt="" />
+<Icon name="dog" variant="currentColor" size="l" alt="" />
 ```
 
 Icons:
@@ -34,7 +35,7 @@ import Text from '../Text';
 import { Flex, Box } from '@rebass/grid';
 <Text>
   <Flex as={Link} href="/" alignItems="center">
-    <Icon name="star" variant="secondary" alt="" />
+    <Icon name="star" alt="" />
     <Box ml={2} as="span">
       Good girls and boys
     </Box>
@@ -50,7 +51,7 @@ import Button from '../Button';
 import { Flex, Box } from '@rebass/grid';
 <Button>
   <Flex href="/" alignItems="center">
-    <Icon name="star" variant="secondary" alt="" />
+    <Icon name="star" alt="" />
     <Box ml={2} as="span">
       Good girls and boys
     </Box>
