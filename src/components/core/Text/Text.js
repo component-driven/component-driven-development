@@ -28,6 +28,7 @@ const Text = styled.p`
 	font-size: ${props => props.theme.fontSizes[getFontSize(props.variant)]};
 	color: ${props => props.theme.colors[getColor(props.variant)]};
 	text-align: ${props => props.align};
+	list-style-type: none;
 `;
 
 Text.propTypes = {

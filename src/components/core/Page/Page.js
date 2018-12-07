@@ -6,7 +6,9 @@ const Page = styled.div`
 	min-height: 100vh;
 `;
 
-const Footer = styled.footer`
+const Footer = styled.footer.attrs({
+	role: 'contentinfo',
+})`
 	margin-top: auto;
 `;
 
