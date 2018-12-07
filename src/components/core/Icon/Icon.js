@@ -70,6 +70,9 @@ const getColor = variant =>
 	}[variant]);
 
 const IconBase = styled.span`
+	display: inline-block;
+	line-height: 1;
+
 	& path {
 		fill: ${props => props.theme.colors[getColor(props.variant)]};
 	}
