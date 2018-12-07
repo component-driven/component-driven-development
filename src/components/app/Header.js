@@ -17,6 +17,8 @@ const Header = () => (
 			backgroundPosition="bottom center"
 			px={4}
 			py={3}
+			as="header"
+			role="banner"
 		>
 			<Flex justifyContent={['center', 'space-between']} flexWrap="wrap">
 				<Box width={[1, 'auto']} mb={2}>
@@ -24,17 +26,26 @@ const Header = () => (
 						<Link href="/">Rent-o-dog</Link>
 					</Text>
 				</Box>
-				<Stack justifyContent="center" gridAutoFlow="column" gap={4} mb={2}>
-					<Text>
-						<Link href="/">How it works</Link>
-					</Text>
-					<Text>
-						<Link href="/">Contact us</Link>
-					</Text>
-					<Text>
-						<Link href="/">Login for dogs</Link>
-					</Text>
-				</Stack>
+				<nav role="navigation">
+					<Stack
+						justifyContent="center"
+						gridAutoFlow="column"
+						gap={4}
+						mt={0}
+						mb={2}
+						as="ul"
+					>
+						<Text as="li">
+							<Link href="/">How it works</Link>
+						</Text>
+						<Text as="li">
+							<Link href="/">Contact us</Link>
+						</Text>
+						<Text as="li">
+							<Link href="/">Login for dogs</Link>
+						</Text>
+					</Stack>
+				</nav>
 			</Flex>
 			<Box py={[4, 5, 6, 7]}>
 				<Heading as="p" level={2} size="xxxl" mb={5}>
