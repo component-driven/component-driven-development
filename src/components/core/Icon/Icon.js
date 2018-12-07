@@ -74,7 +74,8 @@ const IconBase = styled.span`
 	line-height: 1;
 
 	& path {
-		fill: ${props => props.theme.colors[getColor(props.variant)]};
+		fill: ${props =>
+			props.theme.colors[getColor(props.variant)] || 'currentColor'};
 	}
 `;
 
@@ -104,13 +105,13 @@ const Icon = ({ name, size, alt, ...rest }) => {
 
 Icon.propTypes = {
 	name: PropTypes.string.isRequired,
-	variant: PropTypes.oneOf(['primary', 'secondary', 'rating']),
+	variant: PropTypes.oneOf(['currentColor', 'primary', 'secondary', 'rating']),
 	size: PropTypes.oneOf(['s', 'm', 'l']),
 	alt: PropTypes.string.isRequired,
 };
 
 Icon.defaultProps = {
-	variant: 'primary',
+	variant: 'currentColor',
 	size: 'm',
 };
 
