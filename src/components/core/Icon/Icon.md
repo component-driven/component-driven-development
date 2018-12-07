@@ -25,17 +25,35 @@ Accessible label:
 <Icon name="dog" alt="a good girl" />
 ```
 
-A link with an icon
+A link with an icon:
 
 ```js
+import Icon from '../Icon';
 import Link from '../Link';
+import Text from '../Text';
 import { Flex, Box } from '@rebass/grid';
-<Link href="/">
-  <Flex>
+<Text>
+  <Flex as={Link} href="/" alignItems="center">
     <Icon name="star" variant="secondary" alt="" />
     <Box ml={2} as="span">
       Good girls and boys
     </Box>
   </Flex>
-</Link>;
+</Text>;
+```
+
+A button with an icon:
+
+```js
+import Icon from '../Icon';
+import Button from '../Button';
+import { Flex, Box } from '@rebass/grid';
+<Button>
+  <Flex href="/" alignItems="center">
+    <Icon name="star" variant="secondary" alt="" />
+    <Box ml={2} as="span">
+      Good girls and boys
+    </Box>
+  </Flex>
+</Button>;
 ```
