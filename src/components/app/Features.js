@@ -8,9 +8,7 @@ import SvgFeatureMegaphone from './images/SvgFeatureMegaphone';
 
 const Features = () => (
 	<>
-		<VisuallyHidden>
-			<h2>Why Rent-o-dog</h2>
-		</VisuallyHidden>
+		<VisuallyHidden as="h2">Why Rent-o-dog</VisuallyHidden>
 		<CardList>
 			<Feature
 				as="li"
