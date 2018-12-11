@@ -36,9 +36,7 @@ const DogFinder = ({
 	onFilterUpdate,
 }) => (
 	<React.Fragment>
-		<VisuallyHidden>
-			<h3>Filters</h3>
-		</VisuallyHidden>
+		<VisuallyHidden as="h3">Filters</VisuallyHidden>
 		<Flex mt={3} mb={5} mx={-3} flexWrap="wrap">
 			{filterOptions.map(({ name, label, options }) => (
 				<Box key={name} width={[1, 1 / 3]} px={3} py={[3, 0]}>
@@ -54,13 +52,11 @@ const DogFinder = ({
 				</Box>
 			))}
 		</Flex>
-		<VisuallyHidden>
-			<h3>
-				Search results{' '}
-				<span aria-live="polite" role="status">
-					({dogs.length} dogs found)
-				</span>
-			</h3>
+		<VisuallyHidden as="h3">
+			Search results{' '}
+			<span aria-live="polite" role="status">
+				({dogs.length} dogs found)
+			</span>
 		</VisuallyHidden>
 		{status === STATUSES.FAILURE && (
 			<p aria-live="assertive" role="alert">
