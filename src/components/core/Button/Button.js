@@ -9,7 +9,7 @@ const getBgColor = variant => ({ primary: 'primary' }[variant]);
  * A button.
  */
 const Button = styled.button`
-	width: ${props => props.fullWidth && '100%'};
+	display: ${props => props.fullWidth && 'block'};
 	padding: ${themeGet('space.3')} ${themeGet('space.4')};
 	border: 1px solid ${themeGet('colors.primary')};
 	border-radius: ${themeGet('radii.base')};
@@ -18,10 +18,11 @@ const Button = styled.button`
 	color: ${props => props.theme.colors[getColor(props.variant)]};
 	background-color: ${props =>
 		props.theme.colors[getBgColor(props.variant)] || 'transparent'};
+	text-decoration: none;
 	user-select: none;
 
-	&:hover:enabled,
-	&:active:enabled {
+	&:hover:not(:disabled),
+	&:active:not(:disabled) {
 		border-color: ${themeGet('colors.hover')};
 		background-color: ${themeGet('colors.hover')};
 		cursor: pointer;
