@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Stack from 'stack-styled';
 import { Box } from '@rebass/grid';
+import { Link } from '@reach/router';
 import Heading from '../core/Heading';
 import Text from '../core/Text';
 import Button from '../core/Button';
@@ -25,7 +26,12 @@ const DogCard = ({ as, dog, ...props }) => (
 				<Rating value={dog.rating} />
 			</Stack>
 			<Box mt="auto">
-				<Button variant="primary" fullWidth>
+				<Button
+					as={Link}
+					variant="primary"
+					fullWidth
+					to={`/checkout/${dog.id}`}
+				>
 					Rent {dog.name}
 				</Button>
 			</Box>

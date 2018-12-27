@@ -1,13 +1,13 @@
 import React from 'react';
 import ThemeProvider from './ThemeProvider';
 import GlobalStyle from './styles';
-import Layout from './components/app/Layout';
+import Routes from './components/app/Routes';
 
 const App = () => (
 	<ThemeProvider>
 		<>
 			<GlobalStyle />
-			<Layout />
+			<Routes />
 		</>
 	</ThemeProvider>
 );

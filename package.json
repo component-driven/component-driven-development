@@ -5,6 +5,7 @@
   "license": "MIT",
   "homepage": "https://component-driven.github.io/component-driven-development/",
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "@rebass/grid": "^6.0.0-4",
     "polished": "^2.3.0",
     "prop-types": "^15.6.2",

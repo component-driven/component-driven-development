@@ -7,7 +7,7 @@ import Footer from '../app/Footer';
 import Features from '../app/Features';
 import DogFinder from '../app/DogFinderContainer';
 
-const Layout = () => (
+const Homepage = () => (
 	<Page>
 		<Header />
 		<main role="main">
@@ -27,4 +27,4 @@ const Layout = () => (
 	</Page>
 );
 
-export default Layout;
+export default Homepage;
