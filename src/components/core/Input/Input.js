@@ -10,6 +10,7 @@ const Input = styled.input`
 	display: block;
 	margin: 0;
 	width: ${props => props.fullWidth && '100%'};
+	height: 2.5rem;
 	padding: ${themeGet('space.3')};
 	border: 1px solid ${themeGet('colors.primary')};
 	border-radius: ${themeGet('radii.base')};

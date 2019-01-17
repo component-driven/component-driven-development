@@ -18,6 +18,7 @@ const Select = styled.select`
 	appearance: none;
 	user-select: none;
 	width: ${props => props.fullWidth && '100%'};
+	height: 2.5rem;
 	padding-top: ${themeGet('space.3')};
 	padding-right: ${themeGet('space.5')};
 	padding-bottom: ${themeGet('space.3')};
