@@ -6,18 +6,20 @@ import Text from '../Text';
 /**
  * A container for a form control with a label.
  */
-const Widget = ({ label, children }) => {
+const Widget = ({ label, children, ...props }) => {
 	return (
-		<Text as="label">
-			<Box mb={3}>{label}</Box>
-			{children}
-		</Text>
+		<Box {...props}>
+			<Text as="label">
+				<Box mb={2}>{label}</Box>
+				{children}
+			</Text>
+		</Box>
 	);
 };
 
 Widget.propTypes = {
-	label: PropTypes.node,
-	children: PropTypes.node,
+	label: PropTypes.node.isRequired,
+	children: PropTypes.node.isRequired,
 };
 
 export default Widget;

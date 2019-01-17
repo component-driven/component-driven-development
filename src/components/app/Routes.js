@@ -1,12 +1,12 @@
 import React from 'react';
 import { Router } from '@reach/router';
 import Homepage from './Homepage';
-import Checkout from './Checkout';
+import Checkout from './CheckoutContainer';
 
 const Routes = () => (
 	<Router>
 		<Homepage path="/" />
-		<Checkout path="/checkout/:dog" />
+		<Checkout path="/checkout/:dogId" />
 	</Router>
 );
 

@@ -20,6 +20,14 @@ export function findDogs(query) {
 	});
 }
 
+export function getDog(id) {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve(dogs.find(props => props.id === id));
+		}, 500);
+	});
+}
+
 export function getLocations() {
 	return new Promise(resolve => {
 		setTimeout(() => {

@@ -3,28 +3,18 @@ import PropTypes from 'prop-types';
 import Stack from 'stack-styled';
 import { Box } from '@rebass/grid';
 import { Link } from '@reach/router';
-import Heading from '../core/Heading';
-import Text from '../core/Text';
 import Button from '../core/Button';
 import Image from '../core/Image';
-import Rating from '../core/Rating';
 import Panel from '../core/Panel';
+import DogInfo from './DogInfo';
 
 const DogCard = ({ as, dog, ...props }) => (
 	<Panel as={as}>
 		<Stack gap={4}>
 			<Box mt={-4} ml={-4} mr={-4}>
-				<Image src={`images/${dog.image}`} alt={dog.name} />
+				<Image src={`/images/${dog.image}`} alt={dog.name} />
 			</Box>
-			<Stack gap={2}>
-				<Heading as="h3" size="m">
-					{dog.name}
-				</Heading>
-				<Text variant="secondary">
-					{dog.breed} from {dog.location}
-				</Text>
-				<Rating value={dog.rating} />
-			</Stack>
+			<DogInfo dog={dog} isHeading />
 			<Box mt="auto">
 				<Button
 					as={Link}

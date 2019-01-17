@@ -4,12 +4,33 @@ import Heading from '../core/Heading';
 import Page from '../core/Page';
 import Header from '../app/Header';
 import Footer from '../app/Footer';
+import Hero from '../core/Hero';
 import Features from '../app/Features';
 import DogFinder from '../app/DogFinderContainer';
+import { Inverted } from '../../ThemeProvider';
+
+const BACKGROUND = `linear-gradient(to bottom, rgba(44,35,28,0.7), rgba(0,0,0,0)),
+url(images/drew-coffman-125736-unsplash.jpg)`;
 
 const Homepage = () => (
 	<Page>
-		<Header />
+		<Inverted>
+			<Hero
+				backgroundImage={BACKGROUND}
+				backgroundPosition="bottom center"
+				px={4}
+				py={3}
+				as="header"
+				role="banner"
+			>
+				<Header />
+				<Box py={[4, 5, 6, 7]}>
+					<Heading as="p" level={2} size="xxxl" mb={5}>
+						Good boys and girls to brighten your office
+					</Heading>
+				</Box>
+			</Hero>
+		</Inverted>
 		<main role="main">
 			<Box px={4} py={5}>
 				<Features />
