@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex, Box } from '@rebass/grid';
+import { Form, Field } from 'formik';
 import Text from '../core/Text';
 import Button from '../core/Button';
 import Input from '../core/Input';
@@ -8,88 +9,128 @@ import Widget from '../core/Widget';
 import Fieldset from '../core/Fieldset';
 
 const CheckoutForm = ({ disabled }) => (
-	<form>
+	<Form>
 		<Fieldset label="Delivery" mb={5}>
 			<Widget label="Address" mb={4}>
-				<Input
-					name="address"
-					autocomplete="shipping street-address"
-					required
-					fullWidth
-				/>
+				<Field name="address">
+					{({ field }) => (
+						<Input
+							autoComplete="shipping street-address"
+							required
+							fullWidth
+							{...field}
+						/>
+					)}
+				</Field>
 			</Widget>
 			<Flex flexWrap="wrap" m={-3} mb={3}>
 				<Box width={[1, 1 / 4]} p={3}>
 					<Widget label="Zip code">
-						<Input
-							name="zip"
-							autocomplete="shipping postal-code"
-							required
-							pattern="^[0-9]+$"
-							fullWidth
-						/>
+						<Field name="zip">
+							{({ field }) => (
+								<Input
+									autoComplete="shipping postal-code"
+									required
+									pattern="^[0-9]+$"
+									fullWidth
+									{...field}
+								/>
+							)}
+						</Field>
 					</Widget>
 				</Box>
 				<Box width={[1, 1 / 4]} p={3}>
 					<Widget label="Country">
-						<Select
-							name="country"
-							autocomplete="shipping country"
-							required
-							fullWidth
-						>
-							<option>Berlin</option>
-						</Select>
+						<Field name="country">
+							{({ field }) => (
+								<Select
+									autoComplete="shipping country"
+									required
+									fullWidth
+									{...field}
+								>
+									<option>Berlin</option>
+								</Select>
+							)}
+						</Field>
 					</Widget>
 				</Box>
 				<Box width={[1, 1 / 2]} p={3}>
 					<Widget label="City">
-						<Input
-							name="city"
-							autocomplete="shipping locality"
-							required
-							fullWidth
-						/>
+						<Field name="city">
+							{({ field }) => (
+								<Input
+									autoComplete="shipping locality"
+									required
+									fullWidth
+									{...field}
+								/>
+							)}
+						</Field>
 					</Widget>
 				</Box>
 			</Flex>
 			<Flex flexWrap="wrap" m={-3} mb={3}>
 				<Box width={[1, 1 / 2]} p={3}>
 					<Widget label="Date from">
-						<Input name="datefrom" type="date" required fullWidth />
+						<Field name="datefrom">
+							{({ field }) => (
+								<Input type="date" required fullWidth {...field} />
+							)}
+						</Field>
 					</Widget>
 				</Box>
 				<Box width={[1, 1 / 2]} p={3}>
 					<Widget label="Date to">
-						<Input name="dateto" type="date" required fullWidth />
+						<Field name="dateto">
+							{({ field }) => (
+								<Input type="date" required fullWidth {...field} />
+							)}
+						</Field>
 					</Widget>
 				</Box>
 			</Flex>
 		</Fieldset>
 		<Fieldset label="Payment" mb={5}>
 			<Widget label="Card number" mb={4}>
-				<Input name="cardnumber" autocomplete="cc-number" required fullWidth />
+				<Field name="cardnumber">
+					{({ field }) => (
+						<Input autoComplete="cc-number" required fullWidth {...field} />
+					)}
+				</Field>
 			</Widget>
 			<Flex flexWrap="wrap" m={-3} mb={3}>
 				<Box width={[1, 1 / 2]} p={3}>
 					<Widget label="Name on card">
-						<Input name="ccname" autocomplete="cc-name" required fullWidth />
+						<Field name="ccname">
+							{({ field }) => (
+								<Input autoComplete="cc-name" required fullWidth {...field} />
+							)}
+						</Field>
 					</Widget>
 				</Box>
 				<Box width={[1, 1 / 4]} p={3}>
 					<Widget label="Expiry date">
-						<Input
-							name="cc-exp"
-							autocomplete="cc-exp"
-							placeholder="MM/YY"
-							required
-							fullWidth
-						/>
+						<Field name="cc-exp">
+							{({ field }) => (
+								<Input
+									autoComplete="cc-exp"
+									placeholder="MM/YY"
+									required
+									fullWidth
+									{...field}
+								/>
+							)}
+						</Field>
 					</Widget>
 				</Box>
 				<Box width={[1, 1 / 4]} p={3}>
 					<Widget label="Security code">
-						<Input name="cvc" autocomplete="cc-csc" required fullWidth />
+						<Field name="cvc">
+							{({ field }) => (
+								<Input autoComplete="cc-csc" required fullWidth {...field} />
+							)}
+						</Field>
 					</Widget>
 				</Box>
 			</Flex>
@@ -107,7 +148,7 @@ const CheckoutForm = ({ disabled }) => (
 				</Text>
 			</Box>
 		</Flex>
-	</form>
+	</Form>
 );
 
 export default CheckoutForm;
