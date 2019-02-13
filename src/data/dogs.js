@@ -10,6 +10,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'jamie-street-564888-unsplash.jpg',
@@ -20,6 +21,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.MEDIUM,
 		rating: 3,
+		price: 299,
 	},
 	{
 		image: 'matthew-hamilton-792658-unsplash.jpg',
@@ -30,6 +32,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.MEDIUM,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'tadeusz-lakota-1116051-unsplash.jpg',
@@ -40,6 +43,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 4,
+		price: 299,
 	},
 	{
 		image: 'avi-richards-438741-unsplash.jpg',
@@ -50,6 +54,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.MEDIUM,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'jf-brou-358069-unsplash.jpg',
@@ -60,6 +65,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'matthew-henry-58760-unsplash.jpg',
@@ -70,6 +76,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.SMALL,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'tim-zankert-370890-unsplash.jpg',
@@ -80,6 +87,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 4,
+		price: 299,
 	},
 	{
 		image: 'daniel-hering-749907-unsplash.jpg',
@@ -90,6 +98,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'jonathan-daniels-416786-unsplash.jpg',
@@ -100,6 +109,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'michael-mroczek-254755-unsplash.jpg',
@@ -110,6 +120,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'tsiri.jpg',
@@ -120,6 +131,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 6,
+		price: 299,
 	},
 	{
 		image: 'dessi.jpg',
@@ -130,6 +142,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.SMALL,
 		rating: 6,
+		price: 299,
 	},
 	{
 		image: 'jordan-davis-183742-unsplash.jpg',
@@ -140,6 +153,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.MEDIUM,
 		rating: 4,
+		price: 299,
 	},
 	{
 		image: 'mitchell-orr-389605-unsplash.jpg',
@@ -150,6 +164,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'twiggy.jpg',
@@ -160,6 +175,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.MEDIUM,
 		rating: 6,
+		price: 299,
 	},
 	{
 		image: 'erda-estremera-583352-unsplash.jpg',
@@ -170,6 +186,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.SMALL,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'ken-reid-290754-unsplash.jpg',
@@ -180,6 +197,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'murucutu-697904-unsplash.jpg',
@@ -190,6 +208,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 4,
+		price: 299,
 	},
 	{
 		image: 'wei-wang-754704-unsplash.jpg',
@@ -200,6 +219,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.SMALL,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'gabriel-crismariu-1060681-unsplash.jpg',
@@ -210,6 +230,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.SMALL,
 		rating: 4,
+		price: 299,
 	},
 	{
 		image: 'lulu.jpg',
@@ -220,6 +241,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 6,
+		price: 299,
 	},
 	{
 		image: 'patrick-hendry-612619-unsplash.jpg',
@@ -230,6 +252,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.MEDIUM,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'yuki-dog-401147-unsplash.jpg',
@@ -240,6 +263,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.MEDIUM,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'heather-miller-456513-unsplash.jpg',
@@ -250,6 +274,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 4,
+		price: 299,
 	},
 	{
 		image: 'marcus-cramer-481656-unsplash.jpg',
@@ -260,6 +285,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'samantha-scholl-157445-unsplash.jpg',
@@ -270,6 +296,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'jacob-ufkes-109329-unsplash.jpg',
@@ -280,6 +307,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'marcus-wallis-471436-unsplash.jpg',
@@ -290,6 +318,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.SMALL,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'sydney-rae-422172-unsplash.jpg',
@@ -300,6 +329,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 4,
+		price: 299,
 	},
 	{
 		image: 'james-barker-560319-unsplash.jpg',
@@ -310,6 +340,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'marek-szturc-1114956-unsplash.jpg',
@@ -320,6 +351,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 5,
+		price: 299,
 	},
 	{
 		image: 'tadeusz-lakota-1060163-unsplash.jpg',
@@ -330,6 +362,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 3,
+		price: 299,
 	},
 	{
 		image: 'freddie-marriage-41870-unsplash.jpg',
@@ -340,6 +373,7 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 4,
+		price: 299,
 	},
 	{
 		image: 'stephane-juban-579135-unsplash.jpg',
@@ -350,5 +384,6 @@ export default [
 		location: 'Berlin',
 		size: SIZES.LARGE,
 		rating: 4,
+		price: 299,
 	},
 ];
