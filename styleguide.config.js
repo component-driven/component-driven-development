@@ -1,6 +1,6 @@
 const path = require('path');
 const glob = require('glob');
-const webpackConfig = require('react-scripts/config/webpack.config.dev');
+const webpackConfig = require('react-scripts/config/webpack.config');
 
 // styleguidist server --exercise
 const shouldShowExercises = !!process.argv.find(x => x === '--exercise');

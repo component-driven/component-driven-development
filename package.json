@@ -6,19 +6,18 @@
   "homepage": "https://component-driven.github.io/component-driven-development/",
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "@rebass/grid": "^6.0.0-4",
+    "@rebass/grid": "^6.0.0-7",
     "date-fns": "^1.30.1",
-    "formik": "^1.4.2",
-    "polished": "^2.3.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-group": "^2.0.0",
-    "react-modal": "^3.6.1",
-    "react-scripts": "2.1.1",
+    "formik": "^1.5.1",
+    "polished": "^3.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-modal": "^3.8.1",
+    "react-scripts": "2.1.5",
     "stack-styled": "0.1.0",
-    "styled-components": "^4.1.1",
-    "styled-system": "^3.1.11"
+    "styled-components": "^4.1.3",
+    "styled-system": "^4.0.0"
   },
   "scripts": {
     "start": "node scripts/setup.js && styleguidist server --open --exercise",
@@ -33,18 +32,17 @@
     "styleguide:build": "node scripts/setup.js && styleguidist build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "format": "prettier --write '**/*.{js,md}'",
-    "precommit": "lint-staged"
+    "format": "prettier --write '**/*.{js,md}'"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.8.0",
+    "babel-plugin-styled-components": "^1.10.0",
     "cross-env": "^5.2.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
     "gh-pages": "^2.0.1",
-    "husky": "^1.2.0",
-    "lint-staged": "^8.1.0",
-    "prettier": "^1.15.2",
-    "react-styleguidist": "^9.0.0-beta3"
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.4",
+    "prettier": "^1.16.4",
+    "react-styleguidist": "^9.0.1"
   },
   "lint-staged": {
     "*.{js}": [
@@ -61,5 +59,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
+  }
 }

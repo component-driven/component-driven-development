@@ -1,7 +1,6 @@
 import { transparentize, modularScale } from 'polished';
 
-const scale = value =>
-	modularScale(value, 1, 'majorThird').replace('em', 'rem');
+const scale = value => modularScale(value, '1rem', 'majorThird');
 
 const fontSizes = {
 	xxxl: scale(5),
