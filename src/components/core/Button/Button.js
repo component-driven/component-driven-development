@@ -21,6 +21,7 @@ const Button = styled.button`
 	text-decoration: none;
 	user-select: none;
 
+	/* We can't use :enabled here because it doesn't work with <a> */
 	&:hover:not(:disabled),
 	&:active:not(:disabled) {
 		border-color: ${themeGet('colors.hover')};

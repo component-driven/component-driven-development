@@ -12,17 +12,17 @@ const getDays = (from, to) => {
 		return undefined;
 	}
 
-	const datefrom = parse(from);
-	const dateto = parse(to);
-	if (!datefrom || !dateto) {
+	const dateFrom = parse(from);
+	const dateTo = parse(to);
+	if (!dateFrom || !dateTo) {
 		return undefined;
 	}
 
-	return differenceInDays(datefrom, dateto) + 1;
+	return differenceInDays(dateFrom, dateTo) + 1;
 };
 
-const OrderSummary = ({ dog, datefrom, dateto }) => {
-	const days = getDays(dateto, datefrom);
+const OrderSummary = ({ dog, dateFrom, dateTo }) => {
+	const days = getDays(dateTo, dateFrom);
 	const summ = days && days * dog.price;
 	return (
 		<>

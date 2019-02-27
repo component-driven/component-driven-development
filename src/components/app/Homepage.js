@@ -9,14 +9,12 @@ import Features from '../app/Features';
 import DogFinder from '../app/DogFinderContainer';
 import { Inverted } from '../../ThemeProvider';
 
-const BACKGROUND = `linear-gradient(to bottom, rgba(44,35,28,0.7), rgba(0,0,0,0)),
-url(images/drew-coffman-125736-unsplash.jpg)`;
-
 const Homepage = () => (
 	<Page>
 		<Inverted>
 			<Hero
-				backgroundImage={BACKGROUND}
+				backgroundImage="linear-gradient(to bottom, rgba(44,35,28,0.7), rgba(0,0,0,0)),
+					url(images/drew-coffman-125736-unsplash.jpg)"
 				backgroundPosition="bottom center"
 				px={4}
 				py={3}
