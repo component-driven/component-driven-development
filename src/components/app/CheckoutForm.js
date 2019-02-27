@@ -73,7 +73,7 @@ const CheckoutForm = ({ disabled }) => (
 			<Flex flexWrap="wrap" m={-3} mb={3}>
 				<Box width={[1, 1 / 2]} p={3}>
 					<Widget label="Date from">
-						<Field name="datefrom">
+						<Field name="dateFrom">
 							{({ field }) => (
 								<Input type="date" required fullWidth {...field} />
 							)}
@@ -82,7 +82,7 @@ const CheckoutForm = ({ disabled }) => (
 				</Box>
 				<Box width={[1, 1 / 2]} p={3}>
 					<Widget label="Date to">
-						<Field name="dateto">
+						<Field name="dateTo">
 							{({ field }) => (
 								<Input type="date" required fullWidth {...field} />
 							)}
