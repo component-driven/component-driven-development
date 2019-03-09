@@ -9,3 +9,9 @@ Disabled buttons:
 ```jsx
 <Button disabled>Can’t touch this</Button> <Button variant="primary" disabled>Can’t touch this</Button>
 ```
+
+Full width button:
+
+```jsx
+<Button fullWidth>Looooong cat button</Button>
+```
