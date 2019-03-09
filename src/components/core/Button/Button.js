@@ -10,6 +10,7 @@ const getBgColor = variant => ({ primary: 'primary' }[variant]);
  */
 const Button = styled.button`
 	display: ${props => props.fullWidth && 'block'};
+	height: 2.5rem;
 	padding: ${themeGet('space.3')} ${themeGet('space.4')};
 	border: 1px solid ${themeGet('colors.primary')};
 	border-radius: ${themeGet('radii.base')};
