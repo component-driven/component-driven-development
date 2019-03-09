@@ -41,16 +41,12 @@ const Card = styled(Box).attrs({
 Rebass Grid has another component — [Flex](https://github.com/rebassjs/grid#flex), that can do everything `Box` can do, but also has Flexbox props, like `alignItems` or `flexWrap`:
 
 ```jsx static
-import { Box, Flex } from '@rebass/grid'
+import { Box, Flex } from '@rebass/grid';
 
 <Flex justifyContent="space-between">
-  <Box width={1/4}>
-    Quarter width
-  </Box>
-  <Box width={1/4}>
-    Quarter width
-  </Box>
-</Flex>
+  <Box width={1 / 4}>Quarter width</Box>
+  <Box width={1 / 4}>Quarter width</Box>
+</Flex>;
 ```
 
 #### The result
@@ -69,6 +65,7 @@ import Input from '../../components/core/Input';
       required
       placeholder="Email"
       aria-label="Email"
+      fullWidth
     />
   </Box>
   <Box pl={3}>
@@ -108,6 +105,7 @@ const SubscriptionForm = () => (
           required
           placeholder="Email"
           aria-label="Email"
+          fullWidth
         />
       </Box>
       <Box pl={3}>
@@ -158,6 +156,7 @@ import Input from '../../components/core/Input';
       required
       placeholder="Email"
       aria-label="Email"
+      fullWidth
     />
   </Box>
   <Box pl={[0, 3]} pt={[3, 0]} width={[1, 'auto']}>
@@ -195,6 +194,7 @@ const SubscriptionForm = () => (
           required
           placeholder="Email"
           aria-label="Email"
+          fullWidth
         />
       </Box>
       <Box pl={[0, 3]} pt={[3, 0]} width={[1, 'auto']}>
@@ -251,6 +251,7 @@ import Input from '../../components/core/Input';
       required
       placeholder="Email"
       aria-label="Email"
+      fullWidth
     />
   </Box>
   <Box p={2} width={[1, 'auto']}>
@@ -286,6 +287,7 @@ const SubscriptionForm = () => (
           required
           placeholder="Email"
           aria-label="Email"
+          fullWidth
         />
       </Box>
       <Box p={2} width={[1, 'auto']}>
@@ -324,7 +326,7 @@ CSS Grid has a thing called _gap_ (`grid-gap` property), which is exactly what w
 [Stack Styled](https://sapegin.github.io/stack-styled/) has a `Stack` component similar to [Flex](https://github.com/rebassjs/grid#flex) component from Rebass Grid, but with CSS Grip props. It’s also based on styled-system, so the API is similar:
 
 ```jsx static
-import Stack from 'stack-styled'
+import Stack from 'stack-styled';
 
 <Stack as="section" gap={5}>
   <Button>Hello React!</Button>
@@ -347,6 +349,7 @@ import Input from '../../components/core/Input';
     required
     placeholder="Email"
     aria-label="Email"
+    fullWidth
   />
   <Button variant="primary" type="submit">
     Subscribe
@@ -378,6 +381,7 @@ const SubscriptionForm = () => (
         required
         placeholder="Email"
         aria-label="Email"
+        fullWidth
       />
       <Button variant="primary" type="submit">
         Subscribe
