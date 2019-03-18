@@ -16,12 +16,7 @@ const DogCard = ({ as, dog, ...props }) => (
 			</Box>
 			<DogInfo dog={dog} isHeading />
 			<Box mt="auto">
-				<Button
-					as={Link}
-					variant="primary"
-					fullWidth
-					to={`/checkout/${dog.id}`}
-				>
+				<Button as={Link} fullWidth to={`/checkout/${dog.id}`}>
 					Rent {dog.name}
 				</Button>
 			</Box>
