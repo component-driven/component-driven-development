@@ -20,7 +20,7 @@ By creating a component, we can hide the complexity from the user, reduce code d
 
 The result should look like this:
 
-```jsx
+```jsx harmony
 import TruncatedText from '../../components/core/TruncatedText';
 <TruncatedText width={200}>
   The quick brown fox jumps over the lazy dog
@@ -80,7 +80,7 @@ We’ll [use Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/sti
 
 The result should look like this:
 
-```jsx
+```jsx harmony
 import Page from '../../components/core/Page';
 <div
   style={{
@@ -154,7 +154,7 @@ Again, we’ll use Flexbox to implement it:
 
 The result should look like this:
 
-```jsx
+```jsx harmony
 import Media from '../../components/core/Media';
 import Text from '../../components/core/Text';
 import Image from '../../components/core/Image';

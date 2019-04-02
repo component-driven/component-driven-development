@@ -1,12 +1,12 @@
 Secondary and primary buttons:
 
-```jsx
+```jsx harmony
 <Button>Push me</Button> <Button variant="primary">Push me</Button>
 ```
 
 Disabled buttons:
 
-```jsx
+```jsx harmony
 <Button disabled>Can’t touch this</Button> <Button variant="primary" disabled>Can’t touch this</Button>
 ```
 

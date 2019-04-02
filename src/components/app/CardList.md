@@ -1,4 +1,4 @@
-```jsx
+```jsx harmony
 import Image from '../core/Image';
 const dogs = [
   'dessi',

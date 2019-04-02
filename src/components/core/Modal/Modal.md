@@ -1,4 +1,4 @@
-```jsx
+```jsx harmony
 import Button from '../Button';
 <>
   <Button onClick={() => setState({ isOpen: true })}>

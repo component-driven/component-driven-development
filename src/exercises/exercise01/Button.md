@@ -1,12 +1,12 @@
 Component with default props:
 
-```jsx
+```jsx harmony
 <Button />
 ```
 
 More examples:
 
-```jsx
+```jsx harmony
 <Button>My name is Mr Knopf</Button>
 <Button onClick={() => alert('Hello')}>I’m clickable</Button>
 ```

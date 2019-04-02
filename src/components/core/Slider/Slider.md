@@ -1,4 +1,4 @@
-```jsx
+```jsx harmony
 initialState = {
   value: 2
 };
