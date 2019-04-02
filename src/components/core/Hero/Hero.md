@@ -1,4 +1,4 @@
-```jsx
+```jsx harmony
 import Heading from '../Heading';
 <Hero backgroundImage="https://source.unsplash.com/TBw3iQGdwbg/1000x600">
   <Heading level={2}>
@@ -9,7 +9,7 @@ import Heading from '../Heading';
 
 Responsive paddings:
 
-```jsx
+```jsx harmony
 import Heading from '../Heading';
 <Hero
   backgroundImage="https://source.unsplash.com/TBw3iQGdwbg/1000x600"
@@ -23,7 +23,7 @@ import Heading from '../Heading';
 
 Responsive height:
 
-```jsx
+```jsx harmony
 import Heading from '../Heading';
 <Hero
   backgroundImage="https://source.unsplash.com/TBw3iQGdwbg/1000x600"
@@ -38,7 +38,7 @@ import Heading from '../Heading';
 
 Inverted theme:
 
-```jsx
+```jsx harmony
 import Stack from 'stack-styled';
 import Heading from '../Heading';
 import Button from '../Button';
@@ -58,7 +58,7 @@ import { Inverted } from '../../../ThemeProvider';
 
 Using as a page heading:
 
-```jsx
+```jsx harmony
 import { Flex, Box } from '@rebass/grid';
 import Stack from 'stack-styled';
 import Heading from '../Heading';

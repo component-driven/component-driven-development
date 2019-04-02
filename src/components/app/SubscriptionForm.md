@@ -1,4 +1,4 @@
-```jsx
+```jsx harmony
 <SubscriptionForm
   id="sf1"
   email=""
@@ -9,7 +9,7 @@
 
 Sending:
 
-```jsx
+```jsx harmony
 <SubscriptionForm
   id="sf2"
   loading
@@ -21,7 +21,7 @@ Sending:
 
 Error:
 
-```jsx
+```jsx harmony
 <SubscriptionForm
   id="sf3"
   error="Out of cheese error"
@@ -33,7 +33,7 @@ Error:
 
 Success:
 
-```jsx
+```jsx harmony
 <SubscriptionForm
   id="sf4"
   success

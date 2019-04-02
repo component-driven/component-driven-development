@@ -1,4 +1,4 @@
-```jsx
+```jsx harmony
 <DogCard
   dog={{
     image: 'tsiri.jpg',

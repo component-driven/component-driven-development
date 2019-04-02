@@ -1,3 +1,3 @@
-```jsx
+```jsx harmony
 <SubscriptionForm />
 ```

@@ -1,4 +1,4 @@
-```jsx
+```jsx harmony
 <Image
   src="https://pbs.twimg.com/profile_images/678903331176214528/TQTdqGwD_400x400.jpg"
   alt="Okonetchnikov"

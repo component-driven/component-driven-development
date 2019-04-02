@@ -1,4 +1,4 @@
-```jsx
+```jsx harmony
 <Select>
   <option value="1">Dachshund</option>
   <option value="2">Saluki</option>
@@ -9,7 +9,7 @@
 
 Disabled select:
 
-```jsx
+```jsx harmony
 <Select disabled>
   <option value="1">Dachshund</option>
   <option value="2">Saluki</option>
@@ -20,7 +20,7 @@ Disabled select:
 
 Full width select:
 
-```jsx
+```jsx harmony
 <Select fullWidth>
   <option value="1">Dachshund</option>
   <option value="2">Saluki</option>
