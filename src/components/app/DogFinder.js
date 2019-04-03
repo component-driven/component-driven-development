@@ -5,7 +5,6 @@ import Stack from 'stack-styled';
 import Select from '../core/Select';
 import Widget from '../core/Widget';
 import VisuallyHidden from '../core/VisuallyHidden';
-import LoadingContainer from '../core/LoadingContainer';
 import DogCard from './DogCard';
 import { STATUSES } from '../../consts';
 
@@ -63,20 +62,11 @@ const DogFinder = ({
 				Something went wrong, try again later
 			</p>
 		)}
-		<LoadingContainer isLoading={status === STATUSES.LOADING}>
-			<Stack
-				gridColumnGap={4}
-				gridRowGap={5}
-				minWidth={200}
-				m={0}
-				p={0}
-				as="ul"
-			>
-				{dogs.map(dog => (
-					<DogCard key={dog.id} dog={dog} as="li" />
-				))}
-			</Stack>
-		</LoadingContainer>
+		<Stack gridColumnGap={4} gridRowGap={5} minWidth={200} m={0} p={0} as="ul">
+			{dogs.map(dog => (
+				<DogCard key={dog.id} dog={dog} as="li" />
+			))}
+		</Stack>
 	</React.Fragment>
 );
 
