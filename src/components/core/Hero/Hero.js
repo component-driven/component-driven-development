@@ -35,9 +35,15 @@ Hero.propTypes = {
 	/** Background color */
 	bg: PropTypes.string,
 	/** Horizontal padding */
-	px: PropTypes.number,
+	px: PropTypes.oneOfType([
+		PropTypes.number,
+		PropTypes.arrayOf(PropTypes.number),
+	]),
 	/** Vertical padding */
-	py: PropTypes.number,
+	py: PropTypes.oneOfType([
+		PropTypes.number,
+		PropTypes.arrayOf(PropTypes.number),
+	]),
 	/** Minimum height */
 	minHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	children: PropTypes.node,
