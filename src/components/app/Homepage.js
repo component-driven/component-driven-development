@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box } from '@rebass/grid';
 import Heading from '../core/Heading';
-import Page from '../core/Page';
 import Header from '../app/Header';
 import Footer from '../app/Footer';
 import Hero from '../core/Hero';
@@ -10,7 +9,7 @@ import DogFinder from '../app/DogFinderContainer';
 import { Inverted } from '../../ThemeProvider';
 
 const Homepage = () => (
-	<Page>
+	<>
 		<Inverted>
 			<Hero
 				backgroundImage="linear-gradient(to bottom, rgba(44,35,28,0.7), rgba(0,0,0,0)),
@@ -40,10 +39,8 @@ const Homepage = () => (
 				<DogFinder />
 			</Box>
 		</main>
-		<Page.Footer>
-			<Footer />
-		</Page.Footer>
-	</Page>
+		<Footer />
+	</>
 );
 
 export default Homepage;
