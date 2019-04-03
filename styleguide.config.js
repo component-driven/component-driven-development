@@ -62,7 +62,7 @@ if (isExercises) {
 			],
 		},
 		{
-			name: 'Components',
+			name: 'Primitives',
 			components: 'src/components/core/**/[A-Z]*.js',
 		},
 		{
