@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 import theme from '../theme';
 import Text from '../components/core/Text';
-import Panel from '../components/core/Panel';
 import Heading from '../components/core/Heading';
 
-const SpacingExample = styled(Panel)`
+const SpacingExample = styled.div`
 	padding: 0;
 	margin: 0;
 	height: ${props => props.space};
@@ -15,6 +14,7 @@ const SpacingExample = styled(Panel)`
 	font-family: ${props => props.theme.fonts.base};
 	background: ${props => props.theme.colors.lighter};
 	border-color: ${props => props.theme.colors.light};
+	border-width: 1px;
 	border-style: dashed;
 `;
 
