@@ -1,10 +1,10 @@
-## Layout and whitespace management
+# Layout and whitespace management
 
-### Getting started
+## Getting started
 
 Run `npm start` and navigate to _Exercise 5_ in the sidebar. Use files in the `src/exercises/exercise05` folder.
 
-### 5.1. Introducing Rebass Grid (former Grid Styled)
+## 5.1. Introducing Rebass Grid (former Grid Styled)
 
 Ideally components shouldn’t have any predefined whitespace around them, otherwise it may be hard to use them in some contexts.
 
@@ -49,7 +49,7 @@ import { Box, Flex } from '@rebass/grid';
 </Flex>;
 ```
 
-#### The result
+## The result
 
 The result should look like this:
 
@@ -76,7 +76,7 @@ import Input from '../../components/core/Input';
 </Flex>;
 ```
 
-#### The task
+## The task
 
 Implement a basic subscription form:
 
@@ -122,7 +122,7 @@ export default SubscriptionForm;
 
 </details>
 
-### 5.2 Making the subscription form responsive
+## 5.2 Making the subscription form responsive
 
 There's one issue with our form: on small screens the input field is too small to type anything. Let’s make our form responsive: wrap the button to the next line on narrow screens.
 
@@ -140,7 +140,7 @@ All Rebass Grid props are [responsive](https://github.com/rebassjs/grid#responsi
 
 **Note:** Have a look at the [default breakpoints](https://jxnblk.com/styled-system/api#breakpoints).
 
-### The result
+## The result
 
 The result should look like this (change the browser window width to see the effect):
 
@@ -167,7 +167,7 @@ import Input from '../../components/core/Input';
 </Flex>;
 ```
 
-#### The task
+## The task
 
 Update the code from the previous exercise to make it responsive: render the input and the button on separate rows on narrow screens.
 
@@ -211,7 +211,7 @@ export default SubscriptionForm;
 
 </details>
 
-### 5.3 Simplifying whitespace management
+## 5.3 Simplifying whitespace management
 
 There are several solutions to the previous task, but the most obvious ones require switching a horizontal padding or margin to a vertical on narrow screens. There are better ways to implement a gap between elements.
 
@@ -235,7 +235,7 @@ One solution is to use [a negative margin](https://medium.com/@justintulk/why-cs
 </div>
 ```
 
-### The result
+## The result
 
 The result should look like this:
 
@@ -262,7 +262,7 @@ import Input from '../../components/core/Input';
 </Flex>;
 ```
 
-#### The task
+## The task
 
 Update the code from the previous exercise using the negative margin technique. There should be no visible changes.
 
@@ -304,7 +304,7 @@ export default SubscriptionForm;
 
 </details>
 
-### 5.4 Introducing Stack Styled
+## 5.4 Introducing Stack Styled
 
 CSS Grid has a thing called _gap_ (`grid-gap` property), which is exactly what we need here: whitespace between items. No need to use negative margins:
 
@@ -334,7 +334,7 @@ import Stack from 'stack-styled';
 </Stack>;
 ```
 
-### The result
+## The result
 
 The result should look like this:
 
@@ -357,7 +357,7 @@ import Input from '../../components/core/Input';
 </Stack>;
 ```
 
-#### The task
+## The task
 
 Update the code from the previous exercise using the [Stack](https://sapegin.github.io/stack-styled/#stack) component from Stack Styled.
 
