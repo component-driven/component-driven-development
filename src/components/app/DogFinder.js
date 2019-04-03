@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from '@rebass/grid';
+import Stack from 'stack-styled';
 import Select from '../core/Select';
 import Widget from '../core/Widget';
 import VisuallyHidden from '../core/VisuallyHidden';
 import LoadingContainer from '../core/LoadingContainer';
-import CardList from './CardList';
 import DogCard from './DogCard';
 import { STATUSES } from '../../consts';
 
@@ -64,11 +64,18 @@ const DogFinder = ({
 			</p>
 		)}
 		<LoadingContainer isLoading={status === STATUSES.LOADING}>
-			<CardList>
+			<Stack
+				gridColumnGap={4}
+				gridRowGap={5}
+				minWidth={200}
+				m={0}
+				p={0}
+				as="ul"
+			>
 				{dogs.map(dog => (
 					<DogCard key={dog.id} dog={dog} as="li" />
 				))}
-			</CardList>
+			</Stack>
 		</LoadingContainer>
 	</React.Fragment>
 );
