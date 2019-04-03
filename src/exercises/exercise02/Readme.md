@@ -1,8 +1,8 @@
-# Creating reusable components
+# Primitives — creating reusable components
 
 ## Getting started
 
-Run `npm start` and navigate to _Exercise 2_ in the sidebar. Use files in the `src/exercises/exercise02` folder.
+Run `npm start` and navigate to _Exercise 2_ in the sidebar. Open `src/exercises/exercise02` in your editor.
 
 ## Result
 
