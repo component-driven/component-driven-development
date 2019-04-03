@@ -1,10 +1,10 @@
-## Hiding complex styles in components
+# Encapsulating complex styles in components
 
-### Getting started
+## Getting started
 
 Run `npm start` and navigate to _Exercise 4_ in the sidebar. Use files in the `src/exercises/exercise04` folder.
 
-### 4.1. Truncating long lines of text
+## 4.1. Truncating long lines of text
 
 Truncating long lines of text with an ellipsis is a common task that requires a hard to remember [CSS snippet](https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/):
 
@@ -16,7 +16,7 @@ text-overflow: ellipsis;
 
 By creating a component, we can hide the complexity from the user, reduce code duplication and allow ourselves to change the implementation in the future (for example, we may use a gradient instead of an ellipsis).
 
-#### The result
+### The result
 
 The result should look like this:
 
@@ -27,7 +27,7 @@ import TruncatedText from '../../components/core/TruncatedText';
 </TruncatedText>;
 ```
 
-#### The task
+### The task
 
 Create a component (`TruncatedText`) that renders its children with an ellipsis at the end, if the content can’t fit on a single line.
 
@@ -53,7 +53,7 @@ export default TruncatedText;
 
 </details>
 
-### 4.2. Creating a sticky footer
+## 4.2. Creating a sticky footer
 
 Sticky footer is another common task. It has [dozens of different solutions](https://css-tricks.com/couple-takes-sticky-footer/), many are tricky and hard to remember.
 
@@ -76,7 +76,7 @@ We’ll [use Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/sti
 </div>
 ```
 
-#### The result
+### The result
 
 The result should look like this:
 
@@ -97,7 +97,7 @@ import Page from '../../components/core/Page';
 </div>;
 ```
 
-#### The task
+### The task
 
 Create two components (`Page` and `Page.Footer`) that implement a sticky footer.
 
@@ -125,7 +125,7 @@ export default Page;
 
 </details>
 
-### 4.3. Implementing the Media object pattern
+## 4.3. Implementing the Media object pattern
 
 [Media object](https://css-tricks.com/media-object-bunch-ways/) is a simple pattern, where an image is placed on a left or right side of text.
 
@@ -150,7 +150,7 @@ Again, we’ll use Flexbox to implement it:
 </div>
 ```
 
-#### The result
+### The result
 
 The result should look like this:
 
@@ -172,7 +172,7 @@ import Image from '../../components/core/Image';
 </Media>;
 ```
 
-#### The task
+### The task
 
 Create three components (`Media`, `Media.Image` and `Media.Body`) that implement the Media object pattern.
 

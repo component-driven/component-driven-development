@@ -1,10 +1,10 @@
-## Creating generic typography components
+# Creating generic typography components
 
-### Getting started
+## Getting started
 
 Run `npm start` and navigate to _Exercise 3_ in the sidebar. Use files in the `src/exercises/exercise03` folder.
 
-### Result
+## Result
 
 The result should look like this:
 
@@ -31,7 +31,7 @@ import Text from '../../components/core/Text';
 </>;
 ```
 
-### 3.1. Creating a basic heading component
+## 3.1. Creating a basic heading component
 
 Have a look at our [typography scale](https://component-driven.github.io/component-driven-development/styleguide/#typography):
 
@@ -42,7 +42,7 @@ import Typography from '../../styleguide/Typography';
 
 We already know how to access design tokens in our styled components from the previous exercise.
 
-#### The task
+## The task
 
 Create a component that renders different levels of headings:
 
@@ -81,7 +81,7 @@ export default Heading;
 
 </details>
 
-### 3.2. Making margins customizable
+## 3.2. Making margins customizable
 
 Usually we need some whitespace below the heading. We can hardcode values for each heading size, but often whitespace depends on the context, where the heading is used.
 
@@ -117,7 +117,7 @@ Let’s make the whitespace part of the component API:
 </Heading>
 ```
 
-#### The task
+## The task
 
 Add props `m`, `mt`, `mr`, `mb` and `ml` to change `margin`, `margin-top`, `margin-right`, `margin-bottom` and `margin-left` respectively.
 
@@ -151,7 +151,7 @@ export default Heading;
 
 </details>
 
-### 3.3. Introducing styled-system
+## 3.3. Introducing styled-system
 
 [Styled-system](http://jxnblk.com/styled-system/) is a collection of utility functions that allow you to control styles of your component using props.
 
@@ -167,7 +167,7 @@ const Heading = styled(Base)`
 
 **Note:** Have a look at the [default spacing scale](https://jxnblk.com/styled-system/api#space-1).
 
-#### The task
+## The task
 
 Replace all custom margins with the `space` function from styled-system.
 
@@ -189,7 +189,7 @@ export default Heading;
 
 </details>
 
-### 3.4. Simplifying styles
+## 3.4. Simplifying styles
 
 Converting props to styles isn’t the only feature of styled-system: [themeGet](http://jxnblk.com/styled-system/api#themeget) function can save you a few keystrokes when accessing the theme values, so instead of writing `props => props.theme.colors.base` you could write:
 
@@ -203,7 +203,7 @@ const Heading = styled.h1`
 `;
 ```
 
-#### The task
+## The task
 
 Replace direct access to `props.theme` with the `themeGet` function.
 
@@ -228,11 +228,11 @@ export default Heading;
 
 </details>
 
-### 3.5. Creating a generic text component
+## 3.5. Creating a generic text component
 
 Now we know enough to easily create customizable components that use many theme values.
 
-### The task
+## The task
 
 Create a component that renders text in different styles:
 

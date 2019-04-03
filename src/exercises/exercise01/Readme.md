@@ -1,19 +1,15 @@
-## React Styleguidist introduction
+# React Styleguidist introduction
 
-### Getting started
+## Getting started
 
-Run `npm start` and navigate to _Exercise 1_ in the sidebar. Use files in the `src/exercises/exercise01` folder.
+Run `npm start` and navigate to _Exercise 1_ in the sidebar. In your editor open the `src/exercises/exercise01` folder.
 
-[React Styleguidist](https://react-styleguidist.js.org/) is a tool that we use as a workbench to develop components, and to generate a style guide.
+[React Styleguidist](https://react-styleguidist.js.org/) is a tool we are using as a workbench to develop components, and to generate a style guide.
 
-### The task
+## The task
 
 1. Explore React Styleguidist UI, try to switch to isolated mode (a button in the top right corner), try to edit the example code.
-
-2. Edit examples in `Button.md`, add a new example.
-
-3. Edit a component source in `Button.js`. See how all examples update every time you save a file.
-
-4. Edit component’s `PropTypes` definition. Open “Props & methods” to see that the documentation updates.
-
-5. Add a new component and an example file and see how it's added to the style guide.
+1. Edit examples in `Button.md`, add a new example.
+1. Edit a component source in `Button.js`. See how all examples update every time you save a file.
+1. Edit component’s `PropTypes` definition. See how “Props & methods” section reacts to the updates.
+1. Add a new component and an example file and see how it's automatically added to the style guide.

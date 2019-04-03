@@ -1,10 +1,10 @@
-## Creating reusable components
+# Creating reusable components
 
-### Getting started
+## Getting started
 
 Run `npm start` and navigate to _Exercise 2_ in the sidebar. Use files in the `src/exercises/exercise02` folder.
 
-### Result
+## Result
 
 The result should look like this:
 
@@ -20,7 +20,7 @@ import Button from '../../components/core/Button';
 </>;
 ```
 
-### 2.1. Introducing styled-components
+## 2.1. Introducing styled-components
 
 If you’re not familiar with [styled-components](https://www.styled-components.com/), here’s the idea in five lines of code:
 
@@ -38,7 +38,7 @@ The `Title` component will render an `h1` tag with an attached CSS that sets f
 
 **Hint:** [A 5-minute intro to styled-components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55).
 
-#### The task
+### The task
 
 1. Rewrite our button component to use styled-components.
 
@@ -70,7 +70,7 @@ export default Button;
 
 </details>
 
-### 2.2. Introducing design tokens
+## 2.2. Introducing design tokens
 
 Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions. We’ve already created tokens for our project. Check them out in [the style guide](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation). Tokens are defined as JavaScript objects in the [theme.js file](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js).
 
@@ -82,7 +82,7 @@ const Button = styled.button`
 `;
 ```
 
-#### The task
+### The task
 
 1. Replace all hardcoded values with design tokens.
 
@@ -113,7 +113,7 @@ export default Button;
 
 </details>
 
-### 2.3. Add hover and active styles
+## 2.3. Add hover and active styles
 
 Use `&` to refer to a component class name similar to Sass:
 
@@ -126,7 +126,7 @@ const Button = styled.button`
 `;
 ```
 
-#### The task
+### The task
 
 1. Add hover and active styles.
 
@@ -165,7 +165,7 @@ export default Button;
 
 </details>
 
-### 2.4. Prop-based styling
+## 2.4. Prop-based styling
 
 Styles in styled-components [can depend on props](https://www.styled-components.com/docs/basics#adapting-based-on-props) you pass to your component:
 
@@ -177,7 +177,7 @@ const Title = styled.h1`
 <Title huge>Hello components!</Title>;
 ```
 
-#### The task
+### The task
 
 1. Add a new variation of a button:
 
