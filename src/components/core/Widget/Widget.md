@@ -1,6 +1,6 @@
 ```jsx harmony
-import Slider from '../Slider';
+import Input from '../Input';
 <Widget label="Size">
-  <Slider value={3} onChange={console.log} />
+  <Input value="" onChange={console.log} />
 </Widget>;
 ```
