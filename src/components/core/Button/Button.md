@@ -10,11 +10,10 @@ Disabled buttons:
 <Button disabled>Can’t touch this</Button> <Button variant="primary" disabled>Can’t touch this</Button>
 ```
 
-
 Full width button:
 
 ```js
-<Button fullWidth>Click me</Button> <Button variant="primary" fullWidth>Click me</Button>
+<Button fullWidth>Click me</Button> <Button variant="primary" fullWidth as="a" href="/">Click me</Button>
 ```
 
 Button as a link:
