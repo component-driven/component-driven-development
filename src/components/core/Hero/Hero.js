@@ -39,7 +39,7 @@ Hero.propTypes = {
 	/** Vertical padding */
 	py: PropTypes.number,
 	/** Minimum height */
-	minHeight: PropTypes.number,
+	minHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 	children: PropTypes.node,
 };
 
