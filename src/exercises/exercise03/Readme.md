@@ -2,7 +2,7 @@
 
 ## Getting started
 
-Run `npm start` and navigate to _Exercise 3_ in the sidebar. Use files in the `src/exercises/exercise03` folder.
+Run `npm start` and navigate to _Exercise 3_ in the sidebar. Open `src/exercises/exercise03` in your editor.
 
 ## Result
 

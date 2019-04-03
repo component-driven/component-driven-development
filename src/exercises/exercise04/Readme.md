@@ -2,7 +2,7 @@
 
 ## Getting started
 
-Run `npm start` and navigate to _Exercise 4_ in the sidebar. Use files in the `src/exercises/exercise04` folder.
+Run `npm start` and navigate to _Exercise 4_ in the sidebar. Open `src/exercises/exercise04` in your editor.
 
 ## 4.1. Truncating long lines of text
 
