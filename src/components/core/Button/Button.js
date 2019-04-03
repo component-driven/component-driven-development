@@ -23,6 +23,7 @@ const Button = styled.button`
 		props.theme.colors[getBgColor(props.variant)] || 'transparent'};
 	text-decoration: none;
 	user-select: none;
+	box-sizing: border-box;
 
 	/* We can't use :enabled here because it doesn't work with <a> */
 	&:hover:not(:disabled),
