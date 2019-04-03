@@ -1,7 +1,6 @@
 import React from 'react';
 import { Flex, Box } from '@rebass/grid';
 import { Formik } from 'formik';
-import Page from '../core/Page';
 import Header from '../app/Header';
 import Heading from '../core/Heading';
 import CheckoutForm from '../app/CheckoutForm';
@@ -24,7 +23,7 @@ const Checkout = ({ status, dog }) => (
 		}}
 	>
 		{({ values, handleChange, handleBlur }) => (
-			<Page>
+			<>
 				<Box px={4} py={3}>
 					<Header />
 				</Box>
@@ -43,7 +42,7 @@ const Checkout = ({ status, dog }) => (
 						</Box>
 					</Flex>
 				</Box>
-			</Page>
+			</>
 		)}
 	</Formik>
 );
