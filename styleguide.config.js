@@ -3,7 +3,7 @@ const glob = require('glob');
 const webpackConfig = require('react-scripts/config/webpack.config');
 
 // styleguidist server --exercise
-const shouldShowExercises = !!process.argv.find(x => x === '--exercise');
+const isExercises = !!process.argv.find(x => x === '--exercise');
 
 // Patch Create React App webpack config with Babel plugin for styled-components
 try {
@@ -15,6 +15,7 @@ try {
 } catch (err) {}
 
 const config = {
+	serverPort: isExercises ? 6061 : 6060,
 	title: 'Component-driven development workshop',
 	styleguideDir: 'build/styleguide',
 	assetsDir: 'public',
@@ -26,10 +27,11 @@ const config = {
 	skipComponentsWithoutExample: true,
 	pagePerSection: true,
 	exampleMode: 'expand',
+	usageMode: 'expand',
 	webpackConfig,
 };
 
-if (shouldShowExercises) {
+if (isExercises) {
 	// Generate sections for all exercises
 	const exercisesRoot = path.join(__dirname, `src/exercises`);
 	const exercises = glob.sync(`${exercisesRoot}/exercise*`);
