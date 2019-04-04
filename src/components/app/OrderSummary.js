@@ -32,17 +32,21 @@ const OrderSummary = ({ dog, dateFrom, dateTo }) => {
 			<Card>
 				<Card.Image src={`/images/${dog.image}`} alt={dog.name} />
 				<Card.Body>
-					<DogInfo dog={dog} />
-					<Flex>
-						{days && <Text>{days} days</Text>}
-						<Box ml="auto">
-							{summ && (
+					<Box mb={3}>
+						<DogInfo dog={dog} />
+					</Box>
+					{summ ? (
+						<Flex>
+							{days && <Text>{days} days</Text>}
+							<Box ml="auto">
 								<Heading as="p" size="l">
 									€ {summ}
 								</Heading>
-							)}
-						</Box>
-					</Flex>
+							</Box>
+						</Flex>
+					) : (
+						<Text>Select dates to see the summ</Text>
+					)}
 				</Card.Body>
 			</Card>
 		</>
