@@ -1,6 +1,11 @@
+A basic example:
+
 ```jsx harmony
 import Heading from '../Heading';
-<Hero backgroundImage="https://source.unsplash.com/TBw3iQGdwbg/1000x600">
+<Hero
+  backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
+  py="6"
+>
   <Heading level={2}>
     The quick brown fox jumps over the lazy dog
   </Heading>
@@ -12,23 +17,8 @@ Responsive paddings:
 ```jsx harmony
 import Heading from '../Heading';
 <Hero
-  backgroundImage="https://source.unsplash.com/TBw3iQGdwbg/1000x600"
+  backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={[5, 6]}
->
-  <Heading level={2} size="xl">
-    The quick brown fox jumps over the lazy dog
-  </Heading>
-</Hero>;
-```
-
-Responsive height:
-
-```jsx harmony
-import Heading from '../Heading';
-<Hero
-  backgroundImage="https://source.unsplash.com/TBw3iQGdwbg/1000x600"
-  py={5}
-  minHeight="20vh"
 >
   <Heading level={2} size="xl">
     The quick brown fox jumps over the lazy dog
@@ -44,7 +34,10 @@ import Heading from '../Heading';
 import Button from '../Button';
 import { Inverted } from '../../../ThemeProvider';
 <Inverted>
-  <Hero backgroundImage="https://source.unsplash.com/cGlac7MEyiE/1000x600">
+  <Hero
+    backgroundImage="url(https://source.unsplash.com/cGlac7MEyiE/1000x600)"
+    py="5"
+  >
     <Heading level={2} size="xl" mb={5}>
       The quick black fox jumps over the lazy dog
     </Heading>
@@ -67,11 +60,7 @@ import Button from '../Button';
 import Text from '../Text';
 import { Inverted } from '../../../ThemeProvider';
 <Inverted>
-  <Hero
-    backgroundImage="https://source.unsplash.com/cGlac7MEyiE/1000x600"
-    px={4}
-    py={3}
-  >
+  <Hero backgroundImage="url(https://source.unsplash.com/cGlac7MEyiE/1000x600)">
     <Flex
       justifyContent={['center', 'space-between']}
       flexWrap="wrap"
