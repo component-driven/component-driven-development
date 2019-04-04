@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@rebass/grid';
 import Heading from '../core/Heading';
 import Header from '../app/Header';
-import Footer from '../app/Footer';
+import Footer from '../patterns/Footer';
 import Hero from '../core/Hero';
 import Features from '../app/Features';
 import DogFinder from '../app/DogFinderContainer';

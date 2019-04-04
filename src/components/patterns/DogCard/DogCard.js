@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Stack from 'stack-styled';
 import { Link } from '@reach/router';
-import Button from '../core/Button';
-import DogInfo from './DogInfo';
-import Card from '../core/Card';
+import Button from '../../core/Button';
+import DogInfo from '../../app/DogInfo';
+import Card from '../../core/Card';
 
 const DogCard = ({ as, dog }) => (
 	<Card as={as}>
