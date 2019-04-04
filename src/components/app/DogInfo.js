@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Stack from 'stack-styled';
 import Heading from '../core/Heading';
 import Text from '../core/Text';
-import Rating from '../core/Rating';
+import Rating from '../patterns/Rating';
 
 const DogInfo = ({ isHeading, dog }) => (
 	<Stack gap={2}>
