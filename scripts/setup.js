@@ -1,8 +1,8 @@
 var verifySystem = require('./vendor/workshop-setup').verifySystem;
 
 verifySystem([
-	verifySystem.validators.node('>=8.6.0'),
-	verifySystem.validators.npm('>=5.4.0'),
+	verifySystem.validators.node('>=10.0.0'),
+	verifySystem.validators.npm('>=6.0.0'),
 	function verifyDeps() {
 		// Doesn't really verify dependencies, just checks that the user has
 		// installed them at least once. Real verification would be too slow

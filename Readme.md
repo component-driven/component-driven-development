@@ -22,8 +22,8 @@ To learn command line basics we recommend [Really Friendly Command Line Intro](h
 ## System requirements
 
 - [Git](https://git-scm.com/) 2.0, or newer
-- [Node.js](https://nodejs.org/) 8.6, or newer
-- [npm](https://www.npmjs.com/) 5.4, or newer
+- [Node.js](https://nodejs.org/) 10.0, or newer
+- [npm](https://www.npmjs.com/) 6.0, or newer
 
 We recommend [nvm](https://github.com/creationix/nvm) or [n](https://github.com/tj/n) to install Node.js.
 
