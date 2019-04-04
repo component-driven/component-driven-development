@@ -5,8 +5,18 @@ import Text from '../core/Text';
 import Button from '../core/Button';
 import Input from '../core/Input';
 import Select from '../core/Select';
-import Widget from '../core/Widget';
 import Fieldset from '../core/Fieldset';
+
+const Widget = ({ label, children, ...props }) => {
+	return (
+		<Box {...props}>
+			<Text as="label">
+				<Box mb={2}>{label}</Box>
+				{children}
+			</Text>
+		</Box>
+	);
+};
 
 const CheckoutForm = ({ disabled }) => (
 	<Form>
