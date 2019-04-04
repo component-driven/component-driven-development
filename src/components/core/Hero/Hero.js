@@ -1,59 +1,39 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
+	space,
 	color,
-	backgroundSize,
 	backgroundImage,
 	backgroundPosition,
-	minHeight,
 } from 'styled-system';
 import { Box } from '@rebass/grid';
-
-const getBackgroundCss = image =>
-	image && !/\(/.test(image) ? `url(${image})` : image;
 
 /**
  * A hero
  */
-const Hero = styled(Box).attrs(props => ({
-	backgroundImage: getBackgroundCss(props.backgroundImage),
-}))`
+const Hero = styled(Box)`
 	${color};
-	${backgroundSize};
-	${backgroundPosition};
 	${backgroundImage};
-	${minHeight};
+	${backgroundPosition};
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
+	background-size: cover;
 `;
 
 Hero.propTypes = {
-	/** Background image (URL or CSS property value) */
-	backgroundImage: PropTypes.string,
-	/** Background color */
-	bg: PropTypes.string,
-	/** Horizontal padding */
-	px: PropTypes.oneOfType([
-		PropTypes.number,
-		PropTypes.arrayOf(PropTypes.number),
-	]),
-	/** Vertical padding */
-	py: PropTypes.oneOfType([
-		PropTypes.number,
-		PropTypes.arrayOf(PropTypes.number),
-	]),
-	/** Minimum height */
-	minHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	...space.propTypes,
+	...color.propTypes,
+	...backgroundImage.propTypes,
+	...backgroundPosition.propTypes,
 	children: PropTypes.node,
 };
 
 Hero.defaultProps = {
-	px: 5,
-	py: 7,
+	px: 4,
+	py: 3,
 	bg: 'bg',
-	backgroundSize: 'cover',
 };
 
 /** @component */
