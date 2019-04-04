@@ -3,9 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Stack from 'stack-styled';
-import Button from '../core/Button';
-import Input from '../core/Input';
-import Text from '../core/Text';
+import Button from '../../core/Button';
+import Input from '../../core/Input';
+import Text from '../../core/Text';
 
 const Form = styled.form`
 	width: 100%;

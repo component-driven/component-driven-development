@@ -66,8 +66,8 @@ if (isExercises) {
 			components: 'src/components/core/**/[A-Z]*.js',
 		},
 		{
-			name: 'Patterns',
-			components: 'src/components/app/**/*.js',
+			name: 'UI Patterns',
+			components: 'src/components/patterns/**/[A-Z]*.js',
 		},
 	];
 }

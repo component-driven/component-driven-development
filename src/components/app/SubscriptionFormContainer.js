@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SubscriptionForm from './SubscriptionForm';
+import SubscriptionForm from '../patterns/SubscriptionForm';
 import subscribe from '../../services/newsletterService';
 
 class SubscriptionFormContainer extends Component {

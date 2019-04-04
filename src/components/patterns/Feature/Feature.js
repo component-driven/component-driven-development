@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '@rebass/grid';
 import Stack from 'stack-styled';
-import Heading from '../core/Heading';
-import Text from '../core/Text';
+import Heading from '../../core/Heading';
+import Text from '../../core/Text';
 
 const Feature = ({ as, imageComponent: Image, title, children }) => (
 	<Stack gap={2} as={as}>

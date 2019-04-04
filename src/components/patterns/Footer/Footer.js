@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box, Flex } from '@rebass/grid';
-import Heading from '../core/Heading';
-import Link from '../core/Link';
-import Text from '../core/Text';
-import { Inverted } from '../../ThemeProvider';
-import SubscriptionForm from '../app/SubscriptionFormContainer';
-import SvgDogPees from './images/SvgDogPees';
+import Heading from '../../core/Heading';
+import Link from '../../core/Link';
+import Text from '../../core/Text';
+import { Inverted } from '../../../ThemeProvider';
+import SubscriptionForm from '../../app/SubscriptionFormContainer';
+import SvgDogPees from '../../app/images/SvgDogPees';
 
 const Footer = () => {
 	return (

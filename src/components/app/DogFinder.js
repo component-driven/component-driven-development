@@ -5,7 +5,7 @@ import Stack from 'stack-styled';
 import Select from '../core/Select';
 import Widget from '../core/Widget';
 import VisuallyHidden from '../core/VisuallyHidden';
-import DogCard from './DogCard';
+import DogCard from '../patterns/DogCard';
 import { STATUSES } from '../../consts';
 
 const FilterSelect = ({ name, options, value, disabled, onChange }) => (
