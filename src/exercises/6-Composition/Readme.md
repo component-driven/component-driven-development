@@ -1,4 +1,4 @@
-**TODO: Hero** **TODO: Card** **TODO: Widget?**
+**TODO: Hero** **TODO: Card**
 
 You can add extra styles using styled-components:
 

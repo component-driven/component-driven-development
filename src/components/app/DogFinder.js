@@ -2,29 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Flex, Box } from '@rebass/grid';
 import Stack from 'stack-styled';
+import Text from '../core/Text';
 import Select from '../core/Select';
-import Widget from '../core/Widget';
 import VisuallyHidden from '../core/VisuallyHidden';
 import DogCard from '../patterns/DogCard';
 import { STATUSES } from '../../consts';
 
-const FilterSelect = ({ name, options, value, disabled, onChange }) => (
-	<Select
-		fullWidth
-		disabled={disabled || options.length <= 1}
-		value={value}
-		onChange={event => {
-			const { value } = event.target;
-			const number = Number(value);
-			onChange(name, String(number) === value ? number : value);
-		}}
-	>
-		{options.map(option => (
-			<option key={option.value} value={option.value}>
-				{option.label}
-			</option>
-		))}
-	</Select>
+const FilterSelect = ({ name, label, options, value, disabled, onChange }) => (
+	<Text as="label">
+		<Box mb={2}>{label}</Box>
+		<Select
+			fullWidth
+			disabled={disabled || options.length <= 1}
+			value={value}
+			onChange={event => {
+				const { value } = event.target;
+				const number = Number(value);
+				onChange(name, String(number) === value ? number : value);
+			}}
+		>
+			{options.map(option => (
+				<option key={option.value} value={option.value}>
+					{option.label}
+				</option>
+			))}
+		</Select>
+	</Text>
 );
 
 const DogFinder = ({
@@ -39,15 +42,14 @@ const DogFinder = ({
 		<Flex mt={3} mb={5} mx={-3} flexWrap="wrap">
 			{filterOptions.map(({ name, label, options }) => (
 				<Box key={name} width={[1, 1 / 3]} px={3} py={[3, 0]}>
-					<Widget label={label}>
-						<FilterSelect
-							name={name}
-							options={options}
-							value={filters[name]}
-							disabled={status === STATUSES.LOADING}
-							onChange={onFilterUpdate}
-						/>
-					</Widget>
+					<FilterSelect
+						name={name}
+						label={label}
+						options={options}
+						value={filters[name]}
+						disabled={status === STATUSES.LOADING}
+						onChange={onFilterUpdate}
+					/>
 				</Box>
 			))}
 		</Flex>
