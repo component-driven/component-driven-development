@@ -1,9 +1,3 @@
-# Layout and whitespace management
-
-## Getting started
-
-Run `npm start` and navigate to _Exercise 5_ in the sidebar. Open `src/exercises/exercise05` in your editor.
-
 ## 5.1. Introducing Rebass Grid (former Grid Styled)
 
 Ideally components shouldn’t have any predefined whitespace around them, otherwise it may be hard to use them in some contexts.

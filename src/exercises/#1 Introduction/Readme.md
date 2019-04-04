@@ -1,9 +1,3 @@
-# React Styleguidist introduction
-
-## Getting started
-
-Run `npm start` and navigate to _Exercise 1_ in the sidebar. Open `src/exercises/exercise01` in your editor.
-
 [React Styleguidist](https://react-styleguidist.js.org/) is a tool we are using as a workbench to develop components, and to generate a style guide.
 
 ## The task
