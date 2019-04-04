@@ -1,20 +1,258 @@
 **TODO: Hero** **TODO: Card**
 
-You can add extra styles using styled-components:
+## 6.1. Extending styled components
+
+Styled-components support [extending styles](https://www.styled-components.com/docs/basics#extending-styles). It’s something like inheritance: you can create a styled component, that’s based on another component, not necessarily styled (but it has to accpept `className` prop). Such component will keep all the styles and behavior or the original component, bu you’ll be able to add extra styles.
+
+For example, a basic card may look like so:
 
 ```js static
 import styled from 'styled-components';
 import { Box } from '@rebass/grid';
 
 const Card = styled(Box).attrs({
-  as: 'section',
-  p: 3,
-  mb: 5
+  p: 3
 })`
   background: ghostwhite;
   border-radius: 3px;
 `;
 ```
+
+This `Card` component will accept all props of the `Box` component (for some we’ve defined default values: `p`), but also will have grayish background and rounded corners.
+
+We can use this technique to implement a hero pattern. It’s a design pattern, where large text is displayed on top of a photo, and often used in site headers.
+
+### The result
+
+```jsx harmony
+import Hero from '../../components/core/Hero';
+import Heading from '../../components/core/Heading';
+<Hero
+  backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
+  py="6"
+>
+  <Heading level={2}>
+    The quick brown fox jumps over the lazy dog
+  </Heading>
+</Hero>;
+```
+
+### The task
+
+Implement a `Hero` component, based on the `Box` component, we’ve created in the previous exercise.
+
+- Accept any `background-image` CSS property value as background.
+- Don’t make any assumptions, like font size, on the content, just render `children` as is.
+
+**Hint:** Use [styled-system functions](https://styled-system.com/table#background) to create props for changing background.
+
+<details>
+ <summary>Solution</summary>
+
+```js static
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import {
+  space,
+  color,
+  backgroundImage,
+  backgroundPosition
+} from 'styled-system';
+import { Box } from '@rebass/grid';
+
+/**
+ * A hero
+ */
+const Hero = styled(Box)`
+  ${color};
+  ${backgroundImage};
+  ${backgroundPosition};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+`;
+
+Hero.propTypes = {
+  ...space.propTypes,
+  ...color.propTypes,
+  ...backgroundImage.propTypes,
+  ...backgroundPosition.propTypes,
+  children: PropTypes.node
+};
+
+Hero.defaultProps = {
+  px: 4,
+  py: 3,
+  bg: 'bg'
+};
+
+/** @component */
+export default Hero;
+```
+
+</details>
+
+## 6.2. Compound components
+
+TODO: Props vs subscomponents
+
+Often we want to render different kinds of content and style them differently, like an image, a heading and a body text of a card.
+
+For example, a more functional card may look like so:
+
+```jsx static
+import styled from 'styled-components';
+import { Box } from '@rebass/grid';
+import {
+  color,
+  border,
+  borderColor,
+  borderRadius
+} from 'styled-system';
+
+const Card = styled(Box).attrs({
+  bg: 'bg',
+  border: 'thin',
+  borderColor: 'light',
+  borderRadius: 'base'
+})`
+  ${color};
+  ${border};
+  ${borderColor};
+  ${borderRadius};
+`;
+
+Card.Image = props => <img {...props} />;
+Card.Body = ({ children }) => <Box p={4}>{children}</Box>;
+```
+
+And then you’d use it like so:
+
+```jsx static
+<Card as={as}>
+  <Card.Image src="tsiri.jpg" alt="Tsiri" />
+  <Card.Body>
+    <Heading size="m">Tsiri the saluki</Heading>
+    <Text variant="secondary">The best dog in the world</Text>
+  </Card.Body>
+</Card>
+```
+
+We can use this technique to implement a feature component.
+
+### The result
+
+```jsx harmony
+import Feature from '../../components/patterns/Feature';
+import SvgFeatureDuck from '../../components/app/images/SvgFeatureDuck';
+<Feature>
+  <Feature.Icon>
+    <SvgFeatureDuck width={80} />
+  </Feature.Icon>
+  <Feature.Heading>Rubberducking</Feature.Heading>
+  <Feature.Body>
+    Expain your problem to a dog, not to a rubber duck.
+  </Feature.Body>
+</Feature>;
+```
+
+### The task
+
+Create a compound `Feature` component, that has three subcomponents:
+
+- `Icon` that renders `children` centered with `secondary` color.
+- `Heading` that renders a large centered heading.
+- `Body` that renders centered text.
+
+**Hint:** Use `Stack` component to create even spacing between subcomponents.
+
+<details>
+ <summary>Solution</summary>
+
+```jsx static
+import React from 'react';
+import { Box } from '@rebass/grid';
+import Stack from 'stack-styled';
+import Heading from '../../core/Heading';
+import Text from '../../core/Text';
+
+const Feature = ({ as, children }) => (
+  <Stack gap={2} as={as}>
+    {children}
+  </Stack>
+);
+
+Feature.Icon = ({ children }) => (
+  <Box ml="auto" mr="auto" color="secondary">
+    {children}
+  </Box>
+);
+
+Feature.Heading = ({ children }) => (
+  <Heading as="h3" size="l" align="center">
+    {children}
+  </Heading>
+);
+
+Feature.Body = ({ children }) => (
+  <Text align="center">{children}</Text>
+);
+
+export default Feature;
+```
+
+</details>
+
+## 6.3. Macro components
+
+Compound components are easy to implement but have some drawbacks:
+
+- The consumer can change the order of subcomponents (it can be a benefit depending on your use case).
+- You can’t do complex layouts. For example, a button on the right side of a heading in a card.
+
+TODO
+
+We can use this technique to implement a perfect card component.
+
+### The result
+
+```jsx harmony
+import { Box } from '@rebass/grid';
+import Card from '../../components/core/Card';
+import Text from '../../components/core/Text';
+import Heading from '../../components/core/Heading';
+<Box width={300}>
+  <Card>
+    <Card.Image src={`/images/tsiri.jpg`} alt="Alt text" />
+    <Card.Body>
+      <Heading size="m">Title of the card</Heading>
+      <Text>Body of the card</Text>
+    </Card.Body>
+  </Card>
+</Box>;
+```
+
+### The task
+
+Create a `Card` component, that has three subcomponents:
+
+- `Cover` that renders and image TODO
+- `Body` that renders a body TODO
+- `Footer` that renders a footer TODO
+
+**Hint:** TODO
+
+<details>
+ <summary>Solution</summary>
+
+```jsx static
+```
+
+</details>
+
+---
 
 ## The result
 
