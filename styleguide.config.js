@@ -36,7 +36,10 @@ if (isExercises) {
 	const exercisesRoot = path.join(__dirname, `src/exercises`);
 	const exercises = glob.sync(`${exercisesRoot}/*`);
 	config.sections = exercises.map(folder => ({
-		name: path.basename(folder),
+		name: path
+			.basename(folder)
+			.replace(/(\d)-/, '')
+			.replace(/_/g, ' '),
 		content: `${folder}/Readme.md`,
 		components: `${folder}/**/*.js`,
 	}));
