@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 import { readableColor } from 'polished';
-import theme from '../theme';
 import Text from '../components/core/Text';
-
-const { colors } = theme;
 
 const Swatch = styled(Box).attrs({ p: 4 })`
 	width: 100%;
@@ -26,10 +23,10 @@ const ColorSample = ({ color, children }) => (
 	</Box>
 );
 
-const Colors = () => (
+const Colors = ({ theme }) => (
 	<Flex flexWrap="wrap">
-		{Object.keys(colors).map(key => (
-			<ColorSample color={colors[key]} key={key}>
+		{Object.keys(theme.colors).map(key => (
+			<ColorSample color={theme.colors[key]} key={key}>
 				{key}
 			</ColorSample>
 		))}

@@ -68,11 +68,11 @@ export default Button;
 
 </details>
 
-## 2.2. Introducing design tokens
+## 2.2. Using design tokens
 
-Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions. We’ve already created tokens for our project. Check them out in [the style guide](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation). Tokens are defined as JavaScript objects in the [theme.js file](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js).
+We’ve already created design tokens for our project. Check them out in [the style guide](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation). Tokens are defined as JavaScript objects in the [theme.js file](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js).
 
-Design tokens are accessible in styled-components, thanks to [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js), and you can use them like this:
+styled-components makes it extremely simple to use design tokens, thanks to [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js). You can access them in your component like this:
 
 ```js static
 const Button = styled.button`
