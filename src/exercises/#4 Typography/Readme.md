@@ -1,9 +1,3 @@
-# Creating generic typography components
-
-## Getting started
-
-Run `npm start` and navigate to _Exercise 3_ in the sidebar. Open `src/exercises/exercise03` in your editor.
-
 ## Result
 
 The result should look like this:

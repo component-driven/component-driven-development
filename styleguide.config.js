@@ -34,9 +34,9 @@ const config = {
 if (isExercises) {
 	// Generate sections for all exercises
 	const exercisesRoot = path.join(__dirname, `src/exercises`);
-	const exercises = glob.sync(`${exercisesRoot}/exercise*`);
-	config.sections = exercises.map((folder, index) => ({
-		name: `Exercise ${index + 1}`,
+	const exercises = glob.sync(`${exercisesRoot}/*`);
+	config.sections = exercises.map(folder => ({
+		name: path.basename(folder),
 		content: `${folder}/Readme.md`,
 		components: `${folder}/**/*.js`,
 	}));
@@ -67,6 +67,7 @@ if (isExercises) {
 		},
 		{
 			name: 'UI Patterns',
+			content: 'src/components/patterns/Readme.md',
 			components: 'src/components/patterns/**/[A-Z]*.js',
 		},
 	];

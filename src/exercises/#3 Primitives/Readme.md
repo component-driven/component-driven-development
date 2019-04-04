@@ -1,8 +1,6 @@
-# Primitives — creating reusable components
+## What are primitives
 
-## Getting started
-
-Run `npm start` and navigate to _Exercise 2_ in the sidebar. Open `src/exercises/exercise02` in your editor.
+> TODO
 
 ## Result
 
