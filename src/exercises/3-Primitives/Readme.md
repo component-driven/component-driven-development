@@ -1,6 +1,6 @@
 ## What are primitives
 
-> TODO
+In this exercise we’ll create reusable form components. We’re create a button, an input field and a custom select. We’ll learn how to work with styled-components, how to do prop-based styling and how to access design tokens (values we’ve defined in `theme.js` in the previous exercise).
 
 ## Result
 
@@ -16,6 +16,21 @@ import Button from '../../components/core/Button';
   </Button>{' '}
   <Button disabled>Disabled</Button>
 </>;
+```
+
+```js noeditor
+import Input from '../../components/core/Input';
+<Input value="" />;
+```
+
+```js noeditor
+import Select from '../../components/core/Select';
+<Select>
+  <option value="1">Dachshund</option>
+  <option value="2">Saluki</option>
+  <option value="3">Sheltie</option>
+  <option value="4">Border Collie</option>
+</Select>;
 ```
 
 ## 2.1. Introducing styled-components
@@ -38,16 +53,9 @@ The `Title` component will render an `h1` tag with an attached CSS that sets f
 
 ### The task
 
-1. Rewrite our button component to use styled-components.
+1. Rewrite a button component in `Button.js` using styled-components.
 
 2. Define basic styles like padding, text and background colors according to [the mockup](https://component-driven.github.io/component-driven-development/).
-
-**Hint:** To fix PropTypes documentation in Styleguidist, add a `@component` JSDoc tag in front of your `export`:
-
-```js static
-/** @component */
-export default Button;
-```
 
 <details>
  <summary>Solution</summary>
@@ -217,6 +225,109 @@ Button.defaultProps = {
 
 /** @component */
 export default Button;
+```
+
+</details>
+
+## 2.5. Reusable input field component
+
+1. Create an `Input` component, similar to the `Button` component, we’ve created in the previous tasks.
+
+- An input should support disabled state (`disabled` prop).
+
+**Bonus 1:** Add focus style.
+
+<details>
+ <summary>Solution</summary>
+
+```js static
+import styled from 'styled-components';
+import { themeGet } from 'styled-system';
+
+const Input = styled.input`
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  height: 2.5rem;
+  padding: ${themeGet('space.3')};
+  border: 1px solid ${themeGet('colors.primary')};
+  border-radius: ${themeGet('radii.base')};
+  font-family: ${themeGet('fonts.base')};
+  font-size: ${themeGet('fontSizes.base')};
+  color: ${themeGet('colors.base')};
+  background-color: ${themeGet('colors.bg')};
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    filter: saturate(60%);
+  }
+`;
+
+/** @component */
+export default Input;
+```
+
+</details>
+
+## 2.6. Reusable custom select component
+
+1. Create a `Select` component, similar to the `Button` and `Input` components, we’ve created in the previous tasks.
+
+- An select should support disabled state (`disabled` prop).
+
+**Bonus 1:** Add focus style.
+
+<details>
+ <summary>Solution</summary>
+
+```js static
+import styled from 'styled-components';
+import { themeGet } from 'styled-system';
+import { getDownArrowIcon } from '../../components/core/Select/icons';
+
+const Select = styled.select`
+  appearance: none;
+  user-select: none;
+  width: ${props => props.fullWidth && '100%'};
+  height: 2.5rem;
+  padding-top: ${themeGet('space.3')};
+  padding-right: ${themeGet('space.5')};
+  padding-bottom: ${themeGet('space.3')};
+  padding-left: ${themeGet('space.3')};
+  border: 1px solid ${themeGet('colors.primary')};
+  border-radius: ${themeGet('radii.base')};
+  font-family: ${themeGet('fonts.base')};
+  font-size: ${themeGet('fontSizes.base')};
+  color: ${themeGet('colors.base')};
+  background-color: ${themeGet('colors.bg')};
+
+  /* Down arrow icon */
+  background-image: ${props =>
+    getDownArrowIcon(props.theme.colors.secondary)};
+  background-position: center right ${themeGet('space.3')};
+  background-repeat: no-repeat;
+
+  &:hover:enabled,
+  &:active:enabled,
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    filter: saturate(60%);
+  }
+`;
+
+/** @component */
+export default Select;
 ```
 
 </details>
