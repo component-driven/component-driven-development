@@ -1,14 +1,24 @@
-To make components reusable we need to make sure they don't define the whitespace around them, otherwise it may be hard to use them in some contexts.
+To make components really reusable we need to make sure they don't define the whitespace around them (margins), otherwise it may be hard to compose them.
 
-For example, if a `Button` would define a margin on the right hand side, it would be very tricky to create a `ButtonGroup` component that requires zero margins between buttons.
+Imagine a `Button` would have `margin-right` defined. This would make it very tricky to create a `ButtonGroup` component that requires zero margins between buttons.
 
 This means that the _white space between components should be controlled outside of components_.
 
 ## 5.1. Box primitive
 
-We just learned how to use the [space](https://jxnblk.com/styled-system/api#space) function from styled-system, that adds margins and paddings props to your component. We could just add this function to all our primitives and start controlling white space using `m` and `p` props.
+We just learned how to use the [space](https://jxnblk.com/styled-system/api#space) function from styled-system, that adds `margin` and `padding` props to your component. We could just add this function to all our primitives and start controlling white space using `m` and `p` props on every instance in our app like this:
 
-Even thought it can work in the beginnning, it will quickly make the code very verbose and hard to maintain. What we actually want are primitives that would control layout and white space _between_ our components.
+```jsx static
+/* Button group */
+<>
+  <Button mr={1}>Left button</Button>
+  <Button>Right button</Button>
+</>
+```
+
+Even thought it works, it will quickly make the code very verbose and hard to maintain. Now imagine making this reposnsive!
+
+What we actually want is _a component that controls layout and white space_ between our components.
 
 The simplest layout primitive is a `Box`
 
