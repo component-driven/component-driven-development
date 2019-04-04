@@ -13,4 +13,7 @@ Button.propTypes = {
 	children: PropTypes.node,
 };
 
+// Tell Styleguidist that we're exporting a React component (to see PropTypes docs
+// for styled-components)
+/** @component */
 export default Button;
