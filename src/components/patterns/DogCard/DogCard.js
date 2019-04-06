@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from 'stack-styled';
 import { Link } from '@reach/router';
 import Button from '../../core/Button';
 import Image from '../../core/Image';

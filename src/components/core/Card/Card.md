@@ -12,7 +12,7 @@ import Button from '../Button';
 <Box width={300}>
   <Card>
     <Card.Cover>
-      <Image src={`/images/tsiri.jpg`} alt="Tsiri the saluki" />
+      <Image src="/images/tsiri.jpg" alt="Tsiri the saluki" />
     </Card.Cover>
     <Card.Body>
       <Heading size="m">Title of the card</Heading>
