@@ -1,5 +1,3 @@
-**TODO: Hero** **TODO: Card**
-
 ## 6.1. Extending styled components
 
 Styled-components support [extending styles](https://www.styled-components.com/docs/basics#extending-styles). It’s something like inheritance: you can create a styled component, that’s based on another component, not necessarily styled (but it has to accpept `className` prop). Such component will keep all the styles and behavior or the original component, bu you’ll be able to add extra styles.
@@ -210,9 +208,57 @@ export default Feature;
 Compound components are easy to implement but have some drawbacks:
 
 - The consumer can change the order of subcomponents (it can be a benefit depending on your use case).
-- You can’t do complex layouts. For example, a button on the right side of a heading in a card.
+- You can’t do complex layouts, where subcomponents should be placed in particular containers.
 
-TODO
+When these things are important, we can use the [macro-components](https://github.com/jxnblk/macro-components) library. For the consumer it works the same way as compound components, but the component developer has absolute control over order and layout of subcomponents.
+
+For example, we want to place a button on the right side of a heading:
+
+```jsx harmony
+import Flex from '../../components/core/Flex';
+import Box from '../../components/core/Box';
+import Heading from '../../components/core/Heading';
+import Button from '../../components/core/Button';
+<Flex alignItems="baseline">
+  <Heading size="l">The most interesting article</Heading>
+  <Box ml="auto">
+    <Button>Delete</Button>
+  </Box>
+</Flex>;
+```
+
+We can make this component using macro-components like so:
+
+```jsx static
+import Macro from 'macro-components';
+import Flex from '../../components/core/Flex';
+import Box from '../../components/core/Box';
+import Heading from '../../components/core/Heading';
+import Button from '../../components/core/Button';
+
+const Title = ({ children }) => (
+  <Heading size="l">{children}</Heading>
+);
+const Button = ({ children }) => <Box ml="auto">{children}</Box>;
+
+const Header = Macro({ Title, Button })(({ Title, Button }) => (
+  <Flex alignItems="baseline">
+    {Title}
+    {Button}
+  </Flex>
+));
+```
+
+And we can later use it like so:
+
+```jsx static
+<Header>
+  <Header.Title>The most interesting article</Header.Title>
+  <Header.Button>
+    <Button>Delete</Button>
+  </Header.Button>
+</Header>
+```
 
 We can use this technique to implement a perfect card component.
 
@@ -223,13 +269,20 @@ import { Box } from '@rebass/grid';
 import Card from '../../components/core/Card';
 import Text from '../../components/core/Text';
 import Heading from '../../components/core/Heading';
+import Image from '../../components/core/Image';
+import Button from '../../components/core/Button';
 <Box width={300}>
   <Card>
-    <Card.Image src={`/images/tsiri.jpg`} alt="Alt text" />
+    <Card.Cover>
+      <Image src="/images/tsiri.jpg" alt="Tsiri the saluki" />
+    </Card.Cover>
     <Card.Body>
       <Heading size="m">Title of the card</Heading>
       <Text>Body of the card</Text>
     </Card.Body>
+    <Card.Footer>
+      <Button fullWidth>Rent Tsiri</Button>
+    </Card.Footer>
   </Card>
 </Box>;
 ```
@@ -238,364 +291,60 @@ import Heading from '../../components/core/Heading';
 
 Create a `Card` component, that has three subcomponents:
 
-- `Cover` that renders and image TODO
-- `Body` that renders a body TODO
-- `Footer` that renders a footer TODO
+- `Cover` that renders and image (no extra styles or layout needed);
+- `Body` that renders a card body;
+- `Footer` that renders a card footer;
 
-**Hint:** TODO
+Cover is optional, and either a body or a footer. A cover should occupy full width of the card without any padding, a body and a footer should have padding around and between them: 16px.
 
 <details>
  <summary>Solution</summary>
 
 ```jsx static
-```
-
-</details>
-
----
-
-## The result
-
-The result should look like this:
-
-```jsx noeditor
-import { Flex, Box } from '@rebass/grid';
-import Button from '../../components/core/Button';
-import Input from '../../components/core/Input';
-<Flex>
-  <Box flex={1}>
-    <Input
-      type="email"
-      value=""
-      required
-      placeholder="Email"
-      aria-label="Email"
-      fullWidth
-    />
-  </Box>
-  <Box pl={3}>
-    <Button variant="primary" type="submit">
-      Subscribe
-    </Button>
-  </Box>
-</Flex>;
-```
-
-## The task
-
-Implement a basic subscription form:
-
-- An email text field, that occupies all available horizontal space.
-- A submit button.
-- A 8 pixel gap between the field and the button.
-
-**Hint:** Use `flex-grow` on the text field container to make it occupy all available space (`<Box flex={1}>`).
-
-<details>
- <summary>Solution</summary>
-
-```js static
 import React from 'react';
-import { Flex, Box } from '@rebass/grid';
-import Button from '../../components/core/Button';
-import Input from '../../components/core/Input';
+import Flex from '../Flex';
+import Box from '../Box';
+import Stack from '../Stack';
+import {
+  color,
+  border,
+  borderColor,
+  borderRadius
+} from 'styled-system';
+import styled from 'styled-components';
+import Macro from 'macro-components';
 
-const SubscriptionForm = () => (
-  <form>
-    <Flex>
-      <Box flex={1}>
-        <Input
-          type="email"
-          value=""
-          required
-          placeholder="Email"
-          aria-label="Email"
-          fullWidth
-        />
-      </Box>
-      <Box pl={3}>
-        <Button type="submit" variant="primary">
-          Subscribe
-        </Button>
-      </Box>
-    </Flex>
-  </form>
+const CardBase = styled(Flex).attrs({
+  bg: 'bg',
+  border: 'thin',
+  borderColor: 'light',
+  borderRadius: 'base',
+  flexDirection: 'column'
+})`
+  ${color};
+  ${border};
+  ${borderColor};
+  ${borderRadius};
+  list-style: none;
+`;
+
+const Cover = ({ children }) => children;
+const Body = ({ children }) => <div>{children}</div>;
+const Footer = ({ children }) => <Box mt="auto">{children}</Box>;
+
+const Card = Macro({ Cover, Body, Footer })(
+  ({ Cover, Body, Footer }, props) => (
+    <CardBase {...props}>
+      {Cover}
+      <Stack height="100%" p={4} gap={4}>
+        {Body}
+        {Footer}
+      </Stack>
+    </CardBase>
+  )
 );
 
-export default SubscriptionForm;
-```
-
-</details>
-
-## 5.2 Making the subscription form responsive
-
-There's one issue with our form: on small screens the input field is too small to type anything. Let’s make our form responsive: wrap the button to the next line on narrow screens.
-
-All Rebass Grid props are [responsive](https://github.com/rebassjs/grid#responsive-styles), meaning that they accept different values for different browser window widths, if you pass an array:
-
-```jsx static
-<Box
-  width={[
-    1, // 100% below the smallest breakpoint
-    1 / 2, // 50% from the next breakpoint and up
-    1 / 4 // 25% from the next breakpoint and up
-  ]}
-/>
-```
-
-**Note:** Have a look at the [default breakpoints](https://jxnblk.com/styled-system/api#breakpoints).
-
-## The result
-
-The result should look like this (change the browser window width to see the effect):
-
-```jsx noeditor
-import { Flex, Box } from '@rebass/grid';
-import Button from '../../components/core/Button';
-import Input from '../../components/core/Input';
-<Flex flexWrap="wrap">
-  <Box flex={1}>
-    <Input
-      type="email"
-      value=""
-      required
-      placeholder="Email"
-      aria-label="Email"
-      fullWidth
-    />
-  </Box>
-  <Box pl={[0, 3]} pt={[3, 0]} width={[1, 'auto']}>
-    <Button variant="primary" type="submit">
-      Subscribe
-    </Button>
-  </Box>
-</Flex>;
-```
-
-## The task
-
-Update the code from the previous exercise to make it responsive: render the input and the button on separate rows on narrow screens.
-
-**Bonus:** Make the button full width on narrow screens.
-
-**Hint:** Use `flexWrap="wrap"` on the container to let Flexbox put items on multiple rows.
-
-<details>
- <summary>Solution</summary>
-
-```js static
-import React from 'react';
-import { Flex, Box } from '@rebass/grid';
-import Button from '../../components/core/Button';
-import Input from '../../components/core/Input';
-
-const SubscriptionForm = () => (
-  <form>
-    <Flex flexWrap="wrap">
-      <Box flex={1}>
-        <Input
-          type="email"
-          value=""
-          required
-          placeholder="Email"
-          aria-label="Email"
-          fullWidth
-        />
-      </Box>
-      <Box pl={[0, 3]} pt={[3, 0]} width={[1, 'auto']}>
-        <Button type="submit" variant="primary">
-          Subscribe
-        </Button>
-      </Box>
-    </Flex>
-  </form>
-);
-
-export default SubscriptionForm;
-```
-
-</details>
-
-## 5.3 Simplifying whitespace management
-
-There are several solutions to the previous task, but the most obvious ones require switching a horizontal padding or margin to a vertical on narrow screens. There are better ways to implement a gap between elements.
-
-One solution is to use [a negative margin](https://medium.com/@justintulk/why-css-grid-frameworks-have-negative-margins-37d67cf6acc8) on the container to keep grid items close to the container edges:
-
-```html static
-<style>
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -8px;
-  }
-  .item {
-    padding: 8px;
-  }
-</style>
-<div class="container">
-  <div class="item">Item 1</div>
-  <div class="item">Item 2</div>
-  <div class="item">Item 3</div>
-</div>
-```
-
-## The result
-
-The result should look like this:
-
-```jsx noeditor
-import { Flex, Box } from '@rebass/grid';
-import Button from '../../components/core/Button';
-import Input from '../../components/core/Input';
-<Flex m={-2} flexWrap="wrap">
-  <Box p={2} flex={1}>
-    <Input
-      type="email"
-      value=""
-      required
-      placeholder="Email"
-      aria-label="Email"
-      fullWidth
-    />
-  </Box>
-  <Box p={2} width={[1, 'auto']}>
-    <Button variant="primary" type="submit">
-      Subscribe
-    </Button>
-  </Box>
-</Flex>;
-```
-
-## The task
-
-Update the code from the previous exercise using the negative margin technique. There should be no visible changes.
-
-**Hint:** Each item should have a half of the desired gap around it. So, instead of 8 pixel left padding on the button, we need 4 pixel padding around the button and the input. And a negative margin with the same value around the container.
-
-<details>
- <summary>Solution</summary>
-
-```js static
-import React from 'react';
-import { Flex, Box } from '@rebass/grid';
-import Button from '../../components/core/Button';
-import Input from '../../components/core/Input';
-
-const SubscriptionForm = () => (
-  <form>
-    <Flex m={-2} flexWrap="wrap">
-      <Box p={2} flex={1}>
-        <Input
-          type="email"
-          value=""
-          required
-          placeholder="Email"
-          aria-label="Email"
-          fullWidth
-        />
-      </Box>
-      <Box p={2} width={[1, 'auto']}>
-        <Button type="submit" variant="primary">
-          Subscribe
-        </Button>
-      </Box>
-    </Flex>
-  </form>
-);
-
-export default SubscriptionForm;
-```
-
-</details>
-
-## 5.4 Introducing Stack Styled
-
-CSS Grid has a thing called _gap_ (`grid-gap` property), which is exactly what we need here: whitespace between items. No need to use negative margins:
-
-```html static
-<style>
-  .container {
-    display: grid;
-    grid-gap: 8px;
-    grid-template-columns: 1fr 1fr;
-  }
-</style>
-<div class="container">
-  <div>Item 1</div>
-  <div>Item 2</div>
-  <div>Item 3</div>
-</div>
-```
-
-[Stack Styled](https://sapegin.github.io/stack-styled/) has a `Stack` component similar to [Flex](https://github.com/rebassjs/grid#flex) component from Rebass Grid, but with CSS Grip props. It’s also based on styled-system, so the API is similar:
-
-```jsx static
-import Stack from 'stack-styled';
-
-<Stack as="section" gap={5}>
-  <Button>Hello React!</Button>
-  <Button>Hello Stack Styled!</Button>
-</Stack>;
-```
-
-## The result
-
-The result should look like this:
-
-```jsx noeditor
-import Stack from 'stack-styled';
-import Button from '../../components/core/Button';
-import Input from '../../components/core/Input';
-<Stack gap={3} gridTemplateColumns={['1fr', '1fr auto']}>
-  <Input
-    type="email"
-    value=""
-    required
-    placeholder="Email"
-    aria-label="Email"
-    fullWidth
-  />
-  <Button variant="primary" type="submit">
-    Subscribe
-  </Button>
-</Stack>;
-```
-
-## The task
-
-Update the code from the previous exercise using the [Stack](https://sapegin.github.io/stack-styled/#stack) component from Stack Styled.
-
-**Hint:** Use responsive `gridTemplateColumns` prop to change the number of columns and their sizes.
-
-<details>
- <summary>Solution</summary>
-
-```js static
-import React from 'react';
-import Stack from 'stack-styled';
-import Button from '../../components/core/Button';
-import Input from '../../components/core/Input';
-
-const SubscriptionForm = () => (
-  <form>
-    <Stack gap={3} gridTemplateColumns={['1fr', '1fr auto']}>
-      <Input
-        type="email"
-        value=""
-        required
-        placeholder="Email"
-        aria-label="Email"
-        fullWidth
-      />
-      <Button variant="primary" type="submit">
-        Subscribe
-      </Button>
-    </Stack>
-  </form>
-);
-
-export default SubscriptionForm;
+export default Card;
 ```
 
 </details>
