@@ -1,15 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Box } from '@rebass/grid';
+import { Flex, Box } from '@rebass/grid';
+import Stack from '../Stack';
 import { color, border, borderColor, borderRadius } from 'styled-system';
 import styled from 'styled-components';
-import Image from '../Image';
+import Macro from 'macro-components';
 
-const Card = styled(Box).attrs({
+const CardBase = styled(Flex).attrs({
 	bg: 'bg',
 	border: 'thin',
 	borderColor: 'light',
 	borderRadius: 'base',
+	flexDirection: 'column',
 })`
 	${color};
 	${border};
@@ -18,12 +19,20 @@ const Card = styled(Box).attrs({
 	list-style: none;
 `;
 
-Card.propTypes = {
-	children: PropTypes.node, // We could validate children of specific type here
-};
+const Cover = ({ children }) => children;
+const Body = ({ children }) => <div>{children}</div>;
+const Footer = ({ children }) => <Box mt="auto">{children}</Box>;
 
-Card.Image = props => <Image {...props} />;
-Card.Body = ({ children }) => <Box p={4}>{children}</Box>;
+const Card = Macro({ Cover, Body, Footer })(
+	({ Cover, Body, Footer }, props) => (
+		<CardBase {...props}>
+			{Cover}
+			<Stack height="100%" p={4} gap={4}>
+				{Body}
+				{Footer}
+			</Stack>
+		</CardBase>
+	)
+);
 
-/** @component */
 export default Card;

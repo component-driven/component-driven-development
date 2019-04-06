@@ -3,20 +3,23 @@ import PropTypes from 'prop-types';
 import Stack from 'stack-styled';
 import { Link } from '@reach/router';
 import Button from '../../core/Button';
+import Image from '../../core/Image';
 import DogInfo from '../../app/DogInfo';
 import Card from '../../core/Card';
 
 const DogCard = ({ as, dog }) => (
 	<Card as={as}>
-		<Card.Image src={`/images/${dog.image}`} alt={dog.name} />
+		<Card.Cover>
+			<Image src={`/images/${dog.image}`} alt={dog.name} />
+		</Card.Cover>
 		<Card.Body>
-			<Stack gap={4}>
-				<DogInfo dog={dog} isHeading />
-				<Button as={Link} fullWidth to={`/checkout/${dog.id}`}>
-					Rent {dog.name}
-				</Button>
-			</Stack>
+			<DogInfo dog={dog} isHeading />
 		</Card.Body>
+		<Card.Footer>
+			<Button as={Link} fullWidth to={`/checkout/${dog.id}`}>
+				Rent {dog.name}
+			</Button>
+		</Card.Footer>
 	</Card>
 );
 
