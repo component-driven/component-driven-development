@@ -1,5 +1,6 @@
 import React from 'react';
-import { Flex, Box } from '@rebass/grid';
+import Flex from '../Flex';
+import Box from '../Box';
 import Stack from '../Stack';
 import { color, border, borderColor, borderRadius } from 'styled-system';
 import styled from 'styled-components';
