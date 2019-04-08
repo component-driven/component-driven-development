@@ -6,7 +6,7 @@ For example, a basic card may look like so:
 
 ```js static
 import styled from 'styled-components';
-import { Box } from '@rebass/grid';
+import Box from '../../components/core/Box';
 
 const Card = styled(Box).attrs({
   p: 3
@@ -27,7 +27,7 @@ import Hero from '../../components/core/Hero';
 import Heading from '../../components/core/Heading';
 <Hero
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
-  py="6"
+  py={6}
 >
   <Heading level={2}>
     The quick brown fox jumps over the lazy dog
@@ -44,6 +44,8 @@ Implement a `Hero` component, based on the `Box` component, we’ve created in
 
 **Hint:** Use [styled-system functions](https://styled-system.com/table#background) to create props for changing background.
 
+**Bonus:** Make padding and background position customizable.
+
 <details>
  <summary>Solution</summary>
 
@@ -56,7 +58,7 @@ import {
   backgroundImage,
   backgroundPosition
 } from 'styled-system';
-import { Box } from '@rebass/grid';
+import Box from '../../components/core/Box';
 
 /**
  * A hero
@@ -94,15 +96,13 @@ export default Hero;
 
 ## 6.2. Compound components
 
-TODO: Props vs subscomponents
-
 Often we want to render different kinds of content and style them differently, like an image, a heading and a body text of a card.
 
 For example, a more functional card may look like so:
 
 ```jsx static
 import styled from 'styled-components';
-import { Box } from '@rebass/grid';
+import Box from '../../components/core/Box';
 import {
   color,
   border,
@@ -171,16 +171,12 @@ Create a compound `Feature` component, that has three subcomponents:
 
 ```jsx static
 import React from 'react';
-import { Box } from '@rebass/grid';
+import Box from '../../components/core/Box';
 import Stack from 'stack-styled';
 import Heading from '../../core/Heading';
 import Text from '../../core/Text';
 
-const Feature = ({ as, children }) => (
-  <Stack gap={2} as={as}>
-    {children}
-  </Stack>
-);
+const Feature = ({ children }) => <Stack gap={2}>{children}</Stack>;
 
 Feature.Icon = ({ children }) => (
   <Box ml="auto" mr="auto" color="secondary">
@@ -265,7 +261,7 @@ We can use this technique to implement a perfect card component.
 ### The result
 
 ```jsx harmony
-import { Box } from '@rebass/grid';
+import Box from '../../components/core/Box';
 import Card from '../../components/core/Card';
 import Text from '../../components/core/Text';
 import Heading from '../../components/core/Heading';

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Flex, Box } from '@rebass/grid';
 import Stack from 'stack-styled';
+import Box from '../core/Box';
+import Flex from '../core/Flex';
 import Link from '../core/Link';
 import Text from '../core/Text';
 

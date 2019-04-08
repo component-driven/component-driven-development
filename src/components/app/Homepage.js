@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@rebass/grid';
+import Box from '../core/Box';
 import Heading from '../core/Heading';
 import Header from '../app/Header';
 import Footer from '../patterns/Footer';

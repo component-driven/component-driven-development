@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Flex } from '@rebass/grid';
 import theme from '../theme';
+import Box from '../components/core/Box';
+import Flex from '../components/core/Flex';
 import Text from '../components/core/Text';
 import Heading from '../components/core/Heading';
 

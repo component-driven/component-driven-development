@@ -1,7 +1,7 @@
 import React from 'react';
-import Flex from '../Flex';
-import Box from '../Box';
-import Stack from '../Stack';
+import Flex from '../../components/core/Flex';
+import Box from '../../components/core/Box';
+import Stack from '../../components/core/Stack';
 import { color, border, borderColor, borderRadius } from 'styled-system';
 import styled from 'styled-components';
 import Macro from 'macro-components';

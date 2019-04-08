@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Flex } from '@rebass/grid';
 import { readableColor } from 'polished';
+import Box from '../components/core/Box';
+import Flex from '../components/core/Flex';
 import Text from '../components/core/Text';
 
 const Swatch = styled(Box).attrs({ p: 4 })`

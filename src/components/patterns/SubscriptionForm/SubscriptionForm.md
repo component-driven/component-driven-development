@@ -1,8 +1,8 @@
 Subscription form should be used to gather emails of users who are interested in the newlestter.
 
-The component implements different states that can be activated during the process:
+The component implements different states that can be activated during the process.
 
-### Normal:
+### Normal
 
 ```jsx harmony
 <SubscriptionForm
@@ -13,7 +13,7 @@ The component implements different states that can be activated during the proce
 />
 ```
 
-### Sending:
+### Sending
 
 ```jsx harmony
 <SubscriptionForm
@@ -25,7 +25,7 @@ The component implements different states that can be activated during the proce
 />
 ```
 
-### Error:
+### Error
 
 ```jsx harmony
 <SubscriptionForm
@@ -37,7 +37,7 @@ The component implements different states that can be activated during the proce
 />
 ```
 
-### Success:
+### Success
 
 ```jsx harmony
 <SubscriptionForm

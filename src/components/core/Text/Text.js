@@ -44,4 +44,5 @@ Text.defaultProps = {
 	variant: 'base',
 };
 
+/** @component */
 export default Text;

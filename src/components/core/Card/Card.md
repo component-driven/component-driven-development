@@ -3,7 +3,7 @@ Card component is a component that renders an image, a body and a footer with a 
 By using subcomponents `Card.Cover`, `Card.Body` and `Card.Footer` users can create different kinds of card for different use cases, because all subcomponents are optional and the card look good with any combination of them.
 
 ```jsx harmony
-import { Box } from '@rebass/grid';
+import Box from '../Box';
 import Heading from '../Heading';
 import Image from '../Image';
 import Text from '../Text';

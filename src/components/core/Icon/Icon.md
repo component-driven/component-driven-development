@@ -29,10 +29,11 @@ Accessible label:
 A link with an icon:
 
 ```js
+import Box from '../Box';
+import Flex from '../Flex';
 import Icon from '../Icon';
 import Link from '../Link';
 import Text from '../Text';
-import { Flex, Box } from '@rebass/grid';
 <Text>
   <Flex as={Link} href="/" alignItems="center">
     <Icon name="star" alt="" />
@@ -46,9 +47,10 @@ import { Flex, Box } from '@rebass/grid';
 A button with an icon:
 
 ```js
+import Box from '../Box';
+import Flex from '../Flex';
 import Icon from '../Icon';
 import Button from '../Button';
-import { Flex, Box } from '@rebass/grid';
 <Button>
   <Flex href="/" alignItems="center">
     <Icon name="star" alt="" />

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box } from '@rebass/grid';
 import Stack from 'stack-styled';
-import Heading from '../../core/Heading';
-import Text from '../../core/Text';
+import Box from '../../components/core/Box';
+import Heading from '../../components/core/Heading';
+import Text from '../../components/core/Text';
 
 const Feature = ({ children }) => (
 	/* Your code here */

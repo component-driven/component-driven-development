@@ -1,11 +1,13 @@
 import React from 'react';
 import differenceInDays from 'date-fns/difference_in_days';
 import parse from 'date-fns/parse';
-import { Flex, Box } from '@rebass/grid';
+import Box from '../core/Box';
+import Flex from '../core/Flex';
 import Heading from '../core/Heading';
 import Text from '../core/Text';
 import DogInfo from '../app/DogInfo';
 import Card from '../core/Card';
+import Image from '../core/Image';
 
 const getDays = (from, to) => {
 	if (!from || !to) {
@@ -30,7 +32,9 @@ const OrderSummary = ({ dog, dateFrom, dateTo }) => {
 				Order Summary
 			</Heading>
 			<Card>
-				<Card.Image src={`/images/${dog.image}`} alt={dog.name} />
+				<Card.Cover>
+					<Image src={`/images/${dog.image}`} alt={dog.name} />
+				</Card.Cover>
 				<Card.Body>
 					<Box mb={3}>
 						<DogInfo dog={dog} />

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Flex, Box } from '@rebass/grid';
 import Stack from 'stack-styled';
+import Box from '../core/Box';
+import Flex from '../core/Flex';
 import Text from '../core/Text';
 import Select from '../core/Select';
 import VisuallyHidden from '../core/VisuallyHidden';
