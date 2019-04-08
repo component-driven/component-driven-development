@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box } from '@rebass/grid';
 import theme from '../theme';
+import Box from '../components/core/Box';
 import Text from '../components/core/Text';
 
 const { fontSizes } = theme;
