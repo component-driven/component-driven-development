@@ -1,5 +1,5 @@
 ```jsx harmony
-import SvgFeatureDuck from '../../app/images/SvgFeatureDuck';
+import SvgFeatureDuck from '../../components/app/images/SvgFeatureDuck';
 <Feature>
   <Feature.Icon>
     <SvgFeatureDuck width={80} />

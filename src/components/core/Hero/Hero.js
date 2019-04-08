@@ -6,7 +6,7 @@ import {
 	backgroundImage,
 	backgroundPosition,
 } from 'styled-system';
-import { Box } from '@rebass/grid';
+import Box from '../Box';
 
 /**
  * A hero

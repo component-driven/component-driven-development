@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box } from '@rebass/grid';
 import Stack from 'stack-styled';
+import Box from '../../core/Box';
 import Heading from '../../core/Heading';
 import Text from '../../core/Text';
 

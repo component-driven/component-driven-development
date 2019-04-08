@@ -14,4 +14,5 @@ const VisuallyHidden = styled.div`
 	position: absolute;
 `;
 
+/** @component */
 export default VisuallyHidden;

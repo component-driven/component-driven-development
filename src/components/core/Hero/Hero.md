@@ -4,7 +4,7 @@ A basic example:
 import Heading from '../Heading';
 <Hero
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
-  py="6"
+  py={6}
 >
   <Heading level={2}>
     The quick brown fox jumps over the lazy dog
@@ -36,7 +36,7 @@ import { Inverted } from '../../../ThemeProvider';
 <Inverted>
   <Hero
     backgroundImage="url(https://source.unsplash.com/cGlac7MEyiE/1000x600)"
-    py="5"
+    py={5}
   >
     <Heading level={2} size="xl" mb={5}>
       The quick black fox jumps over the lazy dog
@@ -52,8 +52,9 @@ import { Inverted } from '../../../ThemeProvider';
 Using as a page heading:
 
 ```jsx harmony
-import { Flex, Box } from '@rebass/grid';
 import Stack from 'stack-styled';
+import Box from '../Box';
+import Flex from '../Flex';
 import Heading from '../Heading';
 import Link from '../Link';
 import Button from '../Button';

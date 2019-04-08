@@ -1,7 +1,8 @@
 import React from 'react';
-import { Flex, Box } from '@rebass/grid';
 import { Formik } from 'formik';
 import Header from '../app/Header';
+import Box from '../core/Box';
+import Flex from '../core/Flex';
 import Heading from '../core/Heading';
 import CheckoutForm from '../app/CheckoutForm';
 import OrderSummary from '../app/OrderSummary';
