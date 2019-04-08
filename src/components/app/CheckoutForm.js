@@ -1,11 +1,13 @@
 import React from 'react';
-import { Flex, Box } from '@rebass/grid';
+import styled from 'styled-components';
 import { Form, Field } from 'formik';
+import Box from '../core/Box';
+import Flex from '../core/Flex';
 import Text from '../core/Text';
 import Button from '../core/Button';
 import Input from '../core/Input';
 import Select from '../core/Select';
-import Fieldset from '../core/Fieldset';
+import Heading from '../core/Heading';
 
 const Widget = ({ label, children, ...props }) => {
 	return (
@@ -15,6 +17,25 @@ const Widget = ({ label, children, ...props }) => {
 				{children}
 			</Text>
 		</Box>
+	);
+};
+
+const FieldsetContainer = styled(Box)`
+	padding: 0;
+	border: none;
+`;
+
+/**
+ * A field set — a group of form fields with a heading.
+ */
+const Fieldset = ({ label, children, ...props }) => {
+	return (
+		<FieldsetContainer as="fieldset" {...props}>
+			<Heading size="l" as="legend" mb={4}>
+				{label} 
+			</Heading>
+			{children}
+		</FieldsetContainer>
 	);
 };
 
