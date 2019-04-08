@@ -1,4 +1,11 @@
 {
-  "main.js": "static/js/main.9784cb66.js",
-  "main.js.map": "static/js/main.9784cb66.js.map"
+  "main.js": "/component-driven-development/static/js/main.de696995.chunk.js",
+  "main.js.map": "/component-driven-development/static/js/main.de696995.chunk.js.map",
+  "runtime~main.js": "/component-driven-development/static/js/runtime~main.dbff57b5.js",
+  "runtime~main.js.map": "/component-driven-development/static/js/runtime~main.dbff57b5.js.map",
+  "static/js/2.520021f8.chunk.js": "/component-driven-development/static/js/2.520021f8.chunk.js",
+  "static/js/2.520021f8.chunk.js.map": "/component-driven-development/static/js/2.520021f8.chunk.js.map",
+  "index.html": "/component-driven-development/index.html",
+  "precache-manifest.844dfa862d738ed8b988bbc93074622d.js": "/component-driven-development/precache-manifest.844dfa862d738ed8b988bbc93074622d.js",
+  "service-worker.js": "/component-driven-development/service-worker.js"
 }
