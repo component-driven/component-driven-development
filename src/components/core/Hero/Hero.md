@@ -29,7 +29,7 @@ import Heading from '../Heading';
 Inverted theme:
 
 ```jsx harmony
-import Stack from 'stack-styled';
+import Stack from '../Stack';
 import Heading from '../Heading';
 import Button from '../Button';
 import { Inverted } from '../../../ThemeProvider';
@@ -41,9 +41,13 @@ import { Inverted } from '../../../ThemeProvider';
     <Heading level={2} size="xl" mb={5}>
       The quick black fox jumps over the lazy dog
     </Heading>
-    <Stack justifyContent="center" gridAutoFlow="column" gap={4}>
-      <Button variant="primary">Try now</Button>
-      <Button variant="secondary">Try later</Button>
+    <Stack justifyContent="center" flexDirection="row" gap={4}>
+      <div>
+        <Button variant="primary">Try now</Button>
+      </div>
+      <div>
+        <Button variant="secondary">Try later</Button>
+      </div>
     </Stack>
   </Hero>
 </Inverted>;
@@ -52,7 +56,7 @@ import { Inverted } from '../../../ThemeProvider';
 Using as a page heading:
 
 ```jsx harmony
-import Stack from 'stack-styled';
+import Stack from '../Stack';
 import Box from '../Box';
 import Flex from '../Flex';
 import Heading from '../Heading';
@@ -73,7 +77,7 @@ import { Inverted } from '../../../ThemeProvider';
       </Box>
       <Stack
         justifyContent="center"
-        gridAutoFlow="column"
+        flexDirection="row"
         gap={4}
         mb={2}
       >
@@ -92,9 +96,13 @@ import { Inverted } from '../../../ThemeProvider';
       <Heading level={2} size="xl" mb={5}>
         The quick black fox jumps over the lazy dog
       </Heading>
-      <Stack justifyContent="center" gridAutoFlow="column" gap={4}>
-        <Button variant="primary">Try now</Button>
-        <Button variant="secondary">Try later</Button>
+      <Stack justifyContent="center" flexDirection="row" gap={4}>
+        <div>
+          <Button variant="primary">Try now</Button>
+        </div>
+        <div>
+          <Button variant="secondary">Try later</Button>
+        </div>
       </Stack>
     </Box>
   </Hero>
