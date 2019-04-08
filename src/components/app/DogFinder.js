@@ -67,8 +67,13 @@ const DogFinder = ({
 		)}
 		<Stack gap={4} m={0} p={0} flexDirection="row" as="ul">
 			{dogs.map(dog => (
-				<Box width={[1, 1 / 2, 1 / 3, 1 / 6]} height="100%" as="li">
-					<DogCard key={dog.id} dog={dog} />
+				<Box
+					key={dog.id}
+					width={[1, 1 / 2, 1 / 3, 1 / 6]}
+					height="100%"
+					as="li"
+				>
+					<DogCard dog={dog} />
 				</Box>
 			))}
 		</Stack>
