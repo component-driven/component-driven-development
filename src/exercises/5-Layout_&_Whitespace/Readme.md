@@ -11,10 +11,6 @@ Both methods are valid and have their use cases.
 
 Let's start with the simplest layout primitive — a `Box`. Box is a rectangular area that can contain other children.
 
-### The task
-
-1. Build the `Box` component that can control its padding, margin, width, and background color via styled-system.
-
 ### Result
 
 Update some props in the example below to see how the `Box` reacts to the change.
@@ -26,6 +22,11 @@ import Box from '../../components/core/Box';
   Box content
 </Box>;
 ```
+
+### The task
+
+1. Build the `Box` component that can control its padding, margin, width, and background color via styled-system.
+1. By default it should just render a `div` without any any spacing applied.
 
 <details>
  <summary>Solution</summary>
@@ -59,11 +60,6 @@ export default Box;
 
 `Flex` is another useful primitive that allows us to control flexbox-related layout without writing CSS.
 
-### The task
-
-1. Create `Flex` primitive based on `Box` component and styled-system.
-1. Update `Box` component to accept `flex` and differnt alignment props.
-
 ### Result
 
 ```jsx
@@ -82,6 +78,12 @@ import Box from '../../components/core/Box';
   </Box>
 </Flex>;
 ```
+
+### The task
+
+1. Create `Flex` primitive based on `Box` component and styled-system.
+1. Update `Box` component to accept `flex` and differnt alignment props.
+1. Create a simple 3 rows layout using `Flex` and `Box` primitives
 
 <details>
  <summary>Solution</summary>
@@ -123,24 +125,25 @@ export default Flex;
 
 ## 5.3 Adding spacing to any primitive
 
-After we've built `Box` and `Flex` we now can create complex layouts using these two primitives.
-
-### Task
-
-1. Create Hero component
+We already used similar technique in the [Typography](http://localhost:6061/#/Typography) exercises. Adding `Box` and `Flex` to the mix we now can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spcing are coming from our [spacing scale](http://localhost:6060/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application!
 
 ### Result
 
-```jsx
-// TODO
+```jsx noeditor
+import Footer from '../../../src/components/patterns/Footer';
+<Footer />;
 ```
+
+### Task
+
+1. Create the `Footer` component using only primitives to adjust the layout
 
 ## 5.4 Stack primitive
 
-We just learned how to use the [space](https://jxnblk.com/styled-system/api#space) function from styled-system, that adds `margin` and `padding` props to any of our primitives. We could just add this function to all our primitives and start controlling white space using `m` and `p` props on every instance in our app like this:
+We just learned that [space](https://jxnblk.com/styled-system/api#space) function of styled-system, that adds `margin` and `padding` props to any of our primitives, is a powerful tool. Now we could just add this function to all our primitives and start controlling white space using `m` and `p` props on every instance in our app like this:
 
 ```jsx static
-/* Button group */
+/* List of buttons */
 <>
   <Button mr={1}>First button</Button>
   <Button mr={1}>Second button</Button>
@@ -148,12 +151,12 @@ We just learned how to use the [space](https://jxnblk.com/styled-system/api#spac
 </>
 ```
 
-Even thought this works, it will quickly make the code very verbose and hard to maintain. Imagine you want to change the margin to a different value or make this reposnsive!
+Even thought this works for some cases, sometimes it will make our code very verbose and hard to maintain. Imagine you want to change the margin to a different value or make this reposnsive!
 
 What we actually want is _a component that controls layout and white space_ between our components.
 
 ```jsx static
-/* Button group */
+/* List of buttons */
 <Stack gap={1}>
   <Button>First button</Button>
   <Button>Second button</Button>
@@ -161,66 +164,69 @@ What we actually want is _a component that controls layout and white space_ betw
 </Stack>
 ```
 
-### The task
-
-1. Create `Stack` primitive based on `Box` component and styled-system.
-1. Update `Box` component to accept `flex` and differnt alignment props.
-
 ### Result
 
 ```jsx noeditor
-import Flex from '../../components/core/Flex';
-import Box from '../../components/core/Box';
+import SubscriptionForm from '../../../src/components/patterns/SubscriptionForm';
 
-<Flex flexDirection="column">
-  <Box p={3} bg="secondary">
-    Row 1
-  </Box>
-  <Box p={3} bg="light">
-    Row 2
-  </Box>
-  <Box p={3} bg="lighter">
-    Row 3
-  </Box>
-</Flex>;
+<SubscriptionForm
+  id="sf1"
+  email=""
+  onSubmit={() => {}}
+  onEmailChange={() => {}}
+/>;
 ```
+
+### The task
+
+1. Create `SubscriptionForm` component using [stack-styled](https://github.com/sapegin/stack-styled) component
+1. Make sure that the layout is responsive and the button is placed below the input field on a narrow screen.
 
 <details>
  <summary>Solution</summary>
 
 ```js static
+/* eslint-disable jsx-a11y/accessible-emoji */
+import React from 'react';
 import styled from 'styled-components';
-import {
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent
-} from 'styled-system';
-import Box from '../Box';
+import Stack from 'stack-styled';
+import Button from '../../../src/components/core/Button';
+import Input from '../../../src/components/core/Input';
 
-const Flex = styled(Box)(
-  {
-    display: 'flex'
-  },
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent
+const Form = styled.form`
+  width: 100%;
+`;
+
+const SubscriptionForm = ({
+  id,
+  onSubmit,
+  onEmailChange,
+  email,
+  loading,
+  success,
+  error
+}) => (
+  <Form onSubmit={onSubmit}>
+    <Stack gap={3} mb={2} gridTemplateColumns={['1fr', '1fr auto']}>
+      <Input
+        type="email"
+        value={email}
+        required
+        placeholder="Email"
+        aria-label="Email"
+        aria-invalid={error && 'true'}
+        aria-describedby={`${id}-info`}
+        disabled={loading}
+        onChange={onEmailChange}
+      />
+      <Button variant="primary" type="submit" disabled={loading}>
+        Subscribe
+      </Button>
+    </Stack>
+  </Form>
 );
 
-Flex.propTypes = {
-  ...flexWrap.propTypes,
-  ...flexDirection.propTypes,
-  ...alignItems.propTypes,
-  ...justifyContent.propTypes
-};
-
-/** @component */
-export default Flex;
+export default SubscriptionForm;
 ```
 
 </details>
-
-> [Rebass Grid](https://grid.rebassjs.org/) is based on styled-system and allows you to define margins and paddings and create responsive Flexbox layouts using React components, like the [Layout](https://github.com/rebassjs/grid#box) component:
-
-**Note:** Have a look at the [default spacing scale](https://jxnblk.com/styled-system/api#space-1).
