@@ -4,6 +4,7 @@ import Flex from '../core/Flex';
 import Stack from '../core/Stack';
 import Link from '../core/Link';
 import Text from '../core/Text';
+import { getUrl } from '../../urls';
 
 const Header = () => (
 	<Flex
@@ -13,19 +14,19 @@ const Header = () => (
 	>
 		<Box width={[1, 'auto']} mb={2}>
 			<Text as="h1">
-				<Link href="/">Rent-o-dog</Link>
+				<Link href={getUrl('/')}>Rent-o-dog</Link>
 			</Text>
 		</Box>
 		<nav role="navigation">
 			<Stack justifyContent="center" gap={4} flexDirection="row" as="ul">
 				<Text as="li">
-					<Link href="/">How it works</Link>
+					<Link href="#">How it works</Link>
 				</Text>
 				<Text as="li">
-					<Link href="/">Contact us</Link>
+					<Link href="#">Contact us</Link>
 				</Text>
 				<Text as="li">
-					<Link href="/">Login for dogs</Link>
+					<Link href="#">Login for dogs</Link>
 				</Text>
 			</Stack>
 		</nav>

@@ -2,10 +2,10 @@ import React from 'react';
 import { Router } from '@reach/router';
 import Homepage from './Homepage';
 import Checkout from './CheckoutContainer';
+import { getUrl } from '../../urls';
 
 const Routes = () => (
-	// HACK: Make the app work when deployed in a subfolder
-	<Router basepath={document.location.pathname}>
+	<Router basepath={getUrl()}>
 		<Homepage path="/" />
 		<Checkout path="/checkout/:dogId" />
 	</Router>
