@@ -1,7 +1,7 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import styled from 'styled-components';
-import Stack from 'stack-styled';
+import Box from '../../../src/components/core/Box';
+import Stack from '../../../src/components/core/Stack';
 import Button from '../../../src/components/core/Button';
 import Input from '../../../src/components/core/Input';
 

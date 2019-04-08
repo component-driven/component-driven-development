@@ -8,7 +8,7 @@ We're prepared the basic structure for the design tokens definition. Open `theme
 
 1. Add a few colors to the `theme.js` and see how the styleguide going to render them
 1. Define appropriate names for colors (group exrecise)
-1. Check out [design tokens](http://localhost:6060/#/Foundation?id=colors) from the final styleguide
+1. Check out [design tokens](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation?id=colors) from the final styleguide
 
 ## Colors
 

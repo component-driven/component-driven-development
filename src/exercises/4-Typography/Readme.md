@@ -147,9 +147,9 @@ export default Heading;
 
 ## 3.3. Introducing styled-system
 
-[Styled-system](http://jxnblk.com/styled-system/) is a collection of utility functions that allow you to control styles of your component using props.
+[Styled-system](https://styled-system.com/) is a collection of utility functions that allow you to control styles of your component using props.
 
-For example, the [space](http://jxnblk.com/styled-system/api#space) function does exactly what we have done in the last task:
+For example, the [space](https://styled-system.com/api#space) function does exactly what we have done in the last task:
 
 ```js static
 import { space } from 'styled-system';
@@ -159,7 +159,7 @@ const Heading = styled(Base)`
 `;
 ```
 
-**Note:** Have a look at the [default spacing scale](https://jxnblk.com/styled-system/api#space-1).
+**Note:** Have a look at the [default spacing scale](https://styled-system.com/api#space-1).
 
 ## The task
 
@@ -185,7 +185,7 @@ export default Heading;
 
 ## 3.4. Simplifying styles
 
-Converting props to styles isn’t the only feature of styled-system: [themeGet](http://jxnblk.com/styled-system/api#themeget) function can save you a few keystrokes when accessing the theme values, so instead of writing `props => props.theme.colors.base` you could write:
+Converting props to styles isn’t the only feature of styled-system: [themeGet](https://styled-system.com/api#themeget) function can save you a few keystrokes when accessing the theme values, so instead of writing `props => props.theme.colors.base` you could write:
 
 ```js static
 import styled from 'styled-components';

@@ -1,9 +1,9 @@
-To make components truly reusable they shouldn't define their margins otherwise it may become hard to compose such components. Imagine a `Button` would have `margin-right` pre-defined. This would make it tricky to create a `ButtonGroup` component there buttons are placed next to each other.
+To make components truly reusable they shouldn't define their margins otherwise it may become hard to compose such components. Imagine a `Button` would have `margin-right` predefined. This would make it tricky to create a `ButtonGroup` component there buttons are placed next to each other.
 
-This means that the _white space between components should be controlled outside of components_. This can be achived in a few different ways:
+This means that the _whitespace between components should be controlled outside of components_. This can be achieved in a few different ways:
 
 1. Controlling spacing props directly via primitives with props
-1. A first-class layout primitive that controls layout of its children
+2. A first-class layout primitive that controls layout of its children
 
 Both methods are valid and have their use cases.
 
@@ -26,7 +26,7 @@ import Box from '../../components/core/Box';
 ### The task
 
 1. Build the `Box` component that can control its padding, margin, width, and background color via styled-system.
-1. By default it should just render a `div` without any any spacing applied.
+2. By default it should just render a `div` without any spacing applied.
 
 <details>
  <summary>Solution</summary>
@@ -82,8 +82,8 @@ import Box from '../../components/core/Box';
 ### The task
 
 1. Create `Flex` primitive based on `Box` component and styled-system.
-1. Update `Box` component to accept `flex` and differnt alignment props.
-1. Create a simple 3 rows layout using `Flex` and `Box` primitives
+2. Update `Box` component to accept `flex` and different alignment props.
+3. Create a simple three rows layout using `Flex` and `Box` primitives.
 
 <details>
  <summary>Solution</summary>
@@ -125,7 +125,7 @@ export default Flex;
 
 ## 5.3 Adding spacing to any primitive
 
-We already used similar technique in the [Typography](http://localhost:6061/#/Typography) exercises. Adding `Box` and `Flex` to the mix we now can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spcing are coming from our [spacing scale](http://localhost:6060/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application!
+We already used similar technique in the [Typography](http://localhost:6061/#/Typography) exercises. Adding `Box` and `Flex` to the mix we now can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spacing are coming from our [spacing scale](http://localhost:6060/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application!
 
 ### Result
 
@@ -140,7 +140,7 @@ import Footer from '../../../src/components/patterns/Footer';
 
 ## 5.4 Stack primitive
 
-We just learned that [space](https://jxnblk.com/styled-system/api#space) function of styled-system, that adds `margin` and `padding` props to any of our primitives, is a powerful tool. Now we could just add this function to all our primitives and start controlling white space using `m` and `p` props on every instance in our app like this:
+We just learned that [space](https://styled-system.com/api#space) function of styled-system, that adds `margin` and `padding` props to any of our primitives, is a powerful tool. Now we could just add this function to all our primitives and start controlling whitespace using `m` and `p` props on every instance in our app like this:
 
 ```jsx static
 /* List of buttons */
@@ -151,9 +151,9 @@ We just learned that [space](https://jxnblk.com/styled-system/api#space) functio
 </>
 ```
 
-Even thought this works for some cases, sometimes it will make our code very verbose and hard to maintain. Imagine you want to change the margin to a different value or make this reposnsive!
+Even thought this works for some cases, sometimes it will make our code very verbose and hard to maintain. Imagine you want to change the margin to a different value or make this responsive!
 
-What we actually want is _a component that controls layout and white space_ between our components.
+What we actually want is _a component that controls layout and whitespace_ between our components.
 
 ```jsx static
 /* List of buttons */
@@ -179,8 +179,8 @@ import SubscriptionForm from '../../../src/components/patterns/SubscriptionForm'
 
 ### The task
 
-1. Create `SubscriptionForm` component using [stack-styled](https://github.com/sapegin/stack-styled) component
-1. Make sure that the layout is responsive and the button is placed below the input field on a narrow screen.
+1. Create `SubscriptionForm` component using the `Stack` component we’ve just created.
+2. Make sure that the layout is responsive and the button is placed below the input field on a narrow screen.
 
 <details>
  <summary>Solution</summary>
@@ -189,7 +189,8 @@ import SubscriptionForm from '../../../src/components/patterns/SubscriptionForm'
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import styled from 'styled-components';
-import Stack from 'stack-styled';
+import Stack from '../../../src/components/core/Stack';
+import Box from '../../../src/components/core/Box';
 import Button from '../../../src/components/core/Button';
 import Input from '../../../src/components/core/Input';
 
@@ -207,21 +208,25 @@ const SubscriptionForm = ({
   error
 }) => (
   <Form onSubmit={onSubmit}>
-    <Stack gap={3} mb={2} gridTemplateColumns={['1fr', '1fr auto']}>
-      <Input
-        type="email"
-        value={email}
-        required
-        placeholder="Email"
-        aria-label="Email"
-        aria-invalid={error && 'true'}
-        aria-describedby={`${id}-info`}
-        disabled={loading}
-        onChange={onEmailChange}
-      />
-      <Button variant="primary" type="submit" disabled={loading}>
-        Subscribe
-      </Button>
+    <Stack gap={3} mb={2} flexDirection="row">
+      <Box flex={1}>
+        <Input
+          type="email"
+          value={email}
+          required
+          placeholder="Email"
+          aria-label="Email"
+          aria-invalid={error && 'true'}
+          aria-describedby={`${id}-info`}
+          disabled={loading}
+          onChange={onEmailChange}
+        />
+      </Box>
+      <Box width={[1, 'auto']}>
+        <Button variant="primary" type="submit" disabled={loading}>
+          Subscribe
+        </Button>
+      </Box>
     </Stack>
   </Form>
 );
