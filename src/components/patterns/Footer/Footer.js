@@ -12,10 +12,10 @@ const Footer = () => {
 	return (
 		<Inverted>
 			<Flex px={5} py={4} flexDirection="column" bg="bg" color="secondary">
-				<Box ml="auto" mr="auto" mb={5}>
+				<Box mx="auto" mb={5}>
 					<SvgDogPees width="100" />
 				</Box>
-				<Box mb={5} ml="auto" mr="auto" width={[1, 2 / 3, 1 / 2]}>
+				<Box mb={5} mx="auto" width={[1, 2 / 3, 1 / 2]}>
 					<Heading size="l" as="h2" mb={4} align="center">
 						Subscribe to our newsletter!
 					</Heading>
