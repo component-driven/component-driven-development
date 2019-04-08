@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+/**
+ * Render text that’s only “visible” for screen readers
+ */
 const VisuallyHidden = styled.div`
 	border: 0;
 	clip: rect(0 0 0 0);
