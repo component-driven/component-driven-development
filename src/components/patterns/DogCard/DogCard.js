@@ -15,7 +15,7 @@ const DogCard = ({ as, dog }) => (
 			<DogInfo dog={dog} isHeading />
 		</Card.Body>
 		<Card.Footer>
-			<Button as={Link} fullWidth to={`/checkout/${dog.id}`}>
+			<Button as={Link} fullWidth to={`checkout/${dog.id}`}>
 				Rent {dog.name}
 			</Button>
 		</Card.Footer>

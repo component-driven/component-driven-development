@@ -4,7 +4,8 @@ import Homepage from './Homepage';
 import Checkout from './CheckoutContainer';
 
 const Routes = () => (
-	<Router>
+	// HACK: Make the app work when deployed in a subfolder
+	<Router basepath={document.location.pathname}>
 		<Homepage path="/" />
 		<Checkout path="/checkout/:dogId" />
 	</Router>
