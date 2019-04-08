@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from 'stack-styled';
+import Stack from '../../core/Stack';
 import Icon from '../../core/Icon';
 import VisuallyHidden from '../../core/VisuallyHidden';
 
@@ -28,7 +28,7 @@ const Rating = ({ value }) => {
 			<VisuallyHidden>
 				{value} out of {STARS_COUNT} stars
 			</VisuallyHidden>
-			<Stack justifyContent="start" gridAutoFlow="column" gap={1}>
+			<Stack justifyContent="start" gap={1} flexDirection="row">
 				{range(STARS_COUNT).map(index => (
 					<Icon
 						key={index}

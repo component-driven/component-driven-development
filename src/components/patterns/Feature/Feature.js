@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from 'stack-styled';
 import Box from '../../core/Box';
+import Stack from '../../core/Stack';
 import Heading from '../../core/Heading';
 import Text from '../../core/Text';
 

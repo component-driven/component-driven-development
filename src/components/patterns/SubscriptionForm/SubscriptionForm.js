@@ -2,7 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Stack from 'stack-styled';
+import Box from '../../core/Box';
+import Stack from '../../core/Stack';
 import Button from '../../core/Button';
 import Input from '../../core/Input';
 import Text from '../../core/Text';
@@ -27,21 +28,31 @@ const SubscriptionForm = ({
 			</Text>
 		) : (
 			<Form onSubmit={onSubmit}>
-				<Stack gap={3} mb={2} gridTemplateColumns={['1fr', '1fr auto']}>
-					<Input
-						type="email"
-						value={email}
-						required
-						placeholder="Email"
-						aria-label="Email"
-						aria-invalid={error && 'true'}
-						aria-describedby={`${id}-info`}
-						disabled={loading}
-						onChange={onEmailChange}
-					/>
-					<Button variant="primary" type="submit" disabled={loading}>
-						Subscribe
-					</Button>
+				<Stack gap={3} mb={2} flexDirection="row">
+					<Box flex={1}>
+						<Input
+							type="email"
+							value={email}
+							required
+							placeholder="Email"
+							aria-label="Email"
+							aria-invalid={error && 'true'}
+							aria-describedby={`${id}-info`}
+							disabled={loading}
+							onChange={onEmailChange}
+							fullWidth
+						/>
+					</Box>
+					<Box width={[1, 'auto']}>
+						<Button
+							variant="primary"
+							type="submit"
+							disabled={loading}
+							fullWidth
+						>
+							Subscribe
+						</Button>
+					</Box>
 				</Stack>
 				<div id={`${id}-info`}>
 					{error ? (
