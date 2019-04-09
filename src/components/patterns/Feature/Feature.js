@@ -13,7 +13,7 @@ const Feature = ({ as, children }) => (
 
 // width={80}
 Feature.Icon = ({ children }) => (
-	<Box alignSelf="center" color="secondary">
+	<Box mx="auto" color="secondary">
 		{children}
 	</Box>
 );
