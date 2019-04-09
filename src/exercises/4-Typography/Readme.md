@@ -101,7 +101,7 @@ const HeadingWithMargin = Heading.extend`
 <HeadingWithMargin size="xl">The quick brown fox</HeadingWithMargin>
 ```
 
-But that's not much better.
+But that doesn’t look much better.
 
 Let’s make the whitespace part of the component API:
 
@@ -149,7 +149,7 @@ export default Heading;
 
 [Styled-system](https://styled-system.com/) is a collection of utility functions that allow you to control styles of your component using props.
 
-For example, the [space](https://styled-system.com/api#space) function does exactly what we have done in the last task:
+For example, the [space](https://styled-system.com/api#space) function does exactly what we’ve done in the previous task:
 
 ```js static
 import { space } from 'styled-system';
@@ -224,7 +224,7 @@ export default Heading;
 
 ## 3.5. Creating a generic text component
 
-Now we know enough to easily create customizable components that use many theme values.
+Now we know enough to create customizable components that use many theme values.
 
 ## The task
 
@@ -236,8 +236,6 @@ Create a component that renders text in different styles:
 - Error message (`base` font size, `error` color).
 
 The `variant` prop is used to change text style.
-
-**Bonus:** The user can change a component or an HTML element that is used to render text.
 
 <details>
  <summary>Solution</summary>
