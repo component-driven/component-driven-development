@@ -187,12 +187,12 @@ const Title = styled.h1`
 
 1. Add a new variation of a button:
 
-- Render the current style when the component rendered with a `variant="primary"` prop.
-- Render a new, secondary, style (no background, just a border) when the component is rendered with a `variant="secondary"` prop.
+   - primary: current style;
+   - secondary: no background, just a border.
 
-2. Add the new `variant` prop to PropTypes.
+2. Use props to change variations.
 
-3. Render a secondary button by default (when the `variant` prop is missed).
+3. Render a secondary button by default.
 
 <details>
  <summary>Solution</summary>
