@@ -128,22 +128,7 @@ export default Flex;
 
 > We could use [Rebass Grid](https://grid.rebassjs.org/) directly since it is based on styled-system and implements the same API but it’s a good thing we keep our primitives abstracted from the implementation details so we can always change implementation without refactoring application’s code.
 
-## 5.3 Adding spacing to any primitive
-
-We’ve already used a similar technique in the [Typography](http://localhost:6061/#/Typography) exercises. Adding `Box` and `Flex` to the mix we now can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spacing are coming from our [spacing scale](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application!
-
-### The result
-
-```jsx noeditor
-import Footer from '../../../src/components/patterns/Footer';
-<Footer />;
-```
-
-### The task
-
-1. Create a `Footer` component using only primitives to adjust the layout.
-
-## 5.4 Stack primitive
+## 5.3 Stack primitive
 
 We’ve just learned that [space](https://styled-system.com/api#space) function of styled-system, that adds `margin` and `padding` props to any of our primitives, is a powerful tool. Now we could add this function to all our primitives and start controlling whitespace using `m` and `p` props on every component in our app like this:
 
@@ -239,6 +224,76 @@ const SubscriptionForm = ({
 );
 
 export default SubscriptionForm;
+```
+
+</details>
+
+## 5.4 Adding spacing to any primitive
+
+We’ve already used a similar technique in the [Typography](http://localhost:6061/#/Typography) exercises. Adding `Box` and `Flex` to the mix we now can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spacing are coming from our [spacing scale](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application!
+
+### The result
+
+```jsx noeditor
+import Footer from '../../../src/components/patterns/Footer';
+<Footer />;
+```
+
+### The task
+
+1. Create a `Footer` component.
+
+2. Use only primitives for layout, whitespace (`Box`, `Flex` and `Stack`) and text (`Text`, `Heading` and `Link`).
+
+<details>
+ <summary>Solution</summary>
+
+```js static
+import React from 'react';
+import Box from '../../../src/components/core/Box';
+import Flex from '../../../src/components/core/Flex';
+import Heading from '../../../src/components/core/Heading';
+import Link from '../../../src/components/core/Link';
+import Text from '../../../src/components/core/Text';
+import { Inverted } from '../../../src/components/../ThemeProvider';
+import SubscriptionForm from '../../../src/components/app/SubscriptionFormContainer';
+import SvgDogPees from '../../../src/components/app/images/SvgDogPees';
+
+const Footer = () => {
+  return (
+    <Inverted>
+      <Flex
+        px={5}
+        py={4}
+        flexDirection="column"
+        bg="bg"
+        color="secondary"
+      >
+        <Box mx="auto" mb={5}>
+          <SvgDogPees width="100" />
+        </Box>
+        <Box mb={5} mx="auto" width={[1, 2 / 3, 1 / 2]}>
+          <Heading size="l" as="h2" mb={4} align="center">
+            Subscribe to our newsletter!
+          </Heading>
+          <SubscriptionForm />
+        </Box>
+        <Text variant="tertiary" align="center">
+          © {new Date().getFullYear()}{' '}
+          <Link href="https://okonet.ru/" shy>
+            Andrey Okonetchnikov
+          </Link>{' '}
+          and{' '}
+          <Link href="https://sapegin.me/" shy>
+            Artem Sapegin
+          </Link>
+        </Text>
+      </Flex>
+    </Inverted>
+  );
+};
+
+export default Footer;
 ```
 
 </details>

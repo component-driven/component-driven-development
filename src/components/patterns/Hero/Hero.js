@@ -6,7 +6,7 @@ import {
 	backgroundImage,
 	backgroundPosition,
 } from 'styled-system';
-import Box from '../Box';
+import Box from '../../core/Box';
 
 /**
  * A hero
