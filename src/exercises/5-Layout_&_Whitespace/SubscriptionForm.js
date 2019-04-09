@@ -1,13 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import Stack from 'stack-styled';
 import Box from '../../../src/components/core/Box';
-import Stack from '../../../src/components/core/Stack';
 import Button from '../../../src/components/core/Button';
 import Input from '../../../src/components/core/Input';
-
-const Form = styled.form`
-	width: 100%;
-`;
 
 const SubscriptionForm = ({
 	id,
@@ -18,7 +13,7 @@ const SubscriptionForm = ({
 	success,
 	error,
 }) => (
-	<Form onSubmit={onSubmit}>
+	<form onSubmit={onSubmit}>
 		<Input
 			type="email"
 			value={email}
@@ -33,7 +28,7 @@ const SubscriptionForm = ({
 		<Button variant="primary" type="submit" disabled={loading}>
 			Subscribe
 		</Button>
-	</Form>
+	</form>
 );
 
 export default SubscriptionForm;

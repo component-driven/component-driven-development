@@ -169,6 +169,10 @@ What we actually want is _a component that controls layout and whitespace_ betwe
 </Stack>
 ```
 
+This is often called _stacking layout_. There are many ways to implement it: [lobotomized owl selector](https://css-tricks.com/lobotomized-owls/), negative margins, CSS Grid, etc. Each has its own pros and cons. If you don’t need to support old versions of Internet Explorer, we recommend [CSS Grid based stacking](https://gridbyexample.com/examples/example28/).
+
+We’re going to use [stack-styled](https://sapegin.github.io/stack-styled/) library that implements stacking layout using CSS Grid. It’s based on styled-system and uses the same spacing values that our `Box` component.
+
 ### The result
 
 ```jsx noeditor
@@ -184,9 +188,11 @@ import SubscriptionForm from '../../../src/components/patterns/SubscriptionForm'
 
 ### The task
 
-1. Create a `SubscriptionForm` component using the `Stack` component we’ve just created.
+1. Create a `SubscriptionForm` component using the `Stack` component from stack-styled.
 
-2. Make sure that the layout is responsive and the button is placed below the input field on a narrow screen.
+2. The layout should be responsive and the button should be placed below the input field on a narrow screen.
+
+**Hint:** Use `grid-template-columns` CSS property for responsiveness, like this: `gridTemplateColumns={['1fr', '1fr auto']}`.
 
 <details>
  <summary>Solution</summary>
@@ -194,15 +200,10 @@ import SubscriptionForm from '../../../src/components/patterns/SubscriptionForm'
 ```js static
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
-import styled from 'styled-components';
-import Stack from '../../../src/components/core/Stack';
+import Stack from 'stack-styled';
 import Box from '../../../src/components/core/Box';
 import Button from '../../../src/components/core/Button';
 import Input from '../../../src/components/core/Input';
-
-const Form = styled.form`
-  width: 100%;
-`;
 
 const SubscriptionForm = ({
   id,
@@ -213,28 +214,28 @@ const SubscriptionForm = ({
   success,
   error
 }) => (
-  <Form onSubmit={onSubmit}>
-    <Stack gap={3} mb={2} flexDirection="row">
-      <Box flex={1}>
-        <Input
-          type="email"
-          value={email}
-          required
-          placeholder="Email"
-          aria-label="Email"
-          aria-invalid={error && 'true'}
-          aria-describedby={`${id}-info`}
-          disabled={loading}
-          onChange={onEmailChange}
-        />
-      </Box>
-      <Box width={[1, 'auto']}>
-        <Button variant="primary" type="submit" disabled={loading}>
-          Subscribe
-        </Button>
-      </Box>
-    </Stack>
-  </Form>
+  <Stack
+    gap={3}
+    mb={2}
+    gridTemplateColumns={['1fr', '1fr auto']}
+    as="form"
+    onSubmit={onSubmit}
+  >
+    <Input
+      type="email"
+      value={email}
+      required
+      placeholder="Email"
+      aria-label="Email"
+      aria-invalid={error && 'true'}
+      aria-describedby={`${id}-info`}
+      disabled={loading}
+      onChange={onEmailChange}
+    />
+    <Button variant="primary" type="submit" disabled={loading}>
+      Subscribe
+    </Button>
+  </Stack>
 );
 
 export default SubscriptionForm;

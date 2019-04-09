@@ -1,15 +1,10 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import Stack from 'stack-styled';
 import Button from '../../core/Button';
 import Input from '../../core/Input';
 import Text from '../../core/Text';
-
-const Form = styled.form`
-	width: 100%;
-`;
 
 const SubscriptionForm = ({
 	id,
@@ -20,13 +15,13 @@ const SubscriptionForm = ({
 	success,
 	error,
 }) => (
-	<React.Fragment>
+	<>
 		{success ? (
 			<Text>
 				Thank you! <span aria-hidden="true">🍕</span>
 			</Text>
 		) : (
-			<Form onSubmit={onSubmit}>
+			<form onSubmit={onSubmit}>
 				<Stack gap={3} mb={2} gridTemplateColumns={['1fr', '1fr auto']}>
 					<Input
 						type="email"
@@ -54,9 +49,9 @@ const SubscriptionForm = ({
 						</Text>
 					)}
 				</div>
-			</Form>
+			</form>
 		)}
-	</React.Fragment>
+	</>
 );
 
 SubscriptionForm.propTypes = {

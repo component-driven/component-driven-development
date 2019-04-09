@@ -15,6 +15,7 @@
 		"react-dom": "^16.8.6",
 		"react-modal": "^3.8.1",
 		"react-scripts": "2.1.8",
+		"stack-styled": "^0.1.0",
 		"styled-components": "^4.2.0",
 		"styled-system": "^4.1.0"
 	},
