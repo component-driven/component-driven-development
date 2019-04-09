@@ -3,7 +3,7 @@ import Box from '../core/Box';
 import Heading from '../core/Heading';
 import Header from '../app/Header';
 import Footer from '../patterns/Footer';
-import Hero from '../core/Hero';
+import Hero from '../patterns/Hero';
 import Features from '../app/Features';
 import DogFinder from '../app/DogFinderContainer';
 import { Inverted } from '../../ThemeProvider';

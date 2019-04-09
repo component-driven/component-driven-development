@@ -23,8 +23,8 @@ We can use this technique to implement a hero pattern. It’s a design pattern, 
 ### The result
 
 ```jsx harmony
-import Hero from '../../components/core/Hero';
 import Heading from '../../components/core/Heading';
+import Hero from '../../components/patterns/Hero';
 <Hero
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={6}
