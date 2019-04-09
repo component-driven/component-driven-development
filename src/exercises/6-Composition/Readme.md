@@ -172,7 +172,7 @@ Create a compound `Feature` component, that has three subcomponents:
 ```jsx static
 import React from 'react';
 import Box from '../../components/core/Box';
-import Stack from '../../core/Stack';
+import Stack from 'stack-styled';
 import Heading from '../../core/Heading';
 import Text from '../../core/Text';
 

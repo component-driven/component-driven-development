@@ -12,7 +12,6 @@ import {
 const Box = styled('div')(
 	{
 		boxSizing: 'border-box',
-		listStyle: 'none',
 	},
 	space,
 	color,

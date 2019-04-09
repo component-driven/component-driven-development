@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Stack from 'stack-styled';
 import Box from '../core/Box';
 import Flex from '../core/Flex';
-import Stack from '../core/Stack';
 import Text from '../core/Text';
 import Select from '../core/Select';
 import VisuallyHidden from '../core/VisuallyHidden';
@@ -65,16 +65,9 @@ const DogFinder = ({
 				Something went wrong, try again later
 			</p>
 		)}
-		<Stack gap={4} m={0} p={0} flexDirection="row" as="ul">
+		<Stack gridColumnGap={4} gridRowGap={5} minWidth={200} m={0} p={0} as="ul">
 			{dogs.map(dog => (
-				<Box
-					key={dog.id}
-					width={[1, 1 / 2, 1 / 3, 1 / 6]}
-					height="100%"
-					as="li"
-				>
-					<DogCard dog={dog} />
-				</Box>
+				<DogCard key={dog.id} dog={dog} as="li" />
 			))}
 		</Stack>
 	</React.Fragment>
