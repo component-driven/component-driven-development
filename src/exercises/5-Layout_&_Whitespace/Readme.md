@@ -71,15 +71,17 @@ export default Box;
 import Flex from '../../components/core/Flex';
 import Box from '../../components/core/Box';
 
-<Flex flexDirection="column">
-  <Box p={3} bg="secondary">
+<Flex flexDirection="row">
+  <Flex alignItems="center" p={3} flex={1} bg="secondary">
     Row 1
-  </Box>
-  <Box p={3} bg="light">
-    Row 2
-  </Box>
-  <Box p={3} bg="lighter">
-    Row 3
+  </Flex>
+  <Box>
+    <Box p={3} bg="light">
+      Row 2
+    </Box>
+    <Box p={3} bg="lighter">
+      Row 3
+    </Box>
   </Box>
 </Flex>;
 ```
