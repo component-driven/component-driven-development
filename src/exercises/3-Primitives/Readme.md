@@ -49,6 +49,18 @@ const Title = styled.h1`
 
 The `Title` component will render an `h1` tag with an attached CSS that sets the color to `salmon`. Styles look almost identical to regular CSS, but instead of classes we have components.
 
+You can also use object notation instead of tagged template literals:
+
+```js static
+import styled from 'styled-components';
+
+const Title = styled('h1')({
+  color: 'salmon'
+});
+
+<Title>Hello components!</Title>;
+```
+
 **Hint:** [A 5-minute intro to styled-components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55).
 
 ### The task
