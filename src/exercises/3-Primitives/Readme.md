@@ -65,7 +65,7 @@ const Title = styled('h1')({
 
 1. Rewrite a button component in `Button.js` using styled-components.
 
-2. Define basic styles like padding, text and background colors according to [the mockup](https://component-driven.github.io/component-driven-development/).
+2. Define basic styles like padding, text and background colors according to [the mockup](https://component-driven.github.io/component-driven-development/), use primary button styles (like the “Place an order” button on the checkout page).
 
 <details>
  <summary>Solution</summary>
