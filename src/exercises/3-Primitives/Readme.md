@@ -113,8 +113,8 @@ const Button = styled.button`
 import styled from 'styled-components';
 
 const Button = styled.button`
-  padding: ${props => props.theme.space[3]}px ${props =>
-      props.theme.space[4]}px;
+  padding: ${props => props.theme.space[3]} ${props =>
+      props.theme.space[4]};
   color: ${props => props.theme.colors.bg};
   background: ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.radii.base};
