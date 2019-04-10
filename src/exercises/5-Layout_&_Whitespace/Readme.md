@@ -9,7 +9,7 @@ Both methods are valid and have their use cases.
 
 ## 5.1. Box primitive
 
-Let’s start with the simplest layout primitive — a `Box`. Box is a rectangular area that can contain other components.
+Let’s start with the simplest layout primitive — a `Box`. Box is a rectangular area (basically `<div>`) that can contain other components.
 
 ### The result
 
@@ -30,6 +30,8 @@ import Box from '../../components/core/Box';
 2. By default it should just render a `div` without any spacing applied.
 
 **Hint:** use [styled-system functions](https://styled-system.com/api), like the `space` function we’ve used in the previous exercise, to create props.
+
+**Hint:** check out [Build a Box](https://styled-system.com/guides/build-a-box/) article by creator of styled-system.
 
 <details>
  <summary>Solution</summary>
