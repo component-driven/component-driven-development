@@ -18,7 +18,7 @@ const Message = styled.p`
 You can also use [themeGet](https://jxnblk.com/styled-system/api#themeget) helper from styled-system to access theme values:
 
 ```diff
-import { themeGet } from 'styled-system'
+import { themeGet } from 'styled-system';
 const Message = styled.p`
 -   color: #8667a8;
 -   font-family: Helvetica;
