@@ -1,18 +1,9 @@
 const path = require('path');
 const glob = require('glob');
-const webpackConfig = require('react-scripts/config/webpack.config');
+const webpackConfig = require('./webpack.config');
 
 // styleguidist server --exercise
 const isExercises = !!process.argv.find(x => x === '--exercise');
-
-// Patch Create React App webpack config with Babel plugin for styled-components
-try {
-	const loaders = webpackConfig.module.rules[1].oneOf;
-	const babelLoader = loaders.find(loader =>
-		loader.loader.includes('babel-loader')
-	);
-	babelLoader.options.plugins = ['babel-plugin-styled-components'];
-} catch (err) {}
 
 const config = {
 	serverPort: isExercises ? 6061 : 6060,
