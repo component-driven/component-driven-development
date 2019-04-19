@@ -39,8 +39,12 @@ npm install
 
 Then run:
 
-- `npm start` to work on exercises
+- `npm start` to work on exercises and run the completed style guide
 - `npm run app` to run the completed app
+
+Or:
+
+- `npm run exercises` to work on exercises
 - `npm run styleguide` to run the completed style guide
 
 ## Tech stack
