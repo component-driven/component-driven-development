@@ -1,6 +1,10 @@
+In this exercise we’ll learn basics of React Styleguidist.
+
+## 1.1. Exploring React Styleguidist
+
 [React Styleguidist](https://react-styleguidist.js.org/) is a tool we’re using as a workbench to develop components, and to generate a style guide.
 
-## The task
+### The task
 
 1. Explore React Styleguidist interface, try to switch to isolated mode (a button in the top right corner), try to edit code of the examples in the browser.
 

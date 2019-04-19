@@ -1,10 +1,22 @@
-## Result
+In this exercise we’ll create reusable typography components. We’ll create a component to render headings of different levels and a component to render text in different styles. We’ll learn how to work with styled-system and how to do make our primitive components more flexible by making whitespace around them customizable.
+
+## 4.1. Creating a basic heading component
+
+Have a look at our [typography scale](https://component-driven.github.io/component-driven-development/styleguide/#typography):
+
+```jsx noeditor
+import Typography from '../../styleguide/Typography';
+<Typography />;
+```
+
+We already know how to access design tokens in our styled components from the previous exercise.
+
+## The result
 
 The result should look like this:
 
 ```js noeditor
 import Heading from '../../components/core/Heading';
-import Text from '../../components/core/Text';
 <>
   <Heading size="xxl" as="h1">
     Heading 1
@@ -18,23 +30,8 @@ import Text from '../../components/core/Text';
   <Heading size="base" as="h4">
     Heading 4
   </Heading>
-  <Text>Normal text</Text>
-  <Text variant="secondary">Secondary text</Text>
-  <Text variant="tertiary">Tertiary text</Text>
-  <Text variant="error">Error text</Text>
 </>;
 ```
-
-## 3.1. Creating a basic heading component
-
-Have a look at our [typography scale](https://component-driven.github.io/component-driven-development/styleguide/#typography):
-
-```jsx noeditor
-import Typography from '../../styleguide/Typography';
-<Typography />;
-```
-
-We already know how to access design tokens in our styled components from the previous exercise.
 
 ## The task
 
@@ -75,7 +72,7 @@ export default Heading;
 
 </details>
 
-## 3.2. Making margins customizable
+## 4.2. Making margins customizable
 
 Usually we need some whitespace below the heading. We can hardcode values for each heading size, but often whitespace depends on the context, where the heading is used.
 
@@ -145,7 +142,7 @@ export default Heading;
 
 </details>
 
-## 3.3. Introducing styled-system
+## 4.3. Introducing styled-system
 
 [Styled-system](https://styled-system.com/) is a collection of utility functions that allow you to control styles of your component using props.
 
@@ -183,48 +180,25 @@ export default Heading;
 
 </details>
 
-## 3.4. Simplifying styles
+## 4.4. Creating a generic text component (bonus)
 
-Converting props to styles isn’t the only feature of styled-system: [themeGet](https://styled-system.com/api#themeget) function can save you a few keystrokes when accessing the theme values, so instead of writing `props => props.theme.colors.base` you could write:
-
-```js static
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
-
-const Heading = styled.h1`
-  font-family: ${themeGet('fonts.heading')};
-  color: ${themeGet('colors.base')};
-`;
-```
-
-## The task
-
-Replace direct access to `props.theme` with the `themeGet` function.
-
-<details>
- <summary>Solution</summary>
-
-```js static
-import styled from 'styled-components';
-import { space, themeGet } from 'styled-system';
-
-const Heading = styled(Base)`
-  ${space};
-  font-family: ${themeGet('fonts.heading')};
-  font-size: ${props => themeGet(`fontSizes.${props.size}`)};
-  color: ${themeGet('colors.base')};
-  /* Other styles */
-`;
-
-/** @component */
-export default Heading;
-```
-
-</details>
-
-## 3.5. Creating a generic text component
+_Feel free to skip this exercise or do it at home, since it doesn’t teach any new techniques but gives you more practice with things you’ve learned in previous exercises._
 
 Now we know enough to create customizable components that use many theme values.
+
+## The result
+
+The result should look like this:
+
+```js noeditor
+import Text from '../../components/core/Text';
+<>
+  <Text>Normal text</Text>
+  <Text variant="secondary">Secondary text</Text>
+  <Text variant="tertiary">Tertiary text</Text>
+  <Text variant="error">Error text</Text>
+</>;
+```
 
 ## The task
 

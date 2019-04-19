@@ -1,4 +1,6 @@
-## What are design tokens?
+In this exercise we’ll learn basics of React Styleguidist.
+
+## 2.1. What are design tokens?
 
 Design tokens are the single source of truth for project’s colors, whitespace, font sizes and other design decisions.
 
