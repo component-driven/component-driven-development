@@ -1,38 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Swatches, FontSwatch } from './tokens';
 import theme from '../theme';
-import Box from '../components/core/Box';
-import Text from '../components/core/Text';
-
-const { fontSizes } = theme;
 
 const FontSizeSample = styled.p`
 	margin: 0;
 	line-height: 1;
-	font-size: ${props => props.fontSize};
+	font-size: ${props => props.theme.fontSizes[props.fontSize]};
 	font-family: ${props => props.theme.fonts.base};
 `;
 
-const FontSample = ({ fontSize, children }) => (
-	<Box mr={3}>
-		<FontSizeSample fontSize={fontSize}>
-			{children}
-			<Text variant="tertiary" as="span">
-				{' '}
-				— {fontSize}
-			</Text>
-		</FontSizeSample>
-	</Box>
-);
-
-const Typography = () => (
-	<Box>
-		{Object.keys(fontSizes).map(key => (
-			<FontSample fontSize={fontSizes[key]} key={key}>
-				{key}
-			</FontSample>
-		))}
-	</Box>
-);
-
-export default Typography;
+export default function() {
+	return (
+		<Swatches items={theme.fontSizes} layout="horizontal">
+			{(key, value) => (
+				<FontSwatch key={key} value={value} token={`fontSizes.${key}`}>
+					<FontSizeSample fontSize={key}>{key}</FontSizeSample>
+				</FontSwatch>
+			)}
+		</Swatches>
+	);
+}
