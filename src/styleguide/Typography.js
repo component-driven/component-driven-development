@@ -12,12 +12,13 @@ const FontSizeSample = styled.p`
 
 export default function() {
 	return (
-		<Swatches items={theme.fontSizes}>
-			{(key, value) => (
+		<Swatches
+			items={theme.fontSizes}
+			renderItem={(key, value) => (
 				<FontSwatch key={key} value={value} token={`fontSizes.${key}`}>
 					<FontSizeSample fontSize={key}>{key}</FontSizeSample>
 				</FontSwatch>
 			)}
-		</Swatches>
+		/>
 	);
 }

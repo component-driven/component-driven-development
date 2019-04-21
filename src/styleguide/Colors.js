@@ -4,8 +4,11 @@ import theme from '../theme';
 
 export default function() {
 	return (
-		<Swatches items={theme.colors} minWidth={150} gap={0}>
-			{(key, value) => (
+		<Swatches
+			items={theme.colors}
+			minWidth={150}
+			gap={0}
+			renderItem={(key, value) => (
 				<ColorSwatch
 					key={key}
 					name={key}
@@ -13,6 +16,6 @@ export default function() {
 					token={`colors.${key}`}
 				/>
 			)}
-		</Swatches>
+		/>
 	);
 }
