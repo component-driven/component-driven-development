@@ -10,11 +10,11 @@ import copy from 'clipboard-copy';
  * Components to showcase design tokens, should be extracted to a new package
  */
 
-export const Swatches = ({ items, minWidth, gap, children }) => (
+export const Swatches = ({ items, minWidth, gap, renderItem }) => (
 	<Stack minWidth={minWidth} gap={gap}>
 		{Array.isArray(items)
-			? items.map((value, index) => children(index, value))
-			: Object.keys(items).map(key => children(key, items[key]))}
+			? items.map((value, index) => renderItem(index, value))
+			: Object.keys(items).map(key => renderItem(key, items[key]))}
 	</Stack>
 );
 
@@ -22,7 +22,7 @@ Swatches.propTypes = {
 	items: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 	minWidth: PropTypes.number,
 	gap: PropTypes.number,
-	children: PropTypes.func.isRequired,
+	renderItem: PropTypes.func.isRequired,
 };
 
 Swatches.defaultProps = {

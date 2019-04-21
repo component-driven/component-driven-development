@@ -4,8 +4,9 @@ import theme from '../theme';
 
 export default function() {
 	return (
-		<Swatches items={theme.space}>
-			{(key, value) => (
+		<Swatches
+			items={theme.space}
+			renderItem={(key, value) => (
 				<SpacingSwatch
 					key={key}
 					name={key}
@@ -13,6 +14,6 @@ export default function() {
 					token={`space[${key}]`}
 				/>
 			)}
-		</Swatches>
+		/>
 	);
 }
