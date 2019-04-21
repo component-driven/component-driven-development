@@ -4,7 +4,7 @@ import theme from '../theme';
 
 export default function() {
 	return (
-		<Swatches items={theme.space} layout="horizontal">
+		<Swatches items={theme.space}>
 			{(key, value) => (
 				<SpacingSwatch
 					key={key}

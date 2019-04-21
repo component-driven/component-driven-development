@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { readableColor } from 'polished';
 import Box from '../../components/core/Box';
@@ -9,16 +10,24 @@ import copy from 'clipboard-copy';
  * Components to showcase design tokens, should be extracted to a new package
  */
 
-export const Swatches = ({ items, layout, children }) => (
-	<Stack minWidth={layout === 'grid' && 150} gap={layout === 'grid' ? 2 : 4}>
+export const Swatches = ({ items, minWidth, gap, children }) => (
+	<Stack minWidth={minWidth} gap={gap}>
 		{Array.isArray(items)
 			? items.map((value, index) => children(index, value))
 			: Object.keys(items).map(key => children(key, items[key]))}
 	</Stack>
 );
 
+Swatches.propTypes = {
+	items: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+	minWidth: PropTypes.number,
+	gap: PropTypes.number,
+	children: PropTypes.func.isRequired,
+};
+
 Swatches.defaultProps = {
 	layout: 'grid',
+	gap: 4,
 };
 
 const ColorSwatchContainer = styled(Box).attrs({ as: 'button', p: 4 })`
@@ -37,7 +46,14 @@ const ColorSwatchContainer = styled(Box).attrs({ as: 'button', p: 4 })`
 	&:hover,
 	&:active,
 	&:focus {
-		outline: 2px dashed #333;
+		outline: 0;
+		box-shadow: inset 0px 0px 0px 2px
+			${props =>
+				readableColor(
+					props.color,
+					'rgba(0, 0, 0, 0.5)',
+					'rgba(255, 255, 255, 0.7)'
+				)};
 		cursor: pointer;
 	}
 `;
@@ -47,6 +63,12 @@ export const ColorSwatch = ({ name, color, token }) => (
 		{name}
 	</ColorSwatchContainer>
 );
+
+ColorSwatch.propTypes = {
+	name: PropTypes.string,
+	color: PropTypes.string.isRequired,
+	token: PropTypes.string.isRequired,
+};
 
 const SpacingSwatchContainer = styled.button`
 	display: flex;
@@ -81,7 +103,7 @@ const SpacingSwatchSubValue = styled(Box)`
 	font-size: 0.85rem;
 `;
 
-export const SpacingSwatch = ({ name, size, token, children }) => (
+export const SpacingSwatch = ({ name, size, token }) => (
 	<SpacingSwatchContainer onClick={() => copy(token)}>
 		<SpacingSwatchBox size={size} />
 		<SpacingSwatchLabel ml={3}>
@@ -90,6 +112,12 @@ export const SpacingSwatch = ({ name, size, token, children }) => (
 		</SpacingSwatchLabel>
 	</SpacingSwatchContainer>
 );
+
+SpacingSwatch.propTypes = {
+	name: PropTypes.string.isRequired,
+	size: PropTypes.string.isRequired,
+	token: PropTypes.string.isRequired,
+};
 
 const FontSwatchContainer = styled.button`
 	display: flex;
@@ -121,3 +149,9 @@ export const FontSwatch = ({ value, token, children }) => (
 		<FontSwatchLabel ml={3}>{value}</FontSwatchLabel>
 	</FontSwatchContainer>
 );
+
+FontSwatch.propTypes = {
+	value: PropTypes.string.isRequired,
+	token: PropTypes.string.isRequired,
+	children: PropTypes.node.isRequired,
+};

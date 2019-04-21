@@ -4,7 +4,7 @@ import theme from '../theme';
 
 export default function() {
 	return (
-		<Swatches items={theme.colors}>
+		<Swatches items={theme.colors} minWidth={150} gap={0}>
 			{(key, value) => (
 				<ColorSwatch
 					key={key}
