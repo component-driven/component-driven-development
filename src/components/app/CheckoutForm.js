@@ -173,7 +173,7 @@ const CheckoutForm = ({ disabled }) => (
 				</Button>
 			</Box>
 			<Box width={[1, 'auto']} p={3}>
-				<Text variant="secondary">
+				<Text variant="tertiary">
 					By clicking the “Place an order” button you agree to Rent-a-dog Terms
 					and conditions
 				</Text>

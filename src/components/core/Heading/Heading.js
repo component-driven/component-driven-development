@@ -5,9 +5,7 @@ import { themeGet, space } from 'styled-system';
 /**
  * A text heading.
  */
-const Heading = styled.h1.attrs({
-	m: 0,
-})`
+const Heading = styled.h1`
 	${space};
 	line-height: ${themeGet('lineHeights.heading')};
 	font-family: ${themeGet('fonts.heading')};
@@ -20,13 +18,14 @@ const Heading = styled.h1.attrs({
 Heading.propTypes = {
 	/** Custom component or HTML tag */
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	size: PropTypes.oneOf(['xxxl', 'xxl', 'xl', 'l', 'm', 'base']),
+	size: PropTypes.oneOf(['xl', 'l', 'm', 'base']),
 	align: PropTypes.oneOf(['left', 'center', 'right']),
 	children: PropTypes.node,
 };
 
 Heading.defaultProps = {
-	size: 'xxl',
+	m: 0,
+	size: 'xl',
 };
 
 /** @component */

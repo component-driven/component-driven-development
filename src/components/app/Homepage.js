@@ -20,7 +20,7 @@ const Homepage = () => (
 			>
 				<Header />
 				<Box py={[4, 5, 6, 7]}>
-					<Heading as="p" level={2} size="xxxl" mb={5}>
+					<Heading as="p" level={2} size="xl" mb={5}>
 						Good boys and girls to brighten your office
 					</Heading>
 				</Box>
@@ -31,7 +31,7 @@ const Homepage = () => (
 				<Features />
 			</Box>
 			<Box px={4} py={5} bg="grey.2">
-				<Heading as="h2" size="xl" mb={4} align="center">
+				<Heading as="h2" size="l" mb={4} align="center">
 					Find the best fluffy coworker for you
 				</Heading>
 				<DogFinder />
