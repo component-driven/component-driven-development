@@ -5,6 +5,7 @@ import { readableColor } from 'polished';
 import Box from '../../components/core/Box';
 import Stack from 'stack-styled';
 import copy from 'clipboard-copy';
+import Text from '../../components/core/Text';
 
 /*
  * Components to showcase design tokens, should be extracted to a new package

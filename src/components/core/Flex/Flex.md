@@ -8,13 +8,13 @@ Using Flex we can create a simple columns layout:
 import Box from '../Box';
 
 <Flex>
-  <Box flex="1 1 auto" p={3} bg="secondary">
+  <Box flex="1 1 auto" p={3} bg="purple.1">
     Column 1
   </Box>
-  <Box flex="1 1 auto" p={3} bg="light">
+  <Box flex="1 1 auto" p={3} bg="purple.2">
     Column 2
   </Box>
-  <Box flex="1 1 auto" p={3} bg="lighter">
+  <Box flex="1 1 auto" p={3} bg="purple.3">
     Column 3
   </Box>
 </Flex>;
@@ -26,13 +26,13 @@ or rows:
 import Box from '../Box';
 
 <Flex flexDirection="column">
-  <Box p={3} bg="secondary">
+  <Box p={3} bg="purple.1">
     Column 1
   </Box>
-  <Box p={3} bg="light">
+  <Box p={3} bg="purple.2">
     Column 2
   </Box>
-  <Box p={3} bg="lighter">
+  <Box p={3} bg="purple.3">
     Column 3
   </Box>
 </Flex>;
