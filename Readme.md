@@ -44,7 +44,7 @@ Then run:
 
 Or:
 
-- `npm run exercises` to work on exercises
+- `npm run exercise` to work on exercises
 - `npm run styleguide` to run the completed style guide
 
 ## Tech stack
