@@ -72,14 +72,14 @@ import Flex from '../../components/core/Flex';
 import Box from '../../components/core/Box';
 
 <Flex flexDirection="row">
-  <Flex alignItems="center" p={3} flex={1} bg="secondary">
+  <Flex alignItems="center" p={3} flex={1} bg="purple.1">
     Row 1
   </Flex>
   <Box>
-    <Box p={3} bg="light">
+    <Box p={3} bg="purple.2">
       Row 2
     </Box>
-    <Box p={3} bg="lighter">
+    <Box p={3} bg="purple.3">
       Row 3
     </Box>
   </Box>

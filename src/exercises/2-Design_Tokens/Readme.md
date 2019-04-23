@@ -19,5 +19,5 @@ We’ve prepared the basic structure for the design tokens file. Open the `theme
 ```jsx noeditor
 import Colors from '../../styleguide/Colors';
 import theme from './theme';
-<Colors theme={theme} />;
+<Colors colors={theme.colors} />;
 ```

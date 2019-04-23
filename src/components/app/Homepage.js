@@ -30,7 +30,7 @@ const Homepage = () => (
 			<Box px={4} py={5}>
 				<Features />
 			</Box>
-			<Box px={4} py={5} bg="lighter">
+			<Box px={4} py={5} bg="grey.2">
 				<Heading as="h2" size="xl" mb={4} align="center">
 					Find the best fluffy coworker for you
 				</Heading>
