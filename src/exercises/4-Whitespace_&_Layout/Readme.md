@@ -7,7 +7,117 @@ This means that the _whitespace between components should be controlled outside 
 
 Both methods are valid and have their use cases.
 
-## 5.1. Box primitive
+In this exercise we’ll learn how to work with styled-system and how to do make our primitive components more flexible by making whitespace around them customizable. We’ll also learn about adding a whitepace separately. We’ll learn how to create first-class layout primitives that control layout of its children: Box, Flex and Stack.
+
+## 4.1. Making components whitespace customizable
+
+Usually we need some whitespace above or below a component. We can hardcode some value, but often whitespace depends on the context, where the component is used.
+
+We can [extend](https://www.styled-components.com/docs/basics#extending-styles) the component:
+
+```jsx static
+const HeadingWithMargin = Heading.extend`
+  margin-bottom: ${props => props.theme.space[6]};
+`
+<HeadingWithMargin size="xl">The quick brown fox</HeadingWithMargin>
+```
+
+But that’s a lot of boilerplate.
+
+Let’s make the whitespace part of the component API:
+
+```jsx static
+<Heading size="xl" mb={5}>
+  The quick brown fox
+</Heading>
+```
+
+## The task
+
+Add props `m`, `mt`, `mr`, `mb` and `ml` to change `margin`, `margin-top`, `margin-right`, `margin-bottom` and `margin-left` respectively.
+
+<details>
+ <summary>Solution</summary>
+
+```js static
+import styled from 'styled-components';
+
+const Heading = styled.h1`
+  margin: ${props => props.theme.space[props.m]};
+  margin-top: ${props => props.theme.space[props.mt]};
+  margin-right: ${props => props.theme.space[props.mr]};
+  margin-bottom: ${props => props.theme.space[props.mb]};
+  margin-left: ${props => props.theme.space[props.ml]};
+  line-height: 1.2;
+  font-weight: normal;
+  font-family: ${props => props.theme.fonts.heading};
+  font-size: ${props => props.theme.fontSizes[props.size]};
+  color: ${props => props.theme.colors.base};
+`;
+
+Heading.defaultProps = {
+  m: 0,
+  size: 'xxl'
+};
+
+/** @component */
+export default Heading;
+```
+
+</details>
+
+## 4.2. Introducing styled-system
+
+[Styled-system](https://styled-system.com/) is a collection of utility functions that allow you to control styles of your component using props.
+
+For example, the [space](https://styled-system.com/api#space) function does exactly what we’ve done in the previous task:
+
+```js static
+import { space } from 'styled-system';
+const Heading = styled(Base)`
+  ${space};
+  /* ... */
+`;
+```
+
+**Note:** Have a look at the [default spacing scale](https://styled-system.com/api#space-1).
+
+## The task
+
+Replace all custom margins with the `space` function from styled-system.
+
+<details>
+ <summary>Solution</summary>
+
+```js static
+import styled from 'styled-components';
+import { space } from 'styled-system';
+
+const Heading = styled.h1`
+  ${space};
+  /* Other styles */
+`;
+
+/** @component */
+export default Heading;
+```
+
+</details>
+
+## 4.3. Box primitive
+
+We can define a new component with needed whitespace and use it:
+
+```jsx static
+const Container = styled.div`
+  margin-bottom: ${props => props.theme.space[6]};
+`
+<Container>
+  <Heading size="xl">The quick brown fox</Heading>
+</Container>
+```
+
+But that’s also a lot of boilerplate code.
 
 Let’s start with the simplest layout primitive — a `Box`. Box is a rectangular area (basically `<div>`) that can contain other components.
 
@@ -61,7 +171,7 @@ export default Box;
 
 </details>
 
-## 5.2 Flex primitive
+## 4.4 Flex primitive
 
 `Flex` is another useful primitive that allows us to control Flexbox-related layout without writing CSS.
 
@@ -132,7 +242,7 @@ export default Flex;
 
 > We could use [Rebass Grid](https://grid.rebassjs.org/) directly since it is based on styled-system and implements the same API but it’s a good thing we keep our primitives abstracted from the implementation details so we can always change implementation without refactoring application’s code.
 
-## 5.3 Stack primitive
+## 4.5 Stack primitive
 
 We’ve just learned that [space](https://styled-system.com/api#space) function of styled-system, that adds `margin` and `padding` props to any of our primitives, is a powerful tool. Now we could add this function to all our primitives and start controlling whitespace using `m` and `p` props on every component in our app like this:
 
@@ -232,7 +342,7 @@ export default SubscriptionForm;
 
 </details>
 
-## 5.4 Adding spacing to any primitive
+## 4.6 Adding spacing to any primitive
 
 We’ve already used a similar technique in the [Typography](http://localhost:6061/#/Typography) exercises. Adding `Box` and `Flex` to the mix we now can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spacing are coming from our [spacing scale](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application!
 

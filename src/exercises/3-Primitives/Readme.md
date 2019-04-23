@@ -1,4 +1,4 @@
-In this exercise we’ll create reusable form components. We’ll create a button, an input field and a custom select. We’ll learn how to work with styled-components, how to do prop-based styling and how to access design tokens (values we’ve defined in the `theme.js` file in the previous exercise).
+In this exercise we’ll create reusable primitive components. We’ll create a button, an input field, a custom select, a text component and a heading component. We’ll learn how to work with styled-components, how to do prop-based styling and how to access design tokens (values we’ve defined in the `theme.js` file in the previous exercise).
 
 ## 3.1. Introducing styled-components
 
@@ -253,9 +253,85 @@ Every styled component has a special prop `as` that allows you to change the HT
 
 Either by editing the `Button.md` file or directly in the Styleguidist interface, change one of the examples of the `Button` component to use an `<a>` tag instead of the default `<button>`.
 
-## 3.6. Reusable input field component (bonus)
+## 3.6. Creating a basic heading component
 
-_Feel free to skip this exercise or do it at home, since it doesn’t teach any new techniques but gives you more practice with things you’ve learned in previous exercises._
+Have a look at our [typography scale](https://component-driven.github.io/component-driven-development/styleguide/#typography):
+
+```jsx noeditor
+import Typography from '../../styleguide/Typography';
+<Typography />;
+```
+
+We already know how to access design tokens in our styled components from the previous exercise.
+
+## The result
+
+The result should look like this:
+
+```js noeditor
+import Heading from '../../components/core/Heading';
+<>
+  <Heading size="xxl" as="h1">
+    Heading 1
+  </Heading>
+  <Heading size="xl" as="h2">
+    Heading 2
+  </Heading>
+  <Heading size="l" as="h3">
+    Heading 3
+  </Heading>
+  <Heading size="base" as="h4">
+    Heading 4
+  </Heading>
+</>;
+```
+
+## The task
+
+Create a component that renders different levels of headings:
+
+- `heading` font family;
+- `normal` font weight;
+- `base` color;
+- font size is defined by a component prop (one of `m`, `l`, `xl` or `xxl`);
+- HTML element can be changed independently from the font size.
+
+**Hint:** We need to change heading styles and an HTML element independently, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3), where the heading is placed in an app, and doesn’t always match the style. Use styled-components [`as` props](https://www.styled-components.com/docs/api#as-polymorphic-prop) to change an HTML element, used to render a component.
+
+<details>
+ <summary>Solution</summary>
+
+```js static
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
+const Heading = styled.h1`
+  margin: 0;
+  line-height: 1.2;
+  font-weight: normal;
+  font-family: ${props => props.theme.fonts.heading};
+  font-size: ${props => props.theme.fontSizes[props.size]};
+  color: ${props => props.theme.colors.base};
+`;
+
+Heading.propTypes = {
+  /** Custom component or HTML tag */
+  as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm']),
+  children: PropTypes.node
+};
+
+/** @component */
+export default Heading;
+```
+
+</details>
+
+---
+
+_Feel free to skip the exercise below or do them at home, since they don’t teach any new techniques but give you more practice with things you’ve learned in previous exercises._
+
+## 3.7. Creating reusable input field component (bonus)
 
 ### The result
 
@@ -270,7 +346,7 @@ import Input from '../../components/core/Input';
 
 1. Create an `Input` component, similar to the `Button` component, we’ve created in the previous tasks.
 
-- An input should support disabled state (`disabled` prop).
+   - An input should support disabled state (`disabled` prop).
 
 **Bonus 1:** Add focus style.
 
@@ -311,9 +387,7 @@ export default Input;
 
 </details>
 
-## 3.7. Reusable custom select component (bonus)
-
-_Feel free to skip this exercise or do it at home, since it doesn’t teach any new techniques but gives you more practice with things you’ve learned in previous exercises._
+## 3.8. Creating reusable custom select component (bonus)
 
 ### The result
 
@@ -383,6 +457,89 @@ const Select = styled.select`
 
 /** @component */
 export default Select;
+```
+
+</details>
+
+## 3.9. Creating a generic text component (bonus)
+
+Now we know enough to create customizable components that use many theme values.
+
+## The result
+
+The result should look like this:
+
+```js noeditor
+import Text from '../../components/core/Text';
+<>
+  <Text>Normal text</Text>
+  <Text variant="secondary">Secondary text</Text>
+  <Text variant="tertiary">Tertiary text</Text>
+  <Text variant="error">Error text</Text>
+</>;
+```
+
+## The task
+
+Create a component that renders text in different styles:
+
+- Normal text (`base` font size, `base` color);
+- Secondary text (`base` font size, `secondary` color);
+- Small text (small (`s`) font size, `secondary` color);
+- Error message (`base` font size, `error` color).
+
+The `variant` prop is used to change text style.
+
+<details>
+ <summary>Solution</summary>
+
+```jsx static
+import styled from 'styled-components';
+import { themeGet } from 'styled-system';
+
+const getFontSize = variant =>
+  ({
+    base: 'm',
+    secondary: 'm',
+    tertiary: 's',
+    error: 'm'
+  }[variant]);
+const getColor = variant =>
+  ({
+    base: 'base',
+    secondary: 'secondary',
+    tertiary: 'secondary',
+    error: 'error'
+  }[variant]);
+
+const Text = styled.p`
+  margin: 0;
+  line-height: ${themeGet('lineHeights.base')};
+  font-family: ${themeGet('fonts.base')};
+  font-size: ${props =>
+    props.theme.fontSizes[getFontSize(props.variant)]};
+  color: ${props => props.theme.colors[getColor(props.variant)]};
+`;
+
+Text.propTypes = {
+  /** Custom component or HTML tag */
+  as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  /** Variation */
+  variant: PropTypes.oneOf([
+    'base',
+    'secondary',
+    'tertiary',
+    'error'
+  ]),
+  children: PropTypes.node
+};
+
+Text.defaultProps = {
+  variant: 'base'
+};
+
+/** @component */
+export default Text;
 ```
 
 </details>
