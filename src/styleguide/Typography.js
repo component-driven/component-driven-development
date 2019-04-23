@@ -15,8 +15,13 @@ export default function() {
 		<Swatches
 			items={theme.fontSizes}
 			renderItem={(key, value) => (
-				<FontSwatch key={key} value={value} token={`fontSizes.${key}`}>
-					<FontSizeSample fontSize={key}>{key}</FontSizeSample>
+				<FontSwatch
+					key={key}
+					name={key}
+					value={value}
+					token={`fontSizes.${key}`}
+				>
+					<FontSizeSample fontSize={key}>Aa</FontSizeSample>
 				</FontSwatch>
 			)}
 		/>

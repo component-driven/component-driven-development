@@ -19,7 +19,7 @@ Feature.Icon = ({ children }) => (
 );
 
 Feature.Heading = ({ children }) => (
-	<Heading as="h3" size="l" align="center">
+	<Heading as="h3" size="m" align="center">
 		{children}
 	</Heading>
 );

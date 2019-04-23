@@ -1,10 +1,8 @@
 import { modularScale } from 'polished';
 
-const scale = value => modularScale(value, '1rem', 'majorThird');
+const scale = value => modularScale(value, '1rem', 'goldenSection');
 
 const fontSizes = {
-	xxxl: scale(5),
-	xxl: scale(4),
 	xl: scale(3),
 	l: scale(1),
 	m: scale(0),
@@ -67,8 +65,6 @@ const theme = {
 		bold: 700,
 	},
 	headingFontWeights: {
-		xxxl: 400,
-		xxl: 400,
 		xl: 400,
 		l: 400,
 		m: 700,
@@ -96,7 +92,6 @@ const theme = {
 		'4rem', // 64px
 		'8rem', // 128px
 		'16rem', // 256px
-		'32rem', // 512px
 	],
 };
 
