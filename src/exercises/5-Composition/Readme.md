@@ -115,7 +115,7 @@ import {
 const Card = styled(Box).attrs({
   bg: 'bg',
   border: 'thin',
-  borderColor: 'light',
+  borderColor: 'grey.2',
   borderRadius: 'base'
 })`
   ${color};
@@ -315,7 +315,7 @@ import Macro from 'macro-components';
 const CardBase = styled(Flex).attrs({
   bg: 'bg',
   border: 'thin',
-  borderColor: 'light',
+  borderColor: 'grey.2',
   borderRadius: 'base',
   flexDirection: 'column'
 })`

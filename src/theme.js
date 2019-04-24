@@ -1,16 +1,55 @@
-import { transparentize, modularScale } from 'polished';
+import { modularScale } from 'polished';
 
-const scale = value => modularScale(value, '1rem', 'majorThird');
+const scale = value => modularScale(value, '1rem', 'goldenSection');
 
 const fontSizes = {
-	xxxl: scale(5),
-	xxl: scale(4),
 	xl: scale(3),
 	l: scale(1),
 	m: scale(0),
 	s: scale(-0.5),
 	xs: scale(-0.75),
 };
+
+const palette = {
+	grey: [
+		'rgb(255, 255, 255)',
+		'rgb(250, 250, 250)',
+		'rgb(246, 246, 246)',
+		'rgb(225, 225, 225)',
+		'rgb(187, 187, 187)',
+		'rgb(126, 126, 126)',
+		'rgb(51, 51, 51)',
+	],
+	purple: [
+		'rgb(255, 230, 242)',
+		'rgb(251, 209, 234)',
+		'rgb(248, 188, 229)',
+		'rgb(231, 143, 222)',
+		'rgb(189, 96, 200)',
+		'rgb(120, 51, 150)',
+		'rgb(52, 18, 90)',
+	],
+};
+
+let invertedPalette = {};
+
+Object.keys(palette).forEach(key => {
+	invertedPalette[key] = [...palette[key]].reverse();
+});
+
+function getColors(palette) {
+	return {
+		...palette,
+		bg: palette.grey[0],
+		base: palette.grey[6],
+		primary: palette.purple[5],
+		secondary: palette.grey[5],
+		hover: palette.purple[2],
+		focus: palette.purple[1],
+		error: '#d0453e',
+		rating: '#f8c124',
+	};
+}
 
 const theme = {
 	fonts: {
@@ -26,8 +65,6 @@ const theme = {
 		bold: 700,
 	},
 	headingFontWeights: {
-		xxxl: 400,
-		xxl: 400,
 		xl: 400,
 		l: 400,
 		m: 700,
@@ -36,18 +73,8 @@ const theme = {
 		base: 1.5,
 		heading: 1.1,
 	},
-	colors: {
-		bg: '#fff',
-		base: '#333',
-		primary: '#8667a8',
-		secondary: '#767676',
-		light: '#ccc',
-		lighter: '#efefef',
-		hover: '#ed9dc5',
-		focus: transparentize(0.4, '#ed9dc5'),
-		error: '#d0453e',
-		rating: '#f8c124',
-	},
+	palette,
+	colors: getColors(palette),
 	borders: {
 		none: 'none',
 		thin: '1px solid',
@@ -65,7 +92,6 @@ const theme = {
 		'4rem', // 64px
 		'8rem', // 128px
 		'16rem', // 256px
-		'32rem', // 512px
 	],
 };
 
@@ -74,11 +100,9 @@ export default theme;
 export const inverted = {
 	...theme,
 	colors: {
-		...theme.colors,
-		bg: theme.colors.base,
-		base: theme.colors.bg,
-		primary: theme.colors.bg,
-		focus: transparentize(0.1, theme.colors.hover),
-		secondary: '#ccc',
+		...getColors(invertedPalette),
+		primary: invertedPalette.grey[4],
+		hover: invertedPalette.grey[6],
+		focus: invertedPalette.grey[1],
 	},
 };

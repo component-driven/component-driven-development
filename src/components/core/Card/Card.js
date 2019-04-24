@@ -9,7 +9,7 @@ import Macro from 'macro-components';
 const CardBase = styled(Flex).attrs({
 	bg: 'bg',
 	border: 'thin',
-	borderColor: 'light',
+	borderColor: 'grey.3',
 	borderRadius: 'base',
 	flexDirection: 'column',
 })`

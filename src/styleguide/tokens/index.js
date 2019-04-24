@@ -31,7 +31,6 @@ Swatches.defaultProps = {
 };
 
 const ColorSwatchContainer = styled(Box).attrs({ as: 'button', p: 4 })`
-	min-height: 100px;
 	font: inherit;
 	text-align: center;
 	border: 0;
@@ -72,7 +71,8 @@ ColorSwatch.propTypes = {
 
 const SpacingSwatchContainer = styled.button`
 	display: flex;
-	padding: 0;
+	align-items: flex-end;
+	padding: 1rem;
 	font: inherit;
 	border: 0;
 	background: none;
@@ -82,34 +82,34 @@ const SpacingSwatchContainer = styled.button`
 	&:hover,
 	&:active,
 	&:focus {
-		outline: 2px dashed #333;
-		outline-offset: 2px;
 		cursor: pointer;
+		background: #efefef;
 	}
 `;
 
 const SpacingSwatchBox = styled.div`
-	width: 100%;
+	width: ${props => (props.size === 0 ? '1px' : props.size)};
 	height: ${props => (props.size === 0 ? '1px' : props.size)};
-	background-color: ${props => (props.size === 0 ? '#efefef' : '#ccc')};
+	border: 1px dashed #888;
+	box-sizing: initial;
 `;
 
-const SpacingSwatchLabel = styled(Box)`
-	min-width: 5rem;
+const SwatchLabel = styled(Box)`
+	min-width: 12rem;
 `;
 
-const SpacingSwatchSubValue = styled(Box)`
+const SwatchSubValue = styled(Box)`
 	color: #767676;
 	font-size: 0.85rem;
 `;
 
 export const SpacingSwatch = ({ name, size, token }) => (
 	<SpacingSwatchContainer onClick={() => copy(token)}>
-		<SpacingSwatchBox size={size} />
-		<SpacingSwatchLabel ml={3}>
+		<SwatchLabel mr={4}>
 			{name}
-			<SpacingSwatchSubValue mt={2}>{size}</SpacingSwatchSubValue>
-		</SpacingSwatchLabel>
+			<SwatchSubValue mt={2}>{size}</SwatchSubValue>
+		</SwatchLabel>
+		<SpacingSwatchBox size={size} />
 	</SpacingSwatchContainer>
 );
 
@@ -121,8 +121,8 @@ SpacingSwatch.propTypes = {
 
 const FontSwatchContainer = styled.button`
 	display: flex;
-	align-items: baseline;
-	padding: 0;
+	align-items: center;
+	padding: 0.25rem 0.5rem;
 	font: inherit;
 	border: 0;
 	background: none;
@@ -132,9 +132,8 @@ const FontSwatchContainer = styled.button`
 	&:hover,
 	&:active,
 	&:focus {
-		outline: 2px dashed #333;
-		outline-offset: 2px;
 		cursor: pointer;
+		background: #efefef;
 	}
 `;
 
@@ -143,10 +142,13 @@ const FontSwatchLabel = styled(Box)`
 	font-size: 0.85rem;
 `;
 
-export const FontSwatch = ({ value, token, children }) => (
+export const FontSwatch = ({ name, value, token, children }) => (
 	<FontSwatchContainer onClick={() => copy(token)}>
+		<SwatchLabel mr={4}>
+			{name}
+			<SwatchSubValue mt={2}>{value}</SwatchSubValue>
+		</SwatchLabel>
 		{children}
-		<FontSwatchLabel ml={3}>{value}</FontSwatchLabel>
 	</FontSwatchContainer>
 );
 
