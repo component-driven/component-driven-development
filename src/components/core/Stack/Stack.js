@@ -3,7 +3,6 @@ import Flex from '../Flex';
 
 const Stack = styled(Flex).attrs(props => ({
 	m: -(props.gap - 1),
-	flexDirection: 'column',
 }))`
 	flex-wrap: wrap;
 	> * {
@@ -13,6 +12,7 @@ const Stack = styled(Flex).attrs(props => ({
 
 Stack.defaultProps = {
 	gap: 0,
+	flexDirection: 'column',
 };
 
 /** @component */

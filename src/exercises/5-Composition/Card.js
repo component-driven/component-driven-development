@@ -6,12 +6,14 @@ import { color, border, borderColor, borderRadius } from 'styled-system';
 import styled from 'styled-components';
 import Macro from 'macro-components';
 
-const CardBase = styled(Flex).attrs({
-	bg: 'bg',
-})`
+const CardBase = styled(Flex)`
 	${color};
 	/* Other container styles */
 `;
+
+CardBase.defaultProps = {
+	bg: 'bg',
+};
 
 // You may use more complex markup, than just <div>s
 const Cover = ({ children }) => <div>{children}</div>;

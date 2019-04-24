@@ -6,19 +6,21 @@ import { color, border, borderColor, borderRadius } from 'styled-system';
 import styled from 'styled-components';
 import Macro from 'macro-components';
 
-const CardBase = styled(Flex).attrs({
-	bg: 'bg',
-	border: 'thin',
-	borderColor: 'grey.3',
-	borderRadius: 'base',
-	flexDirection: 'column',
-})`
+const CardBase = styled(Flex)`
 	${color};
 	${border};
 	${borderColor};
 	${borderRadius};
 	list-style: none;
 `;
+
+CardBase.defaultProps = {
+	bg: 'bg',
+	border: 'thin',
+	borderColor: 'grey.2',
+	borderRadius: 'base',
+	flexDirection: 'column',
+};
 
 const Cover = ({ children }) => children;
 const Body = ({ children }) => <div>{children}</div>;

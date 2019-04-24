@@ -10,12 +10,13 @@ For example, a basic card may look like so:
 import styled from 'styled-components';
 import Box from '../../components/core/Box';
 
-const Card = styled(Box).attrs({
-  p: 3
-})`
+const Card = styled(Box)`
   background: ghostwhite;
   border-radius: 3px;
 `;
+Card.defaultProps = {
+  p: 3
+};
 ```
 
 This `Card` component will accept all props of the `Box` component (for some we’ve defined default values: `p`), but also will have grayish background and rounded corners.
@@ -112,17 +113,19 @@ import {
   borderRadius
 } from 'styled-system';
 
-const Card = styled(Box).attrs({
-  bg: 'bg',
-  border: 'thin',
-  borderColor: 'grey.2',
-  borderRadius: 'base'
-})`
+const Card = styled(Box)`
   ${color};
   ${border};
   ${borderColor};
   ${borderRadius};
 `;
+
+Card.defaultProps = {
+  bg: 'bg',
+  border: 'thin',
+  borderColor: 'grey.2',
+  borderRadius: 'base'
+};
 
 Card.Image = props => <img {...props} />;
 Card.Body = ({ children }) => <Box p={4}>{children}</Box>;
@@ -312,19 +315,21 @@ import {
 import styled from 'styled-components';
 import Macro from 'macro-components';
 
-const CardBase = styled(Flex).attrs({
-  bg: 'bg',
-  border: 'thin',
-  borderColor: 'grey.2',
-  borderRadius: 'base',
-  flexDirection: 'column'
-})`
+const CardBase = styled(Flex)`
   ${color};
   ${border};
   ${borderColor};
   ${borderRadius};
   list-style: none;
 `;
+
+Card.defaultProps = {
+  bg: 'bg',
+  border: 'thin',
+  borderColor: 'grey.2',
+  borderRadius: 'base',
+  flexDirection: 'column'
+};
 
 const Cover = ({ children }) => children;
 const Body = ({ children }) => <div>{children}</div>;
