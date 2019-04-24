@@ -9,19 +9,14 @@ const Text = styled.p`
 `;
 
 Text.propTypes = {
-	/** Less important text */
-	secondary: PropTypes.bool,
-	/** Small copy */
-	tertiary: PropTypes.bool,
-	/** Error message */
-	error: PropTypes.bool,
+	/** Variation */
+	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
+	align: PropTypes.oneOf(['left', 'center', 'right']),
 	children: PropTypes.node,
 };
 
 Text.defaultProps = {
-	secondary: false,
-	tertiary: false,
-	error: false,
+	variant: 'base',
 };
 
 /** @component */
