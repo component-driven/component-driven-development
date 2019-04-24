@@ -12,7 +12,7 @@ We’ve prepared the basic structure for the design tokens file. Open the `theme
 
 2. Define appropriate names for colors (group exercise).
 
-3. Check out [design tokens](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation?id=colors) from the final style guide.
+3. Check out [design tokens](https://cdds.netlify.com/styleguide/#/Foundation?id=colors) from the final style guide.
 
 ## Colors
 

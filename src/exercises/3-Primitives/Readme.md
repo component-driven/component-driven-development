@@ -50,7 +50,7 @@ import Button from '../../components/core/Button';
 
 1. Rewrite a button component in `Button.js` using styled-components.
 
-2. Define basic styles like padding, text and background colors according to [the mockup](https://component-driven.github.io/component-driven-development/), use primary button styles (like the “Place an order” button on the checkout page).
+2. Define basic styles like padding, text and background colors according to [the mockup](https://cdds.netlify.com/), use primary button styles (like the “Place an order” button on the checkout page).
 
 _Don’t try to be pixel perfect here, that’s not the goal of the exercise. Also exact values (like colors or font sizes) aren’t important at this stage — we’ll deal with that in the future exercises._
 
@@ -75,7 +75,7 @@ export default Button;
 
 ## 3.2. Using design tokens
 
-We’ve already created design tokens for our project and explored [the tokens](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation) in the previous exercise.
+We’ve already created design tokens for our project and explored [the tokens](https://cdds.netlify.com/styleguide/#/Foundation) in the previous exercise.
 
 styled-components makes it simple to use design tokens, thanks to [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js). You can access them in your component like this:
 
@@ -255,7 +255,7 @@ Either by editing the `Button.md` file or directly in the Styleguidist interfac
 
 ## 3.6. Creating a basic heading component
 
-Have a look at our [typography scale](https://component-driven.github.io/component-driven-development/styleguide/#typography):
+Have a look at our [typography scale](https://cdds.netlify.com/styleguide/#typography):
 
 ```jsx noeditor
 import Typography from '../../styleguide/Typography';

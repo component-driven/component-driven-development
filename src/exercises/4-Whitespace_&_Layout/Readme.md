@@ -344,7 +344,7 @@ export default SubscriptionForm;
 
 ## 4.6 Adding spacing to any primitive
 
-We’ve already used a similar technique in the [Typography](http://localhost:6061/#/Typography) exercises. Adding `Box` and `Flex` to the mix we now can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spacing are coming from our [spacing scale](https://component-driven.github.io/component-driven-development/styleguide/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application!
+We’ve already used a similar technique in the [Typography](http://localhost:6061/#/Typography) exercises. Adding `Box` and `Flex` to the mix we now can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spacing are coming from our [spacing scale](https://cdds.netlify.com/styleguide/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application!
 
 ### The result
 

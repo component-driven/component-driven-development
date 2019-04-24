@@ -6,7 +6,7 @@ This repository contains exercises for Component-driven development workshop.
 
 _Before attending the workshop, please make sure you can run the code in this repository._
 
-**[Try the app](https://component-driven.github.io/component-driven-development/) or [view the style guide](https://component-driven.github.io/component-driven-development/styleguide/).**
+**[Try the app](https://cdds.netlify.com/) or [view the style guide](https://cdds.netlify.com/styleguide/).**
 
 ## Prerequisites
 
