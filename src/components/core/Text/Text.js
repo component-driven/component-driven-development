@@ -1,21 +1,10 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import { themeGet, variant } from 'styled-system';
 
-const getFontSize = variant =>
-	({
-		base: 'm',
-		secondary: 'm',
-		tertiary: 's',
-		error: 'm',
-	}[variant]);
-const getColor = variant =>
-	({
-		base: 'base',
-		secondary: 'secondary',
-		tertiary: 'secondary',
-		error: 'error',
-	}[variant]);
+const textStyle = variant({
+	key: 'textStyles',
+});
 
 /**
  * A component to render all text in the app.
@@ -25,10 +14,9 @@ const Text = styled.p`
 	font-weight: normal;
 	line-height: ${themeGet('lineHeights.base')};
 	font-family: ${themeGet('fonts.base')};
-	font-size: ${props => props.theme.fontSizes[getFontSize(props.variant)]};
-	color: ${props => props.theme.colors[getColor(props.variant)]};
 	text-align: ${props => props.align};
 	list-style-type: none;
+	${textStyle};
 `;
 
 Text.propTypes = {
