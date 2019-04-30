@@ -22,6 +22,10 @@ const Input = styled.input`
 	/* Remove red outline on required input in Firefox */
 	box-shadow: none;
 
+	&::placeholder {
+		color: ${themeGet('colors.secondary')};
+	}
+
 	&:focus {
 		outline: 0;
 		box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
