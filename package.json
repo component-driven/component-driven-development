@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@reach/router": "^1.2.1",
+		"@styled-system/prop-types": "^5.0.5",
 		"@styled-system/theme-get": "^5.0.5",
 		"clipboard-copy": "^3.0.0",
 		"date-fns": "^1.30.1",
