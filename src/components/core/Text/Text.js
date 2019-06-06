@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { themeGet, variant } from 'styled-system';
+import { variant } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
 
 const textStyle = variant({
 	key: 'textStyles',
