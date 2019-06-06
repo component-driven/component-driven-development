@@ -88,7 +88,7 @@ const Button = styled.button`
 You can also use [themeGet](https://jxnblk.com/styled-system/api#themeget) helper from styled-system to access theme values:
 
 ```js static
-import { themeGet } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
 const Button = styled.button`
   background: ${themeGet('colors.primary')};
 `;
@@ -355,7 +355,7 @@ import Input from '../../components/core/Input';
 
 ```js static
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
 
 const Input = styled.input`
   box-sizing: border-box;
@@ -416,7 +416,7 @@ import Select from '../../components/core/Select';
 
 ```js static
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
 import { getDownArrowIcon } from '../../components/core/Select/icons';
 
 const Select = styled.select`
@@ -495,7 +495,7 @@ The `variant` prop is used to change text style.
 
 ```jsx static
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
 
 const getFontSize = variant =>
   ({

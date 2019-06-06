@@ -15,10 +15,10 @@ const Message = styled.p`
 `;
 ```
 
-You can also use [themeGet](https://jxnblk.com/styled-system/api#themeget) helper from styled-system to access theme values:
+You can also use [themeGet](https://github.com/styled-system/styled-system/tree/master/packages/theme-get) helper from styled-system to access theme values:
 
 ```diff
-import { themeGet } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
 const Message = styled.p`
 -   color: #8667a8;
 -   font-family: Helvetica;

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import themeGet from '@styled-system/theme-get';
 
 const getColor = variant => ({ primary: 'bg', secondary: 'primary' }[variant]);
 const getBgColor = variant => ({ primary: 'primary' }[variant]);
