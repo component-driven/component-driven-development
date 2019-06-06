@@ -85,7 +85,7 @@ const Button = styled.button`
 `;
 ```
 
-You can also use [themeGet](https://jxnblk.com/styled-system/api#themeget) helper from styled-system to access theme values:
+You can also use [themeGet](https://github.com/styled-system/styled-system/tree/master/packages/theme-get) helper from styled-system to access theme values:
 
 ```js static
 import themeGet from '@styled-system/theme-get';
