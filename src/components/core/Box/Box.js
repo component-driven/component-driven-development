@@ -1,13 +1,6 @@
 import styled from 'styled-components';
-import {
-	space,
-	color,
-	width,
-	height,
-	flex,
-	order,
-	alignSelf,
-} from 'styled-system';
+import { space, color, layout, flexbox } from 'styled-system';
+import propTypes from '@styled-system/prop-types';
 
 const Box = styled('div')(
 	{
@@ -15,18 +8,15 @@ const Box = styled('div')(
 	},
 	space,
 	color,
-	width,
-	height,
-	flex,
-	order,
-	alignSelf
+	layout,
+	flexbox
 );
 
 Box.propTypes = {
-	...space.propTypes,
-	...color.propTypes,
-	...width.propTypes,
-	...height.propTypes,
+	...propTypes.space,
+	...propTypes.color,
+	...propTypes.layout,
+	...propTypes.flexbox,
 };
 
 /** @component */
