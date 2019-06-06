@@ -1,6 +1,5 @@
 const path = require('path');
 const glob = require('glob');
-const webpackConfig = require('./webpack.config');
 
 // styleguidist server --exercise
 const isExercises = !!process.argv.find(x => x === '--exercise');
@@ -14,12 +13,25 @@ const config = {
 		Wrapper: path.join(__dirname, 'src/StyleGuideWrapper'),
 	},
 	// Read examples from Component.md files only, not from Readme.md
-	getExampleFilename: x => x.replace(/\.js$/, '.md'),
+	getExampleFilename: x => x.replace(/\.(js|ts)x?$/, '.md'),
 	skipComponentsWithoutExample: true,
 	pagePerSection: true,
 	exampleMode: 'expand',
 	usageMode: 'expand',
-	webpackConfig,
+	webpackConfig: {
+		module: {
+			rules: [
+				{
+					test: /\.(js|ts)x?$/,
+					loader: 'babel-loader',
+					exclude: /node_modules/,
+				},
+			],
+		},
+		resolve: {
+			extensions: ['.js', 'jsx', '.ts', '.tsx', '.json'],
+		},
+	},
 };
 
 if (isExercises) {
@@ -32,7 +44,7 @@ if (isExercises) {
 			.replace(/(\d)-/, '')
 			.replace(/_/g, ' '),
 		content: `${folder}/Readme.md`,
-		components: `${folder}/**/*.js`,
+		components: `${folder}/**/*.{js,jsx,tsx}`,
 	}));
 } else {
 	// Styleguide
@@ -57,12 +69,12 @@ if (isExercises) {
 		},
 		{
 			name: 'Primitives',
-			components: 'src/components/core/**/[A-Z]*.js',
+			components: 'src/components/core/**/[A-Z]*.{js,jsx,tsx}',
 		},
 		{
 			name: 'UI Patterns',
 			content: 'src/components/patterns/Readme.md',
-			components: 'src/components/patterns/**/[A-Z]*.js',
+			components: 'src/components/patterns/**/[A-Z]*.{js,jsx,tsx}',
 		},
 	];
 }

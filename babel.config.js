@@ -7,6 +7,7 @@ module.exports = {
 			},
 		],
 		'@babel/react',
+		'@babel/typescript',
 	],
 	plugins: [
 		'@babel/plugin-proposal-class-properties',
