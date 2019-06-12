@@ -65,8 +65,8 @@ const theme = {
 	},
 	headingFontWeights: {
 		xl: 400,
-		l: 400,
-		m: 700,
+		lg: 400,
+		md: 700,
 	},
 	lineHeights: {
 		base: 1.5,
