@@ -4,6 +4,7 @@
 	"private": true,
 	"license": "MIT",
 	"dependencies": {
+		"@component-driven/react-design-tokens": "^1.1.1",
 		"@reach/router": "^1.2.1",
 		"@styled-system/prop-types": "^5.0.16",
 		"clipboard-copy": "^3.0.0",

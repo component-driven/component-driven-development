@@ -1,17 +1,17 @@
 ## Default theme tokens
 
 ```jsx noeditor
-import Colors from '../src/styleguide/Colors';
+import { Colors } from '@component-driven/react-design-tokens';
 import theme from '../src/theme';
 
-<Colors colors={theme.colors} />;
+<Colors theme={theme} />;
 ```
 
 ## Inverted theme tokens
 
 ```jsx noeditor
-import Colors from '../src/styleguide/Colors';
+import { Colors } from '@component-driven/react-design-tokens';
 import { inverted } from '../src/theme';
 
-<Colors colors={inverted.colors} />;
+<Colors theme={inverted} />;
 ```
