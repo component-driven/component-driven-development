@@ -106,13 +106,13 @@ const Icon = ({ name, size, alt, ...rest }) => {
 Icon.propTypes = {
 	name: PropTypes.string.isRequired,
 	variant: PropTypes.oneOf(['currentColor', 'primary', 'secondary', 'rating']),
-	size: PropTypes.oneOf(['s', 'm', 'l']),
+	size: PropTypes.oneOf(['sm', 'md', 'lg']),
 	alt: PropTypes.string.isRequired,
 };
 
 Icon.defaultProps = {
 	variant: 'currentColor',
-	size: 'm',
+	size: 'md',
 };
 
 /**

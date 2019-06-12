@@ -15,7 +15,7 @@ import Button from '../Button';
       <Image src="/images/tsiri.jpg" alt="Tsiri the saluki" />
     </Card.Cover>
     <Card.Body>
-      <Heading size="m">Title of the card</Heading>
+      <Heading size="md">Title of the card</Heading>
       <Text>Body of the card</Text>
     </Card.Body>
     <Card.Footer>

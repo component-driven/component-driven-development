@@ -266,11 +266,8 @@ import Heading from '../../components/core/Heading';
   <Heading size="xl" as="h2">
     Heading 2
   </Heading>
-  <Heading size="l" as="h3">
+  <Heading size="lg" as="h3">
     Heading 3
-  </Heading>
-  <Heading size="base" as="h4">
-    Heading 4
   </Heading>
 </>;
 ```
@@ -306,7 +303,7 @@ const Heading = styled.h1`
 Heading.propTypes = {
   /** Custom component or HTML tag */
   as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  size: PropTypes.oneOf(['xxl', 'xl', 'l', 'm']),
+  size: PropTypes.oneOf(['xxl', 'xl', 'lg', 'md']),
   children: PropTypes.node
 };
 

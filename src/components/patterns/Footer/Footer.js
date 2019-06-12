@@ -16,7 +16,7 @@ const Footer = () => {
 					<SvgDogPees width="100" />
 				</Box>
 				<Box mb={5} mx="auto" width={[1, 2 / 3, 1 / 2]}>
-					<Heading size="l" as="h2" mb={4} align="center">
+					<Heading size="lg" as="h2" mb={4} align="center">
 						Subscribe to our newsletter!
 					</Heading>
 					<SubscriptionForm />
