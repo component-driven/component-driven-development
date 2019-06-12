@@ -17,7 +17,8 @@ We’ve prepared the basic structure for the design tokens file. Open the `theme
 ## Colors
 
 ```jsx noeditor
-import Colors from '../../styleguide/Colors';
+import { Colors } from '@component-driven/react-design-tokens';
 import theme from './theme';
-<Colors colors={theme.colors} />;
+
+<Colors theme={theme} />;
 ```
