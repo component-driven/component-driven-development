@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { color, space, width, flex, order, alignSelf } from 'styled-system';
+import { space, color, layout, flexbox } from 'styled-system';
 
-const Box = styled('div')``;
-
-Box.propTypes = {
-	...color.propTypes,
-	...space.propTypes,
-	...width.propTypes,
-};
+const Box = styled('div')(
+	{
+		// Your styles here
+	}
+	// styled-system functions
+);
 
 /** @component */
 export default Box;
