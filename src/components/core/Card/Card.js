@@ -2,17 +2,17 @@ import React from 'react';
 import Flex from '../Flex';
 import Box from '../Box';
 import Stack from '../Stack';
-import { color, border, borderColor, borderRadius } from 'styled-system';
+import { color, border } from 'styled-system';
 import styled from 'styled-components';
 import Macro from 'macro-components';
 
-const CardBase = styled(Flex)`
-	${color};
-	${border};
-	${borderColor};
-	${borderRadius};
-	list-style: none;
-`;
+const CardBase = styled(Flex)(
+	{
+		listStyle: 'none',
+	},
+	color,
+	border
+);
 
 CardBase.defaultProps = {
 	bg: 'bg',

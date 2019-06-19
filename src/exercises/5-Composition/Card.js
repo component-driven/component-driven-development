@@ -2,17 +2,21 @@ import React from 'react';
 import Flex from '../../components/core/Flex';
 import Box from '../../components/core/Box';
 import Stack from '../../components/core/Stack';
-import { color, border, borderColor, borderRadius } from 'styled-system';
+import { color, border } from 'styled-system';
 import styled from 'styled-components';
 import Macro from 'macro-components';
 
-const CardBase = styled(Flex)`
-	${color};
-	/* Other container styles */
-`;
+const CardBase = styled(Flex)(
+	{
+		listStyle: 'none',
+	},
+	color,
+	border
+);
 
 CardBase.defaultProps = {
 	bg: 'bg',
+	// Other default styles
 };
 
 // You may use more complex markup, than just <div>s
