@@ -75,9 +75,21 @@ For example, the [space](https://styled-system.com/api#space) function does exa
 ```js static
 import { space } from 'styled-system';
 const Heading = styled(Base)`
+  font-weight: normal;
   ${space};
-  /* ... */
 `;
+```
+
+Or using the object notation instead of a template literal:
+
+```js static
+import { space } from 'styled-system';
+const Heading = styled(Base)(
+  {
+    fontWeight: 'normal'
+  },
+  space
+);
 ```
 
 **Note:** Have a look at the [default spacing scale](https://styled-system.com/api#space-1).
@@ -133,22 +145,30 @@ import Box from '../../components/core/Box';
 </Box>;
 ```
 
+**Note:** See how [the value of the `width` prop is calculated](https://styled-system.com/api#layout).
+
 ### The task
 
-1. Build the `Box` component that can control its padding, margins, width, and background color using props.
+1. Build the `Box` component that can control its padding, margins, width, and colors using props.
 
 2. By default it should just render a `div` without any spacing applied.
+
+3. Add `box-sizing: border-box` as the only default styles.
+
+4. Add support for Flexbox props like `alignItems` and `flexDirection`: we’ll need them for the next exercise.
 
 **Hint:** use [styled-system functions](https://styled-system.com/api), like the `space` function we’ve used in the previous exercise, to create props.
 
 **Hint:** check out [Build a Box](https://styled-system.com/guides/build-a-box/) article by creator of styled-system.
+
+**Bonus:** Add PropType using [@styled-system/prop-types](https://github.com/styled-system/styled-system/tree/master/packages/prop-types) package.
 
 <details>
  <summary>Solution</summary>
 
 ```js static
 import styled from 'styled-components';
-import { space, color, width } from 'styled-system';
+import { space, color, layout, flexbox } from 'styled-system';
 
 const Box = styled('div')(
   {
@@ -156,13 +176,15 @@ const Box = styled('div')(
   },
   space,
   color,
-  width
+  layout,
+  flexbox
 );
 
 Box.propTypes = {
-  ...space.propTypes,
-  ...color.propTypes,
-  ...width.propTypes
+  ...propTypes.space,
+  ...propTypes.color,
+  ...propTypes.layout,
+  ...propTypes.flexbox
 };
 
 /** @component */
@@ -173,7 +195,7 @@ export default Box;
 
 ## 4.4 Flex primitive
 
-`Flex` is another useful primitive that allows us to control Flexbox-related layout without writing CSS.
+`Flex` is another useful primitive that allows us to control Flexbox-related layout without writing CSS. Basically it’s `Box` with `display: flex` applied by default.
 
 ### The result
 
@@ -198,9 +220,9 @@ import Box from '../../components/core/Box';
 
 ### The task
 
-1. Create `Flex` primitive based on `Box` component and styled-system.
+1. Create the `Flex` component based on `Box` component and styled-system.
 
-2. Update `Box` component to accept `flex` and different alignment props, like `alignSelf` and `order`.
+2. Set default value for `justify-content: center` and `flex-direction: row` using component’s `defaultProps`, so they can be overridden using component’s props.
 
 3. Create a simple three rows layout using `Flex` and `Box` primitives.
 
@@ -209,29 +231,22 @@ import Box from '../../components/core/Box';
 
 ```js static
 import styled from 'styled-components';
-import {
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent
-} from 'styled-system';
 import Box from '../Box';
 
-const Flex = styled(Box)(
-  {
-    display: 'flex'
-  },
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent
-);
+export const Flex = styled(Box)({
+  display: 'flex'
+});
+
+Flex.defaultProps = {
+  justifyContent: 'center',
+  flexDirection: 'row'
+};
 
 Flex.propTypes = {
-  ...flexWrap.propTypes,
-  ...flexDirection.propTypes,
-  ...alignItems.propTypes,
-  ...justifyContent.propTypes
+  ...propTypes.space,
+  ...propTypes.color,
+  ...propTypes.layout,
+  ...propTypes.flexbox
 };
 
 /** @component */
@@ -240,7 +255,7 @@ export default Flex;
 
 </details>
 
-> We could use [Rebass Grid](https://grid.rebassjs.org/) directly since it is based on styled-system and implements the same API but it’s a good thing we keep our primitives abstracted from the implementation details so we can always change implementation without refactoring application’s code.
+**Note:** We could use [Rebass Grid](https://grid.rebassjs.org/) instead of custom components: it’s based on styled-system and implements the same API but it’s a good thing we keep our primitives abstracted from the implementation details so we can always change implementation without refactoring application’s code.
 
 ## 4.5 Stack primitive
 
