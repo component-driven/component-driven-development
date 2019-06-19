@@ -1,11 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-	space,
-	color,
-	backgroundImage,
-	backgroundPosition,
-} from 'styled-system';
+import { space, color, background } from 'styled-system';
+import propTypes from '@styled-system/prop-types';
 import Box from '../../core/Box';
 
 /**
@@ -13,8 +9,7 @@ import Box from '../../core/Box';
  */
 const Hero = styled(Box)`
 	${color};
-	${backgroundImage};
-	${backgroundPosition};
+	${background};
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -23,10 +18,9 @@ const Hero = styled(Box)`
 `;
 
 Hero.propTypes = {
-	...space.propTypes,
-	...color.propTypes,
-	...backgroundImage.propTypes,
-	...backgroundPosition.propTypes,
+	...propTypes.space,
+	...propTypes.color,
+	...propTypes.background,
 	children: PropTypes.node,
 };
 

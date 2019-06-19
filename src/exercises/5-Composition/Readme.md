@@ -14,6 +14,7 @@ const Card = styled(Box)`
   background: ghostwhite;
   border-radius: 3px;
 `;
+
 Card.defaultProps = {
   p: 3
 };
@@ -55,12 +56,7 @@ Implement a `Hero` component, based on the `Box` component, we’ve created in
 ```js static
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-  space,
-  color,
-  backgroundImage,
-  backgroundPosition
-} from 'styled-system';
+import { space, color, background } from 'styled-system';
 import Box from '../../components/core/Box';
 
 /**
@@ -68,22 +64,13 @@ import Box from '../../components/core/Box';
  */
 const Hero = styled(Box)`
   ${color};
-  ${backgroundImage};
-  ${backgroundPosition};
+  ${background};
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   background-size: cover;
 `;
-
-Hero.propTypes = {
-  ...space.propTypes,
-  ...color.propTypes,
-  ...backgroundImage.propTypes,
-  ...backgroundPosition.propTypes,
-  children: PropTypes.node
-};
 
 Hero.defaultProps = {
   px: 4,
@@ -106,19 +93,9 @@ For example, a more functional card may look like so:
 ```jsx static
 import styled from 'styled-components';
 import Box from '../../components/core/Box';
-import {
-  color,
-  border,
-  borderColor,
-  borderRadius
-} from 'styled-system';
+import { color, border } from 'styled-system';
 
-const Card = styled(Box)`
-  ${color};
-  ${border};
-  ${borderColor};
-  ${borderRadius};
-`;
+const CardBase = styled(Box)(color, border);
 
 Card.defaultProps = {
   bg: 'bg',
@@ -306,24 +283,19 @@ import React from 'react';
 import Flex from '../Flex';
 import Box from '../Box';
 import Stack from '../Stack';
-import {
-  color,
-  border,
-  borderColor,
-  borderRadius
-} from 'styled-system';
+import { color, border } from 'styled-system';
 import styled from 'styled-components';
 import Macro from 'macro-components';
 
-const CardBase = styled(Flex)`
-  ${color};
-  ${border};
-  ${borderColor};
-  ${borderRadius};
-  list-style: none;
-`;
+const CardBase = styled(Flex)(
+  {
+    listStyle: 'none'
+  },
+  color,
+  border
+);
 
-Card.defaultProps = {
+CardBase.defaultProps = {
   bg: 'bg',
   border: 'thin',
   borderColor: 'grey.2',

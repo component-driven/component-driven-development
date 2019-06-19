@@ -92,7 +92,9 @@ const Heading = styled(Base)(
 );
 ```
 
-**Note:** Have a look at the [default spacing scale](https://styled-system.com/api#space-1).
+[Each styled-system function](https://styled-system.com/table) implements a group of component props. For example `space` adds padding and margins props, `typography` adds props like `fontFamily` and `fontSize`, etc.
+
+**Note:** Have a look at the [default spacing scale](https://styled-system.com/api/#defaults).
 
 ## The task
 
