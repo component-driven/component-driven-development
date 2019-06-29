@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import Box from '../Box';
 import propTypes from '@styled-system/prop-types';
 
-export const Flex = styled(Box)({
-	display: 'flex',
-});
+export const Flex = Box;
 
 Flex.defaultProps = {
+	display: 'flex',
 	justifyContent: 'center',
 	flexDirection: 'row',
 };
