@@ -35,7 +35,7 @@ import Icon from '../Icon';
 import Link from '../Link';
 import Text from '../Text';
 <Text>
-  <Flex as={Link} href="/" alignItems="center">
+  <Flex as={Link} href="/" display="inline-flex" alignItems="center">
     <Icon name="star" alt="" />
     <Box ml={2} as="span">
       Good girls and boys
