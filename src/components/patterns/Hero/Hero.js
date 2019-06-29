@@ -1,21 +1,18 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space, color, background } from 'styled-system';
+import { background } from 'styled-system';
 import propTypes from '@styled-system/prop-types';
-import Box from '../../core/Box';
+import Flex from '../../core/Flex';
 
 /**
  * A hero
  */
-const Hero = styled(Box)`
-	${color};
-	${background};
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	background-size: cover;
-`;
+const Hero = styled(Flex)(
+	{
+		textAlign: 'center',
+	},
+	background
+);
 
 Hero.propTypes = {
 	...propTypes.space,
@@ -28,6 +25,8 @@ Hero.defaultProps = {
 	px: 4,
 	py: 3,
 	bg: 'bg',
+	backgroundSize: 'cover',
+	flexDirection: 'column',
 };
 
 /** @component */
