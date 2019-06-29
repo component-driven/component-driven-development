@@ -34,7 +34,9 @@
 		"test:watch": "react-scripts test --env=jsdom",
 		"posttest": "npm run format",
 		"exercise": "styleguidist server --open --exercise",
+		"prestyleguide": "npm run validate",
 		"styleguide": "styleguidist server --open",
+		"prestyleguide:build": "npm run validate",
 		"styleguide:build": "styleguidist build",
 		"format": "prettier --write '**/*.{js,md}'"
 	},
