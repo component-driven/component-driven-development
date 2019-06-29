@@ -29,7 +29,7 @@ const Message = styled.p`
 `;
 ```
 
-_Prefer_ the [Text](#text) and [Heading](#heading) components to render any text inside the app:
+_Prefer_ the [Text](/#/Primitives?id=text) and [Heading](/#/Primitives?id=heading) components to render any text inside the app:
 
 ```diff
 - const Small = styled.p`
