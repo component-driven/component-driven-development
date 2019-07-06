@@ -255,7 +255,7 @@ Either by editing the `Button.md` file or directly in the Styleguidist interfac
 
 ## 3.6. Creating a basic heading component
 
-Have a look at our [typography scale](https://cdds.netlify.com/styleguide/#typography):
+Have a look at our [typography scale](https://cdds.netlify.com/styleguide/#/Foundation?id=typography):
 
 ```jsx noeditor
 import Typography from '../../styleguide/Typography';
