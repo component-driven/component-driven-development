@@ -166,7 +166,12 @@ const CheckoutForm = ({ disabled }) => (
 				</Box>
 			</Flex>
 		</Fieldset>
-		<Flex flexWrap="wrap" alignItems="baseline" m={-3}>
+		<Flex
+			flexWrap="wrap"
+			alignItems="baseline"
+			justifyContent="flex-start"
+			m={-3}
+		>
 			<Box width={[1, 'auto']} p={3}>
 				<Button type="submit" variant="primary" disabled={disabled}>
 					Place an order
