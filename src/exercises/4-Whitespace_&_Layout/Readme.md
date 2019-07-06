@@ -257,7 +257,7 @@ export default Flex;
 
 </details>
 
-**Note:** We could use [Rebass Grid](https://grid.rebassjs.org/) instead of custom components: it’s based on styled-system and implements the same API but it’s a good thing we keep our primitives abstracted from the implementation details so we can always change implementation without refactoring application’s code.
+**Note:** We could use [Rebass Grid](https://rebassjs.org/grid/) instead of custom components: it’s based on styled-system and implements the same API but it’s a good thing we keep our primitives abstracted from the implementation details so we can always change implementation without refactoring application’s code.
 
 ## 4.5 Stack primitive
 
@@ -361,7 +361,7 @@ export default SubscriptionForm;
 
 ## 4.6 Adding spacing to any primitive
 
-We’ve already used a similar technique in the [Typography](http://localhost:6061/#/Typography) exercises. Adding `Box` and `Flex` to the mix we now can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spacing are coming from our [spacing scale](https://cdds.netlify.com/styleguide/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application!
+Using `Box` and `Flex` components we can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spacing are coming from our [spacing scale](https://cdds.netlify.com/styleguide/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application.
 
 ### The result
 
