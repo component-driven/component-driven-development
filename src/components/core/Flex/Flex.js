@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Box from '../Box';
-import propTypes from '@styled-system/prop-types';
 
 export const Flex = styled(Box)({});
 
@@ -10,11 +9,6 @@ Flex.defaultProps = {
 	flexDirection: 'row',
 };
 
-Flex.propTypes = {
-	...propTypes.space,
-	...propTypes.color,
-	...propTypes.layout,
-	...propTypes.flexbox,
-};
+Flex.propTypes = Box.propTypes;
 
 export default Flex;
