@@ -1,18 +1,17 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space } from 'styled-system';
-import themeGet from '@styled-system/theme-get';
 
 /**
  * A text heading.
  */
 const Heading = styled.h1`
 	${space};
-	line-height: ${themeGet('lineHeights.heading')};
-	font-family: ${themeGet('fonts.heading')};
+	line-height: ${props => props.theme.lineHeights.heading};
+	font-family: ${props => props.theme.fonts.heading};
 	font-weight: ${props => props.theme.headingFontWeights[props.size]};
 	font-size: ${props => props.theme.fontSizes[props.size]};
-	color: ${themeGet('colors.base')};
+	color: ${props => props.theme.colors.base};
 	text-align: ${props => props.align};
 `;
 

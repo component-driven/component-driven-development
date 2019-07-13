@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import themeGet from '@styled-system/theme-get';
 import { getDownArrowIcon } from '../../components/core/Select/icons';
 
 /**
@@ -11,7 +10,7 @@ const Select = styled.select`
 
 	/* Down arrow icon */
 	background-image: ${props => getDownArrowIcon(props.theme.colors.secondary)};
-	background-position: center right ${themeGet('space.3')};
+	background-position: center right ${props => props.theme.space[3]};
 	background-repeat: no-repeat;
 
 	/* Your styles here */

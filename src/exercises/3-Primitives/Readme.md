@@ -85,17 +85,6 @@ const Button = styled.button`
 `;
 ```
 
-You can also use [themeGet](https://github.com/styled-system/styled-system/tree/master/packages/theme-get) helper from styled-system to access theme values:
-
-```js static
-import themeGet from '@styled-system/theme-get';
-const Button = styled.button`
-  background: ${themeGet('colors.primary')};
-`;
-```
-
-The two snippets above are doing the same thing but the latter one is a bit easier to write and read.
-
 ### The task
 
 1. Replace all hardcoded values with design tokens.
@@ -355,24 +344,23 @@ import Input from '../../components/core/Input';
 
 ```js static
 import styled from 'styled-components';
-import themeGet from '@styled-system/theme-get';
 
 const Input = styled.input`
   box-sizing: border-box;
   display: block;
   margin: 0;
   height: 2.5rem;
-  padding: ${themeGet('space.3')};
-  border: 1px solid ${themeGet('colors.primary')};
-  border-radius: ${themeGet('radii.base')};
-  font-family: ${themeGet('fonts.base')};
-  font-size: ${themeGet('fontSizes.base')};
-  color: ${themeGet('colors.base')};
-  background-color: ${themeGet('colors.bg')};
+  padding: ${props => props.theme.space[3]};
+  border: 1px solid ${props => props.theme.colors.primary};
+  border-radius: ${props => props.theme.radii.base};
+  font-family: ${props => props.theme.fonts.base};
+  font-size: ${props => props.theme.fontSizes.base};
+  color: ${props => props.theme.colors.base};
+  background-color: ${props => props.theme.colors.bg};
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
+    box-shadow: 0 0 0 2px ${props => props.theme.colors.focus};
   }
 
   &:disabled {
@@ -416,7 +404,6 @@ import Select from '../../components/core/Select';
 
 ```js static
 import styled from 'styled-components';
-import themeGet from '@styled-system/theme-get';
 import { getDownArrowIcon } from '../../components/core/Select/icons';
 
 const Select = styled.select`
@@ -424,28 +411,28 @@ const Select = styled.select`
   user-select: none;
   width: ${props => props.fullWidth && '100%'};
   height: 2.5rem;
-  padding-top: ${themeGet('space.3')};
-  padding-right: ${themeGet('space.5')};
-  padding-bottom: ${themeGet('space.3')};
-  padding-left: ${themeGet('space.3')};
-  border: 1px solid ${themeGet('colors.primary')};
-  border-radius: ${themeGet('radii.base')};
-  font-family: ${themeGet('fonts.base')};
-  font-size: ${themeGet('fontSizes.base')};
-  color: ${themeGet('colors.base')};
-  background-color: ${themeGet('colors.bg')};
+  padding-top: ${props => props.theme.space[3]};
+  padding-right: ${props => props.theme.space[5]};
+  padding-bottom: ${props => props.theme.space[3]};
+  padding-left: ${props => props.theme.space[3]};
+  border: 1px solid ${props => props.theme.colors.primary};
+  border-radius: ${props => props.theme.radii.base};
+  font-family: ${props => props.theme.fonts.base};
+  font-size: ${props => props.theme.fontSizes.base};
+  color: ${props => props.theme.colors.base};
+  background-color: ${props => props.theme.colors.bg};
 
   /* Down arrow icon */
   background-image: ${props =>
     getDownArrowIcon(props.theme.colors.secondary)};
-  background-position: center right ${themeGet('space.3')};
+  background-position: center right ${props => props.theme.space[3]};
   background-repeat: no-repeat;
 
   &:hover:enabled,
   &:active:enabled,
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
+    box-shadow: 0 0 0 2px ${props => props.theme.colors.focus};
     cursor: pointer;
   }
 
@@ -495,7 +482,6 @@ The `variant` prop is used to change text style.
 
 ```jsx static
 import styled from 'styled-components';
-import themeGet from '@styled-system/theme-get';
 
 const getFontSize = variant =>
   ({
@@ -514,8 +500,8 @@ const getColor = variant =>
 
 const Text = styled.p`
   margin: 0;
-  line-height: ${themeGet('lineHeights.base')};
-  font-family: ${themeGet('fonts.base')};
+  line-height: ${props => props.theme.lineHeights.base};
+  font-family: ${props => props.theme.fonts.base};
   font-size: ${props =>
     props.theme.fontSizes[getFontSize(props.variant)]};
   color: ${props => props.theme.colors[getColor(props.variant)]};

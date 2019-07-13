@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import themeGet from '@styled-system/theme-get';
 import { getDownArrowIcon } from './icons';
 
 /**
@@ -11,27 +10,27 @@ const Select = styled.select`
 	user-select: none;
 	width: ${props => props.fullWidth && '100%'};
 	height: 2.5rem;
-	padding-top: ${themeGet('space.3')};
-	padding-right: ${themeGet('space.5')};
-	padding-bottom: ${themeGet('space.3')};
-	padding-left: ${themeGet('space.3')};
-	border: 1px solid ${themeGet('colors.primary')};
-	border-radius: ${themeGet('radii.base')};
-	font-family: ${themeGet('fonts.base')};
-	font-size: ${themeGet('fontSizes.base')};
-	color: ${themeGet('colors.base')};
-	background-color: ${themeGet('colors.bg')};
+	padding-top: ${props => props.theme.space[3]};
+	padding-right: ${props => props.theme.space[5]};
+	padding-bottom: ${props => props.theme.space[3]};
+	padding-left: ${props => props.theme.space[3]};
+	border: 1px solid ${props => props.theme.colors.primary};
+	border-radius: ${props => props.theme.radii.base};
+	font-family: ${props => props.theme.fonts.base};
+	font-size: ${props => props.theme.fontSizes.base};
+	color: ${props => props.theme.colors.base};
+	background-color: ${props => props.theme.colors.bg};
 
 	/* Down arrow icon */
 	background-image: ${props => getDownArrowIcon(props.theme.colors.secondary)};
-	background-position: center right ${themeGet('space.3')};
+	background-position: center right ${props => props.theme.space[3]};
 	background-repeat: no-repeat;
 
 	&:hover:enabled,
 	&:active:enabled,
 	&:focus {
 		outline: 0;
-		box-shadow: 0 0 0 2px ${themeGet('colors.focus')};
+		box-shadow: 0 0 0 2px ${props => props.theme.colors.focus};
 		cursor: pointer;
 	}
 
