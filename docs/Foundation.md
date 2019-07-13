@@ -15,20 +15,6 @@ const Message = styled.p`
 `;
 ```
 
-You can also use [themeGet](https://github.com/styled-system/styled-system/tree/master/packages/theme-get) helper from styled-system to access theme values:
-
-```diff
-import themeGet from '@styled-system/theme-get';
-const Message = styled.p`
--   color: #8667a8;
--   font-family: Helvetica;
--   font-size: 13px;
-+   color: ${themeGet('colors.primary')};
-+   font-family: ${themeGet('fonts.base')};
-+   font-size: ${themeGet('fontSizes.s')};
-`;
-```
-
 _Prefer_ the [Text](/#/Primitives?id=text) and [Heading](/#/Primitives?id=heading) components to render any text inside the app:
 
 ```diff

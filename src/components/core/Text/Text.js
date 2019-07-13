@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
-import themeGet from '@styled-system/theme-get';
 
 const textStyle = variant({
 	key: 'textStyles',
@@ -13,8 +12,8 @@ const textStyle = variant({
 const Text = styled.p`
 	margin: 0;
 	font-weight: normal;
-	line-height: ${themeGet('lineHeights.base')};
-	font-family: ${themeGet('fonts.base')};
+	line-height: ${props => props.theme.lineHeights.base};
+	font-family: ${props => props.theme.fonts.base};
 	text-align: ${props => props.align};
 	list-style-type: none;
 	${textStyle};
