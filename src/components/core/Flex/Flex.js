@@ -5,8 +5,6 @@ export const Flex = styled(Box)({});
 
 Flex.defaultProps = {
 	display: 'flex',
-	justifyContent: 'center',
-	flexDirection: 'row',
 };
 
 Flex.propTypes = Box.propTypes;
