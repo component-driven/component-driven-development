@@ -9,7 +9,14 @@ import SvgFeatureMegaphone from './images/SvgFeatureMegaphone';
 const Features = () => (
 	<>
 		<VisuallyHidden as="h2">Why Rent-o-dog</VisuallyHidden>
-		<Stack gridColumnGap={4} gridRowGap={5} minWidth={200} m={0} p={0} as="ul">
+		<Stack
+			gridColumnGap={4}
+			gridRowGap={5}
+			minColumnWidth={200}
+			m={0}
+			p={0}
+			as="ul"
+		>
 			<Feature as="li">
 				<Feature.Icon>
 					<SvgFeatureFireplace width={80} />

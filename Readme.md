@@ -53,8 +53,8 @@ Or:
 - [Create React App](https://github.com/facebook/create-react-app)
 - [React Styleguidist](https://react-styleguidist.js.org/)
 - [styled-components](https://www.styled-components.com/)
-- [styled-system](https://jxnblk.com/styled-system/)
-- [Rebass Grid](https://grid.rebassjs.org/) (former Grid Styled)
+- [styled-system](https://styled-system.com/)
+- [Rebass Grid](https://rebassjs.org/grid/) (former Grid Styled)
 - [Stack Styled](https://sapegin.github.io/stack-styled/)
 - [Polished](https://polished.js.org/)
 

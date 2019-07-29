@@ -158,7 +158,9 @@ import Stack from 'stack-styled';
 import Heading from '../../core/Heading';
 import Text from '../../core/Text';
 
-const Feature = ({ children }) => <Stack gap={2}>{children}</Stack>;
+const Feature = ({ children }) => (
+  <Stack gridGap={2}>{children}</Stack>
+);
 
 Feature.Icon = ({ children }) => (
   <Box ml="auto" mr="auto" color="secondary">
@@ -311,7 +313,7 @@ const Card = Macro({ Cover, Body, Footer })(
   ({ Cover, Body, Footer }, props) => (
     <CardBase {...props}>
       {Cover}
-      <Stack height="100%" p={4} gap={4}>
+      <Stack height="100%" p={4} gridGap={4}>
         {Body}
         {Footer}
       </Stack>

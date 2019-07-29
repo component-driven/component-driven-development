@@ -278,7 +278,7 @@ What we actually want is _a component that controls layout and whitespace_ betwe
 
 ```jsx static
 /* List of buttons */
-<Stack gap={1}>
+<Stack gridGap={1}>
   <Button>First button</Button>
   <Button>Second button</Button>
   <Button>Third button</Button>
@@ -331,7 +331,7 @@ const SubscriptionForm = ({
   error
 }) => (
   <Stack
-    gap={3}
+    gridGap={3}
     mb={2}
     gridTemplateColumns={['1fr', '1fr auto']}
     as="form"

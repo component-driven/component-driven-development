@@ -6,7 +6,7 @@ import Heading from '../../core/Heading';
 import Text from '../../core/Text';
 
 const Feature = ({ as, children }) => (
-	<Stack gap={2} as={as}>
+	<Stack gridGap={2} as={as}>
 		{children}
 	</Stack>
 );

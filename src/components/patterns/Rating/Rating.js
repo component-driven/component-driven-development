@@ -28,7 +28,7 @@ const Rating = ({ value }) => {
 			<VisuallyHidden>
 				{value} out of {STARS_COUNT} stars
 			</VisuallyHidden>
-			<Stack justifyContent="start" gridAutoFlow="column" gap={1}>
+			<Stack justifyContent="start" gridAutoFlow="column" gridGap={1}>
 				{range(STARS_COUNT).map(index => (
 					<Icon
 						key={index}
