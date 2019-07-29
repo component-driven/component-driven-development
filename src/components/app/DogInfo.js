@@ -6,7 +6,7 @@ import Text from '../core/Text';
 import Rating from '../patterns/Rating';
 
 const DogInfo = ({ isHeading, dog }) => (
-	<Stack gap={2}>
+	<Stack gridGap={2}>
 		<Heading as={isHeading ? 'h3' : 'p'} size="m">
 			{dog.name}
 		</Heading>

@@ -30,7 +30,7 @@ const Card = Macro({ Cover, Body, Footer })(
 	({ Cover, Body, Footer }, props) => (
 		<CardBase {...props}>
 			{Cover}
-			<Stack height="100%" p={4} gap={4}>
+			<Stack height="100%" p={4} gridGap={4}>
 				{Body}
 				{Footer}
 			</Stack>

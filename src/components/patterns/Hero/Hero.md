@@ -41,7 +41,7 @@ import { Inverted } from '../../../ThemeProvider';
     <Heading level={2} size="xl" mb={5}>
       The quick black fox jumps over the lazy dog
     </Heading>
-    <Stack justifyContent="center" gridAutoFlow="column" gap={4}>
+    <Stack justifyContent="center" gridAutoFlow="column" gridGap={4}>
       <Button variant="primary">Try now</Button>
       <Button variant="secondary">Try later</Button>
     </Stack>
@@ -74,7 +74,7 @@ import { Inverted } from '../../../ThemeProvider';
       <Stack
         justifyContent="center"
         gridAutoFlow="column"
-        gap={4}
+        gridGap={4}
         mb={2}
       >
         <Text>
@@ -92,7 +92,11 @@ import { Inverted } from '../../../ThemeProvider';
       <Heading level={2} size="xl" mb={5}>
         The quick black fox jumps over the lazy dog
       </Heading>
-      <Stack justifyContent="center" gridAutoFlow="column" gap={4}>
+      <Stack
+        justifyContent="center"
+        gridAutoFlow="column"
+        girdGap={4}
+      >
         <Button variant="primary">Try now</Button>
         <Button variant="secondary">Try later</Button>
       </Stack>

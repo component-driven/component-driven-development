@@ -17,7 +17,7 @@ const Header = () => (
 			<Stack
 				justifyContent="center"
 				gridAutoFlow="column"
-				gap={4}
+				gridGap={4}
 				mt={0}
 				mb={2}
 				as="ul"

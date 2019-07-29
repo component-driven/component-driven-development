@@ -65,7 +65,14 @@ const DogFinder = ({
 				Something went wrong, try again later
 			</p>
 		)}
-		<Stack gridColumnGap={4} gridRowGap={5} minWidth={200} m={0} p={0} as="ul">
+		<Stack
+			gridColumnGap={4}
+			gridRowGap={5}
+			minColumnWidth={200}
+			m={0}
+			p={0}
+			as="ul"
+		>
 			{dogs.map(dog => (
 				<DogCard key={dog.id} dog={dog} as="li" />
 			))}

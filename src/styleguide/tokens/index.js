@@ -11,7 +11,7 @@ import copy from 'clipboard-copy';
  */
 
 export const Swatches = ({ items, minWidth, gap, renderItem }) => (
-	<Stack minWidth={minWidth} gap={gap}>
+	<Stack minColumnWidth={minWidth} gridGap={gap}>
 		{Array.isArray(items)
 			? items.map((value, index) => renderItem(index, value))
 			: Object.keys(items).map(key => renderItem(key, items[key]))}
@@ -135,11 +135,6 @@ const FontSwatchContainer = styled.button`
 		cursor: pointer;
 		background: #efefef;
 	}
-`;
-
-const FontSwatchLabel = styled(Box)`
-	color: #767676;
-	font-size: 0.85rem;
 `;
 
 export const FontSwatch = ({ name, value, token, children }) => (
