@@ -1,7 +1,7 @@
 import React from 'react';
 import Flex from '../Flex';
 import Box from '../Box';
-import Stack from '../Stack';
+import Stack from 'stack-styled';
 import { color, border } from 'styled-system';
 import styled from 'styled-components';
 import Macro from 'macro-components';
@@ -30,7 +30,7 @@ const Card = Macro({ Cover, Body, Footer })(
 	({ Cover, Body, Footer }, props) => (
 		<CardBase {...props}>
 			{Cover}
-			<Stack height="100%" p={4} gridGap={4}>
+			<Stack flexGrow={1} p={4} gridGap={4}>
 				{Body}
 				{Footer}
 			</Stack>

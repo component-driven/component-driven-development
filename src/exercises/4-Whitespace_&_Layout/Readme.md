@@ -287,7 +287,7 @@ What we actually want is _a component that controls layout and whitespace_ betwe
 
 This is often called _stacking layout_. There are many ways to implement it: [lobotomized owl selector](https://css-tricks.com/lobotomized-owls/), negative margins, CSS Grid, etc. Each has its own pros and cons. If you don’t need to support old versions of Internet Explorer, we recommend [CSS Grid based stacking](https://gridbyexample.com/examples/example28/).
 
-We’re going to use [stack-styled](https://sapegin.github.io/stack-styled/) library that implements stacking layout using CSS Grid. It’s based on styled-system and uses the same spacing values that our `Box` component.
+We’re going to use [Stack Styled](https://sapegin.github.io/stack-styled/) library that implements stacking layout using CSS Grid. It’s based on styled-system and uses the same spacing values that our `Box` component.
 
 ### The result
 

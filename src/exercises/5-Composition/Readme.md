@@ -146,7 +146,7 @@ Create a compound `Feature` component, that has three subcomponents:
 - `Heading` that renders a large centered heading.
 - `Body` that renders centered text.
 
-**Hint:** Use `Stack` component to create even spacing between subcomponents.
+**Hint:** Use `Stack` component from [Stack Styled](https://sapegin.github.io/stack-styled/) to create even spacing between subcomponents.
 
 <details>
  <summary>Solution</summary>
@@ -284,7 +284,7 @@ Cover is optional, and either a body or a footer. A cover should occupy full wid
 import React from 'react';
 import Flex from '../Flex';
 import Box from '../Box';
-import Stack from '../Stack';
+import Stack from 'stack-styled';
 import { color, border } from 'styled-system';
 import styled from 'styled-components';
 import Macro from 'macro-components';
@@ -313,7 +313,7 @@ const Card = Macro({ Cover, Body, Footer })(
   ({ Cover, Body, Footer }, props) => (
     <CardBase {...props}>
       {Cover}
-      <Stack height="100%" p={4} gridGap={4}>
+      <Stack flexGrow={1} p={4} gridGap={4}>
         {Body}
         {Footer}
       </Stack>
