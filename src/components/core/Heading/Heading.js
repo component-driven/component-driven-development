@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space } from 'styled-system';
@@ -5,7 +6,7 @@ import { space } from 'styled-system';
 /**
  * A text heading.
  */
-const Heading = styled.h1`
+const HeadingBase = styled.h1`
 	${space};
 	line-height: ${props => props.theme.lineHeights.heading};
 	font-family: ${props => props.theme.fonts.heading};
@@ -14,6 +15,10 @@ const Heading = styled.h1`
 	color: ${props => props.theme.colors.base};
 	text-align: ${props => props.align};
 `;
+
+// Apply default props manually, because styled-system will apply them after
+// passed props, so default m prop will overwrite passed mb prop for example
+const Heading = props => <HeadingBase {...Heading.defaultProps} {...props} />;
 
 Heading.propTypes = {
 	/** Custom component or HTML tag */
