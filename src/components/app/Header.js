@@ -4,13 +4,12 @@ import Box from '../core/Box';
 import Flex from '../core/Flex';
 import Link from '../core/Link';
 import Text from '../core/Text';
-import { getUrl } from '../../urls';
 
 const Header = () => (
 	<Flex justifyContent={['center', 'space-between']} flexWrap="wrap">
 		<Box width={[1, 'auto']} mb={2}>
 			<Text as="h1">
-				<Link href={getUrl('/')}>Rent-o-dog</Link>
+				<Link href="/">Rent-o-dog</Link>
 			</Text>
 		</Box>
 		<nav role="navigation">

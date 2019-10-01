@@ -8,7 +8,6 @@ import Text from '../core/Text';
 import DogInfo from '../app/DogInfo';
 import Card from '../core/Card';
 import Image from '../core/Image';
-import { getUrl } from '../../urls';
 
 const getDays = (from, to) => {
 	if (!from || !to) {
@@ -34,7 +33,7 @@ const OrderSummary = ({ dog, dateFrom, dateTo }) => {
 			</Heading>
 			<Card>
 				<Card.Cover>
-					<Image src={getUrl(`/images/${dog.image}`)} alt={dog.name} />
+					<Image src={`/images/${dog.image}`} alt={dog.name} />
 				</Card.Cover>
 				<Card.Body>
 					<Box mb={3}>

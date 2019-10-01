@@ -5,18 +5,17 @@ import Button from '../../core/Button';
 import Image from '../../core/Image';
 import DogInfo from '../../app/DogInfo';
 import Card from '../../core/Card';
-import { getUrl } from '../../../urls';
 
 const DogCard = ({ as, dog }) => (
 	<Card as={as}>
 		<Card.Cover>
-			<Image src={getUrl(`/images/${dog.image}`)} alt={dog.name} />
+			<Image src={`/images/${dog.image}`} alt={dog.name} />
 		</Card.Cover>
 		<Card.Body>
 			<DogInfo dog={dog} isHeading />
 		</Card.Body>
 		<Card.Footer>
-			<Button as={Link} fullWidth to={getUrl(`/checkout/${dog.id}`)}>
+			<Button as={Link} fullWidth to={`/checkout/${dog.id}`}>
 				Rent {dog.name}
 			</Button>
 		</Card.Footer>
