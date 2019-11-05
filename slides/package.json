@@ -1,0 +1,29 @@
+{
+	"name": "slides",
+	"private": true,
+	"version": "0.0.0-development",
+	"description": "Slides for presentations and workshops",
+	"main": "deck.js",
+	"keywords": [],
+	"author": "Andrey Okonetchnikov <andrey@okonet.ru>",
+	"license": "MIT",
+	"scripts": {
+		"start": "mdx-deck deck.js",
+		"build": "mdx-deck build deck.js",
+		"pdf": "mdx-deck pdf deck.js",
+		"image": "mdx-deck screenshot deck.js",
+		"help": "mdx-deck"
+	},
+	"devDependencies": {
+		"raw-loader": "^1.0.0"
+	},
+	"dependencies": {
+		"mdx-deck": "^1.7.7",
+		"mdx-deck-code-surfer": "^0.5.5",
+		"polished": "^3.4.2",
+		"react-syntax-highlighter": "^11.0.2",
+		"react-tweet-embed": "^1.2.2",
+		"reflexbox": "^4.0.6",
+		"stack-styled": "^3.0.0"
+	}
+}

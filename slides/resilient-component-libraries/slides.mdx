@@ -1,0 +1,190 @@
+import { Appear, Image } from 'mdx-deck';
+import { Prism } from 'react-syntax-highlighter';
+import { CodeSurfer } from 'mdx-deck-code-surfer';
+import TweetEmbed from 'react-tweet-embed';
+import { Flex, Box } from 'reflexbox/styled-components';
+import ThatGuy from '../components/ThatGuy';
+
+# Resilient Component Libraries with React
+
+---
+
+# Why building your own component library?
+
+---
+
+## How are we have been building UIs
+
+1. Get a static mockup from a designer
+1. Write HTML markup that represents the mockup
+1. Write CSS and connect with HTML using classes
+1. "Sprinkle" JavaScript using classes to add interactivity
+1. Hand off to a backend developer
+1. Replace HTML with PHP, Ruby, Java, ...
+1. ...
+1. Profit
+
+---
+
+## How are we building UIs with React
+
+1. Get a static mockup from a designer
+1. Get data from API endpoint
+1. Render data in JSX using HTML
+1. Write CSS and connect with JSX using `className`
+1. ...
+1. Profit
+
+---
+
+# We are still doing static mockups and coding in HTML and CSS
+
+---
+
+# What's the problem with static mockups?
+
+---
+
+<Image src="./images/dribbble1.png" size="contain">
+
+## Static mockups are...
+
+</Image>
+
+---
+
+<Image src="./images/dribbble2.png" size="contain">
+
+## Static mockups are... static!
+
+</Image>
+
+---
+
+## Mockups are _static_
+
+## Applications are _dynamic_
+
+---
+
+<ThatGuy />
+
+---
+
+# What's the problem with HTML?
+
+---
+
+<Flex flexDirection="column">
+	<Flex>
+		<Box p={4}>Text</Box>
+		<Box p={4}>
+			<code>P</code>
+		</Box>
+		<Box p={4}>😊</Box>
+	</Flex>
+	<Flex>
+		<Box p={4}>Heading</Box>
+		<Box p={4}>
+			<code>h1...h6</code>
+		</Box>
+		<Box p={4}>️😊</Box>
+	</Flex>
+	<Flex>
+		<Box p={4}>Link</Box>
+		<Box p={4}>
+    		<code>a href</code>
+    	</Box>
+    	<Box p={4}>🤔</Box>
+    </Flex>
+    <Flex>
+    	<Box p={4}>Button</Box>
+    	<Box p={4}>
+    		<code>...</code>
+    	</Box>
+    	<Box p={4}>🙄</Box>
+    </Flex>
+    <Flex>
+    	<Box p={4}>Dropdown</Box>
+    	<Box p={4}>
+    		<code>...</code>
+    	</Box>
+    	<Box p={4}>😩</Box>
+    </Flex>
+</Flex>
+
+---
+
+<Box p={5} width={"100vw"}>
+<Image src="./images/bootstrap-dropdown.png" size="contain" style={{ width: "100%" }} />
+</Box>
+
+---
+
+<ThatGuy />
+
+---
+
+# HTML vs Primitives
+
+<Flex>
+
+```html
+<div class="dropdown">
+  <button
+    class="btn btn-default dropdown-toggle"
+    type="button"
+    id="dropdownMenu1"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded=“true"
+  >
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul
+     class="dropdown-menu"
+     aria-labelledby=“dropdownMenu1"
+  >
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+```
+
+```javascript
+<DropdownButton title="Title">
+  <MenuItem eventKey="1">Action</MenuItem>
+  <MenuItem eventKey="2">Another action</MenuItem>
+  <MenuItem eventKey="3" active>Active Item</MenuItem>
+  <MenuItem divider />
+  <MenuItem eventKey="4">Separated link</MenuItem>
+</DropdownButton>
+```
+
+</Flex>
+
+---
+
+# What's the problem with CSS?
+
+---
+
+<TweetEmbed id="1038073603311448064" />
+
+---
+
+<ThatGuy />
+
+---
+
+<CodeSurfer
+	title="Test"
+	code={require('!raw-loader!../deck.js')}
+	lang="javascript"
+	showNumbers={false}
+	dark={false}
+/>
