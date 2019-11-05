@@ -28,7 +28,7 @@ const OrderSummary = ({ dog, dateFrom, dateTo }) => {
 	const summ = days && days * dog.price;
 	return (
 		<>
-			<Heading size="l" as="h3" mb={4}>
+			<Heading size="lg" as="h3" mb={4}>
 				Order Summary
 			</Heading>
 			<Card>
@@ -43,7 +43,7 @@ const OrderSummary = ({ dog, dateFrom, dateTo }) => {
 						<Flex>
 							{days && <Text>{days} days</Text>}
 							<Box ml="auto">
-								<Heading as="p" size="l">
+								<Heading as="p" size="lg">
 									€ {summ}
 								</Heading>
 							</Box>

@@ -31,7 +31,7 @@ const FieldsetContainer = styled(Box)`
 const Fieldset = ({ label, children, ...props }) => {
 	return (
 		<FieldsetContainer as="fieldset" {...props}>
-			<Heading size="l" as="legend" mb={4}>
+			<Heading size="lg" as="legend" mb={4}>
 				{label} 
 			</Heading>
 			{children}

@@ -2,22 +2,22 @@ Sizes and variants:
 
 ```js
 <Icon name="dog" variant="primary" alt="" />
-<Icon name="dog" variant="primary" size="l" alt="" />
+<Icon name="dog" variant="primary" size="lg" alt="" />
 <Icon name="dog" variant="secondary" alt="" />
-<Icon name="dog" variant="secondary" size="l" alt="" />
-<Icon name="dog" variant="currentColor" size="l" alt="" />
+<Icon name="dog" variant="secondary" size="lg" alt="" />
+<Icon name="dog" variant="currentColor" size="lg" alt="" />
 ```
 
 Icons:
 
 ```js
-<Icon name="dog" size="l" alt="" />
-<Icon name="github" size="l" alt="" />
-<Icon name="pin" size="l" alt="" />
-<Icon name="star" size="l" alt="" />
-<Icon name="starHalf" size="l" alt="" />
-<Icon name="starOutline" size="l" alt="" />
-<Icon name="twitter" size="l" alt="" />
+<Icon name="dog" size="lg" alt="" />
+<Icon name="github" size="lg" alt="" />
+<Icon name="pin" size="lg" alt="" />
+<Icon name="star" size="lg" alt="" />
+<Icon name="starHalf" size="lg" alt="" />
+<Icon name="starOutline" size="lg" alt="" />
+<Icon name="twitter" size="lg" alt="" />
 ```
 
 Accessible label:

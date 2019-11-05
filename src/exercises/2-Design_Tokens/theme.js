@@ -1,6 +1,9 @@
 const theme = {
 	colors: {
-		myfavoritecolor: '#f39037',
+		background: '#fff',
+		text: '#000',
+		primary: '#f39037',
+		muted: '#ccc',
 	},
 };
 

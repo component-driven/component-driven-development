@@ -7,7 +7,7 @@ import Rating from '../patterns/Rating';
 
 const DogInfo = ({ isHeading, dog }) => (
 	<Stack gridGap={2}>
-		<Heading as={isHeading ? 'h3' : 'p'} size="m">
+		<Heading as={isHeading ? 'h3' : 'p'} size="md">
 			{dog.name}
 		</Heading>
 		<Text variant="secondary">

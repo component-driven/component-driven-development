@@ -4,9 +4,9 @@ const scale = value => modularScale(value, '1rem', 'goldenSection');
 
 const fontSizes = {
 	xl: scale(3),
-	l: scale(1),
-	m: scale(0),
-	s: scale(-0.5),
+	lg: scale(1),
+	md: scale(0),
+	sm: scale(-0.5),
 	xs: scale(-0.75),
 };
 
@@ -44,6 +44,7 @@ function getColors(palette) {
 		base: palette.grey[6],
 		primary: palette.purple[5],
 		secondary: palette.grey[5],
+		muted: palette.grey[2],
 		hover: palette.purple[2],
 		focus: palette.purple[1],
 		error: '#d0453e',
@@ -53,21 +54,19 @@ function getColors(palette) {
 
 const theme = {
 	fonts: {
-		base: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+		body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
 		heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+		monospace: 'Menlo, monospace',
 	},
-	fontSizes: {
-		base: fontSizes.m,
-		...fontSizes,
-	},
+	fontSizes,
 	fontWeights: {
 		normal: 400,
 		bold: 700,
 	},
 	headingFontWeights: {
 		xl: 400,
-		l: 400,
-		m: 700,
+		lg: 400,
+		md: 700,
 	},
 	lineHeights: {
 		base: 1.5,

@@ -114,7 +114,7 @@ And then you’d use it like so:
 <Card as={as}>
   <Card.Image src="tsiri.jpg" alt="Tsiri" />
   <Card.Body>
-    <Heading size="m">Tsiri the saluki</Heading>
+    <Heading size="md">Tsiri the saluki</Heading>
     <Text variant="secondary">The best dog in the world</Text>
   </Card.Body>
 </Card>
@@ -169,7 +169,7 @@ Feature.Icon = ({ children }) => (
 );
 
 Feature.Heading = ({ children }) => (
-  <Heading as="h3" size="l" align="center">
+  <Heading as="h3" size="lg" align="center">
     {children}
   </Heading>
 );
@@ -200,7 +200,7 @@ import Box from '../../components/core/Box';
 import Heading from '../../components/core/Heading';
 import Button from '../../components/core/Button';
 <Flex alignItems="baseline">
-  <Heading size="l">The most interesting article</Heading>
+  <Heading size="lg">The most interesting article</Heading>
   <Box ml="auto">
     <Button>Delete</Button>
   </Box>
@@ -217,7 +217,7 @@ import Heading from '../../components/core/Heading';
 import Button from '../../components/core/Button';
 
 const Title = ({ children }) => (
-  <Heading size="l">{children}</Heading>
+  <Heading size="lg">{children}</Heading>
 );
 const Button = ({ children }) => <Box ml="auto">{children}</Box>;
 
@@ -257,7 +257,7 @@ import Button from '../../components/core/Button';
       <Image src="/images/tsiri.jpg" alt="Tsiri the saluki" />
     </Card.Cover>
     <Card.Body>
-      <Heading size="m">Title of the card</Heading>
+      <Heading size="md">Title of the card</Heading>
       <Text>Body of the card</Text>
     </Card.Body>
     <Card.Footer>

@@ -23,7 +23,7 @@ const Heading = props => <HeadingBase {...Heading.defaultProps} {...props} />;
 Heading.propTypes = {
 	/** Custom component or HTML tag */
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	size: PropTypes.oneOf(['xl', 'l', 'm', 'base']),
+	size: PropTypes.oneOf(['xl', 'lg', 'md']),
 	align: PropTypes.oneOf(['left', 'center', 'right']),
 	children: PropTypes.node,
 };
