@@ -41,7 +41,6 @@
 		"format": "prettier --write '**/*.{js,md}'"
 	},
 	"devDependencies": {
-		"@babel/preset-env": "^7.4.5",
 		"babel-plugin-styled-components": "^1.10.0",
 		"cross-env": "^5.2.0",
 		"eslint-plugin-jsx-a11y": "^6.2.1",
