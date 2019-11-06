@@ -1,15 +1,16 @@
 import { jsx, Flex, Box } from 'theme-ui';
 import {
 	Appear,
+	Boom,
 	Center,
 	Code,
 	Cover,
+	Image,
+	Notes,
 	Primary,
 	Secondary,
-	Boom,
-	Image,
+	SplitWithHeading,
 	ThatGuy,
-	Notes,
 } from './theme';
 import { Prism } from 'react-syntax-highlighter';
 import TweetEmbed from 'react-tweet-embed';
@@ -60,7 +61,7 @@ export { theme } from './theme';
 
 <Secondary>
 
-> We are still doing static mockups and coding in HTML and CSS
+> We are still drawing **static mockups** and writing **HTML & CSS**
 
 </Secondary>
 
@@ -87,6 +88,7 @@ export { theme } from './theme';
 - not covering all possible states
 - not covering all possible resolutions
 - losing lots of design knowledge during ~~translation~~ hand-off
+- are static!
 
 ---
 
@@ -104,75 +106,68 @@ export { theme } from './theme';
 
 <Secondary>
 
-## What's the problem with HTML?
-
-</Secondary>
-
----
-
-<Stack gridGap={4} gridTemplateColumns="auto 1fr auto" alignItems="center">
-	<p>Text, Heading</p>
-	<Code language="html">{`<h1>Heading</h1>
-<p>Text</p>`}</Code>
-	<p>️😊</p>
-	<p>Link</p>
-	<Code language="html">{`<a href="#">Link</a>`}</Code>
-	<p>🤔</p>
-	<p>Button</p>
-	<Code language="html">
-		{`<button>Button</button>
-<input type="button">Button</input>`}
-	</Code>
-	<p>🙄</p>
-	<p>Dropdown</p>
-	<Code language="html" sx={{ maxHeight: 200 }}>
-		{dropdown.html}
-	</Code>
-	<p>😩</p>
-</Stack>
-
----
-
-<Image src="./assets/bootstrap-dropdown.png" size="contain" />
-
-<ThatGuy />
-
----
-
-<Secondary>
-
 ## What's the problem with CSS?
 
 </Secondary>
 
 ---
 
+<Boom>
+
+# CSS is hard 🤯
+
+</Boom>
+
+---
+
 <Center>
-<TweetEmbed id="1038073603311448064" />
-<ThatGuy />
+	<TweetEmbed id="1038073603311448064" />
+	<ThatGuy />
 </Center>
 
 ---
 
-<Boom>
+<Center>
 
-## CSS is hard 🤯
+# CSS is the source of inconsistent UIs
 
-</Boom>
+</Center>
 
 ---
 
-<Boom>
+<Image src="./assets/doors.jpg" />
 
-## CSS is too expressive 👩‍🎨
+---
 
-</Boom>
+## Sources of inconsistent UIs
 
-<Notes>
-	Rudimentary abilities of HTML coupled with an incredibly powerful declarative
-	nature of CSS gives developers a false sense of simplicity when building
-	things for the Web.
-</Notes>
+- Color & Typography → Custom CSS
+- Spacing & Layout → Custom CSS
+
+---
+
+<SplitWithHeading>
+
+## Custom CSS
+
+```css
+.description {
+	margin-bottom: 20px;
+	font-size: 16px;
+	color: #c9b8b9;
+}
+```
+
+```css
+.count {
+	margin-left: 0.75em;
+	font-size: 14px;
+	opacity: 0.5;
+	color: #fc9;
+}
+```
+
+</SplitWithHeading>
 
 ---
 
@@ -188,25 +183,210 @@ export { theme } from './theme';
 
 ---
 
-<Image src="./assets/doors.jpg" />
+<Boom>
+
+# CSS is too expressive 👩‍🎨
+
+</Boom>
 
 ---
 
-## Sources of inconsistencies
+<Primary>
 
-- Color
-- Typography
-- Spacing
+# Design tokens
+
+</Primary>
+
+---
+
+<Center>
+	<Image src="./assets/dls-foundation.png" size="contain" />
+</Center>
 
 ---
 
-# Primitives
+<Center>
+	<a href="https://marvelapp.com/styleguide/design/color-scheme">
+		<img src="../assets/design-tokens-colors.png" alt="Design tokens: colors" />
+	</a>
+</Center>
 
 ---
+
+<Center>
+	<a href="https://cloudflare.github.io/cf-ui/#cf-design-gradients">
+		<img
+			src="../assets/design-tokens-gradients.png"
+			alt="Design tokens: gradients"
+		/>
+	</a>
+</Center>
+
+---
+
+<Center>
+	<a href="https://vueds.com/example/#!/Design%20Tokens">
+		<img
+			src="../assets/design-tokens-fonts-spacing.png"
+			alt="Design tokens: fonts and spacing"
+		/>
+	</a>
+</Center>
+
+---
+
+<Center>
+	<a href="https://www.lightningdesignsystem.com/design-tokens/">
+		<img src="../assets/design-tokens-misc.png" alt="Design tokens" />
+	</a>
+</Center>
+
+---
+
+<Boom>
+
+> Design tokens are everything you use more than once in your styles
+
+</Boom>
+
+---
+
+<SplitWithHeading>
+
+## Custom properties as design tokens
+
+```css
+.description {
+	margin-bottom: var(--spacing--3);
+	font-size: var(--fontSize--base);
+	color: var(--color-grey);
+}
+```
+
+```css
+.count {
+	margin-left: var(--spacing--2);
+	font-size: var(--fontSize--small);
+	color: var(--color--light);
+}
+```
+
+</SplitWithHeading>
+
+---
+
+<SplitWithHeading>
+
+## Bad token combinations
+
+<div style={{width: "40vw"}}>
+
+```css
+.cant__read_this {
+	font-size: var(--fontSize--x-small);
+	color: var(--color--light);
+}
+```
+
+</div>
+
+<div style={{ width: '40vw' }}>
+	<div style={{ fontSize: '2vmax', color: '#eee' }}>Can you read me?!</div>
+</div>
+
+</SplitWithHeading>
+
+---
+
+## Custom properties as design tokens
+
+- improved code reusabilty
+- but still allow bad combinations
+- require writing CSS
+- hard to enforce their usage
+
+---
+
+<Secondary>
+
+## What's the problem with HTML?
+
+</Secondary>
+
+---
+
+<Stack gridGap={5} p={4} gridTemplateColumns="auto 1fr auto">
+	<span>Text, Heading</span>
+	<Code language="html">{`<h1>Heading</h1>
+<p>Text</p>`}</Code>
+	<span>️😊</span>
+	<span>Link</span>
+	<Code language="html">{`<a href="#">Link</a>`}</Code>
+	<span>🤔</span>
+	<span>Button</span>
+	<Code language="html">
+		{`<button>Button</button>
+<input type="button">Button</input>`}
+	</Code>
+	<span>🙄</span>
+	<span>Dropdown</span>
+	<Code language="html">{dropdown.html}</Code>
+	<span>😩</span>
+</Stack>
+
+---
+
+<Image src="./assets/bootstrap-dropdown.png" size="contain" />
+
+<ThatGuy />
+
+---
+
+<Boom>
+
+> HTML was designed for documents, not applications!
+
+</Boom>
+
+---
+
+<Secondary>
+
+What should we do?
+
+</Secondary>
+
+---
+
+<Boom>
+
+# Stop writing HTML & CSS!
+
+</Boom>
+
+---
+
+<Primary>
+
+# Primitive components
+
+</Primary>
+
+---
+
+<Image src="../assets/legos.jpg" />
+
+---
+
+<Boom>
 
 > Primitives are the building blocks of your user interface.
 
+</Boom>
+
 ---
+
+<Image src="../assets/legos-assembled.jpg" />
 
 ---
 
@@ -222,6 +402,12 @@ export { theme } from './theme';
 
 ---
 
+<Boom>
+
+> The way your component library is built will inevitably affect the quality of the application code.
+
+</Boom>
+
 ---
 
 ## HTML vs Primitives
@@ -236,26 +422,46 @@ export { theme } from './theme';
 
 ---
 
-# Design Tokens
+<SplitWithHeading>
+
+## HTML vs Primitives
+
+- 😭 CSS acts as an API
+- 😱 HTML can be anything
+- 🤯 CSS = expect unexpected
+- 🤦‍♂️ Reusability
+
+* 🤫 CSS isn’t the API
+* ♿️ HTML isn’t the API
+* 🤝 Strict contract via propsTypes
+* 🙌 Reusability
+
+</SplitWithHeading>
 
 ---
 
-## Typography
+<Primary>
 
-## Color
+# Primitives for the layout & whitespace
 
-## Spacing
-
----
-
-<Image src="./assets/dls-foundation.png" size="contain" />
+</Primary>
 
 ---
 
-### How are we building UIs with primitives and patterns
+### Building UIs with primitives & patterns
 
-1. Get a static mockup from a designer
+1. Get a ~~static mockup~~ wireframe from a designer
 1. Get data from API endpoint
 1. Assembly UI using primitives or re-use a pattern.
 1. ...
 1. Profit
+
+---
+
+<Image src="../assets/napkin.jpg" size="contain" />
+
+---
+
+<Image src="../assets/wireframe.jpg" size="contain" />
+
+---
