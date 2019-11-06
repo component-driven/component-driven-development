@@ -10,6 +10,7 @@ export { default as Appear } from './components/Appear';
 // export { default as Box } from './components/Box';
 // export { default as Bar } from './components/Bar';
 export { default as Code } from './components/Code';
+export { default as LiveCode } from './components/LiveCode';
 // export { default as Delay } from './components/Delay';
 // export { default as Flex } from './components/Flex';
 // export { default as Heading } from './components/Heading';

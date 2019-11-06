@@ -7,6 +7,8 @@ import {
 	Cover,
 	Image,
 	Notes,
+	LiveCode,
+	List,
 	Primary,
 	Secondary,
 	SplitWithHeading,
@@ -387,6 +389,90 @@ What should we do?
 ---
 
 <Image src="../assets/legos-assembled.jpg" />
+
+---
+
+## Text styles
+
+<ul>
+	<li>Normal text</li>
+	<li style={{ color: '#979797', fontSize: '80%' }}>Secondary text</li>
+	<li style={{ color: '#930' }}>Error</li>
+	<li>etc.</li>
+</ul>
+
+---
+
+## API design:
+
+- Text style (`color`, `fontSize`, `letterSpacing`, etc.)
+- Custom HTML element (`p`, `span`, `label`)
+- Alignment (`left`, `center`, `right`, ~~`justify`~~)
+- Whitespace (`margin`)
+
+---
+
+<Boom>
+
+# Minimal number of styles for most of your use cases
+
+</Boom>
+
+---
+
+## API design: variants
+
+- `<Text primary>` 😀
+- `<Text secondary>` 😀
+- `<Text primary secondary>` 🤯
+
+---
+
+## API design: variants
+
+- `<Text variant="primary">` 😀
+- `<Text variant="secondary">` 😀
+- ~~`<Text variant="primary secondary">`~~ 😀
+
+---
+
+<Boom>
+
+> Variants make impossible states impossible
+
+</Boom>
+
+---
+
+## API design: rigidity vs flexibility
+
+- `<Text variant="error">` 😀
+- `<Text color="red" size="xs" >` 😀
+
+---
+
+## API design: custom HTML element
+
+- `<Text>` → `<p>` 😀
+- `<Text inline>` → `<span>` 😐
+- `<Text label>` → `<label>` 😭
+- `<Text as="label">` → `<label>` 😀
+
+---
+
+<LiveCode
+	title="Example"
+	code={require('!raw-loader!./code/Text.js').default}
+	size="large"
+/>
+
+---
+
+<LiveCode
+	title="Example"
+	code={require('!raw-loader!./code/Text2.js').default}
+	size="large"
+/>
 
 ---
 

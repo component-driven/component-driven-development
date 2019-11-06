@@ -4,10 +4,11 @@ import { Prism } from 'react-syntax-highlighter';
 import codeTheme from '../codeTheme';
 
 function Code({ children, ...props }) {
+	console.log(children);
 	if (typeof children !== 'string') {
 		return (
 			<pre style={{ color: 'firebrick' }}>
-				Code: `code` prop must be a string
+				Code: `children` must be a string
 			</pre>
 		);
 	}
