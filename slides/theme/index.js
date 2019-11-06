@@ -1,4 +1,4 @@
-export { Head, Image } from 'mdx-deck';
+export { Head, Image, Notes } from 'mdx-deck';
 export { Invert, Split, SplitRight, FullScreenCode } from 'mdx-deck/layouts';
 export { default as Center } from './layouts/Center';
 export { default as Cover } from './layouts/Cover';

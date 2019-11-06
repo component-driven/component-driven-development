@@ -16,14 +16,12 @@ const animation = keyframes`
 	}
 `;
 
-const Root = styled(Invert)(
+const Boom = styled(Invert)(
 	css(theme => ({
 		background: `linear-gradient(270deg, ${theme.colors.primary}, ${theme.colors.secondary})`,
 		backgroundSize: '400% 400%',
 		animation: `${animation} 10s infinite`,
 	}))
 );
-
-const Boom = ({ children }) => <Root>{children}</Root>;
 
 export default Boom;

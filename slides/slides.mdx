@@ -1,11 +1,22 @@
 import { jsx, Flex, Box } from 'theme-ui';
-import { Cover, Primary, Secondary, Boom, Appear, Image, ThatGuy, Code } from './theme';
+import {
+	Appear,
+	Center,
+	Code,
+	Cover,
+	Primary,
+	Secondary,
+	Boom,
+	Image,
+	ThatGuy,
+	Notes,
+} from './theme';
 import { Prism } from 'react-syntax-highlighter';
 import TweetEmbed from 'react-tweet-embed';
 import Stack from 'stack-styled';
 import * as dropdown from './code/dropdown.js';
 
-export {theme} from './theme'
+export { theme } from './theme';
 
 <Cover author="Andrey Okonetchnikov">
 
@@ -91,7 +102,11 @@ export {theme} from './theme'
 
 ---
 
+<Secondary>
+
 ## What's the problem with HTML?
+
+</Secondary>
 
 ---
 
@@ -124,33 +139,64 @@ export {theme} from './theme'
 
 ---
 
+<Secondary>
+
 ## What's the problem with CSS?
 
+</Secondary>
+
 ---
 
+<Center>
 <TweetEmbed id="1038073603311448064" />
-
 <ThatGuy />
+</Center>
 
 ---
+
+<Boom>
 
 ## CSS is hard 🤯
 
+</Boom>
+
 ---
+
+<Boom>
 
 ## CSS is too expressive 👩‍🎨
 
+</Boom>
+
+<Notes>
+	Rudimentary abilities of HTML coupled with an incredibly powerful declarative
+	nature of CSS gives developers a false sense of simplicity when building
+	things for the Web.
+</Notes>
+
 ---
 
-<Image src="./assets/too-many-buttons.jpg" size="contain">
-
-# ∞
-
-</Image>
+<Image src="./assets/too-many-buttons.jpg" size="contain" />
 
 ---
 
-> Rudimentary abilities of HTML coupled with an incredibly powerful declarative nature of CSS gives developers a false sense of simplicity when building things for the Web.
+<Image src="./assets/too-many-buttons-2.jpg" size="contain" />
+
+---
+
+<Image src="./assets/text.png" size="contain" />
+
+---
+
+<Image src="./assets/doors.jpg" />
+
+---
+
+## Sources of inconsistencies
+
+- Color
+- Typography
+- Spacing
 
 ---
 
@@ -162,14 +208,14 @@ export {theme} from './theme'
 
 ---
 
-
-
 ---
 
 ## `<button> != <Button>`
+
 <Appear>
 
 ## `<p> != <Text>`
+
 ## `<h1> != <Heading>`
 
 </Appear>
@@ -195,7 +241,9 @@ export {theme} from './theme'
 ---
 
 ## Typography
+
 ## Color
+
 ## Spacing
 
 ---

@@ -6,7 +6,7 @@ function ThatGuy(props) {
 	return (
 		<Appear>
 		<Box sx={{ position: 'fixed', top: 0, right: 0, transform: 'translate(45%, 20%)' }} {...props}>
-			<Image src="../images/that-guy.png" size="33%" />
+			<Image src="../assets/that-guy.png" size="33%" />
 		</Box>
 		</Appear>
 	);

@@ -22,7 +22,7 @@ import { OL, UL } from './index';
 export default {
 	// aspectRatio: 9 / 16,
 	googleFont:
-		'https://fonts.googleapis.com/css?family=Fira+Mono:400,700|PT+Sans:400,700&amp;subset=latin-ext',
+		'https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Work+Sans:400,700&amp;subset=latin-ext',
 	font,
 	monospace,
 	fontSizes,

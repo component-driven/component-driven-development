@@ -2,7 +2,6 @@
 import { jsx } from 'theme-ui';
 import Flex from '../components/Flex';
 import Box from '../components/Box';
-// import Wayfair from './Wayfair';
 
 const Cover = ({ author, children }) => (
 	<Flex
