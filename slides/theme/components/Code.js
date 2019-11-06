@@ -4,7 +4,6 @@ import { Prism } from 'react-syntax-highlighter';
 import codeTheme from '../codeTheme';
 
 function Code({ children, ...props }) {
-	console.log(props);
 	if (typeof children !== 'string') {
 		return (
 			<pre style={{ color: 'firebrick' }}>
