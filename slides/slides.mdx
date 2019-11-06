@@ -1,0 +1,213 @@
+import { jsx, Flex, Box } from 'theme-ui';
+import { Cover, Primary, Secondary, Boom, Appear, Image, ThatGuy, Code } from './theme';
+import { Prism } from 'react-syntax-highlighter';
+import TweetEmbed from 'react-tweet-embed';
+import Stack from 'stack-styled';
+import * as dropdown from './code/dropdown.js';
+
+export {theme} from './theme'
+
+<Cover author="Andrey Okonetchnikov">
+
+# Resilient Component Libraries with React
+
+</Cover>
+
+---
+
+<Primary>
+
+## Why building your own component library?
+
+</Primary>
+
+---
+
+### How are we have been building UIs
+
+1. Get a static mockup from a designer
+1. Write HTML markup that represents the mockup
+1. Write CSS and connect with HTML using classes
+1. "Sprinkle" JavaScript using classes to add interactivity
+1. Hand off to a backend developer
+1. Replace HTML with PHP, Ruby, Java, ...
+1. ...
+1. Profit
+
+---
+
+### How are we building UIs with React
+
+1. Get a static mockup from a designer
+1. Get data from API endpoint
+1. Render data in JSX using HTML
+1. Write CSS and connect with JSX using `className`
+1. ...
+1. Profit
+
+---
+
+<Secondary>
+
+> We are still doing static mockups and coding in HTML and CSS
+
+</Secondary>
+
+---
+
+<Secondary>
+
+# What's the problem with static mockups?
+
+</Secondary>
+
+---
+
+<Image src="./assets/dribbble1.png" size="contain" />
+
+---
+
+<Image src="./assets/dribbble2.png" size="contain" />
+
+---
+
+## Static mockups...
+
+- not covering all possible states
+- not covering all possible resolutions
+- losing lots of design knowledge during ~~translation~~ hand-off
+
+---
+
+<Boom>
+
+## Mockups are _static_
+
+## Applications are _dynamic_
+
+<ThatGuy />
+
+</Boom>
+
+---
+
+## What's the problem with HTML?
+
+---
+
+<Stack gridGap={4} gridTemplateColumns="auto 1fr auto" alignItems="center">
+	<p>Text, Heading</p>
+	<Code language="html">{`<h1>Heading</h1>
+<p>Text</p>`}</Code>
+	<p>️😊</p>
+	<p>Link</p>
+	<Code language="html">{`<a href="#">Link</a>`}</Code>
+	<p>🤔</p>
+	<p>Button</p>
+	<Code language="html">
+		{`<button>Button</button>
+<input type="button">Button</input>`}
+	</Code>
+	<p>🙄</p>
+	<p>Dropdown</p>
+	<Code language="html" sx={{ maxHeight: 200 }}>
+		{dropdown.html}
+	</Code>
+	<p>😩</p>
+</Stack>
+
+---
+
+<Image src="./assets/bootstrap-dropdown.png" size="contain" />
+
+<ThatGuy />
+
+---
+
+## What's the problem with CSS?
+
+---
+
+<TweetEmbed id="1038073603311448064" />
+
+<ThatGuy />
+
+---
+
+## CSS is hard 🤯
+
+---
+
+## CSS is too expressive 👩‍🎨
+
+---
+
+<Image src="./assets/too-many-buttons.jpg" size="contain">
+
+# ∞
+
+</Image>
+
+---
+
+> Rudimentary abilities of HTML coupled with an incredibly powerful declarative nature of CSS gives developers a false sense of simplicity when building things for the Web.
+
+---
+
+# Primitives
+
+---
+
+> Primitives are the building blocks of your user interface.
+
+---
+
+
+
+---
+
+## `<button> != <Button>`
+<Appear>
+
+## `<p> != <Text>`
+## `<h1> != <Heading>`
+
+</Appear>
+
+---
+
+---
+
+## HTML vs Primitives
+
+<Stack gridGap={4} gridTemplateColumns="1fr 1fr">
+
+<Code language="html">{dropdown.html}</Code>
+
+<Code language="javascript">{dropdown.jsx}</Code>
+
+</Stack>
+
+---
+
+# Design Tokens
+
+---
+
+## Typography
+## Color
+## Spacing
+
+---
+
+<Image src="./assets/dls-foundation.png" size="contain" />
+
+---
+
+### How are we building UIs with primitives and patterns
+
+1. Get a static mockup from a designer
+1. Get data from API endpoint
+1. Assembly UI using primitives or re-use a pattern.
+1. ...
+1. Profit
