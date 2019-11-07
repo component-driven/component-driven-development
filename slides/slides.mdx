@@ -49,6 +49,12 @@ I design & develop user interfaces on the Web since 1999
 
 ---
 
+// TODO: Tell a story of this wireframe
+
+<Image src={require('file-loader!./assets/wireframe.jpg')} size="contain" />
+
+---
+
 ### How to build a UI
 
 1. Get a static mockup from a designer
@@ -121,14 +127,6 @@ Fast forward 20 years...
 ## Applications are **dynamic**
 
 </Boom>
-
----
-
-<Secondary>
-
-## Why building your own component library?
-
-</Secondary>
 
 ---
 
@@ -209,7 +207,7 @@ Fast forward 20 years...
 
 <SplitWithHeading>
 
-## HTML & CSS vs Primitives
+## HTML & CSS vs. Components
 
 <Code language="html">{dropdown.html}</Code>
 
@@ -273,33 +271,9 @@ const Dropdown = props => (
 
 ---
 
-<Boom>
-
-> Do not use verbs when naming components
-
-</Boom>
-
----
-
 ## Watch my talk
 
 // TODO
-
----
-
-<Secondary>
-
-## `Button > button`
-
-<Appear>
-
-## `Text > p`
-
-## `Heading > h1`
-
-</Appear>
-
-</Secondary>
 
 ---
 
@@ -400,6 +374,22 @@ const Dropdown = props => (
 
 ---
 
+<Secondary>
+
+What should we do?
+
+</Secondary>
+
+---
+
+<Boom>
+
+# Stop writing CSS!
+
+</Boom>
+
+---
+
 <Primary>
 
 # Design tokens
@@ -469,52 +459,11 @@ const Dropdown = props => (
 
 ---
 
-<SplitWithHeading>
-
-## Custom properties as design tokens
-
-```css
-.description {
-	margin-bottom: var(--spacing--3);
-	font-size: var(--fontSize--base);
-	color: var(--color-grey);
-}
-```
-
-```css
-.count {
-	margin-left: var(--spacing--2);
-	font-size: var(--fontSize--small);
-	color: var(--color--light);
-}
-```
-
-</SplitWithHeading>
+// TODO: scales, theme object, theme spec?
 
 ---
 
-## Custom properties as design tokens
-
-1. improve code reusabilty
-1. but still allow wrong combinations
-1. hard to enforce on scale
-1. require writing CSS
-
----
-
-<Secondary>
-
-What should we do?
-
-</Secondary>
-
----
-
-<Boom>
-
-# Stop writing CSS!
-
-</Boom>
+# How can we enforce usage of design tokens?
 
 ---
 
@@ -556,7 +505,10 @@ vs.
 
 <Center>
 
-<Code language="jsx" inline>{`<font face="base" size="3" color="red" />`}</Code>
+<Code
+	language="jsx"
+	inline
+>{`<font face="Arial" size="3" color="red" />`}</Code>
 
 vs.
 
@@ -970,11 +922,11 @@ Now let's compose primitives...
 
 ---
 
-<Boom>
+<Secondary>
 
-> The way your component library is built will inevitably affect the quality of the application code.
+# How could UI development look like?
 
-</Boom>
+</Secondary>
 
 ---
 
@@ -992,6 +944,12 @@ Now let's compose primitives...
 
 ---
 
-<Image src={require('file-loader!./assets/wireframe.jpg')} size="contain" />
+// TODO: Find the tweet by John Gold with the AI scanning drawing of wireframes
 
 ---
+
+<Primary>
+
+# Thank you and let components be with you!
+
+</Primary>
