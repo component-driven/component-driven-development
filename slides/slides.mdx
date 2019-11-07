@@ -12,6 +12,7 @@ import {
 	List,
 	Primary,
 	Secondary,
+	Split,
 	SplitWithHeading,
 	ThatGuy,
 } from './theme';
@@ -599,7 +600,7 @@ vs.
 
 ---
 
-## API:
+## API design
 
 - Text style (`color`, `fontSize`, `letterSpacing`, etc.)
 - Alignment (`left`, `center`, `right`, ~~`justify`~~)
@@ -691,7 +692,7 @@ vs.
 
 ---
 
-## API:
+## API design
 
 - Layout (`width`, `height`, `margin`, `padding`)
 - Colors (`background`, `color`)
@@ -717,7 +718,50 @@ vs.
 
 ---
 
+<Secondary>
+
 # Responsive design
+
+</Secondary>
+
+---
+
+<Center>
+
+**Prop per breakpoint** vs. **all props are responsive**
+
+</Center>
+
+---
+
+<Center>
+<Split>
+
+```jsx
+<Row>
+	<Col xs={12} md={6} lg={3}>
+		Pizza
+	</Col>
+</Row>
+```
+
+```jsx
+// breakpoints: [small, medium, large]
+<Box width={[1, 1 / 2, 1 / 4]} p={['sm', 'md', 'lg']}>
+	Pizza
+</Box>
+```
+
+</Split>
+</Center>
+
+---
+
+<LiveCode
+	title="Box"
+	code={require('!raw-loader!./code/responsive.js').default}
+	size="fullscreen"
+/>
 
 ---
 
@@ -837,6 +881,12 @@ Now let's compose primitives...
 ---
 
 <Demo src="https://viewar-developer-portal.viewar.now.sh/styleguide" />
+
+---
+
+# Implementation
+
+// TODO Intro to styled-system
 
 ---
 
