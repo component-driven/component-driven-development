@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { readableColor } from 'polished';
 import Box from '../../components/core/Box';
-import Stack from 'stack-styled';
+import Stack from '../../components/core/Stack';
 import copy from 'clipboard-copy';
 
 /*

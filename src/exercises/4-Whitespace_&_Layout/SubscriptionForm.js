@@ -1,8 +1,8 @@
 import React from 'react';
-import Stack from 'stack-styled';
-import Box from '../../../src/components/core/Box';
-import Button from '../../../src/components/core/Button';
-import Input from '../../../src/components/core/Input';
+import Stack from '../../components/core/Stack';
+import Box from '../../components/core/Box';
+import Button from '../../components/core/Button';
+import Input from '../../components/core/Input';
 
 const SubscriptionForm = ({
 	id,

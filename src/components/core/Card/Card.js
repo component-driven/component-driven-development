@@ -1,6 +1,6 @@
 import React from 'react';
 import Flex from '../Flex';
-import Stack from 'stack-styled';
+import Stack from '../../core/Stack';
 import { color, border } from 'styled-system';
 import styled from 'styled-components';
 import Macro from 'macro-components';
