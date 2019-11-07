@@ -283,6 +283,8 @@ const Dropdown = props => (
 
 ## Watch my talk
 
+// TODO
+
 ---
 
 <Secondary>
@@ -324,11 +326,11 @@ const Dropdown = props => (
 
 ---
 
-<Center>
+<Boom>
 
 # CSS is the source of inconsistent UIs
 
-</Center>
+</Boom>
 
 ---
 
@@ -338,8 +340,8 @@ const Dropdown = props => (
 
 ## Sources of inconsistent UIs
 
-- Color & Typography → Custom CSS
-- Spacing & Layout → Custom CSS
+- Color & Typography
+- Spacing & Layout
 
 ---
 
@@ -365,6 +367,10 @@ const Dropdown = props => (
 ```
 
 </SplitWithHeading>
+
+---
+
+// TODO: Add video of long CSS file
 
 ---
 
@@ -523,7 +529,11 @@ What should we do?
 
 <Center>
 
-<Code language="jsx">{`<Button onClick={handleClick} />`}</Code>
+<Code language="jsx" inline>{`<button onclick={handleClick} />`}</Code>
+
+vs.
+
+<Code language="jsx" inline>{`<Button onClick={handleClick} />`}</Code>
 
 </Center>
 
@@ -531,7 +541,14 @@ What should we do?
 
 <Center>
 
-<Code language="jsx">{`<Text fontSize="lg" color="danger" />`}</Code>
+<Code language="jsx" inline>{`<font face="base" size="3" color="red" />`}</Code>
+
+vs.
+
+<Code
+	language="jsx"
+	inline
+>{`<Text fontFace="base" fontSize={3} color="danger" />`}</Code>
 
 </Center>
 
@@ -539,20 +556,46 @@ What should we do?
 
 <Primary>
 
-# Text Primitives
+# Basic Primitives
 
 </Primary>
 
 ---
 
-## Text styles
+<Secondary>
+
+# Text
+
+</Secondary>
+
+---
+
+<Image src="./assets/text.png" size="contain" />
+
+---
+
+## Necessary text styles
 
 <ul>
+	<li>
+		<h1 style={{ textAlign: 'left' }}>Heading 1</h1>
+	</li>
+	<li>
+		<h3 style={{ textAlign: 'left' }}>Heading 2</h3>
+	</li>
 	<li>Normal text</li>
 	<li style={{ color: '#979797', fontSize: '80%' }}>Secondary text</li>
 	<li style={{ color: '#930' }}>Error</li>
 	<li>etc.</li>
 </ul>
+
+---
+
+<Boom>
+
+> UI inventory helps with defining what's necessary
+
+</Boom>
 
 ---
 
@@ -586,11 +629,6 @@ What should we do?
 - `<Text variant="primary">` 😀
 - `<Text variant="secondary">` 😀
 - ~~`<Text variant="primary secondary">`~~ 🚫
-
----
-
-## API: boolean vs variant
-
 - `<Button variant="primary" disabled>` 😀
 - `<Button variant="secondary" disabled>` 😀
 
@@ -637,22 +675,6 @@ What should we do?
 
 ---
 
-## API: Composition
-
-- `<Heading>` → `<Text variant="heading" as="h1">`
-- `<Label>` → `<Text variant="label" as="label">`
-- `<Error>` → `<Text color="error" as="p">`
-
----
-
-<Boom>
-
-> Primitives are meant to be composed
-
-</Boom>
-
----
-
 <LiveCode
 	title="Example"
 	code={require('!raw-loader!./code/Text.js').default}
@@ -661,9 +683,55 @@ What should we do?
 
 ---
 
+<Secondary>
+
+# Box
+
+</Secondary>
+
+---
+
+## API:
+
+- Layout (`width`, `height`, `margin`, `padding`)
+- Colors (`background`, `color`)
+- Borders (`border`, `border-radius`),
+- Shadows (`box-shadow`),
+- HTML elements (`div`, `span`, `section`, ...)
+
+---
+
 <LiveCode
-	title="Example"
-	code={require('!raw-loader!./code/Text2.js').default}
+	title="Box"
+	code={require('!raw-loader!./code/Box.js').default}
+	size="fullscreen"
+/>
+
+---
+
+<Boom>
+
+> Model API based on CSS knowledge
+
+</Boom>
+
+---
+
+# Responsive design
+
+---
+
+<Center>
+
+Now let's compose primitives...
+
+</Center>
+
+---
+
+<LiveCode
+	title="Box"
+	code={require('!raw-loader!./code/Box-Text.js').default}
 	size="fullscreen"
 />
 
@@ -682,31 +750,6 @@ What should we do?
 > Primitives to control space around their children
 
 </Boom>
-
----
-
-<Secondary>
-
-# Box
-
-</Secondary>
-
----
-
-## API:
-
-- Layout (`width`, `height`, `margin`, `padding`)
-- Colors (`bacground`, `color`)
-- Borders (`border`),
-- HTML elements (`p`, `span`, `label`)
-
----
-
-<LiveCode
-	title="Box"
-	code={require('!raw-loader!./code/Box.js').default}
-	size="fullscreen"
-/>
 
 ---
 
@@ -743,6 +786,8 @@ What should we do?
 
 # Grid
 
+// TODO
+
 </Secondary>
 
 ---
@@ -751,6 +796,8 @@ What should we do?
 
 # Stack
 
+// TODO
+
 </Secondary>
 
 ---
@@ -758,6 +805,8 @@ What should we do?
 <Secondary>
 
 # Group
+
+// TODO
 
 </Secondary>
 
@@ -793,6 +842,30 @@ What should we do?
 
 <Primary>
 
+# Composition
+
+</Primary>
+
+---
+
+## API: Composition
+
+- `<Heading>` → `<Text variant="heading" as="h1">`
+- `<Label>` → `<Text variant="label" as="label">`
+- `<Error>` → `<Text color="error" as="p">`
+
+---
+
+<Boom>
+
+> Primitives are meant to be composed
+
+</Boom>
+
+---
+
+<Primary>
+
 # Recap
 
 </Primary>
@@ -801,12 +874,21 @@ What should we do?
 
 # Recap
 
+- Components is a better way of writing HTML
+- Components as a common UI language
+- Do not use verbs when naming components
+- Use design tokens to reduce choice
+
 - Start with primitive components (Text, Box)
+- Define a minimal set of props for most of your use cases
+- Variants make impossible states impossible
+- Do not make any assumptions about where your components are going to be used
 - Use layout primitives to control the white space (Flex, Grid, Stack, Group, ...)
 - Components should not have any whitespace around them
 - Make primitives work with your design system, not just any values
 - Embrace CSS knowledge when designing primitives
-- Do not make any assumptions about where your components are going to be used
+
+- Compose complex component using primitives, not HTML & CSS
 
 ---
 
