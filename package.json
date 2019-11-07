@@ -37,7 +37,7 @@
 		"preapp": "npm run validate",
 		"app": "react-scripts start",
 		"prebuild": "npm run validate",
-		"build": "react-scripts build && npm run styleguide:build",
+		"build": "react-scripts build && npm run styleguide:build && npm run slides:build",
 		"pretest": "eslint src",
 		"test": "cross-env CI=true react-scripts test --env=jsdom",
 		"test:watch": "react-scripts test --env=jsdom",
