@@ -32,7 +32,7 @@
 	"scripts": {
 		"validate": "node scripts/setup.js",
 		"prestart": "npm run validate",
-		"start": "run-p exercise styleguide",
+		"start": "run-p app exercise styleguide",
 		"preapp": "npm run validate",
 		"app": "react-scripts start",
 		"prebuild": "npm run validate",
