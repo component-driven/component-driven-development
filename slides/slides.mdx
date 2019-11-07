@@ -49,10 +49,6 @@ I design & develop user interfaces on the Web since 1999
 
 ---
 
-<Image src="../assets/wireframe.jpg" size="contain" />
-
----
-
 ### How to build a UI
 
 1. Get a static mockup from a designer
@@ -101,11 +97,11 @@ Fast forward 20 years...
 
 ---
 
-<Image src="./assets/dribbble1.png" size="contain" />
+<Image src={require('file-loader!./assets/dribbble1.png')} size="contain" />
 
 ---
 
-<Image src="./assets/dribbble2.png" size="contain" />
+<Image src={require('file-loader!./assets/dribbble2.png')} size="contain" />
 
 ---
 
@@ -173,7 +169,10 @@ Fast forward 20 years...
 
 ---
 
-<Image src="./assets/bootstrap-dropdown.png" size="contain" />
+<Image
+	src={require('file-loader!./assets/bootstrap-dropdown.png')}
+	size="contain"
+/>
 
 <ThatGuy />
 
@@ -335,7 +334,7 @@ const Dropdown = props => (
 
 ---
 
-<Image src="./assets/doors.jpg" />
+<Image src={require('file-loader!./assets/doors.jpg')} />
 
 ---
 
@@ -375,15 +374,21 @@ const Dropdown = props => (
 
 ---
 
-<Image src="./assets/too-many-buttons.jpg" size="contain" />
+<Image
+	src={require('file-loader!./assets/too-many-buttons.jpg')}
+	size="contain"
+/>
 
 ---
 
-<Image src="./assets/too-many-buttons-2.jpg" size="contain" />
+<Image
+	src={require('file-loader!./assets/too-many-buttons-2.jpg')}
+	size="contain"
+/>
 
 ---
 
-<Image src="./assets/text.png" size="contain" />
+<Image src={require('file-loader!./assets/text.png')} size="contain" />
 
 ---
 
@@ -404,14 +409,20 @@ const Dropdown = props => (
 ---
 
 <Center>
-	<Image src="./assets/dls-foundation.png" size="contain" />
+	<Image
+		src={require('file-loader!./assets/dls-foundation.png')}
+		size="contain"
+	/>
 </Center>
 
 ---
 
 <Center>
 	<a href="https://marvelapp.com/styleguide/design/color-scheme">
-		<img src="../assets/design-tokens-colors.png" alt="Design tokens: colors" />
+		<img
+			src={require('file-loader!./assets/design-tokens-colors.png')}
+			alt="Design tokens: colors"
+		/>
 	</a>
 </Center>
 
@@ -420,7 +431,7 @@ const Dropdown = props => (
 <Center>
 	<a href="https://cloudflare.github.io/cf-ui/#cf-design-gradients">
 		<img
-			src="../assets/design-tokens-gradients.png"
+			src={require('file-loader!./assets/design-tokens-gradients.png')}
 			alt="Design tokens: gradients"
 		/>
 	</a>
@@ -431,7 +442,7 @@ const Dropdown = props => (
 <Center>
 	<a href="https://vueds.com/example/#!/Design%20Tokens">
 		<img
-			src="../assets/design-tokens-fonts-spacing.png"
+			src={require('file-loader!./assets/design-tokens-fonts-spacing.png')}
 			alt="Design tokens: fonts and spacing"
 		/>
 	</a>
@@ -441,7 +452,10 @@ const Dropdown = props => (
 
 <Center>
 	<a href="https://www.lightningdesignsystem.com/design-tokens/">
-		<img src="../assets/design-tokens-misc.png" alt="Design tokens" />
+		<img
+			src={require('file-loader!./assets/design-tokens-misc.png')}
+			alt="Design tokens"
+		/>
 	</a>
 </Center>
 
@@ -512,7 +526,7 @@ What should we do?
 
 ---
 
-<Image src="../assets/legos.jpg" />
+<Image src={require('file-loader!./assets/legos.jpg')} />
 
 ---
 
@@ -524,7 +538,7 @@ What should we do?
 
 ---
 
-<Image src="../assets/legos-assembled.jpg" />
+<Image src={require('file-loader!./assets/legos-assembled.jpg')} />
 
 ---
 
@@ -571,7 +585,7 @@ vs.
 
 ---
 
-<Image src="./assets/text.png" size="contain" />
+<Image src={require('file-loader!./assets/text.png')} size="contain" />
 
 ---
 
@@ -974,10 +988,10 @@ Now let's compose primitives...
 
 ---
 
-<Image src="../assets/napkin.jpg" size="contain" />
+<Image src={require('file-loader!./assets/napkin.jpg')} size="contain" />
 
 ---
 
-<Image src="../assets/wireframe.jpg" size="contain" />
+<Image src={require('file-loader!./assets/wireframe.jpg')} size="contain" />
 
 ---
