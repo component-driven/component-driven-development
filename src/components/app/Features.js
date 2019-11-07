@@ -1,5 +1,5 @@
 import React from 'react';
-import Stack from 'stack-styled';
+import Stack from '../core/Stack';
 import VisuallyHidden from '../core/VisuallyHidden';
 import Feature from '../patterns/Feature';
 import SvgFeatureDuck from './images/SvgFeatureDuck';

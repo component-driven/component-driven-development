@@ -1,5 +1,5 @@
 import React from 'react';
-import Stack from 'stack-styled';
+import Stack from '../core/Stack';
 import Box from '../core/Box';
 import Flex from '../core/Flex';
 import Link from '../core/Link';

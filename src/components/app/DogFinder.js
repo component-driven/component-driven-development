@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from 'stack-styled';
+import Stack from '../core/Stack';
 import Box from '../core/Box';
 import Flex from '../core/Flex';
 import Text from '../core/Text';
