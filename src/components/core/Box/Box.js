@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { space, color, layout, flexbox } from 'styled-system';
+import { space, color, layout, flexbox, grid } from 'styled-system';
 import propTypes from '@styled-system/prop-types';
 
 const Box = styled('div')(
@@ -9,7 +9,8 @@ const Box = styled('div')(
 	space,
 	color,
 	layout,
-	flexbox
+	flexbox,
+	grid
 );
 
 Box.propTypes = {
@@ -17,6 +18,7 @@ Box.propTypes = {
 	...propTypes.color,
 	...propTypes.layout,
 	...propTypes.flexbox,
+	...propTypes.grid,
 };
 
 /** @component */
