@@ -1,5 +1,5 @@
 import React from 'react';
-import { Invert } from 'mdx-deck/layouts';
+import { Invert } from '../';
 
 const Secondary = props => <Invert bg="secondary" {...props} />;
 
