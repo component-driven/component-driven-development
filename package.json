@@ -20,6 +20,7 @@
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
 		"react-helmet": "^5.2.1",
+		"react-hotkeys-hook": "^1.5.3",
 		"react-modal": "^3.11.1",
 		"react-scripts": "2.1.8",
 		"react-transition-group": "^4.3.0",
