@@ -1,13 +1,25 @@
 /* @jsx jsx */
 import { jsx, Box } from 'theme-ui';
-import { Appear, Image } from 'mdx-deck';
+import { Appear } from 'mdx-deck';
 
 function ThatGuy(props) {
 	return (
 		<Appear>
-		<Box sx={{ position: 'fixed', top: 0, right: 0, transform: 'translate(45%, 20%)' }} {...props}>
-			<Image src="../assets/that-guy.png" size="33%" />
-		</Box>
+			<Box
+				sx={{
+					position: 'absolute',
+					top: "100%",
+					right: 0,
+					border: '1px solid',
+					transform: 'translate(0%, -100%)',
+				}}
+				{...props}
+			>
+				<img
+					src={require('file-loader!../../assets/that-guy.png')}
+					alt="That guy"
+				/>
+			</Box>
 		</Appear>
 	);
 }
