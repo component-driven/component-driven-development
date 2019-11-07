@@ -10,7 +10,6 @@ function ThatGuy(props) {
 					position: 'absolute',
 					top: "100%",
 					right: 0,
-					border: '1px solid',
 					transform: 'translate(0%, -100%)',
 				}}
 				{...props}
