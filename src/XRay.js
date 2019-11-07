@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { useHotkeys } from 'react-hotkeys-hook';
 import Box from './components/core/Box';
 import Flex from './components/core/Flex';
-import Stack from 'stack-styled';
+import Stack from './components/core/Stack';
 
 const flexClassName = `${Flex}`.replace('.', '');
 
