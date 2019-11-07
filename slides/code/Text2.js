@@ -1,4 +1,4 @@
-<>
+<ThemeProvider theme={theme}>
 	<Heading size="xl" as="h2">
 		Saluki
 	</Heading>
@@ -13,4 +13,4 @@
 	<Text as="small" variant="secondary">
 		Don’t leave any food on a table when saluki is around.
 	</Text>
-</>;
+</ThemeProvider>;

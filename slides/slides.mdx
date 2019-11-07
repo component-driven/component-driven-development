@@ -29,15 +29,29 @@ export { theme } from './theme';
 
 ---
 
-<Primary>
+<Center>
 
-## Why building your own component library?
+# My name is Andrey
 
-</Primary>
+I design & develop user interfaces on the Web since 1999
+
+</Center>
 
 ---
 
-### How are we have been building UIs
+<Secondary>
+
+# User Interface Design & Development
+
+</Secondary>
+
+---
+
+<Image src="../assets/wireframe.jpg" size="contain" />
+
+---
+
+### How to build a UI
 
 1. Get a static mockup from a designer
 1. Write HTML markup that represents the mockup
@@ -50,7 +64,15 @@ export { theme } from './theme';
 
 ---
 
-### How are we building UIs with React
+<Center>
+
+Fast forward 20 years...
+
+</Center>
+
+---
+
+### How to build a UI with React
 
 1. Get a static mockup from a designer
 1. Get data from API endpoint
@@ -63,7 +85,7 @@ export { theme } from './theme';
 
 <Secondary>
 
-> We are still drawing **static mockups** and writing **HTML & CSS**
+> Designers are still drawing **static mockups** and developers are writing **HTML & CSS**
 
 </Secondary>
 
@@ -96,13 +118,185 @@ export { theme } from './theme';
 
 <Boom>
 
-## Mockups are _static_
+## Mockups are **static**
 
-## Applications are _dynamic_
+## Applications are **dynamic**
+
+</Boom>
+
+---
+
+<Secondary>
+
+## Why building your own component library?
+
+</Secondary>
+
+---
+
+<Secondary>
+
+## What's the problem with HTML?
+
+</Secondary>
+
+---
+
+<Boom>
+
+> HTML was designed for documents, not applications!
+
+</Boom>
+
+---
+
+<Stack gridGap={5} p={4} gridTemplateColumns="auto 1fr auto">
+	<span>Text, Heading</span>
+	<Code language="html">{`<h1>Heading</h1>
+<p>Text</p>`}</Code>
+	<span>️😊</span>
+	<span>Link</span>
+	<Code language="html">{`<a href="#">Link</a>`}</Code>
+	<span>🤔</span>
+	<span>Button</span>
+	<Code language="html">
+		{`<button>Button</button>
+<input type="button">Button</input>`}
+	</Code>
+	<span>🙄</span>
+	<span>Dropdown</span>
+	<Code language="html">{dropdown.html}</Code>
+	<span>😩</span>
+</Stack>
+
+---
+
+<Image src="./assets/bootstrap-dropdown.png" size="contain" />
 
 <ThatGuy />
 
+---
+
+<Secondary>
+
+# Is there a better way?
+
+</Secondary>
+
+---
+
+<Boom>
+
+> Components is a better way of writing HTML
+
 </Boom>
+
+---
+
+<Center>
+
+# Components
+
+- `<Button>` → `<button>`
+- `<Input>` → `<input type="text">`
+- `<Checkbox>` → `<input type="checkbox">`
+- `<Dropdown>` → ~~`<select>`~~ `<div class="dropdown">...`
+
+</Center>
+
+---
+
+<SplitWithHeading>
+
+## HTML & CSS vs Primitives
+
+<Code language="html">{dropdown.html}</Code>
+
+<Code language="jsx">{dropdown.jsx}</Code>
+
+</SplitWithHeading>
+
+---
+
+<SplitWithHeading>
+
+## Components can change over time
+
+```jsx harmony
+const Dropdown = props => (
+	<select>
+		{props.options.map(option => (
+			<option>{option}</option>
+		))}
+	</select>
+);
+```
+
+```jsx harmony
+const Dropdown = props => (
+	<div className="dropdown">
+		<button class="btn btn-dropdown">{props.button}</button>
+		<ul>
+			{props.options.map(option => (
+				<li>{option}</li>
+			))}
+		</ul>
+	</div>
+);
+```
+
+</SplitWithHeading>
+
+---
+
+# Components as a common language
+
+<Stack gridGap={5} p={4} gridTemplateColumns="1fr 1fr">
+	<span>A button</span>
+	<Code language="jsx">{`<Button>`}</Code>
+	<span>A primary button</span>
+	<Code language="jsx">{`<Button primary>`}</Code>
+	<span>A cheked checkbox</span>
+	<Code language="jsx">{`<Checkbox checked>`}</Code>
+	<span>A product card</span>
+	<Code language="jsx">{`<ProductCard>`}</Code>
+</Stack>
+
+---
+
+<Boom>
+
+> Components as a common UI language
+
+</Boom>
+
+---
+
+<Boom>
+
+> Do not use verbs when naming components
+
+</Boom>
+
+---
+
+## Watch my talk
+
+---
+
+<Secondary>
+
+## `Button > button`
+
+<Appear>
+
+## `Text > p`
+
+## `Heading > h1`
+
+</Appear>
+
+</Secondary>
 
 ---
 
@@ -277,78 +471,12 @@ export { theme } from './theme';
 
 ---
 
-<SplitWithHeading>
-
-## Bad token combinations
-
-<div style={{width: "40vw"}}>
-
-```css
-.cant__read_this {
-	font-size: var(--fontSize--x-small);
-	color: var(--color--light);
-}
-```
-
-</div>
-
-<div style={{ width: '40vw' }}>
-	<div style={{ fontSize: '2vmax', color: '#eee' }}>Can you read me?!</div>
-</div>
-
-</SplitWithHeading>
-
----
-
 ## Custom properties as design tokens
 
-- improved code reusabilty
-- but still allow bad combinations
+- improve code reusabilty
+- but still allow wrong combinations
+- hard to enforce on scale
 - require writing CSS
-- hard to enforce their usage
-
----
-
-<Secondary>
-
-## What's the problem with HTML?
-
-</Secondary>
-
----
-
-<Stack gridGap={5} p={4} gridTemplateColumns="auto 1fr auto">
-	<span>Text, Heading</span>
-	<Code language="html">{`<h1>Heading</h1>
-<p>Text</p>`}</Code>
-	<span>️😊</span>
-	<span>Link</span>
-	<Code language="html">{`<a href="#">Link</a>`}</Code>
-	<span>🤔</span>
-	<span>Button</span>
-	<Code language="html">
-		{`<button>Button</button>
-<input type="button">Button</input>`}
-	</Code>
-	<span>🙄</span>
-	<span>Dropdown</span>
-	<Code language="html">{dropdown.html}</Code>
-	<span>😩</span>
-</Stack>
-
----
-
-<Image src="./assets/bootstrap-dropdown.png" size="contain" />
-
-<ThatGuy />
-
----
-
-<Boom>
-
-> HTML was designed for documents, not applications!
-
-</Boom>
 
 ---
 
@@ -362,7 +490,7 @@ What should we do?
 
 <Boom>
 
-# Stop writing HTML & CSS!
+# Stop writing CSS!
 
 </Boom>
 
@@ -382,13 +510,37 @@ What should we do?
 
 <Boom>
 
-> Primitives are the building blocks of your user interface.
+> Primitives are the building blocks of the user interface.
 
 </Boom>
 
 ---
 
 <Image src="../assets/legos-assembled.jpg" />
+
+---
+
+<Center>
+
+<Code language="jsx">{`<Button onClick={handleClick} />`}</Code>
+
+</Center>
+
+---
+
+<Center>
+
+<Code language="jsx">{`<Text fontSize="lg" color="danger" />`}</Code>
+
+</Center>
+
+---
+
+<Primary>
+
+# Text Primitives
+
+</Primary>
 
 ---
 
@@ -403,24 +555,24 @@ What should we do?
 
 ---
 
-## API design:
+## API:
 
 - Text style (`color`, `fontSize`, `letterSpacing`, etc.)
-- Custom HTML element (`p`, `span`, `label`)
 - Alignment (`left`, `center`, `right`, ~~`justify`~~)
 - Whitespace (`margin`)
+- HTML elements (`p`, `span`, `label`)
 
 ---
 
 <Boom>
 
-# Minimal number of styles for most of your use cases
+> Define a minimal set of props for most of your use cases
 
 </Boom>
 
 ---
 
-## API design: variants
+## API: boolean vs variant
 
 - `<Text primary>` 😀
 - `<Text secondary>` 😀
@@ -428,11 +580,18 @@ What should we do?
 
 ---
 
-## API design: variants
+## API: boolean vs variant
 
 - `<Text variant="primary">` 😀
 - `<Text variant="secondary">` 😀
-- ~~`<Text variant="primary secondary">`~~ 😀
+- ~~`<Text variant="primary secondary">`~~ 🚫
+
+---
+
+## API: boolean vs variant
+
+- `<Button variant="primary" disabled>` 😀
+- `<Button variant="secondary" disabled>` 😀
 
 ---
 
@@ -444,14 +603,23 @@ What should we do?
 
 ---
 
-## API design: rigidity vs flexibility
+## API: rigidity vs flexibility
 
 - `<Text variant="error">` 😀
-- `<Text color="red" size="xs" >` 😀
+- `<Text color="red" size="xs">` 😀
+- `<Text variant="muted" sx={{ letterSpacing: 'caps' }} >` 🤓
 
 ---
 
-## API design: custom HTML element
+<Boom>
+
+> Make primitives flexible enough to not block you
+
+</Boom>
+
+---
+
+## API: HTML element
 
 - `<Text>` → `<p>` 😀
 - `<Text inline>` → `<span>` 😐
@@ -460,10 +628,34 @@ What should we do?
 
 ---
 
+<Boom>
+
+> Primitives can be rendered anywhere
+
+</Boom>
+
+---
+
+## API: Composition
+
+- `<Heading>` → `<Text variant="heading" as="h1">`
+- `<Label>` → `<Text variant="label" as="label">`
+- `<Error>` → `<Text color="error" as="p">`
+
+---
+
+<Boom>
+
+> Primitives are meant to be composed
+
+</Boom>
+
+---
+
 <LiveCode
 	title="Example"
 	code={require('!raw-loader!./code/Text.js').default}
-	size="large"
+	size="fullscreen"
 />
 
 ---
@@ -471,20 +663,121 @@ What should we do?
 <LiveCode
 	title="Example"
 	code={require('!raw-loader!./code/Text2.js').default}
-	size="large"
+	size="fullscreen"
 />
 
 ---
 
-## `<button> != <Button>`
+<Primary>
 
-<Appear>
+# Layout Primitives
 
-## `<p> != <Text>`
+</Primary>
 
-## `<h1> != <Heading>`
+---
 
-</Appear>
+<Boom>
+
+> Primitives to control space around their children
+
+</Boom>
+
+---
+
+<Secondary>
+
+# Box
+
+</Secondary>
+
+---
+
+## API:
+
+- Layout (`width`, `height`, `margin`, `padding`)
+- Colors (`bacground`, `color`)
+- Borders (`border`),
+- HTML elements (`p`, `span`, `label`)
+
+---
+
+<LiveCode
+	title="Box"
+	code={require('!raw-loader!./code/Box.js').default}
+	size="fullscreen"
+/>
+
+---
+
+<Secondary>
+
+# Flex
+
+</Secondary>
+
+---
+
+## Flexbox layout
+
+```jsx
+<Flex
+	alignItems="center"
+	justifyContent="center"
+	flexDirection="row"
+	flexWrap="wrap"
+/>
+```
+
+---
+
+<LiveCode
+	title="Box"
+	code={require('!raw-loader!./code/Flex.js').default}
+	size="fullscreen"
+/>
+
+---
+
+<Secondary>
+
+# Grid
+
+</Secondary>
+
+---
+
+<Secondary>
+
+# Stack
+
+</Secondary>
+
+---
+
+<Secondary>
+
+# Group
+
+</Secondary>
+
+---
+
+<Boom>
+
+> Primitives should not have any whitespace around them!
+
+</Boom>
+
+---
+
+# Recap
+
+- Start with primitive components (Text, Box)
+- Use layout primitives to control the white space (Flex, Grid, Stack, Group, ...)
+- Components should not have any whitespace around them
+- Make primitives work with your design system, not just any values
+- Embrace CSS knowledge when designing primitives
+- Do not make any assumptions about where your components are going to be used
 
 ---
 
@@ -493,44 +786,6 @@ What should we do?
 > The way your component library is built will inevitably affect the quality of the application code.
 
 </Boom>
-
----
-
-## HTML vs Primitives
-
-<Stack gridGap={4} gridTemplateColumns="1fr 1fr">
-
-<Code language="html">{dropdown.html}</Code>
-
-<Code language="javascript">{dropdown.jsx}</Code>
-
-</Stack>
-
----
-
-<SplitWithHeading>
-
-## HTML vs Primitives
-
-- 😭 CSS acts as an API
-- 😱 HTML can be anything
-- 🤯 CSS = expect unexpected
-- 🤦‍♂️ Reusability
-
-* 🤫 CSS isn’t the API
-* ♿️ HTML isn’t the API
-* 🤝 Strict contract via propsTypes
-* 🙌 Reusability
-
-</SplitWithHeading>
-
----
-
-<Primary>
-
-# Primitives for the layout & whitespace
-
-</Primary>
 
 ---
 
