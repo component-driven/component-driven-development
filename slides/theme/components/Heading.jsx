@@ -1,28 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import {css} from 'theme-ui'
 
 const fontSize = props => {
 	const { length } = props.children;
 	if (props.huge) {
-		return '30vmax';
+		return {fontSize: '30vmax'};
 	}
 	if (length <= 30) {
-		return '12vmax';
+		return {fontSize: '10vmax'};
 	}
-	return '8vmax';
+	return {fontSize: '8vmax'};
 };
 
-const Root = styled.h1`
-	max-width: 90vw;
-	font-size: ${fontSize};
-	font-weight: ${props => (props.huge ? 'bold' : 'normal')};
-	line-height: 1.1;
-	text-align: center;
-`;
-
-const Heading = ({ is = 'h1', ...props }) => {
-	const Component = Root.withComponent(is);
-	return <Component {...props} />;
-};
+const Heading = styled.h1(css({
+	m: 0,
+	maxWidth: '90vw',
+	fontWeight: 'normal',
+	lineHeight: 1.1,
+	textAlign: 'center',
+}), fontSize);
 
 export default Heading;

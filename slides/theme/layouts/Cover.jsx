@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui';
 import Flex from '../components/Flex';
 import Box from '../components/Box';
+import Text from '../components/Text';
 
 const Cover = ({ author, children }) => (
 	<Flex
@@ -18,7 +19,9 @@ const Cover = ({ author, children }) => (
 		</Flex>
 		<Flex width={1} p={4} alignItems="center">
 			<Box mr="auto" fontSize="2.5vw">
-				{author}
+				<Text as="p">
+					{author}
+				</Text>
 			</Box>
 		</Flex>
 	</Flex>

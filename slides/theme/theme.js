@@ -1,3 +1,4 @@
+import { createElement } from 'react';
 import { pre, createCode } from '@mdx-deck/themes/syntax-highlighter-prism';
 
 import {
@@ -12,6 +13,16 @@ import {
 } from './tokens';
 import codeTheme from './codeTheme';
 import { OL, UL } from './index';
+import Heading from './components/Heading';
+import Text from './components/Text';
+
+function createTag(component, props) {
+	return ownProps =>
+		createElement(component, {
+			...props,
+			...ownProps,
+		});
+}
 
 export default {
 	// aspectRatio: 9 / 16,
@@ -52,7 +63,7 @@ export default {
 		},
 	},
 	heading: {
-		marginTop: '2vmax',
+		marginTop: '5vmax',
 		marginBottom: 0,
 		lineHeight: 1.1,
 		textAlign: 'center',
@@ -64,6 +75,7 @@ export default {
 		},
 	},
 	h1: {
+		m: 0,
 		fontWeight: 'normal',
 	},
 	h2: {
@@ -82,6 +94,10 @@ export default {
 		textAlign: 'left',
 	},
 	components: {
+		h1: createTag(Heading, { as: 'h1', m: 0 }),
+		h2: createTag(Heading, { as: 'h2', m: 0 }),
+		h3: createTag(Heading, { as: 'h3', m: 0 }),
+		p: createTag(Text, { as: 'p', my: 2 }),
 		ul: UL,
 		ol: OL,
 		pre,
