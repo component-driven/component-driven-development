@@ -1,17 +1,11 @@
 import { pre, createCode } from '@mdx-deck/themes/syntax-highlighter-prism';
 
 import {
-	uiColor,
-	uiHoverColor,
 	bgColor,
-	lightBgColor,
 	baseColor,
 	darkColor,
-	lightColor,
 	primaryColor,
 	secondaryColor,
-	addColor,
-	removeColor,
 	font,
 	monospace,
 	fontSizes,

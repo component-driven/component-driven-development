@@ -3,12 +3,11 @@ import {
 	bgColor,
 	darkColor,
 	lightColor,
-	primaryColor,
+	accentColor,
 	secondaryColor,
 	addColor,
 	removeColor,
 	monospace,
-	fontSizes,
 } from './tokens';
 
 export default {
@@ -37,7 +36,7 @@ export default {
 				'class-name',
 			],
 			style: {
-				color: primaryColor,
+				color: accentColor,
 			},
 		},
 		{
@@ -177,7 +176,7 @@ export default {
 			color: darkColor,
 		},
 		boolean: {
-			color: primaryColor,
+			color: accentColor,
 		},
 		number: {
 			color: lightColor,
@@ -190,16 +189,16 @@ export default {
 			color: secondaryColor,
 		},
 		'class-name': {
-			color: primaryColor,
+			color: accentColor,
 		},
 		constant: {
-			color: primaryColor,
+			color: accentColor,
 		},
 		symbol: {
 			color: baseColor,
 		},
 		selector: {
-			color: primaryColor,
+			color: accentColor,
 		},
 		important: {
 			color: darkColor,
@@ -215,19 +214,19 @@ export default {
 			color: baseColor,
 		},
 		string: {
-			color: primaryColor,
+			color: accentColor,
 		},
 		char: {
-			color: primaryColor,
+			color: accentColor,
 		},
 		'attr-value': {
-			color: primaryColor,
+			color: accentColor,
 		},
 		regex: {
-			color: primaryColor,
+			color: accentColor,
 		},
 		variable: {
-			color: primaryColor,
+			color: accentColor,
 		},
 		operator: {
 			color: lightColor,

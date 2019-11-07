@@ -1,14 +1,12 @@
-export const uiColor = 'rgba(0, 0, 0, 0.3)';
-export const uiHoverColor = 'rgba(0, 0, 0, 0.8)';
 export const bgColor = '#fff';
-export const lightBgColor = '#fafafa';
-export const baseColor = '#222';
-export const darkColor = '#666';
-export const lightColor = '#999';
-export const primaryColor = '#dc8b0c';
-export const secondaryColor = '#38bfd8';
+export const baseColor = 'rgb(27, 37, 79)';
+export const darkColor = 'rgb(74, 91, 136)';
+export const lightColor = 'rgb(107, 127, 168)';
+export const primaryColor = 'rgb(49, 60, 108)';
+export const secondaryColor = 'rgb(27, 187, 254)';
+export const accentColor = '#e64958';
 export const addColor = '#2d7b43';
-export const removeColor = '#bb2c2c';
+export const removeColor = '#e64958';
 
 export const font = 'Work Sans, sans-serif';
 export const monospace = 'Mono Lisa, Fira Mono, monospace';
