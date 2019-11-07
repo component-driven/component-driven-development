@@ -15,7 +15,7 @@ export { default as LiveCode } from './components/LiveCode';
 // export { default as Delay } from './components/Delay';
 // export { default as Flex } from './components/Flex';
 // export { default as Heading } from './components/Heading';
-export { default as List, OL, UL } from './components/List';
+export { default as List } from './components/List';
 // export { default as Explosion } from './components/Explosion';
 export { default as ThatGuy } from './components/ThatGuy';
 export { default as theme } from './theme';

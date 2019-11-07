@@ -40,6 +40,3 @@ List.defaultProps = {
 	appear: true,
 	// columnGap: '8vw'
 };
-
-export const OL = props => <List as="ol" {...props} />;
-export const UL = props => <List as="ul" {...props} />;

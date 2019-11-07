@@ -12,9 +12,9 @@ import {
 	fontSizes,
 } from './tokens';
 import codeTheme from './codeTheme';
-import { OL, UL } from './index';
 import Heading from './components/Heading';
 import Text from './components/Text';
+import List from './components/List';
 
 function createTag(component, props) {
 	return ownProps =>
@@ -63,8 +63,8 @@ export default {
 		},
 	},
 	heading: {
-		marginTop: '5vmax',
-		marginBottom: 0,
+		paddingTop: '5vmax',
+		paddingBottom: 0,
 		lineHeight: 1.1,
 		textAlign: 'center',
 		'& + *': {
@@ -75,12 +75,18 @@ export default {
 		},
 	},
 	h1: {
-		m: 0,
+		margin: 0,
 		fontWeight: 'normal',
 	},
 	h2: {
+		margin: 0,
 		fontWeight: 'normal',
-		fontSize: fontSizes.xl,
+		fontSize: fontSizes.l,
+	},
+	h3: {
+		margin: 0,
+		fontWeight: 'normal',
+		fontSize: fontSizes.m,
 	},
 	pre: {
 		textAlign: 'left',
@@ -91,15 +97,18 @@ export default {
 		textAlign: 'left',
 	},
 	ul: {
+		margin: 0,
+		padding: 0,
 		textAlign: 'left',
+		listStyle: 'none',
 	},
 	components: {
 		h1: createTag(Heading, { as: 'h1', m: 0 }),
 		h2: createTag(Heading, { as: 'h2', m: 0 }),
 		h3: createTag(Heading, { as: 'h3', m: 0 }),
 		p: createTag(Text, { as: 'p', my: 2 }),
-		ul: UL,
-		ol: OL,
+		ul: createTag(List, { as: 'ul' }),
+		ol: createTag(List, { as: 'ol' }),
 		pre,
 		code: createCode(codeTheme),
 	},
