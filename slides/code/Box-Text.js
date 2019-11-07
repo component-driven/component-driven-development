@@ -1,5 +1,10 @@
 <ThemeProvider theme={theme}>
-	<Box as="main" p={5} bg="grey.4" height="100%">
+	<Box
+		as="main"
+		p={5}
+		bg="grey.4"
+		height="100%"
+	>
 		<Box
 			as="section"
 			p={0}
@@ -9,12 +14,20 @@
 			border="thin"
 			borderColor="grey.5"
 		>
-			<Box pb={3} mb={3} borderBottom="thin" borderColor="grey.4">
-				<Heading size="md">Saluki</Heading>
+			<Box
+				pb={3}
+				mb={3}
+				borderBottom="thin"
+				borderColor="grey.4"
+			>
+				<Heading size="md">
+					Saluki
+				</Heading>
 			</Box>
 			<Box p={3}>
 				<Text variant="secondary">
-					Don’t leave any food on a table when saluki is around.
+					Don’t leave any food on a
+					table when saluki is around.
 				</Text>
 			</Box>
 		</Box>

@@ -9,7 +9,10 @@
 				fullWidth
 			/>
 		</Box>
-		<Button variant="primary" type="submit">
+		<Button
+			variant="primary"
+			type="submit"
+		>
 			Subscribe
 		</Button>
 	</Flex>
