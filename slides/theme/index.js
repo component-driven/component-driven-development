@@ -18,4 +18,5 @@ export { default as LiveCode } from './components/LiveCode';
 export { default as List } from './components/List';
 // export { default as Explosion } from './components/Explosion';
 export { default as ThatGuy } from './components/ThatGuy';
+export { default as Video } from './components/Video';
 export { default as theme } from './theme';
