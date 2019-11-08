@@ -10,7 +10,7 @@ const Center = ({ children }) => {
 			alignItems="center"
 			justifyContent="center"
 		>
-			<div>{children}</div>
+			{children}
 		</Flex>
 	);
 };
