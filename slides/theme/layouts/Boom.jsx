@@ -18,7 +18,7 @@ const animation = keyframes`
 
 const Boom = styled(Invert)(
 	css(theme => ({
-		background: `linear-gradient(270deg, ${theme.colors.primary}, ${theme.colors.secondary})`,
+		background: `linear-gradient(270deg, ${theme.colors.primary}, ${theme.colors.accent})`,
 		backgroundSize: '400% 400%',
 		animation: `${animation} 10s infinite`,
 	}))

@@ -10,6 +10,7 @@ import {
 	font,
 	monospace,
 	fontSizes,
+	accentColor,
 } from './tokens';
 import codeTheme from './codeTheme';
 import Heading from './components/Heading';
@@ -38,6 +39,7 @@ export default {
 		heading: 'inherit',
 		primary: primaryColor,
 		secondary: secondaryColor,
+		accent: accentColor,
 		pre: darkColor,
 		code: darkColor,
 	},
