@@ -140,7 +140,7 @@ But most of the projects I had to work on looked differently:
 
 <Secondary>
 
-## What's the problem with HTML?
+# What's the problem with HTML?
 
 </Secondary>
 
@@ -256,7 +256,7 @@ const Dropdown = props => (
 
 ---
 
-# Components as a common language
+## Components as a common language
 
 <Stack gridGap={5} p={4} gridTemplateColumns="1fr 1fr">
 	<span>A button</span>
@@ -273,7 +273,7 @@ const Dropdown = props => (
 
 <Boom>
 
-> Components as a common UI language
+> Components is a common UI language
 
 </Boom>
 
@@ -286,7 +286,7 @@ const Dropdown = props => (
 
 <Secondary>
 
-## What's the problem with CSS?
+# What's the problem with CSS?
 
 </Secondary>
 
@@ -663,7 +663,7 @@ import { color, margin, typography } from 'styled-system';
 export const Text = styled.p(
 	// defaults
 	{
-		m: 0,
+		margin: 0,
 		lineHeight: 1.5,
 	},
 	// API
@@ -966,7 +966,7 @@ Now let's compose primitives...
 
 <Boom>
 
-> Primitives to control space around their children
+> Primitives to control layout and white space around their children
 
 </Boom>
 
@@ -1105,21 +1105,21 @@ Now let's compose primitives...
 
 ---
 
-# Recap
+## Recap
 
-- Components are a common UI language
-- Components is a better way of writing HTML & CSS
-- Use design tokens to reduce choice
-- Use primitive components (Text, Box)
-- Do not make any assumptions about where your components are going to be used
-- Use layout primitives to control the white space (Flex, Grid, Stack, Group, ...)
-- Compose complex components using primitives
+1. Components are a common UI language
+1. Components is a better way of writing HTML & CSS
+1. Use design tokens to reduce choice
+1. Use primitive components (Text, Box)
+1. Do not make any assumptions about where your components are going to be used
+1. Use layout primitives to control the white space (Flex, Grid, Stack, Group, ...)
+1. Compose complex components using primitives
 
 ---
 
 <Secondary>
 
-# Dreaming about UI development
+# The future of UI development
 
 </Secondary>
 
@@ -1174,7 +1174,7 @@ Now let's compose primitives...
 
 # Thank you and let components be with you!
 
-<Stack gridGap={3} gridAutoFlow="column" pt={4}>
+<Stack gridGap={[3, 5]} gridTemplateColumns={['auto', 'repeat(3, 1fr)']} pt={4}>
 	<a href="https://twitter.com/okonetchnikov">@okonetchnikov</a>
 	<a href="https://twitter.com/ComponentDriven">@ComponentDriven</a>
 	<a href="mailto:andrey@okonet.ru">andrey@okonet.ru</a>
