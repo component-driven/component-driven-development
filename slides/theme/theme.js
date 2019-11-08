@@ -102,6 +102,9 @@ export default {
 		textAlign: 'left',
 		listStyle: 'none',
 	},
+	blockquote: {
+		fontSize: fontSizes.l,
+	},
 	components: {
 		h1: createTag(Heading, { as: 'h1', m: 0 }),
 		h2: createTag(Heading, { as: 'h2', m: 0 }),

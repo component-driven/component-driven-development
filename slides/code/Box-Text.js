@@ -15,12 +15,12 @@
 			borderColor="grey.5"
 		>
 			<Box
-				pb={3}
-				mb={3}
+				pb={5}
+				mb={5}
 				borderBottom="thin"
 				borderColor="grey.4"
 			>
-				<Heading size="md">
+				<Heading size="m">
 					Saluki
 				</Heading>
 			</Box>
