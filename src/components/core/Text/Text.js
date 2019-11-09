@@ -13,7 +13,7 @@ const Text = styled.p`
 	margin: 0;
 	font-weight: normal;
 	line-height: ${props => props.theme.lineHeights.base};
-	font-family: ${props => props.theme.fonts.base};
+	font-family: ${props => props.theme.fonts.body};
 	text-align: ${props => props.align};
 	list-style-type: none;
 	${textStyle};
@@ -22,6 +22,7 @@ const Text = styled.p`
 Text.propTypes = {
 	/** Custom component or HTML tag */
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+
 	/** Variation */
 	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
 	align: PropTypes.oneOf(['left', 'center', 'right']),
