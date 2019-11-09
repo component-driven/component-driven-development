@@ -1,10 +1,8 @@
-/* @jsx jsx */
-import { jsx } from 'theme-ui';
-import Flex from '../components/Flex';
-import Box from '../components/Box';
-import Text from '../components/Text';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Head, Box, Flex, Text, Heading } from '../';
 
-const Cover = ({ author, children }) => (
+const Cover = ({ author, title }) => (
 	<Flex
 		flexDirection="column"
 		alignItems="center"
@@ -14,17 +12,26 @@ const Cover = ({ author, children }) => (
 		width="100vw"
 		height="100vh"
 	>
+		<Head>
+			<title>{title}</title>
+		</Head>
 		<Flex alignItems="center" flex="1">
-			{children}
+			<Heading as="h1">{title}</Heading>
 		</Flex>
 		<Flex width={1} p={4} alignItems="center">
-			<Box mr="auto" fontSize="2.5vw">
-				<Text as="p">
-					{author}
-				</Text>
+			<Box mx="auto" fontSize="2.5vw">
+				<Text as="p">by {author}</Text>
 			</Box>
 		</Flex>
 	</Flex>
 );
+
+Cover.propTypes = {
+	/** Talk title */
+	title: PropTypes.string.isRequired,
+
+	/** Author name */
+	author: PropTypes.string.isRequired,
+};
 
 export default Cover;
