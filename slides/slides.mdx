@@ -1,11 +1,13 @@
-import { jsx, Flex, Box } from 'theme-ui';
+import { jsx, Flex } from 'theme-ui';
 import {
 	Appear,
 	Boom,
+	Box,
 	Center,
 	Code,
 	Cover,
 	Demo,
+	Figure,
 	Image,
 	Notes,
 	LiveCode,
@@ -466,45 +468,57 @@ const Dropdown = props => (
 ---
 
 <Center>
-	<a href="https://marvelapp.com/styleguide/design/color-scheme">
-		<img
-			src={require('file-loader!./assets/design-tokens-colors.png')}
-			alt="Design tokens: colors"
-		/>
-	</a>
+	<Figure
+		src={require('file-loader!./assets/design-tokens-colors.png')}
+		alt="Design tokens: colors"
+		caption={
+			<a href="https://marvelapp.com/styleguide/design/color-scheme">
+				https://marvelapp.com/styleguide/design/color-scheme
+			</a>
+		}
+	/>
 </Center>
 
 ---
 
 <Center>
-	<a href="https://cloudflare.github.io/cf-ui/#cf-design-gradients">
-		<img
-			src={require('file-loader!./assets/design-tokens-gradients.png')}
-			alt="Design tokens: gradients"
-		/>
-	</a>
+	<Figure
+		src={require('file-loader!./assets/design-tokens-gradients.png')}
+		alt="Design tokens: gradients"
+		caption={
+			<a href="https://cloudflare.github.io/cf-ui/#cf-design-gradients">
+				https://cloudflare.github.io/cf-ui/#cf-design-gradients
+			</a>
+		}
+	/>
 </Center>
 
 ---
 
 <Center>
-	<a href="https://vueds.com/example/#!/Design%20Tokens">
-		<img
-			src={require('file-loader!./assets/design-tokens-fonts-spacing.png')}
-			alt="Design tokens: fonts and spacing"
-		/>
-	</a>
+	<Figure
+		src={require('file-loader!./assets/design-tokens-fonts-spacing.png')}
+		alt="Design tokens: fonts and spacing"
+		caption={
+			<a href="https://vueds.com/example/#!/Design%20Tokens">
+				https://vueds.com/example/#!/Design%20Tokens
+			</a>
+		}
+	/>
 </Center>
 
 ---
 
 <Center>
-	<a href="https://www.lightningdesignsystem.com/design-tokens/">
-		<img
-			src={require('file-loader!./assets/design-tokens-misc.png')}
-			alt="Design tokens"
-		/>
-	</a>
+	<Figure
+		src={require('file-loader!./assets/design-tokens-misc.png')}
+		alt="Design tokens"
+		caption={
+			<a href="https://www.lightningdesignsystem.com/design-tokens/">
+				https://www.lightningdesignsystem.com/design-tokens/
+			</a>
+		}
+	/>
 </Center>
 
 ---
@@ -608,12 +622,11 @@ vs.
 ---
 
 <Center>
-	<a href="https://styled-system.com">
-		<img
-			src={require('file-loader!./assets/styled-system.png')}
-			alt="Styled-system Webiste"
-		/>
-	</a>
+	<Figure
+		src={require('file-loader!./assets/styled-system.png')}
+		alt="Styled-system Webiste"
+		caption={<a href="https://styled-system.com">https://styled-system.com</a>}
+	/>
 </Center>
 
 ---
@@ -1097,6 +1110,17 @@ Now let's compose primitives...
 
 ---
 
+<Center>
+	<Figure
+		src={require('file-loader!./assets/react-styleguidist.svg')}
+		alt="React-styleguidist Logo"
+		caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
+		gap={4}
+	/>
+</Center>
+
+---
+
 <Primary>
 
 # Recap
@@ -1153,6 +1177,7 @@ Now let's compose primitives...
 ## Links and credits
 
 - https://styled-system.com
+- https://react-styleguidist.js.org
 - https://github.com/sapegin/stack-styled
 - https://github.com/sapegin/react-group
 - https://airbnb.design/sketching-interfaces/
@@ -1160,12 +1185,13 @@ Now let's compose primitives...
 ---
 
 <Center>
-	<a href="https://component-driven.io">
-		<img
-			src={require('file-loader!./assets/component-driven.svg')}
-			alt="Component-driven Logo"
-		/>
-	</a>
+	<Figure
+		src={require('file-loader!./assets/component-driven.svg')}
+		alt="Component-driven Logo"
+		caption={
+			<a href="https://component-driven.io">https://component-driven.io</a>
+		}
+	></Figure>
 </Center>
 
 ---

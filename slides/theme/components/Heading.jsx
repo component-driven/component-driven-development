@@ -4,9 +4,6 @@ import {css} from 'theme-ui'
 
 const fontSize = props => {
 	const { length } = props.children;
-	if (props.huge) {
-		return {fontSize: '30vmax'};
-	}
 	if (length <= 30) {
 		return {fontSize: '10vmax'};
 	}

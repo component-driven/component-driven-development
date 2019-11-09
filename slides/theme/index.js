@@ -11,6 +11,7 @@ export { default as Appear } from './components/Appear';
 // export { default as Bar } from './components/Bar';
 export { default as Code } from './components/Code';
 export { default as Demo } from './components/Demo';
+export { default as Figure } from './components/Figure';
 export { default as LiveCode } from './components/LiveCode';
 // export { default as Delay } from './components/Delay';
 // export { default as Flex } from './components/Flex';

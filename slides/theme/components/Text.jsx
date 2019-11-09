@@ -6,22 +6,21 @@ import { css } from "@styled-system/css";
 
 export const textStyles = {
 	body: {
-		fontSize: 2,
+		fontSize: "m",
 		color: "text",
 	},
 	secondary: {
-		fontSize: 2,
+		fontSize: "m",
 		color: "secondary",
 	},
 };
 
 const Text = styled.p(
-	css({
-		m: 0,
+	{
+		margin: 0,
 		lineHeight: 1.5,
 		fontWeight: "normal",
-		// color: "text",
-	}),
+	},
 	compose(
 		variant({ prop: "textStyle", variants: textStyles }),
 		space,
