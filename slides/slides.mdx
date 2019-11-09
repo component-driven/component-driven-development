@@ -977,6 +977,16 @@ Now let's compose primitives...
 
 ---
 
+<Center>
+	<Figure
+		src={require('file-loader!./assets/spacing-scale.png')}
+		alt="Spacing composition"
+		caption="Space composition by Nathan Curtis"
+	/>
+</Center>
+
+---
+
 <Boom>
 
 > Primitives to control layout and white space around their children
@@ -1046,14 +1056,6 @@ Now let's compose primitives...
 
 ---
 
-<Boom>
-
-> Primitives should not have any whitespace around them!
-
-</Boom>
-
----
-
 <Secondary>
 
 # Group
@@ -1070,9 +1072,17 @@ Now let's compose primitives...
 
 ---
 
+<Boom>
+
+> Primitives should not have any whitespace around them!
+
+</Boom>
+
+---
+
 <Primary>
 
-# Composition
+# Primitives Composition
 
 </Primary>
 
@@ -1083,6 +1093,14 @@ Now let's compose primitives...
 - `<Heading>` → `<Text variant="heading" as="h1">`
 - `<Label>` → `<Text variant="label" as="label">`
 - `<Error>` → `<Text color="error" as="p">`
+
+---
+
+## API: Patterns
+
+- `<Card>` → `<Stack>...</Stack>`
+- `<ProductCard>` → `<Card>...</Card>`
+- `<ProductPage>` → `products.map(product => <ProductCard product={product} />)`
 
 ---
 
