@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"license": "MIT",
+	"homepage": "https://cdds.netlify.com",
 	"dependencies": {
 		"@component-driven/react-design-tokens": "^1.1.1",
 		"@reach/router": "^1.2.1",
