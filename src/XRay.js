@@ -6,9 +6,10 @@ import Flex from './components/core/Flex';
 import Stack from './components/core/Stack';
 
 const flexClassName = `${Flex}`.replace('.', '');
+const stackClassName = `${Stack}`.replace('.', '');
 
 const BoxStyle = createGlobalStyle`
-	*${Box}:not([class*=${flexClassName}]) {
+	*${Box}:not([class*=${flexClassName}]):not([class*=${stackClassName}]) {
 		outline: 2px solid rgba(42, 128, 0, 0.5) !important;
 		outline-offset: -2px;
 		background-color: rgba(42, 128, 0, 0.1);
