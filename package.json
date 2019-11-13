@@ -50,7 +50,7 @@
 		"prestyleguide:build": "npm run validate",
 		"styleguide:build": "styleguidist build",
 		"slides:start": "mdx-deck ./slides/slides.mdx",
-		"slides:build": "mdx-deck build ./slides/slides.mdx -d ./build/slides",
+		"slides:build": "mdx-deck build ./slides/slides.mdx -d ./build/slides --basepath /slides",
 		"format": "prettier --write '**/*.{js,md}'"
 	},
 	"devDependencies": {
