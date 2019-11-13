@@ -6,30 +6,40 @@
 	"homepage": "https://cdds.netlify.com",
 	"dependencies": {
 		"@component-driven/react-design-tokens": "^1.1.1",
+		"@emotion/core": "^10.0.22",
+		"@emotion/styled": "^10.0.23",
+		"@mdx-js/react": "^1.5.1",
 		"@reach/router": "^1.2.1",
-		"@styled-system/prop-types": "^5.0.16",
-		"clipboard-copy": "^3.0.0",
+		"@styled-system/prop-types": "^5.1.2",
+		"clipboard-copy": "^3.1.0",
 		"date-fns": "^1.30.1",
-		"formik": "^1.5.2",
+		"formik": "^1.5.8",
 		"macro-components": "^2.0.0",
-		"polished": "^3.2.0",
+		"mdx-deck-live-code": "^1.0.1",
+		"polished": "^3.4.2",
 		"prop-types": "^15.7.2",
-		"react": "^16.8.6",
-		"react-dom": "^16.8.6",
-		"react-modal": "^3.8.1",
+		"react": "^16.11.0",
+		"react-dom": "^16.11.0",
+		"react-group": "^3.0.2",
+		"react-helmet": "^5.2.1",
+		"react-hotkeys-hook": "^1.5.3",
+		"react-modal": "^3.11.1",
 		"react-scripts": "2.1.8",
+		"react-transition-group": "^4.3.0",
+		"react-tweet-embed": "^1.2.2",
 		"stack-styled": "^3.0.0",
-		"styled-components": "^4.3.2",
-		"styled-system": "^5.0.16"
+		"styled-components": "^4.4.1",
+		"styled-system": "^5.1.2",
+		"theme-ui": "^0.2.46"
 	},
 	"scripts": {
 		"validate": "node scripts/setup.js",
 		"prestart": "npm run validate",
-		"start": "run-p exercise styleguide",
+		"start": "run-p app exercise styleguide",
 		"preapp": "npm run validate",
 		"app": "react-scripts start",
 		"prebuild": "npm run validate",
-		"build": "react-scripts build && npm run styleguide:build",
+		"build": "react-scripts build && npm run styleguide:build && npm run slides:build",
 		"pretest": "eslint src",
 		"test": "cross-env CI=true react-scripts test --env=jsdom",
 		"test:watch": "react-scripts test --env=jsdom",
@@ -39,37 +49,42 @@
 		"styleguide": "styleguidist server --open",
 		"prestyleguide:build": "npm run validate",
 		"styleguide:build": "styleguidist build",
+		"slides:start": "mdx-deck ./slides/slides.mdx",
+		"slides:build": "mdx-deck build ./slides/slides.mdx -d ./build/slides",
 		"format": "prettier --write '**/*.{js,md}'"
 	},
 	"devDependencies": {
-		"babel-plugin-styled-components": "^1.10.0",
-		"cross-env": "^5.2.0",
-		"eslint-plugin-jsx-a11y": "^6.2.1",
+		"babel-plugin-styled-components": "^1.10.6",
+		"caniuse-lite": "^1.0.30001008",
+		"cross-env": "^5.2.1",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"husky": "^1.3.1",
-		"lint-staged": "^8.1.5",
+		"lint-staged": "^8.2.1",
+		"mdx-deck": "^2.5.1",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^1.17.0",
-		"react-styleguidist": "^9.1.11"
+		"prettier": "^1.18.2",
+		"raw-loader": "^3.1.0",
+		"react-styleguidist": "^9.2.0"
 	},
 	"lint-staged": {
 		"*.{js}": [
 			"eslint --fix",
 			"git add"
 		],
-		"*.{js,json,md}": [
+		"*.{js,json,md,mdx}": [
 			"prettier --write",
 			"git add"
 		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
 	},
 	"browserslist": [
 		">0.2%",
 		"not dead",
 		"not ie <= 11",
 		"not op_mini all"
-	],
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	}
+	]
 }
