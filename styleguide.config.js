@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const webpackConfig = require('./webpack.config');
@@ -23,6 +24,22 @@ const config = {
 	exampleMode: 'expand',
 	usageMode: 'expand',
 	webpackConfig,
+	updateExample(props, exampleFilePath) {
+		const { settings, lang } = props;
+		if (typeof settings.file === 'string') {
+			const filepath = path.resolve(
+				path.dirname(exampleFilePath),
+				settings.file
+			);
+			const { file, ...restSettings } = settings;
+			return {
+				content: fs.readFileSync(filepath, 'utf8'),
+				settings: restSettings,
+				lang,
+			};
+		}
+		return props;
+	},
 };
 
 if (isExercises) {

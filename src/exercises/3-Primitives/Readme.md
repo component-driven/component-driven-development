@@ -57,18 +57,7 @@ _Don’t try to be pixel perfect here, that’s not the goal of the exercise. Al
 <details>
  <summary>Solution</summary>
 
-```js static
-import styled from 'styled-components';
-
-const Button = styled.button`
-  padding: 8px 16px;
-  color: #fff;
-  background-color: #8667a8;
-  border: 0;
-`;
-
-/** @component */
-export default Button;
+```js {"file": "solutions/button1.js", "static": true}
 ```
 
 </details>
