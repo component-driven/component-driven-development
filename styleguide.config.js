@@ -2,8 +2,11 @@ const path = require('path');
 const glob = require('glob');
 const webpackConfig = require('./webpack.config');
 
+const EXERCISES = [[1, 4], [5, 5]];
+
 // styleguidist server --exercise
 const isExercises = !!process.argv.find(x => x === '--exercise');
+const workshopId = 0; // TODO: take workshop ID as a CLI argument
 
 const config = {
 	serverPort: isExercises ? 6061 : 6060,
@@ -25,7 +28,8 @@ const config = {
 if (isExercises) {
 	// Generate sections for all exercises
 	const exercisesRoot = path.join(__dirname, `src/exercises`);
-	const exercises = glob.sync(`${exercisesRoot}/*`);
+	const [first, last] = EXERCISES[workshopId];
+	const exercises = glob.sync(`${exercisesRoot}/*`).slice(first - 1, last);
 	config.sections = exercises.map(folder => ({
 		name: path
 			.basename(folder)
