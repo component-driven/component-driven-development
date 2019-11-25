@@ -13,8 +13,8 @@ const Input = styled.input`
 	padding: ${props => props.theme.space[3]};
 	border: 1px solid ${props => props.theme.colors.primary};
 	border-radius: ${props => props.theme.radii.base};
-	font-family: ${props => props.theme.fonts.base};
-	font-size: ${props => props.theme.fontSizes.base};
+	font-family: ${props => props.theme.fonts.body};
+	font-size: ${props => props.theme.fontSizes.md};
 	color: ${props => props.theme.colors.base};
 	background-color: ${props => props.theme.colors.bg};
 

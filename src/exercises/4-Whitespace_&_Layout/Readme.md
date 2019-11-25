@@ -57,7 +57,7 @@ const Heading = styled.h1`
 
 Heading.defaultProps = {
   m: 0,
-  size: 'xxl'
+  size: 'xl'
 };
 
 /** @component */

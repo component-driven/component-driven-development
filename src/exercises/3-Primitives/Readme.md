@@ -105,8 +105,8 @@ const Button = styled.button`
   color: ${props => props.theme.colors.bg};
   background: ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.radii.base};
-  font-family: ${props => props.theme.fonts.base};
-  font-size: ${props => props.theme.fontSizes.base};
+  font-family: ${props => props.theme.fonts.body};
+  font-size: ${props => props.theme.fontSizes.md};
   border: 0;
 `;
 
@@ -260,13 +260,13 @@ The result should look like this:
 ```js noeditor
 import Heading from '../../components/core/Heading';
 <>
-  <Heading size="xxl" as="h1">
+  <Heading size="xl" as="h1">
     Heading 1
   </Heading>
-  <Heading size="xl" as="h2">
+  <Heading size="lg" as="h2">
     Heading 2
   </Heading>
-  <Heading size="lg" as="h3">
+  <Heading size="md" as="h3">
     Heading 3
   </Heading>
 </>;
@@ -279,7 +279,7 @@ Create a component that renders different levels of headings:
 - `heading` font family;
 - `normal` font weight;
 - `base` color;
-- font size is defined by a component prop (one of `m`, `l`, `xl` or `xxl`);
+- font size is defined by a component prop (one of `md`, `lg`, `xl`);
 - HTML element can be changed independently from the font size.
 
 **Hint:** We need to change heading styles and an HTML element independently, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3), where the heading is placed in an app, and doesn’t always match the style. Use styled-components [`as` props](https://www.styled-components.com/docs/api#as-polymorphic-prop) to change an HTML element, used to render a component.
@@ -303,7 +303,7 @@ const Heading = styled.h1`
 Heading.propTypes = {
   /** Custom component or HTML tag */
   as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-  size: PropTypes.oneOf(['xxl', 'xl', 'lg', 'md']),
+  size: PropTypes.oneOf(['xl', 'lg', 'md']),
   children: PropTypes.node
 };
 
@@ -350,8 +350,8 @@ const Input = styled.input`
   padding: ${props => props.theme.space[3]};
   border: 1px solid ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.radii.base};
-  font-family: ${props => props.theme.fonts.base};
-  font-size: ${props => props.theme.fontSizes.base};
+  font-family: ${props => props.theme.fonts.body};
+  font-size: ${props => props.theme.fontSizes.md};
   color: ${props => props.theme.colors.base};
   background-color: ${props => props.theme.colors.bg};
 
@@ -414,8 +414,8 @@ const Select = styled.select`
   padding-left: ${props => props.theme.space[3]};
   border: 1px solid ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.radii.base};
-  font-family: ${props => props.theme.fonts.base};
-  font-size: ${props => props.theme.fontSizes.base};
+  font-family: ${props => props.theme.fonts.body};
+  font-size: ${props => props.theme.fontSizes.md};
   color: ${props => props.theme.colors.base};
   background-color: ${props => props.theme.colors.bg};
 
@@ -498,7 +498,7 @@ const getColor = variant =>
 const Text = styled.p`
   margin: 0;
   line-height: ${props => props.theme.lineHeights.base};
-  font-family: ${props => props.theme.fonts.base};
+  font-family: ${props => props.theme.fonts.body};
   font-size: ${props =>
     props.theme.fontSizes[getFontSize(props.variant)]};
   color: ${props => props.theme.colors[getColor(props.variant)]};

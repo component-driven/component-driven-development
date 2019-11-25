@@ -10,7 +10,7 @@ const Message = styled.p`
 -   font-family: Helvetica;
 -   font-size: 13px;
 +   color: ${props => props.theme.colors.primary};
-+   font-family: ${props => props.theme.fonts.base};
++   font-family: ${props => props.theme.fonts.body};
 +   font-size: ${props => props.theme.fontSizes.s};
 `;
 ```
@@ -19,7 +19,7 @@ _Prefer_ the [Text](/#/Primitives?id=text) and [Heading](/#/Primitives?id=headin
 
 ```diff
 - const Small = styled.p`
--   font-family: ${props => props.theme.fonts.base};
+-   font-family: ${props => props.theme.fonts.body};
 -   font-size: ${props => props.theme.fontSizes.s};
 - `;
 - <Small>Oh dear! Oh dear! I shall be late!</Small>

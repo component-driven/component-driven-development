@@ -7,7 +7,7 @@ const FontSizeSample = styled.p`
 	margin: 0;
 	line-height: 1;
 	font-size: ${props => props.theme.fontSizes[props.fontSize]};
-	font-family: ${props => props.theme.fonts.base};
+	font-family: ${props => props.theme.fonts.body};
 `;
 
 export default function() {
