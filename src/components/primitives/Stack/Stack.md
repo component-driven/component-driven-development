@@ -10,7 +10,8 @@ import Button from '../Button';
 </Stack>;
 ```
 
-Since Stack is based on [Grid](/#/Primitives?id=grid), all of `Grid` props are available:
+Since Stack is based on [Grid](/#/Primitives?id=grid), all of `Grid` props are
+available:
 
 ```javascript
 import Button from '../Button';

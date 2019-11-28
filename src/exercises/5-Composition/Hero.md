@@ -6,9 +6,7 @@ import Heading from '../../components/primitives/Heading';
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={6}
 >
-  <Heading level={2}>
-    The quick brown fox jumps over the lazy dog
-  </Heading>
+  <Heading level={2}>The quick brown fox jumps over the lazy dog</Heading>
 </Hero>;
 ```
 

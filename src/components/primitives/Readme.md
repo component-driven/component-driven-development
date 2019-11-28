@@ -1,4 +1,5 @@
-Primitives are building blocks of your application. Since primitives can be used anywhere in the UI they should be agnostic of their environment.
+Primitives are building blocks of your application. Since primitives can be used
+anywhere in the UI they should be agnostic of their environment.
 
 This means primitives:
 

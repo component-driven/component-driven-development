@@ -1,6 +1,9 @@
-Card component is a component that renders an image, a body and a footer with a specific layout.
+Card component is a component that renders an image, a body and a footer with a
+specific layout.
 
-By using subcomponents `Card.Cover`, `Card.Body` and `Card.Footer` users can create different kinds of card for different use cases, because all subcomponents are optional and the card look good with any combination of them.
+By using subcomponents `Card.Cover`, `Card.Body` and `Card.Footer` users can
+create different kinds of card for different use cases, because all
+subcomponents are optional and the card look good with any combination of them.
 
 ```jsx harmony
 import Box from '../Box';
