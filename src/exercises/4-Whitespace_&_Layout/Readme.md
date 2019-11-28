@@ -53,28 +53,7 @@ Add props `m`, `mt`, `mr`, `mb`, and `ml` to change `margin`, `margin-top`,
 <details>
  <summary>Solution</summary>
 
-```js static
-import styled from 'styled-components';
-
-const Heading = styled.h1`
-  margin: ${props => props.theme.space[props.m]};
-  margin-top: ${props => props.theme.space[props.mt]};
-  margin-right: ${props => props.theme.space[props.mr]};
-  margin-bottom: ${props => props.theme.space[props.mb]};
-  margin-left: ${props => props.theme.space[props.ml]};
-  font-weight: normal;
-  font-family: ${props => props.theme.fonts.heading};
-  font-size: ${props => props.theme.fontSizes[props.size]};
-  color: ${props => props.theme.colors.base};
-`;
-
-Heading.defaultProps = {
-  m: 0,
-  size: 'xl'
-};
-
-/** @component */
-export default Heading;
+```js {"file": "solutions/4.1.js", "static": true}
 ```
 
 </details>
@@ -121,17 +100,7 @@ Replace all custom margins with the `space` function from styled-system.
 <details>
  <summary>Solution</summary>
 
-```js static
-import styled from 'styled-components';
-import { space } from 'styled-system';
-
-const Heading = styled.h1`
-  ${space};
-  /* Other styles */
-`;
-
-/** @component */
-export default Heading;
+```js {"file": "solutions/4.2.js", "static": true}
 ```
 
 </details>
@@ -179,8 +148,8 @@ import Box from '../../components/primitives/Box';
 
 3. Add `box-sizing: border-box` as the only default styles.
 
-4. Add support for Flexbox props like `alignItems` and `flexDirection`: we’ll
-   need them for the next exercise.
+4. Add support for Flexbox and CSS Grid props like `alignItems` and
+   `flexDirection`: we’ll need them for the next exercise.
 
 **Hint:** use [styled-system functions](https://styled-system.com/api), like the
 `space` function we’ve used in the previous exercise, to create props.
@@ -195,29 +164,7 @@ package.
 <details>
  <summary>Solution</summary>
 
-```js static
-import styled from 'styled-components';
-import { space, color, layout, flexbox } from 'styled-system';
-
-const Box = styled('div')(
-  {
-    boxSizing: 'border-box'
-  },
-  space,
-  color,
-  layout,
-  flexbox
-);
-
-Box.propTypes = {
-  ...propTypes.space,
-  ...propTypes.color,
-  ...propTypes.layout,
-  ...propTypes.flexbox
-};
-
-/** @component */
-export default Box;
+```js {"file": "../../components/primitives/Box/Box.js", "static": true}
 ```
 
 </details>
@@ -262,28 +209,7 @@ import Box from '../../components/primitives/Box';
 <details>
  <summary>Solution</summary>
 
-```js static
-import styled from 'styled-components';
-import Box from '../Box';
-
-export const Flex = styled(Box)({
-  display: 'flex'
-});
-
-Flex.defaultProps = {
-  justifyContent: 'center',
-  flexDirection: 'row'
-};
-
-Flex.propTypes = {
-  ...propTypes.space,
-  ...propTypes.color,
-  ...propTypes.layout,
-  ...propTypes.flexbox
-};
-
-/** @component */
-export default Flex;
+```js {"file": "../../components/primitives/Flex/Flex.js", "static": true}
 ```
 
 </details>
@@ -364,48 +290,7 @@ this: `gridTemplateColumns={['1fr', '1fr auto']}`.
 <details>
  <summary>Solution</summary>
 
-```js static
-/* eslint-disable jsx-a11y/accessible-emoji */
-import React from 'react';
-import Stack from 'stack-styled';
-import Box from '../../../src/components/primitives/Box';
-import Button from '../../../src/components/primitives/Button';
-import Input from '../../../src/components/primitives/Input';
-
-const SubscriptionForm = ({
-  id,
-  onSubmit,
-  onEmailChange,
-  email,
-  loading,
-  success,
-  error
-}) => (
-  <Stack
-    gridGap={3}
-    mb={2}
-    gridTemplateColumns={['1fr', '1fr auto']}
-    as="form"
-    onSubmit={onSubmit}
-  >
-    <Input
-      type="email"
-      value={email}
-      required
-      placeholder="Email"
-      aria-label="Email"
-      aria-invalid={error && 'true'}
-      aria-describedby={`${id}-info`}
-      disabled={loading}
-      onChange={onEmailChange}
-    />
-    <Button variant="primary" type="submit" disabled={loading}>
-      Subscribe
-    </Button>
-  </Stack>
-);
-
-export default SubscriptionForm;
+```js {"file": "solutions/4.5.js", "static": true}
 ```
 
 </details>
@@ -435,46 +320,7 @@ import Footer from '../../../src/components/patterns/Footer';
 <details>
  <summary>Solution</summary>
 
-```js static
-import React from 'react';
-import Box from '../../../src/components/primitives/Box';
-import Flex from '../../../src/components/primitives/Flex';
-import Heading from '../../../src/components/primitives/Heading';
-import Link from '../../../src/components/primitives/Link';
-import Text from '../../../src/components/primitives/Text';
-import { Inverted } from '../../../src/components/../ThemeProvider';
-import SubscriptionForm from '../../../src/components/app/SubscriptionFormContainer';
-import SvgDogPees from '../../../src/components/app/images/SvgDogPees';
-
-const Footer = () => {
-  return (
-    <Inverted>
-      <Flex px={5} py={4} flexDirection="column" bg="bg" color="secondary">
-        <Box mx="auto" mb={5}>
-          <SvgDogPees width="100" />
-        </Box>
-        <Box mb={5} mx="auto" width={[1, 2 / 3, 1 / 2]}>
-          <Heading size="lg" as="h2" mb={4} align="center">
-            Subscribe to our newsletter!
-          </Heading>
-          <SubscriptionForm />
-        </Box>
-        <Text variant="tertiary" align="center">
-          © {new Date().getFullYear()}{' '}
-          <Link href="https://okonet.ru/" shy>
-            Andrey Okonetchnikov
-          </Link>{' '}
-          and{' '}
-          <Link href="https://sapegin.me/" shy>
-            Artem Sapegin
-          </Link>
-        </Text>
-      </Flex>
-    </Inverted>
-  );
-};
-
-export default Footer;
+```js {"file": "solutions/4.6.js", "static": true}
 ```
 
 </details>
