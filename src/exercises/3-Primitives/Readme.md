@@ -259,8 +259,10 @@ Have a look at our
 [typography scale](https://cdds.netlify.com/styleguide/#/Foundation?id=typography):
 
 ```jsx noeditor
-import Typography from '../../styleguide/Typography';
-<Typography />;
+import { Typography } from '@component-driven/react-design-tokens';
+import theme from '../../theme';
+
+<Typography theme={theme} />;
 ```
 
 We already know how to access design tokens in our styled components from the
