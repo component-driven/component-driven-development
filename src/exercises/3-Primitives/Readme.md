@@ -1,8 +1,14 @@
-In this exercise we’ll create reusable primitive components. We’ll create a button, an input field, a custom select, a text component and a heading component. We’ll learn how to work with styled-components, how to do prop-based styling and how to access design tokens (values we’ve defined in the `theme.js` file in the previous exercise).
+In this exercise we’ll create reusable primitive components. We’ll create a
+button, an input field, a custom select, a text component and a heading
+component. We’ll learn how to work with styled-components, how to do prop-based
+styling and how to access design tokens (values we’ve defined in the `theme.js`
+file in the previous exercise).
 
 ## 3.1. Introducing styled-components
 
-If you’re not familiar with [styled-components](https://www.styled-components.com/), here’s the idea in five lines of code:
+If you’re not familiar with
+[styled-components](https://www.styled-components.com/), here’s the idea in five
+lines of code:
 
 ```js static
 import styled from 'styled-components';
@@ -14,7 +20,9 @@ const Title = styled.h1`
 <Title>Hello components!</Title>;
 ```
 
-The `Title` component will render an `h1` tag with an attached CSS that sets the color to `salmon`. Styles look almost identical to regular CSS, but instead of classes we have components.
+The `Title` component will render an `h1` tag with an attached CSS that sets the
+color to `salmon`. Styles look almost identical to regular CSS, but instead of
+classes we have components.
 
 You can also use object notation instead of tagged template literals:
 
@@ -28,7 +36,8 @@ const Title = styled('h1')({
 <Title>Hello components!</Title>;
 ```
 
-**Hint:** [A 5-minute intro to styled-components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55).
+**Hint:**
+[A 5-minute intro to styled-components](https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55).
 
 ### The result
 
@@ -37,8 +46,7 @@ The result should look like this:
 ```js noeditor
 import Button from '../../components/primitives/Button';
 <>
-  <Button variant="primary">Primary</Button>{' '}
-  <Button>Secondary</Button>{' '}
+  <Button variant="primary">Primary</Button> <Button>Secondary</Button>{' '}
   <Button variant="primary" disabled>
     Disabled
   </Button>{' '}
@@ -50,9 +58,13 @@ import Button from '../../components/primitives/Button';
 
 1. Rewrite a button component in `Button.js` using styled-components.
 
-2. Define basic styles like padding, text and background colors according to [the mockup](https://cdds.netlify.com/), use primary button styles (like the “Place an order” button on the checkout page).
+2. Define basic styles like padding, text and background colors according to
+   [the mockup](https://cdds.netlify.com/), use primary button styles (like the
+   “Place an order” button on the checkout page).
 
-_Don’t try to be pixel perfect here, that’s not the goal of the exercise. Also exact values (like colors or font sizes) aren’t important at this stage — we’ll deal with that in the future exercises._
+_Don’t try to be pixel perfect here, that’s not the goal of the exercise. Also
+exact values (like colors or font sizes) aren’t important at this stage — we’ll
+deal with that in the future exercises._
 
 <details>
  <summary>Solution</summary>
@@ -64,9 +76,13 @@ _Don’t try to be pixel perfect here, that’s not the goal of the exercise. Al
 
 ## 3.2. Using design tokens
 
-We’ve already created design tokens for our project and explored [the tokens](https://cdds.netlify.com/styleguide/#/Foundation) in the previous exercise.
+We’ve already created design tokens for our project and explored
+[the tokens](https://cdds.netlify.com/styleguide/#/Foundation) in the previous
+exercise.
 
-styled-components makes it simple to use design tokens, thanks to [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js). You can access them in your component like this:
+styled-components makes it simple to use design tokens, thanks to
+[ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js).
+You can access them in your component like this:
 
 ```js static
 const Button = styled.button`
@@ -80,7 +96,9 @@ const Button = styled.button`
 
 **Bonus:** Add `body` font family, font size and border radius.
 
-**Hint:** See [theme.js file](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js) for all available tokens.
+**Hint:** See
+[theme.js file](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js)
+for all available tokens.
 
 <details>
  <summary>Solution</summary>
@@ -89,8 +107,7 @@ const Button = styled.button`
 import styled from 'styled-components';
 
 const Button = styled.button`
-  padding: ${props => props.theme.space[3]} ${props =>
-      props.theme.space[4]};
+  padding: ${props => props.theme.space[3]} ${props => props.theme.space[4]};
   color: ${props => props.theme.colors.bg};
   background: ${props => props.theme.colors.primary};
   border-radius: ${props => props.theme.radii.base};
@@ -107,7 +124,8 @@ export default Button;
 
 ## 3.3. Add hover and active styles
 
-Use `&` to refer to a component class name, generated by styled-components, similar to Sass:
+Use `&` to refer to a component class name, generated by styled-components,
+similar to Sass:
 
 ```js static
 const Button = styled.button`
@@ -124,7 +142,8 @@ const Button = styled.button`
 
 **Bonus 1:** Add focus style.
 
-**Bonus 2:** Add disabled style. Make sure that a button doesn’t have a hover state when it’s disabled.
+**Bonus 2:** Add disabled style. Make sure that a button doesn’t have a hover
+state when it’s disabled.
 
 <details>
  <summary>Solution</summary>
@@ -160,7 +179,9 @@ export default Button;
 
 ## 3.4. Prop-based styling
 
-Styles in styled-components [can depend on props](https://www.styled-components.com/docs/basics#adapting-based-on-props) you pass to your component:
+Styles in styled-components
+[can depend on props](https://www.styled-components.com/docs/basics#adapting-based-on-props)
+you pass to your component:
 
 ```js static
 const Title = styled.h1`
@@ -194,9 +215,7 @@ const Button = styled.button`
       ? props.theme.colors.bg
       : props.theme.colors.primary};
   background-color: ${props =>
-    props.variant === 'primary'
-      ? props.theme.colors.primary
-      : 'transparent'};
+    props.variant === 'primary' ? props.theme.colors.primary : 'transparent'};
   border: 1px solid ${props => props.theme.colors.primary};
 `;
 
@@ -219,7 +238,8 @@ export default Button;
 
 ## 3.5. Changing the HTML element used to render a component
 
-Every styled component has a special prop `as` that allows you to change the HTML element used to render a component:
+Every styled component has a special prop `as` that allows you to change the
+HTML element used to render a component:
 
 ```jsx static
 <Button as="a" href="/">
@@ -229,18 +249,22 @@ Every styled component has a special prop `as` that allows you to change the HT
 
 ### The task
 
-Either by editing the `Button.md` file or directly in the Styleguidist interface, change one of the examples of the `Button` component to use an `<a>` tag instead of the default `<button>`.
+Either by editing the `Button.md` file or directly in the Styleguidist
+interface, change one of the examples of the `Button` component to use an `<a>`
+tag instead of the default `<button>`.
 
 ## 3.6. Creating a basic heading component
 
-Have a look at our [typography scale](https://cdds.netlify.com/styleguide/#/Foundation?id=typography):
+Have a look at our
+[typography scale](https://cdds.netlify.com/styleguide/#/Foundation?id=typography):
 
 ```jsx noeditor
 import Typography from '../../styleguide/Typography';
 <Typography />;
 ```
 
-We already know how to access design tokens in our styled components from the previous exercise.
+We already know how to access design tokens in our styled components from the
+previous exercise.
 
 ## The result
 
@@ -271,7 +295,13 @@ Create a component that renders different levels of headings:
 - font size is defined by a component prop (one of `md`, `lg`, `xl`);
 - HTML element can be changed independently from the font size.
 
-**Hint:** We need to change heading styles and an HTML element independently, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3), where the heading is placed in an app, and doesn’t always match the style. Use styled-components [`as` props](https://www.styled-components.com/docs/api#as-polymorphic-prop) to change an HTML element, used to render a component.
+**Hint:** We need to change heading styles and an HTML element independently,
+because heading level
+[depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3),
+where the heading is placed in an app, and doesn’t always match the style. Use
+styled-components
+[`as` props](https://www.styled-components.com/docs/api#as-polymorphic-prop) to
+change an HTML element, used to render a component.
 
 <details>
  <summary>Solution</summary>
@@ -304,7 +334,9 @@ export default Heading;
 
 ---
 
-_Feel free to skip the exercise below or do them at home, since they don’t teach any new techniques but give you more practice with things you’ve learned in previous exercises._
+_Feel free to skip the exercise below or do them at home, since they don’t teach
+any new techniques but give you more practice with things you’ve learned in
+previous exercises._
 
 ## 3.7. Creating reusable input field component (bonus)
 
@@ -319,7 +351,8 @@ import Input from '../../components/primitives/Input';
 
 ### The task
 
-1. Create an `Input` component, similar to the `Button` component, we’ve created in the previous tasks.
+1. Create an `Input` component, similar to the `Button` component, we’ve created
+   in the previous tasks.
 
    - An input should support disabled state (`disabled` prop).
 
@@ -379,7 +412,8 @@ import Select from '../../components/primitives/Select';
 
 ### The task
 
-1. Create a `Select` component, similar to the `Button` and `Input` components, we’ve created in the previous tasks.
+1. Create a `Select` component, similar to the `Button` and `Input` components,
+   we’ve created in the previous tasks.
 
 - An select should support disabled state (`disabled` prop).
 
@@ -409,8 +443,7 @@ const Select = styled.select`
   background-color: ${props => props.theme.colors.bg};
 
   /* Down arrow icon */
-  background-image: ${props =>
-    getDownArrowIcon(props.theme.colors.secondary)};
+  background-image: ${props => getDownArrowIcon(props.theme.colors.secondary)};
   background-position: center right ${props => props.theme.space[3]};
   background-repeat: no-repeat;
 
@@ -488,8 +521,7 @@ const Text = styled.p`
   margin: 0;
   line-height: ${props => props.theme.lineHeights.base};
   font-family: ${props => props.theme.fonts.body};
-  font-size: ${props =>
-    props.theme.fontSizes[getFontSize(props.variant)]};
+  font-size: ${props => props.theme.fontSizes[getFontSize(props.variant)]};
   color: ${props => props.theme.colors[getColor(props.variant)]};
 `;
 
@@ -497,12 +529,7 @@ Text.propTypes = {
   /** Custom component or HTML tag */
   as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   /** Variation */
-  variant: PropTypes.oneOf([
-    'base',
-    'secondary',
-    'tertiary',
-    'error'
-  ]),
+  variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
   children: PropTypes.node
 };
 

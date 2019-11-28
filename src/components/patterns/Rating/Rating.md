@@ -1,4 +1,5 @@
-Rating should be used when we want to promote a specific piece of content in order to democratically help decide what content is of higher quality.
+Rating should be used when we want to promote a specific piece of content in
+order to democratically help decide what content is of higher quality.
 
 ```js
 <Rating value={1} />

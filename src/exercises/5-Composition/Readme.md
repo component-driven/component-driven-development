@@ -1,8 +1,16 @@
-In this exercise we’ll create reusable form components. We’ll create a button, an input field and a custom select. We’ll learn how to work with styled-components, how to do prop-based styling and how to access design tokens (values we’ve defined in the `theme.js` file in the previous exercise).
+In this exercise we’ll create reusable form components. We’ll create a button,
+an input field and a custom select. We’ll learn how to work with
+styled-components, how to do prop-based styling and how to access design tokens
+(values we’ve defined in the `theme.js` file in the previous exercise).
 
 ## 5.1. Extending styled components
 
-Styled-components support [extending styles](https://www.styled-components.com/docs/basics#extending-styles). It’s something like inheritance: you can create a styled component, that’s based on another component, not necessarily styled (but it has to accpept `className` prop). Such component will keep all the styles and behavior or the original component, bu you’ll be able to add extra styles.
+Styled-components support
+[extending styles](https://www.styled-components.com/docs/basics#extending-styles).
+It’s something like inheritance: you can create a styled component, that’s based
+on another component, not necessarily styled (but it has to accpept `className`
+prop). Such component will keep all the styles and behavior or the original
+component, bu you’ll be able to add extra styles.
 
 For example, a basic card may look like so:
 
@@ -20,9 +28,12 @@ Card.defaultProps = {
 };
 ```
 
-This `Card` component will accept all props of the `Box` component (for some we’ve defined default values: `p`), but also will have grayish background and rounded corners.
+This `Card` component will accept all props of the `Box` component (for some
+we’ve defined default values: `p`), but also will have grayish background and
+rounded corners.
 
-We can use this technique to implement a hero pattern. It’s a design pattern, where large text is displayed on top of a photo, and often used in site headers.
+We can use this technique to implement a hero pattern. It’s a design pattern,
+where large text is displayed on top of a photo, and often used in site headers.
 
 ### The result
 
@@ -33,20 +44,22 @@ import Hero from '../../components/patterns/Hero';
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={6}
 >
-  <Heading level={2}>
-    The quick brown fox jumps over the lazy dog
-  </Heading>
+  <Heading level={2}>The quick brown fox jumps over the lazy dog</Heading>
 </Hero>;
 ```
 
 ### The task
 
-Implement a `Hero` component, based on the `Box` component, we’ve created in the previous exercise.
+Implement a `Hero` component, based on the `Box` component, we’ve created in the
+previous exercise.
 
 - Accept any `background-image` CSS property value as background.
-- Don’t make any assumptions, like font size, on the content, just render `children` as is.
+- Don’t make any assumptions, like font size, on the content, just render
+  `children` as is.
 
-**Hint:** Use [styled-system functions](https://styled-system.com/table#background) to create props for changing background.
+**Hint:** Use
+[styled-system functions](https://styled-system.com/table#background) to create
+props for changing background.
 
 **Bonus:** Make padding and background position customizable.
 
@@ -86,7 +99,8 @@ export default Hero;
 
 ## 5.2. Compound components
 
-Often we want to render different kinds of content and style them differently, like an image, a heading and a body text of a card.
+Often we want to render different kinds of content and style them differently,
+like an image, a heading and a body text of a card.
 
 For example, a more functional card may look like so:
 
@@ -146,7 +160,9 @@ Create a compound `Feature` component, that has three subcomponents:
 - `Heading` that renders a large centered heading.
 - `Body` that renders centered text.
 
-**Hint:** Use `Stack` component from [Stack Styled](https://sapegin.github.io/stack-styled/) to create even spacing between subcomponents.
+**Hint:** Use `Stack` component from
+[Stack Styled](https://sapegin.github.io/stack-styled/) to create even spacing
+between subcomponents.
 
 <details>
  <summary>Solution</summary>
@@ -158,9 +174,7 @@ import Stack from 'stack-styled';
 import Heading from '../../core/Heading';
 import Text from '../../core/Text';
 
-const Feature = ({ children }) => (
-  <Stack gridGap={2}>{children}</Stack>
-);
+const Feature = ({ children }) => <Stack gridGap={2}>{children}</Stack>;
 
 Feature.Icon = ({ children }) => (
   <Box ml="auto" mr="auto" color="secondary">
@@ -174,9 +188,7 @@ Feature.Heading = ({ children }) => (
   </Heading>
 );
 
-Feature.Body = ({ children }) => (
-  <Text align="center">{children}</Text>
-);
+Feature.Body = ({ children }) => <Text align="center">{children}</Text>;
 
 export default Feature;
 ```
@@ -187,10 +199,15 @@ export default Feature;
 
 Compound components are easy to implement but have some drawbacks:
 
-- The consumer can change the order of subcomponents (it can be a benefit depending on your use case).
-- You can’t do complex layouts, where subcomponents should be placed in particular containers.
+- The consumer can change the order of subcomponents (it can be a benefit
+  depending on your use case).
+- You can’t do complex layouts, where subcomponents should be placed in
+  particular containers.
 
-When these things are important, we can use the [macro-components](https://github.com/jxnblk/macro-components) library. For the consumer it works the same way as compound components, but the component developer has absolute control over order and layout of subcomponents.
+When these things are important, we can use the
+[macro-components](https://github.com/jxnblk/macro-components) library. For the
+consumer it works the same way as compound components, but the component
+developer has absolute control over order and layout of subcomponents.
 
 For example, we want to place a button on the right side of a heading:
 
@@ -216,9 +233,7 @@ import Box from '../../components/primitives/Box';
 import Heading from '../../components/primitives/Heading';
 import Button from '../../components/primitives/Button';
 
-const Title = ({ children }) => (
-  <Heading size="lg">{children}</Heading>
-);
+const Title = ({ children }) => <Heading size="lg">{children}</Heading>;
 const Button = ({ children }) => <Box ml="auto">{children}</Box>;
 
 const Header = Macro({ Title, Button })(({ Title, Button }) => (
@@ -275,7 +290,9 @@ Create a `Card` component, that has three subcomponents:
 - `Body` that renders a card body;
 - `Footer` that renders a card footer;
 
-Cover is optional, and either a body or a footer. A cover should occupy full width of the card without any padding, a body and a footer should have padding around and between them: 16px.
+Cover is optional, and either a body or a footer. A cover should occupy full
+width of the card without any padding, a body and a footer should have padding
+around and between them: 16px.
 
 <details>
  <summary>Solution</summary>

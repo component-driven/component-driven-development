@@ -1,6 +1,8 @@
-Subscription form should be used to gather emails of users who are interested in the newlestter.
+Subscription form should be used to gather emails of users who are interested in
+the newlestter.
 
-The component implements different states that can be activated during the process.
+The component implements different states that can be activated during the
+process.
 
 ### Normal
 
