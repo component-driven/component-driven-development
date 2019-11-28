@@ -1,9 +1,9 @@
 import React from 'react';
-import Box from '../../../src/components/core/Box';
-import Flex from '../../../src/components/core/Flex';
-import Heading from '../../../src/components/core/Heading';
-import Link from '../../../src/components/core/Link';
-import Text from '../../../src/components/core/Text';
+import Box from '../../components/primitives/Box';
+import Flex from '../../components/primitives/Flex';
+import Heading from '../../components/primitives/Heading';
+import Link from '../../components/primitives/Link';
+import Text from '../../components/primitives/Text';
 import { Inverted } from '../../../src/components/../ThemeProvider';
 import SubscriptionForm from '../../../src/components/app/SubscriptionFormContainer';
 import SvgDogPees from '../../../src/components/app/images/SvgDogPees';

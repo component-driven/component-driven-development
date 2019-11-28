@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from '../../core/Stack';
-import Button from '../../core/Button';
-import Input from '../../core/Input';
-import Text from '../../core/Text';
+import Stack from '../../primitives/Stack';
+import Button from '../../primitives/Button';
+import Input from '../../primitives/Input';
+import Text from '../../primitives/Text';
 
 const SubscriptionForm = ({
 	id,

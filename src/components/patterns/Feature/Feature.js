@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from '../../core/Stack';
-import Box from '../../core/Box';
-import Heading from '../../core/Heading';
-import Text from '../../core/Text';
+import Stack from '../../primitives/Stack';
+import Box from '../../primitives/Box';
+import Heading from '../../primitives/Heading';
+import Text from '../../primitives/Text';
 
 const Feature = ({ as, children }) => (
 	<Stack gridGap={2} as={as}>

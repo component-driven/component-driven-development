@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space, color, background } from 'styled-system';
-import Box from '../../components/core/Box';
+import Box from '../../components/primitives/Box';
 
 /**
  * A hero

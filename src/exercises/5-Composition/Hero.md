@@ -1,7 +1,7 @@
 A basic example:
 
 ```jsx harmony
-import Heading from '../../components/core/Heading';
+import Heading from '../../components/primitives/Heading';
 <Hero
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={6}
@@ -15,7 +15,7 @@ import Heading from '../../components/core/Heading';
 Responsive paddings:
 
 ```jsx harmony
-import Heading from '../../components/core/Heading';
+import Heading from '../../components/primitives/Heading';
 <Hero
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={[5, 6]}

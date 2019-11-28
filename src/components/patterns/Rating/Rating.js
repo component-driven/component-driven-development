@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from '../../core/Stack';
-import Icon from '../../core/Icon';
-import VisuallyHidden from '../../core/VisuallyHidden';
+import Stack from '../../primitives/Stack';
+import Icon from '../../primitives/Icon';
+import VisuallyHidden from '../../primitives/VisuallyHidden';
 
 const STARS_COUNT = 5;
 

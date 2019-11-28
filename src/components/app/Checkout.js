@@ -1,9 +1,9 @@
 import React from 'react';
 import { Formik } from 'formik';
 import Header from '../app/Header';
-import Box from '../core/Box';
-import Flex from '../core/Flex';
-import Heading from '../core/Heading';
+import Box from '../primitives/Box';
+import Flex from '../primitives/Flex';
+import Heading from '../primitives/Heading';
 import CheckoutForm from '../app/CheckoutForm';
 import OrderSummary from '../app/OrderSummary';
 import { STATUSES } from '../../consts';

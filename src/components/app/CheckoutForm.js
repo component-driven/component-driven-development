@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Form, Field } from 'formik';
-import Box from '../core/Box';
-import Flex from '../core/Flex';
-import Text from '../core/Text';
-import Button from '../core/Button';
-import Input from '../core/Input';
-import Select from '../core/Select';
-import Heading from '../core/Heading';
+import Box from '../primitives/Box';
+import Flex from '../primitives/Flex';
+import Text from '../primitives/Text';
+import Button from '../primitives/Button';
+import Input from '../primitives/Input';
+import Select from '../primitives/Select';
+import Heading from '../primitives/Heading';
 
 const Widget = ({ label, children, ...props }) => {
 	return (

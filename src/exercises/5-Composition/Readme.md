@@ -8,7 +8,7 @@ For example, a basic card may look like so:
 
 ```js static
 import styled from 'styled-components';
-import Box from '../../components/core/Box';
+import Box from '../../components/primitives/Box';
 
 const Card = styled(Box)`
   background: ghostwhite;
@@ -27,7 +27,7 @@ We can use this technique to implement a hero pattern. It’s a design pattern, 
 ### The result
 
 ```jsx harmony
-import Heading from '../../components/core/Heading';
+import Heading from '../../components/primitives/Heading';
 import Hero from '../../components/patterns/Hero';
 <Hero
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
@@ -57,7 +57,7 @@ Implement a `Hero` component, based on the `Box` component, we’ve created in
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space, color, background } from 'styled-system';
-import Box from '../../components/core/Box';
+import Box from '../../components/primitives/Box';
 
 /**
  * A hero
@@ -92,7 +92,7 @@ For example, a more functional card may look like so:
 
 ```jsx static
 import styled from 'styled-components';
-import Box from '../../components/core/Box';
+import Box from '../../components/primitives/Box';
 import { color, border } from 'styled-system';
 
 const CardBase = styled(Box)(color, border);
@@ -153,7 +153,7 @@ Create a compound `Feature` component, that has three subcomponents:
 
 ```jsx static
 import React from 'react';
-import Box from '../../components/core/Box';
+import Box from '../../components/primitives/Box';
 import Stack from 'stack-styled';
 import Heading from '../../core/Heading';
 import Text from '../../core/Text';
@@ -195,10 +195,10 @@ When these things are important, we can use the [macro-components](https://githu
 For example, we want to place a button on the right side of a heading:
 
 ```jsx harmony
-import Flex from '../../components/core/Flex';
-import Box from '../../components/core/Box';
-import Heading from '../../components/core/Heading';
-import Button from '../../components/core/Button';
+import Flex from '../../components/primitives/Flex';
+import Box from '../../components/primitives/Box';
+import Heading from '../../components/primitives/Heading';
+import Button from '../../components/primitives/Button';
 <Flex alignItems="baseline">
   <Heading size="lg">The most interesting article</Heading>
   <Box ml="auto">
@@ -211,10 +211,10 @@ We can make this component using macro-components like so:
 
 ```jsx static
 import Macro from 'macro-components';
-import Flex from '../../components/core/Flex';
-import Box from '../../components/core/Box';
-import Heading from '../../components/core/Heading';
-import Button from '../../components/core/Button';
+import Flex from '../../components/primitives/Flex';
+import Box from '../../components/primitives/Box';
+import Heading from '../../components/primitives/Heading';
+import Button from '../../components/primitives/Button';
 
 const Title = ({ children }) => (
   <Heading size="lg">{children}</Heading>
@@ -245,12 +245,12 @@ We can use this technique to implement a perfect card component.
 ### The result
 
 ```jsx harmony
-import Box from '../../components/core/Box';
-import Card from '../../components/core/Card';
-import Text from '../../components/core/Text';
-import Heading from '../../components/core/Heading';
-import Image from '../../components/core/Image';
-import Button from '../../components/core/Button';
+import Box from '../../components/primitives/Box';
+import Card from '../../components/primitives/Card';
+import Text from '../../components/primitives/Text';
+import Heading from '../../components/primitives/Heading';
+import Image from '../../components/primitives/Image';
+import Button from '../../components/primitives/Button';
 <Box width={300}>
   <Card>
     <Card.Cover>
