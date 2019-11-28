@@ -78,7 +78,7 @@ const Button = styled.button`
 
 1. Replace all hardcoded values with design tokens.
 
-**Bonus:** Add `base` font family, font size and border radius.
+**Bonus:** Add `body` font family, font size and border radius.
 
 **Hint:** See [theme.js file](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js) for all available tokens.
 
