@@ -13,28 +13,31 @@ Both methods are valid and have their use cases.
 
 In this exercise we’ll learn how to work with styled-system and how to do make
 our primitive components more flexible by making whitespace around them
-customizable. We’ll also learn about adding a whitepace separately. We’ll learn
+customizable. We’ll also learn about adding a whitespace separately. We’ll learn
 how to create first-class layout primitives that control layout of its children:
-Box, Flex and Stack.
+Box, Flex, Grid, Stack, etc.
 
-## 4.1. Making components whitespace customizable
+## 4.1. Controlling whitespace with props
 
 Usually we need some whitespace above or below a component. We can hardcode some
 value, but often whitespace depends on the context, where the component is used.
 
-We can [extend](https://www.styled-components.com/docs/basics#extending-styles)
-the component:
+We could create a new component with margin based on the original one:
 
 ```jsx static
-const HeadingWithMargin = Heading.extend`
-  margin-bottom: ${props => props.theme.space[6]};
+import styled from 'styled-components';
+import Heading from '../Heading';
+
+const HeadingWithMargin = styled(Heading)`
+  margin-bottom: ${props => props.theme.space[5]};
 `
 <HeadingWithMargin size="xl">The quick brown fox</HeadingWithMargin>
 ```
 
-But that’s a lot of boilerplate.
+But that’s a lot of boilerplate and it's not reusable.
 
-Let’s make the whitespace part of the component API:
+Let’s make the whitespace part of the component API so we can declare margins
+via props when using the component:
 
 ```jsx static
 <Heading size="xl" mb={5}>
@@ -44,8 +47,8 @@ Let’s make the whitespace part of the component API:
 
 ## The task
 
-Add props `m`, `mt`, `mr`, `mb` and `ml` to change `margin`, `margin-top`,
-`margin-right`, `margin-bottom` and `margin-left` respectively.
+Add props `m`, `mt`, `mr`, `mb`, and `ml` to change `margin`, `margin-top`,
+`margin-right`, `margin-bottom`, and `margin-left` respectively.
 
 <details>
  <summary>Solution</summary>
@@ -59,7 +62,6 @@ const Heading = styled.h1`
   margin-right: ${props => props.theme.space[props.mr]};
   margin-bottom: ${props => props.theme.space[props.mb]};
   margin-left: ${props => props.theme.space[props.ml]};
-  line-height: 1.2;
   font-weight: normal;
   font-family: ${props => props.theme.fonts.heading};
   font-size: ${props => props.theme.fontSizes[props.size]};
@@ -87,7 +89,7 @@ exactly what we’ve done in the previous task:
 
 ```js static
 import { space } from 'styled-system';
-const Heading = styled(Base)`
+const Heading = styled.h1`
   font-weight: normal;
   ${space};
 `;
@@ -97,7 +99,7 @@ Or using the object notation instead of a template literal:
 
 ```js static
 import { space } from 'styled-system';
-const Heading = styled(Base)(
+const Heading = styled.h1(
   {
     fontWeight: 'normal'
   },
