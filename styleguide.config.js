@@ -78,6 +78,7 @@ if (isExercises) {
 		},
 		{
 			name: 'Primitives',
+			content: 'src/components/core/Readme.md',
 			components: 'src/components/core/**/[A-Z]*.js',
 		},
 		{
