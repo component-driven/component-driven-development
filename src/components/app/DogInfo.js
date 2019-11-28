@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from '../core/Stack';
-import Heading from '../core/Heading';
-import Text from '../core/Text';
+import Stack from '../primitives/Stack';
+import Heading from '../primitives/Heading';
+import Text from '../primitives/Text';
 import Rating from '../patterns/Rating';
 
 const DogInfo = ({ isHeading, dog }) => (

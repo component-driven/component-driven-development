@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getDownArrowIcon } from '../../components/core/Select/icons';
+import { getDownArrowIcon } from '../../components/primitives/Select/icons';
 
 /**
  * A select.

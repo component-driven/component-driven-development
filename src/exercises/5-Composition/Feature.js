@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from '../../components/core/Stack';
-import Box from '../../components/core/Box';
-import Heading from '../../components/core/Heading';
-import Text from '../../components/core/Text';
+import Stack from '../../components/primitives/Stack';
+import Box from '../../components/primitives/Box';
+import Heading from '../../components/primitives/Heading';
+import Text from '../../components/primitives/Text';
 
 const Feature = ({ children }) => (
 	/* Your code here */

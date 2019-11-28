@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Stack from '../core/Stack';
-import Box from '../core/Box';
-import Flex from '../core/Flex';
-import Text from '../core/Text';
-import Select from '../core/Select';
-import VisuallyHidden from '../core/VisuallyHidden';
+import Stack from '../primitives/Stack';
+import Box from '../primitives/Box';
+import Flex from '../primitives/Flex';
+import Text from '../primitives/Text';
+import Select from '../primitives/Select';
+import VisuallyHidden from '../primitives/VisuallyHidden';
 import DogCard from '../patterns/DogCard';
 import { STATUSES } from '../../consts';
 

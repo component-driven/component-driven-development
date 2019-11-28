@@ -1,13 +1,13 @@
 import React from 'react';
 import differenceInDays from 'date-fns/difference_in_days';
 import parse from 'date-fns/parse';
-import Box from '../core/Box';
-import Flex from '../core/Flex';
-import Heading from '../core/Heading';
-import Text from '../core/Text';
+import Box from '../primitives/Box';
+import Flex from '../primitives/Flex';
+import Heading from '../primitives/Heading';
+import Text from '../primitives/Text';
 import DogInfo from '../app/DogInfo';
-import Card from '../core/Card';
-import Image from '../core/Image';
+import Card from '../primitives/Card';
+import Image from '../primitives/Image';
 
 const getDays = (from, to) => {
 	if (!from || !to) {

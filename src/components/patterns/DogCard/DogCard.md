@@ -1,5 +1,5 @@
 ```jsx harmony
-import Box from '../../core/Box';
+import Box from '../../primitives/Box';
 <Box width={300}>
   <DogCard
     dog={{

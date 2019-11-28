@@ -78,8 +78,8 @@ if (isExercises) {
 		},
 		{
 			name: 'Primitives',
-			content: 'src/components/core/Readme.md',
-			components: 'src/components/core/**/[A-Z]*.js',
+			content: 'src/components/primitives/Readme.md',
+			components: 'src/components/primitives/**/[A-Z]*.js',
 		},
 		{
 			name: 'UI Patterns',

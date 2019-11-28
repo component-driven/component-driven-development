@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { background } from 'styled-system';
 import propTypes from '@styled-system/prop-types';
-import Flex from '../../core/Flex';
+import Flex from '../../primitives/Flex';
 
 /**
  * A hero

@@ -140,7 +140,7 @@ Let’s start with the simplest layout primitive — a `Box`. Box is a rectangul
 Update some props in the example below to see how the `Box` reacts to the change.
 
 ```jsx
-import Box from '../../components/core/Box';
+import Box from '../../components/primitives/Box';
 
 <Box p={2} m={3} width={1 / 4} bg="primary">
   Box content
@@ -202,8 +202,8 @@ export default Box;
 ### The result
 
 ```jsx
-import Flex from '../../components/core/Flex';
-import Box from '../../components/core/Box';
+import Flex from '../../components/primitives/Flex';
+import Box from '../../components/primitives/Box';
 
 <Flex flexDirection="row">
   <Flex alignItems="center" p={3} flex={1} bg="purple.1">
@@ -317,9 +317,9 @@ import SubscriptionForm from '../../../src/components/patterns/SubscriptionForm'
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import Stack from 'stack-styled';
-import Box from '../../../src/components/core/Box';
-import Button from '../../../src/components/core/Button';
-import Input from '../../../src/components/core/Input';
+import Box from '../../../src/components/primitives/Box';
+import Button from '../../../src/components/primitives/Button';
+import Input from '../../../src/components/primitives/Input';
 
 const SubscriptionForm = ({
   id,
@@ -381,11 +381,11 @@ import Footer from '../../../src/components/patterns/Footer';
 
 ```js static
 import React from 'react';
-import Box from '../../../src/components/core/Box';
-import Flex from '../../../src/components/core/Flex';
-import Heading from '../../../src/components/core/Heading';
-import Link from '../../../src/components/core/Link';
-import Text from '../../../src/components/core/Text';
+import Box from '../../../src/components/primitives/Box';
+import Flex from '../../../src/components/primitives/Flex';
+import Heading from '../../../src/components/primitives/Heading';
+import Link from '../../../src/components/primitives/Link';
+import Text from '../../../src/components/primitives/Text';
 import { Inverted } from '../../../src/components/../ThemeProvider';
 import SubscriptionForm from '../../../src/components/app/SubscriptionFormContainer';
 import SvgDogPees from '../../../src/components/app/images/SvgDogPees';

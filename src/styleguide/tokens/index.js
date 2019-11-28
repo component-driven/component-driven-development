@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { readableColor } from 'polished';
-import Box from '../../components/core/Box';
-import Stack from '../../components/core/Stack';
+import Box from '../../components/primitives/Box';
+import Stack from '../../components/primitives/Stack';
 import copy from 'clipboard-copy';
 
 /*

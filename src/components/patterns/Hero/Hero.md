@@ -1,7 +1,7 @@
 A basic example:
 
 ```jsx harmony
-import Heading from '../../core/Heading';
+import Heading from '../../primitives/Heading';
 <Hero
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={6}
@@ -15,7 +15,7 @@ import Heading from '../../core/Heading';
 Responsive paddings:
 
 ```jsx harmony
-import Heading from '../../core/Heading';
+import Heading from '../../primitives/Heading';
 <Hero
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={[5, 6]}
@@ -30,8 +30,8 @@ Inverted theme:
 
 ```jsx harmony
 import Stack from 'stack-styled';
-import Heading from '../../core/Heading';
-import Button from '../../core/Button';
+import Heading from '../../primitives/Heading';
+import Button from '../../primitives/Button';
 import { Inverted } from '../../../ThemeProvider';
 <Inverted>
   <Hero
@@ -53,12 +53,12 @@ Using as a page heading:
 
 ```jsx harmony
 import Stack from 'stack-styled';
-import Box from '../../core/Box';
-import Flex from '../../core/Flex';
-import Heading from '../../core/Heading';
-import Link from '../../core/Link';
-import Button from '../../core/Button';
-import Text from '../../core/Text';
+import Box from '../../primitives/Box';
+import Flex from '../../primitives/Flex';
+import Heading from '../../primitives/Heading';
+import Link from '../../primitives/Link';
+import Button from '../../primitives/Button';
+import Text from '../../primitives/Text';
 import { Inverted } from '../../../ThemeProvider';
 <Inverted>
   <Hero backgroundImage="url(https://source.unsplash.com/cGlac7MEyiE/1000x600)">

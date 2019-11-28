@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
-import Button from '../../core/Button';
-import Image from '../../core/Image';
+import Button from '../../primitives/Button';
+import Image from '../../primitives/Image';
 import DogInfo from '../../app/DogInfo';
-import Card from '../../core/Card';
+import Card from '../../primitives/Card';
 
 const DogCard = ({ as, dog }) => (
 	<Card as={as}>

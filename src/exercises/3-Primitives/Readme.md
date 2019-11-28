@@ -35,7 +35,7 @@ const Title = styled('h1')({
 The result should look like this:
 
 ```js noeditor
-import Button from '../../components/core/Button';
+import Button from '../../components/primitives/Button';
 <>
   <Button variant="primary">Primary</Button>{' '}
   <Button>Secondary</Button>{' '}
@@ -247,7 +247,7 @@ We already know how to access design tokens in our styled components from the pr
 The result should look like this:
 
 ```js noeditor
-import Heading from '../../components/core/Heading';
+import Heading from '../../components/primitives/Heading';
 <>
   <Heading size="xl" as="h1">
     Heading 1
@@ -313,7 +313,7 @@ _Feel free to skip the exercise below or do them at home, since they don’t tea
 The result should look like this:
 
 ```js noeditor
-import Input from '../../components/core/Input';
+import Input from '../../components/primitives/Input';
 <Input value="" placeholder="I am an input" />;
 ```
 
@@ -368,7 +368,7 @@ export default Input;
 The result should look like this:
 
 ```js noeditor
-import Select from '../../components/core/Select';
+import Select from '../../components/primitives/Select';
 <Select>
   <option value="1">Dachshund</option>
   <option value="2">Saluki</option>
@@ -390,7 +390,7 @@ import Select from '../../components/core/Select';
 
 ```js static
 import styled from 'styled-components';
-import { getDownArrowIcon } from '../../components/core/Select/icons';
+import { getDownArrowIcon } from '../../components/primitives/Select/icons';
 
 const Select = styled.select`
   appearance: none;
@@ -443,7 +443,7 @@ Now we know enough to create customizable components that use many theme values.
 The result should look like this:
 
 ```js noeditor
-import Text from '../../components/core/Text';
+import Text from '../../components/primitives/Text';
 <>
   <Text>Normal text</Text>
   <Text variant="secondary">Secondary text</Text>

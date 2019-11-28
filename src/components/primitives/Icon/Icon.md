@@ -1,34 +1,38 @@
 Sizes and variants:
 
 ```js
-<Icon name="dog" variant="primary" alt="" />
-<Icon name="dog" variant="primary" size="lg" alt="" />
-<Icon name="dog" variant="secondary" alt="" />
-<Icon name="dog" variant="secondary" size="lg" alt="" />
-<Icon name="dog" variant="currentColor" size="lg" alt="" />
+<>
+  <Icon name="dog" variant="primary" alt="" />
+  <Icon name="dog" variant="primary" size="lg" alt="" />
+  <Icon name="dog" variant="secondary" alt="" />
+  <Icon name="dog" variant="secondary" size="lg" alt="" />
+  <Icon name="dog" variant="currentColor" size="lg" alt="" />
+</>
 ```
 
 Icons:
 
 ```js
-<Icon name="dog" size="lg" alt="" />
-<Icon name="github" size="lg" alt="" />
-<Icon name="pin" size="lg" alt="" />
-<Icon name="star" size="lg" alt="" />
-<Icon name="starHalf" size="lg" alt="" />
-<Icon name="starOutline" size="lg" alt="" />
-<Icon name="twitter" size="lg" alt="" />
+<>
+  <Icon name="dog" size="lg" alt="" />
+  <Icon name="github" size="lg" alt="" />
+  <Icon name="pin" size="lg" alt="" />
+  <Icon name="star" size="lg" alt="" />
+  <Icon name="starHalf" size="lg" alt="" />
+  <Icon name="starOutline" size="lg" alt="" />
+  <Icon name="twitter" size="lg" alt="" />
+</>
 ```
 
 Accessible label:
 
-```js
+```jsx harmony
 <Icon name="dog" alt="a good girl" />
 ```
 
 A link with an icon:
 
-```js
+```jsx harmony
 import Box from '../Box';
 import Flex from '../Flex';
 import Icon from '../Icon';
@@ -46,7 +50,7 @@ import Text from '../Text';
 
 A button with an icon:
 
-```js
+```jsx harmony
 import Box from '../Box';
 import Flex from '../Flex';
 import Icon from '../Icon';

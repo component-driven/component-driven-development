@@ -1,9 +1,9 @@
 import React from 'react';
-import Stack from '../core/Stack';
-import Box from '../core/Box';
-import Flex from '../core/Flex';
-import Link from '../core/Link';
-import Text from '../core/Text';
+import Stack from '../primitives/Stack';
+import Box from '../primitives/Box';
+import Flex from '../primitives/Flex';
+import Link from '../primitives/Link';
+import Text from '../primitives/Text';
 
 const Header = () => (
 	<Flex justifyContent={['center', 'space-between']} flexWrap="wrap">
