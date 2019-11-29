@@ -6,7 +6,9 @@ import Heading from '../../primitives/Heading';
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={6}
 >
-  <Heading level={2}>The quick brown fox jumps over the lazy dog</Heading>
+  <Heading level={2}>
+    The quick brown fox jumps over the lazy dog
+  </Heading>
 </Hero>;
 ```
 
@@ -60,13 +62,21 @@ import Text from '../../primitives/Text';
 import { Inverted } from '../../../ThemeProvider';
 <Inverted>
   <Hero backgroundImage="url(https://source.unsplash.com/cGlac7MEyiE/1000x600)">
-    <Flex justifyContent={['center', 'space-between']} flexWrap="wrap">
+    <Flex
+      justifyContent={['center', 'space-between']}
+      flexWrap="wrap"
+    >
       <Box width={[1, 'auto']} mb={2}>
         <Text as="h1">
           <Link href="/">Rent-o-dog</Link>
         </Text>
       </Box>
-      <Stack justifyContent="center" gridAutoFlow="column" gridGap={4} mb={2}>
+      <Stack
+        justifyContent="center"
+        gridAutoFlow="column"
+        gridGap={4}
+        mb={2}
+      >
         <Text>
           <Link href="/">Our dogs</Link>
         </Text>
@@ -82,7 +92,11 @@ import { Inverted } from '../../../ThemeProvider';
       <Heading level={2} size="xl" mb={5}>
         The quick black fox jumps over the lazy dog
       </Heading>
-      <Stack justifyContent="center" gridAutoFlow="column" girdGap={4}>
+      <Stack
+        justifyContent="center"
+        gridAutoFlow="column"
+        girdGap={4}
+      >
         <Button variant="primary">Try now</Button>
         <Button variant="secondary">Try later</Button>
       </Stack>

@@ -1,11 +1,6 @@
-Colors, spacing, and typography are the building blocks of the design system and
-are often referred to as design tokens. Design tokens are named entities that
-store visual design attributes.
+Colors, spacing, and typography are the building blocks of the design system and are often referred to as design tokens. Design tokens are named entities that store visual design attributes.
 
-Those values are accessible in the app via
-[ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js)
-and the `theme` object. To ensure consistency, always use values from the
-`theme` object, instead of hardcoded values.
+Those values are accessible in the app via [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js) and the `theme` object. To ensure consistency, always use values from the `theme` object, instead of hardcoded values.
 
 For example:
 
@@ -20,9 +15,7 @@ const Message = styled.p`
 `;
 ```
 
-_Prefer_ the [Text](/#/Primitives?id=text) and
-[Heading](/#/Primitives?id=heading) components to render any text inside the
-app:
+_Prefer_ the [Text](/#/Primitives?id=text) and [Heading](/#/Primitives?id=heading) components to render any text inside the app:
 
 ```diff
 - const Small = styled.p`
@@ -33,6 +26,4 @@ app:
 + <Text variant="secondary">Oh dear! Oh dear! I shall be late!</Text>
 ```
 
-Check out the
-[theme.js](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js)
-file for all available design tokens.
+Check out the [theme.js](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js) file for all available design tokens.
