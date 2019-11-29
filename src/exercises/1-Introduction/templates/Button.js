@@ -1,7 +1,23 @@
+// COMMENT_START
+// This is an exercise about using styled-components
+// COMMENT_END
 import React from 'react';
 import PropTypes from 'prop-types';
+// FINAL_START
+import styled from 'styled-components';
+// FINAL_END
 
+// WORKSHOP_START
 const Button = (props) => <button {...props} />
+// WORKSHOP_END
+// FINAL_START
+const Button = styled.button`
+	padding: 8px 16px;
+	color: #fff;
+	background-color: #8667a8;
+	border: 0;
+`;
+// FINAL_END
 
 Button.propTypes = {
 	/** Button label */
