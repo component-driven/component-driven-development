@@ -11,7 +11,7 @@ const workshopId = 0; // TODO: take workshop ID as a CLI argument
 
 const config = {
 	serverPort: isExercises ? 6061 : 6060,
-	title: 'Component-driven development workshop',
+	title: 'Component-driven design systems workshop',
 	styleguideDir: 'build/styleguide',
 	assetsDir: 'public',
 	styleguideComponents: {
