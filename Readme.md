@@ -67,7 +67,9 @@ Or:
 
 [Artem Sapegin](http://sapegin.me), [Andrey Okonetchnikov](http://okonet.ru/) and [contributors](https://github.com/component-driven/component-driven-development/graphs/contributors).
 
-MIT License, see the included [License.md](License.md) file.
+This material is available for private, non-commercial use under the GPL version 3. If you would like to use this material to conduct your own workshop, please contact us at hi@component-driven.io.
+
+## Credits
 
 Icons: [Ionicons](https://ionicons.com/), [Font Awesome](https://fontawesome.com/), [Ilya Kolbin](https://thenounproject.com/kolbin.ia/), [Denis Sazhin](https://thenounproject.com/iconka/).
 
