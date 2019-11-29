@@ -2,7 +2,7 @@
 	"name": "component-driven-development",
 	"version": "0.1.0",
 	"private": true,
-  "license": "(GPL-3.0 OR CC BY-NC 4.0)",
+  "license": "CC BY-NC 4.0",
 	"homepage": "https://cdds.netlify.com",
 	"dependencies": {
 		"@component-driven/react-design-tokens": "^1.1.1",
