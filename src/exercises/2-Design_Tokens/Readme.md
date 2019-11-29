@@ -1,8 +1,6 @@
-In this exercise we’ll learn basics of React Styleguidist.
+Design tokens are the single source of truth for project’s colors, whitespace, font styles and other design decisions.
 
 ## 2.1. What are design tokens?
-
-Design tokens are the single source of truth for project’s colors, whitespace, font styles and other design decisions.
 
 We’ve prepared the basic structure for the design tokens file. Open the `theme.js` in the exercise directory (`src/exercises/2-Design_Tokens/theme.js`).
 

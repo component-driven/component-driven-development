@@ -1,12 +1,25 @@
-Component with default props:
+Default button:
 
 ```jsx harmony
-<Button />
+<Button>Push me</Button>
 ```
 
-More examples:
+Disabled button:
 
 ```jsx harmony
-<Button>My name is Mr Knopf</Button>
-<Button onClick={() => alert('Hello')}>I’m clickable</Button>
+<Button disabled>Can’t touch this</Button>
+```
+
+Primary button:
+
+```jsx harmony
+<Button variant="primary">Push me</Button>
+```
+
+Disabled primary button:
+
+```jsx harmony
+<Button variant="primary" disabled>
+  Can’t touch this
+</Button>
 ```
