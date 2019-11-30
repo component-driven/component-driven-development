@@ -1,4 +1,4 @@
-In this exercise we’ll create reusable primitive components. We’ll create a button, an input field, a custom select, a text component and a heading component. We'll learn and how to access design tokens (values we’ve defined in the `theme.js` file in the previous exercise).
+In this exercise we’ll create reusable primitive components. We’ll create a button, an input field, a custom select, a text component and a heading component. We'll learn how to access design tokens (values we’ve defined in the `theme.js` file in the previous exercise).
 
 ## 3.1. Using design tokens
 
