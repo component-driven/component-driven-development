@@ -9,87 +9,7 @@ Both methods are valid and have their use cases.
 
 In this exercise we’ll learn how to work with styled-system and how to do make our primitive components more flexible by making whitespace around them customizable. We’ll also learn about adding a whitespace separately. We’ll learn how to create first-class layout primitives that control layout of its children: Box, Flex, Grid, Stack, etc.
 
-## 4.1. Controlling whitespace with props
-
-Usually we need some whitespace above or below a component. We can hardcode some value, but often whitespace depends on the context, where the component is used.
-
-We could create a new component with margin based on the original one:
-
-```jsx static
-import styled from 'styled-components';
-import Heading from '../Heading';
-
-const HeadingWithMargin = styled(Heading)`
-  margin-bottom: ${props => props.theme.space[5]};
-`
-<HeadingWithMargin size="xl">The quick brown fox</HeadingWithMargin>
-```
-
-But that’s a lot of boilerplate and it's not reusable.
-
-Let’s make the whitespace part of the component API so we can declare margins via props when using the component:
-
-```jsx static
-<Heading size="xl" mb={5}>
-  The quick brown fox
-</Heading>
-```
-
-## The task
-
-Add props `m`, `mt`, `mr`, `mb`, and `ml` to change `margin`, `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` respectively.
-
-<details>
- <summary>Solution</summary>
-
-```js {"file": "solutions/4.1.js", "static": true}
-```
-
-</details>
-
-## 4.2. Introducing styled-system
-
-[Styled-system](https://styled-system.com/) is a collection of utility functions that allow you to control styles of your component using props.
-
-For example, the [space](https://styled-system.com/api#space) function does exactly what we’ve done in the previous task:
-
-```js static
-import { space } from 'styled-system';
-const Heading = styled.h1`
-  font-weight: normal;
-  ${space};
-`;
-```
-
-Or using the object notation instead of a template literal:
-
-```js static
-import { space } from 'styled-system';
-const Heading = styled.h1(
-  {
-    fontWeight: 'normal'
-  },
-  space
-);
-```
-
-[Each styled-system function](https://styled-system.com/table) implements a group of component props. For example `space` adds padding and margins props, `typography` adds props like `fontFamily` and `fontSize`, etc.
-
-**Note:** Have a look at the [default spacing scale](https://styled-system.com/api/#defaults).
-
-## The task
-
-Replace all custom margins with the `space` function from styled-system.
-
-<details>
- <summary>Solution</summary>
-
-```js {"file": "solutions/4.2.js", "static": true}
-```
-
-</details>
-
-## 4.3. Box primitive
+## 4.1. Box primitive
 
 We can define a new component with needed whitespace and use it:
 
@@ -144,7 +64,7 @@ import Box from '../../components/primitives/Box';
 
 </details>
 
-## 4.4 Flex primitive
+## 4.2 Flex primitive
 
 `Flex` is another useful primitive that allows us to control Flexbox-related layout without writing CSS. Basically it’s `Box` with `display: flex` applied by default.
 
@@ -187,7 +107,7 @@ import Box from '../../components/primitives/Box';
 
 **Note:** We could use [Rebass Grid](https://rebassjs.org/grid/) instead of custom components: it’s based on styled-system and implements the same API but it’s a good thing we keep our primitives abstracted from the implementation details so we can always change implementation without refactoring application’s code.
 
-## 4.5 Stack primitive
+## 4.3 Stack primitive
 
 We’ve just learned that [space](https://styled-system.com/api#space) function of styled-system, that adds `margin` and `padding` props to any of our primitives, is a powerful tool. Now we could add this function to all our primitives and start controlling whitespace using `m` and `p` props on every component in our app like this:
 
@@ -246,7 +166,7 @@ import SubscriptionForm from '../../../src/components/patterns/SubscriptionForm'
 
 </details>
 
-## 4.6 Adding spacing to any primitive
+## 4.4 Adding spacing to any primitive
 
 Using `Box` and `Flex` components we can create really complex layouts only using our primitives without writing HTML or CSS. And since the values for the spacing are coming from our [spacing scale](https://cdds.netlify.com/styleguide/#/Foundation?id=spacing) we can be sure our layouts are consistent across the whole application.
 

@@ -4,9 +4,9 @@ import styled from 'styled-components';
 /**
  * A component to render all text in the app.
  */
-const Text = styled.p`
-	/* Your styles here */
-`;
+const Text = styled.p({
+	// Your styles here
+});
 
 Text.propTypes = {
 	/** Variation */

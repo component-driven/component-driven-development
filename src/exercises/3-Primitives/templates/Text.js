@@ -1,15 +1,21 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+// FINAL_START
 import { space, variant } from 'styled-system';
+// FINAL_END
 
 /**
  * A component to render all text in the app.
  */
+// WORKSHOP_START
+const Text = styled.p({
+	// Your styles here
+});
+// WORKSHOP_END
+// FINAL_START
 const Text = styled.p(
 	{
 		margin: 0,
-		listStyleType: 'none',
-		textAlign: props => props.align,
 	},
 	space,
 	variant({
@@ -45,10 +51,9 @@ const Text = styled.p(
 		},
 	})
 );
+// FINAL_END
 
 Text.propTypes = {
-	/** Custom component or HTML tag */
-	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 	/** Variation */
 	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
 	align: PropTypes.oneOf(['left', 'center', 'right']),
