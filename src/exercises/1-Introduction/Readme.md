@@ -68,3 +68,17 @@ A component (`src/exercises/1-Introduction/Button.js`):
 ```
 
 </details>
+
+## 1.3. Changing the HTML element used to render a component
+
+Every styled component has a special prop `as` that allows you to change the HTML element used to render a component:
+
+```jsx static
+<Button as="a" href="/">
+  Back to bright side
+</Button>
+```
+
+### The task
+
+Either by editing the `Button.md` file or directly in the Styleguidist interface, change the example code of the `Button` component to use an `<a>` tag instead of the default `<button>`.
