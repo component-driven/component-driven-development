@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Button = styled.button`
-	padding: 8px 16px;
-	color: #fff;
-	background-color: #8667a8;
+	padding: ${props => props.theme.space[3]} ${props => props.theme.space[4]};
+	color: ${props => props.theme.colors.bg};
+	background-color: ${props => props.theme.colors.primary};
 	border: 0;
 `;
 

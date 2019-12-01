@@ -48,14 +48,7 @@ The result should look like this:
 
 ```js noeditor
 import Button from '../../components/primitives/Button';
-<>
-  <Button variant="primary">Primary</Button>{' '}
-  <Button>Secondary</Button>{' '}
-  <Button variant="primary" disabled>
-    Disabled
-  </Button>{' '}
-  <Button disabled>Disabled</Button>
-</>;
+<Button variant="primary">I am a button!</Button>;
 ```
 
 ### The task
