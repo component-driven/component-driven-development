@@ -8,8 +8,6 @@ import { space, variant } from 'styled-system';
 const Text = styled.p(
 	{
 		margin: 0,
-		listStyleType: 'none',
-		textAlign: props => props.align,
 	},
 	space,
 	variant({
@@ -47,8 +45,6 @@ const Text = styled.p(
 );
 
 Text.propTypes = {
-	/** Custom component or HTML tag */
-	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 	/** Variation */
 	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
 	align: PropTypes.oneOf(['left', 'center', 'right']),

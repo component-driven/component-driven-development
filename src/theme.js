@@ -92,19 +92,6 @@ const theme = {
 		'8rem', // 128px
 		'16rem', // 256px
 	],
-	textStyles: {
-		base: {},
-		secondary: {
-			color: palette.grey[5],
-		},
-		tertiary: {
-			color: palette.grey[5],
-			fontSize: fontSizes.s,
-		},
-		error: {
-			color: getColors(palette).error,
-		},
-	},
 };
 
 export default theme;

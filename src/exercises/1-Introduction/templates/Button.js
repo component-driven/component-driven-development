@@ -1,7 +1,9 @@
 // COMMENT_START
 // This is an exercise about using styled-components
 // COMMENT_END
+// WORKSHOP_START
 import React from 'react';
+// WORKSHOP_END
 import PropTypes from 'prop-types';
 // FINAL_START
 import styled from 'styled-components';

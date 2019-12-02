@@ -1,12 +1,25 @@
-import PropTypes from 'prop-types';
+// COMMENT_START
+// This is an exercise about using styled-components
+// COMMENT_END
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
+// WORKSHOP_START
 const Button = styled.button`
 	padding: 8px 16px;
 	color: #fff;
 	background-color: #8667a8;
 	border: 0;
 `;
+// WORKSHOP_END
+// FINAL_START
+const Button = styled.button`
+	padding: ${props => props.theme.space[3]} ${props => props.theme.space[4]};
+	color: ${props => props.theme.colors.bg};
+	background-color: ${props => props.theme.colors.primary};
+	border: 0;
+`;
+// FINAL_END
 
 Button.propTypes = {
 	/** Button label */
