@@ -1,15 +1,3 @@
-import { modularScale } from 'polished';
-
-const scale = value => modularScale(value, '1rem', 'goldenSection');
-
-const fontSizes = {
-	xl: '4em',
-	lg: '2em',
-	md: '1em',
-	sm: '0.9em',
-	xs: '0.75em',
-};
-
 const palette = {
 	grey: [
 		'rgb(255, 255, 255)',
@@ -58,7 +46,13 @@ const theme = {
 		heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
 		monospace: 'Menlo, monospace',
 	},
-	fontSizes,
+	fontSizes: {
+		xl: '4em',
+		lg: '2em',
+		md: '1em',
+		sm: '0.9em',
+		xs: '0.75em',
+	},
 	fontWeights: {
 		light: 200,
 		normal: 400,
