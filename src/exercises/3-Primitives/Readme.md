@@ -130,11 +130,7 @@ It is not possible to account for all use cases for your design system. As with 
 
 **Hint:** Check out how to use [CSS prop](https://www.styled-components.com/docs/api#css-prop) in styled-components and [documentation of CSS function](https://styled-system.com/css)
 
-## 3.6 Adding responsive styles via primitives
-
-When working on the app or a website it's oftentimes desirable to handle responsive styles as well. There are different ways of handling responsive styles. Styled-system approach is simple yet very powerful: every prop accepts a value or an array of values.
-
-## 3.7. Managing whitespace of primitives
+## 3.6. Managing whitespace of primitives
 
 Usually we need some whitespace around a component. Most of time, we get defaults by the user agent (the browser). For example, `0.5em` above and below a heading and paragraph. This is a good default if you're crating a document for reading but can make usage of primitives in different places of your app a nightmare since you'd need to override defaults every single time. Moreover those defaults are based on the current font size value that comes from CSS cascade.
 
