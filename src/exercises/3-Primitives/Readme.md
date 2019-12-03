@@ -10,9 +10,9 @@ We could approach this task naively:
 
 ```jsx static
 const Text = styled.p`
-  fontfamily: ${props => props.theme.fonts[props.fontFamily]};
-  fontsize: ${props => props.theme.fontSizes[props.fontSize]};
-  fontweight: ${props => props.theme.fontWeights[props.fontWeight]};
+  font-family: ${props => props.theme.fonts[props.fontFamily]};
+  font-size: ${props => props.theme.fontSizes[props.fontSize]};
+  font-weight: ${props => props.theme.fontWeights[props.fontWeight]};
   color: ${props => props.theme.colors[props.color]};
 `;
 ```
