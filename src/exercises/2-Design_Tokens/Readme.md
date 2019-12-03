@@ -43,7 +43,7 @@ import theme from './theme';
 
 ## 2.2. Accessing design tokens from components
 
-styled-components makes it simple to use design tokens, thanks to [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js) and React Context. You can access them in your component like this:
+styled-components makes it convenient to use design tokens, thanks to [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js) and React Context. You can access them in your component like this:
 
 ```js static
 const Heading = styled.h1`
