@@ -17,7 +17,6 @@
 		"formik": "^1.5.8",
 		"macro-components": "^2.0.0",
 		"mdx-deck-live-code": "^1.0.1",
-		"polished": "^3.4.2",
 		"prop-types": "^15.7.2",
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",

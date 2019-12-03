@@ -3,11 +3,11 @@ import { modularScale } from 'polished';
 const scale = value => modularScale(value, '1rem', 'goldenSection');
 
 const fontSizes = {
-	xl: scale(3),
-	lg: scale(1),
-	md: scale(0),
-	sm: scale(-0.5),
-	xs: scale(-0.75),
+	xl: '4em',
+	lg: '2em',
+	md: '1em',
+	sm: '0.9em',
+	xs: '0.75em',
 };
 
 const palette = {

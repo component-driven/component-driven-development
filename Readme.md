@@ -56,7 +56,6 @@ Or:
 - [styled-system](https://styled-system.com/)
 - [Rebass Grid](https://rebassjs.org/grid/) (former Grid Styled)
 - [Stack Styled](https://sapegin.github.io/stack-styled/)
-- [Polished](https://polished.js.org/)
 
 ## Further resources
 
