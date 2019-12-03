@@ -1,6 +1,6 @@
 ## 2.1. Defining design tokens
 
-UI Inventory is the process that is used to split the existing UI into smaller chunks. Many stop performing UI inventory on components but there is more to it. By analyzing the UI we can see even smaller patterns of colors, font styles, borders, etc. being used. We call those patterns _design tokens_.
+UI Inventory is the process of splitting the existing UI into smaller chunks. Many people only do UI inventory until the component level but there is more to it. By analyzing the UI we can see even smaller patterns of colors, font styles, borders, etc. being used. We call those patterns _design tokens_.
 
 > Design tokens are the single source of truth for project’s colors, whitespace, font styles and other design decisions.
 
