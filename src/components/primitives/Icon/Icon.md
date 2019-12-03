@@ -1,12 +1,12 @@
-Sizes and variants:
+Sizes and colors:
 
 ```js
 <>
-  <Icon name="dog" variant="primary" alt="" />
-  <Icon name="dog" variant="primary" size="lg" alt="" />
-  <Icon name="dog" variant="secondary" alt="" />
-  <Icon name="dog" variant="secondary" size="lg" alt="" />
-  <Icon name="dog" variant="currentColor" size="lg" alt="" />
+  <Icon name="dog" color="primary" alt="" />
+  <Icon name="dog" color="primary" size="lg" alt="" />
+  <Icon name="dog" color="secondary" alt="" />
+  <Icon name="dog" color="secondary" size="lg" alt="" />
+  <Icon name="dog" color="currentColor" size="lg" alt="" />
 </>
 ```
 

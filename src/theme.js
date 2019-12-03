@@ -8,15 +8,6 @@ const palette = {
 		'rgb(126, 126, 126)',
 		'rgb(51, 51, 51)',
 	],
-	purple: [
-		'rgb(255, 230, 242)',
-		'rgb(251, 209, 234)',
-		'rgb(248, 188, 229)',
-		'rgb(231, 143, 222)',
-		'rgb(189, 96, 200)',
-		'rgb(120, 51, 150)',
-		'rgb(52, 18, 90)',
-	],
 };
 
 let invertedPalette = {};
@@ -30,17 +21,28 @@ function getColors(palette) {
 		...palette,
 		bg: palette.grey[0],
 		base: palette.grey[6],
-		primary: palette.purple[5],
+		primary: 'rgb(120, 51, 150)',
 		secondary: palette.grey[5],
-		muted: palette.grey[2],
-		hover: palette.purple[2],
-		focus: palette.purple[1],
+		accent: '#f8c124',
+		muted: palette.grey[3],
+		hover: 'rgb(248, 188, 229)',
+		focus: 'rgb(251, 209, 234)',
 		error: '#d0453e',
-		rating: '#f8c124',
 	};
 }
 
 const theme = {
+	space: [
+		0,
+		'0.125rem', // 2px
+		'0.25rem', // 4px
+		'0.5rem', // 8px
+		'1rem', // 16px
+		'2rem', // 32px
+		'4rem', // 64px
+		'8rem', // 128px
+		'16rem', // 256px
+	],
 	fonts: {
 		body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
 		heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
@@ -58,16 +60,10 @@ const theme = {
 		normal: 400,
 		bold: 700,
 	},
-	headingFontWeights: {
-		xl: 400,
-		lg: 400,
-		md: 700,
-	},
 	lineHeights: {
 		base: 1.5,
 		heading: 1.1,
 	},
-	palette,
 	colors: getColors(palette),
 	borders: {
 		none: 'none',
@@ -76,20 +72,7 @@ const theme = {
 	radii: {
 		base: '0.15em',
 	},
-	space: [
-		0,
-		'0.125rem', // 2px
-		'0.25rem', // 4px
-		'0.5rem', // 8px
-		'1rem', // 16px
-		'2rem', // 32px
-		'4rem', // 64px
-		'8rem', // 128px
-		'16rem', // 256px
-	],
 };
-
-export default theme;
 
 export const inverted = {
 	...theme,
@@ -100,3 +83,5 @@ export const inverted = {
 		focus: invertedPalette.grey[1],
 	},
 };
+
+export default theme;
