@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from '../Box';
 import Flex from '../Flex';
 import Stack from '../Stack';
 import { color, border } from 'styled-system';
@@ -21,9 +22,9 @@ CardBase.defaultProps = {
 	flexDirection: 'column',
 };
 
-const Cover = ({ children }) => children;
-const Body = ({ children }) => <div>{children}</div>;
-const Footer = ({ children }) => <div>{children}</div>;
+const Cover = React.Fragment;
+const Body = Box;
+const Footer = Box;
 
 const Card = Macro({ Cover, Body, Footer })(
 	({ Cover, Body, Footer }, props) => (

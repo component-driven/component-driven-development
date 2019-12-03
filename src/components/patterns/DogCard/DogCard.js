@@ -14,8 +14,8 @@ const DogCard = ({ as, dog }) => (
 		<Card.Body>
 			<DogInfo dog={dog} isHeading />
 		</Card.Body>
-		<Card.Footer>
-			<Button as={Link} fullWidth to={`/checkout/${dog.id}`}>
+		<Card.Footer display="flex" flexDirection="column">
+			<Button as={Link} to={`/checkout/${dog.id}`}>
 				Rent {dog.name}
 			</Button>
 		</Card.Footer>
@@ -25,13 +25,11 @@ const DogCard = ({ as, dog }) => (
 DogCard.propTypes = {
 	as: PropTypes.string,
 	dog: PropTypes.shape({
-		image: PropTypes.string.isRequired,
 		id: PropTypes.string.isRequired,
+		image: PropTypes.string.isRequired,
 		name: PropTypes.string.isRequired,
 		breed: PropTypes.string.isRequired,
-		info: PropTypes.string.isRequired,
 		location: PropTypes.string.isRequired,
-		size: PropTypes.number.isRequired,
 		rating: PropTypes.number.isRequired,
 	}),
 };

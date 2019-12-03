@@ -20,13 +20,9 @@ const DogInfo = ({ isHeading, dog }) => (
 DogInfo.propTypes = {
 	isHeading: PropTypes.bool,
 	dog: PropTypes.shape({
-		image: PropTypes.string.isRequired,
-		id: PropTypes.string.isRequired,
 		name: PropTypes.string.isRequired,
 		breed: PropTypes.string.isRequired,
-		info: PropTypes.string.isRequired,
 		location: PropTypes.string.isRequired,
-		size: PropTypes.number.isRequired,
 		rating: PropTypes.number.isRequired,
 	}),
 };
