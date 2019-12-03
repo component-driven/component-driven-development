@@ -201,4 +201,4 @@ import theme from '../../theme';
 1. Use design tokens from the design system to reduce the amount of choice.
 1. When creating primitives, first think of the API (i.e. imagine how the component is going to be used, then code it).
 1. styled-system allows creating primitives with constraint-based APIs easily.
-1. Compose higher order components out of primitives.
+1. Compose complex components out of primitives.
