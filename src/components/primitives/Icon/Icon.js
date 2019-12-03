@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import VisuallyHidden from '../VisuallyHidden';
 
 const DEFAULT_SIZE = 512;
-const SIZES = { m: 16, l: 32 };
+const SIZES = { sm: 16, lg: 32 };
 const ICONS = {
 	dog: {
 		path: `M496 96h-64l-7.16-14.31A32 32 0 0 0 396.22
@@ -106,13 +106,13 @@ const Icon = ({ name, size, alt, ...rest }) => {
 Icon.propTypes = {
 	name: PropTypes.string.isRequired,
 	variant: PropTypes.oneOf(['currentColor', 'primary', 'secondary', 'rating']),
-	size: PropTypes.oneOf(['sm', 'md', 'lg']),
+	size: PropTypes.oneOf(['sm', 'lg']),
 	alt: PropTypes.string.isRequired,
 };
 
 Icon.defaultProps = {
 	variant: 'currentColor',
-	size: 'md',
+	size: 'sm',
 };
 
 /**
