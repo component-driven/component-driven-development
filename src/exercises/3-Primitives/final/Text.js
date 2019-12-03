@@ -1,23 +1,22 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space, color, typography, variant } from 'styled-system';
+import { color, typography, space, variant } from 'styled-system';
+import { css } from '@styled-system/css';
 
 /**
  * A component to render all text in the app.
  */
 const Text = styled.p(
-	props =>
-		// Defaults
-		({
-			margin: 0,
-			fontWeight: props.theme.fontWeights.normal,
-			fontFamily: props.theme.fonts.body,
-			fontSize: props.theme.fontSizes.md,
-			lineHeight: props.theme.lineHeights.base,
-			color: props.theme.colors.text,
-			listStyleType: 'none',
-			textAlign: props => props.align,
-		}),
+	// Default styles
+	// css function provides access to our design tokens
+	css({
+		m: 0,
+		fontWeight: 'normal',
+		fontFamily: 'body',
+		fontSize: 'md',
+		lineHeight: 'base',
+		color: 'base',
+	}),
 	// APIs
 	color,
 	typography,
@@ -25,24 +24,24 @@ const Text = styled.p(
 	variant({
 		variants: {
 			base: {
+				fontSize: 'md', // You can use design tokens in variants!
 				fontWeight: 'normal',
 				lineHeight: 'base',
 				fontFamily: 'body',
-				fontSize: 'md',
 				color: 'text',
 			},
 			secondary: {
+				fontSize: 'md',
 				fontWeight: 'normal',
 				lineHeight: 'base',
 				fontFamily: 'body',
-				fontSize: 'md',
 				color: 'grey.5',
 			},
 			tertiary: {
+				fontSize: 'sm',
 				fontWeight: 'normal',
 				lineHeight: 'base',
 				fontFamily: 'body',
-				fontSize: 'sm',
 				color: 'grey.5',
 			},
 			error: {
@@ -57,14 +56,14 @@ const Text = styled.p(
 );
 
 Text.propTypes = {
-		/** Variation */
+	/** Variation */
 	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
-		children: PropTypes.node,
+	children: PropTypes.node,
 };
 
 Text.defaultProps = {
-		variant: 'base',
-	};
+	variant: 'base',
+};
 
 /** @component */
 export default Text;

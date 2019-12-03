@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
@@ -17,8 +16,8 @@ const Heading = styled(Text)(
 		prop: 'size',
 		variants: {
 			xl: {
-				fontSize: 'xl',
-				fontWeight: 'light',
+				fontSize: ['lg', 'xl'],
+				fontWeight: ['bold', 'light'],
 			},
 			lg: {
 				fontSize: 'lg',
