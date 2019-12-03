@@ -1,6 +1,6 @@
 In this exercise we’ll create reusable primitive components. We’ll create a text and a heading component. We'll learn how to reduce boilerplate by using [styled-system](https://styled-system.com)
 
-About 80% of every user interface is a text. Unsurprisingly, most of inconsistencies are coming from text styles. In order to reduce the amount of different text styles we should restrict our styling and only allow using design tokens.
+The majority of every user interface is a text. Unsurprisingly, most of inconsistencies are coming from text styles. To reduce the amount of different text styles we should restrict our styling and only allow using design tokens.
 
 ## 3.1. Creating a generic text component
 
