@@ -23,13 +23,6 @@ const Text = styled.p(
 	space,
 	variant({
 		variants: {
-			base: {
-				fontSize: 'md', // You can use design tokens in variants!
-				fontWeight: 'normal',
-				lineHeight: 'base',
-				fontFamily: 'body',
-				color: 'text',
-			},
 			secondary: {
 				fontSize: 'md',
 				fontWeight: 'normal',
@@ -59,7 +52,7 @@ Text.propTypes = {
 	/** Custom component or HTML tag */
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 	/** Variation */
-	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
+	variant: PropTypes.oneOf(['secondary', 'tertiary', 'error']),
 	children: PropTypes.node,
 };
 
