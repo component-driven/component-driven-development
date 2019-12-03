@@ -98,7 +98,7 @@ const Icon = ({ name, size, alt, ...rest }) => {
 
 Icon.propTypes = {
 	name: PropTypes.string.isRequired,
-	variant: PropTypes.oneOf(Object.keys(theme.colors)),
+	color: PropTypes.oneOf(Object.keys(theme.colors)),
 	size: PropTypes.oneOf(['sm', 'lg']),
 	alt: PropTypes.string.isRequired,
 };
