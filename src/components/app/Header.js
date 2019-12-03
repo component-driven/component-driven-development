@@ -1,5 +1,5 @@
+import styled from 'styled-components/macro'; //eslint-disable-line
 import React from 'react';
-import styled from 'styled-components/macro';
 import Stack from '../primitives/Stack';
 import Box from '../primitives/Box';
 import Flex from '../primitives/Flex';

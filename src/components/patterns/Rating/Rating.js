@@ -33,7 +33,7 @@ const Rating = ({ value }) => {
 					<Icon
 						key={index}
 						name={getIcon(value, index)}
-						variant="accent"
+						color="accent"
 						alt=""
 					/>
 				))}
