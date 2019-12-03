@@ -93,7 +93,7 @@ import { Inverted } from '../../../ThemeProvider';
       <Stack
         justifyContent="center"
         gridAutoFlow="column"
-        girdGap={4}
+        gridGap={4}
       >
         <Button variant="primary">Try now</Button>
         <Button variant="secondary">Try later</Button>
