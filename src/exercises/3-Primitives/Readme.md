@@ -1,36 +1,105 @@
-In this exercise we’ll create reusable primitive components. We’ll create a button, an input field, a custom select, a text component and a heading component. We'll learn how to access design tokens (values we’ve defined in the `theme.js` file in the previous exercise).
+In this exercise we’ll create reusable primitive components. We’ll create a text and a heading component. We'll learn how to reduce boilerplate by using [styled-system](https://styled-system.com)
 
-## 3.1. Creating a basic heading component
+About 80% of every user interface is a text. Unsurprisingly, most of inconsistencies are coming from text styles. In order to reduce the amount of different text styles we should restrict our styling and only allow using design tokens.
 
-We already know how to access design tokens in our styled components from the previous exercise. So now we can use these tokens to crate a generic heading component.
+## 3.1. Creating a generic text component
 
-Styles in styled-components [can depend on props](https://www.styled-components.com/docs/basics#adapting-based-on-props) you pass to your component:
+In the previous exercise we learned how to use design tokens instead of arbitrary CSS values in our components. Now we need a way to write styles and access design tokens inside our application code. I.e. we want to design a component that implements an API to our design system and doesn't require writing CSS.
 
-```js static
-import styled from 'styled-components';
-const Heading = styled.h1`
-  color: ${props =>
-    props.variant === 'primary'
-      ? props.theme.colors.primary
-      : props.theme.colors.base};
+We could approach this task naively:
+
+```jsx static
+const Text = styled.p`
+  fontfamily: ${props => props.theme.fonts[props.fontFamily]};
+  fontsize: ${props => props.theme.fontSizes[props.fontSize]};
+  fontweight: ${props => props.theme.fontWeights[props.fontWeight]};
+  color: ${props => props.theme.colors[props.color]};
 `;
 ```
 
-## The result
+As you can see, there is a lot of repetition going on. Also this method doesn't cover lots of edge cases. Luckily for us, [styled-system](https://styled-system.com) is a library designed specifically for our needs.
+
+> Styled System lets you quickly build custom UI components with constraint-based style props based on scales defined in your theme.
+
+### The task
+
+1. Refactor the `Text` component so that it can render different font styles that are defined in the `theme.js`
+1. Provide following API via props: `fontFamily`, `fontSize`, `fontWeight`, `lineHeight`, `letterSpacing`, `textAlign`, and `fontStyle`.
+1. The component should use `fontFamily: "body"`, `fontSize: 2`, `fontWeight: "normal"`, and should render `p` tag by default
+1. Allow using design tokens directly via string literals, like `"primary"`, `"muted"`.
+
+### The result
+
+The result should allow rendering such text:
+
+```jsx harmony
+import Text from '../../components/primitives/Text';
+
+<Text color="error" fontWeight="bold">
+  Bold red text
+</Text>;
+```
+
+## 3.2. Using style variations
+
+Now we already have a much better way of styling any text in the application but it doesn't prevent developers from using "wrong" combinations of tokens. I.e. you can still end up with a barely readable text or a font style that doesn't exist anywhere else in the app.
+
+To prevent that, we can make our primitives more rigid by only allowing certain pre-defined font styles.
+
+### The task
+
+Refactor `Text` component to allow rendering text with following styles:
+
+- Normal text (`base` font size, `base` color);
+- Secondary text (`base` font size, `secondary` color);
+- Small text (small (`sm`) font size, `secondary` color);
+- Error message (`base` font size, `error` color).
+
+### The result
 
 The result should look like this:
 
 ```js noeditor
+import Text from '../../components/primitives/Text';
+<>
+  <Text>Normal text</Text>
+  <Text variant="secondary">Secondary text</Text>
+  <Text variant="tertiary">Tertiary text</Text>
+  <Text variant="error">Error text</Text>
+</>;
+```
+
+<details>
+ <summary>Solution</summary>
+
+```js {"file": "final/Text.js", "static": true}
+```
+
+</details>
+
+## 3.3 Making your styles responsive
+
+When working on the app or a website it's oftentimes desirable to handle responsive styles as well. There are different ways of handling responsive styles. Styled-system approach is simple yet very powerful: every prop accepts a value or an array of values. If the array is provided,
+
+## 3.3. Extending primitives
+
+Now that we have our `Text` component, let's create a `Heading` primitive that should help rendering all headings across the app. In this case, it's important to keep in mind that in UIs headings won't follow document outline, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3). In other words we need to change heading styles and an HTML element independently. This means, we have to create the API that's doesn't couple HTML tag and the look of the heading. We can leverage [`as` prop](https://www.styled-components.com/docs/api#as-polymorphic-prop) to render a desired HTML element.
+
+### The result
+
+The result and the API should look like this:
+
+```js
 import Heading from '../../components/primitives/Heading';
 <>
   <Heading size="xl" as="h1">
-    Heading 1
+    Hero Heading
   </Heading>
   <Heading size="lg" as="h2">
-    Heading 2
+    Big Heading
   </Heading>
   <Heading size="md" as="h3">
-    Heading 3
+    Small Heading
   </Heading>
 </>;
 ```
@@ -46,20 +115,17 @@ import theme from '../../theme';
 
 ## The task
 
-Create a component that renders different levels of headings:
+Create a component that renders different levels of headings using `Text` component:
 
 - `heading` font family;
-- `normal` font weight;
-- `base` color;
-- font size is defined by a component prop (`size`, the value is `md`, `lg` or `xl`);
+- `heading` line height;
+- different sizes are defined by a component prop (`size`, the value is `md`, `lg` or `xl`);
 - HTML element can be changed independently from the font size.
-
-**Hint:** We need to change heading styles and an HTML element independently, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3), where the heading is placed in an app, and doesn’t always match the style. Use styled-components [`as` props](https://www.styled-components.com/docs/api#as-polymorphic-prop) to change an HTML element, used to render a component.
 
 <details>
  <summary>Solution</summary>
 
-```js {"file_": "final/Heading-3.1.js", "static": true}
+```js {"file": "final/Heading.js", "static": true}
 ```
 
 </details>
@@ -196,37 +262,11 @@ Heading.defaultProps = {
 };
 ```
 
-You can use design tokens directly in variants, like `primary` color above.
+## Takeaways
 
-## The result
-
-The result should look like this:
-
-```js noeditor
-import Text from '../../components/primitives/Text';
-<>
-  <Text>Normal text</Text>
-  <Text variant="secondary">Secondary text</Text>
-  <Text variant="tertiary">Tertiary text</Text>
-  <Text variant="error">Error text</Text>
-</>;
-```
-
-## The task
-
-Create a component that renders text with default styles:
-
-- Normal text (`base` font size, `base` color);
-- Secondary text (`base` font size, `secondary` color);
-- Small text (small (`sm`) font size, `secondary` color);
-- Error message (`base` font size, `error` color).
-
-The `variant` prop is used to change text style.
-
-<details>
- <summary>Solution</summary>
-
-```js {"file": "final/Text.js", "static": true}
-```
-
-</details>
+1. All text in the UI should be rendered using `Text` component
+1. Do not rely on global CSS since it is error prone and may differ depending on where the component is rendered.
+1. Use design tokens from the design system to reduce the amount of choice.
+1. When creating primitives, first think of the API (i.e. imagine how the component is going to be used, then code it).
+1. styled-system allows creating primitives with constraint-based APIs easily.
+1. Compose higher order components out of primitives.

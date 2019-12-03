@@ -29,7 +29,7 @@ const Checkout = ({ status, dog }) => (
 					<Header />
 				</Box>
 				<Box px={4} py={3}>
-					<Heading level={1} mb={5}>
+					<Heading mb={5}>
 						{status === STATUSES.LOADING ? 'Loading…' : `Rent ${dog.name}`}
 					</Heading>
 					<Flex flexWrap="wrap" m={-4}>

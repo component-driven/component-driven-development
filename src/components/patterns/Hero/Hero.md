@@ -6,9 +6,7 @@ import Heading from '../../primitives/Heading';
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={6}
 >
-  <Heading level={2}>
-    The quick brown fox jumps over the lazy dog
-  </Heading>
+  <Heading>The quick brown fox jumps over the lazy dog</Heading>
 </Hero>;
 ```
 
@@ -20,7 +18,7 @@ import Heading from '../../primitives/Heading';
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={[5, 6]}
 >
-  <Heading level={2} size="xl">
+  <Heading size="xl">
     The quick brown fox jumps over the lazy dog
   </Heading>
 </Hero>;
@@ -38,7 +36,7 @@ import { Inverted } from '../../../ThemeProvider';
     backgroundImage="url(https://source.unsplash.com/cGlac7MEyiE/1000x600)"
     py={5}
   >
-    <Heading level={2} size="xl" mb={5}>
+    <Heading size="xl" mb={5}>
       The quick black fox jumps over the lazy dog
     </Heading>
     <Stack justifyContent="center" gridAutoFlow="column" gridGap={4}>
@@ -89,7 +87,7 @@ import { Inverted } from '../../../ThemeProvider';
       </Stack>
     </Flex>
     <Box py={6}>
-      <Heading level={2} size="xl" mb={5}>
+      <Heading size="xl" mb={5}>
         The quick black fox jumps over the lazy dog
       </Heading>
       <Stack

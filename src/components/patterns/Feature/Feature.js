@@ -11,7 +11,6 @@ const Feature = ({ as, children }) => (
 	</Stack>
 );
 
-// width={80}
 Feature.Icon = ({ children }) => (
 	<Box mx="auto" color="secondary">
 		{children}
@@ -19,12 +18,12 @@ Feature.Icon = ({ children }) => (
 );
 
 Feature.Heading = ({ children }) => (
-	<Heading as="h3" size="md" align="center">
+	<Heading as="h3" size="md" textAlign="center">
 		{children}
 	</Heading>
 );
 
-Feature.Body = ({ children }) => <Text align="center">{children}</Text>;
+Feature.Body = ({ children }) => <Text textAlign="center">{children}</Text>;
 
 Feature.propTypes = {
 	as: PropTypes.string,

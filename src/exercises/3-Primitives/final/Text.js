@@ -1,14 +1,26 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space, variant } from 'styled-system';
+import { space, color, typography, variant } from 'styled-system';
 
 /**
  * A component to render all text in the app.
  */
 const Text = styled.p(
-	{
-		margin: 0,
-	},
+	props =>
+		// Defaults
+		({
+			margin: 0,
+			fontWeight: props.theme.fontWeights.normal,
+			fontFamily: props.theme.fonts.body,
+			fontSize: props.theme.fontSizes.md,
+			lineHeight: props.theme.lineHeights.base,
+			color: props.theme.colors.text,
+			listStyleType: 'none',
+			textAlign: props => props.align,
+		}),
+	// APIs
+	color,
+	typography,
 	space,
 	variant({
 		variants: {
@@ -17,7 +29,7 @@ const Text = styled.p(
 				lineHeight: 'base',
 				fontFamily: 'body',
 				fontSize: 'md',
-				color: 'primary',
+				color: 'text',
 			},
 			secondary: {
 				fontWeight: 'normal',
@@ -45,15 +57,14 @@ const Text = styled.p(
 );
 
 Text.propTypes = {
-	/** Variation */
+		/** Variation */
 	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
-	align: PropTypes.oneOf(['left', 'center', 'right']),
-	children: PropTypes.node,
+		children: PropTypes.node,
 };
 
 Text.defaultProps = {
-	variant: 'base',
-};
+		variant: 'base',
+	};
 
 /** @component */
 export default Text;

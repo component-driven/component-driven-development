@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components/macro';
 import Stack from '../primitives/Stack';
 import Box from '../primitives/Box';
 import Flex from '../primitives/Flex';
@@ -20,6 +21,9 @@ const Header = () => (
 				mt={0}
 				mb={2}
 				as="ul"
+				css={{
+					listStyleType: 'none',
+				}}
 			>
 				<Text as="li">
 					<Link href="#">How it works</Link>

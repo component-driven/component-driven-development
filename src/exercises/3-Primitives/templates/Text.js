@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // FINAL_START
-import { space, variant } from 'styled-system';
+import { space, color, typography, variant } from 'styled-system';
 // FINAL_END
 
 /**
@@ -14,9 +14,21 @@ const Text = styled.p({
 // WORKSHOP_END
 // FINAL_START
 const Text = styled.p(
-	{
-		margin: 0,
-	},
+	props =>
+		// Defaults
+		({
+			margin: 0,
+			fontWeight: props.theme.fontWeights.normal,
+			fontFamily: props.theme.fonts.body,
+			fontSize: props.theme.fontSizes.md,
+			lineHeight: props.theme.lineHeights.base,
+			color: props.theme.colors.text,
+			listStyleType: 'none',
+			textAlign: props => props.align,
+		}),
+	// APIs
+	color,
+	typography,
 	space,
 	variant({
 		variants: {
@@ -25,7 +37,7 @@ const Text = styled.p(
 				lineHeight: 'base',
 				fontFamily: 'body',
 				fontSize: 'md',
-				color: 'primary',
+				color: 'text',
 			},
 			secondary: {
 				fontWeight: 'normal',
@@ -54,14 +66,17 @@ const Text = styled.p(
 // FINAL_END
 
 Text.propTypes = {
+	// FINAL_START
 	/** Variation */
 	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
-	align: PropTypes.oneOf(['left', 'center', 'right']),
+	// FINAL_END
 	children: PropTypes.node,
 };
 
 Text.defaultProps = {
+	// FINAL_START
 	variant: 'base',
+	// FINAL_END
 };
 
 /** @component */

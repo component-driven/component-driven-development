@@ -60,6 +60,7 @@ const theme = {
 	},
 	fontSizes,
 	fontWeights: {
+		light: 200,
 		normal: 400,
 		bold: 700,
 	},

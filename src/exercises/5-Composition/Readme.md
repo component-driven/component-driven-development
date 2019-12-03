@@ -33,9 +33,7 @@ import Hero from '../../components/patterns/Hero';
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={6}
 >
-  <Heading level={2}>
-    The quick brown fox jumps over the lazy dog
-  </Heading>
+  <Heading>The quick brown fox jumps over the lazy dog</Heading>
 </Hero>;
 ```
 
@@ -169,13 +167,13 @@ Feature.Icon = ({ children }) => (
 );
 
 Feature.Heading = ({ children }) => (
-  <Heading as="h3" size="lg" align="center">
+  <Heading as="h3" size="lg" textAlign="center">
     {children}
   </Heading>
 );
 
 Feature.Body = ({ children }) => (
-  <Text align="center">{children}</Text>
+  <Text textAlign="center">{children}</Text>
 );
 
 export default Feature;

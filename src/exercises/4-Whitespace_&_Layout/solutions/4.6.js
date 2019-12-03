@@ -16,12 +16,12 @@ const Footer = () => {
 					<SvgDogPees width="100" />
 				</Box>
 				<Box mb={5} mx="auto" width={[1, 2 / 3, 1 / 2]}>
-					<Heading size="lg" as="h2" mb={4} align="center">
+					<Heading size="lg" as="h2" mb={4} textAlign="center">
 						Subscribe to our newsletter!
 					</Heading>
 					<SubscriptionForm />
 				</Box>
-				<Text variant="tertiary" align="center">
+				<Text variant="tertiary" textAlign="center">
 					© {new Date().getFullYear()}{' '}
 					<Link href="https://okonet.ru/" shy>
 						Andrey Okonetchnikov
