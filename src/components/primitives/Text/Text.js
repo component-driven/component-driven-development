@@ -15,7 +15,7 @@ const Text = styled.p(
 		fontFamily: 'body',
 		fontSize: 'md',
 		lineHeight: 'base',
-		color: 'base',
+		color: 'text',
 	}),
 	// APIs
 	color,

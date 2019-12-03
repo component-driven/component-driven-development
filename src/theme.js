@@ -19,8 +19,8 @@ Object.keys(palette).forEach(key => {
 function getColors(palette) {
 	return {
 		...palette,
-		bg: palette.grey[0],
-		base: palette.grey[6],
+		background: palette.grey[0],
+		text: palette.grey[6],
 		primary: 'rgb(120, 51, 150)',
 		secondary: palette.grey[5],
 		accent: '#f8c124',

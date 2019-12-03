@@ -24,7 +24,7 @@ Hero.propTypes = {
 Hero.defaultProps = {
 	px: 4,
 	py: 3,
-	bg: 'bg',
+	bg: 'background',
 	backgroundSize: 'cover',
 	flexDirection: 'column',
 };

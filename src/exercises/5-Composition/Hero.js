@@ -16,7 +16,7 @@ Hero.propTypes = {
 };
 
 Hero.defaultProps = {
-	bg: 'bg',
+	bg: 'background',
 };
 
 /** @component */

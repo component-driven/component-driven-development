@@ -73,7 +73,7 @@ const Hero = styled(Box)`
 Hero.defaultProps = {
   px: 4,
   py: 3,
-  bg: 'bg'
+  bg: 'background'
 };
 
 /** @component */
@@ -96,7 +96,7 @@ import { color, border } from 'styled-system';
 const CardBase = styled(Box)(color, border);
 
 Card.defaultProps = {
-  bg: 'bg',
+  bg: 'background',
   border: 'thin',
   borderColor: 'grey.2',
   borderRadius: 'base'
@@ -296,7 +296,7 @@ const CardBase = styled(Flex)(
 );
 
 CardBase.defaultProps = {
-  bg: 'bg',
+  bg: 'background',
   border: 'thin',
   borderColor: 'grey.2',
   borderRadius: 'base',

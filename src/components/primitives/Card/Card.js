@@ -15,7 +15,7 @@ const CardBase = styled(Flex)(
 );
 
 CardBase.defaultProps = {
-	bg: 'bg',
+	bg: 'background',
 	border: 'thin',
 	borderColor: 'grey.2',
 	borderRadius: 'base',

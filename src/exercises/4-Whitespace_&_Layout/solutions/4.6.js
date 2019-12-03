@@ -11,7 +11,13 @@ import SvgDogPees from '../../../../src/components/app/images/SvgDogPees';
 const Footer = () => {
 	return (
 		<Inverted>
-			<Flex px={5} py={4} flexDirection="column" bg="bg" color="secondary">
+			<Flex
+				px={5}
+				py={4}
+				flexDirection="column"
+				bg="background"
+				color="secondary"
+			>
 				<Box mx="auto" mb={5}>
 					<SvgDogPees width="100" />
 				</Box>
