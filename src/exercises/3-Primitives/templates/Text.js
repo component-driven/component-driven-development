@@ -65,17 +65,11 @@ const Text = styled.p(
 // FINAL_END
 
 Text.propTypes = {
-	// FINAL_START
+// FINAL_START
 	/** Variation */
-	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
-	// FINAL_END
+	variant: PropTypes.oneOf(['secondary', 'tertiary', 'error']),
+// FINAL_END
 	children: PropTypes.node,
-};
-
-Text.defaultProps = {
-	// FINAL_START
-	variant: 'base',
-	// FINAL_END
 };
 
 /** @component */

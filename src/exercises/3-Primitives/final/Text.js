@@ -56,14 +56,10 @@ const Text = styled.p(
 );
 
 Text.propTypes = {
-		/** Variation */
-	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
-		children: PropTypes.node,
+	/** Variation */
+	variant: PropTypes.oneOf(['secondary', 'tertiary', 'error']),
+	children: PropTypes.node,
 };
-
-Text.defaultProps = {
-		variant: 'base',
-	};
 
 /** @component */
 export default Text;

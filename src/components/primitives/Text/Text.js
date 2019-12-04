@@ -56,7 +56,5 @@ Text.propTypes = {
 	children: PropTypes.node,
 };
 
-Text.defaultProps = {};
-
 /** @component */
 export default Text;

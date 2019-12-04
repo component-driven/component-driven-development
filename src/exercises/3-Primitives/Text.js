@@ -9,11 +9,8 @@ const Text = styled.p({
 });
 
 Text.propTypes = {
-		children: PropTypes.node,
+	children: PropTypes.node,
 };
-
-Text.defaultProps = {
-	};
 
 /** @component */
 export default Text;
