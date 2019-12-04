@@ -3,7 +3,7 @@ const path = require('path');
 const glob = require('glob');
 const webpackConfig = require('./webpack.config');
 
-const EXERCISES = [[1, 4], [5, 5]];
+const EXERCISES = [[1, 5], [6, 6]];
 
 // styleguidist server --exercise
 const isExercises = !!process.argv.find(x => x === '--exercise');
