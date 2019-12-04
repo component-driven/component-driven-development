@@ -192,9 +192,9 @@ import theme from '../../theme';
 
 ## Takeaways
 
-1. All text in the UI should be rendered using `Text` component
-1. Do not rely on global CSS since it is error prone and may differ depending on where the component is rendered.
+1. All text in the app should be rendered using `Text` component.
+1. Do not rely on the cascade from global CSS since may affect the styles depending on where the component is rendered.
 1. Use design tokens from the design system to reduce the amount of choice.
 1. When creating primitives, first think of the API (i.e. imagine how the component is going to be used, then code it).
 1. styled-system simplifies creating primitives with constraint-based APIs.
-1. Compose complex components out of primitives.
+1. Compose more complex components out of primitives.
