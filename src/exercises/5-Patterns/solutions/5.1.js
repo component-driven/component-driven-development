@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
-import Stack from 'stack-styled';
+import Grid from '../../../../src/components/primitives/Grid';
 import Button from '../../../../src/components/primitives/Button';
 import Input from '../../../../src/components/primitives/Input';
 
@@ -13,7 +13,7 @@ const SubscriptionForm = ({
 	success,
 	error,
 }) => (
-	<Stack
+	<Grid
 		gridGap={3}
 		mb={2}
 		gridTemplateColumns={['1fr', '1fr auto']}
@@ -34,7 +34,7 @@ const SubscriptionForm = ({
 		<Button variant="primary" type="submit" disabled={loading}>
 			Subscribe
 		</Button>
-	</Stack>
+	</Grid>
 );
 
 export default SubscriptionForm;
