@@ -75,14 +75,14 @@ import Flex from '../../components/primitives/Flex';
 import Box from '../../components/primitives/Box';
 
 <Flex flexDirection="row">
-  <Flex alignItems="center" p={3} flex={1} bg="purple.1">
+  <Flex alignItems="center" p={3} flex={1} bg="grey.3">
     Row 1
   </Flex>
   <Box>
-    <Box p={3} bg="purple.2">
+    <Box p={3} bg="grey.4">
       Row 2
     </Box>
-    <Box p={3} bg="purple.3">
+    <Box p={3} bg="grey.5">
       Row 3
     </Box>
   </Box>
