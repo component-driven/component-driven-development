@@ -1,36 +1,93 @@
-In this exercise we’ll create reusable primitive components. We’ll create a button, an input field, a custom select, a text component and a heading component. We'll learn how to access design tokens (values we’ve defined in the `theme.js` file in the previous exercise).
+In this exercise we’ll create reusable primitive components. We’ll create a text and a heading component. We'll learn how to reduce boilerplate by using [styled-system](https://styled-system.com)
 
-## 3.1. Creating a basic heading component
+The majority of every user interface is a text. Unsurprisingly, most of inconsistencies are coming from text styles. To reduce the amount of different text styles we should restrict our styling and only allow using design tokens.
 
-We already know how to access design tokens in our styled components from the previous exercise. So now we can use these tokens to crate a generic heading component.
+## 3.1. Creating a generic text component
 
-Styles in styled-components [can depend on props](https://www.styled-components.com/docs/basics#adapting-based-on-props) you pass to your component:
+In the previous exercise we learned how to use design tokens instead of arbitrary CSS values in our components. Now we need a way to write styles and access design tokens inside our application code. I.e. we want to design a component that implements an API to our design system and doesn't require writing CSS.
 
-```js static
-import styled from 'styled-components';
-const Heading = styled.h1`
-  color: ${props =>
-    props.variant === 'primary'
-      ? props.theme.colors.primary
-      : props.theme.colors.base};
+We could approach this task naively:
+
+```jsx static
+const Text = styled.p`
+  font-family: ${props => props.theme.fonts[props.fontFamily]};
+  font-size: ${props => props.theme.fontSizes[props.fontSize]};
+  font-weight: ${props => props.theme.fontWeights[props.fontWeight]};
+  color: ${props => props.theme.colors[props.color]};
 `;
 ```
 
-## The result
+As you can see, there is a lot of repetition going on. Also this method doesn't cover lots of edge cases. Luckily for us, [styled-system](https://styled-system.com) is a library designed specifically for our needs.
+
+> Styled System lets you quickly build custom UI components with constraint-based style props based on scales defined in your theme.
+
+### The task
+
+1. Refactor the `Text` component so that it can render different font styles that are defined in the `theme.js`
+1. Provide following API via props: `fontFamily`, `fontSize`, `fontWeight`, `lineHeight`, `letterSpacing`, `textAlign`, and `fontStyle`.
+1. The component should use `fontFamily: "body"`, `fontSize: 2`, `fontWeight: "normal"`, and should render `p` tag by default
+1. Allow using design tokens directly via string literals, like `"primary"`, `"muted"`.
+
+### The result
+
+The result should allow rendering such text:
+
+```jsx harmony
+import Text from '../../components/primitives/Text';
+
+<Text color="error" fontWeight="bold">
+  Bold red text
+</Text>;
+```
+
+## 3.2. Using style variations
+
+Now we already have a much better way of styling any text in the application but it doesn't prevent developers from using "wrong" combinations of tokens. I.e. you can still end up with a barely readable text or a font style that doesn't exist anywhere else in the app.
+
+To prevent that, we can make our primitives more rigid by only allowing certain pre-defined font styles.
+
+### The task
+
+Refactor `Text` component to allow rendering text with following styles:
+
+- Normal text (`base` font size, `base` color);
+- Secondary text (`base` font size, `secondary` color);
+- Small text (small (`sm`) font size, `secondary` color);
+- Error message (`base` font size, `error` color).
+
+### The result
 
 The result should look like this:
 
 ```js noeditor
+import Text from '../../components/primitives/Text';
+<>
+  <Text>Normal text</Text>
+  <Text variant="secondary">Secondary text</Text>
+  <Text variant="tertiary">Tertiary text</Text>
+  <Text variant="error">Error text</Text>
+</>;
+```
+
+## 3.3. Extending primitives
+
+Now that we have our `Text` component, let's create a `Heading` primitive that should help rendering all headings across the app. In this case, it's important to keep in mind that in UIs headings won't follow document outline, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3). In other words we need to change heading styles and an HTML element independently. This means, we have to create the API that's doesn't couple HTML tag and the look of the heading. We can leverage [`as` prop](https://www.styled-components.com/docs/api#as-polymorphic-prop) to render a desired HTML element.
+
+### The result
+
+The result and the API should look like this:
+
+```js
 import Heading from '../../components/primitives/Heading';
 <>
   <Heading size="xl" as="h1">
-    Heading 1
+    Hero Heading
   </Heading>
   <Heading size="lg" as="h2">
-    Heading 2
+    Big Heading
   </Heading>
   <Heading size="md" as="h3">
-    Heading 3
+    Small Heading
   </Heading>
 </>;
 ```
@@ -46,83 +103,67 @@ import theme from '../../theme';
 
 ## The task
 
-Create a component that renders different levels of headings:
+Create a component that renders different levels of headings using `Text` component:
 
 - `heading` font family;
-- `normal` font weight;
-- `base` color;
-- font size is defined by a component prop (`size`, the value is `md`, `lg` or `xl`);
+- `heading` line height;
+- different sizes are defined by a component prop (`size`, the value is `md`, `lg` or `xl`);
 - HTML element can be changed independently from the font size.
 
-**Hint:** We need to change heading styles and an HTML element independently, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3), where the heading is placed in an app, and doesn’t always match the style. Use styled-components [`as` props](https://www.styled-components.com/docs/api#as-polymorphic-prop) to change an HTML element, used to render a component.
+## 3.4 Making your styles responsive
 
-<details>
- <summary>Solution</summary>
+When working on the app or a website it's oftentimes desirable to handle responsive styles as well. There are different ways of handling responsive styles. Styled-system approach is simple yet very powerful: every prop accepts a value or an array of values.
 
-```js {"file_": "final/Heading-3.1.js", "static": true}
-```
+### The task
 
-</details>
+- Make the font size of `Heading` component responsive. It should become smaller, on smaller screens.
 
-## 3.2. Introducing styled-system
+**Hint:** Check out the documentation of [responsive styles](https://styled-system.com/responsive-styles)
 
-Usually we need some whitespace above or below a component. We can hardcode some value, but often whitespace depends on the context, where the component is used.
+## 3.5 Making primitives lean
 
-We could create a new component with margin based on the original one:
+It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time and it is crucial for primitives to be lean enough to adapt to those requirement. In other words, good primitives should be flexible enough to allow one-off "snowflakes" usages of unpredicted requirements.
+
+### The task
+
+- Refactor `Text` component so it could accept style overrides via `css` prop. All values should accept design tokens and not just CSS values.
+
+**Hint:** Check out how to use [CSS prop](https://www.styled-components.com/docs/api#css-prop) in styled-components and [documentation of CSS function](https://styled-system.com/css)
+
+## 3.6. Managing whitespace of primitives
+
+Usually we need some whitespace around a component. Most of time, we get defaults by the user agent (the browser). For example, `0.5em` above and below a heading and paragraph. This is a good default if you're crating a document for reading but can make usage of primitives in different places of your app a nightmare since you'd need to override defaults every single time. Moreover those defaults are based on the current font size value that comes from CSS cascade.
+
+In order to make primitives reusable, we should remove margins from the component by default and then add it where needed.
+
+This also can be done differently. We could create a new component based on the original one but with an added margin:
 
 ```jsx static
 import styled from 'styled-components';
 import Heading from '../Heading';
 
-const HeadingWithMargin = styled(Heading)`
+const HeadingWithBottomMargin = styled(Heading)`
   margin-bottom: ${props => props.theme.space[5]};
 `
-<HeadingWithMargin size="xl">The quick brown fox</HeadingWithMargin>
+<HeadingWithBottomMargin size="xl">The quick brown fox</HeadingWithBottomMargin>
 ```
 
-But that’s a lot of boilerplate and it's not reusable.
+Imagine doing this across all the app! 🤯 Not to mention it is not reusable.
 
-Let’s make the whitespace part of the component API so we can declare margins via props when using the component:
+Following the same principle as before, we should make the whitespace part of the component's API. This way we can add margins via props when using the component:
 
 ```jsx static
-<Heading size="xl" mb={5}>
+// This will add `margin-bottom: 0.5em` and `margin-top: 0.5em`
+<Heading size="xl" marginBottom="0.5em" mt="0.5em">
   The quick brown fox
 </Heading>
 ```
 
-[Styled-system](https://styled-system.com/) is a collection of utility functions that allow you to control styles of your component using props.
+But as we learned already, our goal is to restrict developer's choice and to achieve that we should use design tokens.
 
-For example, the [space](https://styled-system.com/api#space) function does exactly what we’ve done in the previous task:
+## The task
 
-```js static
-import styled from 'styled-components';
-import { space } from 'styled-system';
-const Heading = styled.h1`
-  margin: 0;
-  font-weight: normal;
-  ${space};
-`;
-```
-
-Or using the object notation instead of a template literal:
-
-```js static
-import styled from 'styled-components';
-import { space } from 'styled-system';
-const Heading = styled.h1(
-  {
-    margin: 0,
-    fontWeight: 'normal'
-  },
-  space
-);
-```
-
-**Note:** we’re overriding default margins on `h1` with `margin: 0` and then allow the user to customize them via component props using styled-system’s `space` function.
-
-[Each styled-system function](https://styled-system.com/table) implements a group of component props. For example `space` adds padding and margins props, `typography` adds props like `fontFamily` and `fontSize`, etc.
-
-Have a look at our [spacing scale](https://cdds.netlify.com/styleguide/#/Foundation?id=spacing):
+Refactor `Text` component so that we can customize its `margin` via props. Keep in mind that values should be coming from our [spacing scale](https://cdds.netlify.com/styleguide/#/Foundation?id=spacing):
 
 ```jsx noeditor
 import { Spacing } from '@component-driven/react-design-tokens';
@@ -131,102 +172,29 @@ import theme from '../../theme';
 <Spacing theme={theme} />;
 ```
 
-## The task
-
-Use the `space` function from styled-system to make margins or our Heading component customizable via props.
+## Solutions
 
 <details>
- <summary>Solution</summary>
+ <summary>Text</summary>
+
+```js {"file": "final/Text.js", "static": true}
+```
+
+</details>
+
+<details>
+ <summary>Heading</summary>
 
 ```js {"file": "final/Heading.js", "static": true}
 ```
 
 </details>
 
-## 3.3. Creating a generic text component
+## Takeaways
 
-Let’s create a more complex component, for rendering text with different styles in our app.
-
-We already know how to control styles of component with props, styled-system can make it much simpler with [Variants](https://styled-system.com/variants/):
-
-```js static
-import styled from 'styled-components';
-import { variant } from 'styled-system';
-const variants = variant({
-  variants: {
-    primary: {
-      color: 'primary'
-    },
-    secondary: {
-      color: 'base'
-    }
-  }
-});
-const Heading = styled.h1`
-  margin: 0;
-  ${variants};
-`;
-Heading.defaultProps = {
-  variant: 'secondary'
-};
-```
-
-Or with an object notation:
-
-```js static
-import styled from 'styled-components';
-import { variant } from 'styled-system';
-const Heading = styled.h1(
-  {
-    margin: 0
-  },
-  variant({
-    variants: {
-      primary: {
-        color: 'primary'
-      },
-      secondary: {
-        color: 'base'
-      }
-    }
-  })
-);
-Heading.defaultProps = {
-  variant: 'secondary'
-};
-```
-
-You can use design tokens directly in variants, like `primary` color above.
-
-## The result
-
-The result should look like this:
-
-```js noeditor
-import Text from '../../components/primitives/Text';
-<>
-  <Text>Normal text</Text>
-  <Text variant="secondary">Secondary text</Text>
-  <Text variant="tertiary">Tertiary text</Text>
-  <Text variant="error">Error text</Text>
-</>;
-```
-
-## The task
-
-Create a component that renders text with default styles:
-
-- Normal text (`base` font size, `base` color);
-- Secondary text (`base` font size, `secondary` color);
-- Small text (small (`sm`) font size, `secondary` color);
-- Error message (`base` font size, `error` color).
-
-The `variant` prop is used to change text style.
-
-<details>
- <summary>Solution</summary>
-
-```js {"file": "final/Text.js", "static": true}
-```
-
-</details>
+1. All text in the app should be rendered using `Text` component.
+1. Do not rely on the cascade from global CSS since may affect the styles depending on where the component is rendered.
+1. Use design tokens from the design system to reduce the amount of choice.
+1. When creating primitives, first think of the API (i.e. imagine how the component is going to be used, then code it).
+1. styled-system simplifies creating primitives with constraint-based APIs.
+1. Compose more complex components out of primitives.

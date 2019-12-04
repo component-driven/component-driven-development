@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import VisuallyHidden from '../VisuallyHidden';
+import theme from '../../../theme';
 
 const DEFAULT_SIZE = 512;
 const SIZES = { sm: 16, lg: 32 };
@@ -62,20 +63,12 @@ const ICONS = {
 	},
 };
 
-const getColor = variant =>
-	({
-		primary: 'base',
-		secondary: 'secondary',
-		rating: 'rating',
-	}[variant]);
-
 const IconBase = styled.span`
 	display: inline-block;
 	line-height: 1;
 
 	& path {
-		fill: ${props =>
-			props.theme.colors[getColor(props.variant)] || 'currentColor'};
+		fill: ${props => props.theme.colors[props.color] || 'currentColor'};
 	}
 `;
 
@@ -105,7 +98,7 @@ const Icon = ({ name, size, alt, ...rest }) => {
 
 Icon.propTypes = {
 	name: PropTypes.string.isRequired,
-	variant: PropTypes.oneOf(['currentColor', 'primary', 'secondary', 'rating']),
+	color: PropTypes.oneOf(Object.keys(theme.colors)),
 	size: PropTypes.oneOf(['sm', 'lg']),
 	alt: PropTypes.string.isRequired,
 };

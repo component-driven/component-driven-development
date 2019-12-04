@@ -1,23 +1,39 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space } from 'styled-system';
+import { variant } from 'styled-system';
+import { css } from '@styled-system/css';
+import Text from '../../../components/primitives/Text';
 
 /**
  * A text heading.
  */
-const Heading = styled.h1`
-	margin: 0;
-	${space};
-	line-height: ${props => props.theme.lineHeights.heading};
-	font-weight: ${props => props.theme.fontWeights.normal};
-	font-family: ${props => props.theme.fonts.heading};
-	font-size: ${props => props.theme.fontSizes[props.size]};
-	color: ${props => props.theme.colors.base};
-`;
+const Heading = styled(Text)(
+	css({
+		fontFamily: 'heading',
+		lineHeight: 'heading',
+	}),
+	variant({
+		prop: 'size',
+		variants: {
+			xl: {
+				fontSize: ['lg', 'xl'],
+				fontWeight: ['bold', 'light'],
+			},
+			lg: {
+				fontSize: 'lg',
+			},
+			md: {
+				fontSize: 'md',
+				fontWeight: 'bold',
+			},
+		},
+	})
+);
 
 Heading.propTypes = {
 	/** Custom component or HTML tag */
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+	/** Variant */
 	size: PropTypes.oneOf(['xl', 'lg', 'md']),
 	children: PropTypes.node,
 };

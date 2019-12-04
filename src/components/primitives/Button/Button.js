@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const getColor = variant => ({ primary: 'bg', secondary: 'primary' }[variant]);
+const getColor = variant =>
+	({ primary: 'background', secondary: 'primary' }[variant]);
 const getBgColor = variant => ({ primary: 'primary' }[variant]);
 
 /**

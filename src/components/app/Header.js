@@ -1,3 +1,4 @@
+import styled from 'styled-components/macro'; //eslint-disable-line
 import React from 'react';
 import Stack from '../primitives/Stack';
 import Box from '../primitives/Box';
@@ -20,6 +21,9 @@ const Header = () => (
 				mt={0}
 				mb={2}
 				as="ul"
+				css={{
+					listStyleType: 'none',
+				}}
 			>
 				<Text as="li">
 					<Link href="#">How it works</Link>

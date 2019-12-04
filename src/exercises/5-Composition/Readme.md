@@ -33,9 +33,7 @@ import Hero from '../../components/patterns/Hero';
   backgroundImage="url(https://source.unsplash.com/TBw3iQGdwbg/1000x600)"
   py={6}
 >
-  <Heading level={2}>
-    The quick brown fox jumps over the lazy dog
-  </Heading>
+  <Heading>The quick brown fox jumps over the lazy dog</Heading>
 </Hero>;
 ```
 
@@ -75,7 +73,7 @@ const Hero = styled(Box)`
 Hero.defaultProps = {
   px: 4,
   py: 3,
-  bg: 'bg'
+  bg: 'background'
 };
 
 /** @component */
@@ -98,7 +96,7 @@ import { color, border } from 'styled-system';
 const CardBase = styled(Box)(color, border);
 
 Card.defaultProps = {
-  bg: 'bg',
+  bg: 'background',
   border: 'thin',
   borderColor: 'grey.2',
   borderRadius: 'base'
@@ -169,13 +167,13 @@ Feature.Icon = ({ children }) => (
 );
 
 Feature.Heading = ({ children }) => (
-  <Heading as="h3" size="lg" align="center">
+  <Heading as="h3" size="lg" textAlign="center">
     {children}
   </Heading>
 );
 
 Feature.Body = ({ children }) => (
-  <Text align="center">{children}</Text>
+  <Text textAlign="center">{children}</Text>
 );
 
 export default Feature;
@@ -298,7 +296,7 @@ const CardBase = styled(Flex)(
 );
 
 CardBase.defaultProps = {
-  bg: 'bg',
+  bg: 'background',
   border: 'thin',
   borderColor: 'grey.2',
   borderRadius: 'base',

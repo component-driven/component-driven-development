@@ -1,31 +1,40 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space } from 'styled-system';
+import { variant } from 'styled-system';
+import { css } from '@styled-system/css';
+import Text from '../Text';
 
 /**
  * A text heading.
  */
-const HeadingBase = styled.h1`
-	margin: 0;
-	${space};
-	line-height: ${props => props.theme.lineHeights.heading};
-	font-family: ${props => props.theme.fonts.heading};
-	font-weight: ${props => props.theme.headingFontWeights[props.size]};
-	font-size: ${props => props.theme.fontSizes[props.size]};
-	color: ${props => props.theme.colors.base};
-	text-align: ${props => props.align};
-`;
-
-// Apply default props manually, because styled-system will apply them after
-// passed props, so default m prop will overwrite passed mb prop for example
-const Heading = props => <HeadingBase {...Heading.defaultProps} {...props} />;
+const Heading = styled(Text)(
+	css({
+		fontFamily: 'heading',
+		lineHeight: 'heading',
+	}),
+	variant({
+		prop: 'size',
+		variants: {
+			xl: {
+				fontSize: ['lg', 'xl'],
+				fontWeight: ['bold', 'light'],
+			},
+			lg: {
+				fontSize: 'lg',
+			},
+			md: {
+				fontSize: 'md',
+				fontWeight: 'bold',
+			},
+		},
+	})
+);
 
 Heading.propTypes = {
 	/** Custom component or HTML tag */
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+	/** Variant */
 	size: PropTypes.oneOf(['xl', 'lg', 'md']),
-	align: PropTypes.oneOf(['left', 'center', 'right']),
 	children: PropTypes.node,
 };
 

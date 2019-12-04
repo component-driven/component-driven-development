@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // FINAL_START
-import { space, variant } from 'styled-system';
+import { color, typography, space, variant } from 'styled-system';
+import { css } from '@styled-system/css';
 // FINAL_END
 
 /**
@@ -14,31 +15,41 @@ const Text = styled.p({
 // WORKSHOP_END
 // FINAL_START
 const Text = styled.p(
-	{
-		margin: 0,
-	},
+	// Default styles
+	// css function provides access to our design tokens
+	css({
+		m: 0,
+		fontWeight: 'normal',
+		fontFamily: 'body',
+		fontSize: 'md',
+		lineHeight: 'base',
+		color: 'text',
+	}),
+	// APIs
+	color,
+	typography,
 	space,
 	variant({
 		variants: {
 			base: {
+				fontSize: 'md', // You can use design tokens in variants!
 				fontWeight: 'normal',
 				lineHeight: 'base',
 				fontFamily: 'body',
-				fontSize: 'md',
-				color: 'primary',
+				color: 'text',
 			},
 			secondary: {
+				fontSize: 'md',
 				fontWeight: 'normal',
 				lineHeight: 'base',
 				fontFamily: 'body',
-				fontSize: 'md',
 				color: 'grey.5',
 			},
 			tertiary: {
+				fontSize: 'sm',
 				fontWeight: 'normal',
 				lineHeight: 'base',
 				fontFamily: 'body',
-				fontSize: 'sm',
 				color: 'grey.5',
 			},
 			error: {
@@ -54,14 +65,11 @@ const Text = styled.p(
 // FINAL_END
 
 Text.propTypes = {
+// FINAL_START
 	/** Variation */
-	variant: PropTypes.oneOf(['base', 'secondary', 'tertiary', 'error']),
-	align: PropTypes.oneOf(['left', 'center', 'right']),
+	variant: PropTypes.oneOf(['secondary', 'tertiary', 'error']),
+// FINAL_END
 	children: PropTypes.node,
-};
-
-Text.defaultProps = {
-	variant: 'base',
 };
 
 /** @component */
