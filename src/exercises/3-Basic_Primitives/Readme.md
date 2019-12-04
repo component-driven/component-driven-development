@@ -69,7 +69,17 @@ import Text from '../../components/primitives/Text';
 </>;
 ```
 
-## 3.3. Extending primitives
+## 3.3 Making primitives lean
+
+It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time and it is crucial for primitives to be lean enough to adapt to those requirements. In other words, good primitives should be flexible enough to allow one-off “snowflakes” usages.
+
+### The task
+
+- Refactor `Text` component so it could accept style overrides via `css` prop. All values should accept design tokens and not just CSS values.
+
+**Hint:** Check out how to use [CSS prop](https://www.styled-components.com/docs/api#css-prop) in styled-components and [documentation of CSS function](https://styled-system.com/css)
+
+## 3.4. Extending primitives
 
 Now that we have our `Text` component, let’s create a `Heading` primitive that should help rendering all headings across the app. In this case, it’s important to keep in mind that in UIs headings won’t follow document outline, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3). In other words we need to change heading styles and an HTML element independently. This means, we have to create the API that’s doesn’t couple HTML tag and the look of the heading. We can leverage [`as` prop](https://www.styled-components.com/docs/api#as-polymorphic-prop) to render a desired HTML element.
 
@@ -110,7 +120,7 @@ Create a component that renders different levels of headings using `Text` compon
 - different sizes are defined by a component prop (`size`, the value is `md`, `lg` or `xl`);
 - HTML element can be changed independently from the font size.
 
-## 3.4 Making your styles responsive
+## 3.5 Making your styles responsive
 
 When working on the app or a website it’s oftentimes desirable to handle responsive styles as well. There are different ways of handling responsive styles. Styled-system approach is simple yet very powerful: every prop accepts a value or an array of values.
 
@@ -119,16 +129,6 @@ When working on the app or a website it’s oftentimes desirable to handle respo
 - Make the font size of `Heading` component responsive. It should become smaller, on smaller screens.
 
 **Hint:** Check out the documentation of [responsive styles](https://styled-system.com/responsive-styles)
-
-## 3.5 Making primitives lean
-
-It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time and it is crucial for primitives to be lean enough to adapt to those requirements. In other words, good primitives should be flexible enough to allow one-off “snowflakes” usages.
-
-### The task
-
-- Refactor `Text` component so it could accept style overrides via `css` prop. All values should accept design tokens and not just CSS values.
-
-**Hint:** Check out how to use [CSS prop](https://www.styled-components.com/docs/api#css-prop) in styled-components and [documentation of CSS function](https://styled-system.com/css)
 
 ## 3.6. Managing whitespace of primitives
 
