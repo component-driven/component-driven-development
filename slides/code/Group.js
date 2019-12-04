@@ -16,7 +16,7 @@
 		>
 			<Box
 				as={"span"}
-				bg={"purple.3"}
+				bg={"grey.3"}
 				py={2}
 				px={4}
 			>
@@ -24,7 +24,7 @@
 			</Box>
 			<Box
 				as={"span"}
-				bg={"purple.3"}
+				bg={"grey.3"}
 				py={2}
 				px={4}
 			>
@@ -32,7 +32,7 @@
 			</Box>
 			<Box
 				as={"span"}
-				bg={"purple.3"}
+				bg={"grey.3"}
 				py={2}
 				px={4}
 			>
@@ -40,7 +40,7 @@
 			</Box>
 			<Box
 				as={"span"}
-				bg={"purple.3"}
+				bg={"grey.3"}
 				py={2}
 				px={4}
 			>
