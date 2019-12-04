@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Stack from '../primitives/Stack';
+import Button from '../primitives/Button';
 import Box from '../primitives/Box';
 import Flex from '../primitives/Flex';
 import Text from '../primitives/Text';
@@ -40,9 +41,9 @@ const DogFinder = ({
 }) => (
 	<React.Fragment>
 		<VisuallyHidden as="h3">Filters</VisuallyHidden>
-		<Flex mt={3} mb={5} mx={-3} flexWrap="wrap">
+		<Flex mt={3} mb={5} mx={-3} flexWrap="wrap" alignItems="flex-end">
 			{filterOptions.map(({ name, label, options }) => (
-				<Box key={name} width={[1, 1 / 3]} px={3} py={[3, 0]}>
+				<Box key={name} flexGrow={1} px={3}>
 					<FilterSelect
 						name={name}
 						label={label}
@@ -53,6 +54,11 @@ const DogFinder = ({
 					/>
 				</Box>
 			))}
+			<Box width={[1, 1 / 6]} px={3} py={[3, 0]}>
+				<Button fullWidth variant="primary">
+					Find dogs!
+				</Button>
+			</Box>
 		</Flex>
 		<VisuallyHidden as="h3">
 			Search results{' '}
