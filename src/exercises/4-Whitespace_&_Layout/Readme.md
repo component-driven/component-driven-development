@@ -1,4 +1,4 @@
-To be truly reusable, components shouldn't define any whitespace around them, otherwise it may become hard to compose such components. Imagine a `Button` would have `margin-right` predefined. This would make it tricky to create a `ButtonGroup` component there buttons are placed next to each other.
+To be truly reusable, components shouldn’t define any whitespace around them, otherwise it may become hard to compose such components. Imagine a `Button` would have `margin-right` predefined. This would make it tricky to create a `ButtonGroup` component there buttons are placed next to each other.
 
 This means that the _whitespace between components should be controlled outside of components_. This can be achieved in a few different ways:
 

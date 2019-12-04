@@ -1,10 +1,10 @@
-In this exercise we’ll create reusable primitive components. We’ll create a text and a heading component. We'll learn how to reduce boilerplate by using [styled-system](https://styled-system.com)
+In this exercise we’ll create reusable primitive components. We’ll create a text and a heading component. We’ll learn how to reduce boilerplate by using [styled-system](https://styled-system.com)
 
 The majority of every user interface is a text. Unsurprisingly, most of inconsistencies are coming from text styles. To reduce the amount of different text styles we should restrict our styling and only allow using design tokens.
 
 ## 3.1. Creating a generic text component
 
-In the previous exercise we learned how to use design tokens instead of arbitrary CSS values in our components. Now we need a way to write styles and access design tokens inside our application code. I.e. we want to design a component that implements an API to our design system and doesn't require writing CSS.
+In the previous exercise we learned how to use design tokens instead of arbitrary CSS values in our components. Now we need a way to write styles and access design tokens inside our application code. I.e. we want to design a component that implements an API to our design system and doesn’t require writing CSS.
 
 We could approach this task naively:
 
@@ -17,7 +17,7 @@ const Text = styled.p`
 `;
 ```
 
-As you can see, there is a lot of repetition going on. Also this method doesn't cover lots of edge cases. Luckily for us, [styled-system](https://styled-system.com) is a library designed specifically for our needs.
+As you can see, there is a lot of repetition going on. Also this method doesn’t cover lots of edge cases. Luckily for us, [styled-system](https://styled-system.com) is a library designed specifically for our needs.
 
 > Styled System lets you quickly build custom UI components with constraint-based style props based on scales defined in your theme.
 
@@ -42,7 +42,7 @@ import Text from '../../components/primitives/Text';
 
 ## 3.2. Using style variations
 
-Now we already have a much better way of styling any text in the application but it doesn't prevent developers from using "wrong" combinations of tokens. I.e. you can still end up with a barely readable text or a font style that doesn't exist anywhere else in the app.
+Now we already have a much better way of styling any text in the application but it doesn’t prevent developers from using ”wrong” combinations of tokens. I.e. you can still end up with a barely readable text or a font style that doesn’t exist anywhere else in the app.
 
 To prevent that, we can make our primitives more rigid by only allowing certain pre-defined font styles.
 
@@ -71,7 +71,7 @@ import Text from '../../components/primitives/Text';
 
 ## 3.3. Extending primitives
 
-Now that we have our `Text` component, let's create a `Heading` primitive that should help rendering all headings across the app. In this case, it's important to keep in mind that in UIs headings won't follow document outline, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3). In other words we need to change heading styles and an HTML element independently. This means, we have to create the API that's doesn't couple HTML tag and the look of the heading. We can leverage [`as` prop](https://www.styled-components.com/docs/api#as-polymorphic-prop) to render a desired HTML element.
+Now that we have our `Text` component, let’s create a `Heading` primitive that should help rendering all headings across the app. In this case, it’s important to keep in mind that in UIs headings won’t follow document outline, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3). In other words we need to change heading styles and an HTML element independently. This means, we have to create the API that’s doesn’t couple HTML tag and the look of the heading. We can leverage [`as` prop](https://www.styled-components.com/docs/api#as-polymorphic-prop) to render a desired HTML element.
 
 ### The result
 
@@ -112,7 +112,7 @@ Create a component that renders different levels of headings using `Text` compon
 
 ## 3.4 Making your styles responsive
 
-When working on the app or a website it's oftentimes desirable to handle responsive styles as well. There are different ways of handling responsive styles. Styled-system approach is simple yet very powerful: every prop accepts a value or an array of values.
+When working on the app or a website it’s oftentimes desirable to handle responsive styles as well. There are different ways of handling responsive styles. Styled-system approach is simple yet very powerful: every prop accepts a value or an array of values.
 
 ### The task
 
@@ -122,7 +122,7 @@ When working on the app or a website it's oftentimes desirable to handle respons
 
 ## 3.5 Making primitives lean
 
-It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time and it is crucial for primitives to be lean enough to adapt to those requirement. In other words, good primitives should be flexible enough to allow one-off "snowflakes" usages of unpredicted requirements.
+It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time and it is crucial for primitives to be lean enough to adapt to those requirement. In other words, good primitives should be flexible enough to allow one-off “snowflakes” usages of unpredicted requirements.
 
 ### The task
 
@@ -132,7 +132,7 @@ It is not possible to account for all use cases for your design system. As with 
 
 ## 3.6. Managing whitespace of primitives
 
-Usually we need some whitespace around a component. Most of time, we get defaults by the user agent (the browser). For example, `0.5em` above and below a heading and paragraph. This is a good default if you're crating a document for reading but can make usage of primitives in different places of your app a nightmare since you'd need to override defaults every single time. Moreover those defaults are based on the current font size value that comes from CSS cascade.
+Usually we need some whitespace around a component. Most of time, we get defaults by the user agent (the browser). For example, `0.5em` above and below a heading and paragraph. This is a good default if you’re crating a document for reading but can make usage of primitives in different places of your app a nightmare since you’d need to override defaults every single time. Moreover those defaults are based on the current font size value that comes from CSS cascade.
 
 In order to make primitives reusable, we should remove margins from the component by default and then add it where needed.
 
@@ -150,7 +150,7 @@ const HeadingWithBottomMargin = styled(Heading)`
 
 Imagine doing this across all the app! 🤯 Not to mention it is not reusable.
 
-Following the same principle as before, we should make the whitespace part of the component's API. This way we can add margins via props when using the component:
+Following the same principle as before, we should make the whitespace part of the component’s API. This way we can add margins via props when using the component:
 
 ```jsx static
 // This will add `margin-bottom: 0.5em` and `margin-top: 0.5em`
@@ -159,7 +159,7 @@ Following the same principle as before, we should make the whitespace part of th
 </Heading>
 ```
 
-But as we learned already, our goal is to restrict developer's choice and to achieve that we should use design tokens.
+But as we learned already, our goal is to restrict developer’s choice and to achieve that we should use design tokens.
 
 ## The task
 
