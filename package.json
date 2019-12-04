@@ -49,7 +49,7 @@
 		"styleguide": "styleguidist server --open",
 		"prestyleguide:build": "npm run validate",
 		"styleguide:build": "styleguidist build",
-		"slides:start": "mdx-deck ./slides/slides.mdx",
+		"slides:start": "mdx-deck ./slides/cdds-worskhop.mdx",
 		"slides:build": "mdx-deck build ./slides/slides.mdx -d ./build/slides --basepath /slides",
 		"format": "prettier --write '**/*.{js,md}'",
 		"generate": "node scripts/generate.js",

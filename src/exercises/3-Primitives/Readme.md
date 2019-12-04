@@ -122,7 +122,7 @@ When working on the app or a website it’s oftentimes desirable to handle respo
 
 ## 3.5 Making primitives lean
 
-It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time and it is crucial for primitives to be lean enough to adapt to those requirement. In other words, good primitives should be flexible enough to allow one-off “snowflakes” usages of unpredicted requirements.
+It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time and it is crucial for primitives to be lean enough to adapt to those requirements. In other words, good primitives should be flexible enough to allow one-off “snowflakes” usages.
 
 ### The task
 
