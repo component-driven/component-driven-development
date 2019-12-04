@@ -17,6 +17,10 @@ export const Stack = styled(Grid)(
 					? `repeat(auto-fit, minmax(${getMinMaxValue(value, scale)}, 1fr))`
 					: null,
 		},
+		numColumns: {
+			property: 'gridTemplateColumns',
+			transform: value => (value ? `repeat(${value}, 1fr)` : null),
+		},
 	})
 );
 
