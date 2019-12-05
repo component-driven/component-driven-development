@@ -10,8 +10,5 @@ import Box from './Box';
   <Box p={4} bg="grey.4">
     Stack Item
   </Box>
-  <Box p={4} bg="grey.5">
-    Stack Item
-  </Box>
 </Stack>;
 ```

@@ -26,9 +26,13 @@ export const Stack = styled(Grid)(
 
 Stack.propTypes = {
 	...Grid.propTypes,
-
 	/** Minimum column per item */
 	minColumnWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	/** Number of columns */
+	numColumns: PropTypes.oneOfType([
+		PropTypes.number,
+		PropTypes.arrayOf(PropTypes.number),
+	]),
 };
 
 export default Stack;

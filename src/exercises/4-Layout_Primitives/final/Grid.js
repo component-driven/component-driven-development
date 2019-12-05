@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import Box from '../../components/primitives/Box';
 
-const Grid = styled(Box)({
-	// Your styles here
+export const Grid = styled(Box)({
+	display: 'grid',
 });
 
 Grid.propTypes = Box.propTypes;

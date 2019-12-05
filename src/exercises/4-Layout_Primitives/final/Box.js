@@ -4,9 +4,14 @@ import propTypes from '@styled-system/prop-types';
 
 const Box = styled('div')(
 	{
-		// Your styles here
-	}
-	// styled-system functions
+		boxSizing: 'border-box',
+	},
+	space,
+	color,
+	border,
+	layout,
+	flexbox,
+	grid
 );
 
 Box.propTypes = {

@@ -3,9 +3,14 @@ import styled from 'styled-components';
 import { system } from 'styled-system';
 import Grid from '../../components/primitives/Grid';
 
-const Stack = styled(Grid)({
-	// Your styles here
-});
+export const Stack = styled(Grid)(
+	system({
+		numColumns: {
+			property: 'gridTemplateColumns',
+			transform: value => (value ? `repeat(${value}, 1fr)` : null),
+		},
+	})
+);
 
 Stack.propTypes = {
 	...Grid.propTypes,
