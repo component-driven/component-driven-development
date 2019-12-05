@@ -996,65 +996,6 @@ import Text from '../primitives/Text';
 
 <Secondary>
 
-# Box
-
-</Secondary>
-
----
-
-## API design
-
-- Layout (`width`, `height`, etc.)
-- White space (`margin`, `padding`)
-- Colors (`background`, `color`)
-- Borders (`border`, `border-radius`),
-- Shadows (`box-shadow`),
-- HTML elements (`div`, `span`, `section`, ...)
-
----
-
-<Center>
-
-```javascript
-import styled from '@emotion/styled';
-import { layout, space, color, border, boxShadow } from 'styled-system';
-
-export const Box = styled.div(
-	// defaults
-	{
-		minWidth: 0,
-	},
-	// API
-	layout,
-	space,
-	color,
-	border,
-	boxShadow
-);
-```
-
-</Center>
-
----
-
-<LiveCode
-	title="Box"
-	code={require('!raw-loader!./code/Box.js').default}
-	size="fullscreen"
-/>
-
----
-
-<Boom>
-
-> Model API based on CSS knowledge
-
-</Boom>
-
----
-
-<Secondary>
-
 # Responsive design
 
 </Secondary>
@@ -1137,6 +1078,65 @@ Now let's compose primitives...
 <Boom>
 
 > Primitives to control layout and white space around their children
+
+</Boom>
+
+---
+
+<Secondary>
+
+# Box
+
+</Secondary>
+
+---
+
+## API design
+
+- Layout (`width`, `height`, etc.)
+- White space (`margin`, `padding`)
+- Colors (`background`, `color`)
+- Borders (`border`, `border-radius`),
+- Shadows (`box-shadow`),
+- HTML elements (`div`, `span`, `section`, ...)
+
+---
+
+<Center>
+
+```javascript
+import styled from '@emotion/styled';
+import { layout, space, color, border, boxShadow } from 'styled-system';
+
+export const Box = styled.div(
+	// defaults
+	{
+		minWidth: 0,
+	},
+	// API
+	layout,
+	space,
+	color,
+	border,
+	boxShadow
+);
+```
+
+</Center>
+
+---
+
+<LiveCode
+	title="Box"
+	code={require('!raw-loader!./code/Box.js').default}
+	size="fullscreen"
+/>
+
+---
+
+<Boom>
+
+> Model API based on CSS knowledge
 
 </Boom>
 
