@@ -207,3 +207,5 @@ import Box from '../../components/primitives/Box';
 ```
 
 </details>
+
+**Note:** the Stack component is also available as an npm package, [stack-styled](https://stack-styled.js.org).
