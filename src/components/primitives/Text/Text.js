@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { color, typography, space, variant } from 'styled-system';
+import { color, typography, space, layout, variant } from 'styled-system';
 import { css } from '@styled-system/css';
 
 /**
@@ -21,6 +21,7 @@ const Text = styled.p(
 	color,
 	typography,
 	space,
+	layout,
 	variant({
 		variants: {
 			secondary: {

@@ -1,45 +1,30 @@
 import React from 'react';
-import Box from '../../../../src/components/primitives/Box';
-import Flex from '../../../../src/components/primitives/Flex';
-import Heading from '../../../../src/components/primitives/Heading';
-import Link from '../../../../src/components/primitives/Link';
-import Text from '../../../../src/components/primitives/Text';
-import { Inverted } from '../../../../src/components/../ThemeProvider';
-import SubscriptionForm from '../../../../src/components/app/SubscriptionFormContainer';
-import SvgDogPees from '../../../../src/components/app/images/SvgDogPees';
+import Box from '../../../../components/primitives/Box';
+import Flex from '../../../../components/primitives/Flex';
+import Heading from '../../../../components/primitives/Heading';
+import Button from '../../components/primitives/Button';
+import Link from '../../../../components/primitives/Link';
+import Text from '../../../../components/primitives/Text';
+import Input from '../../../../components/primitives/Input';
 
-const Footer = () => {
+const LoginPage = () => {
 	return (
-		<Inverted>
-			<Flex
-				px={5}
-				py={4}
-				flexDirection="column"
-				bg="background"
-				color="secondary"
-			>
-				<Box mx="auto" mb={5}>
-					<SvgDogPees width="100" />
-				</Box>
-				<Box mb={5} mx="auto" width={[1, 2 / 3, 1 / 2]}>
-					<Heading size="lg" as="h2" mb={4} textAlign="center">
-						Subscribe to our newsletter!
-					</Heading>
-					<SubscriptionForm />
-				</Box>
-				<Text variant="tertiary" textAlign="center">
-					© {new Date().getFullYear()}{' '}
-					<Link href="https://okonet.ru/" shy>
-						Andrey Okonetchnikov
-					</Link>{' '}
-					and{' '}
-					<Link href="https://sapegin.me/" shy>
-						Artem Sapegin
-					</Link>
-				</Text>
-			</Flex>
-		</Inverted>
+		<form>
+			<Heading mb={4}>Login</Heading>
+			<Text as="label" display="block" mb={3}>
+				<Box mb={2}>Username</Box>
+				<Input type="text" />
+			</Text>
+			<Text as="label" display="block" mb={4}>
+				<Box mb={2}>Password</Box>
+				<Input type="password" />
+			</Text>
+			<Box mb={4}>
+				<Link href="#">Forgot your password?</Link>
+			</Box>
+			<Button>Log in</Button>
+		</form>
 	);
 };
 
-export default Footer;
+export default LoginPage;
