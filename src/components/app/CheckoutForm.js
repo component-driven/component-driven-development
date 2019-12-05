@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Form, Field } from 'formik';
 import Box from '../primitives/Box';
 import Flex from '../primitives/Flex';
@@ -9,6 +8,7 @@ import Input from '../primitives/Input';
 import Select from '../primitives/Select';
 import Heading from '../primitives/Heading';
 
+// A form field with a label
 const Widget = ({ label, children, ...props }) => {
 	return (
 		<Box {...props}>
@@ -20,22 +20,15 @@ const Widget = ({ label, children, ...props }) => {
 	);
 };
 
-const FieldsetContainer = styled(Box)`
-	padding: 0;
-	border: none;
-`;
-
-/**
- * A field set — a group of form fields with a heading.
- */
+// A field set — a group of form fields with a heading.
 const Fieldset = ({ label, children, ...props }) => {
 	return (
-		<FieldsetContainer as="fieldset" {...props}>
+		<Box as="fieldset" m={0} p={0} border="none" {...props}>
 			<Heading size="lg" as="legend" mb={4}>
-				{label} 
+				{label}
 			</Heading>
 			{children}
-		</FieldsetContainer>
+		</Box>
 	);
 };
 
