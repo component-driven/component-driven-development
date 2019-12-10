@@ -6,14 +6,12 @@ import { css } from '@styled-system/css';
  * A basic input field.
  */
 const Input = styled.input(
-	{
-		width: props => props.fullWidth && '100%',
-	},
 	css({
 		boxSizing: 'border-box',
 		display: 'block',
-		margin: 0,
+		width: '100%',
 		height: '2.5rem',
+		margin: 0,
 		padding: 3,
 		border: 'thin',
 		borderColor: 'primary',
@@ -41,9 +39,7 @@ const Input = styled.input(
 	})
 );
 
-Input.propTypes = {
-	fullWidth: PropTypes.bool,
-};
+Input.propTypes = {};
 
 /** @component */
 export default Input;
