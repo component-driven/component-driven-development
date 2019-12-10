@@ -31,6 +31,8 @@ function getColors(palette) {
 	};
 }
 
+const colors = getColors(palette);
+
 const theme = {
 	space: [
 		0,
@@ -64,13 +66,16 @@ const theme = {
 		base: 1.5,
 		heading: 1.1,
 	},
-	colors: getColors(palette),
+	colors,
 	borders: {
 		none: 'none',
 		thin: '1px solid',
 	},
 	radii: {
 		base: '0.15em',
+	},
+	shadows: {
+		focus: `0 0 0 2px ${colors.focus}`,
 	},
 };
 
