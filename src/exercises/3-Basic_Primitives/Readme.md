@@ -50,10 +50,10 @@ To prevent that, we can make our primitives more rigid by only allowing certain 
 
 Refactor `Text` component to allow rendering text with following styles:
 
-- Normal text (`base` font size, `base` color);
-- Secondary text (`base` font size, `secondary` color);
+- Normal text (`md` font size, `text` color);
+- Secondary text (`md` font size, `secondary` color);
 - Small text (small (`sm`) font size, `secondary` color);
-- Error message (`base` font size, `error` color).
+- Error message (`md` font size, `error` color).
 
 ### The result
 

@@ -15,7 +15,7 @@ const Button = styled.button`
 // FINAL_START
 const Button = styled.button`
 	padding: ${props => props.theme.space[3]} ${props => props.theme.space[4]};
-	color: ${props => props.theme.colors.bg};
+	color: ${props => props.theme.colors.background};
 	background-color: ${props => props.theme.colors.primary};
 	border: 0;
 `;
