@@ -24,3 +24,17 @@ Button as a link:
   Click me
 </Button>
 ```
+
+Full width button:
+
+```js padded
+import Flex from '../Flex';
+<>
+  <Flex flexDirection="column" mb={4}>
+    <Button>Loooongcat is long</Button>
+  </Flex>
+  <Flex flexDirection="column">
+    <Button variant="primary">Loooongcat is long</Button>
+  </Flex>
+</>;
+```

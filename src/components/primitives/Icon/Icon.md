@@ -6,7 +6,7 @@ Sizes and colors:
   <Icon name="dog" color="primary" size="lg" alt="" />
   <Icon name="dog" color="secondary" alt="" />
   <Icon name="dog" color="secondary" size="lg" alt="" />
-  <Icon name="dog" color="currentColor" size="lg" alt="" />
+  <Icon name="dog" size="lg" alt="" />
 </>
 ```
 

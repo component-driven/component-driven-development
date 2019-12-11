@@ -53,6 +53,7 @@ const Select = props => (
 			size="md"
 			alignSelf="center"
 			ml={-5}
+			alt=""
 		/>
 	</Flex>
 );

@@ -61,7 +61,6 @@ Button.propTypes = {
 	children: PropTypes.node,
 	/** Button variation */
 	variant: PropTypes.oneOf(['primary', 'secondary']),
-	fullWidth: PropTypes.bool,
 };
 
 Button.defaultProps = {

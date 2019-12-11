@@ -86,7 +86,7 @@ const Icon = ({ name, size, alt, ...rest }) => {
 	const a11yProps = alt ? { role: 'img' } : { 'aria-hidden': 'true' };
 	const displaySize = SIZES[size];
 	return (
-		<IconBase {...rest}>
+		<IconBase as="span" {...rest}>
 			{alt && <VisuallyHidden>{alt}</VisuallyHidden>}
 			<svg
 				{...a11yProps}
@@ -104,12 +104,11 @@ const Icon = ({ name, size, alt, ...rest }) => {
 Icon.propTypes = {
 	name: PropTypes.string.isRequired,
 	color: PropTypes.oneOf(Object.keys(theme.colors)),
-	size: PropTypes.oneOf(['sm', 'lg']),
+	size: PropTypes.oneOf(Object.keys(SIZES)),
 	alt: PropTypes.string.isRequired,
 };
 
 Icon.defaultProps = {
-	variant: 'currentColor',
 	size: 'sm',
 };
 

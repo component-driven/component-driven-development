@@ -4,6 +4,7 @@ By using subcomponents `Card.Cover`, `Card.Body` and `Card.Footer` users can cre
 
 ```jsx harmony
 import Box from '../Box';
+import Flex from '../Flex';
 import Heading from '../Heading';
 import Image from '../Image';
 import Text from '../Text';
@@ -18,8 +19,8 @@ import Button from '../Button';
       <Heading size="md">Title of the card</Heading>
       <Text>Body of the card</Text>
     </Card.Body>
-    <Card.Footer>
-      <Button fullWidth>Rent Tsiri</Button>
+    <Card.Footer display="flex" flexDirection="column">
+      <Button>Rent Tsiri</Button>
     </Card.Footer>
   </Card>
 </Box>;

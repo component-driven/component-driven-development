@@ -38,12 +38,7 @@ const CheckoutForm = ({ disabled }) => (
 			<Widget label="Address" mb={4}>
 				<Field name="address">
 					{({ field }) => (
-						<Input
-							autoComplete="shipping street-address"
-							required
-							fullWidth
-							{...field}
-						/>
+						<Input autoComplete="shipping street-address" required {...field} />
 					)}
 				</Field>
 			</Widget>
@@ -56,7 +51,6 @@ const CheckoutForm = ({ disabled }) => (
 									autoComplete="shipping postal-code"
 									required
 									pattern="^[0-9]+$"
-									fullWidth
 									{...field}
 								/>
 							)}
@@ -67,12 +61,7 @@ const CheckoutForm = ({ disabled }) => (
 					<Widget label="Country">
 						<Field name="country">
 							{({ field }) => (
-								<Select
-									autoComplete="shipping country"
-									required
-									fullWidth
-									{...field}
-								>
+								<Select autoComplete="shipping country" required {...field}>
 									<option>Berlin</option>
 								</Select>
 							)}
@@ -83,12 +72,7 @@ const CheckoutForm = ({ disabled }) => (
 					<Widget label="City">
 						<Field name="city">
 							{({ field }) => (
-								<Input
-									autoComplete="shipping locality"
-									required
-									fullWidth
-									{...field}
-								/>
+								<Input autoComplete="shipping locality" required {...field} />
 							)}
 						</Field>
 					</Widget>
@@ -98,18 +82,14 @@ const CheckoutForm = ({ disabled }) => (
 				<Box width={[1, 1 / 2]} p={3}>
 					<Widget label="Date from">
 						<Field name="dateFrom">
-							{({ field }) => (
-								<Input type="date" required fullWidth {...field} />
-							)}
+							{({ field }) => <Input type="date" required {...field} />}
 						</Field>
 					</Widget>
 				</Box>
 				<Box width={[1, 1 / 2]} p={3}>
 					<Widget label="Date to">
 						<Field name="dateTo">
-							{({ field }) => (
-								<Input type="date" required fullWidth {...field} />
-							)}
+							{({ field }) => <Input type="date" required {...field} />}
 						</Field>
 					</Widget>
 				</Box>
@@ -119,7 +99,7 @@ const CheckoutForm = ({ disabled }) => (
 			<Widget label="Card number" mb={4}>
 				<Field name="cardnumber">
 					{({ field }) => (
-						<Input autoComplete="cc-number" required fullWidth {...field} />
+						<Input autoComplete="cc-number" required {...field} />
 					)}
 				</Field>
 			</Widget>
@@ -128,7 +108,7 @@ const CheckoutForm = ({ disabled }) => (
 					<Widget label="Name on card">
 						<Field name="ccname">
 							{({ field }) => (
-								<Input autoComplete="cc-name" required fullWidth {...field} />
+								<Input autoComplete="cc-name" required {...field} />
 							)}
 						</Field>
 					</Widget>
@@ -141,7 +121,6 @@ const CheckoutForm = ({ disabled }) => (
 									autoComplete="cc-exp"
 									placeholder="MM/YY"
 									required
-									fullWidth
 									{...field}
 								/>
 							)}
@@ -152,7 +131,7 @@ const CheckoutForm = ({ disabled }) => (
 					<Widget label="Security code">
 						<Field name="cvc">
 							{({ field }) => (
-								<Input autoComplete="cc-csc" required fullWidth {...field} />
+								<Input autoComplete="cc-csc" required {...field} />
 							)}
 						</Field>
 					</Widget>
