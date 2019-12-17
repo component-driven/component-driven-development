@@ -4,7 +4,6 @@ By using subcomponents `Card.Cover`, `Card.Body` and `Card.Footer` users can cre
 
 ```jsx harmony
 import Box from '../Box';
-import Flex from '../Flex';
 import Heading from '../Heading';
 import Image from '../Image';
 import Text from '../Text';

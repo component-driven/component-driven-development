@@ -8,9 +8,9 @@ import { css } from '@styled-system/css';
  */
 const Button = styled.button(
 	css({
-		boxBizing: 'border-box',
+		boxSizing: 'border-box',
 		display: 'inline-block',
-		height: '2.5rem',
+		minHeight: '2.5rem',
 		px: 4,
 		py: 3,
 		textAlign: 'center',
