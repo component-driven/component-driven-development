@@ -155,24 +155,35 @@ But most of the projects I had to work on looked differently:
 
 ---
 
-<Stack gridGap={5} p={4} gridTemplateColumns="auto 1fr auto">
+<Appear>
+<Stack gridGap={5} p={4} gridTemplateColumns="200px 1fr 100px">
 	<span>Text, Heading</span>
 	<Code language="html">{`<h1>Heading</h1>
 <p>Text</p>`}</Code>
 	<span>️😊</span>
+</Stack>
+
+<Stack gridGap={5} p={4} gridTemplateColumns="200px 1fr 100px">
 	<span>Link</span>
 	<Code language="html">{`<a href="#">Link</a>`}</Code>
 	<span>🤔</span>
+</Stack>
+
+<Stack gridGap={5} p={4} gridTemplateColumns="200px 1fr 100px">
 	<span>Button</span>
 	<Code language="html">
 		{`<button>Button</button>
 <input type="button">Button</input>`}
 	</Code>
 	<span>🙄</span>
+</Stack>
+
+<Stack gridGap={5} p={4} gridTemplateColumns="200px 1fr 100px">
 	<span>Dropdown</span>
 	<Code language="html">{dropdown.html}</Code>
 	<span>😩</span>
 </Stack>
+</Appear>
 
 ---
 
