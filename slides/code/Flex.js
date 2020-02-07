@@ -6,7 +6,6 @@
 				defaultValue=""
 				placeholder="Email"
 				aria-label="Email"
-				fullWidth
 			/>
 		</Box>
 		<Button

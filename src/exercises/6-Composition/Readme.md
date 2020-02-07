@@ -259,7 +259,7 @@ import Button from '../../components/primitives/Button';
       <Text>Body of the card</Text>
     </Card.Body>
     <Card.Footer>
-      <Button fullWidth>Rent Tsiri</Button>
+      <Button>Rent Tsiri</Button>
     </Card.Footer>
   </Card>
 </Box>;

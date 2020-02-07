@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Box from '../Box';
 import VisuallyHidden from '../VisuallyHidden';
 import theme from '../../../theme';
 
 const DEFAULT_SIZE = 512;
-const SIZES = { sm: 16, lg: 32 };
+const SIZES = { sm: 16, md: 24, lg: 32 };
 const ICONS = {
 	dog: {
 		path: `M496 96h-64l-7.16-14.31A32 32 0 0 0 396.22
@@ -61,9 +62,13 @@ const ICONS = {
 		c-7.8,0-15.5-0.5-23.1-1.4C62.8,432,113.7,448,168.3,448C346.6,448,444,300.3,444,172.2c0-4.2-0.1-8.4-0.3-12.5
 		C462.6,146,479,129,492,109.5z`,
 	},
+	downArrow: {
+		path:
+			'M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z',
+	},
 };
 
-const IconBase = styled.span`
+const IconBase = styled(Box)`
 	display: inline-block;
 	line-height: 1;
 
@@ -81,7 +86,7 @@ const Icon = ({ name, size, alt, ...rest }) => {
 	const a11yProps = alt ? { role: 'img' } : { 'aria-hidden': 'true' };
 	const displaySize = SIZES[size];
 	return (
-		<IconBase {...rest}>
+		<IconBase as="span" {...rest}>
 			{alt && <VisuallyHidden>{alt}</VisuallyHidden>}
 			<svg
 				{...a11yProps}
@@ -99,12 +104,11 @@ const Icon = ({ name, size, alt, ...rest }) => {
 Icon.propTypes = {
 	name: PropTypes.string.isRequired,
 	color: PropTypes.oneOf(Object.keys(theme.colors)),
-	size: PropTypes.oneOf(['sm', 'lg']),
+	size: PropTypes.oneOf(Object.keys(SIZES)),
 	alt: PropTypes.string.isRequired,
 };
 
 Icon.defaultProps = {
-	variant: 'currentColor',
 	size: 'sm',
 };
 

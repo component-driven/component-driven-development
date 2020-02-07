@@ -18,8 +18,8 @@ import Button from '../Button';
       <Heading size="md">Title of the card</Heading>
       <Text>Body of the card</Text>
     </Card.Body>
-    <Card.Footer>
-      <Button fullWidth>Rent Tsiri</Button>
+    <Card.Footer display="flex" flexDirection="column">
+      <Button>Rent Tsiri</Button>
     </Card.Footer>
   </Card>
 </Box>;

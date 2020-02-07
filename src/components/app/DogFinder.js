@@ -14,7 +14,6 @@ const FilterSelect = ({ name, label, options, value, disabled, onChange }) => (
 	<Text as="label">
 		<Box mb={2}>{label}</Box>
 		<Select
-			fullWidth
 			disabled={disabled || options.length <= 1}
 			value={value}
 			onChange={event => {
@@ -54,11 +53,9 @@ const DogFinder = ({
 					/>
 				</Box>
 			))}
-			<Box width={[1, 1 / 6]} px={3} py={[3, 0]}>
-				<Button fullWidth variant="primary">
-					Find dogs!
-				</Button>
-			</Box>
+			<Flex width={[1, 1 / 6]} px={3} py={[3, 0]} flexDirection="column">
+				<Button variant="primary">Find dogs!</Button>
+			</Flex>
 		</Flex>
 		<VisuallyHidden as="h3">
 			Search results{' '}
