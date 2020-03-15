@@ -15,7 +15,7 @@
 			borderColor="grey.5"
 		>
 			<Box
-				pb={5}
+				py={5}
 				mb={5}
 				borderBottom="thin"
 				borderColor="grey.4"
