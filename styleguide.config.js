@@ -23,6 +23,15 @@ const config = {
 	pagePerSection: true,
 	exampleMode: 'expand',
 	usageMode: 'expand',
+	compilerConfig: {
+		transforms: {
+			// Support for styled-components
+			dangerousTaggedTemplateString: true,
+
+			// "Support" for `import` syntax
+			moduleImport: false,
+		},
+	},
 	webpackConfig,
 	updateExample(props, exampleFilePath) {
 		const { settings, lang } = props;
