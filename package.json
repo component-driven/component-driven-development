@@ -5,19 +5,15 @@
 	"license": "CC BY-NC 4.0",
 	"homepage": "https://cdds.netlify.com",
 	"dependencies": {
+		"@component-driven/mdx-deck-theme": "1.0.1",
 		"@component-driven/react-design-tokens": "^1.1.1",
-		"@emotion/core": "^10.0.22",
-		"@emotion/styled": "^10.0.23",
-		"@mdx-js/react": "^1.5.1",
 		"@reach/router": "^1.2.1",
 		"@styled-system/css": "^5.0.23",
 		"@styled-system/prop-types": "^5.1.2",
-		"clipboard-copy": "^3.1.0",
 		"date-fns": "^1.30.1",
 		"formik": "^1.5.8",
 		"macro-components": "^2.0.0",
 		"mdx-deck": "4.1.1",
-		"mdx-deck-live-code": "^1.0.1",
 		"prop-types": "^15.7.2",
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
@@ -27,11 +23,9 @@
 		"react-modal": "^3.11.1",
 		"react-scripts": "2.1.8",
 		"react-transition-group": "^4.3.0",
-		"react-tweet-embed": "^1.2.2",
 		"stack-styled": "^3.0.0",
 		"styled-components": "^4.4.1",
-		"styled-system": "^5.1.2",
-		"theme-ui": "^0.2.46"
+		"styled-system": "^5.1.2"
 	},
 	"scripts": {
 		"postinstall": "patch-package",

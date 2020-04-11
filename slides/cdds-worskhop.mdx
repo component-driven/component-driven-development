@@ -1,30 +1,7 @@
-import { jsx, Flex } from 'theme-ui';
-import {
-	Appear,
-	Boom,
-	Box,
-	Center,
-	Code,
-	Cover,
-	Demo,
-	Figure,
-	Image,
-	Notes,
-	LiveCode,
-	List,
-	Primary,
-	Secondary,
-	Split,
-	SplitWithHeading,
-	ThatGuy,
-	Video,
-} from './theme';
-import { Prism } from 'react-syntax-highlighter';
-import TweetEmbed from 'react-tweet-embed';
+import CDTheme from '@component-driven/mdx-deck-theme';
 import Stack from 'stack-styled';
-import * as dropdown from './code/dropdown.js';
 
-export { theme } from './theme';
+export const theme = { ...CDTheme };
 
 <Cover
 	title="Component-driven Design Systems"
@@ -33,35 +10,25 @@ export { theme } from './theme';
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/component-driven.svg')}
-		alt="Component-driven Logo"
-		caption={
-			<a href="https://component-driven.io">https://component-driven.io</a>
-		}
-	></Figure>
-</Center>
+<Figure
+	src={require('./assets/component-driven.svg')}
+	alt="Component-driven Logo"
+	caption={
+		<a href="https://component-driven.io">https://component-driven.io</a>
+	}
+/>
 
 ---
-
-<Center>
 
 ## Andrey Okonetchnikov
 
 UI developer with experience in both design and development who specializes in interaction design, design systems and modern frontend development.
 
-</Center>
-
 ---
-
-<Center>
 
 ## Artem Sapegin
 
 UI engineer working with web technologies since 1999. Creator of react-styleguidist and component-driven-development 🥑
-
-</Center>
 
 ---
 
@@ -106,15 +73,11 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-<Center>
-
 # 🪓 `npm start`
 
 - [http://localhost:3000](http://localhost:3000) — App
 - [http://localhost:6060](http://localhost:6060) — Final styleguide
 - [http://localhost:6061](http://localhost:6061) — Exercises
-
-</Center>
 
 ---
 
@@ -130,20 +93,12 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/react-styleguidist.svg')}
-		alt="React-styleguidist Logo"
-		caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
-		gap={4}
-	/>
-</Center>
-
-<Notes>
-
-I have stickers with me. Please go grab one after the talk!
-
-</Notes>
+<Figure
+	src={require('./assets/react-styleguidist.svg')}
+	alt="React-styleguidist Logo"
+	caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
+	gap={4}
+/>
 
 ---
 
@@ -204,11 +159,11 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<Image src={require('file-loader!./assets/dribbble1.png')} size="contain" />
+<Image src={require('./assets/dribbble1.png')} size="contain" />
 
 ---
 
-<Image src={require('file-loader!./assets/dribbble2.png')} size="contain" />
+<Image src={require('./assets/dribbble2.png')} size="contain" />
 
 ---
 
@@ -229,11 +184,11 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<Boom>
+<AnimatedGradient>
 
 # CSS is hard 🤯
 
-</Boom>
+</AnimatedGradient>
 
 ---
 
@@ -245,9 +200,11 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<SplitWithHeading>
+<SplitTitle>
 
 ## What text color Text A and Text B going to be?
+
+<Split>
 
 ```css
 .red {
@@ -264,26 +221,26 @@ I have stickers with me. Please go grab one after the talk!
 <p class="blue red">Text B</p>
 ```
 
-</SplitWithHeading>
+</Split>
+
+</SplitTitle>
 
 ---
 
-<Center>
-	<TweetEmbed id="1038073603311448064" />
-	<ThatGuy />
-</Center>
+<TweetEmbed id="1038073603311448064" />
+<ThatGuy />
 
 ---
 
-<Boom>
+<AnimatedGradient>
 
 # CSS is the source of inconsistent UIs
 
-</Boom>
+</AnimatedGradient>
 
 ---
 
-<Image src={require('file-loader!./assets/doors.jpg')} />
+<Image src={require('./assets/doors.jpg')} />
 
 ---
 
@@ -294,9 +251,11 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<SplitWithHeading>
+<SplitTitle>
 
 ## Custom CSS
+
+<Split>
 
 ```css
 .description {
@@ -315,33 +274,24 @@ I have stickers with me. Please go grab one after the talk!
 }
 ```
 
-</SplitWithHeading>
+</Split>
+</SplitTitle>
 
 ---
 
-<Image
-	src={require('file-loader!./assets/too-many-buttons.jpg')}
-	size="contain"
-/>
+<Image src={require('./assets/too-many-buttons.jpg')} size="contain" />
 
 ---
 
-<Image
-	src={require('file-loader!./assets/too-many-buttons-2.jpg')}
-	size="contain"
-/>
+<Image src={require('./assets/too-many-buttons-2.jpg')} size="contain" />
 
 ---
 
-<Image src={require('file-loader!./assets/text.png')} size="contain" />
+<Image src={require('./assets/text.png')} size="contain" />
 
 ---
 
-<Boom>
-
-# CSS is too expressive 👩‍🎨
-
-</Boom>
+> CSS is too expressive 👩‍🎨
 
 ---
 
@@ -353,11 +303,7 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<Boom>
-
-# Stop writing CSS!
-
-</Boom>
+> Stop writing CSS!
 
 ---
 
@@ -369,77 +315,52 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<Center>
-	<Image
-		src={require('file-loader!./assets/dls-foundation.png')}
-		size="contain"
-	/>
-</Center>
+<Image src={require('./assets/dls-foundation.png')} size="contain" />
 
 ---
-
-<Boom>
 
 > Design tokens are everything you use more than once in your styles
 
-</Boom>
-
 ---
-
-<Center>
-
-# Defining & Documenting Design Tokens
-
-</Center>
-
----
-
-<Center>
 
 ## UI Inventory process
 
-</Center>
+Defining & Documenting Design Tokens
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/ui-inventory-1.png')}
-		alt="UI inventory process"
-	/>
-</Center>
+<Figure
+	src={require('./assets/ui-inventory-1.png')}
+	alt="UI inventory process"
+/>
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/ui-inventory-2.png')}
-		alt="UI inventory process"
-	/>
-</Center>
+<Figure
+	src={require('./assets/ui-inventory-2.png')}
+	alt="UI inventory process"
+/>
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/ui-inventory-3.png')}
-		alt="UI inventory process"
-	/>
-</Center>
+<Figure
+	src={require('./assets/ui-inventory-3.png')}
+	alt="UI inventory process"
+/>
 
 ---
 
-<Image src={require('file-loader!./assets/text.png')} size="contain" />
+<Figure src={require('./assets/text.png')} alt="Different text styles" />
 
 ---
 
-<Center>
-	<Code language="javascript">
-		{require('!raw-loader!./code/themeExample.js').default}
-	</Code>
-</Center>
+<Code language="javascript">
+	{require('raw-loader!./code/themeExample.txt').default}
+</Code>
 
 ---
+
+<SplitTitle>
 
 ## Naming of design tokens
 
@@ -450,61 +371,55 @@ I have stickers with me. Please go grab one after the talk!
 - 100 200 300 400 500
 - ~~alpha beta gamma delta epsilon~~
 
----
-
-<Center>
-	<Figure
-		src={require('file-loader!./assets/design-tokens-colors.png')}
-		alt="Design tokens: colors"
-		caption={
-			<a href="https://marvelapp.com/styleguide/design/color-scheme">
-				https://marvelapp.com/styleguide/design/color-scheme
-			</a>
-		}
-	/>
-</Center>
+</SplitTitle>
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/design-tokens-gradients.png')}
-		alt="Design tokens: gradients"
-		caption={
-			<a href="https://cloudflare.github.io/cf-ui/#cf-design-gradients">
-				https://cloudflare.github.io/cf-ui/#cf-design-gradients
-			</a>
-		}
-	/>
-</Center>
+<Figure
+	src={require('./assets/design-tokens-colors.png')}
+	alt="Design tokens: colors"
+	caption={
+		<a href="https://marvelapp.com/styleguide/design/color-scheme">
+			https://marvelapp.com/styleguide/design/color-scheme
+		</a>
+	}
+/>
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/design-tokens-fonts-spacing.png')}
-		alt="Design tokens: fonts and spacing"
-		caption={
-			<a href="https://vueds.com/example/#!/Design%20Tokens">
-				https://vueds.com/example/#!/Design%20Tokens
-			</a>
-		}
-	/>
-</Center>
+<Figure
+	src={require('./assets/design-tokens-gradients.png')}
+	alt="Design tokens: gradients"
+	caption={
+		<a href="https://cloudflare.github.io/cf-ui/#cf-design-gradients">
+			https://cloudflare.github.io/cf-ui/#cf-design-gradients
+		</a>
+	}
+/>
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/design-tokens-misc.png')}
-		alt="Design tokens"
-		caption={
-			<a href="https://www.lightningdesignsystem.com/design-tokens/">
-				https://www.lightningdesignsystem.com/design-tokens/
-			</a>
-		}
-	/>
-</Center>
+<Figure
+	src={require('./assets/design-tokens-fonts-spacing.png')}
+	alt="Design tokens: fonts and spacing"
+	caption={
+		<a href="https://vueds.com/example/#!/Design%20Tokens">
+			https://vueds.com/example/#!/Design%20Tokens
+		</a>
+	}
+/>
+
+---
+
+<Figure
+	src={require('./assets/design-tokens-misc.png')}
+	alt="Design tokens"
+	caption={
+		<a href="https://www.lightningdesignsystem.com/design-tokens/">
+			https://www.lightningdesignsystem.com/design-tokens/
+		</a>
+	}
+/>
 
 ---
 
@@ -512,25 +427,19 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/colorsnapper.png')}
-		alt="Colorsnapper"
-		caption={<a href="https://colorsnapper.com">https://colorsnapper.com</a>}
-	/>
-</Center>
-
----
-
-<Center>
-
 # 🪓 `npm start`
 
 - [http://localhost:3000](http://localhost:3000) — App
 - [http://localhost:6060](http://localhost:6060) — Final styleguide
 - [http://localhost:6061](http://localhost:6061) — Exercises
 
-</Center>
+---
+
+<Figure
+	src={require('./assets/colorsnapper.png')}
+	alt="Colorsnapper"
+	caption={<a href="https://colorsnapper.com">https://colorsnapper.com</a>}
+/>
 
 ---
 
@@ -542,11 +451,7 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<Boom>
-
 > HTML was designed for documents, not applications!
-
-</Boom>
 
 ---
 
@@ -573,7 +478,9 @@ I have stickers with me. Please go grab one after the talk!
 		<span>🙄</span>
 		<span>Dropdown</span>
 		<div>
-			<Code language="html">{dropdown.html}</Code>
+			<Code language="html">
+				{require('raw-loader!./code/dropdownHTML.txt').default}
+			</Code>
 		</div>
 		<span>😩</span>
 	</Appear>
@@ -581,24 +488,25 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<Image
-	src={require('file-loader!./assets/bootstrap-dropdown.png')}
-	size="contain"
+<Figure
+	src={require('./assets/bootstrap-dropdown.png')}
+	alt="Bootstrap Documentation Screenshot"
+	caption={
+		<a href="https://getbootstrap.com/docs/3.3/components/#dropdowns">
+			https://getbootstrap.com/docs/3.3/components/#dropdowns
+		</a>
+	}
 />
+
+<Image src={require('./assets/bootstrap-dropdown.png')} size="contain" />
 
 <ThatGuy />
 
 ---
 
-<Boom>
-
 > Components is a better way of writing HTML
 
-</Boom>
-
 ---
-
-<Center>
 
 # Components
 
@@ -607,23 +515,25 @@ I have stickers with me. Please go grab one after the talk!
 - `<Checkbox>` → `<input type="checkbox">`
 - `<Dropdown>` → ~~`<select>`~~ `<div class="dropdown">...`
 
-</Center>
-
 ---
 
-<SplitWithHeading>
+<SplitTitle>
 
 ## HTML & CSS vs. Components
 
-<Code language="html">{dropdown.html}</Code>
+<Code language="html">
+	{require('raw-loader!./code/dropdownHTML.txt').default}
+</Code>
 
-<Code language="jsx">{dropdown.jsx}</Code>
+<Code language="jsx">
+	{require('raw-loader!./code/dropdownJSX.txt').default}
+</Code>
 
-</SplitWithHeading>
+</SplitTitle>
 
 ---
 
-<SplitWithHeading>
+<SplitTitle>
 
 ## Components can change over time
 
@@ -650,7 +560,7 @@ const Dropdown = props => (
 );
 ```
 
-</SplitWithHeading>
+</SplitTitle>
 
 ---
 
@@ -669,11 +579,7 @@ const Dropdown = props => (
 
 ---
 
-<Boom>
-
 > Components is a common UI language
-
-</Boom>
 
 <Notes>
 	You can watch my talk from React Amsterdam or React Finland called "A Common
@@ -690,19 +596,15 @@ const Dropdown = props => (
 
 ---
 
-<Image src={require('file-loader!./assets/legos.jpg')} />
+<Image src={require('./assets/legos.jpg')} />
 
 ---
-
-<Boom>
 
 > Primitives are the building blocks of the user interface.
 
-</Boom>
-
 ---
 
-<Image src={require('file-loader!./assets/legos-assembled.jpg')} />
+<Image src={require('./assets/legos-assembled.jpg')} />
 
 ---
 
@@ -714,15 +616,9 @@ const Dropdown = props => (
 
 ---
 
-<Center>
-
 ## The React way™
 
-</Center>
-
 ---
-
-<Center>
 
 <Code language="jsx" inline>{`<button onclick={handleClick} />`}</Code>
 
@@ -730,11 +626,7 @@ vs.
 
 <Code language="jsx" inline>{`<Button onClick={handleClick} />`}</Code>
 
-</Center>
-
 ---
-
-<Center>
 
 <Code
 	language="jsx"
@@ -748,41 +640,25 @@ vs.
 	inline
 >{`<Text fontFace="base" fontSize={3} color="danger" />`}</Code>
 
-</Center>
-
 ---
-
-<Boom>
 
 > Learn once, use everywhere
 
-</Boom>
-
 ---
-
-<Center>
 
 ## CSS + React way™ = styled-system
 
-</Center>
-
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/styled-system.png')}
-		alt="Styled-system Webiste"
-		caption={<a href="https://styled-system.com">https://styled-system.com</a>}
-	/>
-</Center>
+<Figure
+	src={require('./assets/styled-system.png')}
+	alt="Styled-system Webiste"
+	caption={<a href="https://styled-system.com">https://styled-system.com</a>}
+/>
 
 ---
-
-<Boom>
 
 > Styled System lets you quickly build custom UI components with constraint-based style props based on scales defined in your theme.
-
-</Boom>
 
 ---
 
@@ -806,15 +682,9 @@ Things developers will be allowed to customize
 
 ---
 
-<Boom>
-
 > Define a minimal set of props that can be customized
 
-</Boom>
-
 ---
-
-<Center>
 
 ```javascript
 import styled from '@emotion/styled';
@@ -833,11 +703,7 @@ export const Text = styled.p(
 );
 ```
 
-</Center>
-
 ---
-
-<Center>
 
 ```javascript
 import Text from '../primitives/Text';
@@ -847,22 +713,20 @@ import Text from '../primitives/Text';
 </Text>;
 ```
 
-</Center>
+---
+
+<Image src={require('./assets/text.png')} size="contain" />
 
 ---
 
-<Image src={require('file-loader!./assets/text.png')} size="contain" />
-
----
-
-## Necessary text styles
+## Only necessary text styles
 
 <ul>
 	<li>
-		<h1 style={{ textAlign: 'left' }}>Heading 1</h1>
+		<h1 style={{ textAlign: 'left', margin: 0 }}>Heading 1</h1>
 	</li>
 	<li>
-		<h2 style={{ textAlign: 'left' }}>Heading 2</h2>
+		<h2 style={{ textAlign: 'left', margin: 0 }}>Heading 2</h2>
 	</li>
 	<li>Normal text</li>
 	<li style={{ color: '#979797', fontSize: '80%' }}>Secondary text</li>
@@ -872,11 +736,11 @@ import Text from '../primitives/Text';
 
 ---
 
-<Boom>
+<AnimatedGradient>
 
 > UI inventory helps with defining what's necessary
 
-</Boom>
+</AnimatedGradient>
 
 ---
 
@@ -898,15 +762,9 @@ import Text from '../primitives/Text';
 
 ---
 
-<Boom>
-
 > Variants make impossible states impossible
 
-</Boom>
-
 ---
-
-<Center>
 
 ```diff
 	import styled from '@emotion/styled';
@@ -937,19 +795,13 @@ import Text from '../primitives/Text';
 	);
 ```
 
-</Center>
-
 ---
-
-<Center>
 
 ```javascript
 import Text from '../primitives/Text';
 
 <Text variant="secondary">Secondary text</Text>;
 ```
-
-</Center>
 
 ---
 
@@ -961,11 +813,7 @@ import Text from '../primitives/Text';
 
 ---
 
-<Boom>
-
 > Make primitives flexible to not block you
-
-</Boom>
 
 ---
 
@@ -978,19 +826,11 @@ import Text from '../primitives/Text';
 
 ---
 
-<Boom>
-
 > Primitives can be rendered anywhere
-
-</Boom>
 
 ---
 
-<LiveCode
-	title="Example"
-	code={require('!raw-loader!./code/Text.js').default}
-	size="fullscreen"
-/>
+<LiveCode code={require('raw-loader!./code/Text.txt').default} />
 
 ---
 
@@ -1002,16 +842,11 @@ import Text from '../primitives/Text';
 
 ---
 
-<Center>
+<SplitTitle>
 
-**Prop per breakpoint** vs. **all props are responsive**
+### Prop per breakpoint vs. responsive props
 
-</Center>
-
----
-
-<Center>
-<Split>
+<Grid gap={5}>
 
 ```jsx
 <Row>
@@ -1028,32 +863,24 @@ import Text from '../primitives/Text';
 </Box>
 ```
 
-</Split>
-</Center>
+</Grid>
+</SplitTitle>
 
 ---
 
-<LiveCode
-	title="Box"
-	code={require('!raw-loader!./code/responsive.js').default}
-	size="fullscreen"
-/>
+<LiveCode code={require('raw-loader!./code/responsive.txt').default} />
 
 ---
 
-<Center>
+<Secondary>
 
-Now let's compose primitives...
+## Now let's compose primitives...
 
-</Center>
+</Secondary>
 
 ---
 
-<LiveCode
-	title="Box"
-	code={require('!raw-loader!./code/Box-Text.js').default}
-	size="fullscreen"
-/>
+<LiveCode code={require('raw-loader!./code/Box-Text.txt').default} />
 
 ---
 
@@ -1065,21 +892,15 @@ Now let's compose primitives...
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/spacing-scale.png')}
-		alt="Spacing composition"
-		caption="Space composition by Nathan Curtis"
-	/>
-</Center>
+<Figure
+	src={require('./assets/spacing-scale.png')}
+	alt="Spacing composition"
+	caption="Space composition by Nathan Curtis"
+/>
 
 ---
 
-<Boom>
-
 > Primitives to control layout and white space around their children
-
-</Boom>
 
 ---
 
@@ -1102,8 +923,6 @@ Now let's compose primitives...
 
 ---
 
-<Center>
-
 ```javascript
 import styled from '@emotion/styled';
 import { layout, space, color, border, boxShadow } from 'styled-system';
@@ -1122,23 +941,17 @@ export const Box = styled.div(
 );
 ```
 
-</Center>
+---
+
+<LiveCode code={require('raw-loader!./code/Box.txt').default} />
 
 ---
 
-<LiveCode
-	title="Box"
-	code={require('!raw-loader!./code/Box.js').default}
-	size="fullscreen"
-/>
-
----
-
-<Boom>
+<AnimatedGradient>
 
 > Model API based on CSS knowledge
 
-</Boom>
+</AnimatedGradient>
 
 ---
 
@@ -1163,11 +976,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode
-	title="Flex"
-	code={require('!raw-loader!./code/Flex.js').default}
-	size="fullscreen"
-/>
+<LiveCode code={require('raw-loader!./code/Flex.txt').default} />
 
 ---
 
@@ -1179,11 +988,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode
-	title="Grid"
-	code={require('!raw-loader!./code/Grid.js').default}
-	size="fullscreen"
-/>
+<LiveCode code={require('raw-loader!./code/Grid.txt').default} />
 
 ---
 
@@ -1195,11 +1000,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode
-	title="Stack"
-	code={require('!raw-loader!./code/Stack.js').default}
-	size="fullscreen"
-/>
+<LiveCode code={require('raw-loader!./code/Stack.txt').default} />
 
 ---
 
@@ -1211,19 +1012,11 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode
-	title="Stack"
-	code={require('!raw-loader!./code/Group.js').default}
-	size="fullscreen"
-/>
+<LiveCode code={require('raw-loader!./code/Group.txt').default} />
 
 ---
 
-<Boom>
-
 > Primitives should not have any whitespace around them!
-
-</Boom>
 
 ---
 
@@ -1243,11 +1036,7 @@ export const Box = styled.div(
 
 ---
 
-<Boom>
-
 > Primitives are meant to be composed
-
-</Boom>
 
 ---
 
@@ -1259,11 +1048,7 @@ export const Box = styled.div(
 
 ---
 
-<Boom>
-
 > A design pattern is the re-usable form of a solution to a design problem.
-
-</Boom>
 
 ---
 
@@ -1299,20 +1084,12 @@ export const Box = styled.div(
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/react-styleguidist.svg')}
-		alt="React-styleguidist Logo"
-		caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
-		gap={4}
-	/>
-</Center>
-
-<Notes>
-
-I have stickers with me. Please go grab one after the talk!
-
-</Notes>
+<Figure
+	src={require('./assets/react-styleguidist.svg')}
+	alt="React-styleguidist Logo"
+	caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
+	gap={4}
+/>
 
 ---
 
@@ -1354,7 +1131,7 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<Image src={require('file-loader!./assets/napkin.jpg')} size="contain" />
+<Image src={require('./assets/napkin.jpg')} size="contain" />
 
 ---
 
@@ -1379,15 +1156,13 @@ I have stickers with me. Please go grab one after the talk!
 
 ---
 
-<Center>
-	<Figure
-		src={require('file-loader!./assets/component-driven.svg')}
-		alt="Component-driven Logo"
-		caption={
-			<a href="https://component-driven.io">https://component-driven.io</a>
-		}
-	></Figure>
-</Center>
+<Figure
+	src={require('./assets/component-driven.svg')}
+	alt="Component-driven Logo"
+	caption={
+		<a href="https://component-driven.io">https://component-driven.io</a>
+	}
+/>
 
 ---
 
