@@ -52,6 +52,7 @@
 		"generate:watch": "node scripts/generate.js --watch"
 	},
 	"devDependencies": {
+		"@mdx-deck/gatsby-plugin": "4.1.1",
 		"babel-plugin-styled-components": "^1.10.6",
 		"caniuse-lite": "^1.0.30001008",
 		"chokidar": "^3.3.0",
