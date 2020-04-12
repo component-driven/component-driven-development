@@ -1,6 +1,6 @@
-In this exercise we’ll create reusable primitive components. We’ll create a text and a heading component. We’ll learn how to reduce boilerplate by using [styled-system](https://styled-system.com)
+In this exercise we’ll create reusable primitive components. We’ll create a text and a heading component. We’ll learn how to reduce boilerplate by using [styled-system](https://styled-system.com).
 
-The majority of every user interface is a text. Unsurprisingly, most of inconsistencies are coming from text styles. To reduce the amount of different text styles we should restrict our styling and only allow using design tokens.
+The majority of every user interface is a text. Unsurprisingly, most of the inconsistencies are coming from text styles. To reduce the amount of different text styles we should restrict our styling and only allow using design tokens.
 
 ## 3.1. Creating a generic text component
 
@@ -40,9 +40,9 @@ import Text from '../../components/primitives/Text';
 </Text>;
 ```
 
-## 3.2. Using style variations
+## 3.2. Using style variants
 
-Now we already have a much better way of styling any text in the application but it doesn’t prevent developers from using ”wrong” combinations of tokens. I.e. you can still end up with a barely readable text or a font style that doesn’t exist anywhere else in the app.
+Now we already have a much better way of styling any text in the application, but it doesn’t prevent developers from using "wrong" combinations of tokens. I.e. you can still end up with a barely readable text, or a font style that doesn’t exist anywhere else in the app.
 
 To prevent that, we can make our primitives more rigid by only allowing certain pre-defined font styles.
 
@@ -50,6 +50,7 @@ To prevent that, we can make our primitives more rigid by only allowing certain 
 
 Refactor `Text` component to allow rendering text with following styles:
 
+- Large text (`lg` font size, `text` color);
 - Normal text (`md` font size, `text` color);
 - Secondary text (`md` font size, `secondary` color);
 - Small text (small (`sm`) font size, `secondary` color);
@@ -62,6 +63,7 @@ The result should look like this:
 ```js noeditor
 import Text from '../../components/primitives/Text';
 <>
+  <Text variant="lg">Large text</Text>
   <Text>Normal text</Text>
   <Text variant="secondary">Secondary text</Text>
   <Text variant="tertiary">Tertiary text</Text>
@@ -71,7 +73,7 @@ import Text from '../../components/primitives/Text';
 
 ## 3.3 Making primitives lean
 
-It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time and it is crucial for primitives to be lean enough to adapt to those requirements. In other words, good primitives should be flexible enough to allow one-off “snowflakes” usages.
+It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time, and it is crucial for primitives to be lean enough to adapt to those requirements. In other words, good primitives should be flexible enough to allow a one-off “snowflakes” usages.
 
 ### The task
 
@@ -79,7 +81,7 @@ It is not possible to account for all use cases for your design system. As with 
 
 **Hint:** Check out how to use [CSS prop](https://www.styled-components.com/docs/api#css-prop) in styled-components and [documentation of CSS function](https://styled-system.com/css)
 
-## 3.4. Extending primitives
+## 3.4. Composing primitives
 
 Now that we have our `Text` component, let’s create a `Heading` primitive that should help rendering all headings across the app. In this case, it’s important to keep in mind that in UIs headings won’t follow document outline, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3). In other words we need to change heading styles and an HTML element independently. This means, we have to create the API that’s doesn’t couple HTML tag and the look of the heading. We can leverage [`as` prop](https://www.styled-components.com/docs/api#as-polymorphic-prop) to render a desired HTML element.
 
@@ -102,7 +104,7 @@ import Heading from '../../components/primitives/Heading';
 </>;
 ```
 
-Have a look at our [typography scale](https://cdds.netlify.com/styleguide/#/Foundation?id=typography):
+Have a look at our [typography styles](https://cdds.netlify.com/styleguide/#/Foundation?id=typography):
 
 ```jsx noeditor
 import { Typography } from '@component-driven/react-design-tokens';
@@ -144,8 +146,11 @@ import Heading from '../Heading';
 
 const HeadingWithBottomMargin = styled(Heading)`
   margin-bottom: ${props => props.theme.space[5]};
-`
-<HeadingWithBottomMargin size="xl">The quick brown fox</HeadingWithBottomMargin>
+`;
+
+<HeadingWithBottomMargin size="xl">
+  The quick brown fox
+</HeadingWithBottomMargin>;
 ```
 
 Imagine doing this across all the app! 🤯 Not to mention it is not reusable.

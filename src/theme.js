@@ -33,6 +33,55 @@ function getColors(palette) {
 
 const colors = getColors(palette);
 
+const textStyles = {
+	xl: {
+		fontFamily: 'heading',
+		lineHeight: 'heading',
+		fontSize: ['lg', 'xl'],
+		fontWeight: ['bold', 'light'],
+	},
+	lg: {
+		fontFamily: 'heading',
+		lineHeight: 'heading',
+		fontSize: 'lg',
+		fontWeight: 'normal',
+	},
+	md: {
+		fontFamily: 'heading',
+		lineHeight: 'heading',
+		fontSize: 'md',
+		fontWeight: 'bold',
+	},
+	body: {
+		fontWeight: 'normal',
+		fontFamily: 'body',
+		fontSize: 'md',
+		lineHeight: 'base',
+		color: 'text',
+	},
+	secondary: {
+		fontSize: 'md',
+		fontWeight: 'normal',
+		lineHeight: 'base',
+		fontFamily: 'body',
+		color: 'grey.5',
+	},
+	tertiary: {
+		fontSize: 'sm',
+		fontWeight: 'normal',
+		lineHeight: 'base',
+		fontFamily: 'body',
+		color: 'grey.5',
+	},
+	error: {
+		fontWeight: 'normal',
+		lineHeight: 'base',
+		fontFamily: 'body',
+		fontSize: 'md',
+		color: 'error',
+	},
+};
+
 const theme = {
 	space: [
 		0,
@@ -66,6 +115,7 @@ const theme = {
 		base: 1.5,
 		heading: 1.1,
 	},
+	textStyles,
 	colors,
 	borders: {
 		none: 'none',
