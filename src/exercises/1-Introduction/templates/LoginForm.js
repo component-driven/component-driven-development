@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './Button';
+import Button from './final/Button';
 
 // WORKSHOP_START
 const Heading = styled.h1``;

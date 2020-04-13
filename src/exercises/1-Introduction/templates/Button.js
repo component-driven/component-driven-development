@@ -18,6 +18,7 @@ const Button = styled.button`
 	color: #fff;
 	background-color: #8667a8;
 	border: 0;
+	border-radius: 5px;
 `;
 // FINAL_END
 
