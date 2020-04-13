@@ -20,10 +20,9 @@ You can override specific attributes, such as `color` or `margin`:
 However, we encourage you to use the `variant` prop as much as possible to ensure consistent look of text in the app:
 
 ```jsx
-<Text variant="lg">Large text</Text>
-<Text>Body text</Text>
-<Text variant="secondary">Secondary text</Text>
-<Text variant="tertiary">Tertiary text</Text>
+<Text variant="heading">Heading</Text>
+<Text variant="body">Body text</Text>
+<Text variant="hint">Help text</Text>
 <Text variant="error">Error text</Text>
 ```
 
