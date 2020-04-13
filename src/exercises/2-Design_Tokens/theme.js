@@ -18,6 +18,20 @@ const theme = {
 		lg: '2rem',
 		xl: '4rem',
 	},
+	fontWeights: {
+		heading: 'bold',
+		body: 'normal',
+	},
+	textStyles: {
+		heading: {
+			fontSize: 'xl',
+			fontWeight: 'heading',
+		},
+		body: {
+			fontSize: 'md',
+			fontWeight: 'body',
+		},
+	},
 };
 
 export default theme;
