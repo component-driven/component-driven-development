@@ -29,7 +29,7 @@ However, we encourage you to use the `variant` prop as much as possible to ensur
 It can be used to render headings, too, but you should use [Heading](/#/Primitives?id=heading)
 
 ```jsx
-<Text as="h1" variant="xl">
+<Text as="h1" variant="heading">
   Heading Text
 </Text>
 ```
