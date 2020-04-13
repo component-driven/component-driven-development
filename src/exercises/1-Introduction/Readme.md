@@ -47,8 +47,7 @@ const Title = styled('h1')({
 The result should look like this:
 
 ```js noeditor
-import { Button } from '../../components';
-<Button variant="primary">I am a button!</Button>;
+<Button variant="primary">I am a button!</Button>
 ```
 
 ### The task

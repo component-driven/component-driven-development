@@ -34,11 +34,9 @@ Having a special component that has props to define margins and padding would ma
 The result should look like this:
 
 ```jsx
-import { Box } from '../../components';
-
 <Box p={2} m={3} width={1 / 4} bg="primary">
   Box content
-</Box>;
+</Box>
 ```
 
 Update some props in the example below to see how the `Box` reacts to the change.
@@ -78,8 +76,6 @@ Update some props in the example below to see how the `Box` reacts to the change
 The result should look like this:
 
 ```jsx
-import { Box, Flex } from '../../components';
-
 <Flex flexDirection="row">
   <Flex alignItems="center" p={3} flex={1} bg="grey.3">
     Row 1
@@ -92,7 +88,7 @@ import { Box, Flex } from '../../components';
       Row 3
     </Box>
   </Box>
-</Flex>;
+</Flex>
 ```
 
 ### The task
@@ -120,8 +116,6 @@ import { Box, Flex } from '../../components';
 The result should look like this:
 
 ```jsx
-import { Box, Grid } from '../../components';
-
 <Grid
   gridGap={2}
   gridTemplateColumns="1fr 2fr 1fr"
@@ -136,7 +130,7 @@ import { Box, Grid } from '../../components';
   <Box p={4} bg="grey.4">
     Grid Item
   </Box>
-</Grid>;
+</Grid>
 ```
 
 ### The task
@@ -176,8 +170,6 @@ We already know how to create custom props using styled-system’s [system](http
 The result should look like this:
 
 ```jsx
-import { Box, Stack } from '../../components';
-
 <Stack gridGap={2} numColumns={[1, 2, 3]}>
   <Box p={4} bg="grey.2">
     Stack Item
@@ -188,7 +180,7 @@ import { Box, Stack } from '../../components';
   <Box p={4} bg="grey.4">
     Stack Item
   </Box>
-</Stack>;
+</Stack>
 ```
 
 ### The task

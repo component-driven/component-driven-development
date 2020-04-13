@@ -35,11 +35,9 @@ As you can see, there is a lot of repetition going on. Luckily for us, [styled-s
 The result should allow rendering such text:
 
 ```jsx
-import { Text } from '../../components';
-
 <Text color="error" fontWeight="bold">
   Bold red text
-</Text>;
+</Text>
 ```
 
 ## 3.2. Variants
