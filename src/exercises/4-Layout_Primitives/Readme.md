@@ -7,7 +7,7 @@ This means that the _whitespace between components should be controlled outside 
 
 Both methods are valid and have their use cases.
 
-In this exercise we’ll learn how to work with styled-system and how to make our primitive components more flexible by making whitespace around them customizable. We’ll also learn how to add whitespace separately. We’ll learn how to create first-class layout primitives that control layout of its children: `Box`, `Flex`, `Grid` and `Stack`.
+In this exercise we’ll learn how to create primitive components more flexible by making whitespace around them customizable. We’ll also learn how to add whitespace separately. We’ll learn how to create first-class layout primitives that control layout of its children: `Box`, `Flex`, `Grid` and `Stack`.
 
 ## 4.1. Box primitive
 
@@ -16,16 +16,25 @@ We can define a new component with required whitespace and use it:
 ```jsx static
 import styled from 'styled-components';
 
-const Container = styled.div`
-  margin-bottom: ${props => props.theme.space[6]};
+const H1 = styled.h1`
+  margin-bottom: ${props => props.theme.space[4]};
 `;
 
-<Container>Content with the margin bottom set</Container>;
+<H1>Heading with the margin bottom set</H1>;
 ```
 
-But that’s a lot of boilerplate just to add a margin below the component.
+That’s a lot of boilerplate just to add a margin below the component, and it's not really reusable: what if we want to adjust the margin or add margin on other sides of the component? What if, instead, we could make the whitespace part of the component’s API? This way we can add margins via props when using the component:
 
-Having a special component that has props to define margins and padding would make it much easier, and Box does exactly that. Box is a rectangular area (basically a `<div>`) that can contain other components.
+```jsx static
+// This will add `margin-bottom: 0.5em` and `margin-top: 0.5em`
+<Heading marginBottom="0.5em" mt="0.5em">
+  The quick brown fox
+</Heading>
+```
+
+Alternatively, we could have a special component called `Box` that would have props to define `margin`, `padding`, `width` etc.
+
+Box is a rectangular area (basically a `<div>`) that can contain other components.
 
 ### The result
 
@@ -144,49 +153,16 @@ The result should look like this:
 
 ## 4.4 Stack primitive
 
-`Stack` is the last layout primitive we’ll create. It’s based on Grid and allows us to create CSS Grid layouts with some additional features for convenience.
+`Stack` is the layout primitive to create _stacking layouts_ i.e. when children evenly distributed vertically. Think of it as a designer-friendly component that doesn't require understanding of CSS Grid Layout even though our implementation is based on `Grid`.
 
-CSS Grid is very powerful, but it’s hard to remember all the useful techniques, so it could be a good idea to create specialized props to apply these techniques without remembering implementation details.
-
-A good example could be a column layout:
-
-```css
-.columns {
-  grid-template-columns: repeat(3, 1fr);
-}
-```
-
-This will create three columns.
-
-In order to create custom props that are coupled with our design system, styled-system’s offers [system](https://styled-system.com/api#system) function that looks like this:
-
-```js static
-import styled from 'styled-components';
-import { system } from 'styled-system';
-
-const Text = styled('div')(
-  system({
-    fontSize: {
-      property: 'fontSize',
-      scale: 'fontSizes',
-      defaultScale: [12, 14, 16, 20, 24, 32, 48]
-    },
-    lineHeight: {
-      property: 'lineHeight',
-      scale: 'lineHeights'
-    }
-  })
-);
-```
-
-One interesting part of the API is the `transform` that allows you change the value passed as prop to a CSS value. So we could create a `numColumns` prop that would generate `gridTemplateColumns` value for us.
+In order to create custom props that are coupled with our design system, styled-system’s offers [system](https://styled-system.com/api#system) function.
 
 ### The result
 
 The result should look like this:
 
 ```jsx
-<Stack gridGap={2} numColumns={[1, 2, 3]}>
+<Stack gap={2}>
   <Box p={4} bg="grey.2">
     Stack Item
   </Box>
@@ -202,8 +178,7 @@ The result should look like this:
 ### The task
 
 1. Create the `Stack` component based on `Grid` component and styled-system.
-
-2. Add `numColumns` prop to apply the CSS Grid technique explained above.
+2. Add `gap` prop to apply the CSS `grid-gap` property based on our [spacing scale](http://localhost:6060/#/Foundation?id=section-spacing).
 
 <details>
  <summary>Solution</summary>

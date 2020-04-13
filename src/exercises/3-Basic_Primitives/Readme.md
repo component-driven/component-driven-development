@@ -6,8 +6,6 @@ The majority of every user interface is a text. Unsurprisingly, most of the inco
 
 In the previous exercise we learned how to use design tokens instead of arbitrary CSS values in our components. Now we need a way to write styles and access design tokens inside our application code. without writing custom CSS.
 
-> TODO: Link to slides?
-
 We could approach this task naively:
 
 ```jsx static
@@ -44,8 +42,6 @@ The result should allow rendering such text:
 
 Now we already have a much better way of styling any text in the application, but it doesn’t prevent developers from using "wrong" combinations of tokens. I.e. you can still end up with a barely readable text, or a font style that doesn’t exist anywhere else in the app.
 
-> TODO: Link to slides
-
 To prevent that, we can make our primitives more rigid by only allowing certain pre-defined font styles.
 
 ### The task
@@ -70,17 +66,7 @@ The result should look like this:
 </>
 ```
 
-## 3.3 Making primitives lean
-
-It is not possible to account for all use cases for your design system. As with any software, requirements are going to change over time, and it is crucial for primitives to be lean enough to adapt to those requirements. In other words, good primitives should be flexible enough to allow a one-off “snowflakes” usages.
-
-### The task
-
-- Refactor `Text` component so it could accept style overrides via `css` prop. All values should accept design tokens and not just CSS values.
-
-**Hint:** Check out how to use [CSS prop](https://www.styled-components.com/docs/api#css-prop) in styled-components and [documentation of CSS function](https://styled-system.com/css)
-
-## 3.4. Composing primitives
+## 3.3. Composing primitives
 
 Now that we have our `Text` component, let’s create a `Heading` primitive that should help rendering all headings across the app. In this case, it’s important to keep in mind that in UIs headings won’t follow document outline, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3). In other words we need to change heading styles and an HTML element independently. This means, we have to create the API that’s doesn’t couple HTML tag and the look of the heading. We can leverage [`as` prop](https://www.styled-components.com/docs/api#as-polymorphic-prop) to render a desired HTML element.
 
@@ -92,25 +78,16 @@ The result and the API should look like this:
 <Heading>Hero Heading</Heading>
 ```
 
-Have a look at our [typography styles](https://cdds.netlify.com/styleguide/#/Foundation?id=typography):
-
-```jsx noeditor
-import { Typography } from '@component-driven/react-design-tokens';
-import theme from '../../theme';
-
-<Typography theme={theme} />;
-```
-
 ## The task
 
-Create a component that renders different levels of headings using `Text` component:
+Have a look at our [typography styles](https://cdds.netlify.com/styleguide/#/Foundation?id=typography) and create a `Heading` component that renders a heading using `Text` component:
 
 - `heading` font family;
 - `heading` line height;
-- different sizes are defined by a component prop (`size`, the value is `md`, `lg` or `xl`);
-- HTML element can be changed independently from the font size.
+- `xl` font size
+- HTML element can be changed independently using `as` prop.
 
-## 3.5 Making your styles responsive
+## 3.4 Making your styles responsive
 
 When working on the app or a website it’s oftentimes desirable to handle responsive styles as well. There are different ways of handling responsive styles. Styled-system approach is simple yet very powerful: every prop accepts a value or an array of values.
 
@@ -119,51 +96,6 @@ When working on the app or a website it’s oftentimes desirable to handle respo
 - Make the font size of `Heading` component responsive. It should become smaller, on smaller screens.
 
 **Hint:** Check out the documentation of [responsive styles](https://styled-system.com/responsive-styles)
-
-## 3.6. Managing whitespace of primitives
-
-Usually we need some whitespace around a component. Most of time, we get defaults by the user agent (the browser). For example, `0.5em` above and below a heading and paragraph. This is a good default if you’re crating a document for reading but can make usage of primitives in different places of your app a nightmare since you’d need to override defaults every single time. Moreover those defaults are based on the current font size value that comes from CSS cascade.
-
-In order to make primitives reusable, we should remove margins from the component by default and then add it where needed.
-
-This also can be done differently. We could create a new component based on the original one but with an added margin:
-
-```jsx static
-import styled from 'styled-components';
-import Heading from '../Heading';
-
-const HeadingWithBottomMargin = styled(Heading)`
-  margin-bottom: ${props => props.theme.space[5]};
-`;
-
-<HeadingWithBottomMargin size="xl">
-  The quick brown fox
-</HeadingWithBottomMargin>;
-```
-
-Imagine doing this across all the app! 🤯 Not to mention it is not reusable.
-
-Following the same principle as before, we should make the whitespace part of the component’s API. This way we can add margins via props when using the component:
-
-```jsx static
-// This will add `margin-bottom: 0.5em` and `margin-top: 0.5em`
-<Heading marginBottom="0.5em" mt="0.5em">
-  The quick brown fox
-</Heading>
-```
-
-But as we learned already, our goal is to restrict developer’s choice and to achieve that we should use design tokens.
-
-## The task
-
-Refactor `Text` component so that we can customize its `margin` via props. Keep in mind that values should be coming from our [spacing scale](https://cdds.netlify.com/styleguide/#/Foundation?id=spacing):
-
-```jsx noeditor
-import { Spacing } from '@component-driven/react-design-tokens';
-import theme from '../../theme';
-
-<Spacing theme={theme} />;
-```
 
 ## Solutions
 
