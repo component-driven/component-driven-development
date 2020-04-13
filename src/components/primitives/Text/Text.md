@@ -17,7 +17,7 @@ You can override specific attributes, such as `color` or `margin`:
 </Text>
 ```
 
-but we encourage you to use `variant` prop as much as possible to ensure all text in the app look consistent:
+However, we encourage you to use the `variant` prop as much as possible to ensure consistent look of text in the app:
 
 ```jsx
 <Text variant="lg">Large text</Text>
