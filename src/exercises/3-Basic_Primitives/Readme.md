@@ -1,10 +1,12 @@
-In this exercise we’ll create reusable primitive components. We’ll create a text and a heading component. We’ll learn how to reduce boilerplate by using [styled-system](https://styled-system.com).
+In this exercise we’ll create reusable primitive components. We’ll create a Text, Link, and a Heading components. We’ll learn how to reduce boilerplate by using [styled-system](https://styled-system.com) and how to compose primitives.
 
 The majority of every user interface is a text. Unsurprisingly, most of the inconsistencies are coming from text styles. To reduce the amount of different text styles we should restrict our styling and only allow using design tokens.
 
 ## 3.1. Creating a generic text component
 
-In the previous exercise we learned how to use design tokens instead of arbitrary CSS values in our components. Now we need a way to write styles and access design tokens inside our application code. I.e. we want to design a component that implements an API to our design system and doesn’t require writing CSS.
+In the previous exercise we learned how to use design tokens instead of arbitrary CSS values in our components. Now we need a way to write styles and access design tokens inside our application code. without writing custom CSS.
+
+> TODO: Link to slides?
 
 We could approach this task naively:
 
@@ -17,7 +19,7 @@ const Text = styled.p`
 `;
 ```
 
-As you can see, there is a lot of repetition going on. Also this method doesn’t cover lots of edge cases. Luckily for us, [styled-system](https://styled-system.com) is a library designed specifically for our needs.
+As you can see, there is a lot of repetition going on. Luckily for us, [styled-system](https://styled-system.com) is a library designed specifically for our needs.
 
 > Styled System lets you quickly build custom UI components with constraint-based style props based on scales defined in your theme.
 
@@ -25,8 +27,8 @@ As you can see, there is a lot of repetition going on. Also this method doesn’
 
 1. Refactor the `Text` component so that it can render different font styles that are defined in the `theme.js`
 1. Provide following API via props: `fontFamily`, `fontSize`, `fontWeight`, `lineHeight`, `letterSpacing`, `textAlign`, and `fontStyle`.
-1. The component should use `fontFamily: "body"`, `fontSize: 2`, `fontWeight: "normal"`, and should render `p` tag by default
-1. Allow using design tokens directly via string literals, like `"primary"`, `"muted"`.
+1. The component should use `fontFamily: "body"`, `fontSize: "md"`, `fontWeight: "normal"`, and should render `p` tag by default
+1. Allow using design tokens without importing `theme.js` via string literals, like `color: "primary"`.
 
 ### The result
 
@@ -40,9 +42,11 @@ import { Text } from '../../components';
 </Text>;
 ```
 
-## 3.2. Using style variants
+## 3.2. Variants
 
 Now we already have a much better way of styling any text in the application, but it doesn’t prevent developers from using "wrong" combinations of tokens. I.e. you can still end up with a barely readable text, or a font style that doesn’t exist anywhere else in the app.
+
+> TODO: Link to slides
 
 To prevent that, we can make our primitives more rigid by only allowing certain pre-defined font styles.
 
@@ -50,25 +54,22 @@ To prevent that, we can make our primitives more rigid by only allowing certain 
 
 Refactor `Text` component to allow rendering text with following styles:
 
-- Large text (`lg` font size, `text` color);
-- Normal text (`md` font size, `text` color);
-- Secondary text (`md` font size, `secondary` color);
-- Small text (small (`sm`) font size, `secondary` color);
-- Error message (`md` font size, `error` color).
+- Heading text (`xl` font size, `heading` font family);
+- Body text (`md` font size, `body` font family);
+- Help text (`sm` font size, `secondary` color, `body` font family);
+- Error text (`md` font size, `error` color, `body` font family).
 
 ### The result
 
 The result should look like this:
 
 ```js noeditor
-import { Text } from '../../components';
 <>
-  <Text variant="lg">Large text</Text>
-  <Text>Normal text</Text>
-  <Text variant="secondary">Secondary text</Text>
-  <Text variant="tertiary">Tertiary text</Text>
+  <Text variant="heading">Heading</Text>
+  <Text variant="body">Body text</Text>
+  <Text variant="hint">Help text</Text>
   <Text variant="error">Error text</Text>
-</>;
+</>
 ```
 
 ## 3.3 Making primitives lean
@@ -89,10 +90,8 @@ Now that we have our `Text` component, let’s create a `Heading` primitive that
 
 The result and the API should look like this:
 
-```js
-import Heading from '../../components/patterns/Heading';
-
-<Heading>Hero Heading</Heading>;
+```jsx
+<Heading>Hero Heading</Heading>
 ```
 
 Have a look at our [typography styles](https://cdds.netlify.com/styleguide/#/Foundation?id=typography):

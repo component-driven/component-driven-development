@@ -4,7 +4,7 @@ Normal link:
 <Link href="/">Normal link</Link>
 ```
 
-Since `Link` uses `Text` we can pass any prop of `Text` to tweak it. For example, if we want our link's color to match the paragraph color we can do the following:
+Match Link and the paragraph's colors:
 
 ```jsx
 <Text>

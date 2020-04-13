@@ -1,34 +1,27 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
+import { css } from '@styled-system/css';
+import { Text } from '../';
 
 /**
- * A link.
+ * A link is a `Text` rendered as `a` with additional styles.
  */
-const Link = styled.a`
-	&,
-	&:link,
-	&:visited {
-		color: ${props => (props.shy ? 'inherit' : props.theme.colors.primary)};
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: ${props => props.theme.colors.hover};
-	}
-	&:focus {
-		outline: 1px dashed ${props => props.theme.colors.focus};
-		outline-offset: 2px;
-	}
-`;
-
-Link.propTypes = {
-	/** Has text color by default */
-	shy: PropTypes.bool,
-};
-
-Link.defaultProps = {
-	shy: false,
-};
+const Link = styled(props => <Text as="a" {...props} />)(props =>
+	css({
+		cursor: 'pointer',
+		'&, &:link, &:visited': {
+			color: props.color || 'primary',
+		},
+		'&:hover, &:focus, &:active': {
+			color: 'hover',
+		},
+		'&:focus': {
+			outline: '1px dashed',
+			outlineColor: 'focus',
+			outlineOffset: 2,
+		},
+	})
+);
 
 /** @component */
 export default Link;
