@@ -27,7 +27,7 @@ const Text = styled.p(
 Text.propTypes = {
 	/** Custom component or HTML tag */
 	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	/** Variants */
+	/** Variant */
 	variant: PropTypes.oneOf(Object.keys(theme.textStyles)),
 	children: PropTypes.node,
 };
