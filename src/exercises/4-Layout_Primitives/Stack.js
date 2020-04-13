@@ -9,8 +9,8 @@ const Stack = styled(Grid)({
 
 Stack.propTypes = {
 	...Grid.propTypes,
-	/** Number of columns */
-	numColumns: PropTypes.oneOfType([
+	/** Spacing between items */
+	gap: PropTypes.oneOfType([
 		PropTypes.number,
 		PropTypes.arrayOf(PropTypes.number),
 	]),

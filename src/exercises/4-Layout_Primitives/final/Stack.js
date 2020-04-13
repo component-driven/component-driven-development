@@ -5,17 +5,17 @@ import { Grid } from '../../components';
 
 export const Stack = styled(Grid)(
 	system({
-		numColumns: {
-			property: 'gridTemplateColumns',
-			transform: value => (value ? `repeat(${value}, 1fr)` : null),
+		gap: {
+			property: 'gridGap',
+			scale: 'space',
 		},
 	})
 );
 
 Stack.propTypes = {
 	...Grid.propTypes,
-	/** Number of columns */
-	numColumns: PropTypes.oneOfType([
+	/** Spacing between items */
+	gap: PropTypes.oneOfType([
 		PropTypes.number,
 		PropTypes.arrayOf(PropTypes.number),
 	]),

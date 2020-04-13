@@ -17,7 +17,7 @@ const Link = styled.a`
 		color: ${props => props.theme.colors.accent};
 	}
 	&:focus {
-		outline: 1px dashed ${props => props.theme.colors.focus};
+		outline: 1px dashed ${props => props.theme.colors.accent};
 		outline-offset: 2px;
 	}
 `;
