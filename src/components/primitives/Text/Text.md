@@ -1,4 +1,4 @@
-By default, it renders `<P>` element with the default text styles.
+By default, it renders `<p>` element with the default text styles.
 
 ```jsx
 <Text>
