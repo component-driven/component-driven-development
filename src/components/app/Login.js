@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from '../patterns/LoginForm';
-import Flex from '../primitives/Flex/Flex';
+import { Flex } from '../';
 
 const Login = () => (
 	<Flex

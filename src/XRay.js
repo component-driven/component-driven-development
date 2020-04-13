@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { useHotkeys } from 'react-hotkeys-hook';
-import Box from './components/primitives/Box';
-import Flex from './components/primitives/Flex';
-import Stack from './components/primitives/Stack';
+import { Box, Flex, Stack } from './components';
 
 const flexClassName = `${Flex}`.replace('.', '');
 const stackClassName = `${Stack}`.replace('.', '');

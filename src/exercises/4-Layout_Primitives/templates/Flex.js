@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Box from '../../components/primitives/Box';
+import { Box } from '../../components';
 
 // WORKSHOP_START
 const Flex = styled(Box)({

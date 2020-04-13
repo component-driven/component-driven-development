@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // FINAL_START
-import Text from '../../../components/primitives/Text';
+import { Text } from '../../../components';
 // FINAL_END
 
 /**

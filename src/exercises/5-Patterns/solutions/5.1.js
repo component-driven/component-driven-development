@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
-import Grid from '../../../../src/components/primitives/Grid';
-import Button from '../../../../src/components/primitives/Button';
-import Input from '../../../../src/components/primitives/Input';
+import { Grid, Button, Input } from '../../../../src/components';
 
 const SubscriptionForm = ({
 	id,

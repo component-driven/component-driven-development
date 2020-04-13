@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { system } from 'styled-system';
-import Grid from '../../components/primitives/Grid';
+import { Grid } from '../../components';
 
 // WORKSHOP_START
 const Stack = styled(Grid)({

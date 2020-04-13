@@ -9,13 +9,15 @@ Let's create a LoginForm with the primitives we learned today.
 ### The result
 
 ```jsx noeditor
-import Box from '../../components/primitives/Box';
-import Grid from '../../components/primitives/Grid';
-import Button from '../../components/primitives/Button';
-import Link from '../../components/primitives/Link';
-import Text from '../../components/primitives/Text';
-import Input from '../../components/primitives/Input';
-import Heading from '../../components/patterns/Heading';
+import {
+  Box,
+  Grid,
+  Button,
+  Heading,
+  Link,
+  Text,
+  Input
+} from '../../components';
 
 <Grid as="form" gridGap={4}>
   <Heading mb={4}>Login</Heading>

@@ -1,12 +1,14 @@
 import React from 'react';
-import Box from '../../../../components/primitives/Box';
-import Flex from '../../../../components/primitives/Flex';
-import Stack from '../../../../components/primitives/Stack';
-import Button from '../../components/primitives/Button';
-import Link from '../../../../components/primitives/Link';
-import Text from '../../../../components/primitives/Text';
-import Input from '../../../../components/primitives/Input';
-import Heading from '../../../../components/patterns/Heading';
+import {
+	Box,
+	Flex,
+	Stack,
+	Button,
+	Link,
+	Text,
+	Input,
+	Heading,
+} from '../../../../components';
 
 const LoginPage = () => {
 	return (

@@ -1,11 +1,13 @@
 import React from 'react';
-import Box from '../../components/primitives/Box';
-import Grid from '../../components/primitives/Grid';
-import Button from '../../components/primitives/Button';
-import Link from '../../components/primitives/Link';
-import Text from '../../components/primitives/Text';
-import Input from '../../components/primitives/Input';
-import Heading from '../../components/patterns/Heading';
+import {
+	Box,
+	Grid,
+	Button,
+	Link,
+	Text,
+	Input,
+	Heading,
+} from '../../components';
 
 export default () => (
 	<Grid as="form" gridGap={4}>

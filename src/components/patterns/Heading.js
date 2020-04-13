@@ -1,5 +1,5 @@
 import React from 'react';
-import Text from '../primitives/Text';
+import { Text } from '../';
 
 export default props => {
 	return <Text variant="heading" {...props} />;

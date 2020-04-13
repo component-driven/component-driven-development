@@ -33,7 +33,7 @@ As you can see, there is a lot of repetition going on. Also this method doesn’
 The result should allow rendering such text:
 
 ```jsx harmony
-import Text from '../../components/primitives/Text';
+import { Text } from '../../components';
 
 <Text color="error" fontWeight="bold">
   Bold red text
@@ -61,7 +61,7 @@ Refactor `Text` component to allow rendering text with following styles:
 The result should look like this:
 
 ```js noeditor
-import Text from '../../components/primitives/Text';
+import { Text } from '../../components';
 <>
   <Text variant="lg">Large text</Text>
   <Text>Normal text</Text>
