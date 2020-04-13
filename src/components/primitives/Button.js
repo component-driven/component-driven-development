@@ -24,6 +24,7 @@ const Button = styled.button(
 
 		// We can't use :enabled here because it doesn't work with <a>
 		'&:hover:not(:disabled), &:active:not(:disabled)': {
+			color: 'background',
 			borderColor: 'accent',
 			backgroundColor: 'accent',
 			cursor: 'pointer',
@@ -31,6 +32,7 @@ const Button = styled.button(
 
 		'&:focus': {
 			outline: 0,
+			color: 'background',
 			backgroundColor: 'accent',
 			borderColor: 'accent',
 		},
