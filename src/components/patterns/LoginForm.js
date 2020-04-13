@@ -7,10 +7,11 @@ import {
 	Text,
 	Input,
 	Heading,
+	Stack,
 } from '../../components';
 
 export default () => (
-	<Grid as="form" gridGap={4}>
+	<Stack as="form" gridGap={4}>
 		<Heading mb={5}>Login</Heading>
 		<Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '6rem 1fr']}>
 			<Text as="label" display="block">
@@ -37,5 +38,5 @@ export default () => (
 				</Text>
 			</Grid>
 		</Grid>
-	</Grid>
+	</Stack>
 );
