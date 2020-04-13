@@ -22,11 +22,11 @@ const Link = styled(props => <Text as="a" {...props} />)(props =>
 			color: props.color || 'primary',
 		},
 		'&:hover, &:focus, &:active': {
-			color: 'hover',
+			color: 'accent',
 		},
 		'&:focus': {
 			outline: '1px dashed',
-			outlineColor: 'focus',
+			outlineColor: 'accent',
 			outlineOffset: 2,
 		},
 	})

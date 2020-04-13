@@ -28,7 +28,7 @@ const Input = styled.input(
 
 		'&:focus': {
 			outline: 0,
-			boxShadow: 'focus',
+			borderColor: 'accent',
 		},
 
 		'&:disabled': {

@@ -19,10 +19,10 @@ const Link = styled.a`
 	&:hover,
 	&:focus,
 	&:active {
-		color: ${props => props.theme.colors.hover};
+		color: ${props => props.theme.colors.accent};
 	}
 	&:focus {
-		outline: 1px dashed ${props => props.theme.colors.focus};
+		outline: 1px dashed ${props => props.theme.colors.accent};
 		outline-offset: 2px;
 	}
 `;
@@ -43,11 +43,11 @@ const Link = styled(props => <Text as="a" {...props} />)(props =>
 			color: props.color || 'primary',
 		},
 		'&:hover, &:focus, &:active': {
-			color: 'hover',
+			color: 'accent',
 		},
 		'&:focus': {
 			outline: '1px dashed',
-			outlineColor: 'focus',
+			outlineColor: 'accent',
 			outlineOffset: 2,
 		},
 	})
