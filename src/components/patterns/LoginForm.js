@@ -12,7 +12,6 @@ import {
 
 export default () => (
 	<Stack as="form" gap={4}>
-		<Heading mb={5}>Login</Heading>
 		<Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '6rem 1fr']}>
 			<Text as="label" display="block">
 				Username

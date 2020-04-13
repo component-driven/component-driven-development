@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from '../patterns/LoginForm';
-import { Flex } from '../';
+import { Flex, Heading, Stack } from '../';
 
 const Login = () => (
 	<Flex
@@ -10,7 +10,10 @@ const Login = () => (
 		height="100vh"
 		width="100%"
 	>
-		<LoginForm />
+		<Stack gap={5}>
+			<Heading>Login</Heading>
+			<LoginForm />
+		</Stack>
 	</Flex>
 );
 
