@@ -11,7 +11,7 @@ We’ve prepared the basic structure for the design tokens file. Open the `theme
 1. Add a few colors to the `theme.js` and see how they are updated in the styleguide.
 1. Add a palette of grey colors to the `colors` object (_hint_: Use `Array` for that).
 1. Change spacing scale to see how swatches react to this change. Continue with other values.
-1. Update design tokens to fit our design ([main page](https://www.figma.com/file/cALZfCbmthI9VQz9MJR6JdPk/CDD-Workshop?node-id=1%3A2) and [checkout page](https://www.figma.com/file/cALZfCbmthI9VQz9MJR6JdPk/CDD-Workshop?node-id=1%3A40)).
+1. Update design tokens to fit our design ([main page](https://www.figma.com/file/cALZfCbmthI9VQz9MJR6JdPk/CDD-Workshop?node-id=1%3A2) and [signup page](https://www.figma.com/file/cALZfCbmthI9VQz9MJR6JdPk/CDD-Workshop?node-id=1%3A40)).
 1. Check out [design tokens](https://cdds.netlify.com/styleguide/#/Foundation?id=colors) from the final style guide.
 
 ## Colors
@@ -43,11 +43,20 @@ import theme from './theme';
 
 ## 2.2. Accessing design tokens from components
 
-styled-components makes it convenient to use design tokens, thanks to [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js) and React Context. You can access them in your component like this:
+Theme values can be accessed everywhere in the app via [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js) and the `theme` object.
 
-```js static
-const Heading = styled.h1`
-  font-size: ${props => props.theme.fontSizes.xl};
+To ensure consistency of UI, always use values from the `theme` object, instead of hardcoded values.
+
+For example following example is going to render small text with `primary` color.
+
+```diff
+const Message = styled.p`
+-   color: #8667a8;
+-   font-family: Helvetica;
+-   font-size: 13px;
++   color: ${props => props.theme.colors.primary};
++   font-family: ${props => props.theme.fonts.body};
++   font-size: ${props => props.theme.fontSizes.s};
 `;
 ```
 

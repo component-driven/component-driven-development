@@ -1,5 +1,5 @@
 // COMMENT_START
-// This is an exercise about using styled-components
+// This is an exercise about using design tokens with styled-components
 // COMMENT_END
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
