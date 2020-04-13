@@ -2,15 +2,16 @@ import React from 'react';
 import {
 	Box,
 	Flex,
+	Grid,
+	Stack,
 	Button,
 	Link,
 	Text,
 	Input,
-	Heading,
 } from '../../components';
 
-const LoginPage = () => {
+const LoginForm = () => {
 	return <form>Your markup here</form>;
 };
 
-export default LoginPage;
+export default LoginForm;
