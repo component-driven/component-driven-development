@@ -13,11 +13,11 @@ const theme = {
 		monospace: `"Mono Lisa", Monaco, monospace` /* Check out https://monolisa.dev for Mono Lisa font */,
 	},
 	fontSizes: {
-		xs: '0.8rem',
-		sm: '1rem',
-		md: '1.5rem',
-		lg: '2rem',
 		xl: '4rem',
+		lg: '2rem',
+		md: '1rem',
+		sm: '0.9rem',
+		xs: '0.75rem',
 	},
 	fontWeights: {
 		heading: 'bold',

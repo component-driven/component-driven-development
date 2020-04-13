@@ -56,7 +56,7 @@ const Message = styled.p`
 -   font-size: 13px;
 +   color: ${props => props.theme.colors.primary};
 +   font-family: ${props => props.theme.fonts.body};
-+   font-size: ${props => props.theme.fontSizes.s};
++   font-size: ${props => props.theme.fontSizes.sm};
 `;
 ```
 

@@ -65,13 +65,14 @@ const theme = {
 	fonts: {
 		heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
 		body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+		monospace: `"Mono Lisa", Monaco, monospace` /* Check out https://monolisa.dev for Mono Lisa font */,
 	},
 	fontSizes: {
-		xl: '4em',
-		lg: '2em',
-		md: '1em',
-		sm: '0.9em',
-		xs: '0.75em',
+		xl: '4rem',
+		lg: '2rem',
+		md: '1rem',
+		sm: '0.9rem',
+		xs: '0.75rem',
 	},
 	fontWeights: {
 		light: 200,
