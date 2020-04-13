@@ -68,16 +68,24 @@ A component (`src/exercises/1-Introduction/Button.js`):
 
 </details>
 
-## 1.3. Changing the HTML element used to render a component
+## 1.3. Create a login form
 
-Every styled component has a special prop `as` that allows you to change the HTML element used to render a component:
+Now that you're familiar how to use styled-components to add styles, let's create a simple login form using this "design":
 
-```jsx static
-<Button as="a" href="/">
-  Back to bright side
-</Button>
-```
+> TODO
+
+![Login Form Mockup](../../../slides/assets/napkin.jpg)
 
 ### The task
 
-Either by editing the `Button.md` file or directly in the Styleguidist interface, change the example code of the `Button` component to use an `<a>` tag instead of the default `<button>`.
+1. Open `src/exercises/1-Introduction/LoginForm.js` and try to match the layout of the "mockup". Choose colors and styles yourself or as a team.
+
+<details>
+ <summary>Solution</summary>
+
+A component (`src/exercises/1-Introduction/LoginForm.js`):
+
+```js {"file": "final/LoginForm.js", "static": true}
+```
+
+</details>
