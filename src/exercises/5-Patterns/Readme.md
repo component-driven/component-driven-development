@@ -40,28 +40,34 @@ We can even create full pages. Let’s try to create a new login page four our a
 
 ```jsx noeditor
 import Box from '../../components/primitives/Box';
-import Flex from '../../components/primitives/Flex';
+import Grid from '../../components/primitives/Grid';
 import Heading from '../../components/primitives/Heading';
 import Button from '../../components/primitives/Button';
 import Link from '../../components/primitives/Link';
 import Text from '../../components/primitives/Text';
 import Input from '../../components/primitives/Input';
 
-<form>
+<Grid as="form" gridGap={4}>
   <Heading mb={4}>Login</Heading>
-  <Text as="label" display="block" mb={3}>
-    <Box mb={2}>Username</Box>
+  <Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '150px 1fr']}>
+    <Text as="label" display="block">
+      <Box mb={2}>Username</Box>
+    </Text>
     <Input type="text" />
-  </Text>
-  <Text as="label" display="block" mb={4}>
-    <Box mb={2}>Password</Box>
+  </Grid>
+  <Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '150px 1fr']}>
+    <Text as="label" display="block">
+      <Box mb={2}>Password</Box>
+    </Text>
     <Input type="password" />
-  </Text>
-  <Box mb={4}>
-    <Link href="#">Forgot your password?</Link>
-  </Box>
-  <Button>Log in</Button>
-</form>;
+  </Grid>
+  <Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '150px 1fr']}>
+    <Grid gridColumn={[1, 2]} gridGap={3}>
+      <Button variant="primary">Log in</Button>
+      <Link href="#">Forgot your password?</Link>
+    </Grid>
+  </Grid>
+</Grid>;
 ```
 
 ### The task
