@@ -14,8 +14,8 @@ const textStyles = {
 	heading: {
 		fontFamily: 'heading',
 		lineHeight: 'heading',
-		fontSize: ['lg', 'xl'],
-		fontWeight: ['bold', 'light'],
+		fontSize: 'lg',
+		fontWeight: 'bold',
 	},
 	body: {
 		fontWeight: 'normal',
