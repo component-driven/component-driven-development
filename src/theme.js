@@ -29,7 +29,7 @@ const textStyles = {
 		fontWeight: 'normal',
 		lineHeight: 'body',
 		fontFamily: 'body',
-		color: 'grey.5',
+		color: 'secondary',
 	},
 	error: {
 		fontWeight: 'normal',
