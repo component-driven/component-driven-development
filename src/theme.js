@@ -1,12 +1,12 @@
 const palette = {
 	grey: [
-		'rgb(255, 255, 255)',
-		'rgb(250, 250, 250)',
-		'rgb(246, 246, 246)',
-		'rgb(225, 225, 225)',
-		'rgb(187, 187, 187)',
-		'rgb(126, 126, 126)',
 		'rgb(51, 51, 51)',
+		'rgb(126, 126, 126)',
+		'rgb(187, 187, 187)',
+		'rgb(225, 225, 225)',
+		'rgb(246, 246, 246)',
+		'rgb(250, 250, 250)',
+		'rgb(255, 255, 255)',
 	],
 };
 
@@ -43,12 +43,12 @@ const textStyles = {
 const theme = {
 	colors: {
 		...palette,
-		background: palette.grey[0],
-		text: palette.grey[6],
+		background: palette.grey[6],
+		text: palette.grey[0],
 		primary: '#00beff',
-		secondary: palette.grey[5],
+		secondary: palette.grey[2],
 		accent: '#fa3653',
-		muted: palette.grey[3],
+		muted: palette.grey[4],
 		error: '#d0453e',
 	},
 	space: [
