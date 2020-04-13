@@ -12,7 +12,8 @@ const Text = styled.p(
 	// css function provides access to our design tokens
 	css({
 		m: 0,
-		...theme.textStyles.body, // Default text style
+		fontFamily: 'body',
+		lineHeight: 'body',
 	}),
 	// APIs
 	color,
