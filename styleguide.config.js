@@ -83,6 +83,11 @@ if (isExercises) {
 			components: 'src/components/primitives/**/[A-Z]*.js',
 		},
 		{
+			name: 'Layout Primitives',
+			content: 'src/components/layout/Readme.md',
+			components: 'src/components/layout/**/[A-Z]*.js',
+		},
+		{
 			name: 'UI Patterns',
 			content: 'src/components/patterns/Readme.md',
 			components: 'src/components/patterns/**/[A-Z]*.js',
