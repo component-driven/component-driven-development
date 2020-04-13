@@ -90,18 +90,9 @@ Now that we have our `Text` component, let’s create a `Heading` primitive that
 The result and the API should look like this:
 
 ```js
-import Heading from '../../components/primitives/Heading';
-<>
-  <Heading size="xl" as="h1">
-    Hero Heading
-  </Heading>
-  <Heading size="lg" as="h2">
-    Big Heading
-  </Heading>
-  <Heading size="md" as="h3">
-    Small Heading
-  </Heading>
-</>;
+import Heading from '../../components/patterns/Heading';
+
+<Heading>Hero Heading</Heading>;
 ```
 
 Have a look at our [typography styles](https://cdds.netlify.com/styleguide/#/Foundation?id=typography):
@@ -159,7 +150,7 @@ Following the same principle as before, we should make the whitespace part of th
 
 ```jsx static
 // This will add `margin-bottom: 0.5em` and `margin-top: 0.5em`
-<Heading size="xl" marginBottom="0.5em" mt="0.5em">
+<Heading marginBottom="0.5em" mt="0.5em">
   The quick brown fox
 </Heading>
 ```

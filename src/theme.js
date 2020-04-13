@@ -10,14 +10,38 @@ const palette = {
 	],
 };
 
-let invertedPalette = {};
+const textStyles = {
+	heading: {
+		fontFamily: 'heading',
+		lineHeight: 'heading',
+		fontSize: ['lg', 'xl'],
+		fontWeight: ['bold', 'light'],
+	},
+	body: {
+		fontWeight: 'normal',
+		fontFamily: 'body',
+		fontSize: 'md',
+		lineHeight: 'body',
+		color: 'text',
+	},
+	hint: {
+		fontSize: 'sm',
+		fontWeight: 'normal',
+		lineHeight: 'body',
+		fontFamily: 'body',
+		color: 'grey.5',
+	},
+	error: {
+		fontWeight: 'normal',
+		lineHeight: 'body',
+		fontFamily: 'body',
+		fontSize: 'md',
+		color: 'error',
+	},
+};
 
-Object.keys(palette).forEach(key => {
-	invertedPalette[key] = [...palette[key]].reverse();
-});
-
-function getColors(palette) {
-	return {
+const theme = {
+	colors: {
 		...palette,
 		background: palette.grey[0],
 		text: palette.grey[6],
@@ -28,61 +52,7 @@ function getColors(palette) {
 		hover: 'rgb(248, 188, 229)',
 		focus: 'rgb(251, 209, 234)',
 		error: '#d0453e',
-	};
-}
-
-const colors = getColors(palette);
-
-const textStyles = {
-	xl: {
-		fontFamily: 'heading',
-		lineHeight: 'heading',
-		fontSize: ['lg', 'xl'],
-		fontWeight: ['bold', 'light'],
 	},
-	lg: {
-		fontFamily: 'heading',
-		lineHeight: 'heading',
-		fontSize: 'lg',
-		fontWeight: 'normal',
-	},
-	md: {
-		fontFamily: 'heading',
-		lineHeight: 'heading',
-		fontSize: 'md',
-		fontWeight: 'bold',
-	},
-	body: {
-		fontWeight: 'normal',
-		fontFamily: 'body',
-		fontSize: 'md',
-		lineHeight: 'base',
-		color: 'text',
-	},
-	secondary: {
-		fontSize: 'md',
-		fontWeight: 'normal',
-		lineHeight: 'base',
-		fontFamily: 'body',
-		color: 'grey.5',
-	},
-	tertiary: {
-		fontSize: 'sm',
-		fontWeight: 'normal',
-		lineHeight: 'base',
-		fontFamily: 'body',
-		color: 'grey.5',
-	},
-	error: {
-		fontWeight: 'normal',
-		lineHeight: 'base',
-		fontFamily: 'body',
-		fontSize: 'md',
-		color: 'error',
-	},
-};
-
-const theme = {
 	space: [
 		0,
 		'0.125rem', // 2px
@@ -95,9 +65,8 @@ const theme = {
 		'16rem', // 256px
 	],
 	fonts: {
-		body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
 		heading: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-		monospace: 'Menlo, monospace',
+		body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
 	},
 	fontSizes: {
 		xl: '4em',
@@ -112,31 +81,19 @@ const theme = {
 		bold: 700,
 	},
 	lineHeights: {
-		base: 1.5,
+		body: 1.5,
 		heading: 1.1,
 	},
-	textStyles,
-	colors,
 	borders: {
 		none: 'none',
 		thin: '1px solid',
 	},
 	radii: {
-		base: '0.15em',
+		none: 0,
+		base: '0.25em',
+		round: 99999,
 	},
-	shadows: {
-		focus: `0 0 0 2px ${colors.focus}`,
-	},
-};
-
-export const inverted = {
-	...theme,
-	colors: {
-		...getColors(invertedPalette),
-		primary: invertedPalette.grey[4],
-		hover: invertedPalette.grey[6],
-		focus: invertedPalette.grey[1],
-	},
+	textStyles,
 };
 
 export default theme;
