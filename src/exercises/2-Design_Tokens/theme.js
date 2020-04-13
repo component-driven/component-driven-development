@@ -4,8 +4,9 @@ const theme = {
 		background: '#fff',
 		text: '#000',
 		primary: '#f39037',
-		secondary: '#509cb7',
-		muted: '#ccc',
+		secondary: '#ccc',
+		accent: '#509cb7',
+		muted: '#efefef',
 	},
 	fonts: {
 		body: `-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif`,
