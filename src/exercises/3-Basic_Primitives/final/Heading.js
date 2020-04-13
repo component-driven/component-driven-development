@@ -1,30 +1,24 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
-import { css } from '@styled-system/css';
 import Text from '../../../components/primitives/Text';
+import theme from '../../../theme';
 
 /**
  * A text heading.
  */
 const Heading = styled(Text)(
-	css({
-		fontFamily: 'heading',
-		lineHeight: 'heading',
-	}),
 	variant({
 		prop: 'size',
 		variants: {
 			xl: {
-				fontSize: ['lg', 'xl'],
-				fontWeight: ['bold', 'light'],
+				...theme.textStyles.xl,
 			},
 			lg: {
-				fontSize: 'lg',
+				...theme.textStyles.lg,
 			},
 			md: {
-				fontSize: 'md',
-				fontWeight: 'bold',
+				...theme.textStyles.md,
 			},
 		},
 	})

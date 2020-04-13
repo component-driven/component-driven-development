@@ -4,7 +4,7 @@ import styled from 'styled-components';
 /**
  * A text heading.
  */
-const Heading = styled.h1({
+const Heading = styled(Text)({
 	/* Your styles here */
 });
 
