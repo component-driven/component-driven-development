@@ -23,7 +23,7 @@ _Prefer_ the [Text](/#/Primitives?id=text) and [Heading](/#/Primitives?id=headin
 -   font-size: ${props => props.theme.fontSizes.s};
 - `;
 - <Small>Oh dear! Oh dear! I shall be late!</Small>
-+ <Text variant="hint">Oh dear! Oh dear! I shall be late!</Text>
++ <Text variant="help">Oh dear! Oh dear! I shall be late!</Text>
 ```
 
 Check out the [theme.js](https://github.com/component-driven/component-driven-development/blob/master/src/theme.js) file for all available design tokens.

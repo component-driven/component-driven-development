@@ -24,7 +24,7 @@ const textStyles = {
 		lineHeight: 'body',
 		color: 'text',
 	},
-	hint: {
+	help: {
 		fontSize: 'sm',
 		fontWeight: 'normal',
 		lineHeight: 'body',

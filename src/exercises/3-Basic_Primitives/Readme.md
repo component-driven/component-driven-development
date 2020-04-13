@@ -65,7 +65,7 @@ The result should look like this:
 <>
   <Text variant="heading">Heading</Text>
   <Text variant="body">Body text</Text>
-  <Text variant="hint">Help text</Text>
+  <Text variant="help">Help text</Text>
   <Text variant="error">Error text</Text>
 </>
 ```
