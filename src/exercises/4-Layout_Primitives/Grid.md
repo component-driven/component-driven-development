@@ -1,4 +1,4 @@
-```jsx harmony
+```jsx
 import Box from './Box';
 <Grid
   gridGap={2}

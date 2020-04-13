@@ -1,4 +1,4 @@
-```jsx harmony
+```jsx
 import Box from './Box';
 
 <Flex flexDirection="column">

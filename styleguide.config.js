@@ -24,6 +24,7 @@ const config = {
 	exampleMode: 'expand',
 	usageMode: 'expand',
 	webpackConfig,
+	require: [path.join(__dirname, 'styleguide.setup.js')],
 	updateExample(props, exampleFilePath) {
 		const { settings, lang } = props;
 		if (typeof settings.file === 'string') {

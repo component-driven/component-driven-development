@@ -1,20 +1,16 @@
 Stack is a layout primitive that adds space around their children.
 
-```javascript
-import Button from '../Button';
-
+```jsx
 <Stack gridGap={4}>
   <Button>Button</Button>
   <Button>Button</Button>
   <Button>Button</Button>
-</Stack>;
+</Stack>
 ```
 
 Since Stack is based on [Grid](/#/Primitives?id=grid), all of `Grid` props are available:
 
-```javascript
-import Button from '../Button';
-
+```jsx
 <Stack gridGap={3} gridAutoFlow="column">
   <Button>Button</Button>
   <Button>Button</Button>
@@ -23,5 +19,5 @@ import Button from '../Button';
   <Button>Button</Button>
   <Button>Button</Button>
   <Button>Button</Button>
-</Stack>;
+</Stack>
 ```

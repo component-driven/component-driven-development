@@ -4,9 +4,7 @@ See https://styled-system.com/api#grid for more information.
 
 Using Grid we can create a complex grid layouts:
 
-```jsx harmony
-import Box from '../Box';
-
+```jsx
 <Grid gridTemplateColumns="repeat(auto-fit, minmax(200px, 1fr))">
   <Box p={4} bg="grey.1">
     Grid Item
@@ -20,5 +18,5 @@ import Box from '../Box';
   <Box p={4} bg="grey.4">
     Grid Item
   </Box>
-</Grid>;
+</Grid>
 ```

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { system } from 'styled-system';
-import Grid from '../Grid';
+import Grid from './Grid';
 
 const px = value => (typeof value === 'number' ? `${value}px` : value);
 

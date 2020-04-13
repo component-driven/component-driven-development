@@ -1,3 +1,3 @@
-```jsx harmony
+```jsx
 <Footer />
 ```

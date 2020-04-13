@@ -1,9 +1,9 @@
-```jsx harmony
+```jsx
 <Input type="text" />
 ```
 
 Disabled input:
 
-```jsx harmony
+```jsx
 <Input type="text" disabled />
 ```

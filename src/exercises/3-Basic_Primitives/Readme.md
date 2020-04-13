@@ -32,7 +32,7 @@ As you can see, there is a lot of repetition going on. Also this method doesn’
 
 The result should allow rendering such text:
 
-```jsx harmony
+```jsx
 import { Text } from '../../components';
 
 <Text color="error" fontWeight="bold">

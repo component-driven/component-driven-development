@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { color, typography, space, layout, variant } from 'styled-system';
 import { css } from '@styled-system/css';
-import theme from '../../../theme';
+import theme from '../../theme';
 
 /**
  * A component to render all text in the app.
