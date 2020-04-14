@@ -15,7 +15,10 @@ export const Stack = styled(Flex)(
 		gap: {
 			property: '& > * + *', // Here, instead of the CSS property we generate the selector
 			scale: 'space',
-			transform: (value, scale) => ({ marginTop: scale[value] }), // And here instead of the value for the property we return an object
+			// And here instead of the value for the property we return an object
+			// We need to add important since we set margin: 0 in our components
+			// and we need to override it
+			transform: (value, scale) => ({ marginTop: `${scale[value]}!important` }),
 		},
 	})
 );

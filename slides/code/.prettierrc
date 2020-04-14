@@ -5,7 +5,7 @@
 	  "files": "*.txt",
 	  "options": {
 		"parser": "babel",
-		"printWidth": 40,
+		"printWidth": 30,
 		"useTabs": false,
 		"trailingComma": "none",
 		"proseWrap": "never"

@@ -1,35 +1,31 @@
 <ThemeProvider theme={theme}>
-  <Box
+  <Flex
     as="main"
-    p={5}
-    bg="grey.4"
-    height="100%"
+    p={4}
   >
-    <Box
+    <Stack
       as="section"
-      p={0}
-      mx="auto"
-      width={1 / 2}
-      bg="grey.0"
+      padding={4}
+      gap={4}
+      marginX="auto"
+      width={2 / 3}
+      backgroundColor="muted"
       border="thin"
-      borderColor="grey.5"
+      borderColor="secondary"
     >
+      <Heading>
+        Saluki
+      </Heading>
       <Box
-        pb={5}
-        mb={5}
         borderBottom="thin"
-        borderColor="grey.4"
-      >
-        <Heading size="m">
-          Saluki
-        </Heading>
-      </Box>
-      <Box p={3}>
-        <Text variant="secondary">
-          Don’t leave any food on a
-          table when saluki is around.
-        </Text>
-      </Box>
-    </Box>
-  </Box>
+        borderColor="accent"
+        height={1}
+      />
+      <Text>
+        Don’t leave any food
+        on a table when saluki
+        is around.
+      </Text>
+    </Stack>
+  </Flex>
 </ThemeProvider>;

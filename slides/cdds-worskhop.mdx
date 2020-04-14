@@ -986,61 +986,7 @@ import Text from '../primitives/Text';
 
 ---
 
-> Primitives can be rendered anywhere
-
----
-
 <CodeLive code={<RequireExample path="code/Text.txt" />} />
-
----
-
-<Secondary>
-
-# Responsive design
-
-</Secondary>
-
----
-
-<SplitTitle>
-
-### Prop per breakpoint vs. responsive props
-
-<Grid gap={5}>
-
-```jsx
-<Row>
-	<Col xs={12} md={6} lg={3}>
-		Pizza
-	</Col>
-</Row>
-```
-
-```jsx
-// breakpoints: [small, medium, large]
-<Box width={[1, 1 / 2, 1 / 4]} p={['sm', 'md', 'lg']}>
-	Pizza
-</Box>
-```
-
-</Grid>
-</SplitTitle>
-
----
-
-<CodeLive code={<RequireExample path="code/responsive.txt" />} />
-
----
-
-<Secondary>
-
-## Now let's compose primitives...
-
-</Secondary>
-
----
-
-<CodeLive code={<RequireExample path="code/Box-Text.txt" />} />
 
 ---
 
@@ -1180,6 +1126,56 @@ export const Box = styled.div(
 
 ---
 
+<Secondary>
+
+# Responsive design
+
+</Secondary>
+
+---
+
+<SplitTitle>
+
+### Prop per breakpoint vs. responsive props
+
+<Grid gap={5}>
+
+```jsx
+<Row>
+	<Col xs={12} md={6} lg={3}>
+		Pizza
+	</Col>
+</Row>
+```
+
+```jsx
+// breakpoints: [small, medium, large]
+<Box width={[1, 1 / 2, 1 / 4]} p={['sm', 'md', 'lg']}>
+	Pizza
+</Box>
+```
+
+</Grid>
+</SplitTitle>
+
+---
+
+<CodeLive code={<RequireExample path="code/responsive.txt" />} />
+
+---
+
+<Secondary>
+
+## All together
+
+</Secondary>
+
+---
+
+<CodeLive code={<RequireExample path="code/Box-Text.txt" />} />
+
+---
+
 <Primary>
 
 # Primitives Composition
@@ -1202,7 +1198,7 @@ export const Box = styled.div(
 
 <Primary>
 
-# Patterns
+# UI Patterns
 
 </Primary>
 
@@ -1213,15 +1209,8 @@ export const Box = styled.div(
 ---
 
 <Demo
-	src="http://localhost:6060/#!/Card"
-	prodSrc="https://cdds.netlify.com/styleguide/#!/Card"
-/>
-
----
-
-<Demo
-	src="http://localhost:6060/#!/SubscriptionForm"
-	prodSrc="https://cdds.netlify.com/styleguide/#!/SubscriptionForm"
+	src="http://localhost:6060/#!/LoginForm"
+	prodSrc="https://cdds.netlify.com/styleguide/#!/LoginForm"
 />
 
 ---

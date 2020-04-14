@@ -4,10 +4,12 @@
   </Heading>
   <Text>
     The Saluki is classed as a
-    sighthound and is typically
-    deep-chested and long-legged.
-    Salukis are “sight” hounds — hunting
-    by sight — and run their quarry down
-    to kill or retrieve it.
+    sighthound and is
+    typically deep-chested and
+    long-legged. Salukis are
+    “sight” hounds — hunting
+    by sight — and run their
+    quarry down to kill or
+    retrieve it.
   </Text>
 </ThemeProvider>;
