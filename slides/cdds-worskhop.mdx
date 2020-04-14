@@ -82,15 +82,31 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-<Demo src="//localhost:8000" />
+<Demo
+	src={
+		location.hostname !== 'localhost'
+			? 'https://cdds.netlify.com'
+			: 'http://localhost:8000'
+	}
+/>
 
 ---
 
-<Demo src="//localhost:6060" />
+<Demo
+	src={
+		location.hostname !== 'localhost'
+			? 'cdds.netlify.com/styleguide'
+			: 'http://localhost:6060'
+	}
+/>
 
 ---
 
-<Demo src="//localhost:6061" />
+<Demo
+	src={
+		location.hostname !== 'localhost' ? 'about:blank' : 'http://localhost:6061'
+	}
+/>
 
 ---
 
@@ -415,7 +431,13 @@ Defining & Documenting Design Tokens
 
 ---
 
-<Demo src="//localhost:6060" />
+<Demo
+	src={
+		location.hostname !== 'localhost'
+			? 'cdds.netlify.com/styleguide'
+			: 'http://localhost:6060'
+	}
+/>
 
 ---
 
@@ -1040,11 +1062,23 @@ export const Box = styled.div(
 
 ---
 
-<Demo src="//localhost:6060/#!/Card" />
+<Demo
+	src={
+		location.hostname !== 'localhost'
+			? 'cdds.netlify.com/styleguide/#!/Card'
+			: 'http://localhost:6060/#!/Card'
+	}
+/>
 
 ---
 
-<Demo src="//localhost:6060/#!/SubscriptionForm" />
+<Demo
+	src={
+		location.hostname !== 'localhost'
+			? 'cdds.netlify.com/styleguide/#!/SubscriptionForm'
+			: 'http://localhost:6060/#!/SubscriptionForm'
+	}
+/>
 
 ---
 
