@@ -1,3 +1,1 @@
-Layout primitives are components that manage the whitespace of their children.
-
-Instead of adding margin to your primitives which makes
+The guiding principle for layout is that components should not provide surrounding white space. Instead, spacing between elements is controlled entirely by layout primitives. This approach ensures that the system is as composable as possible while keeping white space completely predictable.
