@@ -81,15 +81,27 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-<Demo src="http://localhost:8000" />
+<Demo
+	src={
+		process.env.NODE_ENV === 'production'
+			? 'cdds.netlify.com'
+			: 'http://localhost:8000'
+	}
+/>
 
 ---
 
-<Demo src="http://localhost:6060" />
+<Demo
+	src={
+		process.env.NODE_ENV === 'production'
+			? 'cdds.netlify.com/styleguide'
+			: 'http://localhost:6060'
+	}
+/>
 
 ---
 
-<Demo src="http://localhost:6061" />
+{process.env.NODE_ENV !== 'production' && <Demo src="http://localhost:6061" />}
 
 ---
 
@@ -414,7 +426,7 @@ Defining & Documenting Design Tokens
 
 ---
 
-<Demo src="http://localhost:6060" />
+{process.env.NODE_ENV === 'production' ? 'cdds.netlify.com/styleguide' : 'http://localhost:6060'}
 
 ---
 
@@ -1039,11 +1051,13 @@ export const Box = styled.div(
 
 ---
 
-<Demo src="http://localhost:6060/#!/Card" />
-
----
-
-<Demo src="http://localhost:6060/#!/SubscriptionForm" />
+<Demo
+	src={
+		process.env.NODE_ENV === 'production'
+			? 'cdds.netlify.com/styleguide/#!/UI%20Patterns/LoginForm'
+			: 'http://localhost:6060/#!/UI%20Patterns/LoginForm'
+	}
+/>
 
 ---
 
@@ -1052,31 +1066,6 @@ export const Box = styled.div(
 - `<Card>` → `<Stack>...</Stack>`
 - `<ProductCard>` → `<Card>...</Card>`
 - `<ProductPage>` → `products.map(product => <ProductCard product={product} />)`
-
----
-
-<Secondary>
-
-# Demo
-
-</Secondary>
-
----
-
-<Demo src="http://localhost:8000" />
-
----
-
-<Demo src="http://localhost:6060" />
-
----
-
-<Figure
-	src={'../assets/react-styleguidist.svg'}
-	alt="React-styleguidist Logo"
-	caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
-	gap={4}
-/>
 
 ---
 
@@ -1155,7 +1144,7 @@ export const Box = styled.div(
 
 <Primary>
 
-# Thank you and let components be with you!
+## Thank you and let components be with you!
 
 <Stack gridGap={[3, 5]} gridTemplateColumns={['auto', 'repeat(3, 1fr)']} pt={4}>
 	<a href="https://twitter.com/okonetchnikov">@okonetchnikov</a>
