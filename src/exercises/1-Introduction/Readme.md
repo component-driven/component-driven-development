@@ -70,7 +70,7 @@ A component (`src/exercises/1-Introduction/Button.js`):
 
 ## 1.3. Create a login form
 
-Now that you're familiar how to use styled-components to add styles, let's create a simple login form using this "design":
+Now that you're know how to use styled-components to add styles, let's create a simple login form using this "design":
 
 > TODO
 
