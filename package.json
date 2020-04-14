@@ -27,7 +27,7 @@
 		"generate:watch": "node scripts/generate.js --watch"
 	},
 	"dependencies": {
-		"@component-driven/mdx-deck-theme": "1.0.2",
+		"@component-driven/mdx-deck-theme": "^1.0.3",
 		"@component-driven/react-design-tokens": "2.1.0",
 		"@mdx-deck/gatsby-plugin": "4.1.1",
 		"@reach/router": "^1.2.1",
