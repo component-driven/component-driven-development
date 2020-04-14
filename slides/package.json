@@ -1,0 +1,24 @@
+{
+	"name": "slides",
+	"version": "0.0.0-development",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"preslides:start": "npm install",
+		"preslides:build": "npm install",
+		"postinstall": "patch-package",
+		"slides:start": "mdx-deck ./cdds-worskhop.mdx",
+		"slides:build": "mdx-deck build ./cdds-worskhop.mdx"
+	},
+	"keywords": [],
+	"author": "Andrey Okonetchnikov <andrey@okonet.ru>",
+	"license": "MIT",
+	"dependencies": {
+		"@component-driven/mdx-deck-theme": "1.0.2",
+		"@mdx-deck/gatsby-plugin": "4.1.1",
+		"mdx-deck": "4.1.1"
+	},
+	"devDependencies": {
+		"patch-package": "6.2.2"
+	}
+}
