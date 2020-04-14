@@ -11,8 +11,9 @@ We’ve prepared the basic structure for the design tokens file. Open the `theme
 1. Add a few colors to the `theme.js` and see how they are updated in the styleguide.
 1. Add a palette of grey colors to the `colors` object (_hint_: Use `Array` for that).
 1. Change spacing scale to see how swatches react to this change. Continue with other values.
-1. Update design tokens to fit our design ([main page](https://www.figma.com/file/cALZfCbmthI9VQz9MJR6JdPk/CDD-Workshop?node-id=1%3A2) and [signup page](https://www.figma.com/file/cALZfCbmthI9VQz9MJR6JdPk/CDD-Workshop?node-id=1%3A40)).
-1. Check out [design tokens](https://cdds.netlify.com/styleguide/#/Foundation?id=colors) from the final style guide.
+1. Update color tokens to match the final [styleguide](https://cdds.netlify.com/styleguide/#/Foundation?id=colors).
+
+> **Hint:** Use [ColorSnapper](https://colorsnapper.com) if you're on macOS to grab colors from the screen.
 
 ## Colors
 
@@ -68,6 +69,9 @@ const Message = styled.p`
  <summary>Solution</summary>
 
 ```js {"file": "final/Button.js", "static": true}
+```
+
+```js {"file": "final/LoginForm.js", "static": true}
 ```
 
 </details>
