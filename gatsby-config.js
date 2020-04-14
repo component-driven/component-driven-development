@@ -1,5 +1,5 @@
 module.exports = {
-	pathPrefix: `/slides`,
+	// pathPrefix: `/slides`,
 	plugins: [
 		{
 			resolve: 'gatsby-theme-mdx-deck',
@@ -7,7 +7,7 @@ module.exports = {
 				// source directory
 				contentPath: './slides',
 				// base path for routes generate by this theme
-				basePath: '/slides',
+				// basePath: '/slides',
 			},
 		},
 		{

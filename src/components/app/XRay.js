@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { useHotkeys } from 'react-hotkeys-hook';
-import { Box, Flex, Grid, Stack } from './components';
+import { Box, Flex, Grid, Stack } from '../';
 
 const stackClassName = `${Stack}`.replace('.', '');
 

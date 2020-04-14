@@ -12,8 +12,8 @@ const workshopId = 0; // TODO: take workshop ID as a CLI argument
 const config = {
 	serverPort: isExercises ? 6061 : 6060,
 	title: 'Component-driven design systems workshop',
-	styleguideDir: 'build/styleguide',
-	assetsDir: 'public',
+	styleguideDir: 'public/styleguide',
+	assetsDir: 'static',
 	styleguideComponents: {
 		Wrapper: path.join(__dirname, 'src/StyleGuideWrapper'),
 	},

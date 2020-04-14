@@ -7,7 +7,7 @@
 /coverage
 
 # production
-/build
+/public
 
 # Gatsby
 .cache

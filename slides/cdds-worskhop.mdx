@@ -11,7 +11,7 @@ export const theme = { ...CDTheme };
 ---
 
 <Figure
-	src={require('./assets/component-driven.svg')}
+	src={'../assets/component-driven.svg'}
 	alt="Component-driven Logo"
 	caption={
 		<a href="https://component-driven.io">https://component-driven.io</a>
@@ -94,7 +94,7 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 ---
 
 <Figure
-	src={require('./assets/react-styleguidist.svg')}
+	src={'../assets/react-styleguidist.svg'}
 	alt="React-styleguidist Logo"
 	caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
 	gap={4}
@@ -159,11 +159,11 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-<Image src={require('./assets/dribbble1.png')} size="contain" />
+<Image src={'../assets/dribbble1.png'} size="contain" />
 
 ---
 
-<Image src={require('./assets/dribbble2.png')} size="contain" />
+<Image src={'../assets/dribbble2.png'} size="contain" />
 
 ---
 
@@ -240,7 +240,7 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-<Image src={require('./assets/doors.jpg')} />
+<Image src={'../assets/doors.jpg'} />
 
 ---
 
@@ -279,15 +279,15 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-<Image src={require('./assets/too-many-buttons.jpg')} size="contain" />
+<Image src={'../assets/too-many-buttons.jpg'} size="contain" />
 
 ---
 
-<Image src={require('./assets/too-many-buttons-2.jpg')} size="contain" />
+<Image src={'../assets/too-many-buttons-2.jpg'} size="contain" />
 
 ---
 
-<Image src={require('./assets/text.png')} size="contain" />
+<Image src={'../assets/text.png'} size="contain" />
 
 ---
 
@@ -315,7 +315,7 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-<Image src={require('./assets/dls-foundation.png')} size="contain" />
+<Image src={'../assets/dls-foundation.png'} size="contain" />
 
 ---
 
@@ -329,33 +329,24 @@ Defining & Documenting Design Tokens
 
 ---
 
-<Figure
-	src={require('./assets/ui-inventory-1.png')}
-	alt="UI inventory process"
-/>
+<Figure src={'../assets/ui-inventory-1.png'} alt="UI inventory process" />
 
 ---
 
-<Figure
-	src={require('./assets/ui-inventory-2.png')}
-	alt="UI inventory process"
-/>
+<Figure src={'../assets/ui-inventory-2.png'} alt="UI inventory process" />
 
 ---
 
-<Figure
-	src={require('./assets/ui-inventory-3.png')}
-	alt="UI inventory process"
-/>
+<Figure src={'../assets/ui-inventory-3.png'} alt="UI inventory process" />
 
 ---
 
-<Figure src={require('./assets/text.png')} alt="Different text styles" />
+<Figure src={'../assets/text.png'} alt="Different text styles" />
 
 ---
 
 <Code language="javascript">
-	{require('raw-loader!./code/themeExample.txt').default}
+	{'raw-loader!./code/themeExample.txt'.default}
 </Code>
 
 ---
@@ -376,7 +367,7 @@ Defining & Documenting Design Tokens
 ---
 
 <Figure
-	src={require('./assets/design-tokens-colors.png')}
+	src={'../assets/design-tokens-colors.png'}
 	alt="Design tokens: colors"
 	caption={
 		<a href="https://marvelapp.com/styleguide/design/color-scheme">
@@ -388,7 +379,7 @@ Defining & Documenting Design Tokens
 ---
 
 <Figure
-	src={require('./assets/design-tokens-gradients.png')}
+	src={'../assets/design-tokens-gradients.png'}
 	alt="Design tokens: gradients"
 	caption={
 		<a href="https://cloudflare.github.io/cf-ui/#cf-design-gradients">
@@ -400,7 +391,7 @@ Defining & Documenting Design Tokens
 ---
 
 <Figure
-	src={require('./assets/design-tokens-fonts-spacing.png')}
+	src={'../assets/design-tokens-fonts-spacing.png'}
 	alt="Design tokens: fonts and spacing"
 	caption={
 		<a href="https://vueds.com/example/#!/Design%20Tokens">
@@ -412,7 +403,7 @@ Defining & Documenting Design Tokens
 ---
 
 <Figure
-	src={require('./assets/design-tokens-misc.png')}
+	src={'../assets/design-tokens-misc.png'}
 	alt="Design tokens"
 	caption={
 		<a href="https://www.lightningdesignsystem.com/design-tokens/">
@@ -436,7 +427,7 @@ Defining & Documenting Design Tokens
 ---
 
 <Figure
-	src={require('./assets/colorsnapper.png')}
+	src={'../assets/colorsnapper.png'}
 	alt="Colorsnapper"
 	caption={<a href="https://colorsnapper.com">https://colorsnapper.com</a>}
 />
@@ -479,7 +470,7 @@ Defining & Documenting Design Tokens
 		<span>Dropdown</span>
 		<div>
 			<Code language="html">
-				{require('raw-loader!./code/dropdownHTML.txt').default}
+				{'raw-loader!./code/dropdownHTML.txt'.default}
 			</Code>
 		</div>
 		<span>😩</span>
@@ -489,7 +480,7 @@ Defining & Documenting Design Tokens
 ---
 
 <Figure
-	src={require('./assets/bootstrap-dropdown.png')}
+	src={'../assets/bootstrap-dropdown.png'}
 	alt="Bootstrap Documentation Screenshot"
 	caption={
 		<a href="https://getbootstrap.com/docs/3.3/components/#dropdowns">
@@ -498,7 +489,7 @@ Defining & Documenting Design Tokens
 	}
 />
 
-<Image src={require('./assets/bootstrap-dropdown.png')} size="contain" />
+<Image src={'../assets/bootstrap-dropdown.png'} size="contain" />
 
 <ThatGuy />
 
@@ -521,13 +512,9 @@ Defining & Documenting Design Tokens
 
 ## HTML & CSS vs. Components
 
-<Code language="html">
-	{require('raw-loader!./code/dropdownHTML.txt').default}
-</Code>
+<Code language="html">{'raw-loader!./code/dropdownHTML.txt'.default}</Code>
 
-<Code language="jsx">
-	{require('raw-loader!./code/dropdownJSX.txt').default}
-</Code>
+<Code language="jsx">{'raw-loader!./code/dropdownJSX.txt'.default}</Code>
 
 </SplitTitle>
 
@@ -596,7 +583,7 @@ const Dropdown = props => (
 
 ---
 
-<Image src={require('./assets/legos.jpg')} />
+<Image src={'../assets/legos.jpg'} />
 
 ---
 
@@ -604,7 +591,7 @@ const Dropdown = props => (
 
 ---
 
-<Image src={require('./assets/legos-assembled.jpg')} />
+<Image src={'../assets/legos-assembled.jpg'} />
 
 ---
 
@@ -651,7 +638,7 @@ vs.
 ---
 
 <Figure
-	src={require('./assets/styled-system.png')}
+	src={'../assets/styled-system.png'}
 	alt="Styled-system Webiste"
 	caption={<a href="https://styled-system.com">https://styled-system.com</a>}
 />
@@ -715,7 +702,7 @@ import Text from '../primitives/Text';
 
 ---
 
-<Image src={require('./assets/text.png')} size="contain" />
+<Image src={'../assets/text.png'} size="contain" />
 
 ---
 
@@ -830,7 +817,7 @@ import Text from '../primitives/Text';
 
 ---
 
-<LiveCode code={require('raw-loader!./code/Text.txt').default} />
+<LiveCode code={'raw-loader!./code/Text.txt'.default} />
 
 ---
 
@@ -868,7 +855,7 @@ import Text from '../primitives/Text';
 
 ---
 
-<LiveCode code={require('raw-loader!./code/responsive.txt').default} />
+<LiveCode code={'raw-loader!./code/responsive.txt'.default} />
 
 ---
 
@@ -880,7 +867,7 @@ import Text from '../primitives/Text';
 
 ---
 
-<LiveCode code={require('raw-loader!./code/Box-Text.txt').default} />
+<LiveCode code={'raw-loader!./code/Box-Text.txt'.default} />
 
 ---
 
@@ -893,7 +880,7 @@ import Text from '../primitives/Text';
 ---
 
 <Figure
-	src={require('./assets/spacing-scale.png')}
+	src={'../assets/spacing-scale.png'}
 	alt="Spacing composition"
 	caption="Space composition by Nathan Curtis"
 />
@@ -943,7 +930,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={require('raw-loader!./code/Box.txt').default} />
+<LiveCode code={'raw-loader!./code/Box.txt'.default} />
 
 ---
 
@@ -976,7 +963,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={require('raw-loader!./code/Flex.txt').default} />
+<LiveCode code={'raw-loader!./code/Flex.txt'.default} />
 
 ---
 
@@ -988,7 +975,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={require('raw-loader!./code/Grid.txt').default} />
+<LiveCode code={'raw-loader!./code/Grid.txt'.default} />
 
 ---
 
@@ -1000,7 +987,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={require('raw-loader!./code/Stack.txt').default} />
+<LiveCode code={'raw-loader!./code/Stack.txt'.default} />
 
 ---
 
@@ -1012,7 +999,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={require('raw-loader!./code/Group.txt').default} />
+<LiveCode code={'raw-loader!./code/Group.txt'.default} />
 
 ---
 
@@ -1085,7 +1072,7 @@ export const Box = styled.div(
 ---
 
 <Figure
-	src={require('./assets/react-styleguidist.svg')}
+	src={'../assets/react-styleguidist.svg'}
 	alt="React-styleguidist Logo"
 	caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
 	gap={4}
@@ -1131,7 +1118,7 @@ export const Box = styled.div(
 
 ---
 
-<Image src={require('./assets/napkin.jpg')} size="contain" />
+<Image src={'../assets/napkin.jpg'} size="contain" />
 
 ---
 
@@ -1157,7 +1144,7 @@ export const Box = styled.div(
 ---
 
 <Figure
-	src={require('./assets/component-driven.svg')}
+	src={'../assets/component-driven.svg'}
 	alt="Component-driven Logo"
 	caption={
 		<a href="https://component-driven.io">https://component-driven.io</a>
