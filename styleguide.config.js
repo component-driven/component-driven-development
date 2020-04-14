@@ -15,7 +15,7 @@ const config = {
 	styleguideDir: 'public/styleguide',
 	assetsDir: 'static',
 	styleguideComponents: {
-		Wrapper: path.join(__dirname, 'src/StyleGuideWrapper'),
+		Wrapper: path.join(__dirname, 'src/ThemeProvider'),
 	},
 	// Read examples from Component.md files only, not from Readme.md
 	getExampleFilename: x => x.replace(/\.js$/, '.md'),
