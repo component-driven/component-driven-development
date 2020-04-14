@@ -47,14 +47,15 @@ const Title = styled('h1')({
 The result should look like this:
 
 ```js noeditor
-<Button variant="primary">I am a button!</Button>
+import Button from './final/Button';
+
+<Button variant="primary">I am a button!</Button>;
 ```
 
 ### The task
 
 1. Rewrite a button component in `Button.js` using styled-components.
-
-2. Define basic styles like padding, text and background colors according to [the mockup](https://cdds.netlify.com/), use primary button styles (like the “Place an order” button on the checkout page).
+1. Define basic styles like padding, text and background colors according to the example above.
 
 _Don’t try to be pixel perfect here, that’s not the goal of the exercise. Also exact values (like colors or font sizes) aren’t important at this stage — we’ll deal with that in the future exercises._
 
@@ -72,9 +73,7 @@ A component (`src/exercises/1-Introduction/Button.js`):
 
 Now that you're know how to use styled-components to add styles, let's create a simple login form using this "design":
 
-> TODO
-
-![Login Form Mockup](../../../slides/assets/napkin.jpg)
+![Login Form Mockup](assets/napkin.jpg)
 
 ### The task
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './final/Button';
+import Button from './Button';
 
 const Heading = styled.h1`
 	margin: 0;
