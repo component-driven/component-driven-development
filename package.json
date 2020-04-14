@@ -5,7 +5,6 @@
 	"license": "CC BY-NC 4.0",
 	"homepage": "https://cdds.netlify.com",
 	"scripts": {
-		"postinstall": "patch-package",
 		"validate": "node scripts/setup.js",
 		"prestart": "npm run validate",
 		"start": "run-p app exercise styleguide",
@@ -29,8 +28,6 @@
 	"dependencies": {
 		"@component-driven/mdx-deck-theme": "^1.0.3",
 		"@component-driven/react-design-tokens": "2.1.0",
-		"@mdx-deck/gatsby-plugin": "4.1.1",
-		"@reach/router": "^1.2.1",
 		"@styled-system/css": "^5.0.23",
 		"@styled-system/prop-types": "^5.1.2",
 		"mdx-deck": "^4.1.1",
@@ -38,7 +35,6 @@
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
 		"react-group": "^3.0.2",
-		"react-helmet": "^5.2.1",
 		"react-hotkeys-hook": "^1.5.3",
 		"stack-styled": "^3.0.0",
 		"styled-components": "^4.4.1",
@@ -62,7 +58,6 @@
 		"lint-staged": "^10.0.0-beta.6",
 		"mkdirp": "^0.5.1",
 		"npm-run-all": "^4.1.5",
-		"patch-package": "6.2.2",
 		"prettier": "^1.18.2",
 		"raw-loader": "^3.1.0",
 		"react-styleguidist": "^10.2.1"
