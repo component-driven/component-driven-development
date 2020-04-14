@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 // FINAL_START
-import { color, typography, space, variant } from 'styled-system';
+import { color, typography, space, variant, layout } from 'styled-system';
 import { css } from '@styled-system/css';
+import theme from '../../../theme';
 // FINAL_END
 
 /**
@@ -19,55 +20,23 @@ const Text = styled.p(
 	// css function provides access to our design tokens
 	css({
 		m: 0,
-		fontWeight: 'normal',
-		fontFamily: 'body',
-		fontSize: 'md',
-		lineHeight: 'base',
-		color: 'text',
+		...theme.textStyles.body, // Default text style
 	}),
 	// APIs
 	color,
 	typography,
 	space,
+	layout,
 	variant({
-		variants: {
-			base: {
-				fontSize: 'md', // You can use design tokens in variants!
-				fontWeight: 'normal',
-				lineHeight: 'base',
-				fontFamily: 'body',
-				color: 'text',
-			},
-			secondary: {
-				fontSize: 'md',
-				fontWeight: 'normal',
-				lineHeight: 'base',
-				fontFamily: 'body',
-				color: 'grey.5',
-			},
-			tertiary: {
-				fontSize: 'sm',
-				fontWeight: 'normal',
-				lineHeight: 'base',
-				fontFamily: 'body',
-				color: 'grey.5',
-			},
-			error: {
-				fontWeight: 'normal',
-				lineHeight: 'base',
-				fontFamily: 'body',
-				fontSize: 'md',
-				color: 'error',
-			},
-		},
+		variants: theme.textStyles,
 	})
 );
 // FINAL_END
 
 Text.propTypes = {
 	// FINAL_START
-	/** Variation */
-	variant: PropTypes.oneOf(['secondary', 'tertiary', 'error']),
+	/** Variants */
+	variant: PropTypes.oneOf(Object.keys(theme.textStyles)),
 	// FINAL_END
 	children: PropTypes.node,
 };

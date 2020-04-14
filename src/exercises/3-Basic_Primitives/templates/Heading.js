@@ -1,54 +1,21 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 // FINAL_START
-import { variant } from 'styled-system';
-import { css } from '@styled-system/css';
-import Text from '../../../components/primitives/Text';
+import { Text } from '../../../components';
 // FINAL_END
 
 /**
- * A text heading.
+ * A component to render all text in the app.
  */
 // WORKSHOP_START
-const Heading = styled.h1({
-	/* Your styles here */
-});
+const Heading = props => <h1>{props.children}</h1>;
 // WORKSHOP_END
 // FINAL_START
-const Heading = styled(Text)(
-	css({
-		fontFamily: 'heading',
-		lineHeight: 'heading',
-	}),
-	variant({
-		prop: 'size',
-		variants: {
-			xl: {
-				fontSize: ['lg', 'xl'],
-				fontWeight: ['bold', 'light'],
-			},
-			lg: {
-				fontSize: 'lg',
-			},
-			md: {
-				fontSize: 'md',
-				fontWeight: 'bold',
-			},
-		},
-	})
-);
+const Heading = props => <Text variant="heading" {...props} />;
 // FINAL_END
 
 Heading.propTypes = {
-	/** Custom component or HTML tag */
-	as: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-	/** Variant */
-	size: PropTypes.oneOf(['xl', 'lg', 'md']),
 	children: PropTypes.node,
-};
-
-Heading.defaultProps = {
-	size: 'xl',
 };
 
 /** @component */

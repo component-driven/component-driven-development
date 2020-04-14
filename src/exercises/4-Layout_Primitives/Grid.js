@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Box from '../../components/primitives/Box';
+import { Box } from '../../components';
 
 const Grid = styled(Box)({
 	// Your styles here

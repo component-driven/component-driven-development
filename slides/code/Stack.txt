@@ -1,5 +1,5 @@
 <ThemeProvider theme={theme}>
-	<Stack m={4} gridGap={4}>
+	<Stack m={4} gap={4}>
 		<Box p={4} bg="grey.2">
 			Stack Item
 		</Box>

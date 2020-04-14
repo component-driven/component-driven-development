@@ -24,6 +24,7 @@ const config = {
 	exampleMode: 'expand',
 	usageMode: 'expand',
 	webpackConfig,
+	require: [path.join(__dirname, 'styleguide.setup.js')],
 	updateExample(props, exampleFilePath) {
 		const { settings, lang } = props;
 		if (typeof settings.file === 'string') {
@@ -80,6 +81,11 @@ if (isExercises) {
 			name: 'Primitives',
 			content: 'src/components/primitives/Readme.md',
 			components: 'src/components/primitives/**/[A-Z]*.js',
+		},
+		{
+			name: 'Layout Primitives',
+			content: 'src/components/layout/Readme.md',
+			components: 'src/components/layout/**/[A-Z]*.js',
 		},
 		{
 			name: 'UI Patterns',
