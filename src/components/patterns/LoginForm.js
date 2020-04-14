@@ -1,19 +1,27 @@
 import React from 'react';
-import { Button, Grid, Input, Link, Stack, Text } from '../../components';
+import {
+	Button,
+	Grid,
+	Input,
+	Link,
+	Stack,
+	Text,
+	Label,
+} from '../../components';
 
 export default () => (
 	<Stack as="form" gap={4}>
 		<Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '6rem 1fr']}>
-			<Text as="label" display="block">
-				Username
-			</Text>
-			<Input type="text" />
+			<Label required htmlFor="email1">
+				Email
+			</Label>
+			<Input type="email" id="email1" />
 		</Grid>
 		<Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '6rem 1fr']}>
-			<Text as="label" display="block">
+			<Label required htmlFor="password1">
 				Password
-			</Text>
-			<Input type="password" />
+			</Label>
+			<Input type="password" id="password1" />
 		</Grid>
 		<Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '6rem 1fr']}>
 			<Grid gridColumn={[1, 2]} gridGap={3}>

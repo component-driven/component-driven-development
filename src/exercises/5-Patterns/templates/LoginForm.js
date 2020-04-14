@@ -1,12 +1,11 @@
 import React from 'react';
 import {
-	Box,
-	Flex,
 	Grid,
 	Stack,
 	Button,
 	Link,
 	Text,
+	Label,
 	Input,
 } from '../../components';
 
@@ -19,16 +18,16 @@ const LoginForm = () => {
 const LoginForm = () => (
 	<Stack as="form" gap={4}>
 		<Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '6rem 1fr']}>
-			<Text as="label" display="block">
-				Username
-			</Text>
-			<Input type="text" />
+			<Label required htmlFor="email">
+				Email
+			</Label>
+			<Input type="email" id="email" />
 		</Grid>
 		<Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '6rem 1fr']}>
-			<Text as="label" display="block">
+			<Label required htmlFor="password">
 				Password
-			</Text>
-			<Input type="password" />
+			</Label>
+			<Input type="password" id="password" />
 		</Grid>
 		<Grid gridGap={[1, 4]} gridTemplateColumns={['1fr', '6rem 1fr']}>
 			<Grid gridColumn={[1, 2]} gridGap={3}>

@@ -12,4 +12,5 @@ export { default as Link } from './primitives/Link';
 export { default as Heading } from './primitives/Heading';
 
 // Patterns
+export { default as Label } from './patterns/Label';
 export { default as LoginForm } from './patterns/LoginForm';

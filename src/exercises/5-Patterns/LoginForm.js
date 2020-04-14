@@ -1,12 +1,11 @@
 import React from 'react';
 import {
-	Box,
-	Flex,
 	Grid,
 	Stack,
 	Button,
 	Link,
 	Text,
+	Label,
 	Input,
 } from '../../components';
 
