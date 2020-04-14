@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-	Box,
-	Grid,
-	Button,
-	Link,
-	Text,
-	Input,
-	Heading,
-	Stack,
-} from '../../components';
+import { Button, Grid, Input, Link, Stack, Text } from '../../components';
 
 export default () => (
 	<Stack as="form" gap={4}>
