@@ -45,7 +45,7 @@ import theme from './theme';
 
 Theme values can be accessed everywhere in the app via [ThemeProvider](https://github.com/component-driven/component-driven-development/blob/master/src/ThemeProvider.js) and the `theme` object.
 
-To ensure consistency of UI, always use values from the `theme` object, instead of hardcoded values.
+To ensure UI consistency, always use values from the `theme` object, instead of hardcoded values.
 
 For example, render small text with the `primary` color:
 
