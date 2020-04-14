@@ -1,5 +1,5 @@
 ```jsx
-<Stack gap={2}>
+<Stack gap={4}>
   <Box p={4} bg="grey.2">
     Stack Item
   </Box>

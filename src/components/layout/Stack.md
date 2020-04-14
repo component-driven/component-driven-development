@@ -1,4 +1,4 @@
-Stack is a layout primitive that "stacks" its children with an evenly distributed gaps.
+Stack is a layout primitive that "stacks" its children vertically and adding a gap between them.
 
 ```jsx
 <Stack gap={4}>

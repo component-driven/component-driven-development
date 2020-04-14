@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { system } from 'styled-system';
-import { Grid } from '../../components';
+import { Flex } from '../../components';
 
-const Stack = styled(Grid)({
+const Stack = styled(Flex)({
 	// Your styles here
 });
 
 Stack.propTypes = {
-	...Grid.propTypes,
+	...Flex.propTypes,
 	/** Spacing between items */
 	gap: PropTypes.oneOfType([
 		PropTypes.number,
@@ -16,4 +16,5 @@ Stack.propTypes = {
 	]),
 };
 
+/** @component */
 export default Stack;

@@ -153,7 +153,7 @@ The result should look like this:
 
 ## 4.4 Stack primitive
 
-`Stack` is the layout primitive to create _stacking layouts_ i.e. when children evenly distributed vertically. Think of it as a designer-friendly component that doesn't require understanding of CSS Grid Layout even though our implementation is based on `Grid`.
+`Stack` is the layout primitive to create _stacking layouts_ i.e. when children evenly distributed vertically. Most designers don't think in CSS but rather in higher level abstractions like stacks, groups etc. Stack is a designer-friendly component that allows distribute its children vertically.
 
 To create a design system constrained custom prop, styled-system has the [system](https://styled-system.com/api#system) function.
 
