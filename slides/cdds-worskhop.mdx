@@ -569,7 +569,29 @@ export default {
 		<span>Dropdown</span>
 		<div>
 			<Code language="html">
-				<RequireExample path="code/dropdownHTML.txt" />
+				{`<div class="dropdown">
+    <button
+	  class="btn btn-default dropdown-toggle"
+	  type="button"
+	  id="dropdownMenu1"
+	  data-toggle="dropdown"
+	  aria-haspopup="true"
+	  aria-expanded=“true"
+	>
+      Dropdown
+      <span class="caret"></span>
+    </button>
+    <ul
+	   class="dropdown-menu"
+	   aria-labelledby=“dropdownMenu1"
+	>
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>`}
 			</Code>
 		</div>
 		<span>😩</span>
@@ -592,10 +614,6 @@ export default {
 
 ---
 
-> Components is a better way of writing HTML
-
----
-
 # Components
 
 - `<Button>` → `<button>`
@@ -605,11 +623,9 @@ export default {
 
 ---
 
-<SplitTitle>
+> Components is a better way of writing HTML
 
-## HTML & CSS vs. Components
-
-<Grid columns={2}>
+---
 
 ```html
 <div class="dropdown">
@@ -637,31 +653,27 @@ export default {
 </div>
 ```
 
+---
+
 ```jsx
 <DropdownButton title="Title">
-	{' '}
-	 <MenuItem eventKey="1">Action</MenuItem> 
-	<MenuItem eventKey="2">Another action</MenuItem> <MenuItem
-		eventKey="3"
-		active
-	>
+	<MenuItem eventKey="1">Action</MenuItem>
+	<MenuItem eventKey="2">Another action</MenuItem>
+	<MenuItem eventKey="3" active>
 		Active Item
 	</MenuItem>
-	 <MenuItem divider />
-	 <MenuItem eventKey="4">Separated link</MenuItem>
+	<MenuItem divider />
+	<MenuItem eventKey="4">Separated link</MenuItem>
 </DropdownButton>
 ```
 
-</Grid>
-</SplitTitle>
+---
+
+> Components can change over time
 
 ---
 
-<SplitTitle>
-
-## Components can change over time
-
-```jsx harmony
+```jsx
 const Dropdown = props => (
 	<select>
 		{props.options.map(option => (
@@ -671,7 +683,9 @@ const Dropdown = props => (
 );
 ```
 
-```jsx harmony
+---
+
+```jsx
 const Dropdown = props => (
 	<div className="dropdown">
 		<button class="btn btn-dropdown">{props.button}</button>
@@ -684,13 +698,9 @@ const Dropdown = props => (
 );
 ```
 
-</SplitTitle>
-
 ---
 
-## Components as a common language
-
-<Stack gridGap={5} p={4} gridTemplateColumns="1fr 1fr">
+<Grid gap={5} columns={2}>
 	<span>A button</span>
 	<Code language="jsx">{`<Button>`}</Code>
 	<span>A primary button</span>
@@ -699,7 +709,7 @@ const Dropdown = props => (
 	<Code language="jsx">{`<Checkbox checked>`}</Code>
 	<span>A product card</span>
 	<Code language="jsx">{`<ProductCard>`}</Code>
-</Stack>
+</Grid>
 
 ---
 
