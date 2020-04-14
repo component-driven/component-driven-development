@@ -47,7 +47,7 @@ Theme values can be accessed everywhere in the app via [ThemeProvider](https://g
 
 To ensure consistency of UI, always use values from the `theme` object, instead of hardcoded values.
 
-For example following example is going to render small text with `primary` color.
+For example, render small text with the `primary` color:
 
 ```diff
 const Message = styled.p`
