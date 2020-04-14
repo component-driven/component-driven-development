@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
-const webpackConfig = require('./webpack.config');
 
 const EXERCISES = [[1, 5], [6, 6]];
 
@@ -23,7 +22,17 @@ const config = {
 	pagePerSection: true,
 	exampleMode: 'expand',
 	usageMode: 'expand',
-	webpackConfig,
+	webpackConfig: {
+		module: {
+			rules: [
+				{
+					test: /\.js$/,
+					loader: 'babel-loader',
+					exclude: /node_modules/,
+				},
+			],
+		},
+	},
 	require: [path.join(__dirname, 'styleguide.setup.js')],
 	updateExample(props, exampleFilePath) {
 		const { settings, lang } = props;
