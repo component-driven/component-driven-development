@@ -1,5 +1,5 @@
 module.exports = {
-	pathPrefix: `/slides`,
+	// pathPrefix: `/slides`,
 	plugins: [
 		{
 			resolve: 'gatsby-theme-mdx-deck',

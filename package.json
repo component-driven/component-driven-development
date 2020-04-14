@@ -11,7 +11,7 @@
 		"preapp": "npm run validate",
 		"app": "gatsby develop",
 		"prebuild": "npm run validate",
-		"build": "gatsby clean && gatsby build && npm run styleguide:build",
+		"build": "gatsby clean && gatsby build --prefix-paths && npm run styleguide:build",
 		"pretest": "eslint src",
 		"test": "cross-env CI=true react-scripts test --env=jsdom",
 		"test:watch": "react-scripts test --env=jsdom",
