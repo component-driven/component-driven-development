@@ -151,7 +151,7 @@ But most of the projects I had to work on looked differently:
 
 ---
 
-<Demo src="//localhost:6061" />
+<Demo src="//localhost:6061" prodSrc="about:blank" />
 
 ---
 
@@ -505,7 +505,10 @@ export default {
 
 ---
 
-<Demo src="//localhost:6060" />
+<Demo
+	src="http://localhost:6060"
+	prodSrc="https://cdds.netlify.com/styleguide"
+/>
 
 ---
 
@@ -1186,11 +1189,17 @@ export const Box = styled.div(
 
 ---
 
-<Demo src="//localhost:6060/#!/Card" />
+<Demo
+	src="http://localhost:6060/#!/Card"
+	prodSrc="https://cdds.netlify.com/styleguide/#!/Card"
+/>
 
 ---
 
-<Demo src="//localhost:6060/#!/SubscriptionForm" />
+<Demo
+	src="http://localhost:6060/#!/SubscriptionForm"
+	prodSrc="https://cdds.netlify.com/styleguide/#!/SubscriptionForm"
+/>
 
 ---
 
