@@ -19,8 +19,9 @@ const Text = styled.p(
 	// Default styles
 	// css function provides access to our design tokens
 	css({
-		m: 0,
-		...theme.textStyles.body, // Default text style
+		margin: 0,
+		fontFamily: 'body',
+		lineHeight: 'body',
 	}),
 	// APIs
 	color,

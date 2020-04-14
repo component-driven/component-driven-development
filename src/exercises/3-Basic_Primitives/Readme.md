@@ -49,6 +49,7 @@ To prevent that, we can make our primitives more rigid by only allowing certain 
 Refactor `Text` component to allow rendering text with following styles:
 
 - Heading text (`xl` font size, `heading` font family);
+- Sub-heading text (`lg` font size, `heading` font family);
 - Body text (`md` font size, `body` font family);
 - Help text (`sm` font size, `secondary` color, `body` font family);
 - Error text (`md` font size, `error` color, `body` font family).
@@ -60,13 +61,31 @@ The result should look like this:
 ```js noeditor
 <>
   <Text variant="heading">Heading</Text>
+  <Text variant="sub-heading">Sub-Heading</Text>
   <Text variant="body">Body text</Text>
   <Text variant="disclaimer">Help text</Text>
   <Text variant="error">Error text</Text>
 </>
 ```
 
-## 3.3. Composing primitives
+## 3.3. Using `css` function to access design tokens
+
+When creating primitives it can be tedious to write `props => props.theme.colors.accent` all the time. In order to reduce the amount of code, styled-system has a separate package `@styled-system/css` that can be used to access design tokens as strings:
+
+```diff
+- {
+-   color: props => props.theme.colors.accent
+- }
++ css({
++   color: "accent"
++ })
+```
+
+### The task
+
+Refactor `Link` component to use `css` function.
+
+## 3.4. Composing primitives
 
 Now that we have our `Text` component, let’s create a `Heading` primitive that should help rendering all headings across the app. In this case, it’s important to keep in mind that in UIs headings won’t follow document outline, because heading level [depends on the context](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3). In other words we need to change heading styles and an HTML element independently. This means, we have to create the API that’s doesn’t couple HTML tag and the look of the heading. We can leverage [`as` prop](https://www.styled-components.com/docs/api#as-polymorphic-prop) to render a desired HTML element.
 
@@ -84,18 +103,8 @@ Have a look at our [typography styles](https://cdds.netlify.com/styleguide/#/Fou
 
 - `heading` font family;
 - `heading` line height;
-- `xl` font size
+- `lg` font size
 - HTML element can be changed independently using `as` prop.
-
-## 3.4 Making your styles responsive
-
-When working on the app or a website it’s oftentimes desirable to handle responsive styles as well. There are different ways of handling responsive styles. Styled-system approach is simple yet very powerful: every prop accepts a value or an array of values.
-
-### The task
-
-- Make the font size of `Heading` component responsive. It should become smaller, on smaller screens.
-
-**Hint:** Check out the documentation of [responsive styles](https://styled-system.com/responsive-styles)
 
 ## Solutions
 
@@ -103,6 +112,14 @@ When working on the app or a website it’s oftentimes desirable to handle respo
  <summary>Text</summary>
 
 ```js {"file": "final/Text.js", "static": true}
+```
+
+</details>
+
+<details>
+ <summary>Link</summary>
+
+```js {"file": "final/Link.js", "static": true}
 ```
 
 </details>

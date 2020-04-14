@@ -11,7 +11,7 @@ import { Text } from '../../../components';
 const Heading = props => <h1>{props.children}</h1>;
 // WORKSHOP_END
 // FINAL_START
-const Heading = props => <Text variant="heading" {...props} />;
+const Heading = props => <Text as="h1" {...props} variant="heading" />;
 // FINAL_END
 
 Heading.propTypes = {

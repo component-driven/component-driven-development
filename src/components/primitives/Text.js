@@ -11,7 +11,7 @@ const Text = styled.p(
 	// Default styles
 	// css function provides access to our design tokens
 	css({
-		m: 0,
+		margin: 0,
 		fontFamily: 'body',
 		lineHeight: 'body',
 	}),
