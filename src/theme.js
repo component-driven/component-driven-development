@@ -24,7 +24,7 @@ const textStyles = {
 		lineHeight: 'body',
 		color: 'text',
 	},
-	help: {
+	disclaimer: {
 		fontSize: 'sm',
 		fontWeight: 'normal',
 		lineHeight: 'body',

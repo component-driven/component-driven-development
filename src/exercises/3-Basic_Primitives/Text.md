@@ -6,6 +6,6 @@
   the pyramids. Archaeologists have even found these dogs entombed
   with Egyptian royalty!
 </Text>
-<Text variant="help">Help text</Text>
+<Text variant="disclaimer">Help text</Text>
 <Text variant="error">Error text</Text>
 ```

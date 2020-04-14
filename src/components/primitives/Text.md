@@ -22,7 +22,7 @@ However, we encourage you to use the `variant` prop as much as possible to ensur
 ```jsx
 <Text variant="heading">Heading</Text>
 <Text variant="body">Body text</Text>
-<Text variant="help">Help text</Text>
+<Text variant="disclaimer">Help text</Text>
 <Text variant="error">Error text</Text>
 ```
 

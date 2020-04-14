@@ -28,7 +28,7 @@ const LoginForm = () => (
 			<Grid gridColumn={[1, 2]} gridGap={3}>
 				<Button variant="primary">Log in</Button>
 				<Link href="#">Forgot your password?</Link>
-				<Text variant="help">
+				<Text variant="disclaimer">
 					By using our site you agree to the following{' '}
 					<Link href="/" color="inherit">
 						Terms of Service
