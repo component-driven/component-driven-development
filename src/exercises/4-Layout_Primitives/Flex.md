@@ -1,6 +1,4 @@
-```jsx harmony
-import Box from './Box';
-
+```jsx
 <Flex flexDirection="column">
   <Box p={3} bg="grey.3">
     Row 1
@@ -11,5 +9,5 @@ import Box from './Box';
   <Box p={3} bg="grey.5">
     Row 3
   </Box>
-</Flex>;
+</Flex>
 ```

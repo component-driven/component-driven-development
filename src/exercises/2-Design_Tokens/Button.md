@@ -1,5 +1,5 @@
 Default button:
 
-```jsx harmony
+```jsx
 <Button>Push me</Button>
 ```

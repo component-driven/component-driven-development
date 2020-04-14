@@ -1,5 +1,4 @@
-```jsx harmony
-import Box from './Box';
+```jsx
 <Grid
   gridGap={2}
   gridTemplateColumns="1fr 2fr 1fr"
@@ -14,5 +13,5 @@ import Box from './Box';
   <Box p={4} bg="grey.4">
     Grid Item
   </Box>
-</Grid>;
+</Grid>
 ```
