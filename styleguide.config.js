@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
-const webpackConfig = require('./webpack.config');
 
 const EXERCISES = [[1, 5], [6, 6]];
 
@@ -12,10 +11,10 @@ const workshopId = 0; // TODO: take workshop ID as a CLI argument
 const config = {
 	serverPort: isExercises ? 6061 : 6060,
 	title: 'Component-driven design systems workshop',
-	styleguideDir: 'build/styleguide',
-	assetsDir: 'public',
+	styleguideDir: 'public/styleguide',
+	assetsDir: 'static',
 	styleguideComponents: {
-		Wrapper: path.join(__dirname, 'src/StyleGuideWrapper'),
+		Wrapper: path.join(__dirname, 'src/ThemeProvider'),
 	},
 	// Read examples from Component.md files only, not from Readme.md
 	getExampleFilename: x => x.replace(/\.js$/, '.md'),
@@ -23,7 +22,17 @@ const config = {
 	pagePerSection: true,
 	exampleMode: 'expand',
 	usageMode: 'expand',
-	webpackConfig,
+	webpackConfig: {
+		module: {
+			rules: [
+				{
+					test: /\.js$/,
+					loader: 'babel-loader',
+					exclude: /node_modules/,
+				},
+			],
+		},
+	},
 	require: [path.join(__dirname, 'styleguide.setup.js')],
 	updateExample(props, exampleFilePath) {
 		const { settings, lang } = props;

@@ -25,9 +25,9 @@ const Text = styled.p(
 );
 
 Text.propTypes = {
-		/** Variants */
+	/** Variants */
 	variant: PropTypes.oneOf(Object.keys(theme.textStyles)),
-		children: PropTypes.node,
+	children: PropTypes.node,
 };
 
 /** @component */
