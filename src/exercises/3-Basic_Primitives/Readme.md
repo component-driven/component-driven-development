@@ -4,7 +4,7 @@ The majority of every user interface is a text. Unsurprisingly, most of the inco
 
 ## 3.1. Creating a generic text component
 
-In the previous exercise we learned how to use design tokens instead of arbitrary CSS values in our components. Now we need a way to write styles and access design tokens inside our application code. without writing custom CSS.
+In the previous exercise we learned how to use design tokens instead of arbitrary CSS values in our components. Now we need a way to write styles and access design tokens inside our application code without writing custom CSS.
 
 We could approach this task naively:
 
