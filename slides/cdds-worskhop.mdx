@@ -927,7 +927,7 @@ import Text from '../primitives/Text';
 ---
 
 ```diff
-	import styled from '@emotion/styled';
+	import styled from 'styled-components';
 +	import { color, margin, typography, variant } from 'styled-system';
 
 +	export const textStyles = {
@@ -1030,7 +1030,7 @@ import Text from '../primitives/Text';
 ---
 
 ```javascript
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { layout, space, color, border, boxShadow } from 'styled-system';
 
 export const Box = styled.div(
