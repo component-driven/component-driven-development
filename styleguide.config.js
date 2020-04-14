@@ -22,6 +22,13 @@ const config = {
 	pagePerSection: true,
 	exampleMode: 'expand',
 	usageMode: 'expand',
+	styles: {
+		StyleGuide: {
+			'@global img': {
+				maxWidth: '100%',
+			},
+		},
+	},
 	webpackConfig: {
 		module: {
 			rules: [

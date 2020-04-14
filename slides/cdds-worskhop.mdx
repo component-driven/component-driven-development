@@ -1,5 +1,7 @@
 import CDTheme from '@component-driven/mdx-deck-theme';
 import Stack from 'stack-styled';
+import CodeLive from './theme/components/LiveCode';
+import RequireExample from './theme/components/RequireExample';
 
 export const theme = { ...CDTheme };
 
@@ -11,23 +13,13 @@ export const theme = { ...CDTheme };
 
 ---
 
-<Figure
-	src={'../assets/component-driven.svg'}
-	alt="Component-driven Logo"
-	caption={
-		<a href="https://component-driven.io">https://component-driven.io</a>
-	}
-/>
-
----
-
 ### Andrey Okonetchnikov
 
 UI developer with experience in both design and development who specializes in interaction design, design systems and modern frontend development.
 
 ---
 
-## Artem Sapegin
+### Artem Sapegin
 
 UI engineer working with web technologies since 1999. Creator of react-styleguidist and component-driven-development 🥑
 
@@ -54,19 +46,11 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-<Secondary>
-
-# What's on your mind?
-
-</Secondary>
-
----
-
 ## Plan of the workshop
 
-1. Introduction to DS and CDD
-1. UI Inventory
-1. Design Tokens
+1. Introductions
+1. Component-Driven Development
+1. UI Inventory & Design Tokens
 1. Basic Primitives
 1. Layout Primitives
 1. UI Patterns
@@ -74,26 +58,60 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-# 🪓 `npm start`
+<Secondary>
 
-- [http://localhost:8000](http://localhost:8000) — App
-- [http://localhost:6060](http://localhost:6060) — Final styleguide
-- [http://localhost:6061](http://localhost:6061) — Exercises
+### What's your name and what's on your mind?
 
----
-
-<Demo src="http://localhost:8000" prodSrc="https://cdds.netlify.com" />
+</Secondary>
 
 ---
 
-<Demo
-	src="http://localhost:6060"
-	prodSrc="https://cdds.netlify.com/styleguide"
+<Figure
+	src={'../assets/component-driven.svg'}
+	alt="Component-driven Logo"
+	caption={
+		<a href="https://component-driven.io">https://component-driven.io</a>
+	}
 />
 
 ---
 
-<Demo src="http://localhost:6061" prodSrc="about:blank" />
+<Primary>
+
+# Component-Driven Development
+
+</Primary>
+
+---
+
+<SplitTitle>
+
+## Component-Driven Development a.k.a. Styleguide-Driven Development
+
+<Grid gap={4} columns={2}>
+<Box>
+
+### 👎 Traditional
+
+- Building directly in the "app"
+- Coupling between components
+- Slow and error-prone
+- Not all possible states covered
+
+</Box>
+<Box>
+
+### 👍 Component-Driven
+
+- Building components in isolation
+- API first, no coupling
+- Fast and reliable
+- All possible states visible
+
+</Box>
+</Grid>
+
+</SplitTitle>
 
 ---
 
@@ -103,6 +121,49 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 	caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
 	gap={4}
 />
+
+---
+
+# 👩‍💻 `npm run exercise`
+
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+<Figure src="/assets/wireframe.jpg" alt="Wireframes" caption="Wireframes" />
+
+<Notes>
+I've recently moved apartments and found this 10 years old wireframes I made with pen and paper.
+And it made me think of how much better this kind of prototyping process is since it allows iterating so quickly
+and doesn't make us to be attached to the prototype.
+
+But most of the projects I had to work on looked differently:
+
+</Notes>
+
+---
+
+<Figure
+	src="/assets/napkin.jpg"
+	alt="Login Form Mockup"
+	caption="Login Form Mockup"
+/>
+
+---
+
+<Demo src="//localhost:6061" prodSrc="about:blank" />
+
+---
+
+> ⏳ 15-20 minutes
+
+---
+
+<Secondary>
+
+## Recap
+
+</Secondary>
 
 ---
 
@@ -232,13 +293,14 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 ---
 
 <TweetEmbed id="1038073603311448064" />
+
 <ThatGuy />
 
 ---
 
 <AnimatedGradient>
 
-# CSS is the source of inconsistent UIs
+# CSS is the source of UI inconsistencies
 
 </AnimatedGradient>
 
@@ -248,7 +310,7 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-## Sources of inconsistent UIs
+## Sources of UI inconsistencies
 
 1. Color & Typography
 1. Spacing & Layout
@@ -349,9 +411,34 @@ Defining & Documenting Design Tokens
 
 ---
 
-<Code language="javascript">
-	{'raw-loader!./code/themeExample.txt'.default}
-</Code>
+```javascript
+export default {
+	colors: {
+		text: '#000',
+		background: '#fff',
+		primary: '#07c',
+		secondary: '#05a',
+		accent: '#609',
+		muted: '#f6f6f6',
+	},
+	space: [0, 4, 8, 16, 32, 64, 128],
+	fontSizes: [12, 14, 16, 20, 24, 32],
+	fonts: {
+		body: 'system-ui, sans-serif',
+		heading: 'system-ui, sans-serif',
+		monospace: 'Menlo, monospace',
+	},
+	fontWeights: {
+		body: 400,
+		heading: 700,
+		bold: 700,
+	},
+	lineHeights: {
+		body: 1.5,
+		heading: 1.125,
+	},
+};
+```
 
 ---
 
@@ -425,7 +512,7 @@ Defining & Documenting Design Tokens
 
 ---
 
-# 🪓 `npm start`
+# 👩‍💻 `npm start`
 
 - [http://localhost:8000](http://localhost:8000) — App
 - [http://localhost:6060](http://localhost:6060) — Final styleguide
@@ -438,6 +525,14 @@ Defining & Documenting Design Tokens
 	alt="Colorsnapper"
 	caption={<a href="https://colorsnapper.com">https://colorsnapper.com</a>}
 />
+
+---
+
+<Demo src="//localhost:8000" />
+
+---
+
+<Demo src="//localhost:6060" />
 
 ---
 
@@ -477,7 +572,29 @@ Defining & Documenting Design Tokens
 		<span>Dropdown</span>
 		<div>
 			<Code language="html">
-				{'raw-loader!./code/dropdownHTML.txt'.default}
+				{`<div class="dropdown">
+    <button
+	  class="btn btn-default dropdown-toggle"
+	  type="button"
+	  id="dropdownMenu1"
+	  data-toggle="dropdown"
+	  aria-haspopup="true"
+	  aria-expanded=“true"
+	>
+      Dropdown
+      <span class="caret"></span>
+    </button>
+    <ul
+	   class="dropdown-menu"
+	   aria-labelledby=“dropdownMenu1"
+	>
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>`}
 			</Code>
 		</div>
 		<span>😩</span>
@@ -496,13 +613,7 @@ Defining & Documenting Design Tokens
 	}
 />
 
-<Image src={'../assets/bootstrap-dropdown.png'} size="contain" />
-
 <ThatGuy />
-
----
-
-> Components is a better way of writing HTML
 
 ---
 
@@ -515,23 +626,57 @@ Defining & Documenting Design Tokens
 
 ---
 
-<SplitTitle>
-
-## HTML & CSS vs. Components
-
-<Code language="html">{'raw-loader!./code/dropdownHTML.txt'.default}</Code>
-
-<Code language="jsx">{'raw-loader!./code/dropdownJSX.txt'.default}</Code>
-
-</SplitTitle>
+> Components is a better way of writing HTML
 
 ---
 
-<SplitTitle>
+```html
+<div class="dropdown">
+  <button
+    class="btn btn-default dropdown-toggle"
+    type="button"
+    id="dropdownMenu1"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded=“true"
+  >
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul
+     class="dropdown-menu"
+     aria-labelledby=“dropdownMenu1"
+  >
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+```
 
-## Components can change over time
+---
 
-```jsx harmony
+```jsx
+<DropdownButton title="Title">
+	<MenuItem eventKey="1">Action</MenuItem>
+	<MenuItem eventKey="2">Another action</MenuItem>
+	<MenuItem eventKey="3" active>
+		Active Item
+	</MenuItem>
+	<MenuItem divider />
+	<MenuItem eventKey="4">Separated link</MenuItem>
+</DropdownButton>
+```
+
+---
+
+> Components can change over time
+
+---
+
+```jsx
 const Dropdown = props => (
 	<select>
 		{props.options.map(option => (
@@ -541,7 +686,9 @@ const Dropdown = props => (
 );
 ```
 
-```jsx harmony
+---
+
+```jsx
 const Dropdown = props => (
 	<div className="dropdown">
 		<button class="btn btn-dropdown">{props.button}</button>
@@ -554,13 +701,9 @@ const Dropdown = props => (
 );
 ```
 
-</SplitTitle>
-
 ---
 
-## Components as a common language
-
-<Stack gridGap={5} p={4} gridTemplateColumns="1fr 1fr">
+<Grid gap={5} columns={2}>
 	<span>A button</span>
 	<Code language="jsx">{`<Button>`}</Code>
 	<span>A primary button</span>
@@ -569,7 +712,7 @@ const Dropdown = props => (
 	<Code language="jsx">{`<Checkbox checked>`}</Code>
 	<span>A product card</span>
 	<Code language="jsx">{`<ProductCard>`}</Code>
-</Stack>
+</Grid>
 
 ---
 
@@ -824,7 +967,7 @@ import Text from '../primitives/Text';
 
 ---
 
-<LiveCode code={'raw-loader!./code/Text.txt'.default} />
+<CodeLive code={<RequireExample path="code/Text.txt" />} />
 
 ---
 
@@ -862,7 +1005,7 @@ import Text from '../primitives/Text';
 
 ---
 
-<LiveCode code={'raw-loader!./code/responsive.txt'.default} />
+<CodeLive code={<RequireExample path="code/responsive.txt" />} />
 
 ---
 
@@ -874,7 +1017,7 @@ import Text from '../primitives/Text';
 
 ---
 
-<LiveCode code={'raw-loader!./code/Box-Text.txt'.default} />
+<CodeLive code={<RequireExample path="code/Box-Text.txt" />} />
 
 ---
 
@@ -937,7 +1080,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={'raw-loader!./code/Box.txt'.default} />
+<CodeLive code={<RequireExample path="code/Box.txt" />} />
 
 ---
 
@@ -970,7 +1113,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={'raw-loader!./code/Flex.txt'.default} />
+<CodeLive code={<RequireExample path="code/Flex.txt" />} />
 
 ---
 
@@ -982,7 +1125,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={'raw-loader!./code/Grid.txt'.default} />
+<CodeLive code={<RequireExample path="code/Grid.txt" />} />
 
 ---
 
@@ -994,7 +1137,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={'raw-loader!./code/Stack.txt'.default} />
+<CodeLive code={<RequireExample path="code/Stack.txt" />} />
 
 ---
 
@@ -1006,7 +1149,7 @@ export const Box = styled.div(
 
 ---
 
-<LiveCode code={'raw-loader!./code/Group.txt'.default} />
+<CodeLive code={<RequireExample path="code/Group.txt" />} />
 
 ---
 

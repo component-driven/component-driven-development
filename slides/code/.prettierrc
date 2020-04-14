@@ -1,3 +1,15 @@
 {
-  "printWidth": 40
+  "printWidth": 40,
+  "overrides": [
+	{
+	  "files": "*.txt",
+	  "options": {
+		"parser": "babel",
+		"printWidth": 40,
+		"useTabs": false,
+		"trailingComma": "none",
+		"proseWrap": "never"
+	  }
+	}
+  ]
 }

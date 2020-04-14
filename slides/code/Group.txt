@@ -1,7 +1,7 @@
 <ThemeProvider theme={theme}>
-	<Box p={5}>
-		<Group
-		/*
+  <Box p={5}>
+    <Group
+    /*
 			separator={
 				<Box
 					as="hr"
@@ -13,39 +13,39 @@
 				/>
 			}
 			 */
-		>
-			<Box
-				as={"span"}
-				bg={"grey.3"}
-				py={2}
-				px={4}
-			>
-				Tag
-			</Box>
-			<Box
-				as={"span"}
-				bg={"grey.3"}
-				py={2}
-				px={4}
-			>
-				Tag
-			</Box>
-			<Box
-				as={"span"}
-				bg={"grey.3"}
-				py={2}
-				px={4}
-			>
-				Tag
-			</Box>
-			<Box
-				as={"span"}
-				bg={"grey.3"}
-				py={2}
-				px={4}
-			>
-				Tag
-			</Box>
-		</Group>
-	</Box>
+    >
+      <Box
+        as={"span"}
+        bg={"grey.3"}
+        py={2}
+        px={4}
+      >
+        Tag
+      </Box>
+      <Box
+        as={"span"}
+        bg={"grey.3"}
+        py={2}
+        px={4}
+      >
+        Tag
+      </Box>
+      <Box
+        as={"span"}
+        bg={"grey.3"}
+        py={2}
+        px={4}
+      >
+        Tag
+      </Box>
+      <Box
+        as={"span"}
+        bg={"grey.3"}
+        py={2}
+        px={4}
+      >
+        Tag
+      </Box>
+    </Group>
+  </Box>
 </ThemeProvider>;
