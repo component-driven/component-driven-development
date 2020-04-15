@@ -1,15 +1,27 @@
 <ThemeProvider theme={theme}>
+<Box as="form" p={5}>
   <Box
-    as="section"
-    p={5}
-    my={5}
-    mx="auto"
-    width={1 / 2}
-    bg="grey.3"
-    color="primary"
+    as="input"
+    display="inline-block"
+    padding={3}
+    marginRight={2}
+    bg="background"
+    color="text"
     border="thin"
-    borderColor="secondary"
+    borderColor="primary"
+    borderRadius="base"
+  />
+  <Box
+    as="button"
+    display="inline-block"
+    paddingX={4}
+    paddingY={3}
+    bg="primary"
+    color="background"
+    border="none"
+    borderRadius="round"
   >
-    Box content
+    Button
   </Box>
+</Box>
 </ThemeProvider>;

@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Button = styled.button`
 	padding: ${props => props.theme.space[3]} ${props => props.theme.space[4]};
@@ -12,10 +13,13 @@ const Button = styled.button`
 Button.propTypes = {
 	/** Button label */
 	children: PropTypes.node,
+	/** Button variation */
+	variant: PropTypes.oneOf(['primary', 'secondary']),
 };
 
-// This will let react-styleguidist know that we're exporting a React component
-// so it can generate the PropTypes table. This is only needed when used
-// with styled-components and such.
+Button.defaultProps = {
+	variant: 'secondary',
+};
+
 /** @component */
 export default Button;

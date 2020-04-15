@@ -1,11 +1,21 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { variant } from 'styled-system';
+// FINAL_START
 import { css } from '@styled-system/css';
+import { variant } from 'styled-system';
+// FINAL_END
 
-/**
- * A button.
- */
+// WORKSHOP_START
+const Button = styled.button`
+	padding: ${props => props.theme.space[3]} ${props => props.theme.space[4]};
+	color: ${props => props.theme.colors.background};
+	background-color: ${props => props.theme.colors.primary};
+	border: 0;
+	border-radius: ${props => props.theme.radii.round};
+`;
+// WORKSHOP_END
+// FINAL_START
 const Button = styled.button(
 	css({
 		boxSizing: 'border-box',
@@ -54,6 +64,7 @@ const Button = styled.button(
 		},
 	})
 );
+// FINAL_END
 
 Button.propTypes = {
 	/** Button label */

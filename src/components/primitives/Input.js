@@ -9,7 +9,6 @@ const Input = styled.input(
 		boxSizing: 'border-box',
 		display: 'block',
 		width: '100%',
-		height: '2.5rem',
 		margin: 0,
 		padding: 3,
 		border: 'thin',

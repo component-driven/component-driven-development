@@ -18,6 +18,7 @@ const Button = styled.button`
 	color: ${props => props.theme.colors.background};
 	background-color: ${props => props.theme.colors.primary};
 	border: 0;
+	border-radius: ${props => props.theme.radii.round};
 `;
 // FINAL_END
 

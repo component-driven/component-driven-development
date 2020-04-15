@@ -1,4 +1,29 @@
-## 5.1 Creating simple UI Patterns
+## 5.1 Rewrite the Button
+
+To make our Button
+
+### The task
+
+1. Rewrite the Button we created before using Box
+1. Make it less flexible: we don't want `padding` and `border` be customizable via props
+1. Add `secondary` and `primary` variants to the button and allow choosing them via props
+
+### The result
+
+```jsx padded
+<Button>Push me</Button>
+<Button variant="primary">Push me</Button>
+```
+
+<details>
+ <summary>Solution</summary>
+
+```js {"file": "final/Button.js", "static": true}
+```
+
+</details>
+
+## 5.2 Creating simple UI Patterns
 
 Let's create a simple `Label` UI pattern.
 
@@ -21,7 +46,7 @@ Let's create a simple `Label` UI pattern.
 
 </details>
 
-## 5.2 Using primitives to compose UI patterns
+## 5.3 Using primitives to compose UI patterns
 
 In the previous exercise we learned how to manage whitespace around our primitives. Now it's time to use what we learned and create an application specific component.
 

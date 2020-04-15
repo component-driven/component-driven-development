@@ -804,24 +804,6 @@ vs.
 
 ---
 
-# 👩‍💻 `npm start`
-
-- [http://localhost:6061](http://localhost:6061) — Exercises
-
----
-
-> ⏳ 15-20 minutes
-
----
-
-<Secondary>
-
-## Recap
-
-</Secondary>
-
----
-
 <Secondary>
 
 # Text
@@ -896,11 +878,7 @@ import Text from '../primitives/Text';
 
 ---
 
-<AnimatedGradient>
-
 > UI inventory helps with defining what's necessary
-
-</AnimatedGradient>
 
 ---
 
@@ -926,45 +904,6 @@ import Text from '../primitives/Text';
 
 ---
 
-```diff
-	import styled from 'styled-components';
-+	import { color, margin, typography, variant } from 'styled-system';
-
-+	export const textStyles = {
-+	  primary: {
-+		fontSize: 2,
-+		color: "text",
-+	  },
-+	  secondary: {
-+		fontSize: 1,
-+		color: "secondary",
-+	  },
-+	}
-
-	export const Text = styled.p(
-		// defaults
-		{
-			m: 0,
-			lineHeight: 1.5,
-		},
-		// API
-		color,
-		typography,
-		margin,
-+		variant({ variants: textStyles }), // Adds `variant` prop
-	);
-```
-
----
-
-```javascript
-import Text from '../primitives/Text';
-
-<Text variant="secondary">Secondary text</Text>;
-```
-
----
-
 ## API: rigidity vs flexibility
 
 - `<Text variant="error">` 😀
@@ -987,6 +926,24 @@ import Text from '../primitives/Text';
 ---
 
 <CodeLive code={<RequireExample path="code/Text.txt" />} />
+
+---
+
+# 👩‍💻 `npm start`
+
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+> ⏳ 15-20 minutes
+
+---
+
+<Secondary>
+
+## Recap
+
+</Secondary>
 
 ---
 
