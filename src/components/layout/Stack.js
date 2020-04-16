@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { system } from 'styled-system';
-import { Flex } from '../';
+import { Box } from '../';
 
-export const Stack = styled(Flex)(
-	{
-		flexDirection: 'column',
-	},
+// We need this export here to fix something
+export const Stack = styled(Box)(
 	/*
 	 * We are using a "lobotomized owl" CSS selector to add margin between children
 	 * More information: https://every-layout.dev/layouts/stack/#the-solution
@@ -24,7 +22,7 @@ export const Stack = styled(Flex)(
 );
 
 Stack.propTypes = {
-	...Flex.propTypes,
+	...Box.propTypes,
 	/** Spacing between items */
 	gap: PropTypes.oneOfType([
 		PropTypes.number,

@@ -1,18 +1,15 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { system } from 'styled-system';
-import { Flex } from '../../components';
+import { Box } from '../../components';
 
 // WORKSHOP_START
-const Stack = styled(Flex)({
+const Stack = styled(Box)({
 	// Your styles here
 });
 // WORKSHOP_END
 // FINAL_START
-export const Stack = styled(Flex)(
-	{
-		flexDirection: 'column',
-	},
+const Stack = styled(Box)(
 	/*
 	 * We are using a "lobotomized owl" CSS selector to add margin between children
 	 * More information: https://every-layout.dev/layouts/stack/#the-solution
@@ -31,7 +28,7 @@ export const Stack = styled(Flex)(
 // FINAL_END
 
 Stack.propTypes = {
-	...Flex.propTypes,
+	...Box.propTypes,
 	/** Spacing between items */
 	gap: PropTypes.oneOfType([
 		PropTypes.number,
