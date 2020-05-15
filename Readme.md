@@ -1,8 +1,8 @@
-# Component-driven development workshop
+# Design systems for React developers and Resilient component libraries in React workshops
 
 [![Build Status](https://travis-ci.org/component-driven/component-driven-development.svg)](https://travis-ci.org/component-driven/component-driven-development)
 
-This repository contains exercises for Component-driven development workshop.
+This repository contains exercises for **Design systems for React developers** and **Resilient component libraries in React** workshops.
 
 _Before attending the workshop, please make sure you can run the code in this repository._
 
@@ -29,7 +29,7 @@ We recommend [nvm](https://github.com/creationix/nvm) or [n](https://github.com/
 
 ## Setup
 
-First, clone the repository and install the dependencies:
+First, clone the repository, and install the dependencies:
 
 ```
 git clone https://github.com/component-driven/component-driven-development.git
@@ -37,14 +37,28 @@ cd component-driven-development
 npm install
 ```
 
-Then run:
+### Design systems for React developers
+
+Run:
 
 - `npm start` to work on exercises and run the completed style guide
 - `npm run app` to run the completed app
 
 Or:
 
-- `npm run exercises` to work on exercises
+- `npm run exercises-cdd` to work on exercises
+- `npm run styleguide` to run the completed style guide
+
+### Resilient component libraries in React
+
+Run:
+
+- `npm run start-rcl` to work on exercises and run the completed style guide
+- `npm run app` to run the completed app
+
+Or:
+
+- `npm run exercises-rcl` to work on exercises
 - `npm run styleguide` to run the completed style guide
 
 ## Tech stack

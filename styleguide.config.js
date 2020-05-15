@@ -2,14 +2,23 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
-const EXERCISES = [[1, 5], [6, 6]];
+const EXERCISES = {
+	'workshop-cdd': [1, 5],
+	'workshop-rcl': [6, 6],
+};
 
-// styleguidist server --exercise
-const isExercises = !!process.argv.find(x => x === '--exercise');
-const workshopId = 0; // TODO: take workshop ID as a CLI argument
+// styleguidist server --exercises-cdd OR styleguidist server --exercises-rcl
+const isExercisesCdd = !!process.argv.find(x => x === '--exercises-cdd');
+const isExercisesRcl = !!process.argv.find(x => x === '--exercises-rcl');
+
+const mode = isExercisesCdd
+	? 'workshop-cdd'
+	: isExercisesRcl
+	? 'workshop-rcl'
+	: 'styleguide';
 
 const config = {
-	serverPort: isExercises ? 6061 : 6060,
+	serverPort: mode === 'styleguide' ? 6060 : 6061,
 	title: 'Component-driven design systems workshop',
 	styleguideDir: 'public/styleguide',
 	assetsDir: 'static',
@@ -59,20 +68,7 @@ const config = {
 	},
 };
 
-if (isExercises) {
-	// Generate sections for all exercises
-	const exercisesRoot = path.join(__dirname, `src/exercises`);
-	const [first, last] = EXERCISES[workshopId];
-	const exercises = glob.sync(`${exercisesRoot}/*`).slice(first - 1, last);
-	config.sections = exercises.map(folder => ({
-		name: path
-			.basename(folder)
-			.replace(/(\d)-/, '')
-			.replace(/_/g, ' '),
-		content: `${folder}/Readme.md`,
-		components: `${folder}/**/*.js`,
-	}));
-} else {
+if (mode === 'styleguide') {
 	// Styleguide
 	config.sections = [
 		{
@@ -109,6 +105,19 @@ if (isExercises) {
 			components: 'src/components/patterns/**/[A-Z]*.js',
 		},
 	];
+} else {
+	// Generate sections for all exercises
+	const exercisesRoot = path.join(__dirname, `src/exercises`);
+	const [first, last] = EXERCISES[mode];
+	const exercises = glob.sync(`${exercisesRoot}/*`).slice(first - 1, last);
+	config.sections = exercises.map(folder => ({
+		name: path
+			.basename(folder)
+			.replace(/(\d)-/, '')
+			.replace(/_/g, ' '),
+		content: `${folder}/Readme.md`,
+		components: `${folder}/**/*.js`,
+	}));
 }
 
 module.exports = config;
