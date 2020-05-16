@@ -4,7 +4,7 @@ UI Inventory is the process of splitting the existing UI into smaller chunks. Ma
 
 > Design tokens are the single source of truth for project’s colors, whitespace, font styles and other design decisions.
 
-We’ve prepared the basic structure for the design tokens file. Open the `theme.js` in the exercise directory (`src/exercises/2-Design_Tokens/theme.js`).
+We’ve prepared the basic structure for the design tokens file. Open the `theme.js` in the exercise directory (`src/exercises/1-2-Design_Tokens/theme.js`).
 
 ### The task
 
@@ -68,10 +68,14 @@ const Message = styled.p`
 <details>
  <summary>Solution</summary>
 
-```js {"file": "final/Button.js", "static": true}
+The `Button` component (`src/exercises/1-2-Design_Tokens/Button.js`):
+
+```jsx {"file": "final/Button.js", "static": true}
 ```
 
-```js {"file": "final/LoginForm.js", "static": true}
+The `LoginForm` component (`src/exercises/1-2-Design_Tokens/LoginForm.js`):
+
+```jsx {"file": "final/LoginForm.js", "static": true}
 ```
 
 </details>

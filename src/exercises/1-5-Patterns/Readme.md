@@ -18,7 +18,9 @@ To make our Button
 <details>
  <summary>Solution</summary>
 
-```js {"file": "final/Button.js", "static": true}
+The `Button` component (`src/exercises/1-5-Patterns/Button.js`):
+
+```jsx {"file": "final/Button.js", "static": true}
 ```
 
 </details>
@@ -41,7 +43,9 @@ Let's create a simple `Label` UI pattern.
 <details>
  <summary>Solution</summary>
 
-```js {"file": "final/Label.js", "static": true}
+The `Label` component (`src/exercises/1-5-Patterns/Label.js`):
+
+```jsx {"file": "final/Label.js", "static": true}
 ```
 
 </details>
@@ -69,7 +73,9 @@ Let's create a LoginForm with the primitives we created today.
 <details>
  <summary>Solution</summary>
 
-```js {"file": "final/LoginForm.js", "static": true}
+The `LogingForm` component (`src/exercises/1-5-Patterns/LoginForm.js`):
+
+```jsx {"file": "final/LoginForm.js", "static": true}
 ```
 
 </details>
