@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { system } from 'styled-system';
-import { Flex } from '../../components';
+import { Box } from '../../components';
 
-const Stack = styled(Flex)({
+const Stack = styled(Box)({
 	// Your styles here
 });
 
 Stack.propTypes = {
-	...Flex.propTypes,
+	...Box.propTypes,
 	/** Spacing between items */
 	gap: PropTypes.oneOfType([
 		PropTypes.number,
