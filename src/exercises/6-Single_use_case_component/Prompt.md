@@ -3,14 +3,11 @@ const [isVisible, setIsVisible] = React.useState(false);
 const [name, setName] = React.useState('');
 <>
   {isVisible && (
-    <Dialog
+    <Prompt
       message="What’s your name, yo?"
       defaultValue="Incognito"
       onSubmit={value => {
         setName(value);
-        setIsVisible(false);
-      }}
-      onClose={() => {
         setIsVisible(false);
       }}
     />

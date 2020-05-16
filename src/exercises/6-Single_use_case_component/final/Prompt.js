@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Dialog({ message, defaultValue, onSubmit, onClose }) {
+export default function Prompt({ message, defaultValue, onSubmit }) {
 	const [value, setValue] = React.useState(defaultValue);
 	return (
 		<div
@@ -36,11 +37,15 @@ export default function Dialog({ message, defaultValue, onSubmit, onClose }) {
 					/>
 				</label>
 				<div>
-					<button type="submit" variant="primary">
-						OK
-					</button>
+					<button type="submit">OK</button>
 				</div>
 			</form>
 		</div>
 	);
 }
+
+Prompt.propTypes = {
+	message: PropTypes.string.isRequired,
+	defaultValue: PropTypes.string,
+	onSubmit: PropTypes.func.isRequired,
+};
