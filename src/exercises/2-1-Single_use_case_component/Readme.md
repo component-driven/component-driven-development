@@ -24,7 +24,7 @@ Edit these files as you like: you’ll see the results immediately here, in Styl
 <details>
  <summary>Solution</summary>
 
-The `Prompt` component (`src/exercises/2-6-Single_use_case_component/Prompt.js`):
+The `Prompt` component (`src/exercises/2-1-Single_use_case_component/Prompt.js`):
 
 ```jsx {"file": "final/Prompt.js", "static": true}
 ```

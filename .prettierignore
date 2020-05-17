@@ -1,3 +1,4 @@
 build/
 scripts/vendor/
 src/exercises/2-1-Single_use_case_component/templates/Prompt.js
+src/exercises/2-2-Flexible_component/templates/Prompt.js
