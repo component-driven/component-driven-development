@@ -6,7 +6,7 @@ This repository contains exercises for **Design systems for React developers** a
 
 _Before attending the workshop, please make sure you can run the code in this repository._
 
-**[Try the app](https://cdds.netlify.com/) or [view the style guide](https://cdds.netlify.com/styleguide/).**
+**[Try the app](https://cdds.component-driven.io/) or [view the style guide](https://cdds.component-driven.io/styleguide/).**
 
 ## Prerequisites
 
