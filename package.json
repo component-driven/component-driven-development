@@ -16,7 +16,6 @@
 		"build": "gatsby clean && gatsby build --prefix-paths && npm run styleguide:build",
 		"pretest": "eslint src",
 		"test": "echo ok",
-		"posttest": "npm run format",
 		"exercises-cdd": "styleguidist server --open --exercises-cdd",
 		"exercises-rcl": "styleguidist server --open --exercises-rcl",
 		"prestyleguide": "npm run validate",
