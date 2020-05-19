@@ -1,0 +1,1575 @@
+import CDTheme from '@component-driven/mdx-deck-theme';
+import Stack from 'stack-styled';
+import CodeLive from './theme/components/LiveCode';
+import RequireExample from './theme/components/RequireExample';
+
+export const theme = { ...CDTheme };
+
+<Primary>
+
+# Resilient ⚛ Component Libraries
+
+</Primary>
+
+---
+
+<Secondary>
+
+# [bit.ly/cddwrkshp](https://bit.ly/cddwrkshp)
+
+</Secondary>
+
+---
+
+## Schedule
+
+- 9:00-12:00 🏁 Workshop
+- 12:00-13:00 🥗 Lunch
+- 13:00-17:00 👨‍💻 Workshop
+
+~10-15 minutes breaks every hour.
+
+---
+
+## Remote workshop
+
+1. Please keep your camera on for a more personal feeling.
+1. "Rise hand". Ask questions any time!
+1. Exercises with teams 5-6 people in breakout rooms.
+1. Use "Ask a question" in the breakout room to get attention
+1. Someone should always share their screen.
+
+---
+
+## Plan of the workshop
+
+1. Introductions
+1. Why developing a component library
+1. Primitives
+1. UI Composition
+1. Behavior Composition
+1. Patterns
+1. Maintenance
+1. Discussion and Q&A
+
+---
+
+<Secondary>
+
+### What's your name and what's on your mind?
+
+</Secondary>
+
+---
+
+### Andrey Okonetchnikov
+
+UI developer with experience in both design and development who specializes in interaction design, design systems and modern frontend development.
+
+[@okonetchnikov](https://twitter.com/okonetchnikov)
+
+---
+
+### Artem Sapegin
+
+UI engineer working with web technologies since 1999. Creator of react-styleguidist and component-driven-development 🥑
+
+[@iamsapegin](https://twitter.com/iamsapegin)
+
+---
+
+<Primary>
+
+# Why building a component library?
+
+</Primary>
+
+---
+
+## HTML has lots of UI primitives
+
+---
+
+## HTML has lots of UI primitives?
+
+---
+
+<Stack gridGap={5} p={4} gridTemplateColumns="auto 1fr auto">
+	<Appear>
+		<span>Text, Heading</span>
+		<div>
+			<Code language="html">{`<h1>Heading</h1>
+<p>Text</p>`}</Code>
+		</div>
+		<span>️😊</span>
+		<span>Link</span>
+		<div>
+			<Code language="html">{`<a href="#">Link</a>`}</Code>
+		</div>
+		<span>🤔</span>
+		<span>Button</span>
+		<div>
+			<Code language="html">
+				{`<button>Button</button>
+<input type="button">Button</input>`}
+			</Code>
+		</div>
+		<span>🙄</span>
+		<span>Dropdown</span>
+		<div>
+			<Code language="html">
+				{`<div class="dropdown">
+    <button
+	  class="btn btn-default dropdown-toggle"
+	  type="button"
+	  id="dropdownMenu1"
+	  data-toggle="dropdown"
+	  aria-haspopup="true"
+	  aria-expanded=“true"
+	>
+      Dropdown
+      <span class="caret"></span>
+    </button>
+    <ul
+	   class="dropdown-menu"
+	   aria-labelledby=“dropdownMenu1"
+	>
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>`}
+			</Code>
+		</div>
+		<span>😩</span>
+	</Appear>
+</Stack>
+
+---
+
+<Figure
+	src={'/assets/bootstrap-dropdown.png'}
+	alt="Bootstrap Documentation Screenshot"
+	caption={
+		<a href="https://getbootstrap.com/docs/3.3/components/#dropdowns">
+			https://getbootstrap.com/docs/3.3/components/#dropdowns
+		</a>
+	}
+/>
+
+<ThatGuy />
+
+---
+
+<Figure
+	src="/assets/html-interactive.png"
+	alt="HTML Interactive Elements"
+	caption="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+/>
+
+---
+
+# Components
+
+- `<Button>` → `<button>`
+- `<Input>` → `<input type="text">`
+- `<Checkbox>` → `<input type="checkbox">`
+- `<Dropdown>` → ~~`<select>`~~ `<div class="dropdown">...`
+
+---
+
+> Components: a better way of writing HTML
+
+---
+
+```html
+<div class="dropdown">
+  <button
+    class="btn btn-default dropdown-toggle"
+    type="button"
+    id="dropdownMenu1"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded=“true"
+  >
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul
+     class="dropdown-menu"
+     aria-labelledby=“dropdownMenu1"
+  >
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+```
+
+---
+
+```jsx
+<DropdownButton title="Title">
+	<MenuItem eventKey="1">Action</MenuItem>
+	<MenuItem eventKey="2">Another action</MenuItem>
+	<MenuItem eventKey="3" active>
+		Active Item
+	</MenuItem>
+	<MenuItem divider />
+	<MenuItem eventKey="4">Separated link</MenuItem>
+</DropdownButton>
+```
+
+---
+
+> Components can change over time
+
+---
+
+```jsx
+const Dropdown = props => (
+	<select>
+		{props.options.map(option => (
+			<option>{option}</option>
+		))}
+	</select>
+);
+```
+
+---
+
+```jsx
+const Dropdown = props => (
+	<div className="dropdown">
+		<button class="btn btn-dropdown">{props.button}</button>
+		<ul>
+			{props.options.map(option => (
+				<li>{option}</li>
+			))}
+		</ul>
+	</div>
+);
+```
+
+---
+
+## A11Y
+
+---
+
+<Demo src="http://fraserxu.me/react-dropdown/" />
+
+---
+
+> Components: a common UI language
+
+---
+
+<Grid gap={5} columns={2}>
+	<span>A button</span>
+	<Code language="jsx">{`<Button>`}</Code>
+	<span>A primary button</span>
+	<Code language="jsx">{`<Button primary>`}</Code>
+	<span>A cheked checkbox</span>
+	<Code language="jsx">{`<Checkbox checked>`}</Code>
+	<span>A product card</span>
+	<Code language="jsx">{`<ProductCard>`}</Code>
+</Grid>
+
+---
+
+<SplitTitle>
+
+## Component libraries
+
+- enable faster development
+- abstract implementation details
+- designed for change,
+- intuitive to use
+- inclusive
+- based on strong principles
+
+</SplitTitle>
+
+---
+
+// TODO: Examples
+
+---
+
+<SplitTitle>
+
+## Why own component library?
+
+1. 👍 Control
+1. 👍 Development Speed
+1. 👍 Custom Requirements
+1. 👍👎 Maintenance
+
+</SplitTitle>
+<Notes>
+- Open source software is often written in a free time by a small amount of people. If something goes wrong, you might end up with an unmaintained software. I would not bet my business on that.
+- Ready made component libraries are often try to be universal and please everyone. That comes with the cost of verbosity, greater choice and complexity. At the same time they often don't cover specific requirements of your business.
+- It's harder to fix things in the code that you don't own. If a requirement for one of the component changes, it might take weeks to turn over the formal process and get a new version even with a well maintained component library. All this time you'll probably be maintaining your own fork of the repo with all its bells and whistles.
+</Notes>
+
+---
+
+<Grid columns={3}>
+<Box>
+
+### OSS
+
+ex. Material UI, Ant Design, Bootstrap
+
+</Box>
+<Box>
+
+### Mix
+
+Re-export components from OSS + build upon.
+
+</Box>
+<Box>
+
+### Custom
+
+Build everything from scratch
+
+</Box>
+</Grid>
+
+---
+
+<SplitTitle>
+
+## Mixed approach
+
+```diff
+export { DatePicker } from "material-ui"
+
+// In your app
+- import { DatePicker } from "material-ui"
++ import { DatePicker } from "./components"
+```
+
+</SplitTitle>
+
+---
+
+# 👩‍💻 `npm run exercise`
+
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+<Figure
+	src={'/assets/react-styleguidist.svg'}
+	alt="React-styleguidist Logo"
+	caption={<a href="https://react-styleguidist.js.org">react-styleguidist</a>}
+	gap={4}
+/>
+
+---
+
+<Demo src="//localhost:6061" prodSrc="about:blank" />
+
+---
+
+> ⏳ 15-20 minutes
+
+---
+
+<Secondary>
+
+## Recap
+
+</Secondary>
+
+---
+
+<Primary>
+
+# UI Primitives
+
+</Primary>
+
+---
+
+<TweetEmbed id="1090733766950223878" />
+
+---
+
+rigidity vs flexibility
+
+## Why do we need design systems?
+
+1. Products becoming more complex
+1. Development speed is mission critical
+1. End quality is mission critical, too
+1. Our processes of building for web are outdated
+1. Communication is everything
+
+---
+
+## Building UI with HTML & CSS (past ~20 years)
+
+1. Get a static mockup from a designer
+1. Write HTML markup that represents the mockup
+1. Write CSS and connect with HTML using classes
+1. "Sprinkle" JavaScript using classes to add interactivity
+1. Hand off to a backend developer
+1. Replace HTML with PHP, Ruby, Java, ...
+1. ...
+1. Profit
+
+---
+
+## Building UI with React (past ~5 years)
+
+1. Get a static mockup from a designer
+1. Get data from API endpoint
+1. Render data in JSX using HTML
+1. Write CSS and connect with JSX using `className`
+1. ...
+1. Profit
+
+---
+
+<Secondary>
+
+> Designers are still drawing **static mockups** and developers are writing **HTML & CSS**
+
+</Secondary>
+
+---
+
+<Secondary>
+
+# What's the problem with static mockups?
+
+</Secondary>
+
+---
+
+<Image src={'/assets/dribbble1.png'} size="contain" />
+
+---
+
+<Image src={'/assets/dribbble2.png'} size="contain" />
+
+---
+
+## Static mockups...
+
+1. not covering all possible states
+1. not covering all possible resolutions
+1. losing lots of design knowledge during ~~translation~~ hand-off
+1. are static!
+
+---
+
+<Secondary>
+
+# What's the problem with using CSS?
+
+</Secondary>
+
+---
+
+<AnimatedGradient>
+
+# CSS is hard 🤯
+
+</AnimatedGradient>
+
+---
+
+<Secondary>
+
+# Quiz
+
+</Secondary>
+
+---
+
+<SplitTitle>
+
+## What text color Text A and Text B going to be?
+
+<Split>
+
+```css
+.red {
+	color: red;
+}
+
+.blue {
+	color: blue;
+}
+```
+
+```html
+<p class="red blue">Text A</p>
+<p class="blue red">Text B</p>
+```
+
+</Split>
+
+</SplitTitle>
+
+---
+
+<TweetEmbed id="1038073603311448064" />
+
+<ThatGuy />
+
+---
+
+<AnimatedGradient>
+
+# CSS is the source of UI inconsistencies
+
+</AnimatedGradient>
+
+---
+
+<Image src={'/assets/doors.jpg'} />
+
+---
+
+## Sources of UI inconsistencies
+
+1. Color & Typography
+1. Spacing & Layout
+
+---
+
+<SplitTitle>
+
+## Custom CSS
+
+<Split>
+
+```css
+.description {
+	margin-bottom: 20px;
+	font-size: 16px;
+	color: #c9b8b9;
+}
+```
+
+```css
+.count {
+	margin-left: 0.75em;
+	font-size: 14px;
+	opacity: 0.5;
+	color: #fc9;
+}
+```
+
+</Split>
+</SplitTitle>
+
+---
+
+<Image src={'/assets/too-many-buttons.jpg'} size="contain" />
+
+---
+
+<Image src={'/assets/too-many-buttons-2.jpg'} size="contain" />
+
+---
+
+<Image src={'/assets/text.png'} size="contain" />
+
+---
+
+> CSS is too expressive 👩‍🎨
+
+---
+
+<Secondary>
+
+## What should we do?
+
+</Secondary>
+
+---
+
+> Stop writing CSS!
+
+---
+
+<Primary>
+
+# Design tokens
+
+</Primary>
+
+---
+
+<Image src={'/assets/dls-foundation.png'} size="contain" />
+
+---
+
+> Design tokens are everything you use more than once in your styles
+
+---
+
+## UI Inventory process
+
+Defining & Documenting Design Tokens
+
+---
+
+<Figure src={'/assets/ui-inventory-1.png'} alt="UI inventory process" />
+
+---
+
+<Figure src={'/assets/ui-inventory-2.png'} alt="UI inventory process" />
+
+---
+
+<Figure src={'/assets/ui-inventory-3.png'} alt="UI inventory process" />
+
+---
+
+<Figure src={'/assets/text.png'} alt="Different text styles" />
+
+---
+
+```javascript
+export default {
+	colors: {
+		text: '#000',
+		background: '#fff',
+		primary: '#07c',
+		secondary: '#05a',
+		accent: '#609',
+		muted: '#f6f6f6',
+	},
+	space: [0, 4, 8, 16, 32, 64, 128],
+	fontSizes: [12, 14, 16, 20, 24, 32],
+	fonts: {
+		body: 'system-ui, sans-serif',
+		heading: 'system-ui, sans-serif',
+		monospace: 'Menlo, monospace',
+	},
+	fontWeights: {
+		body: 400,
+		heading: 700,
+		bold: 700,
+	},
+	lineHeights: {
+		body: 1.5,
+		heading: 1.125,
+	},
+};
+```
+
+---
+
+<SplitTitle>
+
+## Naming of design tokens
+
+- x-small small medium large x-large
+- xs sm md lg xl
+- xs s m l xl
+- 0 1 2 3 4 5
+- 100 200 300 400 500
+- ~~alpha beta gamma delta epsilon~~
+
+</SplitTitle>
+
+---
+
+<Figure
+	src={'/assets/design-tokens-colors.png'}
+	alt="Design tokens: colors"
+	caption={
+		<a href="https://marvelapp.com/styleguide/design/color-scheme">
+			https://marvelapp.com/styleguide/design/color-scheme
+		</a>
+	}
+/>
+
+---
+
+<Figure
+	src={'/assets/design-tokens-gradients.png'}
+	alt="Design tokens: gradients"
+	caption={
+		<a href="https://cloudflare.github.io/cf-ui/#cf-design-gradients">
+			https://cloudflare.github.io/cf-ui/#cf-design-gradients
+		</a>
+	}
+/>
+
+---
+
+<Figure
+	src={'/assets/design-tokens-fonts-spacing.png'}
+	alt="Design tokens: fonts and spacing"
+	caption={
+		<a href="https://vueds.com/example/#!/Design%20Tokens">
+			https://vueds.com/example/#!/Design%20Tokens
+		</a>
+	}
+/>
+
+---
+
+<Figure
+	src={'/assets/design-tokens-misc.png'}
+	alt="Design tokens"
+	caption={
+		<a href="https://www.lightningdesignsystem.com/design-tokens/">
+			https://www.lightningdesignsystem.com/design-tokens/
+		</a>
+	}
+/>
+
+---
+
+<Demo
+	src="http://localhost:6060"
+	prodSrc="https://cdds.netlify.com/styleguide"
+/>
+
+---
+
+# 👩‍💻 `npm start`
+
+- [http://localhost:8000](http://localhost:8000) — App
+- [http://localhost:6060](http://localhost:6060) — Final styleguide
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+<Figure
+	src={'/assets/colorsnapper.png'}
+	alt="Colorsnapper"
+	caption={<a href="https://colorsnapper.com">https://colorsnapper.com</a>}
+/>
+
+---
+
+> ⏳ 15-20 minutes
+
+---
+
+<Secondary>
+
+## Recap
+
+</Secondary>
+
+---
+
+<Primary>
+
+# UI Primitives
+
+</Primary>
+
+---
+
+> HTML was designed for documents, not applications!
+
+---
+
+<Stack gridGap={5} p={4} gridTemplateColumns="auto 1fr auto">
+	<Appear>
+		<span>Text, Heading</span>
+		<div>
+			<Code language="html">{`<h1>Heading</h1>
+<p>Text</p>`}</Code>
+		</div>
+		<span>️😊</span>
+		<span>Link</span>
+		<div>
+			<Code language="html">{`<a href="#">Link</a>`}</Code>
+		</div>
+		<span>🤔</span>
+		<span>Button</span>
+		<div>
+			<Code language="html">
+				{`<button>Button</button>
+<input type="button">Button</input>`}
+			</Code>
+		</div>
+		<span>🙄</span>
+		<span>Dropdown</span>
+		<div>
+			<Code language="html">
+				{`<div class="dropdown">
+    <button
+	  class="btn btn-default dropdown-toggle"
+	  type="button"
+	  id="dropdownMenu1"
+	  data-toggle="dropdown"
+	  aria-haspopup="true"
+	  aria-expanded=“true"
+	>
+      Dropdown
+      <span class="caret"></span>
+    </button>
+    <ul
+	   class="dropdown-menu"
+	   aria-labelledby=“dropdownMenu1"
+	>
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </div>`}
+			</Code>
+		</div>
+		<span>😩</span>
+	</Appear>
+</Stack>
+
+---
+
+<Figure
+	src={'/assets/bootstrap-dropdown.png'}
+	alt="Bootstrap Documentation Screenshot"
+	caption={
+		<a href="https://getbootstrap.com/docs/3.3/components/#dropdowns">
+			https://getbootstrap.com/docs/3.3/components/#dropdowns
+		</a>
+	}
+/>
+
+<ThatGuy />
+
+---
+
+# Components
+
+- `<Button>` → `<button>`
+- `<Input>` → `<input type="text">`
+- `<Checkbox>` → `<input type="checkbox">`
+- `<Dropdown>` → ~~`<select>`~~ `<div class="dropdown">...`
+
+---
+
+> Components is a better way of writing HTML
+
+---
+
+```html
+<div class="dropdown">
+  <button
+    class="btn btn-default dropdown-toggle"
+    type="button"
+    id="dropdownMenu1"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded=“true"
+  >
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul
+     class="dropdown-menu"
+     aria-labelledby=“dropdownMenu1"
+  >
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+```
+
+---
+
+```jsx
+<DropdownButton title="Title">
+	<MenuItem eventKey="1">Action</MenuItem>
+	<MenuItem eventKey="2">Another action</MenuItem>
+	<MenuItem eventKey="3" active>
+		Active Item
+	</MenuItem>
+	<MenuItem divider />
+	<MenuItem eventKey="4">Separated link</MenuItem>
+</DropdownButton>
+```
+
+---
+
+> Components can change over time
+
+---
+
+```jsx
+const Dropdown = props => (
+	<select>
+		{props.options.map(option => (
+			<option>{option}</option>
+		))}
+	</select>
+);
+```
+
+---
+
+```jsx
+const Dropdown = props => (
+	<div className="dropdown">
+		<button class="btn btn-dropdown">{props.button}</button>
+		<ul>
+			{props.options.map(option => (
+				<li>{option}</li>
+			))}
+		</ul>
+	</div>
+);
+```
+
+---
+
+<Grid gap={5} columns={2}>
+	<span>A button</span>
+	<Code language="jsx">{`<Button>`}</Code>
+	<span>A primary button</span>
+	<Code language="jsx">{`<Button primary>`}</Code>
+	<span>A cheked checkbox</span>
+	<Code language="jsx">{`<Checkbox checked>`}</Code>
+	<span>A product card</span>
+	<Code language="jsx">{`<ProductCard>`}</Code>
+</Grid>
+
+---
+
+> Components is a common UI language
+
+<Notes>
+	You can watch my talk from React Amsterdam or React Finland called "A Common
+	Design Language".
+</Notes>
+
+---
+
+<Primary>
+
+# Primitive components
+
+</Primary>
+
+---
+
+<Image src={'/assets/legos.jpg'} />
+
+---
+
+> Primitives are the building blocks of the user interface.
+
+---
+
+<Image src={'/assets/legos-assembled.jpg'} />
+
+---
+
+<Primary>
+
+# Basic Primitives
+
+</Primary>
+
+---
+
+## The React way™
+
+---
+
+<Code language="jsx" inline>{`<button onclick={handleClick} />`}</Code>
+
+vs.
+
+<Code language="jsx" inline>{`<Button onClick={handleClick} />`}</Code>
+
+---
+
+<Code
+	language="jsx"
+	inline
+>{`<font face="Arial" size="3" color="red" />`}</Code>
+
+vs.
+
+<Code
+	language="jsx"
+	inline
+>{`<Text fontFace="base" fontSize={3} color="danger" />`}</Code>
+
+---
+
+> Learn once, use everywhere
+
+---
+
+## CSS + React way™ = styled-system
+
+---
+
+<Figure
+	src={'/assets/styled-system.png'}
+	alt="Styled-system Webiste"
+	caption={<a href="https://styled-system.com">https://styled-system.com</a>}
+/>
+
+---
+
+> Styled System lets you quickly build custom UI components with constraint-based style props based on scales defined in your theme.
+
+---
+
+<Secondary>
+
+# Text
+
+</Secondary>
+
+---
+
+## API design
+
+Things developers will be allowed to customize
+
+- Typography (`fontSize`, `fontWeight`, `letterSpacing`, etc.)
+- Alignment (`left`, `center`, `right`, ~~`justify`~~)
+- Color (`color`)
+- Whitespace (`margin`)
+- HTML elements (`p`, `span`, `label`)
+
+---
+
+> Define a minimal set of props that can be customized
+
+---
+
+```javascript
+import styled from 'styled-components';
+import { color, margin, typography } from 'styled-system';
+
+export const Text = styled.p(
+	// defaults
+	{
+		margin: 0,
+		lineHeight: 1.5,
+	},
+	// API
+	color,
+	typography,
+	margin
+);
+```
+
+---
+
+```javascript
+import Text from '../primitives/Text';
+
+<Text color="error" fontWeight="bold">
+	Bold red text
+</Text>;
+```
+
+---
+
+<Image src={'/assets/text.png'} size="contain" />
+
+---
+
+## Only necessary text styles
+
+<ul>
+	<li>
+		<h1 style={{ textAlign: 'left', margin: 0 }}>Heading 1</h1>
+	</li>
+	<li>
+		<h2 style={{ textAlign: 'left', margin: 0 }}>Heading 2</h2>
+	</li>
+	<li>Normal text</li>
+	<li style={{ color: '#979797', fontSize: '80%' }}>Secondary text</li>
+	<li style={{ color: '#930' }}>Error</li>
+	<li>etc.</li>
+</ul>
+
+---
+
+> UI inventory helps with defining what's necessary
+
+---
+
+## API: boolean vs variant
+
+- `<Text primary>` 😀
+- `<Text secondary>` 😀
+- `<Text primary secondary>` 🤯
+
+---
+
+## API: boolean vs variant
+
+- `<Text variant="primary">` 😀
+- `<Text variant="secondary">` 😀
+- ~~`<Text variant="primary secondary">`~~ 🚫
+- `<Button variant="primary" disabled>` 😀
+- `<Button variant="secondary" disabled>` 😀
+
+---
+
+> Variants make impossible states impossible
+
+---
+
+## API: rigidity vs flexibility
+
+- `<Text variant="error">` 😀
+- `<Text color="red" size="xs">` 😀
+- `<Text variant="muted" css={{ letterSpacing: 'caps' }} >` 🤓
+
+---
+
+> Make primitives flexible to not block you
+
+---
+
+## API: HTML element
+
+- `<Text>` → `<p>` 😀
+- `<Text inline>` → `<span>` 😐
+- `<Text label>` → `<label>` 😭
+- `<Text as="label">` → `<label>` 😀
+
+---
+
+<CodeLive code={<RequireExample path="code/Text.txt" />} />
+
+---
+
+# 👩‍💻 `npm start`
+
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+> ⏳ 15-20 minutes
+
+---
+
+<Secondary>
+
+## Recap
+
+</Secondary>
+
+---
+
+<Primary>
+
+# Layout Primitives
+
+</Primary>
+
+---
+
+<Figure
+	src={'/assets/spacing-scale.png'}
+	alt="Spacing composition"
+	caption="Space composition by Nathan Curtis"
+/>
+
+---
+
+> Primitives to control layout and white space around their children
+
+---
+
+<Secondary>
+
+# Box
+
+</Secondary>
+
+---
+
+## API design
+
+- Layout (`width`, `height`, etc.)
+- White space (`margin`, `padding`)
+- Colors (`background`, `color`)
+- Borders (`border`, `border-radius`),
+- Shadows (`box-shadow`),
+- HTML elements (`div`, `span`, `section`, ...)
+
+---
+
+```javascript
+import styled from 'styled-components';
+import { layout, space, color, border, boxShadow } from 'styled-system';
+
+export const Box = styled.div(
+	// defaults
+	{
+		minWidth: 0,
+	},
+	// API
+	layout,
+	space,
+	color,
+	border,
+	boxShadow
+);
+```
+
+---
+
+<CodeLive code={<RequireExample path="code/Box.txt" />} />
+
+---
+
+<AnimatedGradient>
+
+> Model API based on CSS knowledge
+
+</AnimatedGradient>
+
+---
+
+<Secondary>
+
+# Flex
+
+</Secondary>
+
+---
+
+## Flexbox layout
+
+```jsx
+<Flex
+	alignItems="center"
+	justifyContent="center"
+	flexDirection="row"
+	flexWrap="wrap"
+/>
+```
+
+---
+
+<CodeLive code={<RequireExample path="code/Flex.txt" />} />
+
+---
+
+<Secondary>
+
+# Grid
+
+</Secondary>
+
+---
+
+<CodeLive code={<RequireExample path="code/Grid.txt" />} />
+
+---
+
+<Secondary>
+
+# Stack
+
+</Secondary>
+
+---
+
+<CodeLive code={<RequireExample path="code/Stack.txt" />} />
+
+---
+
+<Secondary>
+
+# Group
+
+</Secondary>
+
+---
+
+<CodeLive code={<RequireExample path="code/Group.txt" />} />
+
+---
+
+> Primitives should not have any whitespace around them!
+
+---
+
+<Secondary>
+
+# Responsive design
+
+</Secondary>
+
+---
+
+<SplitTitle>
+
+### Prop per breakpoint vs. responsive props
+
+<Grid gap={5}>
+
+```jsx
+<Row>
+	<Col xs={12} md={6} lg={3}>
+		Pizza
+	</Col>
+</Row>
+```
+
+```jsx
+// breakpoints: [small, medium, large]
+<Box width={[1, 1 / 2, 1 / 4]} p={['sm', 'md', 'lg']}>
+	Pizza
+</Box>
+```
+
+</Grid>
+</SplitTitle>
+
+---
+
+<CodeLive code={<RequireExample path="code/responsive.txt" />} />
+
+---
+
+<Secondary>
+
+## All together
+
+</Secondary>
+
+---
+
+<CodeLive code={<RequireExample path="code/Box-Text.txt" />} />
+
+---
+
+# 👩‍💻 `npm start`
+
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+> ⏳ 15-20 minutes
+
+---
+
+<Secondary>
+
+## Recap
+
+</Secondary>
+
+---
+
+<Primary>
+
+# Primitives Composition
+
+</Primary>
+
+---
+
+## API: Composition
+
+- `<Heading>` → `<Text variant="heading" as="h1">`
+- `<Label>` → `<Text variant="label" as="label">`
+- `<Error>` → `<Text color="error" as="p">`
+
+---
+
+> Primitives are meant to be composed
+
+---
+
+<Primary>
+
+# UI Patterns
+
+</Primary>
+
+---
+
+> A design pattern is the re-usable form of a solution to a design problem.
+
+---
+
+<Demo
+	src="http://localhost:6060/#!/Label"
+	prodSrc="https://cdds.netlify.com/styleguide/#!/Label"
+/>
+
+---
+
+<Demo
+	src="http://localhost:6060/#!/LoginForm"
+	prodSrc="https://cdds.netlify.com/styleguide/#!/LoginForm"
+/>
+
+---
+
+## API: Patterns
+
+- `<Card>` → `<Stack>...</Stack>`
+- `<ProductCard>` → `<Card>...</Card>`
+- `<ProductPage>` → `products.map(product => <ProductCard product={product} />)`
+
+---
+
+# 👩‍💻 `npm start`
+
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+> ⏳ 15-20 minutes
+
+---
+
+<Secondary>
+
+## Recap
+
+</Secondary>
+
+---
+
+<Primary>
+
+# Recap
+
+</Primary>
+
+---
+
+## Recap
+
+1. Components are a common UI language
+1. Components is a better way of writing HTML & CSS
+1. Use design tokens to reduce choice
+1. Use primitive components (Text, Box)
+1. Do not make any assumptions
+1. Use layout primitives to control the white space
+1. Compose complex components using primitives
+
+---
+
+<Secondary>
+
+# The future of UI development
+
+</Secondary>
+
+---
+
+## Building UIs with primitives & patterns
+
+1. Get a ~~static mockup~~ wireframe from a designer
+1. Get data from API endpoint
+1. Assembly UI using primitives or re-use a pattern.
+1. ...
+1. Profit
+
+---
+
+<Image src={'/assets/napkin.jpg'} size="contain" />
+
+---
+
+<Video
+	src="https://airbnb.design/wp-content/uploads/2017/10/WireframeClassifiersmall.mp4?_=1"
+	autoPlay="autoplay"
+	loop="loop"
+	width="100%"
+	height="100vh"
+	margin="auto"
+/>
+
+---
+
+## Links and credits
+
+- https://react-styleguidist.js.org
+- https://styled-system.com
+- https://theme-ui.com
+- https://airbnb.design/sketching-interfaces/
+- https://colorsnapper.com — color picker Mac app
+- https://monolisa.dev — the coding font I'm using
+
+---
+
+<Demo src="https://monolisa.dev" prodSrc="https://monolisa.dev" />
+
+---
+
+### Upcoming workshops @ React Finland
+
+1. [Design Systems 101](https://react-finland.fi/workshops/#design-systems-101) 24.05.2020
+1. [Component-Driven Design Systems](https://react-finland.fi/workshops/#design-systems-for-react-developers) 25.05.2020
+1. [Resilient Component Libraries](https://react-finland.fi/workshops/#resilient-component-libraries-with-react) 26.05.2020
+
+---
+
+<Figure
+	src={'/assets/component-driven.svg'}
+	alt="Component-driven Logo"
+	caption={
+		<a href="https://component-driven.io">https://component-driven.io</a>
+	}
+/>
+
+---
+
+<Secondary>
+
+## [Feedback Form](https://forms.gle/Cxv7BNwBWSwiYSmLA)
+
+</Secondary>
+
+---
+
+<Primary>
+
+# Q & A
+
+</Primary>
+
+---
+
+### Homework
+
+https://github.com/component-driven/component-driven-development/issues/68
+
+---
+
+<Primary>
+
+# Thank you!
+
+<Stack gridGap={[3, 5]} gridTemplateColumns={['auto', 'repeat(3, 1fr)']} pt={4}>
+	<a href="https://twitter.com/okonetchnikov">@okonetchnikov</a>
+	<a href="https://twitter.com/ComponentDriven">@ComponentDriven</a>
+	<a href="mailto:andrey@okonet.ru">andrey@okonet.ru</a>
+</Stack>
+
+</Primary>
