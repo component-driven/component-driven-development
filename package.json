@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"license": "CC BY-NC 4.0",
-	"homepage": "https://cdds.netlify.com",
+	"homepage": "https://cdds.component-driven.io",
 	"scripts": {
 		"validate": "node scripts/setup.js",
 		"prestart": "npm run validate",
