@@ -64,7 +64,6 @@ Or:
 ## Tech stack
 
 - [React](https://reactjs.org/)
-- [Create React App](https://github.com/facebook/create-react-app)
 - [React Styleguidist](https://react-styleguidist.js.org/)
 - [styled-components](https://www.styled-components.com/)
 - [styled-system](https://styled-system.com/)

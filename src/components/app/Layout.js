@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 import ThemeProvider from '../../ThemeProvider';
 import XRay from './XRay';
@@ -18,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 `;
 
-const App = ({ children }) => (
+const Layout = ({ children }) => (
 	<ThemeProvider>
 		<>
 			<GlobalStyle />
@@ -28,4 +29,8 @@ const App = ({ children }) => (
 	</ThemeProvider>
 );
 
-export default App;
+Layout.propTypes = {
+	children: PropTypes.node.isRequired,
+};
+
+export default Layout;
