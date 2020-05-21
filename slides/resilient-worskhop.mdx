@@ -15,7 +15,7 @@ export const theme = { ...CDTheme };
 
 <Secondary>
 
-# [bit.ly/cddwrkshp](https://bit.ly/cddwrkshp)
+# [git](https://github.com/component-driven/component-driven-development)
 
 </Secondary>
 
@@ -91,6 +91,10 @@ UI engineer working with web technologies since 1999. Creator of React Styleguid
 ---
 
 ## HTML has lots of UI primitives?
+
+---
+
+> HTML was designed for documents
 
 ---
 
@@ -284,15 +288,27 @@ const Dropdown = props => (
 
 <SplitTitle>
 
-## Component libraries
+## Good Component libraries
 
+- ensure UI consistency
+- enable faster development
+- abstract implementation details
+
+</SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Great Component libraries
+
+- ensure UI consistency
 - enable faster development
 - abstract implementation details
 - designed for change
 - intuitive to use
 - inclusive
 - based on strong principles
-- ensure UI consistency
 
 </SplitTitle>
 
@@ -332,14 +348,14 @@ ex. Material UI, Ant Design, Bootstrap
 
 ### Mix
 
-Re-export components from OSS + build upon.
+Re-export or wrap components from OSS (Reakit, Theme-UI, Chakra, etc.)
 
 </Box>
 <Box>
 
 ### Custom
 
-Build everything from scratch
+Build everything from scratch (using styled-system, etc.)
 
 </Box>
 </Grid>
@@ -561,6 +577,8 @@ export { DatePicker } from "material-ui"
 
 # 😭
 
+<Notes>apropcalipse</Notes>
+
 ---
 
 <Secondary>
@@ -571,24 +589,47 @@ export { DatePicker } from "material-ui"
 
 ---
 
-```jsx
-<Dialog>
-  <Backdrop />
-  <DialogContent>
-  	<form onSubmit={}>
-	  <button onClose={}>x</button>
-	  <label>What’s your name, yo?</label>
-	  <input type="text" defaultValue="Incognito" />
-	  <button type="submit">Submit</button>
-	  <button onClose={}>Cancel</button>
-  	</form>
-  </DialogContent>
-</Dialog>
+```html
+<select name="select">
+	<option value="1">compound components</option>
+	<option value="2">apropcalipse</option>
+</select>
 ```
 
 ---
 
-rigidity vs flexibility
+```html
+<table>
+	<thead>
+		<tr>
+			<th>Heading</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Cell</td>
+		</tr>
+	</tbody>
+</table>
+```
+
+---
+
+rigidity → flexibility
+
+---
+
+```html
+<table>
+	<tbody>
+		<tr>
+			<td>Cell 1</td>
+			<td>Cell 2</td>
+			<td>Cell 3</td>
+		</tr>
+	</tbody>
+</table>
+```
 
 ---
 
@@ -608,6 +649,77 @@ rigidity vs flexibility
 ## Recap
 
 </Secondary>
+
+---
+
+```jsx
+<Prompt
+	title="Asking for a name"
+	message="What’s your name, yo?"
+	defaultValue="Incognito"
+	onSubmit={}
+	onClose={}
+	showClose
+	showCancel
+	showBackdrop
+	showHeader
+	submitLabel="Submit"
+	cancelLabel="Go away!"
+	className="style"
+	closeStyles={{}}
+/>
+```
+
+---
+
+```jsx
+<Backdrop />
+<Dialog>
+	<DialogHeader>
+		<h1>Asking for a name</h1>
+		<button onClose={}>x</button>
+	</DialogHeader>
+	<DialogContent>
+		<form onSubmit={}>
+			<label>What’s your name, yo?</label>
+			<input type="text" defaultValue="Incognito" />
+			<button type="submit">Submit</button>
+			<button onClose={}>Cancel</button>
+		</form>
+	</DialogContent>
+</Dialog>
+```
+
+---
+
+## Lessons learned
+
+- Inversion of control
+- Do not abstract too early
+- Design primitives and compose them
+- Make impossible states impossible (`variant`)
+
+---
+
+<Secondary>
+
+# Principles of Primitives
+
+</Secondary>
+
+---
+
+- Pass all HTML props down
+- Do not overload valid HTML attributes
+- Merge styles and `className`
+- Merge event handlers when wrapping
+- Always pass the `ref` with `forwardRef`
+- Allow setting underlying HTML tag with `as`
+- No outer white space (`margin: 0`)
+
+---
+
+// TODO more examples for each
 
 ---
 
@@ -659,10 +771,10 @@ https://github.com/component-driven/component-driven-development/issues/68
 
 # Thank you!
 
-<Stack gridGap={[3, 5]} gridTemplateColumns={['auto', 'repeat(3, 1fr)']} pt={4}>
+<Grid gridGap={[3, 5]} columns={[1, 3]} pt={4}>
 	<a href="https://twitter.com/okonetchnikov">@okonetchnikov</a>
+	<a href="https://twitter.com/iamsapegin">@iamsapegin</a>
 	<a href="https://twitter.com/ComponentDriven">@ComponentDriven</a>
-	<a href="mailto:andrey@okonet.ru">andrey@okonet.ru</a>
-</Stack>
+</Grid>
 
 </Primary>
