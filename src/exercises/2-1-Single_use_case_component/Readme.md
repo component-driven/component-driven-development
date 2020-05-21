@@ -8,31 +8,7 @@ Your project manager comes to your desk and says that they want to greet each ap
 
 The result should look like this:
 
-```jsx noeditor
-import Prompt from './final/Prompt';
-const [name, setName] = React.useState('');
-const [isVisible, setIsVisible] = React.useState(false);
-<div
-  style={{
-    border: '1px solid #e8e8e8',
-    borderRadius: 3,
-    padding: 16
-  }}
->
-  {isVisible && (
-    <Prompt
-      title="The univers asks"
-      message="What’s your name, yo?"
-      defaultValue="Incognito"
-      onSubmit={value => {
-        setName(value);
-        setIsVisible(false);
-      }}
-    />
-  )}
-  <p>Name: {name || 'Incognito'}</p>
-  <button onClick={() => setIsVisible(true)}>Ask name</button>
-</div>;
+```jsx {"file": "final/Prompt.md", "noeditor": true}
 ```
 
 ### The task
@@ -63,6 +39,8 @@ const [name, setName] = React.useState('Batman');
   </button>
 </>;
 ```
+
+Read more in [Styleguidist documentation](https://react-styleguidist.js.org/docs/documenting.html).
 
 <details>
  <summary>Solution</summary>

@@ -1,6 +1,6 @@
 ```jsx
-const [name, setName] = React.useState('');
 // WORKSHOP_START
+const [name, setName] = React.useState('');
 <>
   {/* <Prompt prop1={42} /> */}
   <p>Name: {name || 'Incognito'}</p>
@@ -10,6 +10,8 @@ const [name, setName] = React.useState('');
 </>;
 // WORKSHOP_END
 // FINAL_START
+import Prompt from './final/Prompt';
+const [name, setName] = React.useState('');
 const [isVisible, setIsVisible] = React.useState(false);
 <>
   {isVisible && (

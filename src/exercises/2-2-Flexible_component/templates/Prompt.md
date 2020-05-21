@@ -1,9 +1,9 @@
 ```jsx
+// WORKSHOP_START
 const [name, setName] = React.useState('');
 const [isVisible, setIsVisible] = React.useState(false);
 <>
   {isVisible && (
-// WORKSHOP_START
     <Prompt
       title="The univers asks"
       message="What’s your name, yo?"
@@ -13,8 +13,17 @@ const [isVisible, setIsVisible] = React.useState(false);
         setIsVisible(false);
       }}
     />
+  )}
+  <p>Name: {name || 'Incognito'}</p>
+  <button onClick={() => setIsVisible(true)}>Ask name</button>
+</>;
 // WORKSHOP_END
 // FINAL_START
+import Prompt from './final/Prompt';
+const [name, setName] = React.useState('');
+const [isVisible, setIsVisible] = React.useState(false);
+<>
+  {isVisible && (
     <Prompt
       title="The univers asks"
       message="What’s your name, yo?"
@@ -30,9 +39,9 @@ const [isVisible, setIsVisible] = React.useState(false);
         setIsVisible(false);
       }}
     />
-// FINAL_END
   )}
   <p>Name: {name || 'Incognito'}</p>
   <button onClick={() => setIsVisible(true)}>Ask name</button>
 </>;
+// FINAL_END
 ```

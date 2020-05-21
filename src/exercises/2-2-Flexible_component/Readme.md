@@ -8,37 +8,7 @@ Your project manager wants to test the conversion of different variations of the
 
 The result should look like this:
 
-```jsx noeditor
-import Prompt from './final/Prompt';
-const [name, setName] = React.useState('');
-const [isVisible, setIsVisible] = React.useState(false);
-<div
-  style={{
-    border: '1px solid #e8e8e8',
-    borderRadius: 3,
-    padding: 16
-  }}
->
-  {isVisible && (
-    <Prompt
-      title="The univers asks"
-      message="What’s your name, yo?"
-      defaultValue="Incognito"
-      showClose
-      showCancel
-      showBackdrop
-      onSubmit={value => {
-        setName(value);
-        setIsVisible(false);
-      }}
-      onClose={value => {
-        setIsVisible(false);
-      }}
-    />
-  )}
-  <p>Name: {name || 'Incognito'}</p>
-  <button onClick={() => setIsVisible(true)}>Ask name</button>
-</div>;
+```jsx {"file": "final/Prompt.md", "noeditor": true}
 ```
 
 ### The task
