@@ -43,8 +43,10 @@ export default function Prompt({
 						×
 					</button>
 				)}
+				<h2>{title}</h2>
 				<label>
-					<h2>{message}</h2>
+					{message}
+					<br />
 					<input
 						type="text"
 						value={value}
@@ -65,6 +67,7 @@ export default function Prompt({
 }
 
 Prompt.propTypes = {
+	title: PropTypes.string.isRequired,
 	message: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
 	showClose: PropTypes.bool,

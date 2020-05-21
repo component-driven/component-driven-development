@@ -1,18 +1,10 @@
 ```jsx
-const [isVisible, setIsVisible] = React.useState(false);
 const [name, setName] = React.useState('');
 <>
-  {isVisible && (
-    <Prompt
-      message="What’s your name, yo?"
-      defaultValue="Incognito"
-      onSubmit={value => {
-        setName(value);
-        setIsVisible(false);
-      }}
-    />
-  )}
+  {/* <Prompt prop1={42} /> */}
   <p>Name: {name || 'Incognito'}</p>
-  <button onClick={() => setIsVisible(true)}>Ask name</button>
+  <button onClick={() => console.log('not implemented')}>
+    Ask name
+  </button>
 </>;
 ```

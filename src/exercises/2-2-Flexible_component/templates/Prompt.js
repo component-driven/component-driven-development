@@ -29,8 +29,22 @@ export default function Prompt({ message, defaultValue, onSubmit }) {
 					border: '1px solid gainsboro',
 				}}
 			>
+				<header
+					style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+						alignItems: 'center',
+					}}
+				>
+					<h2>{title}</h2>
+					{showClose && (
+						<button type="button" aria-label="Close" onClick={onClose}>
+							×
+						</button>
+					)}
+				</header>
 				<label>
-					<h2>{message}</h2>
+					{message}<br />
 					<input
 						type="text"
 						value={value}
@@ -46,6 +60,7 @@ export default function Prompt({ message, defaultValue, onSubmit }) {
 }
 
 Prompt.propTypes = {
+	title: PropTypes.string.isRequired,
 	message: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
 	onSubmit: PropTypes.func.isRequired,
@@ -94,8 +109,9 @@ export default function Prompt({
 						×
 					</button>
 				)}
+				<h2>{title}</h2>
 				<label>
-					<h2>{message}</h2>
+					{message}<br />
 					<input
 						type="text"
 						value={value}
@@ -116,6 +132,7 @@ export default function Prompt({
 }
 
 Prompt.propTypes = {
+	title: PropTypes.string.isRequired,
 	message: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
 	showClose: PropTypes.bool,

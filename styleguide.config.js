@@ -71,7 +71,7 @@ if (workshopId) {
 			.replace(/^\d+-(\d+)-/, '')
 			.replace(/_/g, ' '),
 		content: `${folder}/Readme.md`,
-		components: `${folder}/**/*.js`,
+		components: `${folder}/*.js`,
 	}));
 } else {
 	// Styleguide
