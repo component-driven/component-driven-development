@@ -113,13 +113,23 @@ export default function Prompt({
 					onSubmit(value);
 				}}
 				style={{
+					position: 'relative',
 					padding: '1rem',
 					backgroundColor: 'white',
 					border: '1px solid gainsboro',
 				}}
 			>
 				{showClose && (
-					<button type="button" aria-label="Close" onClick={onClose}>
+					<button
+						type="button"
+						aria-label="Close"
+						onClick={onClose}
+						style={{
+							position: 'absolute',
+							top: '1rem',
+							right: '1rem',
+						}}
+					>
 						×
 					</button>
 				)}

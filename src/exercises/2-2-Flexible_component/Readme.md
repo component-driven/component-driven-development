@@ -13,7 +13,7 @@ The result should look like this:
 
 ### The task
 
-1. Add an option to render close button (`×`) at the top of the dialog. On click it should close the dialog without submitting the form.
+1. Add an option to render close button (`×`) in the top rigth corner of the dialog. On click it should close the dialog without submitting the form.
 2. Add an option to show a semitransparent backdrop that also should close the dialog on click.
 3. Add an option to add a “Cancel” button that’s displayed after the the submit button. On click it should close the dialog without submitting the form.
 
