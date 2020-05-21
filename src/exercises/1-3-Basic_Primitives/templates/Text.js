@@ -35,10 +35,10 @@ const Text = styled.p(
 // FINAL_END
 
 Text.propTypes = {
-	// FINAL_START
+// FINAL_START
 	/** Variants */
 	variant: PropTypes.oneOf(Object.keys(theme.textStyles)),
-	// FINAL_END
+// FINAL_END
 	children: PropTypes.node,
 };
 
