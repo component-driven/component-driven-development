@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function Prompt({
+	title,
 	message,
 	defaultValue,
 	showClose,
@@ -31,6 +32,9 @@ export default function Prompt({
 				onSubmit={event => {
 					event.preventDefault();
 					onSubmit(value);
+				}}
+				onClick={event => {
+					event.stopPropagation();
 				}}
 				style={{
 					padding: '1rem',

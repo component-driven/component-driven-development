@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Prompt({ message, defaultValue, onSubmit }) {
+export default function Prompt({ title, message, defaultValue, onSubmit }) {
 	const [value, setValue] = React.useState(defaultValue);
 	return (
 		<div

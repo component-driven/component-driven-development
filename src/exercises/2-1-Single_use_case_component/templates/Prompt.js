@@ -60,7 +60,8 @@ export default function Prompt({ title, message, defaultValue, onSubmit }) {
 			>
 				<h2>{title}</h2>
 				<label>
-					{message}<br />
+					{message}
+					<br />
 					<input
 						type="text"
 						value={value}

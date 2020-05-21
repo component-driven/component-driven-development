@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // WORKSHOP_START
-export default function Prompt({ message, defaultValue, onSubmit }) {
+export default function Prompt({ title, message, defaultValue, onSubmit }) {
 	const [value, setValue] = React.useState(defaultValue);
 	return (
 		<div
@@ -44,7 +44,8 @@ export default function Prompt({ message, defaultValue, onSubmit }) {
 					)}
 				</header>
 				<label>
-					{message}<br />
+					{message}
+					<br />
 					<input
 						type="text"
 						value={value}
@@ -68,6 +69,7 @@ Prompt.propTypes = {
 // WORKSHOP_END
 // FINAL_START
 export default function Prompt({
+	title,
 	message,
 	defaultValue,
 	showClose,
@@ -98,6 +100,9 @@ export default function Prompt({
 					event.preventDefault();
 					onSubmit(value);
 				}}
+				onClick={event => {
+					event.stopPropagation();
+				}}
 				style={{
 					padding: '1rem',
 					backgroundColor: 'white',
@@ -111,7 +116,8 @@ export default function Prompt({
 				)}
 				<h2>{title}</h2>
 				<label>
-					{message}<br />
+					{message}
+					<br />
 					<input
 						type="text"
 						value={value}
