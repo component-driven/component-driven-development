@@ -1,4 +1,5 @@
 ```jsx
+import Prompt from './final/Prompt';
 const [name, setName] = React.useState('');
 const [isVisible, setIsVisible] = React.useState(false);
 <>

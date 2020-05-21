@@ -31,7 +31,7 @@ export default function Prompt(props) {
 Prompt.propTypes = {};
 // WORKSHOP_END
 // FINAL_START
-export default function Prompt({ message, defaultValue, onSubmit }) {
+export default function Prompt({ title, message, defaultValue, onSubmit }) {
 	const [value, setValue] = React.useState(defaultValue);
 	return (
 		<div
@@ -58,8 +58,10 @@ export default function Prompt({ message, defaultValue, onSubmit }) {
 					border: '1px solid gainsboro',
 				}}
 			>
+				<h2>{title}</h2>
 				<label>
-					<h2>{message}</h2>
+					{message}
+					<br />
 					<input
 						type="text"
 						value={value}
@@ -75,6 +77,7 @@ export default function Prompt({ message, defaultValue, onSubmit }) {
 }
 
 Prompt.propTypes = {
+	title: PropTypes.string.isRequired,
 	message: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
 	onSubmit: PropTypes.func.isRequired,

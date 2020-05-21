@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // WORKSHOP_START
-export default function Prompt({ message, defaultValue, onSubmit }) {
+export default function Prompt({ title, message, defaultValue, onSubmit }) {
 	const [value, setValue] = React.useState(defaultValue);
 	return (
 		<div
@@ -29,8 +29,23 @@ export default function Prompt({ message, defaultValue, onSubmit }) {
 					border: '1px solid gainsboro',
 				}}
 			>
+				<header
+					style={{
+						display: 'flex',
+						justifyContent: 'space-between',
+						alignItems: 'center',
+					}}
+				>
+					<h2>{title}</h2>
+					{showClose && (
+						<button type="button" aria-label="Close" onClick={onClose}>
+							×
+						</button>
+					)}
+				</header>
 				<label>
-					<h2>{message}</h2>
+					{message}
+					<br />
 					<input
 						type="text"
 						value={value}
@@ -46,6 +61,7 @@ export default function Prompt({ message, defaultValue, onSubmit }) {
 }
 
 Prompt.propTypes = {
+	title: PropTypes.string.isRequired,
 	message: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
 	onSubmit: PropTypes.func.isRequired,
@@ -53,6 +69,7 @@ Prompt.propTypes = {
 // WORKSHOP_END
 // FINAL_START
 export default function Prompt({
+	title,
 	message,
 	defaultValue,
 	showClose,
@@ -74,28 +91,52 @@ export default function Prompt({
 				right: 0,
 				bottom: 0,
 				left: 0,
-				backgroundColor: showBackdrop ? 'hsla(0,0%,0%,0.5)' : undefined,
 			}}
-			onClick={showBackdrop ? onClose : undefined}
 		>
+			{showBackdrop && (
+				<div
+					style={{
+						position: 'fixed',
+						zIndex: -1,
+						top: 0,
+						right: 0,
+						bottom: 0,
+						left: 0,
+						backgroundColor: 'hsla(0,0%,0%,0.5)',
+					}}
+					onClick={onClose}
+				/>
+			)}
 			<form
 				onSubmit={event => {
 					event.preventDefault();
 					onSubmit(value);
 				}}
 				style={{
+					position: 'relative',
 					padding: '1rem',
 					backgroundColor: 'white',
 					border: '1px solid gainsboro',
 				}}
 			>
 				{showClose && (
-					<button type="button" aria-label="Close" onClick={onClose}>
+					<button
+						type="button"
+						aria-label="Close"
+						onClick={onClose}
+						style={{
+							position: 'absolute',
+							top: '1rem',
+							right: '1rem',
+						}}
+					>
 						×
 					</button>
 				)}
+				<h2>{title}</h2>
 				<label>
-					<h2>{message}</h2>
+					{message}
+					<br />
 					<input
 						type="text"
 						value={value}
@@ -116,6 +157,7 @@ export default function Prompt({
 }
 
 Prompt.propTypes = {
+	title: PropTypes.string.isRequired,
 	message: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
 	showClose: PropTypes.bool,

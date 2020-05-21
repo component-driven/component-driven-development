@@ -8,6 +8,22 @@ const isExercisesRcl = !!process.argv.find(x => x === '--exercises-rcl');
 
 const workshopId = isExercisesCdd ? 1 : isExercisesRcl ? 2 : null;
 
+const borderedStyle = {
+	border: '1px solid #e8e8e8',
+	borderRadius: 3,
+	padding: 16,
+};
+
+// Prepare Markdown file to use as final result:
+// 1. Remove ```js ... ``` markers from Markdown
+// 2. Replace <></> with a <div /> that looks like a Styleguidist example,
+//    but without an editor
+const markdownToCodeExample = s =>
+	s
+		.replace(/^```\w*$/gm, '')
+		.replace(/<>/, `<div style={${JSON.stringify(borderedStyle)}}>`)
+		.replace(/<\/>/, `</div>`);
+
 const config = {
 	serverPort: workshopId ? 6061 : 6060,
 	title: 'Component-driven design systems workshop',
@@ -49,8 +65,12 @@ const config = {
 				settings.file
 			);
 			const { file, ...restSettings } = settings;
+			const rawContent = fs.readFileSync(filepath, 'utf8');
+			const content = filepath.endsWith('.md')
+				? markdownToCodeExample(rawContent)
+				: rawContent;
 			return {
-				content: fs.readFileSync(filepath, 'utf8'),
+				content,
 				settings: restSettings,
 				lang,
 			};
@@ -71,7 +91,7 @@ if (workshopId) {
 			.replace(/^\d+-(\d+)-/, '')
 			.replace(/_/g, ' '),
 		content: `${folder}/Readme.md`,
-		components: `${folder}/**/*.js`,
+		components: `${folder}/*.js`,
 	}));
 } else {
 	// Styleguide

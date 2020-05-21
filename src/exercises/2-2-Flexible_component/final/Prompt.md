@@ -1,4 +1,5 @@
 ```jsx
+import Prompt from './final/Prompt';
 const [name, setName] = React.useState('');
 const [isVisible, setIsVisible] = React.useState(false);
 <>
@@ -7,8 +8,14 @@ const [isVisible, setIsVisible] = React.useState(false);
       title="The univers asks"
       message="What’s your name, yo?"
       defaultValue="Incognito"
+      showClose
+      showCancel
+      showBackdrop
       onSubmit={value => {
         setName(value);
+        setIsVisible(false);
+      }}
+      onClose={value => {
         setIsVisible(false);
       }}
     />
