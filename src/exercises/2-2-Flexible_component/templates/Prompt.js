@@ -91,17 +91,26 @@ export default function Prompt({
 				right: 0,
 				bottom: 0,
 				left: 0,
-				backgroundColor: showBackdrop ? 'hsla(0,0%,0%,0.5)' : undefined,
 			}}
-			onClick={showBackdrop ? onClose : undefined}
 		>
+			{showBackdrop && (
+				<div
+					style={{
+						position: 'fixed',
+						zIndex: -1,
+						top: 0,
+						right: 0,
+						bottom: 0,
+						left: 0,
+						backgroundColor: 'hsla(0,0%,0%,0.5)',
+					}}
+					onClick={onClose}
+				/>
+			)}
 			<form
 				onSubmit={event => {
 					event.preventDefault();
 					onSubmit(value);
-				}}
-				onClick={event => {
-					event.stopPropagation();
 				}}
 				style={{
 					padding: '1rem',
