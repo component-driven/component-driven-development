@@ -1,7 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export function Dialog({ children }) {
+export function useDialogState({ open: defaultOpen = false } = {}) {
+	const [open, setIsOpen] = React.useState(defaultOpen);
+	return {
+		open,
+		onOpen: () => setIsOpen(true),
+		onClose: () => setIsOpen(false),
+	};
+}
+
+export function Dialog({ children, open }) {
+	if (!open) {
+		return null;
+	}
+
 	return (
 		<div
 			style={{
@@ -22,6 +35,7 @@ export function Dialog({ children }) {
 }
 
 Dialog.propTypes = {
+	open: PropTypes.bool.isRequired,
 	children: PropTypes.node.isRequired,
 };
 
