@@ -1,6 +1,6 @@
 In this exercise we’ll split our Prompt component into multiple primitive components.
 
-## 2.3 Creating primitive components
+## 2.3 Creating compound components
 
 Components with many props to achieve flexibility for many different use cases are hard to learn and use, and they make impossible states possible — not all combination of props make sense. They are also harder to maintain. And even with many props, the flexibility is still limited. For example, in our Prompt component, there’s no way to change the submit button label.
 
