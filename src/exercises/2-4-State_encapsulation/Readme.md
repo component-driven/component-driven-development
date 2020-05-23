@@ -38,7 +38,7 @@ const disclosure = useDisclosureState({ expanded: false });
 </>;
 ```
 
-The benefit is that we don’t have to remember the API of each primitive component, and can spread the same props to each component, and let them deal with it. However, we still have access to all the values and function, and could use them in our custom components. We also reduce code duplication and make the behaviour more consistent, which is especially important for components with more complex behavior.
+The benefit is that we don’t have to remember the API of each primitive component, and can spread the same props to each component, and let them deal with it. However, we still have access to all the values and function, and could use them in our custom components or extend with our own behavior. We also reduce code duplication and make the behaviour more consistent, which is especially important for components with more complex behavior.
 
 **Note:** This exercise is inspired by the [Reakit Dialog component](https://reakit.io/docs/dialog/).
 
