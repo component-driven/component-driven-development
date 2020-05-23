@@ -2,7 +2,7 @@ In this exercise we’ll create a custom React Hook to manage the state of our D
 
 ## 2.4 Encapsulating state in a React Hook
 
-In the previous exercise we’ve created a collection of stateless components. This gave us almost unlimited flexibility on how to compose these components. But since this components are stateless, we still have to manage the state (in our case the state of the modal opening) ourselves, and we have to repeate this code everty time we want to create a modal.
+In the previous exercise we’ve created a collection of stateless components. This gave us almost unlimited flexibility on how to compose these components. But since this components are stateless, we still have to manage the state (in our case the state of the modal opening) ourselves, and we have to duplicate this code every time we want to create a modal.
 
 To solve this issue, we’re going to create a custom React Hook that encapsulates the state and returns its current value and a function to change this value. We’ll also need to move the condition from the caller code to our container `Dialog` component.
 
