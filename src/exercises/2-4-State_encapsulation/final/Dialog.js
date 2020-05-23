@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export function useDialogState({ open: defaultOpen = false } = {}) {
-	const [open, setIsOpen] = React.useState(defaultOpen);
+export function useDialogState({ open = false } = {}) {
+	const [isOpen, setIsOpen] = React.useState(open);
 	return {
-		open,
+		isOpen,
 		onOpen: () => setIsOpen(true),
 		onClose: () => setIsOpen(false),
 	};
 }
 
-export function Dialog({ children, open }) {
-	if (!open) {
+export function Dialog({ children, isOpen }) {
+	if (!isOpen) {
 		return null;
 	}
 
@@ -35,7 +35,7 @@ export function Dialog({ children, open }) {
 }
 
 Dialog.propTypes = {
-	open: PropTypes.bool.isRequired,
+	isOpen: PropTypes.bool.isRequired,
 	children: PropTypes.node.isRequired,
 };
 
