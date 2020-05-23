@@ -314,7 +314,30 @@ const Dropdown = props => (
 
 ---
 
-// TODO: Examples
+<Figure
+	src={'/assets/mui.png'}
+	alt="Material UI Homepage"
+	caption={<a href="https://material-ui.com">https://material-ui.com</a>}
+	gap={4}
+/>
+
+---
+
+<Figure
+	src={'/assets/antdesign.png'}
+	alt="Ant.Design Homepage"
+	caption={<a href="https://ant.design">https://ant.design</a>}
+	gap={4}
+/>
+
+---
+
+<Figure
+	src={'/assets/chakra.png'}
+	alt="Chakra UI Homepage"
+	caption={<a href="https://chakra-ui.com">https://chakra-ui.com</a>}
+	gap={4}
+/>
 
 ---
 
@@ -341,21 +364,23 @@ const Dropdown = props => (
 
 ### OSS
 
-ex. Material UI, Ant Design, Bootstrap
+<small>ex. Material UI, Ant Design, Bootstrap</small>
 
 </Box>
 <Box>
 
 ### Mix
 
-Re-export or wrap components from OSS (Reakit, Theme-UI, Chakra, etc.)
+<small>
+	Re-export or wrap components from OSS (Reakit, Theme-UI, Chakra, etc.)
+</small>
 
 </Box>
 <Box>
 
 ### Custom
 
-Build everything from scratch (using styled-system, etc.)
+<small>Build everything from scratch (using styled-system, etc.)</small>
 
 </Box>
 </Grid>
@@ -397,7 +422,7 @@ export { DatePicker } from "material-ui"
 
 ---
 
-> ⏳ 15-20 minutes
+> ⏳ 30 minutes
 
 ---
 
@@ -406,18 +431,6 @@ export { DatePicker } from "material-ui"
 ## Recap
 
 </Secondary>
-
----
-
-<Primary>
-
-# UI Primitives
-
-</Primary>
-
----
-
-<TweetEmbed id="1090733766950223878" />
 
 ---
 
@@ -581,6 +594,33 @@ export { DatePicker } from "material-ui"
 
 ---
 
+## Lessons learned
+
+- Wrong abstractions are worse than no abstractions
+- Single responsibility is bad
+
+---
+
+<Primary>
+
+# UI Primitives
+
+</Primary>
+
+---
+
+> Primitives are building blocks of the UI.
+
+---
+
+<Image src={'/assets/legos.jpg'} />
+
+---
+
+<Image src={'/assets/legos-assembled.jpg'} />
+
+---
+
 <Secondary>
 
 # Compound Components
@@ -615,7 +655,24 @@ export { DatePicker } from "material-ui"
 
 ---
 
-rigidity → flexibility
+```html
+<table>
+	<thead>
+		<tr>
+			<th>Heading</th>
+			<th>Heading</th>
+			<th>Heading</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Cell</td>
+			<td>Cell</td>
+			<td>Cell</td>
+		</tr>
+	</tbody>
+</table>
+```
 
 ---
 
@@ -623,13 +680,17 @@ rigidity → flexibility
 <table>
 	<tbody>
 		<tr>
-			<td>Cell 1</td>
-			<td>Cell 2</td>
-			<td>Cell 3</td>
+			<td>Cell</td>
+			<td>Cell</td>
+			<td>Cell</td>
 		</tr>
 	</tbody>
 </table>
 ```
+
+---
+
+## Inversion of control
 
 ---
 
@@ -640,7 +701,7 @@ rigidity → flexibility
 
 ---
 
-> ⏳ 15-20 minutes
+> ⏳ 30 minutes
 
 ---
 
@@ -696,12 +757,15 @@ rigidity → flexibility
 
 ---
 
+## rigidity → flexibility
+
+---
+
 ## Lessons learned
 
 - Inversion of control
-- Do not abstract too early
-- Design primitives and compose them
-- Make impossible states impossible (`variant`)
+- Create UI primitives
+- Compose complex UI from them
 
 ---
 
@@ -713,17 +777,169 @@ rigidity → flexibility
 
 ---
 
-- Pass all HTML props down
-- Do not overload valid HTML attributes
-- Merge styles and `className`
-- Merge event handlers when wrapping
+- Pass down valid HTML attributes
 - Always pass the `ref` with `forwardRef`
 - Allow setting underlying HTML tag with `as`
+- Merge styles and `className`
+- Merge event handlers
 - No outer white space (`margin: 0`)
 
 ---
 
-// TODO more examples for each
+<SplitTitle>
+
+## Always pass the `ref` with `forwardRef`
+
+```jsx
+const Input = ({ type, value, onChange }) => (
+	<input type={type} value={value} onChange={onChange} />
+);
+
+// in your app:
+
+const inputRef = useRef(null);
+
+inputRef.current.focus() // Not going to work!
+
+<>
+	<Input ref={inputRef}>
+</>
+```
+
+</SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Always pass the `ref` with `forwardRef`
+
+```diff
+- const Input = ({ type, value, onChange }, ref) => (
++ const Input = React.forwardRef(({ type, value, onChange }, ref)) => (
+	<input
++		ref={ref}
+		type={type}
+		value={value}
+		onChange={onChange}
+	/>
+-);
++));
+```
+
+</SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Pass down valid HTML attributes
+
+```jsx
+const Input = ({ type, value, onChange }) => (
+	<input type={type} value={value} onChange={onChange} />
+);
+
+// in your app:
+
+<Input placeholder="Not going" aria-label="to work"> // Ooops!
+```
+
+</SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Pass down valid HTML attributes
+
+```diff
+- const Input = ({ type, value, onChange }) => (
++ const Input = ({ type, value, onChange, ...rest }) => (
+-	<input type={type} value={value} onChange={onChange} />
++	<input type={type} value={value} onChange={onChange} {...rest} />
+);
+```
+
+</SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Allow setting underlying HTML tag with `as`
+
+```jsx
+const Button = props => <button {...props} />;
+
+// in your app:
+
+<Button as="a" href="#">
+	Link button
+</Button>; // Ooops!
+```
+
+</SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Allow setting underlying HTML tag with `as`
+
+```jsx
+const Button = ({ as = 'button', ...props }) => React.createElement(as, props);
+```
+
+</SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Merge styles and `className`
+
+```jsx
+const RedBox = (props) => (
+	<div className="p-3 bg-red" {...props} />
+)
+
+// In you app
+<RedBox className="customize"/> // Oops!
+```
+
+</SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Merge styles and `className`
+
+```jsx
+import cx from "classnames";
+
+const RedBox = ({className, ...props}) => (
+	<div className={cx("p-3 bg-red", className)} {...props} />
+)
+
+// In you app
+<RedBox className="customize"/> // all 3 class names applied
+```
+
+</SplitTitle>
+
+---
+
+## Merge event handlers
+
+---
+
+## No outer white space (`margin: 0`)
+
+---
+
+<TweetEmbed id="1090733766950223878" />
 
 ---
 
