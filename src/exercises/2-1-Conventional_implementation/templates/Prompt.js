@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // WORKSHOP_START
-export default function Prompt({ title, message, defaultValue, onSubmit }) {
-	const [value, setValue] = React.useState(defaultValue);
+export default function Prompt(props) {
 	return (
 		<div
 			style={{
@@ -18,54 +17,18 @@ export default function Prompt({ title, message, defaultValue, onSubmit }) {
 				left: 0,
 			}}
 		>
-			<form
-				onSubmit={event => {
-					event.preventDefault();
-					onSubmit(value);
-				}}
+			<div
 				style={{
 					padding: '1rem',
 					backgroundColor: 'white',
 					border: '1px solid gainsboro',
 				}}
-			>
-				<header
-					style={{
-						display: 'flex',
-						justifyContent: 'space-between',
-						alignItems: 'center',
-					}}
-				>
-					<h2>{title}</h2>
-					{showClose && (
-						<button type="button" aria-label="Close" onClick={onClose}>
-							×
-						</button>
-					)}
-				</header>
-				<label>
-					{message}
-					<br />
-					<input
-						type="text"
-						value={value}
-						onChange={event => setValue(event.target.value)}
-					/>
-				</label>
-				<div>
-					<button type="submit">OK</button>
-				</div>
-			</form>
+			></div>
 		</div>
 	);
 }
 
-Prompt.propTypes = {
-	title: PropTypes.string.isRequired,
-	message: PropTypes.string.isRequired,
-	defaultValue: PropTypes.string,
-	onSubmit: PropTypes.func.isRequired,
-};
+Prompt.propTypes = {};
 // WORKSHOP_END
 // FINAL_START
 export default function Prompt({

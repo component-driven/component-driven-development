@@ -56,12 +56,12 @@ The result should look like this:
 <details>
  <summary>Solution</summary>
 
-The `Dialog` component (`src/exercises/2-3-Compound_components/Dialog.js`):
+The `Dialog` component (`src/exercises/2-3-State_encapsulation/Dialog.js`):
 
 ```jsx {"file": "final/Dialog.js", "static": true}
 ```
 
-The usage (`src/exercises/2-3-Compound_components/Dialog.md`):
+The usage (`src/exercises/2-3-State_encapsulation/Dialog.md`):
 
 ```md {"file": "final/Dialog.md", "static": true}
 ```

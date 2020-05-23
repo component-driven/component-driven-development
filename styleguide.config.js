@@ -66,9 +66,10 @@ const config = {
 			);
 			const { file, ...restSettings } = settings;
 			const rawContent = fs.readFileSync(filepath, 'utf8');
-			const content = filepath.endsWith('.md')
-				? markdownToCodeExample(rawContent)
-				: rawContent;
+			const content =
+				filepath.endsWith('.md') && lang === 'jsx'
+					? markdownToCodeExample(rawContent)
+					: rawContent;
 			return {
 				content,
 				settings: restSettings,
