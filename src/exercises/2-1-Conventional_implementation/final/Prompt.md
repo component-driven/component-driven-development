@@ -8,8 +8,14 @@ const [isOpen, setIsOpen] = React.useState(false);
       title="The univers asks"
       message="What’s your name, yo?"
       defaultValue="Incognito"
+      showClose
+      showCancel
+      showBackdrop
       onSubmit={value => {
         setName(value);
+        setIsOpen(false);
+      }}
+      onClose={value => {
         setIsOpen(false);
       }}
     />

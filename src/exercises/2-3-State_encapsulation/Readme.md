@@ -1,6 +1,6 @@
 In this exercise we’ll create a custom React Hook to manage the state of our Dialog component.
 
-## 2.4 Encapsulating state in a React Hook
+## 2.3 Encapsulating state in a React Hook
 
 In the previous exercise we’ve created a collection of stateless components. This gave us almost unlimited flexibility on how to compose these components. But since this components are stateless, we still have to manage the state (in our case the state of the modal opening) ourselves, and we have to duplicate this code every time we want to create a modal.
 
