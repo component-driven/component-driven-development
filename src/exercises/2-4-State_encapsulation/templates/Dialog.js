@@ -117,17 +117,17 @@ DialogFooter.propTypes = {
 };
 // WORKSHOP_END
 // FINAL_START
-export function useDialogState({ open: defaultOpen = false } = {}) {
-  const [open, setIsOpen] = React.useState(defaultOpen);
-  return {
-    open,
-    onOpen: () => setIsOpen(true),
-    onClose: () => setIsOpen(false),
-  };
+export function useDialogState({ open = false } = {}) {
+	const [isOpen, setIsOpen] = React.useState(open);
+	return {
+		isOpen,
+		onOpen: () => setIsOpen(true),
+		onClose: () => setIsOpen(false),
+	};
 }
 
-export function Dialog({ children, open }) {
-	if (!open) {
+export function Dialog({ children, isOpen }) {
+	if (!isOpen) {
 		return null;
 	}
 
@@ -151,7 +151,7 @@ export function Dialog({ children, open }) {
 }
 
 Dialog.propTypes = {
-	open: PropTypes.bool.isRequired,
+	isOpen: PropTypes.bool.isRequired,
 	children: PropTypes.node.isRequired,
 };
 

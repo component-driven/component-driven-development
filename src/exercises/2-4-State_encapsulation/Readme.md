@@ -21,12 +21,10 @@ const [isExpanded, setIsExpanded] = React.useState(false);
 Or we can encapsulate the state management in a custom Hook, and spread the returned value to each primitive:
 
 ```jsx static
-function useDisclosureState({
-  expanded: defaultExpanded = false
-} = {}) {
-  const [expanded, setIsExpanded] = React.useState(defaultExpanded);
+function useDisclosureState({ expanded = false } = {}) {
+  const [isExpanded, setIsExpanded] = React.useState(expanded);
   return {
-    expanded,
+    isExpanded,
     onToggle: () => setIsExpanded(x => !x)
   };
 }
