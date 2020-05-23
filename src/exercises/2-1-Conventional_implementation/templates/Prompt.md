@@ -1,21 +1,12 @@
 ```jsx
 // WORKSHOP_START
 const [name, setName] = React.useState('');
-const [isOpen, setIsOpen] = React.useState(false);
 <>
-  {isOpen && (
-    <Prompt
-      title="The univers asks"
-      message="What’s your name, yo?"
-      defaultValue="Incognito"
-      onSubmit={value => {
-        setName(value);
-        setIsOpen(false);
-      }}
-    />
-  )}
+  {/* <Prompt prop1={42} /> */}
   <p>Name: {name || 'Incognito'}</p>
-  <button onClick={() => setIsOpen(true)}>Ask name</button>
+  <button onClick={() => console.log('not implemented')}>
+    Ask name
+  </button>
 </>;
 // WORKSHOP_END
 // FINAL_START
