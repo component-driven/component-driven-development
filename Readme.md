@@ -41,25 +41,24 @@ npm install
 
 Run:
 
-- `npm start` to work on exercises and run the completed style guide
-- `npm run app` to run the completed app
+- `npm start` to work on exercises and run the completed app and style guide
 
 Or:
 
 - `npm run exercises-cdd` to work on exercises
 - `npm run styleguide` to run the completed style guide
+- `npm run app` to run the completed app
 
 ### Resilient component libraries in React
 
 Run:
 
-- `npm run start-rcl` to work on exercises and run the completed style guide
-- `npm run app` to run the completed app
+- `npm run start-rcl` to work on exercises and run the completed app
 
 Or:
 
 - `npm run exercises-rcl` to work on exercises
-- `npm run styleguide` to run the completed style guide
+- `npm run app` to run the completed app
 
 ## Tech stack
 

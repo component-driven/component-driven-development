@@ -9,7 +9,7 @@
 		"prestart": "npm run validate",
 		"start": "run-p app exercises-cdd styleguide",
 		"start-cdd": "run-p app exercises-cdd styleguide",
-		"start-rcl": "run-p app exercises-rcl styleguide",
+		"start-rcl": "run-p app exercises-rcl",
 		"preapp": "npm run validate",
 		"app": "gatsby develop",
 		"prebuild": "npm run validate",
