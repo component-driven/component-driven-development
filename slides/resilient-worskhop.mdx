@@ -939,7 +939,55 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-<TweetEmbed id="1090733766950223878" />
+> Primitives should not assume how they will be used
+
+---
+
+<Secondary>
+
+# State encapsulation
+
+</Secondary>
+
+---
+
+# 👩‍💻 `npm run start-rcl`
+
+- [http://localhost:8000](http://localhost:8000) — App
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+<Secondary>
+
+# Recap
+
+</Secondary>
+
+---
+
+## Lessons learned
+
+- hooks allow extracting complex state
+- provide a way to override or access state
+
+---
+
+<Secondary>
+
+# Headless Components
+
+</Secondary>
+
+---
+
+> If a component doesn't render HTML it can be a hook
+
+---
+
+- react-dropzone
+- downshift
+- Reakit hooks
 
 ---
 
@@ -951,7 +999,126 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-// TODO
+> A UI pattern is the re-usable form of a solution to a design problem.
+
+---
+
+```jsx
+<Dialog>
+	<Backdrop />
+	<DialogHeader>
+		<h1>Asking for a name</h1>
+		<button onClose={}>x</button>
+	</DialogHeader>
+	<DialogContent>
+		<form onSubmit={}>
+			<label>What’s your name, yo?</label>
+			<input type="text" defaultValue="Incognito" />
+			<button type="submit">Submit</button>
+			<button onClose={}>Cancel</button>
+		</form>
+	</DialogContent>
+</Dialog>
+```
+
+---
+
+```jsx
+<Dialog>
+	<Backdrop />
+	<DialogHeader>
+		<h1>What's 2 + 2?</h1>
+	</DialogHeader>
+	<DialogContent>
+		<form onSubmit={}>
+			<input type="number" />
+			<button type="submit">Submit</button>
+		</form>
+	</DialogContent>
+</Dialog>
+```
+
+---
+
+# Primitives
+
+- 👍 Less abstractions
+- 👍 Easy to change
+- 👎 Inconsistent UI
+- 👎 Slower development
+
+---
+
+# UI Patterns
+
+- UI with a specific goal (solution)
+- Better DX (API more specific)
+- Built with primitives
+
+---
+
+# 👩‍💻 `npm run start-rcl`
+
+- [http://localhost:8000](http://localhost:8000) — App
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+<Secondary>
+
+# Recap
+
+</Secondary>
+
+---
+
+## flexibility → rigidity
+
+---
+
+<TweetEmbed id="1090733766950223878" />
+
+---
+
+## Compound components in Patterns?
+
+---
+
+> If position matters or different children can be used, use compound components. Otherwise use props.
+
+---
+
+## Compound Components
+
+<Code language="jsx">
+	{`<Menu>
+	<MenuItem>Item 1</MenuItem>
+	<MenuItem>Item 2</MenuItem>
+	<MenuItemDivider/>
+	<MenuItem>Item 4</MenuItem>
+</Menu>`}
+</Code>
+
+---
+
+## Prop-based API
+
+<Code language="jsx">
+	{`<Prompt message="Don't want to know about the layout" onSubmit={} />`}
+</Code>
+
+---
+
+## Combine both approaches
+
+<Code language="jsx">
+	{`<DropdownMenu trigger={<Button>Open menu</Button>}>
+	<MenuItem>Item 1</MenuItem>
+	<MenuItem>Item 2</MenuItem>
+	<MenuItemDivider/>
+	<MenuItem>Item 4</MenuItem>
+</DropdownMenu>`}
+</Code>
 
 ---
 
