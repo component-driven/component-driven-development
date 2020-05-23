@@ -1,9 +1,9 @@
 ```jsx
 import Prompt from './final/Prompt';
 const [name, setName] = React.useState('');
-const [isVisible, setIsVisible] = React.useState(false);
+const [isOpen, setIsOpen] = React.useState(false);
 <>
-  {isVisible && (
+  {isOpen && (
     <Prompt
       title="The univers asks"
       message="What’s your name, yo?"
@@ -13,14 +13,14 @@ const [isVisible, setIsVisible] = React.useState(false);
       showBackdrop
       onSubmit={value => {
         setName(value);
-        setIsVisible(false);
+        setIsOpen(false);
       }}
       onClose={value => {
-        setIsVisible(false);
+        setIsOpen(false);
       }}
     />
   )}
   <p>Name: {name || 'Incognito'}</p>
-  <button onClick={() => setIsVisible(true)}>Ask name</button>
+  <button onClick={() => setIsOpen(true)}>Ask name</button>
 </>;
 ```

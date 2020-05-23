@@ -11,10 +11,10 @@ import {
 } from './Dialog';
 const [name, setName] = React.useState('');
 const [draftName, setDraftName] = React.useState('');
-const [isVisible, setIsVisible] = React.useState(false);
-const onClose = () => setIsVisible(false);
+const [isOpen, setIsOpen] = React.useState(false);
+const onClose = () => setIsOpen(false);
 <>
-  {isVisible && (
+  {isOpen && (
     <Dialog>
       <DialogBackdrop onClose={onClose} />
       <DialogContent>
@@ -49,7 +49,7 @@ const onClose = () => setIsVisible(false);
     </Dialog>
   )}
   <p>Name: {name || 'Incognito'}</p>
-  <button onClick={() => setIsVisible(true)}>Ask name</button>
+  <button onClick={() => setIsOpen(true)}>Ask name</button>
 </>;
 // WORKSHOP_END
 // FINAL_START

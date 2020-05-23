@@ -1,9 +1,9 @@
 ```jsx
 // WORKSHOP_START
 const [name, setName] = React.useState('');
-const [isVisible, setIsVisible] = React.useState(false);
+const [isOpen, setIsOpen] = React.useState(false);
 <>
-  {isVisible && (
+  {isOpen && (
     <Prompt
       title="The univers asks"
       message="What’s your name, yo?"
@@ -13,15 +13,15 @@ const [isVisible, setIsVisible] = React.useState(false);
       showBackdrop
       onSubmit={value => {
         setName(value);
-        setIsVisible(false);
+        setIsOpen(false);
       }}
       onClose={value => {
-        setIsVisible(false);
+        setIsOpen(false);
       }}
     />
   )}
   <p>Name: {name || 'Incognito'}</p>
-  <button onClick={() => setIsVisible(true)}>Ask name</button>
+  <button onClick={() => setIsOpen(true)}>Ask name</button>
 </>;
 // WORKSHOP_END
 // FINAL_START
@@ -36,10 +36,10 @@ import {
 } from './final/Dialog';
 const [name, setName] = React.useState('');
 const [draftName, setDraftName] = React.useState('');
-const [isVisible, setIsVisible] = React.useState(false);
-const onClose = () => setIsVisible(false);
+const [isOpen, setIsOpen] = React.useState(false);
+const onClose = () => setIsOpen(false);
 <>
-  {isVisible && (
+  {isOpen && (
     <Dialog>
       <DialogBackdrop onClose={onClose} />
       <DialogContent>
@@ -74,7 +74,7 @@ const onClose = () => setIsVisible(false);
     </Dialog>
   )}
   <p>Name: {name || 'Incognito'}</p>
-  <button onClick={() => setIsVisible(true)}>Ask name</button>
+  <button onClick={() => setIsOpen(true)}>Ask name</button>
 </>;
 // FINAL_END
 ```
