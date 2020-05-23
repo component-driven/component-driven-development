@@ -98,7 +98,7 @@ const dialog = useDialogState();
         </DialogFooter>
       </form>
     </DialogContent>
-    </Dialog>
+  </Dialog>
   <p>Name: {name || 'Incognito'}</p>
   <button onClick={dialog.onOpen}>Ask name</button>
 </>;
