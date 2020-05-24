@@ -11,12 +11,11 @@ import {
 } from './Dialog';
 
 // WORKSHOP_START
-export default function Prompt(prompt) {
-	return (<div>TODO</div>);
+export default function Prompt(props) {
+	return <div>TODO</div>;
 }
 
-Prompt.propTypes = {
-};
+Prompt.propTypes = {};
 // WORKSHOP_END
 // FINAL_START
 export default function Prompt({

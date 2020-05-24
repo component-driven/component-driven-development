@@ -123,22 +123,22 @@ UI engineer working with web technologies since 1999. Creator of React Styleguid
 		<div sx={{ maxHeight: '50%' }}>
 			<Code language="html">
 				{`<div class="dropdown">
-    <button
-	  class="btn btn-default dropdown-toggle"
-	  type="button"
-	  id="dropdownMenu1"
-	  data-toggle="dropdown"
+	<button
+		class="btn btn-default dropdown-toggle"
+		type="button"
+		id="dropdownMenu1"
+		data-toggle="dropdown"
 	>
-      Dropdown <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Action</a></li>
-      <li><a href="#">Another action</a></li>
-      <li><a href="#">Something else here</a></li>
-      <li role="separator" class="divider"></li>
-      <li><a href="#">Separated link</a></li>
-    </ul>
-  </div>`}
+	   Dropdown <span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+		<li><a href="#">Action</a></li>
+		<li><a href="#">Another action</a></li>
+		<li><a href="#">Something else here</a></li>
+		<li role="separator" class="divider"></li>
+		<li><a href="#">Separated link</a></li>
+	</ul>
+</div>`}
 			</Code>
 		</div>
 		<span>😩</span>
@@ -184,27 +184,24 @@ UI engineer working with web technologies since 1999. Creator of React Styleguid
 
 ```html
 <div class="dropdown">
-  <button
-    class="btn btn-default dropdown-toggle"
-    type="button"
-    id="dropdownMenu1"
-    data-toggle="dropdown"
-    aria-haspopup="true"
-    aria-expanded=“true"
-  >
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul
-     class="dropdown-menu"
-     aria-labelledby=“dropdownMenu1"
-  >
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
+	<button
+		class="btn btn-default dropdown-toggle"
+		type="button"
+		id="dropdownMenu1"
+		data-toggle="dropdown"
+		aria-haspopup="true"
+		aria-expanded="true"
+	>
+		Dropdown
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		<li><a href="#">Action</a></li>
+		<li><a href="#">Another action</a></li>
+		<li><a href="#">Something else here</a></li>
+		<li role="separator" class="divider"></li>
+		<li><a href="#">Separated link</a></li>
+	</ul>
 </div>
 ```
 
@@ -224,7 +221,8 @@ UI engineer working with web technologies since 1999. Creator of React Styleguid
 
 ---
 
-> Component implementation changes over time, the API may stay the same
+> Component implementation changes over time,<br/>
+> the API may stay the same
 
 ---
 
@@ -394,8 +392,9 @@ export { DatePicker } from "material-ui"
 
 ---
 
-# 👩‍💻 `npm run exercises-rcl`
+# 👩‍💻 `npm run start-rcl`
 
+- [http://localhost:8000](http://localhost:8000) — App
 - [http://localhost:6061](http://localhost:6061) — Exercises
 
 ---
@@ -588,7 +587,7 @@ export { DatePicker } from "material-ui"
 ## Lessons learned
 
 - Wrong abstractions are worse than no abstractions
-- Single responsibility is bad
+- Big monolithic components are bad
 
 ---
 
@@ -786,9 +785,9 @@ const Input = ({ type, value, onChange }) => (
 	<input type={type} value={value} onChange={onChange} />
 );
 
-// in your app:
+// In your app
 
-const inputRef = useRef(null);
+const inputRef = React.useRef(null);
 
 inputRef.current.focus() // Not going to work!
 
@@ -831,7 +830,7 @@ const Input = ({ type, value, onChange }) => (
 	<input type={type} value={value} onChange={onChange} />
 );
 
-// in your app:
+// In your app
 
 <Input placeholder="Not going" aria-label="to work"> // Ooops!
 ```
@@ -863,11 +862,13 @@ const Input = ({ type, value, onChange }) => (
 ```jsx
 const Button = props => <button {...props} />;
 
-// in your app:
+// In your app
 
 <Button as="a" href="#">
+	{' '}
+	{/* Ooops! */}
 	Link button
-</Button>; // Ooops!
+</Button>;
 ```
 
 </SplitTitle>
@@ -879,7 +880,9 @@ const Button = props => <button {...props} />;
 ## Allow setting underlying HTML tag with `as`
 
 ```jsx
-const Button = ({ as = 'button', ...props }) => React.createElement(as, props);
+const Button = ({ as: Component = 'button', ...props }) => (
+	<Component {...props} />
+);
 ```
 
 </SplitTitle>
@@ -896,6 +899,7 @@ const RedBox = (props) => (
 )
 
 // In you app
+
 <RedBox className="customize"/> // Oops!
 ```
 
@@ -915,7 +919,8 @@ const RedBox = ({className, ...props}) => (
 )
 
 // In you app
-<RedBox className="customize"/> // all 3 class names applied
+
+<RedBox className="customize"/> // All 3 class names applied
 ```
 
 </SplitTitle>
@@ -959,8 +964,8 @@ const RedBox = ({className, ...props}) => (
 
 ## Lessons learned
 
-- hooks allow extracting complex state
-- provide a way to override or access state
+- Hooks allow encapsulation and sharing of complex state
+- Provide a way to override or access state
 
 ---
 
@@ -996,17 +1001,19 @@ const RedBox = ({className, ...props}) => (
 
 ```jsx
 <Dialog>
-	<Backdrop />
-	<DialogHeader>
-		<h1>Asking for a name</h1>
-		<button onClose={}>x</button>
-	</DialogHeader>
 	<DialogContent>
 		<form onSubmit={}>
-			<label>What’s your name, yo?</label>
-			<input type="text" defaultValue="Incognito" />
-			<button type="submit">Submit</button>
-			<button onClose={}>Cancel</button>
+			<DialogHeader>Asking for a name</DialogHeader>
+			<DialogBody>
+			<label>
+				What’s your name, yo?
+				<input type="text" defaultValue="Incognito" />
+			</label>
+			</DialogBody>
+			<DialogFooter>
+			<button type="button" onClick={onClose}>Cancel</button>
+			<button type="submit">OK</button>
+			</DialogFooter>
 		</form>
 	</DialogContent>
 </Dialog>
@@ -1016,14 +1023,19 @@ const RedBox = ({className, ...props}) => (
 
 ```jsx
 <Dialog>
-	<Backdrop />
-	<DialogHeader>
-		<h1>What's 2 + 2?</h1>
-	</DialogHeader>
 	<DialogContent>
 		<form onSubmit={}>
-			<input type="number" />
-			<button type="submit">Submit</button>
+			<DialogHeader>What’s 2 + 2?</DialogHeader>
+			<DialogBody>
+			<label>
+				Please enter the answer:
+				<input type="number" />
+			</label>
+			</DialogBody>
+			<DialogFooter>
+			<button type="button" onClick={onClose}>Cancel</button>
+			<button type="submit">OK</button>
+			</DialogFooter>
 		</form>
 	</DialogContent>
 </Dialog>
@@ -1043,7 +1055,7 @@ const RedBox = ({className, ...props}) => (
 # UI Patterns
 
 - UI with a specific goal (solution)
-- Better DX (API more specific)
+- Better developer experience (API is more specific)
 - Built with primitives
 
 ---

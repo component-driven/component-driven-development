@@ -1,12 +1,12 @@
-In this exercise we’ll create a custom React Hook to manage the state of our Dialog component.
+In this exercise, we’ll create a custom React Hook to manage the state of our Dialog component.
 
-## 2.3 Encapsulating state in a React Hook
+## 3.1 Encapsulating state in a React Hook
 
-In the previous exercise we’ve created a collection of stateless components. This gave us almost unlimited flexibility on how to compose these components. But since this components are stateless, we still have to manage the state (in our case the state of the modal opening) ourselves, and we have to duplicate this code every time we want to create a modal.
+In the previous exercise, we’ve created a collection of stateless primitive components with almost unlimited composition flexibility. However, since these components are stateless, we still have to manage the state (in our case, the state of the dialog opening) ourselves, and we have to write this code again every time we want to create a dialog.
 
-To solve this issue, we’re going to create a custom React Hook that encapsulates the state and returns its current value and a function to change this value. We’ll also need to move the condition from the caller code to our container `Dialog` component.
+To solve this issue, we’re going to create a custom React Hook that encapsulates the state and returns its current values and functions to change these values. We’ll also need to move the condition whether to show a dialog from the caller code to our container `Dialog` component.
 
-For example, we have a disclosure component, that consits of some content and a button that shows or hides the content. We can implement the state on the call site:
+For example, we have a disclosure compound component that consists of some content (`DisclosureContent` primitive) and a button (`DisclosureButton` primitive) that shows or hides the content. We can implement the state on the call site:
 
 ```jsx static
 const [isExpanded, setIsExpanded] = React.useState(false);
@@ -18,7 +18,7 @@ const [isExpanded, setIsExpanded] = React.useState(false);
 </>;
 ```
 
-Or we can encapsulate the state management in a custom Hook, and spread the returned value to each primitive:
+Instead, we can encapsulate the state management in a custom Hook, and spread the returned value to each primitive:
 
 ```jsx static
 function useDisclosureState({ expanded = false } = {}) {
@@ -36,7 +36,7 @@ const disclosure = useDisclosureState({ expanded: false });
 </>;
 ```
 
-The benefit is that we don’t have to remember the API of each primitive component, and can spread the same props to each component, and let them deal with it. However, we still have access to all the values and function, and could use them in our custom components or extend with our own behavior. We also reduce code duplication and make the behaviour more consistent, which is especially important for components with more complex behavior.
+The benefit is that we don’t have to remember the API of each primitive component, and we can spread the same props to each component, letting them handle these values. However, we still have access to all the values and functions, and could use them in our custom components or extend with our custom behavior. We also reduce code duplication and make the behavior more consistent, which is especially important for components with more complex behavior.
 
 **Note:** This exercise is inspired by the [Reakit Dialog component](https://reakit.io/docs/dialog/).
 
@@ -51,7 +51,7 @@ The result should look like this:
 
 ### The task
 
-1. Create a custom React Hook to manage Dialog opening state. The Hook should return the current opening state and function to show and hide the dialog.
+1. Create a custom React Hook to manage dialog opening state. The Hook should return the current opening state and functions to show and hide the dialog.
 
 <details>
  <summary>Solution</summary>

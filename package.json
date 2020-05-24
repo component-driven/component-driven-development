@@ -6,9 +6,10 @@
 	"homepage": "https://cdds.component-driven.io",
 	"scripts": {
 		"validate": "node scripts/setup.js",
-		"prestart": "npm run validate",
 		"start": "run-p app exercises-cdd styleguide",
+		"prestart-cdd": "npm run validate",
 		"start-cdd": "run-p app exercises-cdd styleguide",
+		"prestart-rcl": "npm run validate",
 		"start-rcl": "run-p app exercises-rcl",
 		"preapp": "npm run validate",
 		"app": "gatsby develop",
