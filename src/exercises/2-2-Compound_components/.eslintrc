@@ -1,5 +1,0 @@
-{
-	"root": true,
-	"parser": "babel-eslint",
-	"plugins": ["import", "react", "react-hooks"]
-}

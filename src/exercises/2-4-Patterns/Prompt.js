@@ -10,7 +10,7 @@ import {
 	DialogCloseButton,
 } from './Dialog';
 
-export default function Prompt(prompt) {
+export default function Prompt(props) {
 	return <div>TODO</div>;
 }
 

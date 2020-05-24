@@ -1,5 +1,9 @@
 {
-  "parser": "babel-eslint",
-	"extends": ["plugin:jsx-a11y/recommended"],
-	"plugins": ["import", "jsx-a11y", "react", "react-hooks"]
+	"parser": "babel-eslint",
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"plugins": ["import", "react", "react-hooks"],
+	"rules": {
+		"no-unused-vars": 0,
+		"react/prop-types": 0
+	}
 }
