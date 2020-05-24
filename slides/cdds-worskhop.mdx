@@ -87,9 +87,9 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 <SplitTitle>
 
-## Component-Driven Development a.k.a. Styleguide-Driven Development
+## Component-Driven Development
 
-<Grid gap={4} columns={2}>
+<Grid gap={5} columns={2}>
 <Box>
 
 ### 👎 Traditional
@@ -125,7 +125,7 @@ UI engineer working with web technologies since 1999. Creator of react-styleguid
 
 ---
 
-# 👩‍💻 `npm run exercise`
+# 👩‍💻 `npm run exercises-cdd`
 
 - [http://localhost:6061](http://localhost:6061) — Exercises
 
@@ -514,7 +514,7 @@ export default {
 
 ---
 
-# 👩‍💻 `npm start`
+# 👩‍💻 `npm run start-cdd`
 
 - [http://localhost:8000](http://localhost:8000) — App
 - [http://localhost:6060](http://localhost:6060) — Final styleguide
@@ -576,7 +576,7 @@ export default {
 		</div>
 		<span>🙄</span>
 		<span>Dropdown</span>
-		<div>
+		<div sx={{ maxHeight: '50%' }}>
 			<Code language="html">
 				{`<div class="dropdown">
     <button
@@ -584,16 +584,10 @@ export default {
 	  type="button"
 	  id="dropdownMenu1"
 	  data-toggle="dropdown"
-	  aria-haspopup="true"
-	  aria-expanded=“true"
 	>
-      Dropdown
-      <span class="caret"></span>
+      Dropdown <span class="caret"></span>
     </button>
-    <ul
-	   class="dropdown-menu"
-	   aria-labelledby=“dropdownMenu1"
-	>
+    <ul class="dropdown-menu">
       <li><a href="#">Action</a></li>
       <li><a href="#">Another action</a></li>
       <li><a href="#">Something else here</a></li>
@@ -930,7 +924,7 @@ import Text from '../primitives/Text';
 
 ---
 
-# 👩‍💻 `npm start`
+# 👩‍💻 `npm run start-cdd`
 
 - [http://localhost:6061](http://localhost:6061) — Exercises
 
@@ -1134,7 +1128,7 @@ export const Box = styled.div(
 
 ---
 
-# 👩‍💻 `npm start`
+# 👩‍💻 `npm run start-cdd`
 
 - [http://localhost:6061](http://localhost:6061) — Exercises
 
@@ -1206,7 +1200,7 @@ export const Box = styled.div(
 
 ---
 
-# 👩‍💻 `npm start`
+# 👩‍💻 `npm run start-cdd`
 
 - [http://localhost:6061](http://localhost:6061) — Exercises
 
