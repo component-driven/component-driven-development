@@ -120,7 +120,7 @@ UI engineer working with web technologies since 1999. Creator of React Styleguid
 		</div>
 		<span>🙄</span>
 		<span>Dropdown</span>
-		<div>
+		<div sx={{ maxHeight: '50%' }}>
 			<Code language="html">
 				{`<div class="dropdown">
     <button
@@ -128,16 +128,10 @@ UI engineer working with web technologies since 1999. Creator of React Styleguid
 	  type="button"
 	  id="dropdownMenu1"
 	  data-toggle="dropdown"
-	  aria-haspopup="true"
-	  aria-expanded=“true"
 	>
-      Dropdown
-      <span class="caret"></span>
+      Dropdown <span class="caret"></span>
     </button>
-    <ul
-	   class="dropdown-menu"
-	   aria-labelledby=“dropdownMenu1"
-	>
+    <ul class="dropdown-menu">
       <li><a href="#">Action</a></li>
       <li><a href="#">Another action</a></li>
       <li><a href="#">Something else here</a></li>
@@ -358,28 +352,26 @@ const Dropdown = props => (
 
 ---
 
-<Grid columns={3}>
+<Grid columns={3} gap={5}>
 <Box>
 
-### OSS
+## OSS
 
-<small>ex. Material UI, Ant Design, Bootstrap</small>
+ex. Material UI, Ant Design, Bootstrap
 
 </Box>
 <Box>
 
-### Mix
+## Mix
 
-<small>
-	Re-export or wrap components from OSS (Reakit, Theme-UI, Chakra, etc.)
-</small>
+Re-export or wrap components from OSS (Reakit, Theme-UI, Chakra, etc.)
 
 </Box>
 <Box>
 
-### Custom
+## Custom
 
-<small>Build everything from scratch (using styled-system, etc.)</small>
+Build everything from scratch (using styled-system, etc.)
 
 </Box>
 </Grid>
