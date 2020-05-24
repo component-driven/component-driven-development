@@ -673,21 +673,25 @@ rigidity → flexibility
 ---
 
 ```jsx
-<Backdrop />
-<Dialog>
-	<DialogHeader>
-		<h1>Asking for a name</h1>
-		<button onClose={}>x</button>
-	</DialogHeader>
-	<DialogContent>
-		<form onSubmit={}>
-			<label>What’s your name, yo?</label>
-			<input type="text" defaultValue="Incognito" />
-			<button type="submit">Submit</button>
-			<button onClose={}>Cancel</button>
-		</form>
-	</DialogContent>
-</Dialog>
+    <Dialog>
+      <DialogBackdrop onClose={} />
+      <DialogContent>
+        <DialogCloseButton onClose={} />
+        <form onSubmit={}>
+          <DialogHeader>The universe asks</DialogHeader>
+          <DialogBody>
+            <label>
+              What’s your name, yo?
+              <input type="text" />
+            </label>
+          </DialogBody>
+          <DialogFooter>
+            <button type="button" onClick={onClose}>Cancel</button>
+            <button type="submit">OK</button>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
 ```
 
 ---
