@@ -1,10 +1,12 @@
+import theme from '@component-driven/mdx-deck-theme';
+
 export default {
+	...theme,
 	styles: {
+		...theme.styles,
 		root: {
-			bg: '#fff',
-			margin: 0,
-			fontFamily:
-				'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+			...theme.styles.root,
+			fontSize: '16px', // Change the base font size for the website
 		},
 	},
 };
