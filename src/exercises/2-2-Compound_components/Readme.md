@@ -2,7 +2,7 @@ In this exercise, we’ll split our Prompt component into multiple primitive com
 
 ## 2.1 Creating compound components
 
-Monolithic components with many props to suport many different use cases are hard to learn and use, and they make impossible states possible — not all combinations of props make sense. They are also harder to maintain. Even with many props, the flexibility is still limited. For example, in our Prompt component, there’s no way to change the submit button label.
+Monolithic components with many props to support many different use cases are hard to learn and use, and they make impossible states possible — not all combinations of props make sense. They are also harder to maintain. Even with many props, the flexibility is still limited. For example, in our Prompt component, there’s no way to change the submit button label.
 
 To solve these issues, we’re going to split our single monolithic component into multiple primitive components, and use composition of these small components to implement different use cases.
 
