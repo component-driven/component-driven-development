@@ -292,17 +292,21 @@ const Dropdown = props => (
 
 <SplitTitle>
 
-## Great Component libraries
+## ~~Good~~ _Great_ Component libraries
 
 - ensure UI consistency
 - enable faster development
 - abstract implementation details
-- designed for change
-- intuitive to use
-- inclusive
-- based on strong principles
+- _designed for change_
+- _intuitive to use_
+- _inclusive_
+- _based on strong principles_
 
 </SplitTitle>
+
+---
+
+# Examples
 
 ---
 
@@ -350,45 +354,74 @@ const Dropdown = props => (
 
 ---
 
-<Grid columns={3} gap={5}>
-<Box>
+<Grid gap={5}>
+<Grid columns={2}>
 
 ## OSS
 
 ex. Material UI, Ant Design, Bootstrap
 
-</Box>
-<Box>
+</Grid>
+<Grid columns={2}>
 
 ## Mix
 
 Re-export or wrap components from OSS (Reakit, Theme-UI, Chakra, etc.)
 
-</Box>
-<Box>
+</Grid>
+<Grid columns={2}>
 
 ## Custom
 
 Build everything from scratch (using styled-system, etc.)
 
-</Box>
+</Grid>
 </Grid>
 
 ---
 
 <SplitTitle>
 
-## Mixed approach
+## Using open source
 
 ```diff
-export { DatePicker } from "material-ui"
+import { DatePicker } from "material-ui"
 
-// In your app
-- import { DatePicker } from "material-ui"
-+ import { DatePicker } from "./components"
+<DatePicker {...} />
 ```
 
 </SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Using mixed approach
+
+```jsx
+// components/index.js
+
+export { DatePicker } from "material-ui"
+
+// app.js
+import { DatePicker } from "./components"
+
+<DatePicker {...} />
+```
+
+</SplitTitle>
+
+---
+
+## 🥁🥁🥁 Today we're building
+
+---
+
+<Figure
+	src={'/assets/window-prompt.png'}
+	alt="window.prompt"
+	caption="window.prompt"
+/>
 
 ---
 
@@ -412,7 +445,7 @@ export { DatePicker } from "material-ui"
 
 ---
 
-> ⏳ 30 minutes
+> 20 minutes
 
 ---
 
@@ -580,7 +613,9 @@ export { DatePicker } from "material-ui"
 
 # 😭
 
-<Notes>apropcalipse</Notes>
+---
+
+> Apropcalipse
 
 ---
 
@@ -591,7 +626,7 @@ export { DatePicker } from "material-ui"
 
 ---
 
-<Primary>
+<Primary imgSrc="/assets/legos.jpg">
 
 # UI Primitives
 
@@ -599,23 +634,23 @@ export { DatePicker } from "material-ui"
 
 ---
 
-> Primitives are building blocks of the UI.
+> Primitives are the building blocks of the user interface.
 
 ---
 
-<Image src={'/assets/legos.jpg'} />
+<Figure
+	src={'/assets/legos-assembled.jpg'}
+	alt="Lego cars"
+	caption="Different items from the same set of bricks"
+/>
 
 ---
 
-<Image src={'/assets/legos-assembled.jpg'} />
-
----
-
-<Secondary>
+<Primary>
 
 # Compound Components
 
-</Secondary>
+</Primary>
 
 ---
 
@@ -680,7 +715,7 @@ export { DatePicker } from "material-ui"
 
 ---
 
-## Inversion of control
+> Inversion of control
 
 ---
 
@@ -691,7 +726,7 @@ export { DatePicker } from "material-ui"
 
 ---
 
-> ⏳ 30 minutes
+> 20 minutes
 
 ---
 
@@ -759,11 +794,11 @@ export { DatePicker } from "material-ui"
 
 ---
 
-<Secondary>
+<Primary>
 
 # Principles of Primitives
 
-</Secondary>
+</Primary>
 
 ---
 
@@ -939,11 +974,11 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-<Secondary>
+<Primary>
 
 # State encapsulation
 
-</Secondary>
+</Primary>
 
 ---
 
@@ -951,6 +986,10 @@ const RedBox = ({className, ...props}) => (
 
 - [http://localhost:8000](http://localhost:8000) — App
 - [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+> 15-20 minutes
 
 ---
 
@@ -969,11 +1008,11 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-<Secondary>
+<Primary>
 
 # Headless Components
 
-</Secondary>
+</Primary>
 
 ---
 
@@ -984,6 +1023,35 @@ const RedBox = ({className, ...props}) => (
 - react-dropzone
 - downshift
 - Reakit hooks
+
+---
+
+```jsx
+import React, { useCallback } from 'react';
+import { useDropzone } from 'react-dropzone';
+
+function MyDropzone() {
+	const onDrop = useCallback(acceptedFiles => {
+		// Do something with the files
+	}, []);
+	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
+	return (
+		<div {...getRootProps()}>
+			<input {...getInputProps()} />
+			{isDragActive ? (
+				<p>Drop the files here ...</p>
+			) : (
+				<p>Drag 'n' drop some files here, or click to select files</p>
+			)}
+		</div>
+	);
+}
+```
+
+---
+
+> Low-level primitives to create UI Patterns
 
 ---
 
@@ -1049,6 +1117,15 @@ const RedBox = ({className, ...props}) => (
 - 👍 Easy to change
 - 👎 Inconsistent UI
 - 👎 Slower development
+
+---
+
+# Patterns
+
+- 👎 Higher-order abstractions
+- 👎 Harder to change
+- 👍 Consistent UI
+- 👍 Faster development
 
 ---
 
@@ -1125,13 +1202,73 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-<Figure
-	src={'/assets/component-driven.svg'}
-	alt="Component-driven Logo"
-	caption={
-		<a href="https://component-driven.io">https://component-driven.io</a>
-	}
-/>
+<Primary>
+
+# React.Context
+
+</Primary>
+
+---
+
+> Context is designed to share data that can be considered “global” for a tree of React components
+
+---
+
+<SplitTitle>
+
+## Avoid "prop drilling"
+
+```jsx
+import { ThemeProvider } from 'styled-components';
+import theme from '../theme';
+
+<ThemeProvider theme={theme}>
+	<App />
+</ThemeProvider>;
+```
+
+</SplitTitle>
+
+---
+
+## Avoid re-renders by passing React reconciliation
+
+[React at 60fps](https://medium.com/hackernoon/react-at-60fps-4e36b8189a4c)
+
+---
+
+<Demo src="http://react-sync-scroll.netlify.com" />
+
+---
+
+## Manage global state, decouple rendering, provide better APIs
+
+---
+
+# 👩‍💻 `npm run start-rcl`
+
+- [http://localhost:8000](http://localhost:8000) — App
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+> 15-20 minutes
+
+---
+
+<Secondary>
+
+# Recap
+
+</Secondary>
+
+---
+
+<Primary>
+
+# Q & A
+
+</Primary>
 
 ---
 
@@ -1143,11 +1280,13 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-<Primary>
-
-# Q & A
-
-</Primary>
+<Figure
+	src={'/assets/component-driven.svg'}
+	alt="Component-driven Logo"
+	caption={
+		<a href="https://component-driven.io">https://component-driven.io</a>
+	}
+/>
 
 ---
 
