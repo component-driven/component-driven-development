@@ -178,11 +178,18 @@ But most of the projects I had to work on looked differently:
 
 ## Why do we need design systems?
 
+1. UI consistency
+1. Coherent user experience
+1. A common design language
+
+---
+
+## What design systems mean for developers?
+
 1. Products becoming more complex
 1. Development speed is mission critical
 1. End quality is mission critical, too
 1. Our processes of building for web are outdated
-1. Communication is everything
 
 ---
 
@@ -251,11 +258,7 @@ But most of the projects I had to work on looked differently:
 
 ---
 
-<AnimatedGradient>
-
-# CSS is hard 🤯
-
-</AnimatedGradient>
+> CSS is hard 🤯
 
 ---
 
@@ -300,15 +303,15 @@ But most of the projects I had to work on looked differently:
 
 ---
 
-<AnimatedGradient>
-
-# CSS is the source of UI inconsistencies
-
-</AnimatedGradient>
+> CSS is the source of UI inconsistencies
 
 ---
 
-<Image src={'/assets/doors.jpg'} />
+<Figure
+	src={'/assets/doors.jpg'}
+	alt="Different doors"
+	caption="Same but differnt"
+/>
 
 ---
 
@@ -347,19 +350,31 @@ But most of the projects I had to work on looked differently:
 
 ---
 
-<Image src={'/assets/too-many-buttons.jpg'} size="contain" />
+<Figure
+	src="/assets/too-many-buttons.jpg"
+	alt="Different button styles"
+	caption="Different button styles"
+/>
 
 ---
 
-<Image src={'/assets/too-many-buttons-2.jpg'} size="contain" />
+<Figure
+	src="/assets/too-many-buttons-2.jpg"
+	alt="Different button styles"
+	caption="Different button styles"
+/>
 
 ---
 
-<Image src={'/assets/text.png'} size="contain" />
+<Figure
+	src="/assets/text.png"
+	alt="Different text styles"
+	caption="Different text styles"
+/>
 
 ---
 
-> CSS is too expressive 👩‍🎨
+> CSS is too expressive
 
 ---
 
@@ -383,7 +398,11 @@ But most of the projects I had to work on looked differently:
 
 ---
 
-<Image src={'/assets/dls-foundation.png'} size="contain" />
+<Figure
+	src="/assets/dls-foundation.png"
+	alt="Design Tokens"
+	caption="Design Tokens"
+/>
 
 ---
 
@@ -397,19 +416,35 @@ Defining & Documenting Design Tokens
 
 ---
 
-<Figure src={'/assets/ui-inventory-1.png'} alt="UI inventory process" />
+<Figure
+	src="/assets/ui-inventory-1.png"
+	alt="UI inventory process"
+	caption="UI inventory process"
+/>
 
 ---
 
-<Figure src={'/assets/ui-inventory-2.png'} alt="UI inventory process" />
+<Figure
+	src="/assets/ui-inventory-2.png"
+	alt="UI inventory process"
+	caption="UI inventory process"
+/>
 
 ---
 
-<Figure src={'/assets/ui-inventory-3.png'} alt="UI inventory process" />
+<Figure
+	src="/assets/ui-inventory-3.png"
+	alt="UI inventory process"
+	caption="UI inventory process"
+/>
 
 ---
 
-<Figure src={'/assets/text.png'} alt="Different text styles" />
+<Figure
+	src="/assets/text.png"
+	alt="Different text styles"
+	caption="Different text styles"
+/>
 
 ---
 
@@ -725,7 +760,7 @@ const Dropdown = props => (
 
 ---
 
-<Primary>
+<Primary imgSrc="/assets/legos.jpg">
 
 # Primitive components
 
@@ -733,15 +768,15 @@ const Dropdown = props => (
 
 ---
 
-<Image src={'/assets/legos.jpg'} />
-
----
-
 > Primitives are the building blocks of the user interface.
 
 ---
 
-<Image src={'/assets/legos-assembled.jpg'} />
+<Figure
+	src={'/assets/legos-assembled.jpg'}
+	alt="Lego cars"
+	caption="Different items from the same set of bricks"
+/>
 
 ---
 
