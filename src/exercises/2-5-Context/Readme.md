@@ -30,26 +30,7 @@ Remember the `window.prompt` API? All we have to do it to call a single function
 const name = window.prompt('What’s your name, yo?', 'Incognito');
 ```
 
-What if we can have a similar API for our `Prompt` component? We can achieve similar simplicity and convenience by using React Context and async/await:
-
-```jsx static
-import { useDialog } from './Dialog';
-
-const { prompt } = useDialog();
-const [name, setName] = React.useState('');
-
-<>
-  <p>Name: {name || 'Incognito'}</p>
-  <button
-    onClick={async () => {
-      const name = await prompt('What’s your name, yo?', 'Incognito');
-      setName(name);
-    }}
-  >
-    Ask name
-  </button>
-</>;
-```
+What if we can have a similar API for our `Prompt` component? We can achieve similar simplicity and convenience by using React Context and async/await.
 
 The most tricky part here is the provider. For simplicity, we’ll only allow one dialog at a time. So every time a new dialog is about to show, will close currently open dialog:
 
@@ -111,7 +92,26 @@ const { openDialog, closeDialog } = React.useContext(DialogContext);
 </>;
 ```
 
-But we can go two steps further and simplify it even more.
+But we can go two steps further and simplify it even more:
+
+```jsx static
+import { useDialog } from './Dialog';
+
+const { prompt } = useDialog();
+const [name, setName] = React.useState('');
+
+<>
+  <p>Name: {name || 'Incognito'}</p>
+  <button
+    onClick={async () => {
+      const name = await prompt('What’s your name, yo?', 'Incognito');
+      setName(name);
+    }}
+  >
+    Ask name
+  </button>
+</>;
+```
 
 ### The result
 
