@@ -1,10 +1,10 @@
 ## 5.1 Rewrite the Button
 
-To make our Button
+To make our Button more usable, we need to accommodate for different use cases. In our design system we're going to have 2 different _variants_ of the Button: `primary` and `secondary`. We also don't want users of our Button to screw it up by specifying the `padding` or other styles of it.
 
 ### The task
 
-1. Rewrite the Button we created before using Box
+1. Rewrite the Button we created before. Tip: use `css` function from `@styled-system/css` to get access to design tokens.
 1. Make it less flexible: we don't want `padding` and `border` be customizable via props
 1. Add `secondary` and `primary` variants to the button and allow choosing them via props
 
