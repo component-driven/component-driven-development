@@ -26,7 +26,11 @@ const markdownToCodeExample = s =>
 
 const config = {
 	serverPort: workshopId ? 6061 : 6060,
-	title: 'Component-driven design systems workshop',
+	title: isExercisesCdd
+		? 'Design systems for React developers'
+		: isExercisesRcl
+		? 'Resilient component libraries in React'
+		: 'Component-driven',
 	styleguideDir: 'public/styleguide',
 	assetsDir: 'static',
 	styleguideComponents: {

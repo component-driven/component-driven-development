@@ -1,8 +1,8 @@
-In this exercise, we’ll TODO
+In this exercise, we’ll simplify the API even further.
 
 ## 5.1 Using React Context to simplify the API
 
-We’ve solved consitency and flexibility issues in the previous exercises but there’s still some boilerplate code we need to write every time we want to show a prompt dialog — we need to wire the `useDialogState` Hook and the `Prompt` component:
+We’ve solved consistency and flexibility issues in the previous exercises. However, there’s still some boilerplate code we need to write every time we want to show a prompt dialog — we need to wire the `useDialogState` Hook and the `Prompt` component:
 
 ```jsx static
 import { useDialogState } from './Dialog';
@@ -24,20 +24,20 @@ const dialog = useDialogState();
 </>;
 ```
 
-Remember the `window.prompt` API? All we have to do it to call a single function, and save the result in a variable:
+Remember the `window.prompt` API? All we have to do is to call a single function, and save the result in a variable:
 
 ```js static
 const name = window.prompt('What’s your name, yo?', 'Incognito');
 ```
 
-What if we can have a similar API for our `Prompt` component? We can achieve similar simplicity and convenience by using React Context and async/await.
+What if we can have a similar API for our `Prompt` component? We can achieve comparable simplicity and convenience by using React Context and async/await.
 
 The most tricky part here is the provider:
 
 ```jsx static
 export const DialogContext = React.createContext({});
 
-export function DialogProvider({ chidlren }) {
+export function DialogProvider({ children }) {
   const [dialogs, setDialog] = React.useState([]);
 
   function openDialog(dialog) {
@@ -56,7 +56,9 @@ export function DialogProvider({ chidlren }) {
       }}
     >
       {children}
-      {dialog}
+      {dialogs.map((dialog, index) =>
+        React.cloneElement(dialog, { key: index })
+      )}
     </DialogContext.Provider>
   );
 }
@@ -118,7 +120,7 @@ First, we need to add a new method, `prompt` to our context, that will open a Pr
 ```jsx static
 export const DialogContext = React.createContext({});
 
-export function DialogProvider({ chidlren }) {
+export function DialogProvider({ children }) {
   const [dialogs, setDialog] = React.useState([]);
 
   function openDialog(dialog) {
@@ -153,7 +155,9 @@ export function DialogProvider({ chidlren }) {
       }}
     >
       {children}
-      {dialog}
+      {dialogs.map((dialog, index) =>
+        React.cloneElement(dialog, { key: index })
+      )}
     </DialogContext.Provider>
   );
 }
@@ -176,8 +180,23 @@ The result should look like this:
 
 ### The task
 
-1. Create a new provider compoenent that has renders all open dialogs, has functions to open and close dialogs, and a function to open a Prompt dialog.
+1. Create a new provider component that has renders all open dialogs, has functions to open and close dialogs, and a function to open a Prompt dialog.
 2. Create a React Hook that uses the `DialogContext` and returns all context values.
+
+**Hint:** To use a provider in a Styleguidist example, move it to its own component:
+
+```jsx static
+import { DialogProvider, useDialog } from './DialogProvider';
+
+function PromptExample() {
+  const { openDialog } = useDialog();
+  return <></>;
+}
+
+<DialogProvider>
+  <PromptExample />
+</DialogProvider>;
+```
 
 <details>
  <summary>Solution</summary>
