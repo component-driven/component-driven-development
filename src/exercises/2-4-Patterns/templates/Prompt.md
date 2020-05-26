@@ -18,7 +18,7 @@ const dialog = useDialogState();
 <>
   <Prompt
     {...dialog}
-    title="The univers asks"
+    title="The universe asks"
     message="What’s your name, yo?"
     defaultValue="Incognito"
     onSubmit={setName}

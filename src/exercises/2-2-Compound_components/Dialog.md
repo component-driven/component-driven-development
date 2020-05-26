@@ -4,7 +4,7 @@ const [isOpen, setIsOpen] = React.useState(false);
 <>
   {isOpen && (
     <Prompt
-      title="The univers asks"
+      title="The universe asks"
       message="What’s your name, yo?"
       defaultValue="Incognito"
       showClose
