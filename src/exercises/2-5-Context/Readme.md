@@ -32,20 +32,20 @@ const name = window.prompt('What’s your name, yo?', 'Incognito');
 
 What if we can have a similar API for our `Prompt` component? We can achieve similar simplicity and convenience by using React Context and async/await.
 
-The most tricky part here is the provider. For simplicity, we’ll only allow one dialog at a time. So every time a new dialog is about to show, will close currently open dialog:
+The most tricky part here is the provider:
 
 ```jsx static
 export const DialogContext = React.createContext({});
 
 function DialogProvider({ chidlren }) {
-  const [dialog, setDialog] = React.useState(null);
+  const [dialogs, setDialog] = React.useState([]);
 
   function openDialog(dialog) {
-    setDialog(dialog);
+    setDialog(dialogs => [...dialogs, dialog]);
   }
 
   function closeDialog() {
-    setDialog(null);
+    setDialog(dialogs => dialogs.slice(0, -1));
   }
 
   return (
