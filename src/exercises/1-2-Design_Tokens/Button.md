@@ -1,5 +1,10 @@
 Default button:
 
 ```jsx
-<Button>Push me</Button>
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
+
+<ThemeProvider theme={theme}>
+  <Button>Push me</Button>
+</ThemeProvider>;
 ```
