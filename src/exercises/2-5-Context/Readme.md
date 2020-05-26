@@ -88,7 +88,7 @@ import { DialogContext } from './Dialog';
 import Prompt from './Prompt';
 
 const [name, setName] = React.useState('');
-const dialog = React.useContext(DialogContext);
+const { openDialog, closeDialog } = React.useContext(DialogContext);
 
 <>
   <p>Name: {name || 'Incognito'}</p>
