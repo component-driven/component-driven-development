@@ -2,7 +2,7 @@ In this exercise, we’ll TODO
 
 ## 5.1 Using React Context to simplify the API
 
-We’ve solved consitency and flexibility issues in the previous exercises but there’s still some boilerplate code we need to write every time we want to show a prompt modal — we need to wire the `useDialogState` Hook and the `Prompt` component:
+We’ve solved consitency and flexibility issues in the previous exercises but there’s still some boilerplate code we need to write every time we want to show a prompt dialog — we need to wire the `useDialogState` Hook and the `Prompt` component:
 
 ```jsx static
 import { useDialogState } from './Dialog';
@@ -37,7 +37,7 @@ The most tricky part here is the provider:
 ```jsx static
 export const DialogContext = React.createContext({});
 
-function DialogProvider({ chidlren }) {
+export function DialogProvider({ chidlren }) {
   const [dialogs, setDialog] = React.useState([]);
 
   function openDialog(dialog) {
@@ -62,7 +62,7 @@ function DialogProvider({ chidlren }) {
 }
 ```
 
-We need to wrap our app into this provider to have access to this context in our components. We could use the context directly to show modals:
+We need to wrap our app into this provider to have access to this context in our components. We could use the context directly to show dialogs:
 
 ```jsx static
 import { DialogContext } from './Dialog';
@@ -113,6 +113,60 @@ const [name, setName] = React.useState('');
 </>;
 ```
 
+First, we need to add a new method, `prompt` to our context, that will open a Prompt dialog:
+
+```jsx static
+export const DialogContext = React.createContext({});
+
+export function DialogProvider({ chidlren }) {
+  const [dialogs, setDialog] = React.useState([]);
+
+  function openDialog(dialog) {
+    setDialog(dialogs => [...dialogs, dialog]);
+  }
+
+  function closeDialog() {
+    setDialog(dialogs => dialogs.slice(0, -1));
+  }
+
+  function prompt({ title, message, defaultValue }) {
+    return new Promise(resolve => {
+      openDialog(
+        <Prompt
+          isOpen
+          title={title}
+          message={message}
+          defaultValue={defaultValue}
+          onClose={closeDialog}
+          onSubmit={resolve}
+        />
+      );
+    });
+  }
+
+  return (
+    <DialogContext.Provider
+      value={{
+        openDialog,
+        closeDialog,
+        prompt
+      }}
+    >
+      {children}
+      {dialog}
+    </DialogContext.Provider>
+  );
+}
+```
+
+Then create a new React Hook, `useDialog` as a shortcut to `React.useContext(DialogContext)`:
+
+```jsx static
+export function useDialog() {
+  return React.useContext(DialogContext);
+}
+```
+
 ### The result
 
 The result should look like this:
@@ -122,8 +176,8 @@ The result should look like this:
 
 ### The task
 
-1. Extend the `DialogProvider` component with a new method that open a `Prompt` dialog with given parameters.
-2. Create a React Hook that uses the `DialogContext` and returns all functions from the context: functions to open and close dialog, and a function to open a prompt dialog.
+1. Create a new provider compoenent that has renders all open dialogs, has functions to open and close dialogs, and a function to open a Prompt dialog.
+2. Create a React Hook that uses the `DialogContext` and returns all context values.
 
 <details>
  <summary>Solution</summary>
