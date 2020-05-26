@@ -51,7 +51,7 @@ const [name, setName] = React.useState('');
 </>;
 ```
 
-The most tricky part here is the provider. For simplicity we’ll only support one dialog at a time, and a new modal will kill a dialog that’s already open:
+The most tricky part here is the provider. For simplicity, we’ll only allow one dialog at a time. So every time a new dialog is about to show, will close currently open dialog:
 
 ```jsx static
 export const DialogContext = React.createContext({});
