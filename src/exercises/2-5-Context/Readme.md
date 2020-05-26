@@ -51,7 +51,67 @@ const [name, setName] = React.useState('');
 </>;
 ```
 
-TODO
+The most tricky part here is the provider. For simplicity we’ll only support one dialog at a time, and a new modal will kill a dialog that’s already open:
+
+```jsx static
+export const DialogContext = React.createContext({});
+
+function DialogProvider({ chidlren }) {
+  const [dialog, setDialog] = React.useState(null);
+
+  function openDialog(dialog) {
+    setDialog(dialog);
+  }
+
+  function closeDialog() {
+    setDialog(null);
+  }
+
+  return (
+    <DialogContext.Provider
+      value={{
+        openDialog,
+        closeDialog
+      }}
+    >
+      {children}
+      {dialog}
+    </DialogContext.Provider>
+  );
+}
+```
+
+We need to wrap our app into this provider to have acces to the context in our components. We can already use the context directly to show modals:
+
+```jsx static
+import { DialogContext } from './Dialog';
+import Prompt from './Prompt';
+
+const [name, setName] = React.useState('');
+const dialog = React.useContext(DialogContext);
+
+<>
+  <p>Name: {name || 'Incognito'}</p>
+  <button
+    onClick={() => {
+      openDialog(
+        <Prompt
+          isOpen
+          title="The universe asks"
+          message="What’s your name, yo?"
+          defaultValue="Incognito"
+          onClose={closeDialog}
+          onSubmit={setName}
+        />
+      );
+    }}
+  >
+    Ask name
+  </button>
+</>;
+```
+
+But we can go two steps further and simplify it even more.
 
 ### The result
 
@@ -62,8 +122,8 @@ The result should look like this:
 
 ### The task
 
-1. Create React Context provider that render active dialogs and has functions to open and close a dialog.
-2. Create a React Hook that returns a function that returns function to open and close dialogs, as well as shortcut function that opens a prompt dialog.
+1. Extend the `DialogProvider` component with a new method that open a `Prompt` dialog with given parameters.
+2. Create a React Hook that uses the `DialogContext` and returns all functions from the context: functions to open and close dialog, and a function to open a prompt dialog.
 
 <details>
  <summary>Solution</summary>
