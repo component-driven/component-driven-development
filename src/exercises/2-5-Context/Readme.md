@@ -81,7 +81,7 @@ function DialogProvider({ chidlren }) {
 }
 ```
 
-We need to wrap our app into this provider to have acces to the context in our components. We can already use the context directly to show modals:
+We need to wrap our app into this provider to have access to this context in our components. We could use the context directly to show modals:
 
 ```jsx static
 import { DialogContext } from './Dialog';
