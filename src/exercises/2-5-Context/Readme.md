@@ -201,14 +201,14 @@ function PromptExample() {
 <details>
  <summary>Solution</summary>
 
-The `Prompt` component (`src/exercises/2-4-Patterns/Prompt.js`):
+The `DialogProvider` component (`src/exercises/2-4-Patterns/DialogProvider.js`):
 
-```jsx {"file": "final/Prompt.js", "static": true}
+```jsx {"file": "final/DialogProvider.js", "static": true}
 ```
 
-The usage (`src/exercises/2-4-Patterns/Prompt.md`):
+The usage (`src/exercises/2-4-Patterns/DialogProvider.md`):
 
-```md {"file": "final/Prompt.md", "static": true}
+```md {"file": "final/DialogProvider.md", "static": true}
 ```
 
 </details>
