@@ -39,7 +39,9 @@ export function DialogProvider({ children }) {
 			}}
 		>
 			{children}
-			{dialogs}
+			{dialogs.map((dialog, index) =>
+				React.cloneElement(dialog, { key: index })
+			)}
 		</DialogContext.Provider>
 	);
 }
