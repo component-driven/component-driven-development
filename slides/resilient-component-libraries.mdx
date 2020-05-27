@@ -27,7 +27,7 @@ export const theme = { ...CDTheme };
 - 13:00-14:00 🥗 Lunch
 - 14:00-17:00 👨‍💻 Workshop
 
-~10-15 minutes breaks every hour.
+~10-15 minutes breaks every 1,5 hours.
 
 ---
 
@@ -48,8 +48,7 @@ export const theme = { ...CDTheme };
 1. Primitives
 1. UI Composition
 1. Behavior Composition
-1. Patterns
-1. Maintenance
+1. UI Patterns
 1. Discussion and Q&A
 
 ---
@@ -86,64 +85,46 @@ UI engineer working with web technologies since 1999. Creator of React Styleguid
 
 ---
 
-## HTML has lots of UI primitives
+<SplitTitle>
+
+## Good Component libraries
+
+- ensure UI consistency
+- enable faster development
+- abstract implementation details
+
+</SplitTitle>
 
 ---
 
-## HTML has lots of UI primitives?
+<SplitTitle>
+
+## ~~Good~~ _Great_ Component libraries
+
+- ensure UI consistency
+- abstract implementation details
+- _designed for change_
+- _intuitive to use_
+- _inclusive_
+- _based on strong principles_
+
+</SplitTitle>
 
 ---
 
-> HTML was designed for documents
+## Ensure UI consistency
 
 ---
 
-<Stack gridGap={5} p={4} gridTemplateColumns="auto 1fr auto">
-	<Appear>
-		<span>Text, Heading</span>
-		<div>
-			<Code language="html">{`<h1>Heading</h1>
-<p>Text</p>`}</Code>
-		</div>
-		<span>️😊</span>
-		<span>Link</span>
-		<div>
-			<Code language="html">{`<a href="#">Link</a>`}</Code>
-		</div>
-		<span>🤔</span>
-		<span>Button</span>
-		<div>
-			<Code language="html">
-				{`<button>Button</button>
-<input type="button">Button</input>`}
-			</Code>
-		</div>
-		<span>🙄</span>
-		<span>Dropdown</span>
-		<div sx={{ maxHeight: '50%' }}>
-			<Code language="html">
-				{`<div class="dropdown">
-	<button
-		class="btn btn-default dropdown-toggle"
-		type="button"
-		id="dropdownMenu1"
-		data-toggle="dropdown"
-	>
-	   Dropdown <span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu">
-		<li><a href="#">Action</a></li>
-		<li><a href="#">Another action</a></li>
-		<li><a href="#">Something else here</a></li>
-		<li role="separator" class="divider"></li>
-		<li><a href="#">Separated link</a></li>
-	</ul>
-</div>`}
-			</Code>
-		</div>
-		<span>😩</span>
-	</Appear>
-</Stack>
+<Figure
+	src="/assets/too-many-buttons.jpg"
+	alt="Different button styles"
+	caption="Make it impossible to end up here"
+/>
+
+---
+
+## Abstract implementation details
 
 ---
 
@@ -158,27 +139,6 @@ UI engineer working with web technologies since 1999. Creator of React Styleguid
 />
 
 <ThatGuy />
-
----
-
-<Figure
-	src="/assets/html-interactive.png"
-	alt="HTML Interactive Elements"
-	caption="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
-/>
-
----
-
-# Components
-
-- `<Button>` → `<button>`
-- `<Input>` → `<input type="text">`
-- `<Checkbox>` → `<input type="checkbox">`
-- `<Dropdown>` → ~~`<select>`~~ `<div class="dropdown">...`
-
----
-
-> Components: a better way of writing HTML
 
 ---
 
@@ -221,8 +181,15 @@ UI engineer working with web technologies since 1999. Creator of React Styleguid
 
 ---
 
-> Component implementation changes over time,<br/>
-> the API may stay the same
+## Intuitive
+
+- `<input type="button">` → `<Button>`
+- `<input type="text">` → `<TextField>`
+- `<input type="checkbox">` → `<Checkbox>`
+
+---
+
+## Designed for change
 
 ---
 
@@ -253,15 +220,11 @@ const Dropdown = props => (
 
 ---
 
-## Accessibility
+## Inclusive
 
 ---
 
 <Demo src="https://fraserxu.me/react-dropdown/" />
-
----
-
-> Components: a common UI language
 
 ---
 
@@ -270,7 +233,7 @@ const Dropdown = props => (
 	<Code language="jsx">{`<Button>`}</Code>
 	<span>A primary button</span>
 	<Code language="jsx">{`<Button primary>`}</Code>
-	<span>A cheked checkbox</span>
+	<span>A checked checkbox</span>
 	<Code language="jsx">{`<Checkbox checked>`}</Code>
 	<span>A product card</span>
 	<Code language="jsx">{`<ProductCard>`}</Code>
@@ -278,31 +241,7 @@ const Dropdown = props => (
 
 ---
 
-<SplitTitle>
-
-## Good Component libraries
-
-- ensure UI consistency
-- enable faster development
-- abstract implementation details
-
-</SplitTitle>
-
----
-
-<SplitTitle>
-
-## Great Component libraries
-
-- ensure UI consistency
-- enable faster development
-- abstract implementation details
-- designed for change
-- intuitive to use
-- inclusive
-- based on strong principles
-
-</SplitTitle>
+# Examples
 
 ---
 
@@ -350,45 +289,74 @@ const Dropdown = props => (
 
 ---
 
-<Grid columns={3} gap={5}>
-<Box>
+<Grid gap={5}>
+<Grid columns={2}>
 
 ## OSS
 
 ex. Material UI, Ant Design, Bootstrap
 
-</Box>
-<Box>
+</Grid>
+<Grid columns={2}>
 
 ## Mix
 
 Re-export or wrap components from OSS (Reakit, Theme-UI, Chakra, etc.)
 
-</Box>
-<Box>
+</Grid>
+<Grid columns={2}>
 
 ## Custom
 
 Build everything from scratch (using styled-system, etc.)
 
-</Box>
+</Grid>
 </Grid>
 
 ---
 
 <SplitTitle>
 
-## Mixed approach
+## Using open source
 
 ```diff
-export { DatePicker } from "material-ui"
+import { DatePicker } from "material-ui"
 
-// In your app
-- import { DatePicker } from "material-ui"
-+ import { DatePicker } from "./components"
+<DatePicker {...} />
 ```
 
 </SplitTitle>
+
+---
+
+<SplitTitle>
+
+## Using mixed approach
+
+```jsx
+// components/index.js
+
+export { DatePicker } from "material-ui"
+
+// app.js
+import { DatePicker } from "./components"
+
+<DatePicker {...} />
+```
+
+</SplitTitle>
+
+---
+
+## 🥁🥁🥁 Today we're building
+
+---
+
+<Figure
+	src={'/assets/window-prompt.png'}
+	alt="window.prompt"
+	caption="window.prompt"
+/>
 
 ---
 
@@ -412,7 +380,7 @@ export { DatePicker } from "material-ui"
 
 ---
 
-> ⏳ 30 minutes
+> 20 minutes
 
 ---
 
@@ -580,7 +548,9 @@ export { DatePicker } from "material-ui"
 
 # 😭
 
-<Notes>apropcalipse</Notes>
+---
+
+> Apropcalipse
 
 ---
 
@@ -591,7 +561,7 @@ export { DatePicker } from "material-ui"
 
 ---
 
-<Primary>
+<Primary imgSrc="/assets/legos.jpg">
 
 # UI Primitives
 
@@ -599,23 +569,23 @@ export { DatePicker } from "material-ui"
 
 ---
 
-> Primitives are building blocks of the UI.
+> Primitives are the building blocks of the user interface.
 
 ---
 
-<Image src={'/assets/legos.jpg'} />
+<Figure
+	src={'/assets/legos-assembled.jpg'}
+	alt="Lego cars"
+	caption="Different items from the same set of bricks"
+/>
 
 ---
 
-<Image src={'/assets/legos-assembled.jpg'} />
-
----
-
-<Secondary>
+<Primary>
 
 # Compound Components
 
-</Secondary>
+</Primary>
 
 ---
 
@@ -680,7 +650,7 @@ export { DatePicker } from "material-ui"
 
 ---
 
-## Inversion of control
+> Inversion of control
 
 ---
 
@@ -691,7 +661,7 @@ export { DatePicker } from "material-ui"
 
 ---
 
-> ⏳ 30 minutes
+> 20 minutes
 
 ---
 
@@ -759,11 +729,11 @@ export { DatePicker } from "material-ui"
 
 ---
 
-<Secondary>
+<Primary>
 
 # Principles of Primitives
 
-</Secondary>
+</Primary>
 
 ---
 
@@ -939,11 +909,11 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-<Secondary>
+<Primary>
 
 # State encapsulation
 
-</Secondary>
+</Primary>
 
 ---
 
@@ -951,6 +921,10 @@ const RedBox = ({className, ...props}) => (
 
 - [http://localhost:8000](http://localhost:8000) — App
 - [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+> 15-20 minutes
 
 ---
 
@@ -969,11 +943,11 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-<Secondary>
+<Primary>
 
 # Headless Components
 
-</Secondary>
+</Primary>
 
 ---
 
@@ -984,6 +958,35 @@ const RedBox = ({className, ...props}) => (
 - react-dropzone
 - downshift
 - Reakit hooks
+
+---
+
+```jsx
+import React, { useCallback } from 'react';
+import { useDropzone } from 'react-dropzone';
+
+function MyDropzone() {
+	const onDrop = React.useCallback(acceptedFiles => {
+		// Do something with the files
+	}, []);
+	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
+	return (
+		<div {...getRootProps()}>
+			<input {...getInputProps()} />
+			{isDragActive ? (
+				<p>Drop the files here ...</p>
+			) : (
+				<p>Drag'n'drop some files here, or click to select files</p>
+			)}
+		</div>
+	);
+}
+```
+
+---
+
+> Low-level primitives to create UI Patterns
 
 ---
 
@@ -1043,15 +1046,6 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-# Primitives
-
-- 👍 Less abstractions
-- 👍 Easy to change
-- 👎 Inconsistent UI
-- 👎 Slower development
-
----
-
 # UI Patterns
 
 - UI with a specific goal (solution)
@@ -1072,6 +1066,24 @@ const RedBox = ({className, ...props}) => (
 # Recap
 
 </Secondary>
+
+---
+
+# Primitives
+
+- 👍 Less abstractions
+- 👍 Easy to change
+- 👎 Inconsistent UI
+- 👎 Slower development
+
+---
+
+# Patterns
+
+- 👎 Higher-order abstractions
+- 👎 Harder to change
+- 👍 Consistent UI
+- 👍 Faster development
 
 ---
 
@@ -1125,13 +1137,84 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-<Figure
-	src={'/assets/component-driven.svg'}
-	alt="Component-driven Logo"
-	caption={
-		<a href="https://component-driven.io">https://component-driven.io</a>
-	}
-/>
+<Primary>
+
+# React Context
+
+</Primary>
+
+---
+
+> Context is designed to share data that can be considered “global” for a tree of React components
+
+---
+
+<SplitTitle>
+
+## Avoid "prop drilling"
+
+```jsx
+import { ThemeProvider } from 'styled-components';
+import theme from '../theme';
+
+<ThemeProvider theme={theme}>
+	<App />
+</ThemeProvider>;
+```
+
+</SplitTitle>
+
+---
+
+## Avoid re-renders by bypassing React reconciliation
+
+[React at 60fps](https://medium.com/hackernoon/react-at-60fps-4e36b8189a4c)
+
+---
+
+<Demo src="https://react-sync-scroll.netlify.app/" />
+
+---
+
+## Manage global state, decouple rendering, provide better APIs
+
+---
+
+# 👩‍💻 `npm run start-rcl`
+
+- [http://localhost:8000](http://localhost:8000) — App
+- [http://localhost:6061](http://localhost:6061) — Exercises
+
+---
+
+> 15-20 minutes
+
+---
+
+<Secondary>
+
+# Recap
+
+</Secondary>
+
+---
+
+## React Context
+
+- global state store (you may not need Redux!)
+- performance optimization
+- decouple rendering from intent
+- remove boilerplate
+- simplify APIs
+- something else?..
+
+---
+
+<Primary>
+
+# Q & A
+
+</Primary>
 
 ---
 
@@ -1143,11 +1226,13 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
-<Primary>
-
-# Q & A
-
-</Primary>
+<Figure
+	src={'/assets/component-driven.svg'}
+	alt="Component-driven Logo"
+	caption={
+		<a href="https://component-driven.io">https://component-driven.io</a>
+	}
+/>
 
 ---
 
