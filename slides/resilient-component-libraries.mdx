@@ -1031,7 +1031,7 @@ import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 function MyDropzone() {
-	const onDrop = useCallback(acceptedFiles => {
+	const onDrop = React.useCallback(acceptedFiles => {
 		// Do something with the files
 	}, []);
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
@@ -1042,7 +1042,7 @@ function MyDropzone() {
 			{isDragActive ? (
 				<p>Drop the files here ...</p>
 			) : (
-				<p>Drag 'n' drop some files here, or click to select files</p>
+				<p>Drag'n'drop some files here, or click to select files</p>
 			)}
 		</div>
 	);
@@ -1204,7 +1204,7 @@ function MyDropzone() {
 
 <Primary>
 
-# React.Context
+# React Context
 
 </Primary>
 
@@ -1237,7 +1237,7 @@ import theme from '../theme';
 
 ---
 
-<Demo src="http://react-sync-scroll.netlify.com" />
+<Demo src="https://react-sync-scroll.netlify.app/" />
 
 ---
 
