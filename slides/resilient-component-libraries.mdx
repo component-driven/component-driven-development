@@ -917,6 +917,36 @@ const RedBox = ({className, ...props}) => (
 
 ---
 
+```jsx
+const [isExpanded, setIsExpanded] = React.useState(false);
+<>
+	<DisclosureButton onClick={() => setIsExpanded(x => !x)}>
+		Toggle
+	</DisclosureButton>
+	{isExpanded && <DisclosureContent>Content</DisclosureContent>}
+</>;
+```
+
+---
+
+```jsx
+function useDisclosureState({ expanded = false } = {}) {
+	const [isExpanded, setIsExpanded] = React.useState(expanded);
+	return {
+		isExpanded,
+		onToggle: () => setIsExpanded(x => !x),
+	};
+}
+
+const disclosure = useDisclosureState({ expanded: false });
+<>
+	<DisclosureButton {...disclosure}>Toggle</DisclosureButton>
+	<DisclosureContent {...disclosure}>Content</DisclosureContent>
+</>;
+```
+
+---
+
 # 👩‍💻 `npm run start-rcl`
 
 - [http://localhost:8000](http://localhost:8000) — App
