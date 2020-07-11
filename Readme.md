@@ -1,21 +1,20 @@
-# Design systems for React developers and Resilient component libraries in React workshops
+# Design systems for React developers workshop
 
 [![Build Status](https://travis-ci.org/component-driven/component-driven-development.svg)](https://travis-ci.org/component-driven/component-driven-development)
 
-This repository contains exercises for **Design systems for React developers** and **Resilient component libraries in React** workshops.
+This repository contains exercises for the **Design systems for React developers** workshop.
 
 _Before attending the workshop, please make sure you can run the code in this repository._
 
-**[Try the app](https://cdds.component-driven.io/) or [view the style guide](https://cdds.component-driven.io/styleguide/).**
+**[Try the app](https://cdds.component-driven.io/), [view the style guide](https://cdds.component-driven.io/styleguide/), or [view the slides](https://cdds.component-driven.io/slides/).**
 
 ## Prerequisites
 
-Basic JavaScript, CSS and HTML experience is required. Following will be very useful:
-
-- React experience;
-- command line basics.
+Basic JavaScript, CSS, HTML and React experience is required. Styled-components experience and command line basics will be very useful.
 
 To learn React we recommend [the official tutorial](https://reactjs.org/tutorial/tutorial.html) and [The Beginner’s Guide to React course](https://egghead.io/courses/the-beginner-s-guide-to-react) by Kent C. Dodds.
+
+To learn styled-components we recommend [Introduction to styled-components](https://egghead.io/lessons/react-introduction-to-styled-components) video lesson.
 
 To learn command line basics we recommend [Really Friendly Command Line Intro](https://hellowebbooks.com/learn-command-line/) by Tracy Osborn.
 
@@ -37,27 +36,16 @@ cd component-driven-development
 npm install
 ```
 
-### Design systems for React developers
+### Running the code and exercises
 
 Run:
 
-- `npm start` to work on exercises and run the completed app and style guide
+- `npm start` to work on the exercises, and run the completed app and style guide
 
 Or:
 
-- `npm run exercises-cdd` to work on exercises
+- `npm run exercises` to work on exercises
 - `npm run styleguide` to run the completed style guide
-- `npm run app` to run the completed app
-
-### Resilient component libraries in React
-
-Run:
-
-- `npm run start-rcl` to work on exercises and run the completed app
-
-Or:
-
-- `npm run exercises-rcl` to work on exercises
 - `npm run app` to run the completed app
 
 ## Tech stack
@@ -66,8 +54,6 @@ Or:
 - [React Styleguidist](https://react-styleguidist.js.org/)
 - [styled-components](https://www.styled-components.com/)
 - [styled-system](https://styled-system.com/)
-- [Rebass Grid](https://rebassjs.org/grid/) (former Grid Styled)
-- [Stack Styled](https://sapegin.github.io/stack-styled/)
 
 ## Further resources
 

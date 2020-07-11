@@ -111,7 +111,7 @@ Have a look at our [typography styles](https://cdds.netlify.com/styleguide/#/Fou
 <details>
  <summary>Text</summary>
 
-The `Text` component (`src/exercises/1-3-Basic_Primitives/Text.js`):
+The `Text` component (`src/exercises/3-Basic_Primitives/Text.js`):
 
 ```jsx {"file": "final/Text.js", "static": true}
 ```
@@ -121,7 +121,7 @@ The `Text` component (`src/exercises/1-3-Basic_Primitives/Text.js`):
 <details>
  <summary>Link</summary>
 
-The `Link` component (`src/exercises/1-3-Basic_Primitives/Link.js`):
+The `Link` component (`src/exercises/3-Basic_Primitives/Link.js`):
 
 ```jsx {"file": "final/Link.js", "static": true}
 ```
@@ -131,7 +131,7 @@ The `Link` component (`src/exercises/1-3-Basic_Primitives/Link.js`):
 <details>
  <summary>Heading</summary>
 
-The `Heading` component (`src/exercises/1-3-Basic_Primitives/Heading.js`):
+The `Heading` component (`src/exercises/3-Basic_Primitives/Heading.js`):
 
 ```jsx {"file": "final/Heading.js", "static": true}
 ```
