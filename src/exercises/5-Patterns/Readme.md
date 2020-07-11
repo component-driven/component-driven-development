@@ -18,7 +18,7 @@ To make our Button more usable, we need to accommodate for different use cases. 
 <details>
  <summary>Solution</summary>
 
-The `Button` component (`src/exercises/1-5-Patterns/Button.js`):
+The `Button` component (`src/exercises/5-Patterns/Button.js`):
 
 ```jsx {"file": "final/Button.js", "static": true}
 ```
@@ -43,7 +43,7 @@ Let's create a simple `Label` UI pattern.
 <details>
  <summary>Solution</summary>
 
-The `Label` component (`src/exercises/1-5-Patterns/Label.js`):
+The `Label` component (`src/exercises/5-Patterns/Label.js`):
 
 ```jsx {"file": "final/Label.js", "static": true}
 ```
@@ -73,7 +73,7 @@ Let's create a LoginForm with the primitives we created today.
 <details>
  <summary>Solution</summary>
 
-The `LogingForm` component (`src/exercises/1-5-Patterns/LoginForm.js`):
+The `LogingForm` component (`src/exercises/5-Patterns/LoginForm.js`):
 
 ```jsx {"file": "final/LoginForm.js", "static": true}
 ```

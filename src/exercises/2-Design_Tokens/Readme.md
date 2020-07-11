@@ -68,12 +68,12 @@ const Message = styled.p`
 <details>
  <summary>Solution</summary>
 
-The `Button` component (`src/exercises/1-2-Design_Tokens/Button.js`):
+The `Button` component (`src/exercises/2-Design_Tokens/Button.js`):
 
 ```jsx {"file": "final/Button.js", "static": true}
 ```
 
-The `LoginForm` component (`src/exercises/1-2-Design_Tokens/LoginForm.js`):
+The `LoginForm` component (`src/exercises/2-Design_Tokens/LoginForm.js`):
 
 ```jsx {"file": "final/LoginForm.js", "static": true}
 ```
