@@ -33,6 +33,11 @@ const theme = {
 			fontWeight: 'body',
 		},
 	},
+	radii: {
+		none: 0,
+		base: '0.25em',
+		round: '99999px',
+	},
 };
 
 export default theme;
