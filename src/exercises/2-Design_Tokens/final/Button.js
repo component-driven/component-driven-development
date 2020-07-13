@@ -6,7 +6,7 @@ const Button = styled.button`
 	color: ${props => props.theme.colors.background};
 	background-color: ${props => props.theme.colors.primary};
 	border: 0;
-	border-radius: ${props => props.theme.radii.round}px;
+	border-radius: ${props => props.theme.radii.round};
 `;
 
 Button.propTypes = {
