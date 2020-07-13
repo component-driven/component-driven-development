@@ -7,7 +7,7 @@ In this exercise we’ll learn principles of Component-driven Development. We'll
 ### The task
 
 1. Explore React Styleguidist interface, try to switch to isolated mode (a button in the top right corner), try to edit code of the examples in the browser.
-1. Add a new `Button.js` file (we already added the example Markdown file) in the `src/exercises/1-1-Introduction` folder (both, `.js` and `.md`, files should have the same name) and see how it’s automatically added to the style guide (restart the style guide if the new component did not appear automatically).
+1. Add a new `Button.js` file (we already added the example Markdown file) in the `src/exercises/1-Introduction` folder (both, `.js` and `.md`, files should have the same name) and see how it’s automatically added to the style guide (restart the style guide if the new component did not appear automatically).
 1. Edit a component source in the `Button.js` file. See how all examples update every time you save a file.
 1. Edit component’s `PropTypes` definition. See how “Props & methods” section reacts to the updates.
 1. Edit examples in the `Button.md` file, add a new example. See how examples in the browser update.
@@ -62,7 +62,7 @@ _Don’t try to be pixel perfect here, that’s not the goal of the exercise. Al
 <details>
  <summary>Solution</summary>
 
-The `Button` component (`src/exercises/1-1-Introduction/Button.js`):
+The `Button` component (`src/exercises/1-Introduction/Button.js`):
 
 ```jsx {"file": "final/Button.js", "static": true}
 ```
@@ -77,12 +77,12 @@ Now that you're know how to use styled-components to add styles, let's create a 
 
 ### The task
 
-1. Open `src/exercises/1-1-Introduction/LoginForm.js` and try to match the layout of the "mockup". Choose colors and styles yourself or as a team.
+1. Open `src/exercises/1-Introduction/LoginForm.js` and try to match the layout of the "mockup". Choose colors and styles yourself or as a team.
 
 <details>
  <summary>Solution</summary>
 
-The `LoginForm` component (`src/exercises/1-1-Introduction/LoginForm.js`):
+The `LoginForm` component (`src/exercises/1-Introduction/LoginForm.js`):
 
 ```jsx {"file": "final/LoginForm.js", "static": true}
 ```

@@ -66,7 +66,7 @@ Play around with props in the example below to see how the `Box` reacts to the c
 <details>
  <summary>Solution</summary>
 
-The `Box` component (`src/exercises/1-4-Layout_Primitives/Box.js`):
+The `Box` component (`src/exercises/4-Layout_Primitives/Box.js`):
 
 ```jsx {"file": "./final/Box.js", "static": true}
 ```
@@ -106,7 +106,7 @@ The result should look like this:
 <details>
  <summary>Solution</summary>
 
-The `Flex` component (`src/exercises/1-4-Layout_Primitives/Flex.js`):
+The `Flex` component (`src/exercises/4-Layout_Primitives/Flex.js`):
 
 ```jsx {"file": "./final/Flex.js", "static": true}
 ```
@@ -150,7 +150,7 @@ The result should look like this:
 <details>
  <summary>Solution</summary>
 
-The `Grid` component (`src/exercises/1-4-Layout_Primitives/Grid.js`):
+The `Grid` component (`src/exercises/4-Layout_Primitives/Grid.js`):
 
 ```jsx {"file": "./final/Grid.js", "static": true}
 ```
@@ -189,7 +189,7 @@ The result should look like this:
 <details>
  <summary>Solution</summary>
 
-The `Stack` component (`src/exercises/1-4-Layout_Primitives/Stack.js`):
+The `Stack` component (`src/exercises/4-Layout_Primitives/Stack.js`):
 
 ```jsx {"file": "./final/Stack.js", "static": true}
 ```

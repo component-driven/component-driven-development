@@ -7,18 +7,13 @@
 	"scripts": {
 		"prevalidate": "npm run generate",
 		"validate": "node scripts/setup.js",
-		"start": "run-p app exercises-cdd styleguide",
-		"prestart-cdd": "npm run validate",
-		"start-cdd": "run-p app exercises-cdd styleguide",
-		"prestart-rcl": "npm run validate",
-		"start-rcl": "run-p app exercises-rcl",
+		"start": "run-p app exercises styleguide",
 		"preapp": "npm run validate",
 		"app": "gatsby develop",
 		"prebuild": "npm run validate",
 		"build": "gatsby clean && gatsby build --prefix-paths && npm run styleguide:build",
 		"test": "eslint src",
-		"exercises-cdd": "styleguidist server --open --exercises-cdd",
-		"exercises-rcl": "styleguidist server --open --exercises-rcl",
+		"exercises": "styleguidist server --open --exercises",
 		"prestyleguide": "npm run validate",
 		"styleguide": "styleguidist server --open",
 		"prestyleguide:build": "npm run validate",
@@ -62,7 +57,7 @@
 		"npm-run-all": "^4.1.5",
 		"prettier": "^1.18.2",
 		"raw-loader": "^3.1.0",
-		"react-styleguidist": "^11.0.6"
+		"react-styleguidist": "^11.0.8"
 	},
 	"lint-staged": {
 		"*.{js}": "eslint --fix",

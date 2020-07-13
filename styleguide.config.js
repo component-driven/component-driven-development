@@ -2,11 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
-// styleguidist server --exercises-cdd OR styleguidist server --exercises-rcl
-const isExercisesCdd = !!process.argv.find(x => x === '--exercises-cdd');
-const isExercisesRcl = !!process.argv.find(x => x === '--exercises-rcl');
-
-const workshopId = isExercisesCdd ? 1 : isExercisesRcl ? 2 : null;
+// styleguidist server --exercises
+const isExercises = !!process.argv.find(x => x === '--exercises');
 
 const borderedStyle = {
 	border: '1px solid #e8e8e8',
@@ -25,8 +22,10 @@ const markdownToCodeExample = s =>
 		.replace(/<\/>/, `</div>`);
 
 const config = {
-	serverPort: workshopId ? 6061 : 6060,
-	title: 'Component-driven design systems workshop',
+	serverPort: isExercises ? 6061 : 6060,
+	title: isExercises
+		? 'Design systems for React developers'
+		: 'Component-driven',
 	styleguideDir: 'public/styleguide',
 	assetsDir: 'static',
 	styleguideComponents: {
@@ -80,16 +79,14 @@ const config = {
 	},
 };
 
-if (workshopId) {
+if (isExercises) {
 	// Generate sections for all exercises
 	const exercisesRoot = path.join(__dirname, `src/exercises`);
-	const exercises = glob.sync(`${exercisesRoot}/${workshopId}-*`);
+	const exercises = glob.sync(`${exercisesRoot}/*`);
 	config.sections = exercises.map(folder => ({
 		name: path
 			.basename(folder)
-			// TODO: Figure out why Styleguidist breaks on numbers in titles
-			// https://github.com/styleguidist/react-styleguidist/issues/1594
-			.replace(/^\d+-(\d+)-/, '')
+			.replace(/^(\d+)-/, '$1. ')
 			.replace(/_/g, ' '),
 		content: `${folder}/Readme.md`,
 		components: `${folder}/*.js`,
