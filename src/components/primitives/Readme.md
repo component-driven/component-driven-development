@@ -8,4 +8,4 @@ This means primitives:
 - should not make any assumptions on the HTML element
 - should provide a `ref` prop that is mapped to the underlying DOM node
 
-Primitives are meant to be composed into [UI patterns](/patterns).
+Primitives are meant to be composed into [UI patterns](#/UI%20Patterns).
