@@ -65,9 +65,3 @@ Or:
 [Artem Sapegin](http://sapegin.me), [Andrey Okonetchnikov](http://okonet.ru/) and [contributors](https://github.com/component-driven/component-driven-development/graphs/contributors).
 
 This material is available for private, non-commercial use under the Creative Commons Attribution-NonCommercial 4.0 license. If you would like to use this material to conduct your own workshop, please contact us at hi@component-driven.io.
-
-## Credits
-
-Icons: [Ionicons](https://ionicons.com/), [Font Awesome](https://fontawesome.com/), [Ilya Kolbin](https://thenounproject.com/kolbin.ia/), [Denis Sazhin](https://thenounproject.com/iconka/).
-
-Photos: [Unsplash](https://unsplash.com/), [Artem Sapegin](http://morning.photos/).
