@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"license": "CC BY-NC 4.0",
-	"homepage": "https://cdds.component-driven.io",
+	"homepage": "https://cdds.component-driven.dev",
 	"scripts": {
 		"validate": "node scripts/setup.js",
 		"start": "run-p app exercises styleguide",
