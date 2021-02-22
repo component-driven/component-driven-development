@@ -1,7 +1,6 @@
 import CDTheme from '@component-driven/mdx-deck-theme';
 import Stack from 'stack-styled';
-import CodeLive from './theme/components/LiveCode';
-import RequireExample from './theme/components/RequireExample';
+import Primary from '@component-driven/mdx-deck-theme/dist/layouts/Primary';
 
 export const theme = { ...CDTheme };
 
@@ -40,7 +39,7 @@ Design System Lead, UI developer with experience in both design and development 
 
 ---
 
-## Why do we need design system?
+## Why do we need a design system?
 
 1. UI consistency
 1. Coherent user experience
@@ -53,7 +52,7 @@ Design System Lead, UI developer with experience in both design and development 
 
 1. Component library
 1. Speed of development
-1. Best practices (accessibility, performance, design principles)
+1. Best practices
 1. Shared language
 
 ---
@@ -331,14 +330,6 @@ Past ~5 years
 
 ---
 
-<Secondary>
-
-# Questions?
-
-</Secondary>
-
----
-
 <Primary>
 
 # Components
@@ -446,7 +437,6 @@ Past ~5 years
   >
     <li><a href="#">Action</a></li>
     <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
     <li role="separator" class="divider"></li>
     <li><a href="#">Separated link</a></li>
   </ul>
@@ -457,13 +447,10 @@ Past ~5 years
 
 ```jsx
 <DropdownMenu trigger={<Button>Open Dropdown</Button>}>
-	<DropdownMenuItem>Vienna</DropdownMenuItem>
-	<DropdownMenuItem>Berlin</DropdownMenuItem>
+	<DropdownMenuItem>Action</DropdownMenuItem>
+	<DropdownMenuItem>Another action</DropdownMenuItem>
 	<DropdownMenuSeparator />
-	<DropdownMenuItem prefix={<IconHouse />}>Madrid</DropdownMenuItem>
-	<DropdownMenuItem prefix={<IconColorBucket />} suffix={<IconAccess />}>
-		Paris
-	</DropdownMenuItem>
+	<DropdownMenuItem href="#">Separated link</DropdownMenuItem>
 </DropdownMenu>
 ```
 
@@ -682,25 +669,7 @@ import Text from '../primitives/Text';
 
 ---
 
-## API: boolean vs variant
-
-- `<Text primary>` 😀
-- `<Text secondary>` 😀
-- `<Text primary secondary>` 🤯
-
----
-
-## API: boolean vs variant
-
-- `<Text textStyle="primary">` 😀
-- `<Text textStyle="secondary">` 😀
-- ~~`<Text textStyle="primary secondary">`~~ 🚫
-- `<Button textStyle="primary" disabled>` 😀
-- `<Button textStyle="secondary" disabled>` 😀
-
----
-
-> Variants make impossible states impossible
+<Demo src="https://design-system.adverity.net/versions/17.3.0/storybook/?path=/docs/documentation-foundation-typography--heading" />
 
 ---
 
@@ -785,7 +754,7 @@ export const Box = styled.div(
 
 ---
 
-<CodeLive code={<RequireExample path="code/Box.txt" />} />
+<Demo src="https://design-system.adverity.net/versions/17.3.0/playroom/#?code=N4Igxg9gJgpiBcIA8AhCAPABAQwM4F4AdEAMwgCcBbYgPkIDtNNUMGmm8iQBLegBwCuAF2Jt2AN2wAbATC4AVABbdcmFTka9BIkGKZ9sUKLwDmXdOgC0uStKmjG7W%2BRO8AStxOKh5qzbsO7JgARhSw5ADq3FBCilwAjIHsoeThAMIQUhRcJuTYAJ4AdADMSUwp4W6G3AIExIm6juVhMOQAykL5UnLEuJnRSQD0dI4s6Ho4dSDBwkIQ9GWYBkamvta2UvaNQRWtUTFx9Yu75BlZ5FzBefRQhQAcxy3kVca1CY%2BprR1dPSB9UgNtslsGAANa5CACG5nbLEK7YG6FACsi0g5y4AHdlEIYEkRkEULN5pgpNhgjB7KNBmh0CMkNSMCMQAAaECxGCUGC4BAAbR49Fwnm83IAuqyMdFYtz4DyRQBfIA" />
 
 ---
 
@@ -818,7 +787,7 @@ export const Box = styled.div(
 
 ---
 
-<CodeLive code={<RequireExample path="code/Flex.txt" />} />
+<Demo src="https://design-system.adverity.net/versions/17.3.0/playroom/#?code=N4Igxg9gJgpiBcIA8AxANjAHgAgIYGcBeAHRADMIAnAW1ID5iA7bbJAIQkyZZYJJACWjAA4BXAC6luPAG640omPwAqACwH5sGvMyFjJIaSzIZMAcUoQA7oWABGAL5Hsw3FChCA5v0yYAtPjU8mhSzDxBlJ5CAEoCnqriPv6BwaE82ABGVLCUAOoCUOKq-HZpPFmUOQDCEGhU-J6UuACeAHQAzGUsFTnRbgKiRKSlhmHd2TCUAMrizRj8%2BLUFZQD0DGHsnM58pBkS4hCMXS5uHozepL4BQWgho%2Bk9k-mFxcPHj5Q1dZT8GU2MUFaAA53hNKH0PIMSqDKpMZnMlKRFmhlvdyrgwABrRoQUQAr71Xb-QEAVmOkG%2B-Cs6nEMDK63SbH2h2waFwGRgIQ2Kw4mHWSBW6Cw6xAABoQEUYNQYPgEABtQSMfBxBKygC64qsBSKsvgcrVDiAA" />
 
 ---
 
@@ -830,7 +799,7 @@ export const Box = styled.div(
 
 ---
 
-<CodeLive code={<RequireExample path="code/Grid.txt" />} />
+<Demo src="https://design-system.adverity.net/versions/17.3.0/playroom/#?code=N4Igxg9gJgpiBcIA8BxATgSygAgIYGcBeAHRADMI0BbU7SAGwFcqA7fAYQkZYBdDgAzAF9sAc0xQUuAA4kQ%2BKrnr1SAPmIts2JACEIADw1atBORhbTGPUkeMA3JYxhyAKgAsM%2BbJ7ybzl6xBbLTJ6GH10CAB3fgBGIWDsaVwoKHNROX19AFoFJRUgzWMAI0pYNAB1LB43OVibIq1StHLOeko5cVwATwA6AQbjbGbygCUUjEYiUnrCoZGYNABlHm6wuXwIeixB7AB6dSLdA0TTUn8rXa0HJmdSdx8fXD8LS7njUPDImOB4xOTUulMjk8sorsMyosqlAanVwQs0G0OqQun0Bu8mpC0OM0lM4RiIS1Fis1nd5Fsdu8DrZjoZGnhpiBilYeBAWOCAWkWBlSFlcoowQSEdDYTN4VikWg5MU0M8oL0ABzionYiZ4sVCrEk9akTbbKDw3BgADW4i4LCgkulsotvQArOCGMiQFEPDwYLtDkMdCy2dh6LhijAVEc9np9IckHt0FhDiAADQgGowKgwfAIADaIHM%2BAwojcPHTAF1E1Fqm50-AM0WhEA" />
 
 ---
 
@@ -842,7 +811,7 @@ export const Box = styled.div(
 
 ---
 
-<CodeLive code={<RequireExample path="code/Stack.txt" />} />
+<Demo src="https://design-system.adverity.net/versions/17.3.0/playroom/#?code=N4Igxg9gJgpiBcIA8BlALgQzAawAQYGcBeAHRADMIAnAWzNwIAcsBLAOwHNSQCaMAbfvWosYbTGhYQ23ABYiAXtMxCQAPhJtcuJACEIAD03bthbu0YBXNGWMmAbgMsxuAFVksCuT-i0Xrtlom5PwwBgDiVBAA7kTAAIwAvnbazFBQ7FxkBgYAtLwCqim4AEbUsFQA6ixQaLLc8YEmpeUwVADCEPzU3BxUGACeAHQAzE0mZVQVAEoYGZbEZI0gxZMV6AOh3ARdNeMA9BpBeobFZmT%2BNitB2o78zm4eXj4YfmxWV8UhYZExcUnFNIZTjcHL5PiCcbaNZtaq1epLKEtKZtTrdKi9frDMbXZowqizeaLEDLVatKgbLZkHb8Pa43CHOwnIw3fDEkrWNDSJFAzKgvIFSH06HkuF1BpI-FonpkEr9NhQIYADkl5MJLAWEuFyPWaE2Lmpuygkqw2D6EEsCulGNl8sVAFYkZB0dxoh40DBxkdmrpOdJcPwMCUYEJjvt9AYjkh9uhTUcQAAaEB1GA0GAEBAAbRA7AILA4sjQGYAuknojU6hn4Jni4kgA" />
 
 ---
 
@@ -860,43 +829,22 @@ export const Box = styled.div(
 
 <SplitTitle>
 
-### Prop per breakpoint vs. responsive props
-
-<Grid gap={5}>
-
-```jsx
-<Row>
-	<Col xs={12} md={6} lg={3}>
-		Pizza
-	</Col>
-</Row>
-```
+### Each styled prop is responsive!
 
 ```jsx
 // breakpoints: [small, medium, large]
-<Box width={[1, 1 / 2, 1 / 4]} p={['sm', 'md', 'lg']}>
-	Pizza
-</Box>
+<Stack gap={[1, 2, 3]} orientation={['vertical', 'horizontal']}>
+	<Box>...</Box>
+	<Box>...</Box>
+	<Box>...</Box>
+</Stack>
 ```
 
-</Grid>
 </SplitTitle>
 
 ---
 
-<CodeLive code={<RequireExample path="code/responsive.txt" />} />
-
----
-
-<Secondary>
-
-## All together
-
-</Secondary>
-
----
-
-<CodeLive code={<RequireExample path="code/Box-Text.txt" />} />
+<Demo src="https://design-system.adverity.net/versions/17.3.0/playroom/#?code=N4Igxg9gJgpiBcIA8BlALgQzAawDoDsACQjAZwF5cQAzCAJwFsqDjSAHLAS3wHNzgA2lVIMMAGzFUANISpiMdHjCoBdAL4tC9TjHyY0nCPn5CQANxh0DYcdNkgAFtoBeRzJJDqCAPk1IAQhAAHprEZJQg3GwArmjMRMSEZuLRMBEAKg6cpITZJERRsfGJhNRiMEEA4nQQAO78AIwaCcQcUFDcfFRBQQC0IuIeoYQARvSwdADqnFBoDhENxYljdBMAwhBi9BE8dBgAngB0AMxLxCsTAEoYHdEUVIsgwxeW6PvlEaSbM0sA9L4JALBYbhKiFOJPFpJFJpKiZPJ5DAFfAxCHDMoVap1RrNEptDq8CI9fqiCRnUbjSzTWbzB7kl50DZbOg7PZHU6QkoM663e4gR7PSl0N4fYTfKB-AHEIEhKGgkAjWJoIzk-GdIl9AZkznLIXUuYLelCpnbKgjPb4KCHAAcRtWlh5nDuhp15yFIthIC%2BYh%2BrtGWGwuwg0UtJpZZotVoArOTIMyIrUsmhlDqpYl-EqjIR5CMYJJAb9AkEAUhfugAwCQFIQHMYAwYKQEAJIvhSJweA40I2VNXajM5o34AJ1EA" />
 
 ---
 
@@ -910,8 +858,8 @@ export const Box = styled.div(
 
 ## API: Composition
 
-- `<Heading>` → `<Text variant="heading" as="h1">`
-- `<Label>` → `<Text variant="label" as="label">`
+- `<Heading>` → `<Text textStyle="heading" as="h1">`
+- `<Label>` → `<Text textStyle="label" as="label">`
 - `<Error>` → `<Text color="error" as="p">`
 
 ---
@@ -932,20 +880,6 @@ export const Box = styled.div(
 
 ---
 
-<Demo
-	src="http://localhost:6060/#!/Label"
-	prodSrc="https://cdds.netlify.com/styleguide/#!/Label"
-/>
-
----
-
-<Demo
-	src="http://localhost:6060/#!/LoginForm"
-	prodSrc="https://cdds.netlify.com/styleguide/#!/LoginForm"
-/>
-
----
-
 ## API: Patterns
 
 - `<Card>` → `<Stack>...</Stack>`
@@ -954,21 +888,23 @@ export const Box = styled.div(
 
 ---
 
-# 👩‍💻 `npm start`
-
-- [http://localhost:6061](http://localhost:6061) — Exercises
+<Demo src="https://design-system.adverity.net/versions/17.3.0/storybook/?path=/docs/documentation-components-pattern-heading-heading-docs--page" />
 
 ---
 
-> ⏳ 15-20 minutes
+<Demo src="https://design-system.adverity.net/versions/17.3.0/storybook/?path=/docs/documentation-components-pattern-modaldialog-modaldialog-docs--page" />
 
 ---
 
-<Secondary>
+<Demo src="https://design-system.adverity.net/versions/17.3.0/storybook/iframe.html?id=documentation-components-pattern-autherrorpage-examples--insights" />
 
-## Recap
+---
 
-</Secondary>
+> UI patterns should be created in application and shared only if there is a need.
+
+---
+
+<Demo src="https://design-system.adverity.net/versions/17.3.0/playroom/#?code=N4Igxg9gJgpiBcIA8AhCAPAfAHQHYAJ9gAKASnwF5Mi9DCAnGAFwFd6DUNMkB6NLANy18AXxF5e-HLhAAaEEwAWMALYwAzggDaIAJa51ugOaKmmgLryA7rqhLN8LeZFA" />
 
 ---
 
@@ -980,15 +916,32 @@ export const Box = styled.div(
 
 ---
 
-## Recap
+## 👨‍🎨 Designers
 
-1. Components are a common UI language
+1. Use design tokens and components during design
+1. Avoid custom UI at all cost. If not possible, use primitive components
+1. Share design specs with design tokens and components
+
+---
+
+## 👩‍💻 Developers
+
 1. Components is a better way of writing HTML & CSS
-1. Use design tokens to reduce choice
-1. Use primitive components (Text, Box)
-1. Do not make any assumptions
+1. Use design tokens to reduce choice and improve consistensy (no custom values!)
+1. When possible, use Patterns
+1. If does not exist, use Primitives (but raise a question and pull in DS team)
 1. Use layout primitives to control the white space
-1. Compose complex components using primitives
+1. Never use HTML directly but create semantic HTML using `as` prop
+1. Avoid using `css` prop
+
+---
+
+## 👯‍♀️ Teams
+
+1. Talk to each other (and use the shared language)
+1. There is no single right solution
+1. Think of value to effort
+1. Embrace design system, don't fight it
 
 ---
 
@@ -1027,12 +980,9 @@ export const Box = styled.div(
 
 ## Links and credits
 
-- https://react-styleguidist.js.org
-- https://styled-system.com
-- https://theme-ui.com
-- https://airbnb.design/sketching-interfaces/
-- https://colorsnapper.com — color picker Mac app
-- https://monolisa.dev — the coding font I'm using
+- https://https://design-system.adverity.net
+- https://https://design-system.adverity.net/playroom
+- https://www.monolisa.dev — the coding font I'm using
 
 ---
 
@@ -1040,7 +990,7 @@ export const Box = styled.div(
 	src={'/assets/component-driven.svg'}
 	alt="Component-driven Logo"
 	caption={
-		<a href="https://component-driven.dev">https://component-driven.dev</a>
+		<a href="https://www.component-driven.dev">www.component-driven.dev</a>
 	}
 />
 
@@ -1048,7 +998,7 @@ export const Box = styled.div(
 
 <Secondary>
 
-## [Feedback Form](https://forms.gle/3Ctb2Bz7Vr6zZdbx8)
+## [Survey](https://forms.gle/t5SQgJGjpcADotHu8)
 
 </Secondary>
 
@@ -1059,12 +1009,6 @@ export const Box = styled.div(
 # Q & A
 
 </Primary>
-
----
-
-### Homework
-
-https://github.com/component-driven/component-driven-development/issues/68
 
 ---
 
