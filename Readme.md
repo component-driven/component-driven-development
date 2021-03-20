@@ -1,4 +1,4 @@
-# Design systems for React developers workshop
+# Component-Driven Design systems for React developers workshop
 
 [![Build Status](https://travis-ci.org/component-driven/component-driven-development.svg)](https://travis-ci.org/component-driven/component-driven-development)
 
